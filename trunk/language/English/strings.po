@@ -1,0 +1,569 @@
+# XBMC Media Center language file
+# Addon Name: Titan
+# Addon id: skin.titan
+# Addon Provider: reazorFX & marcelveldt
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2013-08-13 08:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+###############
+#Titan Strings#
+###############
+
+msgctxt "#31400"
+msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"
+msgstr ""
+
+msgctxt "#31401"
+msgid "[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR][COLOR=midgrey]Manage your video library · Set video playback options · Change video listing options · Set subtitle fonts[/COLOR]"
+msgstr ""
+
+msgctxt "#31402"
+msgid "[B]CONFIGURE MUSIC SETTINGS[/B][CR][CR][COLOR=midgrey]Manage your music library · Set music playback options · Change music listing options · Setup song submission · Set karaoke options[/COLOR]"
+msgstr ""
+
+msgctxt "#31403"
+msgid "[B]CONFIGURE PICTURE SETTINGS[/B][CR][CR][COLOR=midgrey]Set picture listing options · Configure slideshows[/COLOR]"
+msgstr ""
+
+msgctxt "#31404"
+msgid "[B]CONFIGURE WEATHER SETTINGS[/B][CR][CR][COLOR=midgrey]Set three cities to collect weather information[/COLOR]"
+msgstr ""
+
+msgctxt "#31405"
+msgid "[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR][COLOR=midgrey]Setup control of XBMC via UPnP and HTTP · Configure file sharing · Set internet access options[/COLOR]"
+msgstr ""
+
+msgctxt "#31406"
+msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR][COLOR=midgrey]Setup and calibrate displays · Configure audio output · Setup remote controls · Set power saving options · Enable debugging · Setup master lock[/COLOR]"
+msgstr ""
+
+msgctxt "#31407"
+msgid "[B]CONFIGURE SKIN SETTINGS[/B][CR][CR][COLOR=midgrey]Setup the Titan skin · Add and remove home menu items · Change skin backgrounds[/COLOR]"
+msgstr ""
+
+msgctxt "#31408"
+msgid "[B]CONFIGURE ADD-ONS[/B][CR][CR][COLOR=midgrey]Manage your installed Add-ons · Browse for and install Add-ons from xbmc.org · Modify Add-on settings[/COLOR]"
+msgstr ""
+
+msgctxt "#31409"
+msgid "[B]SYSTEM INFO[/B][CR][CR][COLOR=midgrey]Summary · Storage · Network · Video · Hardware[/COLOR]"
+msgstr ""
+
+msgctxt "#31410"
+msgid "[B]CONFIGURE TV SETTINGS[/B][CR][CR][COLOR=midgrey]Change fullscreen info · Manage EPG data settings[/COLOR]"
+msgstr ""
+
+msgctxt "#31421"
+msgid "[B]SELECT YOUR XBMC USER PROFILE[/B][CR][CR][COLOR=midgrey]to login and continue[/COLOR]"
+msgstr ""
+
+msgctxt "#41000"
+msgid "Pictures"
+msgstr ""
+
+msgctxt "#41001"
+msgid "Music"
+msgstr ""
+
+msgctxt "#41002"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#41003"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#41004"
+msgid "Video-Addons"
+msgstr ""
+
+msgctxt "#41005"
+msgid "Weather"
+msgstr ""
+
+msgctxt "#41006"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#41007"
+msgid "Shutdown"
+msgstr ""
+
+msgctxt "#41008"
+msgid "Videos"
+msgstr ""
+
+msgctxt "#41009"
+msgid "Today"
+msgstr ""
+
+msgctxt "#41010"
+msgid "Recently Added"
+msgstr ""
+
+msgctxt "#41011"
+msgid "New Movies"
+msgstr ""
+
+msgctxt "#41012"
+msgid "Genre"
+msgstr ""
+
+msgctxt "#41013"
+msgid "Year"
+msgstr ""
+
+msgctxt "#41014"
+msgid "Actors"
+msgstr ""
+
+msgctxt "#41015"
+msgid "Director"
+msgstr ""
+
+msgctxt "#41016"
+msgid "Playlist"
+msgstr ""
+
+msgctxt "#41017"
+msgid "Music Videos"
+msgstr ""
+
+msgctxt "#41018"
+msgid "New Episodes"
+msgstr ""
+
+msgctxt "#41019"
+msgid "Music-Addons"
+msgstr ""
+
+msgctxt "#41020"
+msgid "New Albums"
+msgstr ""
+
+msgctxt "#41021"
+msgid "Artist"
+msgstr ""
+
+msgctxt "#41022"
+msgid "Songs"
+msgstr ""
+
+msgctxt "#41023"
+msgid "Library"
+msgstr ""
+
+msgctxt "#41024"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#41025"
+msgid "File manager"
+msgstr ""
+
+msgctxt "#41026"
+msgid "Addons"
+msgstr ""
+
+msgctxt "#41027"
+msgid "Programs"
+msgstr ""
+
+msgctxt "#41028"
+msgid "Favourites"
+msgstr ""
+
+msgctxt "#41030"
+msgid "Premiere"
+msgstr ""
+
+msgctxt "#41031"
+msgid "Duration"
+msgstr ""
+
+msgctxt "#41032"
+msgid "Rating"
+msgstr ""
+
+msgctxt "#41033"
+msgid "Unwatched Episodes"
+msgstr ""
+
+msgctxt "#41034"
+msgid "Premiere"
+msgstr ""
+
+msgctxt "#41035"
+msgid "Wind"
+msgstr ""
+
+msgctxt "#41037"
+msgid "UV-Index"
+msgstr ""
+
+msgctxt "#41038"
+msgid "Dew Point"
+msgstr ""
+
+msgctxt "#41039"
+msgid "Unwatched"
+msgstr ""
+
+msgctxt "#41070"
+msgid "Single Image"
+msgstr ""
+
+msgctxt "#41071"
+msgid "Multi Image"
+msgstr ""
+
+msgctxt "#41072"
+msgid "Default"
+msgstr ""
+
+msgctxt "#41073"
+msgid "Change Background"
+msgstr ""
+
+msgctxt "#41080"
+msgid "Change Background"
+msgstr ""
+
+msgctxt "#41081"
+msgid "Disable Menu"
+msgstr ""
+
+msgctxt "#41090"
+msgid "Menu"
+msgstr ""
+
+msgctxt "#41091"
+msgid "Scroll Info-Plot"
+msgstr ""
+
+msgctxt "#41092"
+msgid "Youtube Trailer"
+msgstr ""
+
+msgctxt "#41100"
+msgid "Movie Widget"
+msgstr ""
+
+msgctxt "#41101"
+msgid "TV Show Widget"
+msgstr ""
+
+msgctxt "#41102"
+msgid "Album Widget"
+msgstr ""
+
+msgctxt "#41103"
+msgid "Qlock Widget"
+msgstr ""
+
+msgctxt "#41110"
+msgid "New on XBMC ..."
+msgstr ""
+
+msgctxt "#41111"
+msgid "XBMC recommended ..."
+msgstr ""
+
+msgctxt "#41136"
+msgid "Custom home menu"
+msgstr ""
+
+msgctxt "#41137"
+msgid "Custom"
+msgstr ""
+
+msgctxt "#41138"
+msgid "Name"
+msgstr ""
+
+msgctxt "#41139"
+msgid "Fanart"
+msgstr ""
+
+msgctxt "#41140"
+msgid "Dim icon"
+msgstr ""
+
+msgctxt "#41141"
+msgid "Type"
+msgstr ""
+
+msgctxt "#41142"
+msgid "Path"
+msgstr ""
+
+msgctxt "#41143"
+msgid "Recommended size 1280x720px"
+msgstr ""
+
+msgctxt "#41144"
+msgid "Show overlay"
+msgstr ""
+
+msgctxt "#41145"
+msgid "Video add-on"
+msgstr ""
+
+msgctxt "#41146"
+msgid "Music add-on"
+msgstr ""
+
+msgctxt "#41147"
+msgid "Picture add-on"
+msgstr ""
+
+msgctxt "#41148"
+msgid "Program add-on"
+msgstr ""
+
+msgctxt "#41149"
+msgid "Video Playlist"
+msgstr ""
+
+msgctxt "#41150"
+msgid "Music Playlist"
+msgstr ""
+
+msgctxt "#41151"
+msgid "Custom"
+msgstr ""
+
+msgctxt "#41152"
+msgid "Music panel opens"
+msgstr ""
+
+msgctxt "#41153"
+msgid "Favourite"
+msgstr ""
+
+msgctxt "#41154"
+msgid "Close"
+msgstr ""
+
+msgctxt "#41155"
+msgid "Finishes at"
+msgstr ""
+
+msgctxt "#42000"
+msgid "Search Youtube"
+msgstr ""
+
+msgctxt "#42001"
+msgid "Other settings"
+msgstr ""
+
+msgctxt "#42002"
+msgid "Enable/Disable tiles"
+msgstr ""
+
+msgctxt "#42004"
+msgid "Skin mode"
+msgstr ""
+
+msgctxt "#42005"
+msgid "Skin graphics"
+msgstr ""
+
+msgctxt "#42006"
+msgid "NetfliXBMC Plugin"
+msgstr ""
+
+msgctxt "#42007"
+msgid "Enable mediabrowser integration"
+msgstr ""
+
+msgctxt "#42008"
+msgid "Use MediaBrowser mode for"
+msgstr ""
+
+msgctxt "#42009"
+msgid "Mediabrowser tiles for own collection"
+msgstr ""
+
+msgctxt "#42010"
+msgid "Use random fanart for tile image"
+msgstr "Gebruik willekeurige fanart voor tile afbeelding"
+
+msgctxt "#42011"
+msgid "Use own image for tile"
+msgstr ""
+
+msgctxt "#42012"
+msgid "Mediabrowser integration (XBMB3C)"
+msgstr ""
+
+msgctxt "#42013"
+msgid "Tile settings"
+msgstr ""
+
+msgctxt "#42014"
+msgid "tile"
+msgstr ""
+
+msgctxt "#42015"
+msgid "Use default tile picture"
+msgstr ""
+
+msgctxt "#42016"
+msgid "Use own image for tile"
+msgstr ""
+
+msgctxt "#42017"
+msgid "Open TV Guide instead of Live TV"
+msgstr ""
+
+msgctxt "#42018"
+msgid "Netflix"
+msgstr ""
+
+msgctxt "#42019"
+msgid "Open folderpath with music instead of library"
+msgstr ""
+
+
+msgctxt "#42020"
+msgid "Open folderpath with radio streams instead of PVR"
+msgstr ""
+
+msgctxt "#42021"
+msgid "Display temperature in tile"
+msgstr ""
+
+msgctxt "#42022"
+msgid "Skin background settings"
+msgstr ""
+
+msgctxt "#42023"
+msgid "Use blue skin background (default)"
+msgstr ""
+
+msgctxt "#42024"
+msgid "Use original Mediaportal's Titan skin background"
+msgstr ""
+
+msgctxt "#42025"
+msgid "Use dynamic weather background"
+msgstr ""
+
+msgctxt "#42026"
+msgid "Use random fanart background"
+msgstr ""
+
+msgctxt "#42027"
+msgid "Use background based on selected tile"
+msgstr ""
+
+msgctxt "#42028"
+msgid "Other skin tweaks"
+msgstr ""
+
+msgctxt "#42029"
+msgid "Do not show footer bar"
+msgstr ""
+
+msgctxt "#42030"
+msgid "Display weather on home"
+msgstr ""
+
+msgctxt "#42031"
+msgid "Show 2 rows of tiles on homescreen (default)"
+msgstr ""
+
+msgctxt "#42032"
+msgid "Show 3 rows of tiles on homescreen"
+msgstr ""
+
+msgctxt "#42033"
+msgid "Show just 1 row of tiles on homescreen"
+msgstr ""
+
+msgctxt "#42034"
+msgid "items total"
+msgstr ""
+
+msgctxt "#42035"
+msgid "Movies in progress"
+msgstr ""
+
+msgctxt "#42036"
+msgid "Favourite movies"
+msgstr ""
+
+msgctxt "#42037"
+msgid "Trailers"
+msgstr ""
+
+msgctxt "#42038"
+msgid "Use custom image for skin background"
+msgstr ""
+
+msgctxt "#42039"
+msgid "Use custom image for skin background"
+msgstr "Gebruik een eigen afbeelding als achtergrond voor de skin"
+
+
+msgctxt "#42040"
+msgid "Now playing"
+msgstr ""
+
+msgctxt "#42041"
+msgid "Use small settings button at footer of home"
+msgstr ""
+
+msgctxt "#42042"
+msgid "Quick resume movies you are watching"
+msgstr ""
+
+msgctxt "#42043"
+msgid "Quick resume TV shows you are watching"
+msgstr ""
+
+msgctxt "#42044"
+msgid "New added movies"
+msgstr ""
+
+msgctxt "#42045"
+msgid "Musicvideos"
+msgstr ""
+
+msgctxt "#42046"
+msgid "My List - TV Shows"
+msgstr ""
+
+msgctxt "#42047"
+msgid "My List - Movies"
+msgstr ""
+
+msgctxt "#42048"
+msgid "Latest Movies"
+msgstr ""
+
+msgctxt "#42049"
+msgid "Latest TV Shows"
+msgstr ""
+
+msgctxt "#42050"
+msgid "All Movies"
+msgstr ""
+
+msgctxt "#42051"
+msgid "All TV Shows"
+msgstr ""
+
+

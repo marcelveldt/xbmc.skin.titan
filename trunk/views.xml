@@ -1,0 +1,10 @@
+<views>
+    <view id="List" value="50" />
+	<view id="BannerList" value="55" />
+    <view id="Showcase" value="51" />
+	<view id="Showcase Details" value="54" />
+    <view id="Poster" value="52" />
+	<view id="Poster details" value="53" />
+    <view id="Titan Banner" value="501" />
+    <view id="Titan Banner Details" value="505" />
+</views>

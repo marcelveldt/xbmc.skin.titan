@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Titan-->
+<window>
+    <onload condition="System.HasAddon(plugin.video.xbmb3c)">RunScript(plugin.video.xbmb3c,skin)</onload>
+	<onload condition="System.HasAddon(plugin.video.xbmb3c)">XBMC.RunScript(special://skin/scripts/setbackgrounds.py)</onload>
+	<onload>Skin.SetBool(BackgroundWorkersLoaded)</onload>
+    <onload>ReplaceWindow(Home)</onload>
+</window>
