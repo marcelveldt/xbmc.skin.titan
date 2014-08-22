@@ -76,9 +76,9 @@
                 <radioposx>538</radioposx>
                 <include>DialogButton</include>
                 <textureradioonfocus>common/radio/radio-light-fo.png</textureradioonfocus>
-                <textureradiooffnofocus>common/radio/radio-light-fo.png</textureradiooffnofocus>
+                <textureradiooffnofocus>common/radio/radio-light-nf.png</textureradiooffnofocus>
                 <textureradioofffocus>common/radio/radio-light-nf.png</textureradioofffocus>
-                <textureradioonnofocus>common/radio/radio-light-nf.png</textureradioonnofocus>
+                <textureradioonnofocus>common/radio/radio-light-fo.png</textureradioonnofocus>
                 <texturefocus border="2">dialogs/default/highlight.png</texturefocus>
                 <texturenofocus>dialogs/default/separator-btn.png</texturenofocus>
                 <visible>!Window.IsActive(contextmenu)</visible>
