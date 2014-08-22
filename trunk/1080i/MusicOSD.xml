@@ -163,7 +163,7 @@
                 <aspectratio align="left" aligny="top">keep</aspectratio>
             </control>
             <!--Label-->
-			<control type="label">
+            <control type="label">
                 <posx>550</posx>
                 <posy>770</posy>
                 <width>900</width>
@@ -172,7 +172,7 @@
                 <textcolor>midgrey</textcolor>
                 <label>[B]$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Artist, - ][/B]</label>
                 <scroll>false</scroll>
-				<visible>!IsEmpty(MusicPlayer.Album)</visible>
+                <visible>!IsEmpty(MusicPlayer.Album)</visible>
             </control>
             <control type="label">
                 <posx>550</posx>
@@ -183,7 +183,7 @@
                 <textcolor>midgrey</textcolor>
                 <label>[B]$INFO[MusicPlayer.Artist][/B]</label>
                 <scroll>false</scroll>
-				<visible>IsEmpty(MusicPlayer.Album)</visible>
+                <visible>IsEmpty(MusicPlayer.Album)</visible>
             </control>
             <control type="label">
                 <posx>550</posx>
@@ -249,7 +249,7 @@
                     <visible>substring(system.time,AM,right)</visible>
                     <width min="0" max="150">auto</width>
                     <height>80</height>
-                    <label>AM</label>
+                    <label>378</label>
                     <font>Light60</font>
                     <aligny>center</aligny>
                     <textcolor>mainblue</textcolor>
@@ -258,23 +258,23 @@
                     <visible>substring(system.time,PM,right)</visible>
                     <width min="0" max="150">auto</width>
                     <height>80</height>
-                    <label>PM</label>
+                    <label>379</label>
                     <font>Light60</font>
                     <aligny>center</aligny>
                     <textcolor>mainblue</textcolor>
                 </control>
-            </control> 
-			<control type="grouplist" id="200">
+            </control>
+            <control type="grouplist" id="200">
                 <!--OSD-->
                 <posx>757</posx>
                 <posy>956</posy>
                 <width>1000</width>
                 <height>60</height>
                 <itemgap>0</itemgap>
-                <onup>-</onup>
-                <ondown>-</ondown>
-                <onleft>-</onleft>
-                <onright>-</onright>
+                <onup>noop</onup>
+                <ondown>noop</ondown>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
                 <orientation>horizontal</orientation>
                 <control type="button" id="201">
                     <!--Skip Back-->
@@ -347,51 +347,49 @@
                     <width>60</width>
                     <height>60</height>
                     <label>209</label>
-					
                     <font>-</font>
                     <texturefocus>osd/NextTrackFO.png</texturefocus>
                     <texturenofocus>osd/NextTrackNF.png</texturenofocus>
                     <onclick>PlayerControl(Next)</onclick>
                 </control>
-				<control type="button" id="1">
-                <description>Audio Settings</description>
-                <width>170</width>
-				<height>60</height>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<textoffsetx>0</textoffsetx>
-				<font>Reg25</font>
-				<textcolor>darkgrey</textcolor>
-				<focusedcolor>white</focusedcolor>
-                <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
-                <onclick>XBMC.PlayerControl(Repeat)</onclick>
-            </control>
-
-            <control type="button" id="2">
-				<width>180</width>
-				<height>60</height>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<textoffsetx>0</textoffsetx>
-				<font>Reg25</font>
-				<textcolor>darkgrey</textcolor>
-				<focusedcolor>white</focusedcolor>
-                <label>$LOCALIZE[191]$INFO[Playlist.Random, : ]</label>
-                <onclick>XBMC.PlayerControl(Random)</onclick>
-            </control>
-            <control type="button" id="6">
-                <description>Lyrics</description>
-                <width>140</width>
-				<height>60</height>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<textoffsetx>0</textoffsetx>
-				<font>Reg25</font>
-				<textcolor>darkgrey</textcolor>
-				<focusedcolor>white</focusedcolor>
-                <label>24013</label>
-                <onclick>RunScript(script.cu.lrclyrics)</onclick>
-            </control>
+                <control type="button" id="1">
+                    <description>Audio Settings</description>
+                    <width>170</width>
+                    <height>60</height>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <textoffsetx>0</textoffsetx>
+                    <font>Reg25</font>
+                    <textcolor>darkgrey</textcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
+                    <onclick>XBMC.PlayerControl(Repeat)</onclick>
+                </control>
+                <control type="button" id="2">
+                    <width>180</width>
+                    <height>60</height>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <textoffsetx>0</textoffsetx>
+                    <font>Reg25</font>
+                    <textcolor>darkgrey</textcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <label>$LOCALIZE[191]$INFO[Playlist.Random, : ]</label>
+                    <onclick>XBMC.PlayerControl(Random)</onclick>
+                </control>
+                <control type="button" id="6">
+                    <description>Lyrics</description>
+                    <width>140</width>
+                    <height>60</height>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <textoffsetx>0</textoffsetx>
+                    <font>Reg25</font>
+                    <textcolor>darkgrey</textcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <label>24013</label>
+                    <onclick>RunScript(script.cu.lrclyrics)</onclick>
+                </control>
             </control>
             <!--Process/Seekbar-->
             <control type="progress" id="23">

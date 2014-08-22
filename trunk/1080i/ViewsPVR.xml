@@ -591,7 +591,7 @@
                 <scrolltime>350</scrolltime>
                 <timeblocks>40</timeblocks>
                 <rulerunit>6</rulerunit>
-				<progresstexture border="5">pvr/PVR-EpgProgressIndicator.png</progresstexture>
+                <progresstexture border="5">pvr/PVR-EpgProgressIndicator.png</progresstexture>
                 <onleft>31</onleft>
                 <onright>31</onright>
                 <onup>10</onup>
@@ -992,7 +992,7 @@
                 <onup>16</onup>
                 <ondown>16</ondown>
                 <onleft>9000</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <pagecontrol>-</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="80">
@@ -1061,7 +1061,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>red</textcolor>
-                        <label>REC</label>
+                        <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1081,7 +1081,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>green</textcolor>
-                        <label>TIME</label>
+                        <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -1169,7 +1169,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>red</textcolor>
-                        <label>REC</label>
+                        <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1189,7 +1189,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>green</textcolor>
-                        <label>TIME</label>
+                        <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -1427,7 +1427,7 @@
                 <onup>15</onup>
                 <ondown>15</ondown>
                 <onleft>9000</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <pagecontrol>-</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="80">
@@ -1479,7 +1479,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>red</textcolor>
-                        <label>REC</label>
+                        <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1499,7 +1499,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>green</textcolor>
-                        <label>TIME</label>
+                        <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -1569,7 +1569,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>red</textcolor>
-                        <label>REC</label>
+                        <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1589,7 +1589,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>green</textcolor>
-                        <label>TIME</label>
+                        <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -2538,7 +2538,7 @@
                 <onup>15</onup>
                 <ondown>15</ondown>
                 <onleft>9000</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <pagecontrol>-</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="80">
@@ -2590,7 +2590,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>red</textcolor>
-                        <label>REC</label>
+                        <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -2610,7 +2610,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>green</textcolor>
-                        <label>TIME</label>
+                        <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -2681,7 +2681,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>red</textcolor>
-                        <label>REC</label>
+                        <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -2701,7 +2701,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>green</textcolor>
-                        <label>TIME</label>
+                        <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -2941,7 +2941,7 @@
                 <onup>15</onup>
                 <ondown>15</ondown>
                 <onleft>9000</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <pagecontrol>-</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="80">
@@ -2993,7 +2993,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>red</textcolor>
-                        <label>REC</label>
+                        <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -3013,7 +3013,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>green</textcolor>
-                        <label>TIME</label>
+                        <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -3084,7 +3084,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>red</textcolor>
-                        <label>REC</label>
+                        <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -3104,7 +3104,7 @@
                         <height>80</height>
                         <font>Reg32</font>
                         <textcolor>green</textcolor>
-                        <label>TIME</label>
+                        <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">

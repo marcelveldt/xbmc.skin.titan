@@ -10,7 +10,7 @@
             <include>animation_static_dialog</include>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
-            <visible>!Window.IsActive(DialogKayToast.xml) + !Skin.HasSetting(NextUpActive)</visible>
+            <visible>!Window.IsActive(DialogKayToast.xml)</visible>
             <control type="multiimage">
                 <!--Busy Image-->
                 <description>Busy animation</description>

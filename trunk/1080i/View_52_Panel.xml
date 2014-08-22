@@ -17,24 +17,24 @@
                 <onleft>52</onleft>
                 <onright>52</onright>
                 <pagecontrol>60</pagecontrol>
-                <viewtype label="Panel">list</viewtype>
+                <viewtype label="Panel">wide</viewtype>
                 <scrolltime tween="Cubic" easing="inout">500</scrolltime>
                 <focusposition>0</focusposition>
                 <orientation>horizontal</orientation>
                 <preloaditems>2</preloaditems>
                 <!-- itemlayout movies -->
                 <itemlayout height="320" width="230" condition="!Container.Content(albums)">
-						<include>PosterViewLayout</include>
+                    <include>PosterViewLayout</include>
                 </itemlayout>
-				<!-- focussed layout movies -->
+                <!-- focussed layout movies -->
                 <focusedlayout height="320" width="230" condition="!Container.Content(albums)">
-					<include>PosterViewLayoutFocus</include>
+                    <include>PosterViewLayoutFocus</include>
                 </focusedlayout>
-				<!-- itemlayout albums -->
+                <!-- itemlayout albums -->
                 <itemlayout height="290" width="290" condition="Container.Content(albums)">
                     <include>PosterViewAlbumLayout</include>
                 </itemlayout>
-				<!-- focussed layout albums -->
+                <!-- focussed layout albums -->
                 <focusedlayout height="290" width="290" condition="Container.Content(albums)">
                     <include>PosterViewAlbumLayoutFocus</include>
                 </focusedlayout>

@@ -3,8 +3,7 @@
 <includes>
     <include file="IncludesViews.xml" />
     <include name="BannerViewDetails">
-	
-		<!-- movie details and footer -->
+        <!-- movie details and footer -->
         <control type="group">
             <visible>Control.IsVisible(505)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
@@ -18,12 +17,12 @@
             <height>360</height>
             <posy>580</posy>
             <onup>9000</onup>
-            <ondown>-</ondown>
+            <ondown>noop</ondown>
             <onleft>505</onleft>
             <onright>505</onright>
             <orientation>horizontal</orientation>
             <focusposition>-</focusposition>
-            <viewtype label="Titan Banner details">wrap</viewtype>
+            <viewtype label="Titan Banner details">wide</viewtype>
             <scrolltime tween="cubic" easing="inout">500</scrolltime>
             <!-- normal item layout -->
             <itemlayout width="590" height="470" condition="!Container.Content(Episodes)">
@@ -52,6 +51,5 @@
                 </control>
             </focusedlayout>
         </control>
-        
     </include>
 </includes>

@@ -268,8 +268,8 @@
                     <texturefocus border="2">dialogs/default/highlight.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <onup>9002</onup>
-                    <onleft>-</onleft>
-                    <onright>-</onright>
+                    <onleft>noop</onleft>
+                    <onright>noop</onright>
                     <ondown>9001</ondown>
                     <animation effect="fade" start="100" end="50" time="0" condition="!Control.IsEnabled(12)" reversible="false">Conditional</animation>
                 </control>
@@ -296,7 +296,7 @@
                 <posy>703</posy>
                 <control type="button" id="18">
                     <description>OK</description>
-                    <label>OK</label>
+                    <label>186</label>
                     <include>DialogButtonOKCancel</include>
                     <texturefocus>common/select-fo.png</texturefocus>
                     <texturenofocus>common/select-nf.png</texturenofocus>

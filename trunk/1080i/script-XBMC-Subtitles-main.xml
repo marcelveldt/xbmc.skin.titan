@@ -25,7 +25,7 @@
                     <width>550</width>
                     <height>50</height>
                     <font>Reg40</font>
-                    <label>[B]XBMC SUBTITLES[/B]</label>
+                    <label>[B]$LOCALIZE[42060][/B]</label>
                     <align>Left</align>
                     <textcolor>midgrey</textcolor>
                 </control>
@@ -67,7 +67,7 @@
                     <width>1300</width>
                     <height>350</height>
                     <!--onleft>121</onleft-->
-                    <onleft>-</onleft>
+                    <onleft>noop</onleft>
                     <onright>150</onright>
                     <onup>120</onup>
                     <ondown>120</ondown>

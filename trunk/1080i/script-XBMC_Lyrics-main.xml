@@ -24,7 +24,7 @@
                         <selectedcolor>Highlight</selectedcolor>
                         <info>ListItem.Label</info>
                         <textcolor>PanelFG</textcolor>
-                        <font>Font-ListInfo</font>
+                        <font>Light27</font>
                     </control>
                 </itemlayout>
                 <focusedlayout height="50">
@@ -33,7 +33,7 @@
                         <textcolor>Highlight</textcolor>
                         <selectedcolor>Highlight</selectedcolor>
                         <info>ListItem.Label</info>
-                        <font>Font-ListInfo</font>
+                        <font>Light27</font>
                     </control>
                 </focusedlayout>
             </control>
@@ -55,7 +55,7 @@
                         <selectedcolor>Highlight</selectedcolor>
                         <info>ListItem.Label</info>
                         <textcolor>PanelFG</textcolor>
-                        <font>Font-ListInfo</font>
+                        <font>Light27</font>
                     </control>
                 </itemlayout>
                 <focusedlayout height="50">
@@ -64,11 +64,10 @@
                         <textcolor>Highlight</textcolor>
                         <selectedcolor>Highlight</selectedcolor>
                         <info>ListItem.Label</info>
-                        <font>Font-ListInfo</font>
+                        <font>Light27</font>
                     </control>
                 </focusedlayout>
             </control>
-            
             <control type="label" id="200">
                 <description>Scraper label</description>
                 <visible>false</visible>

@@ -563,6 +563,136 @@ msgctxt "#42051"
 msgid "All TV Shows"
 msgstr "Alle series"
 
+msgctxt "#42052"
+msgid "Artwork Downloader"
+msgstr "Artwork Downloader"
 
+msgctxt "#42053"
+msgid "Poster"
+msgstr "Poster"
+
+msgctxt "#42054"
+msgid "Fanart"
+msgstr "Fanart"
+
+msgctxt "#42055"
+msgid "Banner"
+msgstr "Banner"
+
+msgctxt "#42056"
+msgid "Landscape"
+msgstr "Landscape"
+
+msgctxt "#42057"
+msgid "ClearArt"
+msgstr "ClearArt"
+
+msgctxt "#42058"
+msgid "Logo"
+msgstr "Logo"
+
+msgctxt "#42059"
+msgid "Caps"
+msgstr "Caps"
+
+msgctxt "#42060"
+msgid "XBMC SUBTITLES"
+msgstr "XBMC SUBTITLES"
+
+msgctxt "#42061"
+msgid "Druk OK of Back om terug te sluiten"
+msgstr ""
+
+msgctxt "#42062"
+msgid "YouTube"
+msgstr "YouTube"
+
+msgctxt "#42063"
+msgid "Toggle icon layout"
+msgstr "Wissel icoon layout"
+
+msgctxt "#42064"
+msgid "Wide Icons"
+msgstr "Grote iconen"
+
+msgctxt "#42065"
+msgid "Wide Icons MediaInfo"
+msgstr "Grote iconen met info"
+
+msgctxt "#42066"
+msgid "Poster"
+msgstr "Posters"
+
+msgctxt "#42067"
+msgid "Poster MediaInfo"
+msgstr "Posters met info"
+
+msgctxt "#42068"
+msgid "Showcase"
+msgstr "Hoesjes"
+
+msgctxt "#42069"
+msgid "Showcase MediaInfo"
+msgstr "Hoesjes met info"
+
+msgctxt "#42070"
+msgid "Banner list"
+msgstr "Banner lijst"
+
+msgctxt "#42071"
+msgid "Setting level"
+msgstr "Instellingen niveau"
+
+msgctxt "#42072"
+msgid "Sort home menu"
+msgstr "Sorteer hoofdmenu"
+
+msgctxt "#42073"
+msgid "Sort the home menu tiles"
+msgstr "De hoofdmenu iconen sorteren"
+
+msgctxt "#42074"
+msgid "Arrange the homescreen tiles just the way you want it. [CR]Usage: select a direction below and click on the tile's title to move it's position. [CR]Because settings are applied on the fly the screen may blink for one second."
+msgstr "De iconen op het startscherm kun je op jouw volgorde inrichten. [CR]Gebruik: selecteer een richting (omhoog/omlaag) en klik op de titel van een icoon om deze te verplaatsen. [CR]Omdat de instellingen direct worden toegepast kan het zijn dat het scherm even knippert."
+
+msgctxt "#42075"
+msgid "Direction to move:"
+msgstr "Kies richting:"
+
+msgctxt "#42076"
+msgid "UP"
+msgstr "OMHOOG"
+
+msgctxt "#42077"
+msgid "DOWN"
+msgstr "OMLAAG"
+
+msgctxt "#42078"
+msgid "Skin Mode (replace libraries)"
+msgstr "Skin modus (vervang bibliotheken)"
+
+msgctxt "#42079"
+msgid "Changing the skin mode enables you to replace the default XBMC libraries with a third party product like MediaBrowser or Netflix. Not only the default tiles will be adjusted, also items like recent movies widgets etc. You can change the skinmode on a per-library base, this way you can decide for example to use MediaBrowser for your movies, and default XBMC library for TV shows."
+msgstr "Met het aanpassen van de skin modus ben je in staat om een standaard XBMC bibliotheek te vervangen met een product van een derde partij, zoals MediaBrowser of Netflix. Dat betekent niet alleen dat de tegels op het hoofdscherm aangepast worden, maar ook zaken zoals recente films etc. Je kunt de skin-modus aanpassen op categorie-niveau. Bijvoorbeeld alleen voor films etc."
+
+msgctxt "#42080"
+msgid "Netflix integration (netflixbmc)"
+msgstr "Netflix integratie (netflixbmc)"
+
+msgctxt "#42081"
+msgid "Netflix Mode"
+msgstr "Netflix Modus"
+
+msgctxt "#42082"
+msgid "Use Netflix Mode for"
+msgstr "Gebruik Netflix modus voor"
+
+msgctxt "#42083"
+msgid "REC"
+msgstr "REC"
+
+msgctxt "#42084"
+msgid "TIME"
+msgstr "TIME"
 
 

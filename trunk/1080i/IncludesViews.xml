@@ -1,171 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-	<include name="PosterViewLayout">
-		<control type="image">
-			<!--Poster-->
-			<width>200</width>
-			<height>294</height>
-			<texture background="true">$INFO[ListItem.Art(poster)]</texture>
-			<visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-		</control>
-		<control type="image">
-			<!--Poster-->
-			<width>200</width>
-			<height>294</height>
-			<texture background="true" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-			<visible>Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-		</control>
-		<control type="image">
-			<!--Poster-->
-			<width>200</width>
-			<height>294</height>
-			<texture background="true" diffuse="poster_matte.png">$INFO[ListItem.Art(poster)]</texture>
-			<visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-		</control>
-		<control type="image">
-			<!--Poster-->
-			<width>200</width>
-			<height>294</height>
-			<texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-			<visible>!Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-		</control>
-	</include>
-	
-	<include name="PosterViewAlbumLayout">
-		<control type="image">
-			<!--Cover-->
-			<posx>90</posx>
-			<width>290</width>
-			<height>290</height>
-			<texture background="true" diffuse="$VAR[posterviewoverlay]">$INFO[ListItem.Icon]</texture>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
-		</control>
-		<control type="image">
-			<!--Cover-->
-			<posx>90</posx>
-			<width>290</width>
-			<height>290</height>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
-		</control>
-	</include>
-	
-		<include name="PosterViewAlbumLayoutFocus">
-		<control type="image">
-			<animation type="focus">
-					<effect type="zoom" start="100" end="130" center="130,190" time="150" />
-				</animation>
-				<animation type="unfocus">
-					<effect type="zoom" start="130" end="100" center="130,190" time="150" />
-			</animation>
-			<posx>90</posx>
-			<width>290</width>
-			<height>290</height>
-			<texture background="true" diffuse="$VAR[posterviewoverlay]">$INFO[ListItem.Icon]</texture>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
-		</control>
-		<control type="image">
-			<animation type="focus">
-				<effect type="zoom" start="100" end="130" center="130,190" time="150" />
-			</animation>
-			<animation type="unfocus">
-				<effect type="zoom" start="130" end="100" center="130,190" time="150" />
-			</animation>
-			<posx>90</posx>
-			<width>290</width>
-			<height>290</height>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
-		</control>
-	</include>
-	
-	<include name="PosterViewLayoutFocus">
-			<control type="image">
-			<!--Poster-->
-			<animation type="focus">
-				<effect type="zoom" start="100" end="140" center="130,190" time="150" />
-			</animation>
-			<animation type="unfocus">
-				<effect type="zoom" start="140" end="100" center="130,190" time="150" />
-			</animation>
-			<width>200</width>
-			<height>294</height>
-			<texture background="true">$INFO[ListItem.Art(poster)]</texture>
-			<visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-		</control>
-		<control type="image">
-			<!--Poster-->
-			<animation type="focus">
-				<effect type="zoom" start="100" end="140" center="130,190" time="150" />
-			</animation>
-			<animation type="unfocus">
-				<effect type="zoom" start="140" end="100" center="130,190" time="150" />
-			</animation>
-			<width>200</width>
-			<height>294</height>
-			<texture background="true" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-			<visible>Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-		</control>
-		<control type="image">
-			<!--Poster-->
-			<animation type="focus">
-				<effect type="zoom" start="100" end="140" center="130,190" time="150" />
-			</animation>
-			<animation type="unfocus">
-				<effect type="zoom" start="140" end="100" center="130,190" time="150" />
-			</animation>
-			<width>200</width>
-			<height>294</height>
-			<texture background="true" diffuse="poster_matte.png">$INFO[ListItem.Art(poster)]</texture>
-			<visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-		</control>
-		<control type="image">
-			<!--Poster-->
-			<animation type="focus">
-				<effect type="zoom" start="100" end="140" center="130,190" time="150" />
-			</animation>
-			<animation type="unfocus">
-				<effect type="zoom" start="140" end="100" center="130,190" time="150" />
-			</animation>
-			<width>200</width>
-			<height>294</height>
-			<texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-			<visible>!Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-		</control>
-	</include>	
-	
-	
-
+    <include name="PosterViewLayout">
+        <control type="image">
+            <!--Poster-->
+            <width>200</width>
+            <height>294</height>
+            <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+            <visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+        </control>
+        <control type="image">
+            <!--Poster-->
+            <width>200</width>
+            <height>294</height>
+            <texture background="true" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
+            <visible>Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+        </control>
+        <control type="image">
+            <!--Poster-->
+            <width>200</width>
+            <height>294</height>
+            <texture background="true" diffuse="poster_matte.png">$INFO[ListItem.Art(poster)]</texture>
+            <visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+        </control>
+        <control type="image">
+            <!--Poster-->
+            <width>200</width>
+            <height>294</height>
+            <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
+            <visible>!Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+        </control>
+    </include>
+    <include name="PosterViewAlbumLayout">
+        <control type="image">
+            <!--Cover-->
+            <posx>90</posx>
+            <width>290</width>
+            <height>290</height>
+            <texture background="true" diffuse="$VAR[posterviewoverlay]">$INFO[ListItem.Icon]</texture>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+            <visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
+        </control>
+        <control type="image">
+            <!--Cover-->
+            <posx>90</posx>
+            <width>290</width>
+            <height>290</height>
+            <texture background="true">$INFO[ListItem.Icon]</texture>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+            <visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
+        </control>
+    </include>
+    <include name="PosterViewAlbumLayoutFocus">
+        <control type="image">
+            <animation type="focus">
+                <effect type="zoom" start="100" end="130" center="130,190" time="150" />
+            </animation>
+            <animation type="unfocus">
+                <effect type="zoom" start="130" end="100" center="130,190" time="150" />
+            </animation>
+            <posx>90</posx>
+            <width>290</width>
+            <height>290</height>
+            <texture background="true" diffuse="$VAR[posterviewoverlay]">$INFO[ListItem.Icon]</texture>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+            <visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
+        </control>
+        <control type="image">
+            <animation type="focus">
+                <effect type="zoom" start="100" end="130" center="130,190" time="150" />
+            </animation>
+            <animation type="unfocus">
+                <effect type="zoom" start="130" end="100" center="130,190" time="150" />
+            </animation>
+            <posx>90</posx>
+            <width>290</width>
+            <height>290</height>
+            <texture background="true">$INFO[ListItem.Icon]</texture>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+            <visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
+        </control>
+    </include>
+    <include name="PosterViewLayoutFocus">
+        <control type="image">
+            <!--Poster-->
+            <animation type="focus">
+                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+            </animation>
+            <animation type="unfocus">
+                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
+            </animation>
+            <width>200</width>
+            <height>294</height>
+            <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+            <visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+        </control>
+        <control type="image">
+            <!--Poster-->
+            <animation type="focus">
+                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+            </animation>
+            <animation type="unfocus">
+                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
+            </animation>
+            <width>200</width>
+            <height>294</height>
+            <texture background="true" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
+            <visible>Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+        </control>
+        <control type="image">
+            <!--Poster-->
+            <animation type="focus">
+                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+            </animation>
+            <animation type="unfocus">
+                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
+            </animation>
+            <width>200</width>
+            <height>294</height>
+            <texture background="true" diffuse="poster_matte.png">$INFO[ListItem.Art(poster)]</texture>
+            <visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+        </control>
+        <control type="image">
+            <!--Poster-->
+            <animation type="focus">
+                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+            </animation>
+            <animation type="unfocus">
+                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
+            </animation>
+            <width>200</width>
+            <height>294</height>
+            <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
+            <visible>!Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
+            <aspectratio align="center" aligny="center">stretch</aspectratio>
+        </control>
+    </include>
     <include name="BannerViewImagesNormal">
         <control type="image">
             <!--Panel Shadow-->
             <include>BannerViewImageSizeNormalShadow</include>
             <texture>home/home_shadow.png</texture>
-			<include>bannerViewWithOverlay</include>
+            <include>bannerViewWithOverlay</include>
         </control>
         <control type="image">
             <!--Panel fanart image-->
             <include>BannerViewImageSizeNormal</include>
-            <texture diffuse="home/home_matte2.png" background="true" fallback="home/videos.png">$INFO[ListItem.Art(fanart)]</texture>
+            <texture diffuse="home/home_matte2.png" background="true" fallback="home/videos.png">$VAR[BannerFanArtImage]</texture>
             <aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
             <include>bannerViewWithOverlay</include>
+        </control>
+		<control type="image">
+            <!--Panel icon image season backup-->
+            <include>BannerViewImageSizeThumb</include>
+            <texture background="true" diffuse="home/home_matte2.png" fallback="home/videos.png">$INFO[ListItem.Art(thumb)]</texture>
+            <aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+            <include>bannerViewWithoutOverlay</include>
         </control>
         <control type="image">
             <!--Panel icon image-->
             <include>BannerViewImageSizeNormal</include>
-            <texture background="true" diffuse="home/home_matte2.png" fallback="home/videos.png">$INFO[ListItem.Art(landscape)]</texture>
+            <texture background="true" diffuse="home/home_matte2.png">$VAR[BannerLandscapeImage]</texture>
             <aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
             <include>bannerViewWithoutOverlay</include>
         </control>
@@ -233,12 +234,12 @@
         </control>
     </include>
     <include name="BannerViewOverlayFocusNormal">
-	<animation type="Focus">
-                        <effect type="zoom" start="100" end="108" time="300" center="auto" delay="0"/>
-                    </animation>
-                    <animation type="UnFocus">
-                        <effect type="zoom" start="108" end="100" time="300" center="auto" delay="0" />
-                    </animation>
+        <animation type="Focus">
+            <effect type="zoom" start="100" end="108" time="300" center="auto" delay="0" />
+        </animation>
+        <animation type="UnFocus">
+            <effect type="zoom" start="108" end="100" time="300" center="auto" delay="0" />
+        </animation>
         <control type="label">
             <!--Label White-->
             <animation type="Focus">
@@ -262,7 +263,7 @@
                 <effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
             </animation>
             <include>BannerViewImageSizeNormalFocus</include>
-			<include>bannerViewWithOverlay</include>
+            <include>bannerViewWithOverlay</include>
             <texture>home/home_focus.png</texture>
         </control>
     </include>
@@ -323,13 +324,13 @@
         <width>550</width>
         <height>310</height>
     </include>
-	<include name="BannerViewImageSizeNormalShadow">
+    <include name="BannerViewImageSizeNormalShadow">
         <posx>0</posx>
         <posy>0</posy>
         <width>573</width>
         <height>335</height>
     </include>
-	<include name="BannerViewImageSizeNormalFocus">
+    <include name="BannerViewImageSizeNormalFocus">
         <posx>0</posx>
         <posy>0</posy>
         <width>575</width>
@@ -338,6 +339,12 @@
     <include name="BannerViewImageSizeEpisodes">
         <posx>0</posx>
         <posy>0</posy>
+        <width>430</width>
+        <height>260</height>
+    </include>
+	<include name="BannerViewImageSizeThumb">
+        <posx>60</posx>
+        <posy>20</posy>
         <width>430</width>
         <height>260</height>
     </include>
@@ -385,7 +392,7 @@
             <include>animation_view_change</include>
             <include>animation_list</include>
             <posy>950</posy>
-			 <control type="image">
+            <control type="image">
                 <!--RSS Background-->
                 <posx>50</posx>
                 <posy>-26</posy>
@@ -396,7 +403,7 @@
             </control>
             <control type="image">
                 <posx>130</posx>
-				<posy>15</posy>
+                <posy>15</posy>
                 <width>270</width>
                 <height>25</height>
                 <texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
@@ -404,7 +411,7 @@
             </control>
             <control type="image">
                 <posx>130</posx>
-				<posy>15</posy>
+                <posy>15</posy>
                 <width>270</width>
                 <height>25</height>
                 <texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
@@ -1418,72 +1425,70 @@
             </control>
         </control>
     </include>
-    
-	<include name="movieflags">
-	<control type="image">
-                    <!--Video Resolution-->
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>212</width>
-                    <height>45</height>
-                    <colordiffuse>video_info_flag</colordiffuse>
-                    <texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
-                </control>
-                <control type="image">
-                    <!--VideoCode-->
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>212</width>
-                    <height>45</height>
-                    <colordiffuse>video_info_flag</colordiffuse>
-                    <texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>
-                </control>
-                <control type="image">
-                    <!--Aspectration-->
-                    <posx>-0</posx>
-                    <posy>0</posy>
-                    <width>212</width>
-                    <height>45</height>
-                    <colordiffuse>video_info_flag</colordiffuse>
-                    <texture fallback="flags/aspectration/default.png">$INFO[ListItem.VideoAspect,flags/aspectration/,.png]</texture>
-                </control>
-                <control type="image">
-                    <!--Audio Codec-->
-                    <posx>220</posx>
-                    <posy>0</posy>
-                    <width>124</width>
-                    <height>45</height>
-                    <colordiffuse>video_info_flag</colordiffuse>
-                    <texture fallback="flags/audiocodec/default.png">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
-                    <visible>!IsEmpty(ListItem.AudioCodec)</visible>
-                </control>
-                <control type="image">
-                    <!--Audio Channels-->
-                    <posx>220</posx>
-                    <posy>0</posy>
-                    <width>124</width>
-                    <height>45</height>
-                    <colordiffuse>video_info_flag</colordiffuse>
-                    <texture fallback="flags/audiochannels/default.png">$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>
-                    <visible>!IsEmpty(ListItem.AudioChannels)</visible>
-                </control>
-				<control type="image">
-                    <!--Video 3D-->
-                    <posx>350</posx>
-                    <posy>-21</posy>
-                    <width>100</width>
-                    <height>85</height>
-                    <colordiffuse>video_info_flag</colordiffuse>
-                    <texture>flags/3dbd.png</texture>
-                    <visible>ListItem.IsStereoScopic | !IsEmpty(ListItem.Property(Video3DFormat))</visible>
-                </control>
-		</include>
-	
-	<include name="MovieDetails">
+    <include name="movieflags">
+        <control type="image">
+            <!--Video Resolution-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>212</width>
+            <height>45</height>
+            <colordiffuse>video_info_flag</colordiffuse>
+            <texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+        </control>
+        <control type="image">
+            <!--VideoCode-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>212</width>
+            <height>45</height>
+            <colordiffuse>video_info_flag</colordiffuse>
+            <texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>
+        </control>
+        <control type="image">
+            <!--Aspectration-->
+            <posx>-0</posx>
+            <posy>0</posy>
+            <width>212</width>
+            <height>45</height>
+            <colordiffuse>video_info_flag</colordiffuse>
+            <texture fallback="flags/aspectration/default.png">$INFO[ListItem.VideoAspect,flags/aspectration/,.png]</texture>
+        </control>
+        <control type="image">
+            <!--Audio Codec-->
+            <posx>220</posx>
+            <posy>0</posy>
+            <width>124</width>
+            <height>45</height>
+            <colordiffuse>video_info_flag</colordiffuse>
+            <texture fallback="flags/audiocodec/default.png">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
+            <visible>!IsEmpty(ListItem.AudioCodec)</visible>
+        </control>
+        <control type="image">
+            <!--Audio Channels-->
+            <posx>220</posx>
+            <posy>0</posy>
+            <width>124</width>
+            <height>45</height>
+            <colordiffuse>video_info_flag</colordiffuse>
+            <texture fallback="flags/audiochannels/default.png">$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>
+            <visible>!IsEmpty(ListItem.AudioChannels)</visible>
+        </control>
+        <control type="image">
+            <!--Video 3D-->
+            <posx>350</posx>
+            <posy>-21</posy>
+            <width>100</width>
+            <height>85</height>
+            <colordiffuse>video_info_flag</colordiffuse>
+            <texture>flags/3dbd.png</texture>
+            <visible>ListItem.IsStereoScopic | !IsEmpty(ListItem.Property(Video3DFormat))</visible>
+        </control>
+    </include>
+    <include name="MovieDetails">
         <!-- movie details -->
         <control type="group">
-			<include>animation_view_change</include>
-			<include>animation_list</include>
+            <include>animation_view_change</include>
+            <include>animation_list</include>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos -->
                 <visible>!Skin.HasSetting(NoFooterBar) + !IsEmpty(ListItem.Label)</visible>
@@ -1701,12 +1706,12 @@
             </control>
             <!--Flags-->
             <control type="group">
-			<orientation>horizontal</orientation>
-			<posy>470</posy>
-			<posx>105</posx>
+                <orientation>horizontal</orientation>
+                <posy>470</posy>
+                <posx>105</posx>
                 <!--Flags Video-->
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
-				<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+                <visible>!IsEmpty(ListItem.VideoCodec)</visible>
                 <include>movieflags</include>
             </control>
             <!-- Plot -->

@@ -169,8 +169,10 @@
                     <radioposy>15</radioposy>
                     <radiowidth>28</radiowidth>
                     <radioheight>28</radioheight>
-                    <textureradioon>dialogs/keyboard/radio-on.png</textureradioon>
-                    <textureradiooff>dialogs/keyboard/radio-off.png</textureradiooff>
+                    <textureradioonfocus>dialogs/keyboard/radio-on.png</textureradioonfocus>
+                    <textureradiooffnofocus>dialogs/keyboard/radio-on.png</textureradiooffnofocus>
+                    <textureradioofffocus>dialogs/keyboard/radio-off.png</textureradioofffocus>
+                    <textureradioonnofocus>dialogs/keyboard/radio-off.png</textureradioonnofocus>
                 </control>
                 <control type="button" id="65">
                     <description>:a: button</description>
@@ -270,7 +272,7 @@
                 <control type="radiobutton" id="303">
                     <description>Caps lock</description>
                     <posx>0</posx>
-                    <label>Caps</label>
+                    <label>42059</label>
                     <onleft>84</onleft>
                     <onright>75</onright>
                     <onup>304</onup>
@@ -280,8 +282,10 @@
                     <radioposy>15</radioposy>
                     <radiowidth>28</radiowidth>
                     <radioheight>28</radioheight>
-                    <textureradioon>dialogs/keyboard/radio-on.png</textureradioon>
-                    <textureradiooff>dialogs/keyboard/radio-off.png</textureradiooff>
+                    <textureradioonfocus>dialogs/keyboard/radio-on.png</textureradioonfocus>
+                    <textureradiooffnofocus>dialogs/keyboard/radio-on.png</textureradiooffnofocus>
+                    <textureradioofffocus>dialogs/keyboard/radio-off.png</textureradioofffocus>
+                    <textureradioonnofocus>dialogs/keyboard/radio-off.png</textureradioonnofocus>
                 </control>
                 <control type="button" id="75">
                     <description>:k: button</description>
@@ -387,14 +391,16 @@
                     <onright>85</onright>
                     <onup>303</onup>
                     <ondown>361</ondown>
-                    <label>Shift</label>
+                    <label>20178</label>
                     <include>BigKey</include>
                     <radioposx>15</radioposx>
                     <radioposy>15</radioposy>
                     <radiowidth>28</radiowidth>
                     <radioheight>28</radioheight>
-                    <textureradioon>dialogs/keyboard/radio-on.png</textureradioon>
-                    <textureradiooff>dialogs/keyboard/radio-off.png</textureradiooff>
+                    <textureradioonfocus>dialogs/keyboard/radio-on.png</textureradioonfocus>
+                    <textureradiooffnofocus>dialogs/keyboard/radio-on.png</textureradiooffnofocus>
+                    <textureradioofffocus>dialogs/keyboard/radio-off.png</textureradioofffocus>
+                    <textureradioonnofocus>dialogs/keyboard/radio-off.png</textureradioonnofocus>
                 </control>
                 <control type="group" id="351">
                     <control type="button" id="85">
@@ -459,7 +465,7 @@
                     <onright>302</onright>
                     <onup>341</onup>
                     <ondown>362</ondown>
-                    <label>Backspace</label>
+                    <label>20181</label>
                     <include>BackSpace</include>
                 </control>
             </control>

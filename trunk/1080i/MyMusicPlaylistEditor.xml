@@ -61,7 +61,7 @@
                 <posy>100</posy>
                 <width>950</width>
                 <height>420</height>
-                <onleft>-</onleft>
+                <onleft>noop</onleft>
                 <onright>100</onright>
                 <onup>50</onup>
                 <ondown>50</ondown>
@@ -173,7 +173,7 @@
                 <width>950</width>
                 <height>420</height>
                 <onleft>50</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <onup>100</onup>
                 <ondown>100</ondown>
                 <itemlayout height="69" width="900">

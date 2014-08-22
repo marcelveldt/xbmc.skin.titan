@@ -114,8 +114,10 @@
                 <textwidth>844</textwidth>
                 <radioposx>852</radioposx>
                 <include>DialogButton</include>
-                <textureradioon>common/radio/radio-light-fo.png</textureradioon>
-                <textureradiooff>common/radio/radio-light-nf.png</textureradiooff>
+                <textureradioonfocus>common/radio/radio-light-fo.png</textureradioonfocus>
+                <textureradiooffnofocus>common/radio/radio-light-fo.png</textureradiooffnofocus>
+                <textureradioofffocus>common/radio/radio-light-nf.png</textureradioofffocus>
+                <textureradioonnofocus>common/radio/radio-light-nf.png</textureradioonnofocus>
                 <texturefocus border="2">dialogs/default/highlight.png</texturefocus>
                 <texturenofocus>dialogs/default/separator.png</texturenofocus>
             </control>
@@ -190,7 +192,7 @@
                 <posy>772</posy>
                 <control type="button" id="10">
                     <description>OK</description>
-                    <label>OK</label>
+                    <label>186</label>
                     <align>left</align>
                     <textoffsetx>100</textoffsetx>
                     <width>350</width>

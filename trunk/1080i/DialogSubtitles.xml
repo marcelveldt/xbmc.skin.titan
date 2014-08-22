@@ -25,7 +25,7 @@
                     <width>550</width>
                     <height>50</height>
                     <font>Reg40</font>
-                    <label>[B]XBMC SUBTITLES[/B]</label>
+                    <label>[B]$LOCALIZE[42060][/B]</label>
                     <align>Left</align>
                     <textcolor>midgrey</textcolor>
                 </control>
@@ -67,7 +67,7 @@
                     <width>1300</width>
                     <height>350</height>
                     <!--onleft>121</onleft-->
-                    <onleft>-</onleft>
+                    <onleft>noop</onleft>
                     <onright>150</onright>
                     <onup>120</onup>
                     <ondown>120</ondown>
@@ -365,32 +365,28 @@
                         <height>60</height>
                         <texture>dialogs/default/separator.png</texture>
                     </control>
-					<control type="button" id="160"> 
-					<description>Manual search button</description> 
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>Light32</font>
-					<textcolor>midgrey</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<disabledcolor>darkgrey</disabledcolor>
-					<pulseonselect>false</pulseonselect>
-					<texturefocus>common/button-fo.png</texturefocus>
-					<texturenofocus>common/button-nf.png</texturenofocus>
-					<textoffsetx>50</textoffsetx>
-					<left>1350</left> 
-					<top>520</top> 
-					<width>350</width> 
-					<height>40</height> 
-					<onleft>120</onleft> 
-					<onright>120</onright> 
-					<onup>150</onup> 
-					<ondown>150</ondown> 
-					<label>$LOCALIZE[24120]</label> 
-					<font>Light22</font> 
-					<textcolor>white</textcolor> 
-					<focusedcolor>white</focusedcolor> 
-					<align>center</align> 
-				</control> 
+                    <control type="button" id="160">
+                        <description>Manual search button</description>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>Light32</font>
+                        <textcolor>midgrey</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <disabledcolor>darkgrey</disabledcolor>
+                        <pulseonselect>false</pulseonselect>
+                        <texturefocus>common/button-fo.png</texturefocus>
+                        <texturenofocus>common/button-nf.png</texturenofocus>
+                        <textoffsetx>50</textoffsetx>
+                        <left>1350</left>
+                        <top>520</top>
+                        <width>350</width>
+                        <height>40</height>
+                        <onleft>120</onleft>
+                        <onright>120</onright>
+                        <onup>150</onup>
+                        <ondown>150</ondown>
+                        <label>$LOCALIZE[24120]</label>
+                    </control>
                 </control>
                 <control type="list" id="150">
                     <!--List 150-->

@@ -18,7 +18,7 @@
                 <onleft>51</onleft>
                 <onright>51</onright>
                 <onup>9000</onup>
-                <ondown>-</ondown>
+                <ondown>noop</ondown>
                 <viewtype label="Showcase">bigwrap</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <orientation>horizontal</orientation>

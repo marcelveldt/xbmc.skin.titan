@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
 <window id="2006">
-	<defaultcontrol always="true">-</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+    <defaultcontrol always="true">-</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
     <onload>RunScript(script.artistslideshow)</onload>
-	<controls>
-		<include>MusicBackground</include>
-		<control type="visualisation" id="2">
-			<description>visualisation</description>
-			<include>DimensionsFullscreen</include>
-		</control>
-		<control type="multiimage">
+    <controls>
+        <include>MusicBackground</include>
+        <control type="visualisation" id="2">
+            <description>visualisation</description>
+            <include>DimensionsFullscreen</include>
+        </control>
+        <control type="multiimage">
             <aspectratio>scale</aspectratio>
             <include>DimensionsFullscreen</include>
             <timeperimage>10000</timeperimage>
@@ -23,7 +23,7 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
         </control>
-		 <control type="group">
+        <control type="group">
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
             <!--Panel-->
@@ -178,7 +178,7 @@
                 <texture background="true" fallback="cover_default.png" diffuse="cover_matte.png">$INFO[MusicPlayer.Cover]</texture>
                 <aspectratio align="left" aligny="top">keep</aspectratio>
             </control>
-			<control type="image">
+            <control type="image">
                 <!--No Movie-->
                 <posx>290</posx>
                 <posy>775</posy>
@@ -187,7 +187,7 @@
                 <fadetime>200</fadetime>
                 <texture background="true" fallback="cover_default.png" diffuse="cover_matte.png">$INFO[Player.Art(fanart)]</texture>
                 <aspectratio align="left" aligny="top">keep</aspectratio>
-				<visible>IsEmpty(MusicPlayer.Cover)</visible>
+                <visible>IsEmpty(MusicPlayer.Cover)</visible>
             </control>
             <!--Label-->
             <control type="label">
@@ -200,7 +200,7 @@
                 <label>[B]$INFO[MusicPlayer.Artist][/B]</label>
                 <scroll>false</scroll>
             </control>
-			 <!--Label-->
+            <!--Label-->
             <control type="label">
                 <posx>550</posx>
                 <posy>770</posy>
@@ -275,7 +275,7 @@
                     <visible>substring(system.time,AM,right)</visible>
                     <width min="0" max="150">auto</width>
                     <height>80</height>
-                    <label>AM</label>
+                    <label>378</label>
                     <font>Light60</font>
                     <aligny>center</aligny>
                     <textcolor>mainblue</textcolor>
@@ -284,13 +284,13 @@
                     <visible>substring(system.time,PM,right)</visible>
                     <width min="0" max="150">auto</width>
                     <height>80</height>
-                    <label>PM</label>
+                    <label>379</label>
                     <font>Light60</font>
                     <aligny>center</aligny>
                     <textcolor>mainblue</textcolor>
                 </control>
             </control>
-			<!--Process/Seekbar-->
+            <!--Process/Seekbar-->
             <control type="progress" id="23">
                 <description>Progress Bar</description>
                 <posx>700</posx>
@@ -306,8 +306,6 @@
                 <width>800</width>
                 <visible>Player.Seeking</visible>
             </control>
-		</control>
-        
-	</controls>
-
+        </control>
+    </controls>
 </window>

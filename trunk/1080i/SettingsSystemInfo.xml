@@ -29,8 +29,8 @@
             <width>450</width>
             <height>518</height>
             <itemgap>3</itemgap>
-            <onleft>-</onleft>
-            <onright>-</onright>
+            <onleft>noop</onleft>
+            <onright>noop</onright>
             <onup>9000</onup>
             <ondown>9000</ondown>
             <include>animation_fade_visible_hidden</include>

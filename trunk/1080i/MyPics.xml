@@ -128,7 +128,7 @@
                 <control type="button" id="302">
                     <!--View List-->
                     <include>SubMenuButton</include>
-                    <label>List</label>
+                    <label>535</label>
                     <onclick>Container.SetViewMode(50)</onclick>
                     <onfocus>Skin.Reset(OtherView)</onfocus>
                 </control>

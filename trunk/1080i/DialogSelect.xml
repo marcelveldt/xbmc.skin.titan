@@ -464,7 +464,7 @@
                 <animation effect="slide" end="-217" time="0" condition="Control.IsVisible(6)">Conditional</animation>
                 <control type="button" id="5">
                     <description>OK</description>
-                    <label>OK</label>
+                    <label>186</label>
                     <include>DialogButtonOKCancel</include>
                     <texturefocus>common/select-fo.png</texturefocus>
                     <texturenofocus>common/select-nf.png</texturenofocus>

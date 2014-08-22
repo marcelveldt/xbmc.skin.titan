@@ -540,7 +540,7 @@
             <onup>500</onup>
             <ondown>500</ondown>
             <onleft>100</onleft>
-            <onright>-</onright>
+            <onright>noop</onright>
             <orientation>vertical</orientation>
             <posx>510</posx>
             <posy>330</posy>
@@ -594,7 +594,7 @@
             <onup>500</onup>
             <ondown>500</ondown>
             <onleft>100</onleft>
-            <onright>-</onright>
+            <onright>noop</onright>
             <orientation>vertical</orientation>
             <control type="label">
                 <posx>0</posx>
@@ -642,10 +642,10 @@
             <visible>Control.IsVisible(50)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <visible>Container.Content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | container.content(seasons)</visible>
-			<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
-				<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
+            <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
+            <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
             <control type="textbox">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -653,12 +653,12 @@
                 <textcolor>bbwhite</textcolor>
                 <align>justify</align>
                 <font>Light32</font>
-				<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="300" tween="sine" delay="300" easing="in">WindowClose</animation>
-				<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-				<include>animation_view_change</include>
-				<include>animation_list</include>
+                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="300" easing="in">WindowClose</animation>
+                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
+                <include>animation_view_change</include>
+                <include>animation_list</include>
             </control>
         </control>
         <control type="group">
@@ -670,7 +670,7 @@
             <visible>Control.IsVisible(50)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <visible>Container.Content(episodes)</visible>
-			<include>animation_view_change</include>
+            <include>animation_view_change</include>
             <include>animation_list</include>
             <control type="textbox">
                 <posx>0</posx>
@@ -679,10 +679,10 @@
                 <textcolor>bbwhite</textcolor>
                 <align>justify</align>
                 <font>Light32</font>
-				<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
-				<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
+                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
+                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
             </control>
         </control>
         <control type="group">
@@ -787,10 +787,9 @@
             <include>animation_list</include>
             <posx>510</posx>
             <posy>870</posy>
-			<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+            <visible>!IsEmpty(ListItem.VideoCodec)</visible>
             <include>movieflags</include>
         </control>
-        
         <control type="group">
             <!--Flags  Episodes-->
             <visible>Control.IsVisible(50)</visible>
@@ -800,7 +799,7 @@
             <include>animation_list</include>
             <posx>120</posx>
             <posy>840</posy>
-			<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+            <visible>!IsEmpty(ListItem.VideoCodec)</visible>
             <include>movieflags</include>
         </control>
         <!--Control Tags-->
@@ -856,7 +855,7 @@
                 <posy>320</posy>
                 <height>570</height>
                 <onleft>50</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
                 <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling">Conditional</animation>
             </control>

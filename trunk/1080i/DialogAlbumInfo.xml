@@ -183,10 +183,10 @@
                 <width>310</width>
                 <height>473</height>
                 <itemgap>-1</itemgap>
-                <onup>-</onup>
-                <ondown>-</ondown>
+                <onup>noop</onup>
+                <ondown>noop</ondown>
                 <onright>50</onright>
-                <onleft>-</onleft>
+                <onleft>noop</onleft>
                 <orientation>vertical</orientation>
                 <control type="button" id="200">
                     <!--Search on Youtube-->

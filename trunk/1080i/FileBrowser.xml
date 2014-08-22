@@ -76,7 +76,7 @@
                 <width>644</width>
                 <height>480</height>
                 <onleft>8000</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <onup>450</onup>
                 <ondown>450</ondown>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -181,7 +181,7 @@
                 <width>644</width>
                 <height>480</height>
                 <onleft>8000</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <onup>451</onup>
                 <ondown>451</ondown>
                 <scrolltime>0</scrolltime>
@@ -284,7 +284,7 @@
                 <posy>776</posy>
                 <control type="button" id="413">
                     <description>OK</description>
-                    <label>OK</label>
+                    <label>186</label>
                     <include>DialogButtonOKCancel</include>
                     <texturefocus>common/select-fo.png</texturefocus>
                     <texturenofocus>common/select-nf.png</texturenofocus>

@@ -2,7 +2,8 @@
 <!--Titan-->
 <window>
     <onload condition="System.HasAddon(plugin.video.xbmb3c)">RunScript(plugin.video.xbmb3c,skin)</onload>
-	<onload condition="System.HasAddon(plugin.video.xbmb3c)">XBMC.RunScript(special://skin/scripts/setbackgrounds.py)</onload>
-	<onload>Skin.SetBool(BackgroundWorkersLoaded)</onload>
+    <onload condition="System.HasAddon(plugin.video.xbmb3c)">XBMC.RunScript(special://skin/scripts/setbackgrounds.py)</onload>
+	<onload>XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, extrafanart, poster, fanart, clearlogo, clearart, banner, seasonbanner, landscape, extrathumbs, seasonthumb, seasonposter, tvthumb, characterart, seasonlandscape)</onload>
+    <onload>SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
     <onload>ReplaceWindow(Home)</onload>
 </window>

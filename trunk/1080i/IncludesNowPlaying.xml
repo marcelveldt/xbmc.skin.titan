@@ -52,9 +52,9 @@
                 <font>Reg30</font>
                 <textcolor>darkgrey</textcolor>
                 <label>$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</label>
-				<visible>!IsEmpty(MusicPlayer.Artist)</visible>
+                <visible>!IsEmpty(MusicPlayer.Artist)</visible>
             </control>
-			<control type="fadelabel">
+            <control type="fadelabel">
                 <!--Title-->
                 <posx>255</posx>
                 <posy>75</posy>
@@ -63,7 +63,7 @@
                 <font>Reg30</font>
                 <textcolor>darkgrey</textcolor>
                 <label>$INFO[MusicPlayer.Title]</label>
-				<visible>IsEmpty(MusicPlayer.Artist)</visible>
+                <visible>IsEmpty(MusicPlayer.Artist)</visible>
             </control>
             <control type="label">
                 <!--Play Time-->
@@ -74,9 +74,9 @@
                 <font>Reg28</font>
                 <textcolor>darkgrey</textcolor>
                 <label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
-				<visible>Player.HasDuration</visible>
+                <visible>Player.HasDuration</visible>
             </control>
-			<control type="label">
+            <control type="label">
                 <!--Play Time-->
                 <posx>255</posx>
                 <posy>125</posy>
@@ -85,7 +85,7 @@
                 <font>Reg28</font>
                 <textcolor>darkgrey</textcolor>
                 <label>$INFO[Player.Time]</label>
-				<visible>IsEmpty(Player.Duration)</visible>
+                <visible>IsEmpty(Player.Duration)</visible>
             </control>
             <control type="progress">
                 <!--Process-->

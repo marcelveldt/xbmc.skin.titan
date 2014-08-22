@@ -23,10 +23,10 @@
                 <width>1000</width>
                 <height>60</height>
                 <itemgap>0</itemgap>
-                <onup>-</onup>
-                <ondown>-</ondown>
+                <onup>noop</onup>
+                <ondown>noop</ondown>
                 <onleft>200</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <orientation>horizontal</orientation>
                 <control type="togglebutton" id="102">
                     <label></label>

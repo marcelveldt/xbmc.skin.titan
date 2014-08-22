@@ -25,10 +25,10 @@
                 <width>1000</width>
                 <height>60</height>
                 <itemgap>0</itemgap>
-                <onup>-</onup>
-                <ondown>-</ondown>
+                <onup>noop</onup>
+                <ondown>noop</ondown>
                 <onleft>206</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <orientation>horizontal</orientation>
                 <control type="button" id="101">
                     <!--Audio Settings-->
@@ -61,8 +61,8 @@
                     <font>-</font>
                     <texturefocus>osd/SubtitlesFO.png</texturefocus>
                     <texturenofocus>osd/SubtitlesNF.png</texturenofocus>
-                    <onclick>Dialog.Close(VideoOSD)</onclick> 
-					<onclick>ActivateWindow(SubtitleSearch)</onclick> 
+                    <onclick>Dialog.Close(VideoOSD)</onclick>
+                    <onclick>ActivateWindow(SubtitleSearch)</onclick>
                 </control>
             </control>
             <control type="grouplist" id="200">
@@ -72,9 +72,9 @@
                 <width>1000</width>
                 <height>60</height>
                 <itemgap>0</itemgap>
-                <onup>-</onup>
-                <ondown>-</ondown>
-                <onleft>-</onleft>
+                <onup>noop</onup>
+                <ondown>noop</ondown>
+                <onleft>noop</onleft>
                 <onright>101</onright>
                 <orientation>horizontal</orientation>
                 <control type="button" id="201">

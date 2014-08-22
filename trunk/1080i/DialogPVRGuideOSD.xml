@@ -37,8 +37,8 @@
                     <posy>124</posy>
                     <width>780</width>
                     <height>761</height>
-                    <onleft>-</onleft>
-                    <onright>-</onright>
+                    <onleft>noop</onleft>
+                    <onright>noop</onright>
                     <onup>11</onup>
                     <ondown>11</ondown>
                     <pagecontrol>-</pagecontrol>

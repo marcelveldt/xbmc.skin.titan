@@ -1,3 +1,7 @@
+v.1.9.7
+- fixed some language strings
+- added regular thumb as fallback for missing landscape banners
+
 v.1.9.6
 - Added tile for YouTube plugin
 - Added custom Netflix submenu (direct access)

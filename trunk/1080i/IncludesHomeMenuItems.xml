@@ -1,366 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
-	<include name="HomeMenuItems">
-		<item id="0">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.title)]</label>
-			<icon>home/movies.png</icon>
-			<thumb>$VAR[Custom1Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.1.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton1) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,0,UP)</onclick>
-		</item>
-		<item id="1">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.title)]</label>
-			<icon>home/movies.png</icon>
-			<thumb>$VAR[Custom0Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.0.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton0) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,1,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,1,DOWN)</onclick>
-		</item>
-		<item id="2">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.title)]</label>
-			<icon>home/movies.png</icon>
-			<thumb>$VAR[Custom2Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.2.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton2) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,2,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,2,DOWN)</onclick>
-		</item>
-		<item id="3">
-			
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.title)]</label>
-			<icon>home/movies.png</icon>
-			<thumb>$VAR[Custom3Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.3.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton3) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,3,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,3,DOWN)</onclick>
-		</item>
-		<item id="4">
-			
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.title)]</label>
-			<icon>home/movies.png</icon>
-			<thumb>$VAR[Custom4Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.4.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton4) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,4,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,4,DOWN)</onclick>
-		</item>
-		<item id="5">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.title)]</label>
-			<icon>home/tvseries.png</icon>
-			<thumb>$VAR[Custom5Background]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.path)]</onclick>
-			<visible>Skin.HasSetting(HomeMenuCustomButton5) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.0.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,5,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,5,DOWN)</onclick>
-		</item>
-		<item id="6">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.title)]</label>
-			<icon>home/tvseries.png</icon>
-			<thumb>$VAR[Custom6Background]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.path)]</onclick>
-			<visible>Skin.HasSetting(HomeMenuCustomButton6) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.1.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,6,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,6,DOWN)</onclick>
-		</item>
-		<item id="7">
-			<label>41024</label>
-			<icon>home/livetv.png</icon>
-			<thumb>$INFO[Skin.String(CustomPVRFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[LiveTVButtonOnClick]</onclick>
-			<visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,7,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,7,DOWN)</onclick>
-		</item>
-		<item id="8">
-			<label>2</label>
-			<icon>home/music.png</icon>
-			<thumb>$VAR[MusicButtonThumb]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MusicButtonOnClick]</onclick>
-			<visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,8,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,8,DOWN)</onclick>
-		</item>
-		<item id="9">
-			<label>$LOCALIZE[342]</label>
-			<icon>home/movies.png</icon>
-			<thumb>$VAR[MoviesButtonThumb]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MoviesButtonOnClick]</onclick>
-			<visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,9,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,9,DOWN)</onclick>
-		</item>
-		<item id="10">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.title)]</label>
-			<icon>home/tvseries.png</icon>
-			<thumb>$VAR[Custom7Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton7) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.2.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,10,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,10,DOWN)</onclick>
-		</item>
-		<item id="11">
-			<label>Radio</label>
-			<icon>home/radio.png</icon>
-			<thumb>$INFO[Skin.String(CustomRadioFolder)]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[RadioButtonOnClick]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuRadioButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,11,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,11,DOWN)</onclick>
-		</item>
-		<item id="12">
-			<label>20343</label>
-			<icon>home/tvseries.png</icon>
-			<thumb>$VAR[TvseriesButtonThumb]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[TVseriesButtonOnClick]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,12,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,12,DOWN)</onclick>
-		</item>
-		<item id="13">
-			<label>1</label>
-			<icon>home/pictures.png</icon>
-			<thumb>$VAR[PicturesButtonThumb]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[PicturesButtonOnClick]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuPicturesButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,13,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,13,DOWN)</onclick>
-		</item>
-		<item id="14">
-			<label>$VAR[WeatherButtonLabel]</label>
-			<icon>home/weather.png</icon>
-			<thumb>$VAR[WeatherButtonThumb]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(weather)</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,14,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,14,DOWN)</onclick>
-		</item>
-		<item id="15">
-			<label>42045</label>
-			<icon>home/music.png</icon>
-			<thumb>$VAR[MusicVideosButtonThumb]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MusicVideosButtonOnClick]</onclick>
-			<visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,15,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,15,DOWN)</onclick>
-		</item>
-		<item id="16">
-			<label>Netflix</label>
-			<icon>home/netflix.png</icon>
-			<thumb>$INFO[Skin.String(CustomNetflixFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[NetflixButtonOnClick]</onclick>
-			<visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,16,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,16,DOWN)</onclick>
-		</item>
-		<item id="17">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.title)]</label>
-			<icon>home/tvseries.png</icon>
-			<thumb>$VAR[Custom8Background]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.path)]</onclick>
-			<visible>Skin.HasSetting(HomeMenuCustomButton8) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.3.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,17,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,17,DOWN)</onclick>
-		</item>
-		<item id="18">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.title)]</label>
-			<icon>home/tvseries.png</icon>
-			<thumb>$VAR[Custom9Background]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.path)]</onclick>
-			<visible>Skin.HasSetting(HomeMenuCustomButton9) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.4.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,18,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,18,DOWN)</onclick>
-		</item>
-		<item id="19">
-			<label>YouTube</label>
-			<icon>home/youtube.png</icon>
-			<thumb>-</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(10025,"plugin://plugin.video.youtube",return)</onclick>
-			<visible>Skin.HasSetting(HomeMenuYouTubeButton) + System.HasAddon(plugin.video.youtube)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,19,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,19,DOWN)</onclick>
-		</item>
-		<item id="20">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.music.0.title)]</label>
-			<icon>home/music.png</icon>
-			<thumb>$VAR[Custom10Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.0.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton10) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.0.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,20,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,20,DOWN)</onclick>
-		</item>
-		<item id="21">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.music.1.title)]</label>
-			<icon>home/music.png</icon>
-			<thumb>$VAR[Custom11Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.1.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton11) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.1.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,21,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,21,DOWN)</onclick>
-		</item>
-		<item id="22">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.music.2.title)]</label>
-			<icon>home/music.png</icon>
-			<thumb>$VAR[Custom12Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.2.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.2.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,22,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,22,DOWN)</onclick>
-		</item>
-		<item id="23">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.music.3.title)]</label>
-			<icon>home/music.png</icon>
-			<thumb>$VAR[Custom13Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.3.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.3.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,23,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,23,DOWN)</onclick>
-		</item>
-		<item id="24">
-			<label>$INFO[Window(Home).Property(xbmb3c.usr.music.4.title)]</label>
-			<icon>home/music.png</icon>
-			<thumb>$VAR[Custom14Background]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.4.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.4.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,24,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,24,DOWN)</onclick>
-		</item>
-		<item id="25">
-			<label>$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</label>
-			<icon>home/movies.png</icon>
-			<thumb>$VAR[MB3FavoritesBackground]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.std.movies.3.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuMB3FavouritesButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,25,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,25,DOWN)</onclick>
-		</item>
-		<item id="26">
-			<label>$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</label>
-			<icon>home/movies.png</icon>
-			<thumb>$VAR[MB3ChannelsBackground]</thumb>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.std.channels.0.path)]</onclick>
-			<include>liveGadgetSetBackground</include>
-			<visible>Skin.HasSetting(HomeMenuMB3ChannelsButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,26,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,26,DOWN)</onclick>
-		</item>
-		<item id="27">
-			<label>3</label>
-			<icon>home/videos.png</icon>
-			<thumb>$INFO[Skin.String(CustomVideosFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Video,root)</onclick>
-			<visible>Skin.HasSetting(HomeMenuVideosButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,27,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,27,DOWN)</onclick>
-		</item>
-		<item id="28">
-			<label>Video-Addons</label>
-			<icon>home/videoaddons.png</icon>
-			<thumb>$INFO[Skin.String(CustomVideoAddonsFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Video,addons,return)</onclick>
-			<visible>Skin.HasSetting(HomeMenuVideoAddonsButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,28,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,28,DOWN)</onclick>
-		</item>
-		<item id="29">
-			<label>19163</label>
-			<icon>home/tvrecordings.png</icon>
-			<thumb>$INFO[Skin.String(CustomPVRRecFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
-			<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(HomeMenuTVRecordingsButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,29,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,29,DOWN)</onclick>
-		</item>
-		<item id="30">
-			<label>10040</label>
-			<icon>home/addons.png</icon>
-			<thumb>$INFO[Skin.String(CustomAddonsFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(AddonBrowser)</onclick>
-			<visible>Skin.HasSetting(HomeMenuAddonsButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,30,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,30,DOWN)</onclick>
-		</item>
-		<item id="31">
-			<label>41027</label>
-			<icon>home/programs.png</icon>
-			<thumb>$INFO[Skin.String(CustomProgramsFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Programs)</onclick>
-			<visible>Skin.HasSetting(HomeMenuProgramsButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,31,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,31,DOWN)</onclick>
-		</item>
-		<item id="32">
-			<label>XBMB3C Plugin</label>
-			<icon>home/mediabrowser.png</icon>
-			<thumb>-</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(10025,"plugin://plugin.video.xbmb3c",return)</onclick>
-			<visible>Skin.HasSetting(HomeMenuXBMB3CButton) + System.HasAddon(plugin.video.xbmb3c)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,32,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,32,DOWN)</onclick>
-		</item>
-		<item id="33">
-			<label>41025</label>
-			<icon>home/filemanager.png</icon>
-			<thumb>$INFO[Skin.String(CustomFilemanagerFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(filemanager)</onclick>
-			<visible>Skin.HasSetting(HomeMenuFilemanagerButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,33,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,33,DOWN)</onclick>
-		</item>
-		<item id="34">
-			<label>41028</label>
-			<icon>home/favourites.png</icon>
-			<thumb>$INFO[Skin.String(CustomFavouritesFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Favourites)</onclick>
-			<visible>Skin.HasSetting(HomeMenuFavouritesButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,34,UP)</onclick>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,34,DOWN)</onclick>
-		</item>
-		<item id="35">
-			<label>5</label>
-			<icon>home/settings.png</icon>
-			<thumb>$INFO[Skin.String(CustomSettingsFolder)]</thumb>
-			<include>liveGadgetSetBackground</include>
-			<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(settings)</onclick>
-			<visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
-			<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,35,DOWN)</onclick>
-		</item>
-	</include>
-
-	
+    <include name="HomeMenuItems">
+        <item id="0">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.title)]</label>
+            <icon>home/movies.png</icon>
+            <thumb>$VAR[Custom1Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.1.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton1) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,0,UP)</onclick>
+        </item>
+        <item id="1">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.title)]</label>
+            <icon>home/movies.png</icon>
+            <thumb>$VAR[Custom0Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.0.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton0) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,1,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,1,DOWN)</onclick>
+        </item>
+        <item id="2">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.title)]</label>
+            <icon>home/movies.png</icon>
+            <thumb>$VAR[Custom2Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.2.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton2) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,2,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,2,DOWN)</onclick>
+        </item>
+        <item id="3">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.title)]</label>
+            <icon>home/movies.png</icon>
+            <thumb>$VAR[Custom3Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.3.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton3) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,3,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,3,DOWN)</onclick>
+        </item>
+        <item id="4">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.title)]</label>
+            <icon>home/movies.png</icon>
+            <thumb>$VAR[Custom4Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.4.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton4) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,4,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,4,DOWN)</onclick>
+        </item>
+        <item id="5">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.title)]</label>
+            <icon>home/tvseries.png</icon>
+            <thumb>$VAR[Custom5Background]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.path)]</onclick>
+            <visible>Skin.HasSetting(HomeMenuCustomButton5) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.0.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,5,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,5,DOWN)</onclick>
+        </item>
+        <item id="6">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.title)]</label>
+            <icon>home/tvseries.png</icon>
+            <thumb>$VAR[Custom6Background]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.path)]</onclick>
+            <visible>Skin.HasSetting(HomeMenuCustomButton6) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.1.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,6,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,6,DOWN)</onclick>
+        </item>
+        <item id="7">
+            <label>41024</label>
+            <icon>home/livetv.png</icon>
+            <thumb>$INFO[Skin.String(CustomPVRFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[LiveTVButtonOnClick]</onclick>
+            <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,7,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,7,DOWN)</onclick>
+        </item>
+        <item id="8">
+            <label>2</label>
+            <icon>home/music.png</icon>
+            <thumb>$VAR[MusicButtonThumb]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MusicButtonOnClick]</onclick>
+            <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,8,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,8,DOWN)</onclick>
+        </item>
+        <item id="9">
+            <label>$LOCALIZE[342]</label>
+            <icon>home/movies.png</icon>
+            <thumb>$VAR[MoviesButtonThumb]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MoviesButtonOnClick]</onclick>
+            <visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,9,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,9,DOWN)</onclick>
+        </item>
+        <item id="10">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.title)]</label>
+            <icon>home/tvseries.png</icon>
+            <thumb>$VAR[Custom7Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton7) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.2.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,10,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,10,DOWN)</onclick>
+        </item>
+        <item id="11">
+            <label>19021</label>
+            <icon>home/radio.png</icon>
+            <thumb>$INFO[Skin.String(CustomRadioFolder)]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[RadioButtonOnClick]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuRadioButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,11,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,11,DOWN)</onclick>
+        </item>
+        <item id="12">
+            <label>20343</label>
+            <icon>home/tvseries.png</icon>
+            <thumb>$VAR[TvseriesButtonThumb]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[TVseriesButtonOnClick]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,12,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,12,DOWN)</onclick>
+        </item>
+        <item id="13">
+            <label>1</label>
+            <icon>home/pictures.png</icon>
+            <thumb>$VAR[PicturesButtonThumb]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[PicturesButtonOnClick]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuPicturesButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,13,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,13,DOWN)</onclick>
+        </item>
+        <item id="14">
+            <label>$VAR[WeatherButtonLabel]</label>
+            <icon>home/weather.png</icon>
+            <thumb>$VAR[WeatherButtonThumb]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(weather)</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,14,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,14,DOWN)</onclick>
+        </item>
+        <item id="15">
+            <label>42045</label>
+            <icon>home/music.png</icon>
+            <thumb>$VAR[MusicVideosButtonThumb]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MusicVideosButtonOnClick]</onclick>
+            <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,15,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,15,DOWN)</onclick>
+        </item>
+        <item id="16">
+            <label>42018</label>
+            <icon>home/netflix.png</icon>
+            <thumb>$INFO[Skin.String(CustomNetflixFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[NetflixButtonOnClick]</onclick>
+            <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,16,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,16,DOWN)</onclick>
+        </item>
+        <item id="17">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.title)]</label>
+            <icon>home/tvseries.png</icon>
+            <thumb>$VAR[Custom8Background]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.path)]</onclick>
+            <visible>Skin.HasSetting(HomeMenuCustomButton8) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.3.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,17,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,17,DOWN)</onclick>
+        </item>
+        <item id="18">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.title)]</label>
+            <icon>home/tvseries.png</icon>
+            <thumb>$VAR[Custom9Background]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.path)]</onclick>
+            <visible>Skin.HasSetting(HomeMenuCustomButton9) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.4.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,18,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,18,DOWN)</onclick>
+        </item>
+        <item id="19">
+            <label>42062</label>
+            <icon>home/youtube.png</icon>
+            <thumb>-</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(10025,"plugin://plugin.video.youtube",return)</onclick>
+            <visible>Skin.HasSetting(HomeMenuYouTubeButton) + System.HasAddon(plugin.video.youtube)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,19,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,19,DOWN)</onclick>
+        </item>
+        <item id="20">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.music.0.title)]</label>
+            <icon>home/music.png</icon>
+            <thumb>$VAR[Custom10Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.0.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton10) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.0.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,20,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,20,DOWN)</onclick>
+        </item>
+        <item id="21">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.music.1.title)]</label>
+            <icon>home/music.png</icon>
+            <thumb>$VAR[Custom11Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.1.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton11) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.1.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,21,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,21,DOWN)</onclick>
+        </item>
+        <item id="22">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.music.2.title)]</label>
+            <icon>home/music.png</icon>
+            <thumb>$VAR[Custom12Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.2.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.2.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,22,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,22,DOWN)</onclick>
+        </item>
+        <item id="23">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.music.3.title)]</label>
+            <icon>home/music.png</icon>
+            <thumb>$VAR[Custom13Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.3.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.3.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,23,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,23,DOWN)</onclick>
+        </item>
+        <item id="24">
+            <label>$INFO[Window(Home).Property(xbmb3c.usr.music.4.title)]</label>
+            <icon>home/music.png</icon>
+            <thumb>$VAR[Custom14Background]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.4.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.4.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,24,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,24,DOWN)</onclick>
+        </item>
+        <item id="25">
+            <label>$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</label>
+            <icon>home/movies.png</icon>
+            <thumb>$VAR[MB3FavoritesBackground]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.std.movies.3.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,25,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,25,DOWN)</onclick>
+        </item>
+        <item id="26">
+            <label>$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</label>
+            <icon>home/movies.png</icon>
+            <thumb>$VAR[MB3ChannelsBackground]</thumb>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.std.channels.0.path)]</onclick>
+            <include>liveGadgetSetBackground</include>
+            <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,26,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,26,DOWN)</onclick>
+        </item>
+        <item id="27">
+            <label>3</label>
+            <icon>home/videos.png</icon>
+            <thumb>$INFO[Skin.String(CustomVideosFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Video,root)</onclick>
+            <visible>Skin.HasSetting(HomeMenuVideosButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,27,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,27,DOWN)</onclick>
+        </item>
+        <item id="28">
+            <label>1037</label>
+            <icon>home/videoaddons.png</icon>
+            <thumb>$INFO[Skin.String(CustomVideoAddonsFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Video,addons,return)</onclick>
+            <visible>Skin.HasSetting(HomeMenuVideoAddonsButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,28,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,28,DOWN)</onclick>
+        </item>
+        <item id="29">
+            <label>19163</label>
+            <icon>home/tvrecordings.png</icon>
+            <thumb>$INFO[Skin.String(CustomPVRRecFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
+            <visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(HomeMenuTVRecordingsButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,29,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,29,DOWN)</onclick>
+        </item>
+        <item id="30">
+            <label>10040</label>
+            <icon>home/addons.png</icon>
+            <thumb>$INFO[Skin.String(CustomAddonsFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(AddonBrowser)</onclick>
+            <visible>Skin.HasSetting(HomeMenuAddonsButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,30,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,30,DOWN)</onclick>
+        </item>
+        <item id="31">
+            <label>41027</label>
+            <icon>home/programs.png</icon>
+            <thumb>$INFO[Skin.String(CustomProgramsFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Programs)</onclick>
+            <visible>Skin.HasSetting(HomeMenuProgramsButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,31,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,31,DOWN)</onclick>
+        </item>
+        <item id="32">
+            <label>XBMB3C Plugin</label>
+            <icon>home/mediabrowser.png</icon>
+            <thumb>-</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(10025,"plugin://plugin.video.xbmb3c",return)</onclick>
+            <visible>Skin.HasSetting(HomeMenuXBMB3CButton) + System.HasAddon(plugin.video.xbmb3c)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,32,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,32,DOWN)</onclick>
+        </item>
+        <item id="33">
+            <label>41025</label>
+            <icon>home/filemanager.png</icon>
+            <thumb>$INFO[Skin.String(CustomFilemanagerFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(filemanager)</onclick>
+            <visible>Skin.HasSetting(HomeMenuFilemanagerButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,33,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,33,DOWN)</onclick>
+        </item>
+        <item id="34">
+            <label>41028</label>
+            <icon>home/favourites.png</icon>
+            <thumb>$INFO[Skin.String(CustomFavouritesFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Favourites)</onclick>
+            <visible>Skin.HasSetting(HomeMenuFavouritesButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,34,UP)</onclick>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,34,DOWN)</onclick>
+        </item>
+        <item id="35">
+            <label>5</label>
+            <icon>home/settings.png</icon>
+            <thumb>$INFO[Skin.String(CustomSettingsFolder)]</thumb>
+            <include>liveGadgetSetBackground</include>
+            <onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(settings)</onclick>
+            <visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
+            <onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(special://skin/scripts/sethomeitems.py,35,DOWN)</onclick>
+        </item>
+    </include>
 </includes>

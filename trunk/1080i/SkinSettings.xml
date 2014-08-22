@@ -32,7 +32,7 @@
             <height>720</height>
             <onup>100</onup>
             <ondown>100</ondown>
-            <onleft>-</onleft>
+            <onleft>noop</onleft>
             <onright>1000</onright>
             <scrolltime>0</scrolltime>
             <orientation>vertical</orientation>
@@ -71,37 +71,36 @@
                 </control>
             </focusedlayout>
             <content>
-			
                 <item id="8">
                     <!--Enable Home-Menu Button ID=8000-->
                     <label>42002</label>
-                    <onclick>-</onclick>
+                    <onclick>noop</onclick>
                 </item>
                 <!--home button Background ID=9000-->
                 <item id="9">
                     <label>42013</label>
-                    <onclick>-</onclick>
+                    <onclick>noop</onclick>
                 </item>
                 <item id="5">
                     <!--xbmb3c ID=7000-->
                     <label>42004</label>
-                    <onclick>-</onclick>
+                    <onclick>noop</onclick>
                 </item>
                 <item id="6">
                     <!--skin background ID=5000-->
                     <label>42005</label>
-                    <onclick>-</onclick>
+                    <onclick>noop</onclick>
                 </item>
-				<item id="10">
+                <item id="10">
                     <!--sort Home-Menu Button ID=4000-->
-                    <label>Sort home menu</label>
-                    <onclick>-</onclick>
+                    <label>42072</label>
+                    <onclick>noop</onclick>
                 </item>
-				<item id="7">
+                <item id="7">
                     <!--xbmb3c settings-->
                     <label>XBMB3C settings</label>
                     <onclick>Addon.OpenSettings(plugin.video.xbmb3c)</onclick>
-					<visible>Skin.HasSetting(MediaBrowserMode)</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </item>
             </content>
         </control>
@@ -111,7 +110,7 @@
             <posy>200</posy>
             <include>animation_fade_visible_hidden</include>
             <include>animation_list</include>
-			 <control type="grouplist" id="4000">
+            <control type="grouplist" id="4000">
                 <description>Control Area</description>
                 <width>1230</width>
                 <height>720</height>
@@ -119,7 +118,7 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <onleft>100</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <visible>Container(100).Hasfocus(10)</visible>
                 <!-- skin background -->
@@ -127,132 +126,131 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>Sort home menu tiles</label>
+                    <label>42073</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
                     <aligny>center</aligny>
                 </control>
-				<control type="textbox" id="4002">
+                <control type="textbox" id="4002">
                     <width>1230</width>
                     <height>130</height>
                     <font>Reg27</font>
-                    <label>Arrange the homescreen tiles just the way you want it. [CR]Usage: select a direction below and click on the tile's title to move it's position. [CR]Because settings are applied on the fly the screen may blink for one second.</label>
+                    <label>42074</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
                     <aligny>top</aligny>
                 </control>
-				<control type="group" id="4004">
-					<height>60</height>
-					 <control type="label">
+                <control type="group" id="4004">
+                    <height>60</height>
+                    <control type="label">
                         <posx>0</posx>
                         <width>1100</width>
                         <font>Reg32</font>
                         <textcolor>white</textcolor>
                         <selectedcolor>white</selectedcolor>
-                        <label>Direction to move:</label>
+                        <label>42075</label>
                     </control>
-					<control type="radiobutton" id="4005">
-							<posx>300</posx>
-							<posy>0</posy>
-							<width>300</width>
-							<height>60</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>Light32</font>
-							<ondown>4008</ondown>
-							<onright>4006</onright>
-							<label>UP</label>
-							<textcolor>midgrey</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<pulseonselect>false</pulseonselect>
-							<textoffsetx>-80</textoffsetx>
-							<onclick>Skin.SetBool(EditModeDirectionUp)</onclick>
-							<onclick>Skin.Reset(EditModeDirectionDown)</onclick>
-							<selected>Skin.HasSetting(EditModeDirectionUp)</selected>
-						</control>
-						<control type="radiobutton"  id="4006">
-							<posx>600</posx>
-							<posy>0</posy>
-							<width>500</width>
-							<height>60</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<ondown>4008</ondown>
-							<onleft>4005</onleft>
-							<font>Light32</font>
-							<label>DOWN</label>
-							<textcolor>midgrey</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<pulseonselect>false</pulseonselect>
-							<textoffsetx>-90</textoffsetx>
-							<selected>Skin.HasSetting(EditModeDirectionDown)</selected>
-							<onclick>Skin.SetBool(EditModeDirectionDown)</onclick>
-							<onclick>Skin.Reset(EditModeDirectionUp)</onclick>
-						</control>
-					</control>
-				<control type="list" id="4008">
-                <posx>0</posx>
-                <posy>420</posy>
-                <width>1230</width>
-                <height>450</height>
-                <onleft>100</onleft>
-                <onright>4005</onright>
-                <onup>4005</onup>
-                <ondown>50</ondown>
-                <pagecontrol>60</pagecontrol>
-                <viewtype label="List">list</viewtype>
-                <scrolltime>200</scrolltime>
-                <itemlayout width="900" height="50">
-                    <control type="label">
-                        <!--Label 1-->
-                        <posx>0</posx>
-                        <width>1100</width>
-                        <font>Reg32</font>
+                    <control type="radiobutton" id="4005">
+                        <posx>300</posx>
+                        <posy>0</posy>
+                        <width>340</width>
+                        <height>60</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>Light32</font>
+                        <ondown>4008</ondown>
+                        <onright>4006</onright>
+                        <label>42076</label>
                         <textcolor>midgrey</textcolor>
-                        <selectedcolor>white</selectedcolor>
-                        <label>$INFO[ListItem.Label]</label>
+                        <focusedcolor>white</focusedcolor>
+                        <pulseonselect>false</pulseonselect>
+                        <textoffsetx>-80</textoffsetx>
+                        <onclick>Skin.SetBool(EditModeDirectionUp)</onclick>
+                        <onclick>Skin.Reset(EditModeDirectionDown)</onclick>
+                        <selected>Skin.HasSetting(EditModeDirectionUp)</selected>
                     </control>
-				</itemlayout>
-				<focusedlayout width="900" height="50">
-				<control type="button">
-						<width>1100</width>
-						<height>60</height>
-						<font>Reg32</font>
-						<textcolor>blue</textcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label></label>
-						<onfocus>SetProperty(CurrentPos, $INFO[Container(4008).Position])</onfocus>
-					</control>
-                    <control type="label">
-                        <!--Label 1-->
-                        <posx>0</posx>
-                        <width>1100</width>
-                        <font>Reg32</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>white</selectedcolor>
-                        <label>$INFO[ListItem.Label]</label>
+                    <control type="radiobutton" id="4006">
+                        <posx>640</posx>
+                        <posy>0</posy>
+                        <width>460</width>
+                        <height>60</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <ondown>4008</ondown>
+                        <onleft>4005</onleft>
+                        <font>Light32</font>
+                        <label>42077</label>
+                        <textcolor>midgrey</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <pulseonselect>false</pulseonselect>
+                        <textoffsetx>-90</textoffsetx>
+                        <selected>Skin.HasSetting(EditModeDirectionDown)</selected>
+                        <onclick>Skin.SetBool(EditModeDirectionDown)</onclick>
+                        <onclick>Skin.Reset(EditModeDirectionUp)</onclick>
                     </control>
-					<control type="button">
-						<width>1100</width>
-						<height>60</height>
-						<font>Reg32</font>
-						<textcolor>blue</textcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label></label>
-						<visible>false</visible>
-						<onfocus>SetProperty(CurrentPos, $INFO[Container(4008).Position])</onfocus>
-					</control>
-				</focusedlayout>
-					<content>
-						<include>HomeMenuItems</include>
-					</content>
-				</control>
-			</control>
-			
+                </control>
+                <control type="list" id="4008">
+                    <posx>0</posx>
+                    <posy>420</posy>
+                    <width>1230</width>
+                    <height>450</height>
+                    <onleft>100</onleft>
+                    <onright>4005</onright>
+                    <onup>4005</onup>
+                    <ondown>50</ondown>
+                    <pagecontrol>60</pagecontrol>
+                    <viewtype label="List">list</viewtype>
+                    <scrolltime>200</scrolltime>
+                    <itemlayout width="900" height="50">
+                        <control type="label">
+                            <!--Label 1-->
+                            <posx>0</posx>
+                            <width>1100</width>
+                            <font>Reg32</font>
+                            <textcolor>midgrey</textcolor>
+                            <selectedcolor>white</selectedcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="900" height="50">
+                        <control type="button">
+                            <width>1100</width>
+                            <height>60</height>
+                            <font>Reg32</font>
+                            <textcolor>blue</textcolor>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <label></label>
+                            <onfocus>SetProperty(CurrentPos, $INFO[Container(4008).Position])</onfocus>
+                        </control>
+                        <control type="label">
+                            <!--Label 1-->
+                            <posx>0</posx>
+                            <width>1100</width>
+                            <font>Reg32</font>
+                            <textcolor>white</textcolor>
+                            <selectedcolor>white</selectedcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="button">
+                            <width>1100</width>
+                            <height>60</height>
+                            <font>Reg32</font>
+                            <textcolor>blue</textcolor>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <label></label>
+                            <visible>false</visible>
+                            <onfocus>SetProperty(CurrentPos, $INFO[Container(4008).Position])</onfocus>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <include>HomeMenuItems</include>
+                    </content>
+                </control>
+            </control>
             <control type="grouplist" id="8000">
                 <!--Skin Setting: Home-Menu Button-->
                 <description>Control Area</description>
@@ -262,7 +260,7 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <onleft>100</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <visible>Container(100).Hasfocus(8)</visible>
                 <control type="radiobutton" id="8001">
@@ -361,7 +359,7 @@
                     <onclick>Skin.ToggleSetting(HomeMenuWeatherButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuWeatherButton)</selected>
                 </control>
-				<control type="radiobutton" id="81008">
+                <control type="radiobutton" id="81008">
                     <!--MusicVideos-->
                     <description>Musicvideos</description>
                     <width>1230</width>
@@ -431,20 +429,20 @@
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(HomeMenuNetflixButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuNetflixButton)</selected>
-					<visible>System.HasAddon(plugin.video.netflixbmc)</visible>
+                    <visible>System.HasAddon(plugin.video.netflixbmc)</visible>
                 </control>
-				<control type="radiobutton" id="8313">
+                <control type="radiobutton" id="8313">
                     <!--YouTube-->
                     <description>Youtube Plugin</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>Youtube Plugin</label>
+                    <label>42062</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(HomeMenuYouTubeButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuYouTubeButton)</selected>
-					<visible>System.HasAddon(plugin.video.youtube)</visible>
+                    <visible>System.HasAddon(plugin.video.youtube)</visible>
                 </control>
                 <control type="radiobutton" id="8014">
                     <!--TV-Recordings-->
@@ -470,7 +468,7 @@
                     <onclick>Skin.ToggleSetting(HomeMenuRadioButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuRadioButton)</selected>
                 </control>
-				<control type="radiobutton" id="8028">
+                <control type="radiobutton" id="8028">
                     <!--Radio-->
                     <description>XBMB3C Plugin</description>
                     <width>1230</width>
@@ -481,9 +479,9 @@
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(HomeMenuXBMB3CButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuXBMB3CButton)</selected>
-					<visible>System.HasAddon(plugin.video.xbmb3c)</visible>
+                    <visible>System.HasAddon(plugin.video.xbmb3c)</visible>
                 </control>
-				<control type="radiobutton" id="8019">
+                <control type="radiobutton" id="8019">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -504,32 +502,30 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <onleft>100</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <visible>Container(100).Hasfocus(5)</visible>
-				
-				<control type="label" id="2311">
+                <control type="label" id="2311">
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>Skin mode (replace libraries)</label>
+                    <label>42078</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
                     <aligny>center</aligny>
                 </control>
-				<control type="textbox" id="2310">
+                <control type="textbox" id="2310">
                     <width>1230</width>
                     <height>200</height>
                     <font>Reg27</font>
-					<posy>60</posy>
-                    <label>Changing the skin mode enables you to replace the default XBMC libraries with a third party product like MediaBrowser or Netflix. Not only the default tiles will be adjusted, also items like recent movies widgets etc. You can change the skinmode on a per-library base, this way you can decide for example to use MediaBrowser for your movies, and default XBMC library for TV shows.</label>
+                    <posy>60</posy>
+                    <label>42079</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
                     <aligny>top</aligny>
                 </control>
-				
                 <control type="label" id="7101">
                     <width>1230</width>
                     <height>50</height>
@@ -549,36 +545,36 @@
                     <focusedcolor>black</focusedcolor>
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(MediaBrowserMode)</onclick>
-					<enabled>System.HasAddon(plugin.video.xbmb3c)</enabled>
+                    <enable>System.HasAddon(plugin.video.xbmb3c)</enable>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforMusic)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforMovies)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforPictures)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforTVseries)</onclick>
-					<onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforMusicVideos)</onclick>
-					<onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuMB3FavouritesButton)</onclick>
-					<onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuMB3ChannelsButton)</onclick>
+                    <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforMusicVideos)</onclick>
+                    <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuMB3FavouritesButton)</onclick>
+                    <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuMB3ChannelsButton)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton0)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton1)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton2)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton3)</onclick>
-					<onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton4)</onclick>
+                    <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton4)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton4)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton6)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton7)</onclick>
-					<onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton8)</onclick>
+                    <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton8)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton9)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton10)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton11)</onclick>
-					<onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton12)</onclick>
+                    <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton12)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton13)</onclick>
-					<onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton14)</onclick>
+                    <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuCustomButton14)</onclick>
                     <onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuUseMBforMusic)</onclick>
                     <onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuUseMBforMovies)</onclick>
                     <onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuUseMBforPictures)</onclick>
                     <onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuUseMBforTVseries)</onclick>
-					<onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuUseMBforMusicVideos)</onclick>
-					<onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuMB3FavouritesButton)</onclick>
-					<onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuMB3ChannelsButton)</onclick>
+                    <onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuUseMBforMusicVideos)</onclick>
+                    <onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuMB3FavouritesButton)</onclick>
+                    <onclick condition="!Skin.HasSetting(MediaBrowserMode)">Skin.SetBool(HomeMenuMB3ChannelsButton)</onclick>
                     <selected>Skin.HasSetting(MediaBrowserMode)</selected>
                 </control>
                 <control type="radiobutton" id="7001">
@@ -604,7 +600,7 @@
                     <focusedcolor>black</focusedcolor>
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforMovies)</onclick>
-					<onclick>Skin.Reset(HomeMenuUseNetflixforMovies)</onclick>
+                    <onclick>Skin.Reset(HomeMenuUseNetflixforMovies)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforMovies) + !Skin.HasSetting(HomeMenuUseNetflixforMovies)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </control>
@@ -618,7 +614,7 @@
                     <focusedcolor>black</focusedcolor>
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforTVseries)</onclick>
-					<onclick>Skin.Reset(HomeMenuUseNetflixforTVseries)</onclick>
+                    <onclick>Skin.Reset(HomeMenuUseNetflixforTVseries)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforTVseries) + !Skin.HasSetting(HomeMenuUseNetflixforTVseries)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </control>
@@ -635,7 +631,7 @@
                     <selected>Skin.HasSetting(HomeMenuUseMBforPictures)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </control>
-				<control type="radiobutton" id="71008">
+                <control type="radiobutton" id="71008">
                     <!--MusicVideos-->
                     <description>MusicVideos</description>
                     <width>1230</width>
@@ -648,9 +644,7 @@
                     <selected>Skin.HasSetting(HomeMenuUseMBforMusicVideos)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </control>
-				
-
-				<!-- add custom library buttons for MB -->
+                <!-- add custom library buttons for MB -->
                 <control type="label" id="19001">
                     <width>1230</width>
                     <height>50</height>
@@ -662,10 +656,9 @@
                     <aligny>center</aligny>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </control>
-				
-				<control type="radiobutton" id="19002">
+                <control type="radiobutton" id="19002">
                     <!--mb3 favourite movies-->
-					<label>$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</label>
                     <width>1230</width>
                     <align>left</align>
                     <height>50</height>
@@ -676,7 +669,7 @@
                     <selected>Skin.HasSetting(HomeMenuMB3FavouritesButton)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
                 </control>
-				<control type="radiobutton" id="29002">
+                <control type="radiobutton" id="29002">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -699,9 +692,9 @@
                     <selected>Skin.String(MB3FavoritesBackground)</selected>
                     <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton)</visible>
                 </control>
-				<control type="radiobutton" id="19005">
+                <control type="radiobutton" id="19005">
                     <!--mb3 channels-->
-					<label>$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</label>
                     <width>1230</width>
                     <align>left</align>
                     <height>50</height>
@@ -712,7 +705,7 @@
                     <selected>Skin.HasSetting(HomeMenuMB3ChannelsButton)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
                 </control>
-				<control type="radiobutton" id="29005">
+                <control type="radiobutton" id="29005">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -735,7 +728,6 @@
                     <selected>Skin.String(MB3ChannelsBackground)</selected>
                     <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton)</visible>
                 </control>
-
                 <control type="radiobutton" id="19006">
                     <!--custom 0-->
                     <width>1230</width>
@@ -749,7 +741,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton0)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
                 </control>
-				<control type="radiobutton" id="29006">
+                <control type="radiobutton" id="29006">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -784,7 +776,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton1)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
                 </control>
-				<control type="radiobutton" id="29007">
+                <control type="radiobutton" id="29007">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -819,7 +811,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton2)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
                 </control>
-				<control type="radiobutton" id="29008">
+                <control type="radiobutton" id="29008">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -854,7 +846,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton3)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
                 </control>
-				<control type="radiobutton" id="29009">
+                <control type="radiobutton" id="29009">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -889,7 +881,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton4)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
                 </control>
-				<control type="radiobutton" id="29010">
+                <control type="radiobutton" id="29010">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -912,7 +904,7 @@
                     <selected>Skin.String(Custom4Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton4)</visible>
                 </control>
-				<control type="radiobutton" id="19011">
+                <control type="radiobutton" id="19011">
                     <!--custom 5-->
                     <width>1230</width>
                     <align>left</align>
@@ -924,7 +916,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton5)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.0.title))</visible>
                 </control>
-				<control type="radiobutton" id="29011">
+                <control type="radiobutton" id="29011">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -947,7 +939,7 @@
                     <selected>Skin.String(Custom5Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton5)</visible>
                 </control>
-				<control type="radiobutton" id="19012">
+                <control type="radiobutton" id="19012">
                     <!--custom 6-->
                     <width>1230</width>
                     <align>left</align>
@@ -959,7 +951,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton6)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.1.title))</visible>
                 </control>
-				<control type="radiobutton" id="29012">
+                <control type="radiobutton" id="29012">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -982,7 +974,7 @@
                     <selected>Skin.String(Custom6Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton6)</visible>
                 </control>
-				<control type="radiobutton" id="19013">
+                <control type="radiobutton" id="19013">
                     <!--custom 7-->
                     <width>1230</width>
                     <align>left</align>
@@ -994,7 +986,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton7)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.2.title))</visible>
                 </control>
-				<control type="radiobutton" id="29013">
+                <control type="radiobutton" id="29013">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1017,7 +1009,7 @@
                     <selected>Skin.String(Custom7Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton7)</visible>
                 </control>
-				<control type="radiobutton" id="19014">
+                <control type="radiobutton" id="19014">
                     <!--custom 8-->
                     <width>1230</width>
                     <align>left</align>
@@ -1029,7 +1021,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton8)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.3.title))</visible>
                 </control>
-				<control type="radiobutton" id="29014">
+                <control type="radiobutton" id="29014">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1052,7 +1044,7 @@
                     <selected>Skin.String(Custom8Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton8)</visible>
                 </control>
-				<control type="radiobutton" id="19015">
+                <control type="radiobutton" id="19015">
                     <!--custom 9-->
                     <width>1230</width>
                     <align>left</align>
@@ -1064,7 +1056,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton9)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.4.title))</visible>
                 </control>
-				<control type="radiobutton" id="29015">
+                <control type="radiobutton" id="29015">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1087,7 +1079,7 @@
                     <selected>Skin.String(Custom9Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton9)</visible>
                 </control>
-				<control type="radiobutton" id="19016">
+                <control type="radiobutton" id="19016">
                     <!--custom 10-->
                     <width>1230</width>
                     <align>left</align>
@@ -1099,7 +1091,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton10)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.0.title))</visible>
                 </control>
-				<control type="radiobutton" id="29116">
+                <control type="radiobutton" id="29116">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1122,7 +1114,7 @@
                     <selected>Skin.String(Custom10Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton10)</visible>
                 </control>
-				<control type="radiobutton" id="19017">
+                <control type="radiobutton" id="19017">
                     <!--custom 11-->
                     <width>1230</width>
                     <align>left</align>
@@ -1134,7 +1126,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton11)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.1.title))</visible>
                 </control>
-				<control type="radiobutton" id="29016">
+                <control type="radiobutton" id="29016">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1157,7 +1149,7 @@
                     <selected>Skin.String(Custom11Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton11)</visible>
                 </control>
-				<control type="radiobutton" id="19018">
+                <control type="radiobutton" id="19018">
                     <!--custom 12-->
                     <width>1230</width>
                     <align>left</align>
@@ -1169,7 +1161,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton12)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.2.title))</visible>
                 </control>
-				<control type="radiobutton" id="29018">
+                <control type="radiobutton" id="29018">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1192,7 +1184,7 @@
                     <selected>Skin.String(Custom12Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton12)</visible>
                 </control>
-				<control type="radiobutton" id="19019">
+                <control type="radiobutton" id="19019">
                     <!--custom 13-->
                     <width>1230</width>
                     <align>left</align>
@@ -1204,7 +1196,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton13)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.3.title))</visible>
                 </control>
-				<control type="radiobutton" id="29021">
+                <control type="radiobutton" id="29021">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1227,7 +1219,7 @@
                     <selected>Skin.String(Custom13Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton13)</visible>
                 </control>
-				<control type="radiobutton" id="19020">
+                <control type="radiobutton" id="19020">
                     <!--custom 14-->
                     <width>1230</width>
                     <align>left</align>
@@ -1239,7 +1231,7 @@
                     <selected>Skin.HasSetting(HomeMenuCustomButton14)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.4.title))</visible>
                 </control>
-				<control type="radiobutton" id="29019">
+                <control type="radiobutton" id="29019">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1262,62 +1254,59 @@
                     <selected>Skin.String(Custom14Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton14)</visible>
                 </control>
-				
-				<control type="label" id="2301">
+                <control type="label" id="2301">
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>Netflix integration (netflixbmc)</label>
+                    <label>42080</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
                     <aligny>center</aligny>
                 </control>
-				<control type="radiobutton" id="2302">
+                <control type="radiobutton" id="2302">
                     <!--Netflix mode-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>Netflix mode</label>
+                    <label>42081</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(NetflixMode)</onclick>
-					<enabled>System.HasAddon(plugin.video.netflixbmc)</enabled>
+                    <enable>System.HasAddon(plugin.video.netflixbmc)</enable>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforMovies)</onclick>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforTVseries)</onclick>
                     <selected>Skin.HasSetting(NetflixMode)</selected>
                 </control>
-				<control type="radiobutton" id="2303">
+                <control type="radiobutton" id="2303">
                     <!--Movies-->
                     <description>Movies</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>Use netflix mode for $LOCALIZE[342]</label>
+                    <label>$LOCALIZE[42082] $LOCALIZE[342]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseNetflixforMovies)</onclick>
-					<onclick>Skin.Reset(HomeMenuUseMBforMovies)</onclick>
+                    <onclick>Skin.Reset(HomeMenuUseMBforMovies)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseNetflixforMovies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</selected>
                     <visible>Skin.HasSetting(NetflixMode)</visible>
                 </control>
-				<control type="radiobutton" id="2304">
+                <control type="radiobutton" id="2304">
                     <!--TV Series-->
                     <description>Tv Series</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>Use netflix mode for $LOCALIZE[20343]</label>
+                    <label>$LOCALIZE[42082] $LOCALIZE[20343]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg32</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseNetflixforTVseries)</onclick>
-					<onclick>Skin.Reset(HomeMenuUseMBforTVseries)</onclick>
+                    <onclick>Skin.Reset(HomeMenuUseMBforTVseries)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseNetflixforTVseries) + !Skin.HasSetting(HomeMenuUseMBforTVseries)</selected>
                     <visible>Skin.HasSetting(NetflixMode)</visible>
                 </control>
-				
-			</control>
-				
+            </control>
             <control type="grouplist" id="9000">
                 <description>Control Area</description>
                 <width>1230</width>
@@ -1326,7 +1315,7 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <onleft>100</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <visible>Container(100).Hasfocus(9)</visible>
                 <!-- music button -->
@@ -1587,7 +1576,7 @@
                     <selected>!Skin.String(CustomNetflixFolder, artwork) + Skin.String(CustomNetflixFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
                 </control>
-				<control type="radiobutton" id="29">
+                <control type="radiobutton" id="29">
                     <!--enable submenu -->
                     <width>1230</width>
                     <align>left</align>
@@ -1599,7 +1588,7 @@
                     <selected>Skin.HasSetting(HomeMenuUseNetflixSubmenu)</selected>
                     <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
                 </control>
-				<!-- musicvideos button -->
+                <!-- musicvideos button -->
                 <control type="label" id="72301">
                     <width>1230</width>
                     <height>50</height>
@@ -1623,7 +1612,7 @@
                     <selected>!Skin.String(CustomMusicVideosFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
                 </control>
-				<control type="radiobutton" id="72303">
+                <control type="radiobutton" id="72303">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -1647,7 +1636,6 @@
                     <selected>!Skin.String(CustomMusicVideosFolder, artwork) + Skin.String(CustomMusicVideosFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
                 </control>
-				
                 <!-- tv series button -->
                 <control type="label" id="9022">
                     <width>1230</width>
@@ -2091,7 +2079,7 @@
                     <font>Reg32</font>
                     <onclick>Skin.Reset(CustomSettingsFolder)</onclick>
                     <selected>!Skin.String(CustomSettingsFolder)</selected>
-					<visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
+                    <visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
                 </control>
                 <control type="radiobutton" id="9057">
                     <description></description>
@@ -2113,7 +2101,7 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <onleft>100</onleft>
-                <onright>-</onright>
+                <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <visible>Container(100).Hasfocus(6)</visible>
                 <!-- skin background -->

@@ -100,11 +100,11 @@
                     <include>SubMenuButton</include>
                     <label>137</label>
                 </control>
-				                <control type="radiobutton" id="312">
+                <control type="radiobutton" id="312">
                     <!--Toggle Overlay-->
                     <visible>Container.Content(Movies) + [Control.IsVisible(505) | Control.IsVisible(501)]</visible>
                     <include>SubMenuButton</include>
-                    <label>Toggle Overlay</label>
+                    <label>42063</label>
                     <onclick>Skin.ToggleSetting(MovieViewNoOverlay)</onclick>
                     <selected>Skin.HasSetting(MovieViewNoOverlay)</selected>
                 </control>
@@ -112,7 +112,7 @@
                     <!--Toggle Overlay-->
                     <visible>Container.Content(TVShows) + [Control.IsVisible(505) | Control.IsVisible(501)]</visible>
                     <include>SubMenuButton</include>
-                    <label>Toggle Overlay</label>
+                    <label>42063</label>
                     <onclick>Skin.ToggleSetting(TVshowsViewNoOverlay)</onclick>
                     <selected>Skin.HasSetting(TVshowsViewNoOverlay)</selected>
                 </control>
@@ -120,7 +120,7 @@
                     <!--Toggle Overlay-->
                     <visible>Container.Content(seasons) + [Control.IsVisible(505) | Control.IsVisible(501)]</visible>
                     <include>SubMenuButton</include>
-                    <label>Toggle Overlay</label>
+                    <label>42063</label>
                     <onclick>Skin.ToggleSetting(SeasonsViewNoOverlay)</onclick>
                     <selected>Skin.HasSetting(SeasonsViewNoOverlay)</selected>
                 </control>
@@ -128,7 +128,7 @@
                     <!--Toggle Overlay-->
                     <visible>Container.Content(episodes) + [Control.IsVisible(505) | Control.IsVisible(501)]</visible>
                     <include>SubMenuButton</include>
-                    <label>Toggle Overlay</label>
+                    <label>42063</label>
                     <onclick>Skin.ToggleSetting(EpisodesViewNoOverlay)</onclick>
                     <selected>Skin.HasSetting(EpisodesViewNoOverlay)</selected>
                 </control>
@@ -136,15 +136,15 @@
                     <!--Toggle Overlay-->
                     <visible>Container.Content(sets) + [Control.IsVisible(505) | Control.IsVisible(501)]</visible>
                     <include>SubMenuButton</include>
-                    <label>Toggle Overlay</label>
+                    <label>42063</label>
                     <onclick>Skin.ToggleSetting(BoxViewNoOverlay)</onclick>
                     <selected>Skin.HasSetting(BoxViewNoOverlay)</selected>
                 </control>
-				<control type="radiobutton" id="317">
+                <control type="radiobutton" id="317">
                     <!--Toggle Overlay-->
                     <visible>[Control.IsVisible(53) | Control.IsVisible(52)]</visible>
                     <include>SubMenuButton</include>
-                    <label>Toggle Overlay</label>
+                    <label>42063</label>
                     <onclick>Skin.ToggleSetting(PosterViewNoOverlay)</onclick>
                     <selected>Skin.HasSetting(PosterViewNoOverlay)</selected>
                 </control>
@@ -174,7 +174,7 @@
                 <control type="button" id="302">
                     <!--View List-->
                     <include>SubMenuButton</include>
-                    <label>List</label>
+                    <label>535</label>
                     <onclick>Container.SetViewMode(50)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,MOVIES,50)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,SEASONS,50)</onclick>
@@ -186,7 +186,7 @@
                     <!--View BannerWrap-->
                     <visible>!Container.Content(LiveTV)</visible>
                     <include>SubMenuButton</include>
-                    <label>Titan Banner</label>
+                    <label>42064</label>
                     <onclick>Container.SetViewMode(501)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,MOVIES,501)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,SEASONS,501)</onclick>
@@ -198,7 +198,7 @@
                     <!--View BannerWrap details-->
                     <visible>!Container.Content(LiveTV)</visible>
                     <include>SubMenuButton</include>
-                    <label>Titan banner details</label>
+                    <label>42065</label>
                     <onclick>Container.SetViewMode(505)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,MOVIES,505)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,SEASONS,505)</onclick>
@@ -210,7 +210,7 @@
                     <!--View Panel-->
                     <visible>!Container.Content(LiveTV) + !Container.Content(Episodes)</visible>
                     <include>SubMenuButton</include>
-                    <label>Poster</label>
+                    <label>42066</label>
                     <onclick>Container.SetViewMode(52)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,MOVIES,52)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,SEASONS,52)</onclick>
@@ -222,7 +222,7 @@
                     <!--View Panel details-->
                     <visible>!Container.Content(LiveTV) + !Container.Content(Episodes)</visible>
                     <include>SubMenuButton</include>
-                    <label>Poster details</label>
+                    <label>42067</label>
                     <onclick>Container.SetViewMode(53)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,MOVIES,53)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,SEASONS,53)</onclick>
@@ -234,7 +234,7 @@
                     <!--View Showcase-->
                     <visible>!Container.Content(LiveTV) + !Container.Content(Episodes)</visible>
                     <include>SubMenuButton</include>
-                    <label>Showcase</label>
+                    <label>42068</label>
                     <onclick>Container.SetViewMode(51)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,MOVIES,51)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,SEASONS,51)</onclick>
@@ -245,7 +245,7 @@
                     <!--View Showcasedetails-->
                     <visible>!Container.Content(LiveTV) + !Container.Content(Episodes)</visible>
                     <include>SubMenuButton</include>
-                    <label>Showcase details</label>
+                    <label>42069</label>
                     <onclick>Container.SetViewMode(54)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,MOVIES,54)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,SEASONS,54)</onclick>
@@ -256,7 +256,7 @@
                     <!--View Showcasedetails-->
                     <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                     <include>SubMenuButton</include>
-                    <label>Banner list</label>
+                    <label>42070</label>
                     <onclick>Container.SetViewMode(55)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,MOVIES,55)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(special://skin/scripts/setview.py,SEASONS,55)</onclick>

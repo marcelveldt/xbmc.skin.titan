@@ -24,3 +24,7 @@ if currentVersion != previousVersion:
     
 else:
     print('[Titanskin] no action needed')
+
+	
+# always set focus to panel 300
+xbmc.executebuiltin('SetFocus(300)')

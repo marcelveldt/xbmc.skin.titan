@@ -8,7 +8,7 @@
         <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome)">[UPPERCASE]Home[/UPPERCASE]</value>
         <value condition="substring(Container.FolderPath,Radio)">RADIO</value>
         <value condition="Container.Content(movies) + IsEmpty(ListItem.Title)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE]</value>
-		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="Container.Content(movies) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="Container.Content(tvshows)">[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</value>
         <value condition="Container.Content(seasons) + !IsEmpty(ListItem.TVShowTitle)">[UPPERCASE]$LOCALIZE[20343]: $INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
         <value condition="Container.Content(episodes) + !IsEmpty(ListItem.TVShowTitle)">[UPPERCASE]$LOCALIZE[20343]: $INFO[ListItem.TVShowTitle] - $LOCALIZE[20373] $INFO[ListItem.Season][/UPPERCASE]</value>
@@ -123,20 +123,20 @@
         <value condition="Container.Content(episodes)">$LOCALIZE[180] :</value>
         <!-- Duration -->
     </variable>
-	    <variable name="value_ground4_value">
+    <variable name="value_ground4_value">
         <value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos)">$INFO[ListItem.Director]</value>
         <value condition="Container.Content(tvshows)">$INFO[ListItem.Property(TotalEpisodes)] ($LOCALIZE[16101]: $INFO[ListItem.Property(UnwatchedEpisodes)])</value>
         <value condition="Container.Content(episodes) + !SubString(ListItem.Duration,min)">$INFO[ListItem.Duration] min</value>
         <value condition="Container.Content(episodes) + SubString(ListItem.Duration,min)">$INFO[ListItem.Duration]</value>
     </variable>
     <variable name="MusicButtonThumb">
-		<value condition="!Skin.String(CustomMusicFolder, artwork)">$INFO[Skin.String(CustomMusicFolder)]</value>
+        <value condition="!Skin.String(CustomMusicFolder, artwork)">$INFO[Skin.String(CustomMusicFolder)]</value>
         <value condition="Skin.String(CustomMusicFolder, artwork) + Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window.Property(MB3.Background.Music.FanArt)]</value>
         <value condition="Skin.String(CustomMusicFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(RandomArtist.1.FanArt))">$INFO[Window(Home).Property(RandomArtist.1.FanArt)]</value>
         <value condition="Skin.String(CustomMusicFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusic) + IsEmpty(Window(Home).Property(RandomArtist.1.FanArt))">$INFO[Window(Home).Property(RandomArtist.2.FanArt)]</value>
-		<value condition="Skin.String(CustomMusicFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusic) + IsEmpty(Window(Home).Property(RandomArtist.2.FanArt))">$INFO[Window(Home).Property(RandomArtist.3.FanArt)]</value>
-		<value condition="Skin.String(CustomMusicFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusic) + IsEmpty(Window(Home).Property(RandomArtist.3.FanArt))">$INFO[Window(Home).Property(RandomArtist.4.FanArt)]</value>
-		<value condition="Skin.String(CustomMusicFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusic) + IsEmpty(Window(Home).Property(RandomArtist.4.FanArt))">$INFO[Window(Home).Property(RandomArtist.5.FanArt)]</value>
+        <value condition="Skin.String(CustomMusicFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusic) + IsEmpty(Window(Home).Property(RandomArtist.2.FanArt))">$INFO[Window(Home).Property(RandomArtist.3.FanArt)]</value>
+        <value condition="Skin.String(CustomMusicFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusic) + IsEmpty(Window(Home).Property(RandomArtist.3.FanArt))">$INFO[Window(Home).Property(RandomArtist.4.FanArt)]</value>
+        <value condition="Skin.String(CustomMusicFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusic) + IsEmpty(Window(Home).Property(RandomArtist.4.FanArt))">$INFO[Window(Home).Property(RandomArtist.5.FanArt)]</value>
     </variable>
     <variable name="MoviesButtonThumb">
         <value condition="!Skin.String(CustomMoviesFolder, artwork)">$INFO[Skin.String(CustomMoviesFolder)]</value>
@@ -148,7 +148,7 @@
         <value condition="Skin.String(CustomTVShowsFolder, artwork) + Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(MB3.Background.TV.FanArt)]</value>
         <value condition="Skin.String(CustomTVShowsFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.fanart))]</value>
     </variable>
-	<variable name="MusicVideosButtonThumb">
+    <variable name="MusicVideosButtonThumb">
         <value condition="!Skin.String(CustomMusicVideosFolder, artwork)">$INFO[Skin.String(CustomTVShowsFolder)]</value>
         <value condition="Skin.String(CustomMusicVideosFolder, artwork) + Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(xbmb3c.std.music.3.image)]</value>
         <value condition="Skin.String(CustomMusicVideosFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(RandomMusicVideo.1.Fanart)]</value>
@@ -158,198 +158,170 @@
         <value condition="Skin.String(CustomWeatherFolder, artwork)">special://skin/extras/weather/$INFO[Weather.FanartCode]/weather.jpg</value>
     </variable>
     <variable name="WeatherButtonLabel">
-		<value condition="!Skin.HasSetting(WeatherButtonDisplayTemp)">$LOCALIZE[24027]</value>
+        <value condition="!Skin.HasSetting(WeatherButtonDisplayTemp)">$LOCALIZE[24027]</value>
         <value condition="Skin.HasSetting(WeatherButtonDisplayTemp)">$INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</value>
     </variable>
     <variable name="PicturesButtonThumb">
         <value condition="!Skin.String(CustomPicturesFolder, artwork)">$INFO[Skin.String(CustomPicturesFolder)]</value>
         <value condition="Skin.String(CustomPicturesFolder, artwork) + Skin.HasSetting(MediaBrowserMode)">$VAR[randompicturegenerate]</value>
     </variable>
-	<variable name="randompicturegenerate">
-		<value condition="IntegerGreaterThan(System.Time(mm), 55)">$INFO[Window.Property(LatestPhotoMB3.6.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 50)">$INFO[Window.Property(LatestPhotoMB3.7.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 45)">$INFO[Window.Property(LatestPhotoMB3.2.Thumb)]</value>				
-		<value condition="IntegerGreaterThan(System.Time(mm), 40)">$INFO[Window.Property(LatestPhotoMB3.9.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 35)">$INFO[Window.Property(LatestPhotoMB3.8.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 30)">$INFO[Window.Property(LatestPhotoMB3.2.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 25)">$INFO[Window.Property(LatestPhotoMB3.6.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 20)">$INFO[Window.Property(LatestPhotoMB3.4.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 15)">$INFO[Window.Property(LatestPhotoMB3.5.Thumb)]</value>		
-		<value condition="IntegerGreaterThan(System.Time(mm), 10)">$INFO[Window.Property(LatestPhotoMB3.3.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 5)">$INFO[WindowProperty(LatestPhotoMB3.2.Thumb)]</value>
-		<value condition="IntegerGreaterThan(System.Time(mm), 1)">$INFO[Window.Property(LatestPhotoMB3.1.Thumb)]</value>
-	</variable>
-
-	<variable name="NextUpBg">
-		<value condition="!Skin.HasSetting(NoFooterBar)">pvr/pvr_epg_panel.png</value>
-		<value condition="Skin.HasSetting(NoFooterBar)">views/nextup.png</value>
-	</variable>	
+    <variable name="randompicturegenerate">
+        <value condition="IntegerGreaterThan(System.Time(mm), 55)">$INFO[Window.Property(LatestPhotoMB3.6.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 50)">$INFO[Window.Property(LatestPhotoMB3.7.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 45)">$INFO[Window.Property(LatestPhotoMB3.2.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 40)">$INFO[Window.Property(LatestPhotoMB3.9.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 35)">$INFO[Window.Property(LatestPhotoMB3.8.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 30)">$INFO[Window.Property(LatestPhotoMB3.2.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 25)">$INFO[Window.Property(LatestPhotoMB3.6.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 20)">$INFO[Window.Property(LatestPhotoMB3.4.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 15)">$INFO[Window.Property(LatestPhotoMB3.5.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 10)">$INFO[Window.Property(LatestPhotoMB3.3.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 5)">$INFO[WindowProperty(LatestPhotoMB3.2.Thumb)]</value>
+        <value condition="IntegerGreaterThan(System.Time(mm), 1)">$INFO[Window.Property(LatestPhotoMB3.1.Thumb)]</value>
+    </variable>
+    <variable name="NextUpBg">
+        <value condition="!Skin.HasSetting(NoFooterBar)">pvr/pvr_epg_panel.png</value>
+        <value condition="Skin.HasSetting(NoFooterBar)">views/nextup.png</value>
+    </variable>
+    <variable name="Custom0Background">
+        <value condition="!Skin.String(Custom0Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.0.image)]</value>
+        <value condition="Skin.String(Custom0Background)">$INFO[Skin.String(Custom0Background)]</value>
+    </variable>
+    <variable name="Custom1Background">
+        <value condition="!Skin.String(Custom0Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.1.image)]</value>
+        <value condition="Skin.String(Custom1Background)">$INFO[Skin.String(Custom1Background)]</value>
+    </variable>
+    <variable name="Custom2Background">
+        <value condition="!Skin.String(Custom2Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.2.image)]</value>
+        <value condition="Skin.String(Custom2Background)">$INFO[Skin.String(Custom2Background)]</value>
+    </variable>
+    <variable name="Custom3Background">
+        <value condition="!Skin.String(Custom3Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.3.image)]</value>
+        <value condition="Skin.String(Custom3Background)">$INFO[Skin.String(Custom3Background)]</value>
+    </variable>
+    <variable name="Custom4Background">
+        <value condition="!Skin.String(Custom4Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.4.image)]</value>
+        <value condition="Skin.String(Custom4Background)">$INFO[Skin.String(Custom4Background)]</value>
+    </variable>
+    <variable name="Custom5Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom6Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom7Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom8Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom9Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom10Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.0.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom11Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.1.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom12Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.2.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom13Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.3.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="Custom14Background">
+        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.4.image)]</value>
+        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+    </variable>
+    <variable name="MB3FavoritesBackground">
+        <value condition="!Skin.String(MB3FavoritesBackground)">$INFO[Window(Home).Property(xbmb3c.std.movies.3.image)]</value>
+        <value condition="Skin.String(MB3FavoritesBackground)">$INFO[Skin.String(MB3FavoritesBackground)]</value>
+    </variable>
+    <variable name="MB3ChannelsBackground">
+        <value condition="!Skin.String(MB3ChannelsBackground)">$INFO[Window(Home).Property(xbmb3c.std.channels.0.image)]</value>
+        <value condition="Skin.String(MB3ChannelsBackground)">$INFO[Skin.String(MB3ChannelsBackground)]</value>
+    </variable>
+    <variable name="MusicButtonOnClick">
+        <value condition="Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(Music, $INFO[Skin.String(HomeMenuUseMusicCollection)], return)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(1234)</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">ActivateWindow(Music, MusicLibrary, return)</value>
+        <value condition="Skin.HasSetting(MediaBrowserMode) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">$INFO[Window.Property(xbmb3c.std.music.0.path)]</value>
+    </variable>
+    <variable name="NetflixButtonOnClick">
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu)">ActivateWindow(1238)</value>
+        <value>ActivateWindow(10025,"plugin://plugin.video.netflixbmc",return)</value>
+    </variable>
+    <variable name="MoviesButtonOnClick">
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu)">ActivateWindow(1237)</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,movietitles,return)</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.0.path)]</value>
+    </variable>
+    <variable name="TVseriesButtonOnClick">
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries)">ActivateWindow(Video,tvshowtitles,return)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.0.path)]</value>
+    </variable>
+    <variable name="RadioButtonOnClick">
+        <value condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)])</value>
+        <value condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</value>
+    </variable>
+    <variable name="PicturesButtonOnClick">
+        <value condition="!Skin.HasSetting(HomeMenuUseMBforPictures)">ActivateWindow(Video,movietitles,return)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMBforPictures)">$INFO[Window.Property(xbmb3c.std.photo.0.path)]</value>
+    </variable>
+    <variable name="MusicVideosButtonOnClick">
+        <value condition="!Skin.HasSetting(HomeMenuUseMBforMusicVideos)">ActivateWindow(Video,MusicVideoTitles ,return)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window.Property(xbmb3c.std.music.3.path)]</value>
+    </variable>
+    <variable name="LiveTVButtonOnClick">
+        <value condition="Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</value>
+    </variable>
+    <variable name="LatestMoviesNextUp">
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.1.content)]</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">videodb://recentlyaddedmovies/</value>
+    </variable>
+    <variable name="MoviesInProgressNextUp">
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.2.content)]</value>
+    </variable>
+    <variable name="EpisodesNextUpLabel">
+        <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$LOCALIZE[42043]</value>
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">$LOCALIZE[20387]</value>
+        <value>Recently added episodes</value>
+    </variable>
+    <variable name="EpisodesNextUp">
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.3.content)]</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries)">videodb://recentlyaddedepisodes/</value>
+    </variable>
 	
-	
-	<variable name="Custom0Background">
-		<value condition="!Skin.String(Custom0Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.0.image)]</value>
-		<value condition="Skin.String(Custom0Background)">$INFO[Skin.String(Custom0Background)]</value>
-	</variable>	
-	
-	<variable name="Custom1Background">
-		<value condition="!Skin.String(Custom0Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.1.image)]</value>
-		<value condition="Skin.String(Custom1Background)">$INFO[Skin.String(Custom1Background)]</value>
-	</variable>	
-	
-	<variable name="Custom2Background">
-		<value condition="!Skin.String(Custom2Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.2.image)]</value>
-		<value condition="Skin.String(Custom2Background)">$INFO[Skin.String(Custom2Background)]</value>
-	</variable>	
-	
-	<variable name="Custom3Background">
-		<value condition="!Skin.String(Custom3Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.3.image)]</value>
-		<value condition="Skin.String(Custom3Background)">$INFO[Skin.String(Custom3Background)]</value>
-	</variable>	
-	
-	<variable name="Custom4Background">
-		<value condition="!Skin.String(Custom4Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.4.image)]</value>
-		<value condition="Skin.String(Custom4Background)">$INFO[Skin.String(Custom4Background)]</value>
-	</variable>	
-	
-	<variable name="Custom5Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>	
-	
-	<variable name="Custom6Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>	
-	
-	<variable name="Custom7Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>	
-	
-	<variable name="Custom8Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>	
-	
-	<variable name="Custom9Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>	
-	
-	<variable name="Custom10Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.0.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>
-	
-	<variable name="Custom11Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.1.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>
-	
-	<variable name="Custom12Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.2.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>
-	
-	<variable name="Custom13Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.3.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>
-	
-	<variable name="Custom14Background">
-		<value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.4.image)]</value>
-		<value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
-	</variable>
-	
-	<variable name="MB3FavoritesBackground">
-		<value condition="!Skin.String(MB3FavoritesBackground)">$INFO[Window(Home).Property(xbmb3c.std.movies.3.image)]</value>
-		<value condition="Skin.String(MB3FavoritesBackground)">$INFO[Skin.String(MB3FavoritesBackground)]</value>
-	</variable>
-	
-	<variable name="MB3ChannelsBackground">
-		<value condition="!Skin.String(MB3ChannelsBackground)">$INFO[Window(Home).Property(xbmb3c.std.channels.0.image)]</value>
-		<value condition="Skin.String(MB3ChannelsBackground)">$INFO[Skin.String(MB3ChannelsBackground)]</value>
-	</variable>
-	
-	<variable name="MusicButtonOnClick">
-		<value condition="Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(Music, $INFO[Skin.String(HomeMenuUseMusicCollection)], return)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(1234)</value>
-		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">ActivateWindow(Music, MusicLibrary, return)</value>
-		<value condition="Skin.HasSetting(MediaBrowserMode) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">$INFO[Window.Property(xbmb3c.std.music.0.path)]</value>
-	</variable>
-
-	<variable name="NetflixButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu)">ActivateWindow(1238)</value>
-		<value>ActivateWindow(10025,"plugin://plugin.video.netflixbmc",return)</value>
-	</variable>
-	
-	<variable name="MoviesButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">ActivateWindow(10025,&quot;plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url&quot;,return)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu)">ActivateWindow(1237)</value>
-		<value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,movietitles,return)</value>
-		<value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.0.path)]</value>
-	</variable>
-	
-	<variable name="TVseriesButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">ActivateWindow(10025,&quot;plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url&quot;,return)</value>
-		<value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries)">ActivateWindow(Video,tvshowtitles,return)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.0.path)]</value>
-	</variable>
-	
-	<variable name="RadioButtonOnClick">
-		<value condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)])</value>
-		<value condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</value>
-	</variable>
-	
-	<variable name="PicturesButtonOnClick">
-		<value condition="!Skin.HasSetting(HomeMenuUseMBforPictures)">ActivateWindow(Video,movietitles,return)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforPictures)">$INFO[Window.Property(xbmb3c.std.photo.0.path)]</value>
-	</variable>
-	
-	<variable name="MusicVideosButtonOnClick">
-		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusicVideos)">ActivateWindow(Video,MusicVideoTitles ,return)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window.Property(xbmb3c.std.music.3.path)]</value>
-	</variable>
-	
-	<variable name="LiveTVButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</value>
-		<value condition="!Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</value>
-	</variable>
-	
-	<variable name="LatestMoviesNextUp">
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.1.content)]</value>
-		<value condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">videodb://recentlyaddedmovies/</value>
+	<variable name="BannerFanArtImage">
+		<value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(season.fanart)) + !substring(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(season.fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Art(extrafanart)) + !substring(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(extrafanart)]</value>
+		<value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 	
-	<variable name="MoviesInProgressNextUp">
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.2.content)]</value>
+	<variable name="BannerLandscapeImage">
+		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-landscape.jpg]</value>
+		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
+		<value>$INFO[ListItem.Art(fanart)]</value>
 	</variable>
+		
 	
-	<variable name="EpisodesNextUpLabel">
-		<value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$LOCALIZE[42043]</value>
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">$LOCALIZE[20387]</value>
-		<value>Recently added episodes</value>
-	</variable>
-	
-	<variable name="EpisodesNextUp">
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.3.content)]</value>
-		<value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries)">videodb://recentlyaddedepisodes/</value>
-	</variable>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	
 </includes>

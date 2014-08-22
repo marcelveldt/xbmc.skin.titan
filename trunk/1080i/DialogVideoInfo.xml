@@ -16,6 +16,13 @@
                 <colordiffuse>FFFFFFFF</colordiffuse>
                 <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
             </control>
+			<control type="image">
+                <animation effect="fade" time="800" start="0" end="100">WindowOpen</animation>
+                <animation effect="fade" time="800" start="100" end="0">WindowClose</animation>
+                <include>DimensionsFullscreen</include>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+                <texture background="true">$INFO[ListItem.Art(characterart)]</texture>
+            </control>
             <control type="image">
                 <animation effect="fade" time="800" start="0" end="100">WindowOpen</animation>
                 <animation effect="fade" time="800" start="100" end="0">WindowClose</animation>
@@ -45,10 +52,10 @@
                     <width>571</width>
                     <height>316</height>
                     <itemgap>0</itemgap>
-                    <onup>-</onup>
-                    <ondown>-</ondown>
+                    <onup>noop</onup>
+                    <ondown>noop</ondown>
                     <onright>SetFocus(9001)</onright>
-                    <onleft>-</onleft>
+                    <onleft>noop</onleft>
                     <orientation>vertical</orientation>
                     <control type="button" id="100">
                         <!--Search Trailer on Youtube-->
@@ -94,8 +101,8 @@
                         <align>center</align>
                         <textoffsetx>0</textoffsetx>
                         <onclick condition="System.HasAddon(script.artwork.downloader)">ActivateWindow(3004)</onclick>
-						<onclick condition="!System.HasAddon(script.artwork.downloader)">Notification(No artwork downloader,please install/enable artwork downloader) </onclick>
-                        <visible>!substring(Container.FolderPath,plugin://plugin.video)</visible>
+                        <onclick condition="!System.HasAddon(script.artwork.downloader)">Notification(No artwork downloader,please install/enable artwork downloader) </onclick>
+                        <visible>!substring(Container.FolderPath,plugin://plugin.video) + [Container.Content(Movies) | Container.Content(TVshows)]</visible>
                     </control>
                 </control>
                 <!-- Fanart -->
@@ -161,7 +168,7 @@
                     <textcolor>aawhite</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
-					<visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
+                    <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
                 </control>
                 <!--Arrow-->
                 <control type="grouplist">
@@ -579,10 +586,10 @@
                 <control type="button" id="9001">
                     <!--Hidden Button-->
                     <onfocus>SetFocus(50)</onfocus>
-                    <onleft>-</onleft>
-                    <ondown>-</ondown>
-                    <onup>-</onup>
-                    <onclick>-</onclick>
+                    <onleft>noop</onleft>
+                    <ondown>noop</ondown>
+                    <onup>noop</onup>
+                    <onclick>noop</onclick>
                     <font>-</font>
                     <label>-</label>
                     <textcolor>-</textcolor>
@@ -597,8 +604,8 @@
                     <posy>220</posy>
                     <width>1684</width>
                     <height>660</height>
-                    <onup>-</onup>
-                    <ondown>-</ondown>
+                    <onup>noop</onup>
+                    <ondown>noop</ondown>
                     <onleft>SetFocus(9000)</onleft>
                     <scrolltime>200</scrolltime>
                     <orientation>vertical</orientation>
@@ -632,7 +639,7 @@
                             <aligny>center</aligny>
                         </control>
                     </focusedlayout>
-					<include condition="substring(Container.FolderPath,plugin://plugin.video)">CastMB3Content</include>
+                    <include condition="substring(Container.FolderPath,plugin://plugin.video)">CastMB3Content</include>
                 </control>
                 <control type="image">
                     <!--Actor Image-->
@@ -680,13 +687,13 @@
                     <posy>70</posy>
                     <width>225</width>
                     <height>80</height>
-                    <font>Titan32</font>
+                    <font>Reg32</font>
                     <textcolor>black</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <texturefocus border="20">dialogs/keyboard/donefocus.png</texturefocus>
                     <texturenofocus border="20">dialogs/keyboard/key-nf.png</texturenofocus>
                     <onclick>close</onclick>
-                    <label>OK</label>
+                    <label>186</label>
                     <onleft>6</onleft>
                     <onright>6</onright>
                     <onup>6</onup>
@@ -695,7 +702,7 @@
             </control>
             <!--Labels-->
             <control type="group">
-			<visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
+                <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
                 <include>animation_dialog</include>
                 <control type="label">
                     <!--Header-->
@@ -704,7 +711,7 @@
                     <width>1000</width>
                     <height>22</height>
                     <align>center</align>
-                    <label>No Infos</label>
+                    <label>195</label>
                     <include>DialogHeader</include>
                 </control>
                 <control type="label">
@@ -713,7 +720,7 @@
                     <posy>340</posy>
                     <width>1720</width>
                     <align>center</align>
-                    <label>Press Back or OK to exit</label>
+                    <label>42061</label>
                     <include>DialogHeader2</include>
                 </control>
             </control>

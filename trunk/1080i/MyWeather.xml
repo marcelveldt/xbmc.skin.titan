@@ -27,10 +27,8 @@
             <include>HiddenButton</include>
             <onleft>9000</onleft>
         </control>
-		
-		<!-- weather provider logo -->
-		
-	     <control type="image">
+        <!-- weather provider logo -->
+        <control type="image">
             <posx>80</posx>
             <posy>780</posy>
             <width>480</width>
@@ -38,10 +36,9 @@
             <texture>$INFO[Window.Property(WeatherProviderLogo)]</texture>
             <fadetime>1000</fadetime>
             <aspectratio>stretch</aspectratio>
-			<include>animation_fade_visible_hidden</include>
+            <include>animation_fade_visible_hidden</include>
             <include>animation_list</include>
         </control>
-		
         <!--Weather-->
         <control type="group">
             <posx>40</posx>
