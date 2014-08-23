@@ -68,7 +68,7 @@
                 <posy>365</posy>
                 <width>300</width>
                 <height>80</height>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>aawhite</textcolor>
                 <align>center</align>
                 <label>$INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label>

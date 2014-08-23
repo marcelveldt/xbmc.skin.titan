@@ -277,8 +277,8 @@
                     <height>67</height>
                     <posx>70</posx>
                     <width>300</width>
-                    <font>Reg35</font>
-                    <textcolor>midgrey</textcolor>
+                    <font>Reg30</font>
+                    <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
             </itemlayout>
@@ -294,7 +294,7 @@
                     <height>67</height>
                     <posx>70</posx>
                     <width>300</width>
-                    <font>Reg35</font>
+                    <font>Reg30</font>
                     <textcolor>black</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>

@@ -29,7 +29,7 @@
             <width>500</width>
             <align>right</align>
             <font>Light40</font>
-            <textcolor>midgrey</textcolor>
+            <textcolor>white</textcolor>
             <label>Titan Mediabrowser v$INFO[System.AddonVersion(skin.titan)]</label>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
@@ -70,8 +70,8 @@
     <include name="Button9001">
         <label>41070</label>
         <height>50</height>
-        <font>Reg32</font>
-        <textcolor>midgrey</textcolor>
+        <font>Reg28</font>
+        <textcolor>white</textcolor>
         <focusedcolor>black</focusedcolor>
         <texturefocus>common/button-fo.png</texturefocus>
         <texturenofocus>common/button-nf.png</texturenofocus>
@@ -86,8 +86,8 @@
     <include name="Button9002">
         <label>41071</label>
         <height>50</height>
-        <font>Reg32</font>
-        <textcolor>midgrey</textcolor>
+        <font>Reg28</font>
+        <textcolor>white</textcolor>
         <focusedcolor>black</focusedcolor>
         <texturefocus>common/button-fo.png</texturefocus>
         <texturenofocus>common/button-nf.png</texturenofocus>
@@ -102,8 +102,8 @@
     <include name="Button9003">
         <label>41072</label>
         <height>50</height>
-        <font>Reg32</font>
-        <textcolor>midgrey</textcolor>
+        <font>Reg28</font>
+        <textcolor>white</textcolor>
         <focusedcolor>black</focusedcolor>
         <texturefocus>common/button-fo.png</texturefocus>
         <texturenofocus>common/button-nf.png</texturenofocus>
@@ -168,7 +168,7 @@
                     <width min="0" max="300">auto</width>
                     <height>100</height>
                     <info>System.Time(hh:mm)</info>
-                    <font>Bold45</font>
+                    <font>Bold55</font>
                     <textcolor>white</textcolor>
                 </control>
                 <control type="label">
@@ -177,7 +177,7 @@
                     <width min="0" max="150">auto</width>
                     <height>100</height>
                     <label>378</label>
-                    <font>Bold45</font>
+                    <font>Bold55</font>
                     <textcolor>white</textcolor>
                 </control>
                 <control type="label">
@@ -186,7 +186,7 @@
                     <width min="0" max="150">auto</width>
                     <height>100</height>
                     <label>379</label>
-                    <font>Bold45</font>
+                    <font>Bold55</font>
                     <textcolor>white</textcolor>
                 </control>
             </control>
@@ -278,7 +278,7 @@
                 <height>40</height>
                 <posx>130</posx>
                 <posy>25</posy>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>white</textcolor>
                 <align>left</align>
                 <label>$INFO[Weather.Temperature]</label>
@@ -288,7 +288,7 @@
                 <!--Temp-->
                 <width>160</width>
                 <height>40</height>
-                <posx>130</posx>
+                <posx>124</posx>
                 <posy>70</posy>
                 <font>Reg28</font>
                 <textcolor>white</textcolor>
@@ -509,7 +509,7 @@
         <!--Sub Menu Button-->
         <width>458</width>
         <align>left</align>
-        <textcolor>midgrey</textcolor>
+        <textcolor>white</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>77585858</disabledcolor>
         <pulseonselect>false</pulseonselect>
@@ -557,34 +557,41 @@
     <!--Dailog Color/Font-->
     <include name="DialogHeader">
         <!--Dialog Header-->
-        <font>Light40</font>
+        <font>Bold38</font>
         <textcolor>aawhite</textcolor>
     </include>
     <include name="DialogHeader2">
         <!--Dialog Header2 (Yes/No)-->
-        <font>Light45</font>
+        <font>Reg36</font>
         <textcolor>aawhite</textcolor>
     </include>
     <include name="DialogButton">
         <!--Dialog Button-->
-        <font>Light32</font>
+        <font>Reg28</font>
         <textcolor>FF585858</textcolor>
-        <focusedcolor>eewhite</focusedcolor>
-        <disabledcolor>77585858</disabledcolor>
-        <shadowcolor>20FFFFFF</shadowcolor>
+        <focusedcolor>FF585858</focusedcolor>
+        <disabledcolor>FF585858</disabledcolor>
+    </include>
+	<include name="DialogButtonAlt">
+        <!--Dialog Button-->
+        <font>Light32</font>
+        <textcolor>FFfffeff</textcolor>
+        <focusedcolor>FFfffeff</focusedcolor>
+        <disabledcolor>FF585858</disabledcolor>
+        <shadowcolor>FF1b1b1b</shadowcolor>
     </include>
     <include name="DialogButtonBig">
         <!--Dialog Button Big-->
-        <font>Bold30</font>
-        <textcolor>FF585858</textcolor>
+        <font>Reg30</font>
+        <textcolor>white</textcolor>
         <focusedcolor>eewhite</focusedcolor>
         <disabledcolor>77585858</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
     </include>
     <include name="DialogButtonSmall">
         <!--Dialog Button Small-->
-        <font>Reg28</font>
-        <textcolor>FF585858</textcolor>
+        <font>Reg26</font>
+        <textcolor>white</textcolor>
         <focusedcolor>eewhite</focusedcolor>
         <disabledcolor>77585858</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
@@ -592,7 +599,7 @@
     <include name="DialogListNF">
         <!--Dialog List NF-->
         <font>Light32</font>
-        <textcolor>FF585858</textcolor>
+        <textcolor>white</textcolor>
         <selectedcolor>FF585858</selectedcolor>
     </include>
     <include name="DialogListFO">
@@ -603,23 +610,30 @@
     </include>
     <include name="DialogLabel">
         <!--Dialog Label-->
-        <font>Light32</font>
-        <textcolor>FF585858</textcolor>
-        <disabledcolor>FF585858</disabledcolor>
+        <font>Reg28</font>
+        <textcolor>FF3e3e3e</textcolor>
+        <disabledcolor>FF3e3e3e</disabledcolor>
+        <shadowcolor>20FFFFFF</shadowcolor>
+    </include>
+	    <include name="DialogLabelAlt">
+        <!--Dialog Label-->
+        <font>Reg28</font>
+        <textcolor>FFfffeff</textcolor>
+        <disabledcolor>FFfffeff</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
     </include>
     <include name="DialogButtonOKCancel">
         <!--Dialog Button OK Cancel-->
         <font>Light32</font>
-        <textcolor>midgrey</textcolor>
+        <textcolor>white</textcolor>
         <focusedcolor>white</focusedcolor>
-        <disabledcolor>darkgrey</disabledcolor>
+        <disabledcolor>$VAR[ThemeFontColorDarkGrey]</disabledcolor>
         <pulseonselect>false</pulseonselect>
     </include>
     <include name="DialogButtonBrowseAdd">
         <!--Dialog Button Browse Add-->
         <font>Light32</font>
-        <textcolor>FF585858</textcolor>
+        <textcolor>white</textcolor>
         <focusedcolor>eewhite</focusedcolor>
         <disabledcolor>FF585858</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
@@ -644,7 +658,7 @@
         <textoffsetx>0</textoffsetx>
         <texturefocus border="20">dialogs/keyboard/key-fo.png</texturefocus>
         <texturenofocus border="20">dialogs/keyboard/key-nf.png</texturenofocus>
-        <textcolor>darkgrey2</textcolor>
+        <textcolor>$VAR[ThemeFontColorDarkGrey]2</textcolor>
         <focusedcolor>eewhite</focusedcolor>
         <selectedcolor>eewhite</selectedcolor>
     </include>
@@ -683,7 +697,7 @@
         <font>Light28</font>
         <texturefocus border="20">dialogs/keyboard/donefocus.png</texturefocus>
         <texturenofocus border="20">dialogs/keyboard/key-nf.png</texturenofocus>
-        <textcolor>darkgrey2</textcolor>
+        <textcolor>$VAR[ThemeFontColorDarkGrey]2</textcolor>
         <focusedcolor>eewhite</focusedcolor>
         <selectedcolor>eewhite</selectedcolor>
     </include>
@@ -694,7 +708,7 @@
         <font>Light28</font>
         <texturefocus border="20">dialogs/keyboard/cancelfocus.png</texturefocus>
         <texturenofocus border="20">dialogs/keyboard/key-nf.png</texturenofocus>
-        <textcolor>darkgrey2</textcolor>
+        <textcolor>$VAR[ThemeFontColorDarkGrey]2</textcolor>
         <focusedcolor>eewhite</focusedcolor>
         <selectedcolor>eewhite</selectedcolor>
     </include>
@@ -875,7 +889,7 @@
             <width>900</width>
             <align>left</align>
             <font>Light45</font>
-            <textcolor>midgrey</textcolor>
+            <textcolor>$VAR[ThemeFontColorwhite]</textcolor>
             <label>[B]$INFO[VideoPlayer.Title][/B]</label>
             <scroll>false</scroll>
         </control>
@@ -898,7 +912,7 @@
             <width>900</width>
             <align>left</align>
             <font>Light45</font>
-            <textcolor>midgrey</textcolor>
+            <textcolor>$VAR[ThemeFontColorwhite]</textcolor>
             <label>[B]$INFO[VideoPlayer.Episode]. $INFO[VideoPlayer.Title][/B]</label>
             <scroll>false</scroll>
         </control>
@@ -921,7 +935,7 @@
             <width>900</width>
             <align>left</align>
             <font>Light45</font>
-            <textcolor>midgrey</textcolor>
+            <textcolor>$VAR[ThemeFontColorwhite]</textcolor>
             <label>[B]$INFO[VideoPlayer.ChannelName] [/B]</label>
             <scroll>false</scroll>
         </control>
@@ -955,7 +969,7 @@
                 <!--212-->
                 <height>40</height>
                 <!--45-->
-                <colordiffuse>darkgrey</colordiffuse>
+                <colordiffuse>$VAR[ThemeFontColor$VAR[ThemeFontColorDarkGrey]]</colordiffuse>
                 <texture fallback="flags/resolution/default.png">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
             </control>
             <control type="image">
@@ -966,7 +980,7 @@
                 <!--212-->
                 <height>40</height>
                 <!--45-->
-                <colordiffuse>darkgrey</colordiffuse>
+                <colordiffuse>$VAR[ThemeFontColor$VAR[ThemeFontColorDarkGrey]]</colordiffuse>
                 <texture fallback="flags/videocodec/default.png">$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]</texture>
             </control>
             <control type="image">
@@ -977,7 +991,7 @@
                 <!--212-->
                 <height>40</height>
                 <!--45-->
-                <colordiffuse>darkgrey</colordiffuse>
+                <colordiffuse>$VAR[ThemeFontColor$VAR[ThemeFontColorDarkGrey]]</colordiffuse>
                 <texture fallback="flags/aspectration/default.png">$INFO[VideoPlayer.VideoAspect,flags/aspectration/,.png]</texture>
             </control>
         </control>
@@ -999,7 +1013,7 @@
                 <!--124-->
                 <height>40</height>
                 <!--45-->
-                <colordiffuse>darkgrey</colordiffuse>
+                <colordiffuse>$VAR[ThemeFontColor$VAR[ThemeFontColorDarkGrey]]</colordiffuse>
                 <texture fallback="flags/audiocodec/default.png">$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]</texture>
             </control>
             <control type="image">
@@ -1010,7 +1024,7 @@
                 <!--212-->
                 <height>40</height>
                 <!--45-->
-                <colordiffuse>darkgrey</colordiffuse>
+                <colordiffuse>$VAR[ThemeFontColor$VAR[ThemeFontColorDarkGrey]]</colordiffuse>
                 <texture fallback="flags/audiochannels/default.png">$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,.png]</texture>
             </control>
         </control>
@@ -1022,7 +1036,7 @@
             <width>200</width>
             <align>left</align>
             <font>Light32</font>
-            <textcolor>midgrey</textcolor>
+            <textcolor>$VAR[ThemeFontColorwhite]</textcolor>
             <label>$INFO[Player.Time]</label>
         </control>
         <control type="label">
@@ -1032,7 +1046,7 @@
             <width>200</width>
             <align>right</align>
             <font>Light32</font>
-            <textcolor>midgrey</textcolor>
+            <textcolor>$VAR[ThemeFontColorwhite]</textcolor>
             <label>- $INFO[Player.TimeRemaining]</label>
         </control>
         <control type="label">
@@ -1047,7 +1061,7 @@
             <width>300</width>
             <align>right</align>
             <font>Light32</font>
-            <textcolor>darkgrey</textcolor>
+            <textcolor>$VAR[ThemeFontColor$VAR[ThemeFontColorDarkGrey]]</textcolor>
             <label>$LOCALIZE[41155] $INFO[Player.FinishTime]</label>
         </control>
         <control type="label">
@@ -1061,7 +1075,7 @@
             <width>300</width>
             <align>right</align>
             <font>Light32</font>
-            <textcolor>darkgrey</textcolor>
+            <textcolor>$VAR[ThemeFontColor$VAR[ThemeFontColorDarkGrey]]</textcolor>
             <label>$LOCALIZE[41155] $INFO[Player.FinishTime]</label>
         </control>
         <control type="grouplist">

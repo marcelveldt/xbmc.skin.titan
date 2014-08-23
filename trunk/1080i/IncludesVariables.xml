@@ -277,7 +277,7 @@
         <value condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</value>
     </variable>
     <variable name="PicturesButtonOnClick">
-        <value condition="!Skin.HasSetting(HomeMenuUseMBforPictures)">ActivateWindow(Video,movietitles,return)</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseMBforPictures)">ActivateWindow(pictures,return)</value>
         <value condition="Skin.HasSetting(HomeMenuUseMBforPictures)">$INFO[Window.Property(xbmb3c.std.photo.0.path)]</value>
     </variable>
     <variable name="MusicVideosButtonOnClick">
@@ -321,7 +321,19 @@
 		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
 		<value>$INFO[ListItem.Art(fanart)]</value>
 	</variable>
-		
 	
+	<variable name="ThemeFontColorMidGrey">
+		<value condition="!Skin.HasTheme(classic)">FFfffeff</value>
+		<value>FF686868</value>
+	</variable>
+	<variable name="ThemeFontColorDarkGrey">
+		<value condition="!Skin.HasTheme(classic)">FFfffeff</value>
+		<value>FF3e3e3e</value>
+	</variable>
+	<variable name="ThemeFontColorWhite">
+		<value condition="!Skin.HasTheme(classic)">FF1b1b1b</value>
+		<value>FFfffeff</value>
+	</variable>
+
 	
 </includes>

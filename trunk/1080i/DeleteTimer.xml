@@ -45,7 +45,7 @@
                 <width>720</width>
                 <label>$ADDON[pvr.wmc 30121]</label>
                 <font>Reg27</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <align>left</align>
                 <focusedcolor>white</focusedcolor>
                 <onright>10</onright>
@@ -61,7 +61,7 @@
                 <width>720</width>
                 <label>$ADDON[pvr.wmc 30122]</label>
                 <font>Reg27</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <align>left</align>
                 <focusedcolor>white</focusedcolor>
                 <onright>11</onright>
@@ -83,7 +83,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <font>Reg27</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>186</label>
                 <onup>14</onup>
                 <onleft>2</onleft>
@@ -100,7 +100,7 @@
                 <aligny>center</aligny>
                 <label>222</label>
                 <font>Reg27</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <onup>14</onup>
                 <onleft>1</onleft>
                 <onright>1</onright>

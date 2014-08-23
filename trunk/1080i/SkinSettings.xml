@@ -49,8 +49,8 @@
                     <posx>50</posx>
                     <width>390</width>
                     <height>50</height>
-                    <font>Reg32</font>
-                    <textcolor>midgrey</textcolor>
+                    <font>Reg28</font>
+                    <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
             </itemlayout>
@@ -65,7 +65,7 @@
                     <posx>50</posx>
                     <width>390</width>
                     <height>50</height>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <textcolor>black</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
@@ -135,7 +135,7 @@
                 <control type="textbox" id="4002">
                     <width>1230</width>
                     <height>130</height>
-                    <font>Reg27</font>
+                    <font>Reg25</font>
                     <label>42074</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
@@ -147,7 +147,7 @@
                     <control type="label">
                         <posx>0</posx>
                         <width>1100</width>
-                        <font>Reg32</font>
+                        <font>Reg26</font>
                         <textcolor>white</textcolor>
                         <selectedcolor>white</selectedcolor>
                         <label>42075</label>
@@ -163,8 +163,8 @@
                         <ondown>4008</ondown>
                         <onright>4006</onright>
                         <label>42076</label>
-                        <textcolor>midgrey</textcolor>
-                        <focusedcolor>white</focusedcolor>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>-80</textoffsetx>
                         <onclick>Skin.SetBool(EditModeDirectionUp)</onclick>
@@ -182,8 +182,8 @@
                         <onleft>4005</onleft>
                         <font>Light32</font>
                         <label>42077</label>
-                        <textcolor>midgrey</textcolor>
-                        <focusedcolor>white</focusedcolor>
+                        <textcolor>white</textcolor>
+                        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>-90</textoffsetx>
                         <selected>Skin.HasSetting(EditModeDirectionDown)</selected>
@@ -208,8 +208,8 @@
                             <!--Label 1-->
                             <posx>0</posx>
                             <width>1100</width>
-                            <font>Reg32</font>
-                            <textcolor>midgrey</textcolor>
+                            <font>Reg28</font>
+                            <textcolor>white</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
@@ -218,7 +218,7 @@
                         <control type="button">
                             <width>1100</width>
                             <height>60</height>
-                            <font>Reg32</font>
+                            <font>Reg28</font>
                             <textcolor>blue</textcolor>
                             <align>center</align>
                             <aligny>center</aligny>
@@ -229,15 +229,15 @@
                             <!--Label 1-->
                             <posx>0</posx>
                             <width>1100</width>
-                            <font>Reg32</font>
-                            <textcolor>white</textcolor>
+                            <font>Reg28</font>
+                            <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="button">
                             <width>1100</width>
                             <height>60</height>
-                            <font>Reg32</font>
+                            <font>Reg28</font>
                             <textcolor>blue</textcolor>
                             <align>center</align>
                             <aligny>center</aligny>
@@ -271,7 +271,7 @@
                     <label>41001</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuMusicButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuMusicButton)</selected>
                 </control>
@@ -283,7 +283,7 @@
                     <label>3</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuVideosButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuVideosButton)</selected>
                 </control>
@@ -295,7 +295,7 @@
                     <label>41002</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuMoviesButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuMoviesButton)</selected>
                 </control>
@@ -307,7 +307,7 @@
                     <label>41003</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuTVShowsButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuTVShowsButton)</selected>
                 </control>
@@ -319,7 +319,7 @@
                     <label>41024</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuPVRButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuPVRButton)</selected>
                 </control>
@@ -331,7 +331,7 @@
                     <label>41004</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuVideoAddonsButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuVideoAddonsButton)</selected>
                 </control>
@@ -343,7 +343,7 @@
                     <label>41000</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuPicturesButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuPicturesButton)</selected>
                 </control>
@@ -355,7 +355,7 @@
                     <label>41005</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuWeatherButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuWeatherButton)</selected>
                 </control>
@@ -367,7 +367,7 @@
                     <label>42045</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuMusicVideosButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuMusicVideosButton)</selected>
                 </control>
@@ -378,7 +378,7 @@
                     <label>41028</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuFavouritesButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuFavouritesButton)</selected>
                 </control>
@@ -390,7 +390,7 @@
                     <label>24001</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuAddonsButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuAddonsButton)</selected>
                 </control>
@@ -402,7 +402,7 @@
                     <label>41027</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuProgramsButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuProgramsButton)</selected>
                 </control>
@@ -414,7 +414,7 @@
                     <label>41025</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuFilemanagerButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuFilemanagerButton)</selected>
                 </control>
@@ -426,7 +426,7 @@
                     <label>42006</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuNetflixButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuNetflixButton)</selected>
                     <visible>System.HasAddon(plugin.video.netflixbmc)</visible>
@@ -439,7 +439,7 @@
                     <label>42062</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuYouTubeButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuYouTubeButton)</selected>
                     <visible>System.HasAddon(plugin.video.youtube)</visible>
@@ -452,7 +452,7 @@
                     <label>19163</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuTVRecordingsButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuTVRecordingsButton)</selected>
                 </control>
@@ -464,7 +464,7 @@
                     <label>19021</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuRadioButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuRadioButton)</selected>
                 </control>
@@ -476,7 +476,7 @@
                     <label>XBMB3C Plugin</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuXBMB3CButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuXBMB3CButton)</selected>
                     <visible>System.HasAddon(plugin.video.xbmb3c)</visible>
@@ -488,7 +488,7 @@
                     <label>$LOCALIZE[41006]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuSettingsButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuSettingsButton)</selected>
                 </control>
@@ -518,7 +518,7 @@
                 <control type="textbox" id="2310">
                     <width>1230</width>
                     <height>200</height>
-                    <font>Reg27</font>
+                    <font>Reg25</font>
                     <posy>60</posy>
                     <label>42079</label>
                     <textcolor>white</textcolor>
@@ -543,7 +543,7 @@
                     <label>42007</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(MediaBrowserMode)</onclick>
                     <enable>System.HasAddon(plugin.video.xbmb3c)</enable>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforMusic)</onclick>
@@ -585,7 +585,7 @@
                     <label>$LOCALIZE[42008] $LOCALIZE[2]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforMusic)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforMusic)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
@@ -598,7 +598,7 @@
                     <label>$LOCALIZE[42008] $LOCALIZE[342]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforMovies)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseNetflixforMovies)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforMovies) + !Skin.HasSetting(HomeMenuUseNetflixforMovies)</selected>
@@ -612,7 +612,7 @@
                     <label>$LOCALIZE[42008] $LOCALIZE[20343]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforTVseries)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseNetflixforTVseries)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforTVseries) + !Skin.HasSetting(HomeMenuUseNetflixforTVseries)</selected>
@@ -626,7 +626,7 @@
                     <label>$LOCALIZE[42008] $LOCALIZE[1]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforPictures)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforPictures)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
@@ -639,7 +639,7 @@
                     <label>$LOCALIZE[42008] $LOCALIZE[42045]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforMusicVideos)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforMusicVideos)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
@@ -662,9 +662,9 @@
                     <width>1230</width>
                     <align>left</align>
                     <height>50</height>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuMB3FavouritesButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuMB3FavouritesButton)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
@@ -676,7 +676,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(MB3FavoritesBackground)</onclick>
                     <selected>!Skin.String(MB3FavoritesBackground)</selected>
                     <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton)</visible>
@@ -687,7 +687,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(MB3FavoritesBackground)</onclick>
                     <selected>Skin.String(MB3FavoritesBackground)</selected>
                     <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton)</visible>
@@ -698,9 +698,9 @@
                     <width>1230</width>
                     <align>left</align>
                     <height>50</height>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuMB3ChannelsButton)</onclick>
                     <selected>Skin.HasSetting(HomeMenuMB3ChannelsButton)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
@@ -712,7 +712,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(MB3ChannelsBackground)</onclick>
                     <selected>!Skin.String(MB3ChannelsBackground)</selected>
                     <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton)</visible>
@@ -723,7 +723,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(MB3ChannelsBackground)</onclick>
                     <selected>Skin.String(MB3ChannelsBackground)</selected>
                     <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton)</visible>
@@ -734,9 +734,9 @@
                     <align>left</align>
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.title)]</label>
                     <height>50</height>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton0)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton0)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
@@ -748,7 +748,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom0Background)</onclick>
                     <selected>!Skin.String(Custom0Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton0)</visible>
@@ -759,7 +759,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom0Background)</onclick>
                     <selected>Skin.String(Custom0Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton0)</visible>
@@ -771,7 +771,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton1)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton1)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
@@ -783,7 +783,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom1Background)</onclick>
                     <selected>!Skin.String(Custom1Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton1)</visible>
@@ -794,7 +794,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom1Background)</onclick>
                     <selected>Skin.String(Custom1Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton1)</visible>
@@ -806,7 +806,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton2)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton2)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
@@ -818,7 +818,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom2Background)</onclick>
                     <selected>!Skin.String(Custom2Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton2)</visible>
@@ -829,7 +829,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom2Background)</onclick>
                     <selected>Skin.String(Custom2Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton2)</visible>
@@ -841,7 +841,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton3)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton3)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
@@ -853,7 +853,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom3Background)</onclick>
                     <selected>!Skin.String(Custom3Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton3)</visible>
@@ -864,7 +864,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom3Background)</onclick>
                     <selected>Skin.String(Custom3Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton3)</visible>
@@ -876,7 +876,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton4)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton4)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
@@ -888,7 +888,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom4Background)</onclick>
                     <selected>!Skin.String(Custom4Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton4)</visible>
@@ -899,7 +899,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom4Background)</onclick>
                     <selected>Skin.String(Custom4Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton4)</visible>
@@ -911,7 +911,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton5)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton5)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.0.title))</visible>
@@ -923,7 +923,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom5Background)</onclick>
                     <selected>!Skin.String(Custom5Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton5)</visible>
@@ -934,7 +934,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom5Background)</onclick>
                     <selected>Skin.String(Custom5Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton5)</visible>
@@ -946,7 +946,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton6)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton6)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.1.title))</visible>
@@ -958,7 +958,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom6Background)</onclick>
                     <selected>!Skin.String(Custom6Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton6)</visible>
@@ -969,7 +969,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom6Background)</onclick>
                     <selected>Skin.String(Custom6Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton6)</visible>
@@ -981,7 +981,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton7)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton7)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.2.title))</visible>
@@ -993,7 +993,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom7Background)</onclick>
                     <selected>!Skin.String(Custom7Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton7)</visible>
@@ -1004,7 +1004,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom7Background)</onclick>
                     <selected>Skin.String(Custom7Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton7)</visible>
@@ -1016,7 +1016,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton8)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton8)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.3.title))</visible>
@@ -1028,7 +1028,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom8Background)</onclick>
                     <selected>!Skin.String(Custom8Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton8)</visible>
@@ -1039,7 +1039,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom8Background)</onclick>
                     <selected>Skin.String(Custom8Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton8)</visible>
@@ -1051,7 +1051,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton9)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton9)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.4.title))</visible>
@@ -1063,7 +1063,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom9Background)</onclick>
                     <selected>!Skin.String(Custom9Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton9)</visible>
@@ -1074,7 +1074,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom9Background)</onclick>
                     <selected>Skin.String(Custom9Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton9)</visible>
@@ -1086,7 +1086,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.music.0.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton10)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton10)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.0.title))</visible>
@@ -1098,7 +1098,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom10Background)</onclick>
                     <selected>!Skin.String(Custom10Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton10)</visible>
@@ -1109,7 +1109,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom10Background)</onclick>
                     <selected>Skin.String(Custom10Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton10)</visible>
@@ -1121,7 +1121,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.music.1.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton11)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton11)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.1.title))</visible>
@@ -1133,7 +1133,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom11Background)</onclick>
                     <selected>!Skin.String(Custom11Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton11)</visible>
@@ -1144,7 +1144,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom11Background)</onclick>
                     <selected>Skin.String(Custom11Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton11)</visible>
@@ -1156,7 +1156,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.music.2.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton12)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton12)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.2.title))</visible>
@@ -1168,7 +1168,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom12Background)</onclick>
                     <selected>!Skin.String(Custom12Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton12)</visible>
@@ -1179,7 +1179,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom12Background)</onclick>
                     <selected>Skin.String(Custom12Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton12)</visible>
@@ -1191,7 +1191,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.music.3.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton13)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton13)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.3.title))</visible>
@@ -1203,7 +1203,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom13Background)</onclick>
                     <selected>!Skin.String(Custom13Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton13)</visible>
@@ -1214,7 +1214,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom13Background)</onclick>
                     <selected>Skin.String(Custom13Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton13)</visible>
@@ -1226,7 +1226,7 @@
                     <label>$INFO[Window(Home).Property(xbmb3c.usr.music.4.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton14)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton14)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.4.title))</visible>
@@ -1238,7 +1238,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(Custom14Background)</onclick>
                     <selected>!Skin.String(Custom14Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton14)</visible>
@@ -1249,7 +1249,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(Custom14Background)</onclick>
                     <selected>Skin.String(Custom14Background)</selected>
                     <visible>Skin.HasSetting(HomeMenuCustomButton14)</visible>
@@ -1271,7 +1271,7 @@
                     <label>42081</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NetflixMode)</onclick>
                     <enable>System.HasAddon(plugin.video.netflixbmc)</enable>
                     <onclick condition="Skin.HasSetting(MediaBrowserMode)">Skin.Reset(HomeMenuUseMBforMovies)</onclick>
@@ -1286,7 +1286,7 @@
                     <label>$LOCALIZE[42082] $LOCALIZE[342]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseNetflixforMovies)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseMBforMovies)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseNetflixforMovies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</selected>
@@ -1300,7 +1300,7 @@
                     <label>$LOCALIZE[42082] $LOCALIZE[20343]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseNetflixforTVseries)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseMBforTVseries)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseNetflixforTVseries) + !Skin.HasSetting(HomeMenuUseMBforTVseries)</selected>
@@ -1338,7 +1338,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomMusicFolder)</onclick>
                     <selected>!Skin.String(CustomMusicFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
@@ -1351,7 +1351,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomMusicFolder, artwork)</onclick>
                     <selected>Skin.String(CustomMusicFolder, artwork)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
@@ -1364,7 +1364,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomMusicFolder)</onclick>
                     <selected>!Skin.String(CustomMusicFolder, artwork) + Skin.String(CustomMusicFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
@@ -1376,7 +1376,7 @@
                     <label> $LOCALIZE[1035]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMusicSubmenu)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMusicSubmenu)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
@@ -1389,7 +1389,7 @@
                     <label> $LOCALIZE[42019]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(HomeMenuUseMusicCollection)">Skin.SetPath(HomeMenuUseMusicCollection)</onclick>
                     <onclick condition="Skin.String(HomeMenuUseMusicCollection)">Skin.Reset(HomeMenuUseMusicCollection)</onclick>
                     <selected>Skin.String(HomeMenuUseMusicCollection)</selected>
@@ -1414,7 +1414,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomMoviesFolder)</onclick>
                     <selected>!Skin.String(CustomMoviesFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
@@ -1426,7 +1426,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomMoviesFolder, artwork)</onclick>
                     <selected>Skin.String(CustomMoviesFolder, artwork)</selected>
                     <visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
@@ -1438,7 +1438,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomMoviesFolder)</onclick>
                     <selected>!Skin.String(CustomMoviesFolder, artwork) + Skin.String(CustomMoviesFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
@@ -1450,7 +1450,7 @@
                     <label> $LOCALIZE[1035]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMoviesSubmenu)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMoviesSubmenu)</selected>
                     <visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
@@ -1474,7 +1474,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomPVRFolder)</onclick>
                     <selected>!Skin.String(CustomPVRFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
@@ -1486,7 +1486,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomPVRFolder)</onclick>
                     <selected>!Skin.String(CustomPVRFolder, artwork) + Skin.String(CustomPVRFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
@@ -1499,7 +1499,7 @@
                     <label> $LOCALIZE[42017]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseGuideOnTV)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseGuideOnTV)</selected>
                     <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
@@ -1523,7 +1523,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomPVRRecFolder)</onclick>
                     <selected>!Skin.String(CustomPVRRecFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuTVRecordingsButton)</visible>
@@ -1535,7 +1535,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomPVRRecFolder)</onclick>
                     <selected>!Skin.String(CustomPVRRecFolder, artwork) + Skin.String(CustomPVRRecFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuTVRecordingsButton)</visible>
@@ -1559,7 +1559,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomNetflixFolder)</onclick>
                     <selected>!Skin.String(CustomNetflixFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
@@ -1571,7 +1571,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomNetflixFolder)</onclick>
                     <selected>!Skin.String(CustomNetflixFolder, artwork) + Skin.String(CustomNetflixFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
@@ -1583,7 +1583,7 @@
                     <label> $LOCALIZE[1035]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseNetflixSubmenu)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseNetflixSubmenu)</selected>
                     <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
@@ -1607,7 +1607,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomMusicVideosFolder)</onclick>
                     <selected>!Skin.String(CustomMusicVideosFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
@@ -1619,7 +1619,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomMusicVideosFolder, artwork)</onclick>
                     <selected>Skin.String(CustomMusicVideosFolder, artwork)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
@@ -1631,7 +1631,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomMusicVideosFolder)</onclick>
                     <selected>!Skin.String(CustomMusicVideosFolder, artwork) + Skin.String(CustomMusicVideosFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
@@ -1655,7 +1655,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomTVShowsFolder)</onclick>
                     <selected>!Skin.String(CustomTVShowsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
@@ -1667,7 +1667,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomTVShowsFolder, artwork)</onclick>
                     <selected>Skin.String(CustomTVShowsFolder, artwork)</selected>
                     <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
@@ -1679,7 +1679,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomTVShowsFolder)</onclick>
                     <selected>!Skin.String(CustomTVShowsFolder, artwork) + Skin.String(CustomTVShowsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
@@ -1703,7 +1703,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomRadioFolder)</onclick>
                     <selected>!Skin.String(CustomRadioFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuRadioButton)</visible>
@@ -1715,7 +1715,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomRadioFolder)</onclick>
                     <selected>!Skin.String(CustomRadioFolder, artwork) + Skin.String(CustomRadioFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuRadioButton)</visible>
@@ -1728,7 +1728,7 @@
                     <label> $LOCALIZE[42020]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(HomeMenuUseRadioCollection)">Skin.SetPath(HomeMenuUseRadioCollection)</onclick>
                     <onclick condition="Skin.String(HomeMenuUseRadioCollection)">Skin.Reset(HomeMenuUseRadioCollection)</onclick>
                     <selected>Skin.String(HomeMenuUseRadioCollection)</selected>
@@ -1753,7 +1753,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomPicturesFolder)</onclick>
                     <selected>!Skin.String(CustomPicturesFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuPicturesButton)</visible>
@@ -1765,7 +1765,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomPicturesFolder, artwork)</onclick>
                     <selected>Skin.String(CustomPicturesFolder, artwork)</selected>
                     <visible>Skin.HasSetting(HomeMenuPicturesButton) + Skin.HasSetting(HomeMenuUseMBforPictures)</visible>
@@ -1777,7 +1777,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomPicturesFolder)</onclick>
                     <selected>!Skin.String(CustomPicturesFolder, artwork) + Skin.String(CustomPicturesFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuPicturesButton)</visible>
@@ -1801,7 +1801,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomVideosFolder)</onclick>
                     <selected>!Skin.String(CustomVideosFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuVideosButton)</visible>
@@ -1813,7 +1813,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomVideosFolder)</onclick>
                     <selected>!Skin.String(CustomVideosFolder, artwork) + Skin.String(CustomVideosFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuVideosButton)</visible>
@@ -1837,7 +1837,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomWeatherFolder)</onclick>
                     <selected>!Skin.String(CustomWeatherFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
@@ -1849,7 +1849,7 @@
                     <label> $LOCALIZE[42010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomWeatherFolder, artwork)</onclick>
                     <selected>Skin.String(CustomWeatherFolder, artwork)</selected>
                     <visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
@@ -1861,7 +1861,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomWeatherFolder)</onclick>
                     <selected>!Skin.String(CustomWeatherFolder, artwork) + Skin.String(CustomWeatherFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
@@ -1873,7 +1873,7 @@
                     <label> $LOCALIZE[42021]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(WeatherButtonDisplayTemp)</onclick>
                     <selected>Skin.HasSetting(WeatherButtonDisplayTemp)</selected>
                     <visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
@@ -1897,7 +1897,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomVideoAddonsFolder)</onclick>
                     <selected>!Skin.String(CustomVideoAddonsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuVideoAddonsButton)</visible>
@@ -1909,7 +1909,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomVideoAddonsFolder)</onclick>
                     <selected>!Skin.String(CustomVideoAddonsFolder, artwork) + Skin.String(CustomVideoAddonsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuVideoAddonsButton)</visible>
@@ -1933,7 +1933,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomAddonsFolder)</onclick>
                     <selected>!Skin.String(CustomAddonsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuAddonsButton)</visible>
@@ -1945,7 +1945,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomAddonsFolder)</onclick>
                     <selected>!Skin.String(CustomAddonsFolder, artwork) + Skin.String(CustomAddonsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuAddonsButton)</visible>
@@ -1969,7 +1969,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomFavouritesFolder)</onclick>
                     <selected>!Skin.String(CustomFavouritesFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuFavouritesButton)</visible>
@@ -1981,7 +1981,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomFavouritesFolder)</onclick>
                     <selected>!Skin.String(CustomFavouritesFolder, artwork) + Skin.String(CustomFavouritesFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuFavouritesButton)</visible>
@@ -2005,7 +2005,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomProgramsFolder)</onclick>
                     <selected>Skin.String(CustomProgramsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuProgramsButton)</visible>
@@ -2017,7 +2017,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomProgramsFolder)</onclick>
                     <selected>!Skin.String(CustomProgramsFolder, artwork) + Skin.String(CustomProgramsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuProgramsButton)</visible>
@@ -2041,7 +2041,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomFilemanagerFolder)</onclick>
                     <selected>!Skin.String(CustomFilemanagerFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuFilemanagerButton)</visible>
@@ -2053,7 +2053,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomFilemanagerFolder)</onclick>
                     <selected>!Skin.String(CustomFilemanagerFolder, artwork) + Skin.String(CustomFilemanagerFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuFilemanagerButton)</visible>
@@ -2076,7 +2076,7 @@
                     <label> $LOCALIZE[42015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.Reset(CustomSettingsFolder)</onclick>
                     <selected>!Skin.String(CustomSettingsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
@@ -2088,7 +2088,7 @@
                     <label> $LOCALIZE[42016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomSettingsFolder)</onclick>
                     <selected>!Skin.String(CustomSettingsFolder, artwork) + Skin.String(CustomSettingsFolder)</selected>
                 </control>
@@ -2123,7 +2123,7 @@
                     <label>42023</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, blue)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, blue)</selected>
                 </control>
@@ -2135,7 +2135,7 @@
                     <label>42024</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, default)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, default)</selected>
                 </control>
@@ -2147,7 +2147,7 @@
                     <label>42025</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, weather)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, weather)</selected>
                 </control>
@@ -2159,7 +2159,7 @@
                     <label>42026</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, fanart)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, fanart)</selected>
                 </control>
@@ -2171,7 +2171,7 @@
                     <label>42027</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, gadget)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, gadget)</selected>
                 </control>
@@ -2183,7 +2183,7 @@
                     <label>$LOCALIZE[42039]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomBackgroundSetting)</onclick>
                     <selected>!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart) + !Skin.String(CustomBackgroundSetting, gadget)</selected>
                 </control>
@@ -2206,9 +2206,10 @@
                     <label>42029</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoFooterBar)</onclick>
                     <selected>Skin.HasSetting(NoFooterBar)</selected>
+					<visible>!!Skin.HasTheme(classic)</visible>
                 </control>
                 <control type="radiobutton" id="5012">
                     <description></description>
@@ -2218,7 +2219,7 @@
                     <label>42030</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(WeatherOnHome)</onclick>
                     <selected>Skin.HasSetting(WeatherOnHome)</selected>
                 </control>
@@ -2230,7 +2231,7 @@
                     <label>42031</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, 2)</onclick>
                     <selected>Skin.String(GadgetRows, 2) | !Skin.String(GadgetRows)</selected>
                 </control>
@@ -2242,7 +2243,7 @@
                     <label>42032</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, 3)</onclick>
                     <selected>Skin.String(GadgetRows, 3)</selected>
                 </control>
@@ -2254,9 +2255,21 @@
                     <label>42033</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, 1)</onclick>
                     <selected>Skin.String(GadgetRows, 1)</selected>
+                </control>
+				<control type="radiobutton" id="5115">
+                    <description></description>
+                    <!--no titles on home tiles-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>42086</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(NoTitleOnHomeMenuTiles)</onclick>
+                    <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
                 </control>
             </control>
         </control>

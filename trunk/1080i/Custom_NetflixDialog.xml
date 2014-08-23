@@ -27,7 +27,7 @@
                 <width>64</width>
                 <aligny>center</aligny>
                 <colordiffuse>white</colordiffuse>
-                <texture>icons/icon_movies.png</texture>
+                <texture>icons/icon_tvshows.png</texture>
             </control>
             <control type="label" id="1238">
                 <description>header label</description>
@@ -35,8 +35,8 @@
                 <posy>50</posy>
                 <width>600</width>
                 <align>center</align>
-                <textcolor>black</textcolor>
-                <font>Light40</font>
+                <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                <font>Bold32</font>
                 <label>42018</label>
             </control>
             <control type="list" id="1239">
@@ -60,7 +60,7 @@
                         <posx>50</posx>
                         <width>600</width>
                         <height>60</height>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                 </itemlayout>
@@ -76,7 +76,7 @@
                         <posx>50</posx>
                         <width>600</width>
                         <height>60</height>
-                        <textcolor>black</textcolor>
+                        <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                 </focusedlayout>

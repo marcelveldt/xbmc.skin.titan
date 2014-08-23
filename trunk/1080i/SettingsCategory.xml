@@ -56,15 +56,16 @@
         </control>
         <control type="button" id="7">
             <description>Default Button</description>
+			<include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
             <focusedcolor>black</focusedcolor>
-            <font>Reg32</font>
+            <font>Reg28</font>
             <align>left</align>
             <height>50</height>
         </control>
         <control type="radiobutton" id="8">
             <description>Default Radio Button</description>
             <focusedcolor>black</focusedcolor>
-            <font>Reg32</font>
+            <font>Reg28</font>
             <align>left</align>
             <height>50</height>
             <radioposx>1075</radioposx>
@@ -72,20 +73,20 @@
         <control type="spincontrolex" id="9">
             <description>Default Spin Control</description>
             <focusedcolor>black</focusedcolor>
-            <font>Reg32</font>
+            <font>Reg28</font>
             <align>left</align>
             <height>50</height>
         </control>
         <control type="button" id="10">
             <description>Default Category Button</description>
             <focusedcolor>black</focusedcolor>
-            <font>Reg32</font>
+            <font>Reg28</font>
             <align>left</align>
             <height>50</height>
         </control>
         <control type="grouplist" id="9000">
             <posx>90</posx>
-            <posy>850</posy>
+            <posy>830</posy>
             <width>450</width>
             <height>600</height>
             <onleft>9000</onleft>
@@ -98,8 +99,8 @@
             <include>animation_list</include>
             <control type="label" id="200">
                 <height>50</height>
-                <font>Reg32</font>
-                <font>Reg32</font>
+                <font>Reg28</font>
+                <font>Reg28</font>
                 <label>42071</label>
                 <textcolor>white</textcolor>
                 <align>left</align>
@@ -107,7 +108,7 @@
             <control type="button" id="20">
                 <description>Setting level button</description>
                 <focusedcolor>black</focusedcolor>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <align>left</align>
                 <height>50</height>
                 <label>10037</label>
@@ -115,7 +116,7 @@
             </control>
             <control type="button" id="21">
                 <description>Reset button</description>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <focusedcolor>black</focusedcolor>
                 <align>left</align>
                 <height>50</height>

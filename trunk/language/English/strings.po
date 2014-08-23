@@ -515,8 +515,7 @@ msgstr ""
 
 msgctxt "#42039"
 msgid "Use custom image for skin background"
-msgstr "Gebruik een eigen afbeelding als achtergrond voor de skin"
-
+msgstr ""
 
 msgctxt "#42040"
 msgid "Now playing"
@@ -698,5 +697,10 @@ msgctxt "#42084"
 msgid "TIME"
 msgstr ""
 
+msgctxt "#42085"
+msgid "Schedule"
+msgstr ""
 
-
+msgctxt "#42086"
+msgid "Do not show title on home menu tiles"
+msgstr ""

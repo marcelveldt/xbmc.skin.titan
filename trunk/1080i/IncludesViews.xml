@@ -377,14 +377,14 @@
         <posy>222</posy>
         <width>530</width>
         <height>100</height>
-        <font>Light52</font>
+        <font>Reg42</font>
     </include>
     <include name="BannerViewWithOverlayLabelSizeEpisodes">
-        <posx>220</posx>
+        <posx>200</posx>
         <posy>180</posy>
         <width>380</width>
         <height>60</height>
-        <font>Light30</font>
+        <font>Reg28</font>
     </include>
     <include name="ViewsFooter">
         <control type="group">

@@ -24,10 +24,10 @@
                     <posy>150</posy>
                     <width>550</width>
                     <height>50</height>
-                    <font>Reg40</font>
+                    <font>Reg34</font>
                     <label>[B]$LOCALIZE[42060][/B]</label>
                     <align>Left</align>
-                    <textcolor>midgrey</textcolor>
+                    <textcolor>white</textcolor>
                 </control>
                 <control type="label" id="100">
                     <!--textarea-->
@@ -36,7 +36,7 @@
                     <width>780</width>
                     <height>50</height>
                     <font>Light32</font>
-                    <textcolor>midgrey</textcolor>
+                    <textcolor>white</textcolor>
                     <align>Left</align>
                     <wrapmultiline>false</wrapmultiline>
                 </control>
@@ -91,8 +91,8 @@
                             <height>50</height>
                             <font>Light30</font>
                             <aligny>center</aligny>
-                            <textcolor>midgrey</textcolor>
-                            <selectedcolor>midgrey</selectedcolor>
+                            <textcolor>white</textcolor>
+                            <selectedcolor>white</selectedcolor>
                             <align>left</align>
                             <info>ListItem.Label</info>
                         </control>
@@ -120,8 +120,8 @@
                             <height>50</height>
                             <font>Light32</font>
                             <aligny>center</aligny>
-                            <textcolor>midgrey</textcolor>
-                            <selectedcolor>midgrey</selectedcolor>
+                            <textcolor>white</textcolor>
+                            <selectedcolor>white</selectedcolor>
                             <align>left</align>
                             <info>ListItem.Label2</info>
                         </control>
@@ -141,8 +141,8 @@
                                 <width>100</width>
                                 <height>50</height>
                                 <font>Light30</font>
-                                <textcolor>midgrey</textcolor>
-                                <selectedcolor>midgrey</selectedcolor>
+                                <textcolor>white</textcolor>
+                                <selectedcolor>white</selectedcolor>
                                 <label>$INFO[ListItem.ActualIcon,,.0]</label>
                                 <align>right</align>
                                 <aligny>center</aligny>
@@ -165,8 +165,8 @@
                                 <width>100</width>
                                 <height>50</height>
                                 <font>Light30</font>
-                                <textcolor>midgrey</textcolor>
-                                <selectedcolor>midgrey</selectedcolor>
+                                <textcolor>white</textcolor>
+                                <selectedcolor>white</selectedcolor>
                                 <label>$INFO[ListItem.ActualIcon]</label>
                                 <align>right</align>
                                 <aligny>center</aligny>
@@ -293,7 +293,7 @@
                     <font>Light28</font>
                     <align>right</align>
                     <subtype>page</subtype>
-                    <textcolor>midgrey</textcolor>
+                    <textcolor>white</textcolor>
                     <onleft>120</onleft>
                     <onright>120</onright>
                     <ondown>120</ondown>
@@ -321,7 +321,7 @@
                             <width min="10" max="500">auto</width>
                             <height>50</height>
                             <font>Light28</font>
-                            <textcolor>midgrey</textcolor>
+                            <textcolor>white</textcolor>
                             <label>$LOCALIZE[SCRIPT655]</label>
                             <wrapmultiline>false</wrapmultiline>
                         </control>
@@ -386,8 +386,8 @@
                             <height>60</height>
                             <font>Light32</font>
                             <aligny>center</aligny>
-                            <textcolor>FF585858</textcolor>
-                            <selectedcolor>FF585858</selectedcolor>
+                            <textcolor>white</textcolor>
+                            <selectedcolor>white</selectedcolor>
                             <align>left</align>
                             <info>ListItem.Label</info>
                             <visible>!ListItem.property(man)</visible>
@@ -399,8 +399,8 @@
                             <height>60</height>
                             <font>Light32</font>
                             <aligny>center</aligny>
-                            <textcolor>FF585858</textcolor>
-                            <selectedcolor>FF585858</selectedcolor>
+                            <textcolor>white</textcolor>
+                            <selectedcolor>white</selectedcolor>
                             <align>left</align>
                             <info>ListItem.Label</info>
                             <visible>ListItem.property(man)</visible>
@@ -450,7 +450,7 @@
                             <height>60</height>
                             <font>Light32</font>
                             <aligny>center</aligny>
-                            <textcolor>FF585858</textcolor>
+                            <textcolor>white</textcolor>
                             <align>left</align>
                             <info>ListItem.Label</info>
                             <visible>!ListItem.property(man)</visible>
@@ -463,7 +463,7 @@
                             <height>60</height>
                             <font>Light32</font>
                             <aligny>center</aligny>
-                            <textcolor>FF585858</textcolor>
+                            <textcolor>white</textcolor>
                             <align>left</align>
                             <info>ListItem.Label</info>
                             <visible>ListItem.property(man)</visible>

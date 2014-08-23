@@ -1,6 +1,13 @@
+v.1.9.8
+- added setting to hide titles on home menu tiles
+- changed some dialogs; buttons now in the dialog
+
 v.1.9.7
 - fixed some language strings
 - added regular thumb as fallback for missing landscape banners
+- changed used fonts to opensource variant
+- added extra blue modern theme
+- added series-record support for MediaPortal PVR
 
 v.1.9.6
 - Added tile for YouTube plugin

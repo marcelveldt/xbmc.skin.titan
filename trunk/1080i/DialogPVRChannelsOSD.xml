@@ -48,7 +48,7 @@
                 <posy>90</posy>
                 <width>600</width>
                 <height>50</height>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>midgrey</textcolor>
                 <label>$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)] | $INFO[System.Time]</label>
             </control>
@@ -75,7 +75,7 @@
                     <posy>0</posy>
                     <width>100</width>
                     <height>100</height>
-                    <font>Reg40</font>
+                    <font>Reg34</font>
                     <textcolor>midgrey</textcolor>
                     <selectedcolor>mainblue</selectedcolor>
                     <align>left</align>
@@ -115,7 +115,7 @@
                     <posy>20</posy>
                     <width>954</width>
                     <height>25</height>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <textcolor>midgrey</textcolor>
                     <selectedcolor>midgrey</selectedcolor>
                     <align>left</align>
@@ -174,7 +174,7 @@
                     <posy>0</posy>
                     <width>100</width>
                     <height>100</height>
-                    <font>Reg40</font>
+                    <font>Reg34</font>
                     <textcolor>black</textcolor>
                     <selectedcolor>black</selectedcolor>
                     <info>ListItem.ChannelNumber</info>
@@ -213,7 +213,7 @@
                     <posy>20</posy>
                     <width>954</width>
                     <height>25</height>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <textcolor>black</textcolor>
                     <selectedcolor>black</selectedcolor>
                     <align>left</align>

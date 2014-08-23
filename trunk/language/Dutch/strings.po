@@ -510,6 +510,9 @@ msgctxt "#42037"
 msgid "Trailers"
 msgstr "Film trailers"
 
+msgctxt "#42038"
+msgid "Use custom image for skin background"
+msgstr ""
 
 msgctxt "#42039"
 msgid "Use custom image for skin background"
@@ -600,8 +603,8 @@ msgid "XBMC SUBTITLES"
 msgstr "XBMC SUBTITLES"
 
 msgctxt "#42061"
-msgid "Druk OK of Back om terug te sluiten"
-msgstr ""
+msgid "Press Back or OK to exit"
+msgstr "Druk OK of Back om terug te sluiten"
 
 msgctxt "#42062"
 msgid "YouTube"
@@ -695,4 +698,11 @@ msgctxt "#42084"
 msgid "TIME"
 msgstr "TIME"
 
+msgctxt "#42085"
+msgid "Schedule"
+msgstr "Inplannen"
+
+msgctxt "#42086"
+msgid "Do not show title on home menu tiles"
+msgstr "Toon geen tiles op de tiles van het hoofdmenu"
 

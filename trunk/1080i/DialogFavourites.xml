@@ -5,8 +5,8 @@
     <allowoverlay>yes</allowoverlay>
     <controls>
         <control type="group">
-            <posx>550</posx>
-            <posy>150</posy>
+            <posx>660</posx>
+            <posy>240</posy>
             <include>animation_dialog</include>
             <control type="image">
                 <width>600</width>
@@ -20,7 +20,7 @@
                 <posy>50</posy>
                 <width>600</width>
                 <align>center</align>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <font>Light40</font>
                 <label>1036</label>
             </control>
@@ -45,7 +45,7 @@
                         <posx>50</posx>
                         <width>600</width>
                         <height>60</height>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="label">
@@ -53,7 +53,7 @@
                         <width>600</width>
                         <height>60</height>
                         <align>right</align>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <info>ListItem.Label2</info>
                     </control>
                 </itemlayout>

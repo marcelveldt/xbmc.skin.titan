@@ -205,7 +205,7 @@
             <size>31</size>
         </font>
         <font>
-            <name>Reg32</name>
+            <name>Reg28</name>
             <!--Small-->
             <filename>Regular.ttf</filename>
             <size>32</size>
@@ -242,7 +242,7 @@
             <size>38</size>
         </font>
         <font>
-            <name>Reg40</name>
+            <name>Reg34</name>
             <filename>Regular.ttf</filename>
             <size>40</size>
         </font>
@@ -335,7 +335,7 @@
             <size>38</size>
         </font>
         <font>
-            <name>Bold45</name>
+            <name>Bold38</name>
             <filename>Bold.ttf</filename>
             <size>45</size>
         </font>

@@ -59,7 +59,7 @@
                             <posy>0</posy>
                             <width>160</width>
                             <height>76</height>
-                            <font>Reg32</font>
+                            <font>Reg28</font>
                             <align>left</align>
                             <label>$INFO[ListItem.StartTime]</label>
                             <textcolor>99FFFFFF</textcolor>
@@ -72,7 +72,7 @@
                             <posy>0</posy>
                             <width>500</width>
                             <height>76</height>
-                            <font>Reg32</font>
+                            <font>Reg28</font>
                             <align>left</align>
                             <label>$INFO[ListItem.Label]</label>
                             <textcolor>99FFFFFF</textcolor>
@@ -121,7 +121,7 @@
                             <posy>0</posy>
                             <width>130</width>
                             <height>76</height>
-                            <font>Reg32</font>
+                            <font>Reg28</font>
                             <align>left</align>
                             <label>$INFO[ListItem.StartTime]</label>
                             <textcolor>mainblue</textcolor>
@@ -134,7 +134,7 @@
                             <posy>0</posy>
                             <width>500</width>
                             <height>76</height>
-                            <font>Reg32</font>
+                            <font>Reg28</font>
                             <align>left</align>
                             <label>$INFO[ListItem.Label]</label>
                             <textcolor>mainblue</textcolor>

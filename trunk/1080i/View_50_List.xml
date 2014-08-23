@@ -159,7 +159,7 @@
                         <!--Label 1-->
                         <posx>630</posx>
                         <width>1100</width>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>list_label_1_nf</textcolor>
                         <selectedcolor>list_label_1_select</selectedcolor>
                         <label>$VAR[value_list_label_1]</label>
@@ -284,7 +284,7 @@
                         <!--Label 1-->
                         <posx>1225</posx>
                         <width>520</width>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>list_label_1_nf</textcolor>
                         <selectedcolor>list_label_1_select</selectedcolor>
                         <label>$VAR[value_list_label_1]</label>
@@ -409,7 +409,7 @@
                         <!--Label 1-->
                         <posx>1040</posx>
                         <width>650</width>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>list_label_1_nf</textcolor>
                         <selectedcolor>list_label_1_select</selectedcolor>
                         <label>$VAR[value_list_label_1]</label>
@@ -879,7 +879,7 @@
                 <height>100</height>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>$INFO[ListItem.SortLetter]</label>
                 <animation effect="fade" start="0" end="100" time="400" delay="30">Visible</animation>

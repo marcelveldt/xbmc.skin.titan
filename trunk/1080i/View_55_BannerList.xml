@@ -425,7 +425,7 @@
                 <height>100</height>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>$INFO[ListItem.SortLetter]</label>
                 <animation effect="fade" start="0" end="100" time="400" delay="30">Visible</animation>

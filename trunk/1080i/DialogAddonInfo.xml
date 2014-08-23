@@ -73,8 +73,8 @@
                     <description>Type Value</description>
                     <width>590</width>
                     <height>42</height>
-                    <textcolor>midgrey</textcolor>
-                    <label>$INFO[ListItem.Property(Addon.Type),[COLOR darkgrey]$LOCALIZE[146][/COLOR] ]</label>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Property(Addon.Type),[COLOR mainblue]$LOCALIZE[146][/COLOR] ]</label>
                     <scroll>false</scroll>
                     <visible>!IsEmpty(ListItem.Property(Addon.Type))</visible>
                 </control>
@@ -83,8 +83,8 @@
                     <description>Author Value</description>
                     <width>590</width>
                     <height>42</height>
-                    <textcolor>midgrey</textcolor>
-                    <label>$INFO[ListItem.Property(Addon.Creator),[COLOR darkgrey]$LOCALIZE[21863]:[/COLOR] ]</label>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Property(Addon.Creator),[COLOR mainblue]$LOCALIZE[21863]:[/COLOR] ]</label>
                     <scroll>false</scroll>
                     <visible>!IsEmpty(ListItem.Property(Addon.Creator))</visible>
                 </control>
@@ -93,8 +93,8 @@
                     <description>Version Value</description>
                     <width>590</width>
                     <height>42</height>
-                    <textcolor>midgrey</textcolor>
-                    <label>$INFO[ListItem.Property(Addon.Version),[COLOR darkgrey]$LOCALIZE[24051][/COLOR] ]</label>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Property(Addon.Version),[COLOR mainblue]$LOCALIZE[24051][/COLOR] ]</label>
                     <scroll>false</scroll>
                     <visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
                 </control>
@@ -103,8 +103,8 @@
                     <description>Summary Value</description>
                     <width>590</width>
                     <height>42</height>
-                    <textcolor>midgrey</textcolor>
-                    <label>$INFO[ListItem.Property(Addon.Summary),[COLOR darkgrey]$LOCALIZE[20037]:[/COLOR] ]</label>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Property(Addon.Summary),[COLOR mainblue]$LOCALIZE[20037]:[/COLOR] ]</label>
                     <scroll>false</scroll>
                     <visible>!IsEmpty(ListItem.Property(Addon.Summary))</visible>
                 </control>
@@ -113,7 +113,7 @@
                     <description>Disclaimer</description>
                     <width>590</width>
                     <height>42</height>
-                    <textcolor>midgrey</textcolor>
+                    <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Property(Addon.Disclaimer),[COLOR Red]$LOCALIZE[24052]:[/COLOR] ]</label>
                     <scroll>false</scroll>
                     <visible>!IsEmpty(ListItem.Property(Addon.Disclaimer))</visible>
@@ -128,7 +128,7 @@
                 <height>160</height>
                 <align>justify</align>
                 <font>Light32</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>$INFO[ListItem.Property(Addon.Description)]</label>
             </control>
             <!--Buttons-->
@@ -156,7 +156,7 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include>DialogButton</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24022</label>
@@ -167,7 +167,7 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include>DialogButton</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24021</label>
@@ -178,7 +178,7 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include>DialogButton</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24020</label>
@@ -189,7 +189,7 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include>DialogButton</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24069</label>
@@ -200,7 +200,7 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include>DialogButton</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24036</label>

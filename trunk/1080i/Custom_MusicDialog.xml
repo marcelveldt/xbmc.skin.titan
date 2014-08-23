@@ -17,14 +17,26 @@
                 <texture border="39">dialogs/default/bg.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
+			<control type="image">
+                <include>animation_fade_open_close</include>
+                <animation effect="fade" time="600">WindowOpen</animation>
+                <animation effect="fade" time="600">WindowClose</animation>
+                <posx>65</posx>
+                <posy>50</posy>
+                <height>64</height>
+                <width>64</width>
+                <aligny>center</aligny>
+                <colordiffuse>white</colordiffuse>
+                <texture>icons/icon_music.png</texture>
+            </control>
             <control type="label" id="1235">
                 <description>header label</description>
                 <posx>0</posx>
                 <posy>50</posy>
                 <width>600</width>
                 <align>center</align>
-                <textcolor>black</textcolor>
-                <font>Light40</font>
+                <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                <font>Bold32</font>
                 <label>[UPPERCASE]$LOCALIZE[2][/UPPERCASE]</label>
             </control>
             <control type="list" id="1236">
@@ -48,7 +60,7 @@
                         <posx>50</posx>
                         <width>600</width>
                         <height>60</height>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                 </itemlayout>
@@ -64,7 +76,7 @@
                         <posx>50</posx>
                         <width>600</width>
                         <height>60</height>
-                        <textcolor>black</textcolor>
+                        <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                 </focusedlayout>

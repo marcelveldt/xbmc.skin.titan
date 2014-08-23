@@ -6,6 +6,7 @@
     <include>defaultskinsettings</include>
 	<onload>SetFocus(300)</onload>
     <onload>Skin.Reset(youtube)</onload>
+	<onload condition="!Skin.HasTheme(classic) + !Skin.HasSetting(NoFooterBar)">Skin.SetBool(NoFooterBar)</onload>
     <onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
     <onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">XBMC.RunScript(special://skin/scripts/setbackgrounds.py)</onload>
 	<onload>SetFocus(300)</onload>
@@ -91,6 +92,7 @@
                     <height>271</height>
                     <colordiffuse>ccFFFFFF</colordiffuse>
                     <texture diffuse="home/home_matte.png">home/home_overlay.png</texture>
+					<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
                 </control>
                 <control type="label">
                     <!--Label-->
@@ -100,8 +102,9 @@
                     <height>100</height>
                     <align>center</align>
                     <info>ListItem.Label</info>
-                    <font>Light52</font>
+                    <font>Reg45</font>
                     <textcolor>darkgrey</textcolor>
+					<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
                 </control>
             </itemlayout>
             <focusedlayout width="620" height="280">
@@ -139,6 +142,7 @@
                         <height>271</height>
                         <colordiffuse>ccFFFFFF</colordiffuse>
                         <texture diffuse="home/home_matte.png">home/home_overlay.png</texture>
+						<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
                     </control>
                     <control type="label">
                         <!--Label Grey-->
@@ -148,8 +152,9 @@
                         <height>100</height>
                         <align>center</align>
                         <info>ListItem.Label</info>
-                        <font>Light52</font>
+                        <font>Reg45</font>
                         <textcolor>darkgrey</textcolor>
+						<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
                     </control>
                     <control type="label">
                         <!--Label White-->
@@ -165,8 +170,9 @@
                         <height>100</height>
                         <align>center</align>
                         <info>ListItem.Label</info>
-                        <font>Light52</font>
+                        <font>Reg45</font>
                         <textcolor>white</textcolor>
+						<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
                     </control>
                     <control type="image">
                         <!--Panel Focus-->
@@ -187,7 +193,7 @@
                         <top>0</top>
                         <width>1</width>
                         <height>60</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>blue</textcolor>
                         <align>center</align>
                         <aligny>center</aligny>

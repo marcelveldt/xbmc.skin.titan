@@ -71,7 +71,7 @@
                         <posx>145</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Container(11).ListItem.Title]</label>
                     </control>
                 </control>
@@ -89,7 +89,7 @@
                         <posx>145</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Container(11).ListItem.StartTime]</label>
                     </control>
                 </control>
@@ -107,7 +107,7 @@
                         <posx>145</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Container(11).ListItem.EndTime]</label>
                     </control>
                 </control>
@@ -125,7 +125,7 @@
                     <width>830</width>
                     <height>190</height>
                     <font>Light32</font>
-                    <textcolor>midgrey</textcolor>
+                    <textcolor>white</textcolor>
                     <autoscroll>false</autoscroll>
                     <label>$INFO[ListItem.Plot]</label>
                 </control>
@@ -175,8 +175,8 @@
                         <posy>5</posy>
                         <width>100</width>
                         <height>50</height>
-                        <font>Reg40</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg34</font>
+                        <textcolor>white</textcolor>
                         <selectedcolor>mainblue</selectedcolor>
                         <align>left</align>
                         <info>ListItem.ChannelNumber</info>
@@ -215,9 +215,9 @@
                         <posx>1200</posx>
                         <width>545</width>
                         <height>55</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
-                        <selectedcolor>midgrey</selectedcolor>
+                        <font>Reg29</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -249,7 +249,7 @@
                         <posy>5</posy>
                         <width>80</width>
                         <height>80</height>
-                        <font>Reg40</font>
+                        <font>Reg34</font>
                         <textcolor>mainblue</textcolor>
                         <selectedcolor>mainblue</selectedcolor>
                         <info>ListItem.ChannelNumber</info>
@@ -288,7 +288,7 @@
                         <posx>1200</posx>
                         <width>545</width>
                         <height>55</height>
-                        <font>Reg36</font>
+                        <font>Reg29</font>
                         <textcolor>mainblue</textcolor>
                         <selectedcolor>mainblue</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
@@ -300,8 +300,8 @@
                         <width>545</width>
                         <height>33</height>
                         <font>Light28</font>
-                        <textcolor>midgrey</textcolor>
-                        <selectedcolor>midgrey</selectedcolor>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <label>$INFO[ListItem.Title]</label>
                     </control>
                     <control type="image">
@@ -373,7 +373,7 @@
                     <posy>0</posy>
                     <width>800</width>
                     <align>center</align>
-                    <font>Reg30</font>
+                    <font>Reg26</font>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
@@ -431,7 +431,7 @@
                     <height>100</height>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>Bold45</font>
+                    <font>Bold38</font>
                     <textcolor>mainblue</textcolor>
                     <label>$INFO[ListItem.SortLetter]</label>
                     <animation effect="fade" start="0" end="100" time="400" delay="30">Visible</animation>
@@ -500,7 +500,7 @@
                 <posy>190</posy>
                 <width>600</width>
                 <height>50</height>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
@@ -525,7 +525,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
                     </control>
                 </control>
@@ -543,7 +543,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.Duration]</label>
                     </control>
                 </control>
@@ -561,7 +561,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
                 </control>
@@ -575,7 +575,7 @@
                 <posy>190</posy>
                 <width>650</width>
                 <height>190</height>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label fallback="161">$INFO[ListItem.Plot]</label>
                 <autoscroll time="2000" delay="8000" repeat="5000">true</autoscroll>
             </control>
@@ -611,12 +611,12 @@
                         <width>60</width>
                         <height>44</height>
                         <align>left</align>
-                        <font>Light32</font>
+                        <font>Reg30</font>
                         <textcolor>white</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                 </rulerlayout>
-                <channellayout height="80" width="500">
+                <channellayout height="80" width="510">
                     <!--Channel left side UNFOCUS-->
                     <animation effect="fade" start="110" time="200">UnFocus</animation>
                     <control type="image" id="1">
@@ -633,49 +633,7 @@
                         <posy>0</posy>
                         <width>100</width>
                         <height>80</height>
-                        <font>Reg40</font>
-                        <textcolor>midgrey</textcolor>
-                        <selectedcolor>midgrey</selectedcolor>
-                        <info>ListItem.ChannelNumber</info>
-                    </control>
-                    <control type="image">
-                        <!--Channel Icon-->
-                        <posx>75</posx>
-                        <posy>10</posy>
-                        <width>60</width>
-                        <height>60</height>
-                        <texture>$INFO[ListItem.Icon]</texture>
-                    </control>
-                    <control type="label" id="1">
-                        <!--Channel Name-->
-                        <posx>160</posx>
-                        <posy>0</posy>
-                        <width>320</width>
-                        <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
-                        <selectedcolor>midgrey</selectedcolor>
-                        <label>$INFO[ListItem.ChannelName]</label>
-                    </control>
-                </channellayout>
-                <focusedchannellayout height="80" width="500">
-                    <!--Channel left side FOCUS-->
-                    <animation effect="fade" start="110" time="200">OnFocus</animation>
-                    <control type="image" id="1">
-                        <!--Button-->
-                        <posx>65</posx>
-                        <posy>0</posy>
-                        <width>430</width>
-                        <height>80</height>
-                        <texture>common/button-fo.png</texture>
-                    </control>
-                    <control type="label">
-                        <!--Channel Nummber-->
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>100</width>
-                        <height>80</height>
-                        <font>Reg40</font>
+                        <font>Reg30</font>
                         <textcolor>white</textcolor>
                         <selectedcolor>white</selectedcolor>
                         <info>ListItem.ChannelNumber</info>
@@ -694,7 +652,49 @@
                         <posy>0</posy>
                         <width>320</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg29</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <label>$INFO[ListItem.ChannelName]</label>
+                    </control>
+                </channellayout>
+                <focusedchannellayout height="80" width="510">
+                    <!--Channel left side FOCUS-->
+                    <animation effect="fade" start="110" time="200">OnFocus</animation>
+                    <control type="image" id="1">
+                        <!--Button-->
+                        <posx>65</posx>
+                        <posy>0</posy>
+                        <width>430</width>
+                        <height>80</height>
+                        <texture>common/button-fo.png</texture>
+                    </control>
+                    <control type="label">
+                        <!--Channel Nummber-->
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100</width>
+                        <height>80</height>
+                        <font>Reg30</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
+                        <info>ListItem.ChannelNumber</info>
+                    </control>
+                    <control type="image">
+                        <!--Channel Icon-->
+                        <posx>75</posx>
+                        <posy>10</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                    </control>
+                    <control type="label" id="1">
+                        <!--Channel Name-->
+                        <posx>160</posx>
+                        <posy>0</posy>
+                        <width>320</width>
+                        <height>80</height>
+                        <font>Reg29</font>
                         <textcolor>black</textcolor>
                         <selectedcolor>black</selectedcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
@@ -718,11 +718,11 @@
                         <posy>0</posy>
                         <width>0</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg26</font>
                         <aligny>center</aligny>
                         <textoffsetx>0</textoffsetx>
-                        <textcolor>midgrey</textcolor>
-                        <selectedcolor>midgrey</selectedcolor>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="image">
@@ -762,7 +762,7 @@
                         <posy>0</posy>
                         <width>0</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg26</font>
                         <aligny>center</aligny>
                         <textcolor>black</textcolor>
                         <selectedcolor>black</selectedcolor>
@@ -850,7 +850,7 @@
                 <posy>190</posy>
                 <width>600</width>
                 <height>50</height>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
@@ -875,7 +875,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
                     </control>
                 </control>
@@ -893,7 +893,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.Duration]</label>
                     </control>
                 </control>
@@ -911,7 +911,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
                 </control>
@@ -925,7 +925,7 @@
                 <posy>190</posy>
                 <width>650</width>
                 <height>190</height>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label fallback="161">$INFO[ListItem.Plot]</label>
                 <autoscroll time="2000" delay="8000" repeat="5000">true</autoscroll>
             </control>
@@ -1003,7 +1003,7 @@
                         <width>150</width>
                         <height>80</height>
                         <font>Reg36</font>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <info>ListItem.StartTime</info>
                     </control>
                     <control type="label">
@@ -1013,7 +1013,7 @@
                         <width>80</width>
                         <height>80</height>
                         <font>Reg36</font>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <info>ListItem.ChannelNumber</info>
                     </control>
                     <control type="image">
@@ -1030,8 +1030,8 @@
                         <posy>0</posy>
                         <width>400</width>
                         <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
                         <info>ListItem.ChannelName</info>
                     </control>
                     <control type="label">
@@ -1040,8 +1040,8 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="image">
@@ -1059,7 +1059,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -1079,7 +1079,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
@@ -1148,7 +1148,7 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -1167,7 +1167,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -1187,7 +1187,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
@@ -1268,7 +1268,7 @@
                 <posy>190</posy>
                 <width>600</width>
                 <height>50</height>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
@@ -1283,7 +1283,7 @@
                 <width>1920</width>
                 <height>50</height>
                 <align>center</align>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>195</label>
             </control>
@@ -1309,7 +1309,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
                     </control>
                 </control>
@@ -1327,7 +1327,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.Duration]</label>
                     </control>
                 </control>
@@ -1345,7 +1345,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
                 </control>
@@ -1360,7 +1360,7 @@
                 <posy>190</posy>
                 <width>650</width>
                 <height>190</height>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label fallback="161">$INFO[ListItem.Plot]</label>
                 <autoscroll time="2000" delay="8000" repeat="5000">true</autoscroll>
             </control>
@@ -1437,7 +1437,7 @@
                         <posy>0</posy>
                         <width>400</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>mainblue</textcolor>
                         <info>ListItem.Date</info>
                     </control>
@@ -1448,8 +1448,8 @@
                         <posy>0</posy>
                         <width>400</width>
                         <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
                     <control type="label">
@@ -1458,8 +1458,8 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="image">
@@ -1477,7 +1477,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -1497,7 +1497,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
@@ -1528,7 +1528,7 @@
                         <posy>0</posy>
                         <width>400</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <info>ListItem.Date</info>
                     </control>
@@ -1538,7 +1538,7 @@
                         <posy>0</posy>
                         <width>400</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
@@ -1548,7 +1548,7 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -1567,7 +1567,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -1587,7 +1587,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
@@ -1676,7 +1676,7 @@
                         <posx>145</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Container(12).ListItem.Title]</label>
                     </control>
                 </control>
@@ -1694,7 +1694,7 @@
                         <posx>145</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Container(12).ListItem.StartTime]</label>
                     </control>
                 </control>
@@ -1712,7 +1712,7 @@
                         <posx>145</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Container(12).ListItem.EndTime]</label>
                     </control>
                 </control>
@@ -1730,7 +1730,7 @@
                     <width>830</width>
                     <height>190</height>
                     <font>Light32</font>
-                    <textcolor>midgrey</textcolor>
+                    <textcolor>white</textcolor>
                     <autoscroll>false</autoscroll>
                     <label>$INFO[ListItem.Plot]</label>
                 </control>
@@ -1780,8 +1780,8 @@
                         <posy>5</posy>
                         <width>100</width>
                         <height>50</height>
-                        <font>Reg40</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg34</font>
+                        <textcolor>white</textcolor>
                         <selectedcolor>mainblue</selectedcolor>
                         <align>left</align>
                         <info>ListItem.ChannelNumber</info>
@@ -1819,9 +1819,9 @@
                         <posx>1200</posx>
                         <width>545</width>
                         <height>55</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
-                        <selectedcolor>midgrey</selectedcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -1853,7 +1853,7 @@
                         <posy>5</posy>
                         <width>80</width>
                         <height>80</height>
-                        <font>Reg40</font>
+                        <font>Reg34</font>
                         <textcolor>mainblue</textcolor>
                         <selectedcolor>mainblue</selectedcolor>
                         <info>ListItem.ChannelNumber</info>
@@ -1903,8 +1903,8 @@
                         <width>545</width>
                         <height>33</height>
                         <font>Light28</font>
-                        <textcolor>midgrey</textcolor>
-                        <selectedcolor>midgrey</selectedcolor>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <label>$INFO[ListItem.Title]</label>
                     </control>
                     <control type="image">
@@ -2034,7 +2034,7 @@
                     <height>100</height>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>Bold45</font>
+                    <font>Bold38</font>
                     <textcolor>mainblue</textcolor>
                     <label>$INFO[ListItem.SortLetter]</label>
                     <animation effect="fade" start="0" end="100" time="400" delay="30">Visible</animation>
@@ -2115,7 +2115,7 @@
                         <posx>130</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Container(13).ListItem.Title]</label>
                     </control>
                 </control>
@@ -2133,7 +2133,7 @@
                         <posx>130</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[Container(13).ListItem.ChannelName]</label>
                     </control>
                 </control>
@@ -2151,7 +2151,7 @@
                     <width>830</width>
                     <height>190</height>
                     <font>Light32</font>
-                    <textcolor>midgrey</textcolor>
+                    <textcolor>white</textcolor>
                     <autoscroll>false</autoscroll>
                     <label>$INFO[ListItem.Plot]</label>
                 </control>
@@ -2200,9 +2200,9 @@
                         <posx>1050</posx>
                         <width>715</width>
                         <height>55</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
-                        <selectedcolor>midgrey</selectedcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>white</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -2237,7 +2237,7 @@
                             <width>715</width>
                             <height>33</height>
                             <font>Light28</font>
-                            <textcolor>midgrey</textcolor>
+                            <textcolor>white</textcolor>
                             <selectedcolor>mainblue</selectedcolor>
                             <align>left</align>
                             <label>$INFO[ListItem.StartDate] - $INFO[ListItem.StartTime]$INFO[ListItem.Duration, / ,]</label>
@@ -2379,7 +2379,7 @@
                 <posy>190</posy>
                 <width>600</width>
                 <height>50</height>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
@@ -2394,7 +2394,7 @@
                 <width>1920</width>
                 <height>50</height>
                 <align>center</align>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>195</label>
             </control>
@@ -2420,7 +2420,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
                     </control>
                 </control>
@@ -2438,7 +2438,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.Duration]</label>
                     </control>
                 </control>
@@ -2456,7 +2456,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
                 </control>
@@ -2471,7 +2471,7 @@
                 <posy>190</posy>
                 <width>650</width>
                 <height>190</height>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label fallback="161">$INFO[ListItem.Plot]</label>
                 <autoscroll time="2000" delay="8000" repeat="5000">true</autoscroll>
             </control>
@@ -2490,7 +2490,7 @@
                     <height>30</height>
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                     <label>555</label>
                 </control>
                 <control type="label">
@@ -2501,7 +2501,7 @@
                     <height>30</height>
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                     <label>19148</label>
                 </control>
                 <control type="label">
@@ -2512,7 +2512,7 @@
                     <height>30</height>
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                     <label>369</label>
                 </control>
                 <control type="label">
@@ -2523,7 +2523,7 @@
                     <height>30</height>
                     <font>Reg30</font>
                     <textoffsetx>15</textoffsetx>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                     <label>126</label>
                 </control>
             </control>
@@ -2548,7 +2548,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>mainblue</textcolor>
                         <info>ListItem.Date</info>
                     </control>
@@ -2559,8 +2559,8 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
                     <control type="label">
@@ -2569,8 +2569,8 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="image">
@@ -2588,7 +2588,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -2608,7 +2608,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
@@ -2639,7 +2639,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <scroll>true</scroll>
                         <info>ListItem.Date</info>
@@ -2650,7 +2650,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
@@ -2660,7 +2660,7 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -2679,7 +2679,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -2699,7 +2699,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
@@ -2782,7 +2782,7 @@
                 <posy>190</posy>
                 <width>600</width>
                 <height>50</height>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
@@ -2797,7 +2797,7 @@
                 <width>1920</width>
                 <height>50</height>
                 <align>center</align>
-                <font>Bold45</font>
+                <font>Bold38</font>
                 <textcolor>mainblue</textcolor>
                 <label>195</label>
             </control>
@@ -2823,7 +2823,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
                     </control>
                 </control>
@@ -2841,7 +2841,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.Duration]</label>
                     </control>
                 </control>
@@ -2859,7 +2859,7 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
                 </control>
@@ -2874,7 +2874,7 @@
                 <posy>190</posy>
                 <width>650</width>
                 <height>190</height>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label fallback="161">$INFO[ListItem.Plot]</label>
                 <autoscroll time="2000" delay="8000" repeat="5000">true</autoscroll>
             </control>
@@ -2893,7 +2893,7 @@
                     <height>30</height>
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                     <label>555</label>
                 </control>
                 <control type="label">
@@ -2904,7 +2904,7 @@
                     <height>30</height>
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                     <label>19148</label>
                 </control>
                 <control type="label">
@@ -2915,7 +2915,7 @@
                     <height>30</height>
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                     <label>369</label>
                 </control>
                 <control type="label">
@@ -2926,7 +2926,7 @@
                     <height>30</height>
                     <font>Reg30</font>
                     <textoffsetx>15</textoffsetx>
-                    <textcolor>black</textcolor>
+                    <textcolor>white</textcolor>
                     <label>126</label>
                 </control>
             </control>
@@ -2951,7 +2951,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>mainblue</textcolor>
                         <info>ListItem.Date</info>
                     </control>
@@ -2962,8 +2962,8 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
                     <control type="label">
@@ -2972,8 +2972,8 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
-                        <textcolor>midgrey</textcolor>
+                        <font>Reg28</font>
+                        <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="image">
@@ -2991,7 +2991,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -3011,7 +3011,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>42084</label>
                         <visible>ListItem.HasTimer</visible>
@@ -3042,7 +3042,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <scroll>true</scroll>
                         <info>ListItem.Date</info>
@@ -3053,7 +3053,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
@@ -3063,7 +3063,7 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -3082,7 +3082,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>42083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -3102,7 +3102,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>42084</label>
                         <visible>ListItem.HasTimer</visible>

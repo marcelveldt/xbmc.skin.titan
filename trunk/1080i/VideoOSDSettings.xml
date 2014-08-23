@@ -27,7 +27,7 @@
                     <posy>48</posy>
                     <width>870</width>
                     <font>Light40</font>
-                    <textcolor>midgrey</textcolor>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                     <textoffsetx>0</textoffsetx>
                     <align>left</align>
                 </control>
@@ -47,8 +47,8 @@
                 </control>
                 <control type="button" id="7">
                     <align>left</align>
-                    <textcolor>midgrey</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                    <focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
                     <disabledcolor>77585858</disabledcolor>
                     <pulseonselect>false</pulseonselect>
                     <texturefocus>common/button-fo.png</texturefocus>
@@ -56,8 +56,8 @@
                 </control>
                 <control type="radiobutton" id="8">
                     <align>left</align>
-                    <textcolor>midgrey</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                    <focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
                     <disabledcolor>77585858</disabledcolor>
                     <pulseonselect>false</pulseonselect>
                     <texturefocus>common/button-fo.png</texturefocus>
@@ -66,8 +66,8 @@
                 </control>
                 <control type="spincontrolex" id="9">
                     <align>left</align>
-                    <textcolor>midgrey</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                    <focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
                     <disabledcolor>77585858</disabledcolor>
                     <pulseonselect>false</pulseonselect>
                     <texturefocus>common/button-fo.png</texturefocus>
@@ -76,8 +76,8 @@
                 </control>
                 <control type="sliderex" id="10">
                     <align>left</align>
-                    <textcolor>midgrey</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                    <focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
                     <disabledcolor>77585858</disabledcolor>
                     <pulseonselect>false</pulseonselect>
                     <texturefocus>common/button-fo.png</texturefocus>

@@ -17,7 +17,7 @@
 	
 	<!--List 50, and all other List Views-->
 	<color name="list_label_1_fo">cc00b8ff</color>		<!--CC Main Blue-->
-	<color name="list_label_1_nf">FF686868</color>		<!--Mid Grey-->
+	<color name="list_label_1_nf">$VAR[ThemeFontColorMidGrey]</color>		<!--Mid Grey-->
 	<color name="list_label_1_select">cc00b8ff</color>	<!--CC Main Blue-->
 	<color name="list_label_2_first">7700b8ff</color>	<!--77 Main Blue-->
 	<color name="list_label_2_second">FF858585</color>	<!--Light Grey-->	

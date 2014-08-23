@@ -24,7 +24,7 @@
                     <posy>150</posy>
                     <width>550</width>
                     <height>50</height>
-                    <font>Reg40</font>
+                    <font>Reg34</font>
                     <label>[B]$LOCALIZE[42060][/B]</label>
                     <align>Left</align>
                     <textcolor>midgrey</textcolor>

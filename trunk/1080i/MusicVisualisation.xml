@@ -196,7 +196,7 @@
                 <width>900</width>
                 <align>left</align>
                 <font>Light45</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>[B]$INFO[MusicPlayer.Artist][/B]</label>
                 <scroll>false</scroll>
             </control>
@@ -207,7 +207,7 @@
                 <width>900</width>
                 <align>left</align>
                 <font>Light45</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>[B]$INFO[MusicPlayer.ChannelName][/B]</label>
                 <scroll>false</scroll>
             </control>
@@ -229,7 +229,7 @@
                 <width>200</width>
                 <align>left</align>
                 <font>Light32</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>$INFO[Player.Time]</label>
             </control>
             <control type="label">
@@ -239,7 +239,7 @@
                 <width>200</width>
                 <align>right</align>
                 <font>Light32</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>- $INFO[Player.TimeRemaining]</label>
             </control>
             <control type="label">

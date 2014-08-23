@@ -13,7 +13,7 @@
         <control type="panel" id="505">
             <include>animation_home</include>
             <posx>95</posx>
-            <width>1770</width>
+            <width>1740</width>
             <height>360</height>
             <posy>580</posy>
             <onup>9000</onup>
@@ -29,7 +29,7 @@
                 <include>BannerViewImagesNormal</include>
             </itemlayout>
             <!-- item layout for episodes -->
-            <itemlayout width="450" height="320" condition="Container.Content(Episodes)">
+            <itemlayout width="435" height="320" condition="Container.Content(Episodes)">
                 <control type="group">
                     <posy>80</posy>
                     <include>BannerViewImagesEpisodes</include>
@@ -43,7 +43,7 @@
                 </control>
             </focusedlayout>
             <!-- focussed layout for episodes -->
-            <focusedlayout width="450" height="320" condition="Container.Content(Episodes)">
+            <focusedlayout width="435" height="320" condition="Container.Content(Episodes)">
                 <control type="group">
                     <posy>80</posy>
                     <include>BannerViewImagesEpisodes</include>

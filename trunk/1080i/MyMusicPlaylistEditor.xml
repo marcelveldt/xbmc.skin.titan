@@ -52,7 +52,7 @@
                 <width>700</width>
                 <align>left</align>
                 <label>$LOCALIZE[1217]</label>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <font>Bold38</font>
             </control>
             <control type="list" id="50">
@@ -80,7 +80,7 @@
                         <align>left</align>
                         <font>Reg30</font>
                         <info>ListItem.Label</info>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                     </control>
                     <control type="label">
                         <posx>890</posx>
@@ -88,7 +88,7 @@
                         <align>right</align>
                         <font>Reg30</font>
                         <info>ListItem.Label2</info>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                     </control>
                 </itemlayout>
                 <focusedlayout height="69" width="900">
@@ -163,7 +163,7 @@
                 <width>700</width>
                 <align>left</align>
                 <label>$LOCALIZE[525]</label>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <font>Bold38</font>
             </control>
             <control type="list" id="100">
@@ -191,7 +191,7 @@
                         <align>left</align>
                         <font>Reg30</font>
                         <info>ListItem.Label</info>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                     </control>
                     <control type="label">
                         <posx>890</posx>
@@ -199,7 +199,7 @@
                         <align>right</align>
                         <font>Reg30</font>
                         <info>ListItem.Label2</info>
-                        <textcolor>midgrey</textcolor>
+                        <textcolor>white</textcolor>
                     </control>
                 </itemlayout>
                 <focusedlayout height="69" width="900">

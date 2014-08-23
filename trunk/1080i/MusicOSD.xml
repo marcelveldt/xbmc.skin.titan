@@ -169,7 +169,7 @@
                 <width>900</width>
                 <align>left</align>
                 <font>Light45</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>[B]$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Artist, - ][/B]</label>
                 <scroll>false</scroll>
                 <visible>!IsEmpty(MusicPlayer.Album)</visible>
@@ -180,7 +180,7 @@
                 <width>900</width>
                 <align>left</align>
                 <font>Light45</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>[B]$INFO[MusicPlayer.Artist][/B]</label>
                 <scroll>false</scroll>
                 <visible>IsEmpty(MusicPlayer.Album)</visible>
@@ -203,7 +203,7 @@
                 <width>200</width>
                 <align>left</align>
                 <font>Light32</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>$INFO[Player.Time]</label>
             </control>
             <control type="label">
@@ -213,7 +213,7 @@
                 <width>200</width>
                 <align>right</align>
                 <font>Light32</font>
-                <textcolor>midgrey</textcolor>
+                <textcolor>white</textcolor>
                 <label>- $INFO[Player.TimeRemaining]</label>
             </control>
             <control type="label">
@@ -223,7 +223,7 @@
                 <width>300</width>
                 <align>left</align>
                 <font>Light32</font>
-                <textcolor>darkgrey</textcolor>
+                <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                 <label>$LOCALIZE[31000] $INFO[Player.FinishTime]</label>
             </control>
             <control type="grouplist">
@@ -359,8 +359,8 @@
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <textoffsetx>0</textoffsetx>
-                    <font>Reg25</font>
-                    <textcolor>darkgrey</textcolor>
+                    <font>Reg20</font>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
                     <onclick>XBMC.PlayerControl(Repeat)</onclick>
@@ -371,8 +371,8 @@
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <textoffsetx>0</textoffsetx>
-                    <font>Reg25</font>
-                    <textcolor>darkgrey</textcolor>
+                    <font>Reg20</font>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <label>$LOCALIZE[191]$INFO[Playlist.Random, : ]</label>
                     <onclick>XBMC.PlayerControl(Random)</onclick>
@@ -384,8 +384,8 @@
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <textoffsetx>0</textoffsetx>
-                    <font>Reg25</font>
-                    <textcolor>darkgrey</textcolor>
+                    <font>Reg20</font>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <label>24013</label>
                     <onclick>RunScript(script.cu.lrclyrics)</onclick>

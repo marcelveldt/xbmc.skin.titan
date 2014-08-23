@@ -51,8 +51,8 @@
         <aligny>center</aligny>
         <font>Light32</font>
         <label>-</label>
-        <textcolor>midgrey</textcolor>
-        <focusedcolor>white</focusedcolor>
+        <textcolor>white</textcolor>
+        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
         <disabledcolor>darkgrey</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus>common/button-fo.png</texturefocus>
@@ -66,8 +66,8 @@
         <height>60</height>
         <label>-</label>
         <font>Light32</font>
-        <textcolor>midgrey</textcolor>
-        <focusedcolor>white</focusedcolor>
+        <textcolor>white</textcolor>
+        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
         <disabledcolor>darkgrey</disabledcolor>
         <align>center</align>
         <aligny>center</aligny>
@@ -87,8 +87,8 @@
         <aligny>center</aligny>
         <font>Light32</font>
         <label>-</label>
-        <textcolor>midgrey</textcolor>
-        <focusedcolor>white</focusedcolor>
+        <textcolor>white</textcolor>
+        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
         <disabledcolor>darkgrey</disabledcolor>
         <textureradiofocus>common/radio/radio-button-fo.png</textureradiofocus>
         <textureradionofocus>common/radio/radio-button-nf.png</textureradionofocus>
@@ -111,8 +111,8 @@
         <texturedownfocus>common/spinctrl/arrow-down-fo.png</texturedownfocus>
         <spinwidth>43</spinwidth>
         <spinheight>60</spinheight>
-        <textcolor>midgrey</textcolor>
-        <focusedcolor>white</focusedcolor>
+        <textcolor>white</textcolor>
+        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
         <disabledcolor>darkgrey</disabledcolor>
         <textoffsetx>50</textoffsetx>
         <align>center</align>
@@ -134,8 +134,8 @@
         <spinwidth>39</spinwidth>
         <spinheight>39</spinheight>
         <font>Light32</font>
-        <textcolor>midgrey</textcolor>
-        <focusedcolor>white</focusedcolor>
+        <textcolor>white</textcolor>
+        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
         <disabledcolor>darkgrey</disabledcolor>
         <textoffsetx>50</textoffsetx>
         <align>center</align>
@@ -159,8 +159,8 @@
         <textureslidernibfocus border="3">osd/osd_slider_button_focus.png</textureslidernibfocus>
         <aligny>center</aligny>
         <font>Light32</font>
-        <textcolor>midgrey</textcolor>
-        <focusedcolor>white</focusedcolor>
+        <textcolor>white</textcolor>
+        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
         <disabledcolor>darkgrey</disabledcolor>
         <textoffsetx>50</textoffsetx>
         <textoffsety>0</textoffsety>

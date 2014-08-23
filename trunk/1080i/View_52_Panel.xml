@@ -9,7 +9,7 @@
             <!-- ID="52" -->
             <control type="panel" id="52">
                 <posx>60</posx>
-                <posy>200</posy>
+                <posy>300</posy>
                 <width>1840</width>
                 <height>640</height>
                 <onup>9000</onup>
@@ -20,7 +20,7 @@
                 <viewtype label="Panel">wide</viewtype>
                 <scrolltime tween="Cubic" easing="inout">500</scrolltime>
                 <focusposition>0</focusposition>
-                <orientation>horizontal</orientation>
+                <orientation>vertical</orientation>
                 <preloaditems>2</preloaditems>
                 <!-- itemlayout movies -->
                 <itemlayout height="320" width="230" condition="!Container.Content(albums)">
