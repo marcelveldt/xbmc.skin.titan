@@ -73,7 +73,7 @@
                 <width>352</width>
                 <height>60</height>
                 <align>right</align>
-                <include>DialogLabel</include>
+                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 <visible>!ControlGroup(5).HasFocus() | !ControlGroup(5).HasFocus(30)</visible>
             </control>
             <control type="label">
@@ -84,7 +84,7 @@
                 <height>60</height>
                 <align>right</align>
                 <label>$INFO[Control.GetLabel(1000)]</label>
-                <include>DialogLabel</include>
+                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 <visible>ControlGroup(5).HasFocus() + ControlGroup(5).HasFocus(30)</visible>
             </control>
             <control type="image">
@@ -102,7 +102,7 @@
                 <width>352</width>
                 <height>60</height>
                 <align>right</align>
-                <include>DialogLabel</include>
+                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 <visible>[!ControlGroup(5).HasFocus() | !ControlGroup(5).HasFocus(32)] + !IsEmpty(Control.GetLabel(33))</visible>
             </control>
             <control type="label">
@@ -113,7 +113,7 @@
                 <height>60</height>
                 <align>right</align>
                 <label>$INFO[Control.GetLabel(1001)]</label>
-                <include>DialogLabel</include>
+                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 <visible>ControlGroup(5).HasFocus() + ControlGroup(5).HasFocus(32) + !IsEmpty(Control.GetLabel(33))</visible>
             </control>
             <control type="button" id="7">

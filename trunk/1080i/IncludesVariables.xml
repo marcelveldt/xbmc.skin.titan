@@ -149,7 +149,7 @@
         <value condition="Skin.String(CustomTVShowsFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.fanart))]</value>
     </variable>
     <variable name="MusicVideosButtonThumb">
-        <value condition="!Skin.String(CustomMusicVideosFolder, artwork)">$INFO[Skin.String(CustomTVShowsFolder)]</value>
+        <value condition="!Skin.String(CustomMusicVideosFolder, artwork)">$INFO[Skin.String(CustomMusicVideosFolder)]</value>
         <value condition="Skin.String(CustomMusicVideosFolder, artwork) + Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(xbmb3c.std.music.3.image)]</value>
         <value condition="Skin.String(CustomMusicVideosFolder, artwork) + !Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(RandomMusicVideo.1.Fanart)]</value>
     </variable>
@@ -319,19 +319,28 @@
 		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-landscape.jpg]</value>
 		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
-		<value>$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 	
 	<variable name="ThemeFontColorMidGrey">
 		<value condition="!Skin.HasTheme(classic)">FFfffeff</value>
 		<value>FF686868</value>
 	</variable>
+	
+	<variable name="ThemeFontColorMidGrey2">
+		<value condition="!Skin.HasTheme(classic)">white</value>
+		<value>midgrey</value>
+	</variable>
+	
+	
 	<variable name="ThemeFontColorDarkGrey">
 		<value condition="!Skin.HasTheme(classic)">FFfffeff</value>
 		<value>FF3e3e3e</value>
 	</variable>
+	
 	<variable name="ThemeFontColorWhite">
-		<value condition="!Skin.HasTheme(classic)">FF1b1b1b</value>
+		<value condition="!Skin.HasTheme(classic)">FFfffeff</value>
 		<value>FFfffeff</value>
 	</variable>
 

@@ -21,7 +21,7 @@
                 <posx>445</posx>
                 <posy>252</posy>
                 <width>1030</width>
-                <height>576</height>
+                <height>666</height>
                 <texture border="39">dialogs/default/bg.png</texture>
             </control>
             <control type="label" id="1">

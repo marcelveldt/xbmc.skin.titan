@@ -38,7 +38,7 @@
                     <posx>604</posx>
                     <posy>266</posy>
                     <width>712</width>
-                    <height>548</height>
+                    <height>610</height>
                     <texture border="39">dialogs/default/bg.png</texture>
                 </control>
                 <control type="image">
@@ -56,7 +56,7 @@
                     <posx>387</posx>
                     <posy>266</posy>
                     <width>1146</width>
-                    <height>548</height>
+                    <height>620</height>
                     <texture border="39">dialogs/default/bg.png</texture>
                 </control>
                 <control type="image">
@@ -99,7 +99,7 @@
                     <texturenofocus>-</texturenofocus>
                     <label>$LOCALIZE[21863]</label>
                     <label2>$INFO[Container(6).ListItem.Property(Addon.Creator)]</label2>
-                    <include>DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                     <enable>false</enable>
                 </control>
             </control>

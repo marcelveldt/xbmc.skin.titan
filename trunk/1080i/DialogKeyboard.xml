@@ -2,6 +2,7 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">300</defaultcontrol>
+	 <zorder>7</zorder>
     <controls>
         <!--Dialog Overlay-->
         <include>DialogOverlay</include>

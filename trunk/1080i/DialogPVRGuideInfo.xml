@@ -22,7 +22,7 @@
                 <posx>526</posx>
                 <posy>200</posy>
                 <width>868</width>
-                <height>680</height>
+                <height>750</height>
                 <texture border="39">dialogs/default/bg.png</texture>
             </control>
             <!--Header-->
@@ -54,7 +54,7 @@
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <textwidth>540</textwidth>
-                    <include>DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>$LOCALIZE[142]</label>
                     <label2>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ] ($INFO[ListItem.StartDate])</label2>
@@ -69,7 +69,7 @@
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <textwidth>540</textwidth>
-                    <include>DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>$LOCALIZE[180]</label>
                     <label2>$INFO[ListItem.Duration]</label2>
@@ -84,7 +84,7 @@
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <textwidth>540</textwidth>
-                    <include>DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>$LOCALIZE[19148]</label>
                     <label2>$INFO[ListItem.ChannelName]</label2>
@@ -99,7 +99,7 @@
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <textwidth>540</textwidth>
-                    <include>DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                     <texturenofocus>-</texturenofocus>
                     <label>$LOCALIZE[135]</label>
                     <label2 fallback="161">$INFO[ListItem.Genre]</label2>
@@ -120,7 +120,7 @@
                 <width>760</width>
                 <height>310</height>
                 <align>justify</align>
-                <include>DialogLabel</include>
+                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 <pagecontrol>60</pagecontrol>
                 <autoscroll delay="10000" time="3000" repeat="6000">!Control.HasFocus(60) + !Skin.HasSetting(AutoScroll.Disable)</autoscroll>
                 <label fallback="161">$INFO[ListItem.Plot]</label>

@@ -22,7 +22,7 @@
                 <posx>319</posx>
                 <posy>174</posy>
                 <width>1282</width>
-                <height>732</height>
+                <height>800</height>
                 <texture border="39">dialogs/default/bg.png</texture>
             </control>
             <!--Header-->
@@ -48,7 +48,7 @@
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <label>$LOCALIZE[19133]</label>
-                    <include>DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 </control>
                 <control type="image">
                     <posx>0</posx>
@@ -99,7 +99,7 @@
                     <height>78</height>
                     <align>justify</align>
                     <label>$LOCALIZE[19001] $LOCALIZE[19002]</label>
-                    <include>DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 </control>
                 <control type="group" id="8001">
                     <control type="group">

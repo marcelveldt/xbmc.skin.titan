@@ -32,7 +32,7 @@
                 <posx>445</posx>
                 <posy>340</posy>
                 <width>1030</width>
-                <height>401</height>
+                <height>471</height>
                 <texture border="39">dialogs/default/bg.png</texture>
             </control>
             <control type="image">
@@ -67,7 +67,7 @@
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <label>1021</label>
-                    <include>DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 </control>
                 <control type="list" id="10">
                     <posx>479</posx>
@@ -252,7 +252,7 @@
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <label>1022</label>
-                    <textcolor>FF585858</textcolor>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                     <shadowcolor>20FFFFFF</shadowcolor>
                     <font>Light30</font>
                 </control>

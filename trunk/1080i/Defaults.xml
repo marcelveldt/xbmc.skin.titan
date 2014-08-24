@@ -52,8 +52,8 @@
         <font>Light32</font>
         <label>-</label>
         <textcolor>white</textcolor>
-        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
-        <disabledcolor>darkgrey</disabledcolor>
+        <focusedcolor>white</focusedcolor>
+        <disabledcolor>lightgrey</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus>common/button-fo.png</texturefocus>
         <texturenofocus>common/button-nf.png</texturenofocus>
@@ -67,8 +67,8 @@
         <label>-</label>
         <font>Light32</font>
         <textcolor>white</textcolor>
-        <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
-        <disabledcolor>darkgrey</disabledcolor>
+        <focusedcolor>white</focusedcolor>
+        <disabledcolor>lightgrey</disabledcolor>
         <align>center</align>
         <aligny>center</aligny>
         <pulseonselect>false</pulseonselect>

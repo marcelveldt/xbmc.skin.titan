@@ -1,3 +1,7 @@
+v.1.9.9
+- fixed several issues with dialogs and overlays
+- improved banner views
+
 v.1.9.8
 - added setting to hide titles on home menu tiles
 - changed some dialogs; buttons now in the dialog
@@ -6,7 +10,7 @@ v.1.9.7
 - fixed some language strings
 - added regular thumb as fallback for missing landscape banners
 - changed used fonts to opensource variant
-- added extra blue modern theme
+- changed modern theme as default, traditional to classic
 - added series-record support for MediaPortal PVR
 
 v.1.9.6

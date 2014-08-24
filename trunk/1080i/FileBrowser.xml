@@ -2,14 +2,17 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">450</defaultcontrol>
-    <zorder>6</zorder>
+    <zorder>7</zorder>
+	<onload condition="Window.IsActive(networksetup)">SetProperty(ShowDialog,1,home)</onload>
+	<onload condition="Window.IsActive(networksetup)">SetProperty(ShowDialog,1)</onload>
+	<onunload>ClearProperty(ShowDialog,home)</onunload>
     <controls>
         <!--Dialog Overlay-->
         <include>DialogOverlay</include>
         <!--File Browser-->
         <control type="group">
             <include>animation_dialog</include>
-            <visible>!Window.IsVisible(DialogNetworkSetup.xml)</visible>
+            <visible>!Window.IsActive(virtualkeyboard) + !Window.IsVisible(busydialog) + !Window.IsActive(locksettings) + ![Window.IsActive(networksetup) + IsEmpty(Window.Property(ShowDialog))]</visible>
             <!--Panel-->
             <control type="image">
                 <posx>920</posx>
@@ -22,8 +25,9 @@
                 <posx>445</posx>
                 <posy>266</posy>
                 <width>1030</width>
-                <height>548</height>
+                <height>620</height>
                 <texture border="39">dialogs/default/bg.png</texture>
+				<visible>!Window.IsActive(musicosd) + !Window.IsActive(videoosd)</visible>
             </control>
             <control type="image">
                 <posx>479</posx>
@@ -31,6 +35,7 @@
                 <width>644</width>
                 <height>481</height>
                 <texture border="5">dialogs/default/inner.png</texture>
+				<visible>!Window.IsActive(musicosd) + !Window.IsActive(videoosd)</visible>
             </control>
             <control type="image">
                 <posx>1122</posx>
@@ -38,6 +43,7 @@
                 <width>319</width>
                 <height>481</height>
                 <texture border="5">dialogs/default/inner-dark.png</texture>
+				<visible>!Window.IsActive(musicosd) + !Window.IsActive(videoosd)</visible>
             </control>
             <!--Header-->
             <control type="label" id="411">

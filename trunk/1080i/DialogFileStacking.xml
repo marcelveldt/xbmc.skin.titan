@@ -19,7 +19,7 @@
                 <posx>704</posx>
                 <posy>416</posy>
                 <width>512</width>
-                <height>248</height>
+                <height>320</height>
                 <texture border="39">dialogs/default/bg.png</texture>
             </control>
             <control type="label">

@@ -152,21 +152,14 @@
         <control type="image">
             <!--Panel fanart image-->
             <include>BannerViewImageSizeNormal</include>
-            <texture diffuse="home/home_matte2.png" background="true" fallback="home/videos.png">$VAR[BannerFanArtImage]</texture>
+            <texture diffuse="home/home_matte2.png" background="true" fallback="banner_default.png">$VAR[BannerFanArtImage]</texture>
             <aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
             <include>bannerViewWithOverlay</include>
-        </control>
-		<control type="image">
-            <!--Panel icon image season backup-->
-            <include>BannerViewImageSizeThumb</include>
-            <texture background="true" diffuse="home/home_matte2.png" fallback="home/videos.png">$INFO[ListItem.Art(thumb)]</texture>
-            <aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
-            <include>bannerViewWithoutOverlay</include>
         </control>
         <control type="image">
             <!--Panel icon image-->
             <include>BannerViewImageSizeNormal</include>
-            <texture background="true" diffuse="home/home_matte2.png">$VAR[BannerLandscapeImage]</texture>
+            <texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$VAR[BannerLandscapeImage]</texture>
             <aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
             <include>bannerViewWithoutOverlay</include>
         </control>
@@ -263,7 +256,6 @@
                 <effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
             </animation>
             <include>BannerViewImageSizeNormalFocus</include>
-            <include>bannerViewWithOverlay</include>
             <texture>home/home_focus.png</texture>
         </control>
     </include>
@@ -319,8 +311,8 @@
 </visible>
     </include>
     <include name="BannerViewImageSizeNormal">
-        <posx>13</posx>
-        <posy>12</posy>
+        <posx>11</posx>
+        <posy>15</posy>
         <width>550</width>
         <height>310</height>
     </include>
@@ -331,9 +323,9 @@
         <height>335</height>
     </include>
     <include name="BannerViewImageSizeNormalFocus">
-        <posx>0</posx>
+        <posx>1</posx>
         <posy>0</posy>
-        <width>575</width>
+        <width>572</width>
         <height>340</height>
     </include>
     <include name="BannerViewImageSizeEpisodes">

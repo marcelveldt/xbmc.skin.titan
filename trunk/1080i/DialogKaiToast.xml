@@ -28,7 +28,7 @@
             <include>animation_fade_open_close</include>
             <posx>60</posx>
             <posy>40</posy>
-            <visible>!Window.IsActive(fullscreenvideo) + !Window.IsActive(visualisation) + !Window.IsVisible(startup)</visible>
+            <visible>!Window.IsActive(fullscreenvideo) + !Window.IsActive(visualisation) + !Window.IsVisible(startup) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
             <control type="group">
                 <control type="image">
                     <description>Icon</description>
