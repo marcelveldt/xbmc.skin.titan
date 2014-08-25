@@ -683,6 +683,26 @@
                 <label>MusicKaraokeLyrics.xml</label>
                 <visible>Window.IsVisible(MusicKaraokeLyrics.xml)</visible>
             </control>
+			<control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>FFFF0000</textcolor>
+                <shadowcolor>FF000000</shadowcolor>
+                <font>font13</font>
+                <align>left</align>
+                <label>script-XBMC_Lyrics-main.xml</label>
+                <visible>Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
+            </control>
+			<control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>FFFF0000</textcolor>
+                <shadowcolor>FF000000</shadowcolor>
+                <font>font13</font>
+                <align>left</align>
+                <label>script-XBMC-Subtitles-main.xml</label>
+                <visible>Window.IsVisible(script-XBMC-Subtitles-main.xml)</visible>
+            </control>
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -711,7 +731,7 @@
                 <font>font13</font>
                 <align>left</align>
                 <label>MusicVisualisation.xml</label>
-                <visible>Window.IsVisible(MusicVisualisation.xml) + Visualisation.Enabled</visible>
+                <visible>Window.IsVisible(MusicVisualisation.xml)</visible>
             </control>
             <control type="label">
                 <width>780</width>

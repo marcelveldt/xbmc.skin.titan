@@ -208,40 +208,40 @@
         <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
     </variable>
     <variable name="Custom6Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom6Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.image)]</value>
+        <value condition="Skin.String(Custom6Background)">$INFO[Skin.String(Custom6Background)]</value>
     </variable>
     <variable name="Custom7Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom7Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.image)]</value>
+        <value condition="Skin.String(Custom7Background)">$INFO[Skin.String(Custom7Background)]</value>
     </variable>
     <variable name="Custom8Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom8Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.image)]</value>
+        <value condition="Skin.String(Custom8Background)">$INFO[Skin.String(Custom8Background)]</value>
     </variable>
     <variable name="Custom9Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom9Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.image)]</value>
+        <value condition="Skin.String(Custom9Background)">$INFO[Skin.String(Custom9Background)]</value>
     </variable>
     <variable name="Custom10Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.0.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom10Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.0.image)]</value>
+        <value condition="Skin.String(Custom10Background)">$INFO[Skin.String(Custom10Background)]</value>
     </variable>
     <variable name="Custom11Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.1.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom11Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.1.image)]</value>
+        <value condition="Skin.String(Custom11Background)">$INFO[Skin.String(Custom11Background)]</value>
     </variable>
     <variable name="Custom12Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.2.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom12Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.2.image)]</value>
+        <value condition="Skin.String(Custom12Background)">$INFO[Skin.String(Custom12Background)]</value>
     </variable>
     <variable name="Custom13Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.3.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom13Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.3.image)]</value>
+        <value condition="Skin.String(Custom13Background)">$INFO[Skin.String(Custom13Background)]</value>
     </variable>
     <variable name="Custom14Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.4.image)]</value>
-        <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
+        <value condition="!Skin.String(Custom14Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.4.image)]</value>
+        <value condition="Skin.String(Custom14Background)">$INFO[Skin.String(Custom14Background)]</value>
     </variable>
     <variable name="MB3FavoritesBackground">
         <value condition="!Skin.String(MB3FavoritesBackground)">$INFO[Window(Home).Property(xbmb3c.std.movies.3.image)]</value>
@@ -273,7 +273,7 @@
         <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.0.path)]</value>
     </variable>
     <variable name="RadioButtonOnClick">
-        <value condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)])</value>
+        <value condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)], return)</value>
         <value condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</value>
     </variable>
     <variable name="PicturesButtonOnClick">
@@ -310,7 +310,6 @@
 	
 	<variable name="BannerFanArtImage">
 		<value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(season.fanart)) + !substring(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(season.fanart)]</value>
-		<value condition="!IsEmpty(ListItem.Art(extrafanart)) + !substring(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(extrafanart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>

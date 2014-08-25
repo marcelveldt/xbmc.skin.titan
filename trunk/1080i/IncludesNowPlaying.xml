@@ -62,8 +62,19 @@
                 <align>left</align>
                 <font>Reg30</font>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-                <label>$INFO[MusicPlayer.Title]</label>
-                <visible>IsEmpty(MusicPlayer.Artist)</visible>
+                <label>$INFO[Window(Home).Property(streamtitle)] - $INFO[MusicPlayer.Title]</label>
+                <visible>IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.Artist) + !IsEmpty(MusicPlayer.Title)</visible>
+            </control>
+			<control type="fadelabel">
+                <!--Title-->
+                <posx>255</posx>
+                <posy>75</posy>
+                <width>285</width>
+                <align>left</align>
+                <font>Reg30</font>
+                <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                <label>$INFO[Window(Home).Property(streamtitle)]</label>
+                <visible>IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.Title)</visible>
             </control>
             <control type="label">
                 <!--Play Time-->

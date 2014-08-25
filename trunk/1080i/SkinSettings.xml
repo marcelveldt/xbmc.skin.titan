@@ -87,7 +87,7 @@
                     <onclick>noop</onclick>
                 </item>
                 <item id="6">
-                    <!--skin background ID=5000-->
+                    <!--skin settings ID=5000-->
                     <label>42005</label>
                     <onclick>noop</onclick>
                 </item>
@@ -2270,6 +2270,19 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoTitleOnHomeMenuTiles)</onclick>
                     <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
+                </control>
+				<control type="radiobutton" id="5116">
+                    <description></description>
+                    <!--activate lyrics-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>42087</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(MusicActivateLyrics)</onclick>
+                    <selected>Skin.HasSetting(MusicActivateLyrics)</selected>
+					<enable>System.HasAddon(script.cu.lrclyrics)</enable>
                 </control>
             </control>
         </control>

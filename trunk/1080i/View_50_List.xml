@@ -8,6 +8,7 @@
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <include>animation_view_change</include>
             <include>animation_list</include>
+			<onunfocus condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying]">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onunfocus>
             <control type="image">
                 <!-- All Other -->
                 <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + !Skin.HasSetting(NoFooterBar) + IntegerGreaterThan(Container.NumItems, 0)</visible>
@@ -151,6 +152,8 @@
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="List">list</viewtype>
                 <scrolltime>200</scrolltime>
+				<onunfocus condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying] + substring(Container.FolderPath,Radio)">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onunfocus>
+				<onback condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying] + substring(Container.FolderPath,Radio)">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onback>
                 <!-- ====================== -->
                 <!-- All Other x=570 w=1180 -->
                 <!-- ====================== -->
@@ -183,6 +186,20 @@
                         <colordiffuse>list_separator</colordiffuse>
                         <texture>common/separator.png</texture>
                     </control>
+					<control type="button">
+                        <posx>615</posx>
+                        <posy>56</posy>
+                        <width>1200</width>
+                        <height>20</height>
+						<font>Reg28</font>
+						<textcolor>blue</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label></label>
+						<visible>false</visible>
+						<onunfocus condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying] + substring(Container.FolderPath,Radio)">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onunfocus>
+						<onfocus condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying] + substring(Container.FolderPath,Radio)">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onfocus>
+                     </control>
                 </itemlayout>
                 <!-- SMALL -->
                 <focusedlayout condition="![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + [IsEmpty(Control.GetLabel(5101)) | Skin.HasSetting(slimlist)]" width="900" height="60">
@@ -223,6 +240,20 @@
                         <colordiffuse>list_separator</colordiffuse>
                         <texture>common/separator.png</texture>
                     </control>
+					<control type="button">
+                        <posx>615</posx>
+                        <posy>56</posy>
+                        <width>1200</width>
+                        <height>20</height>
+						<font>Reg28</font>
+						<textcolor>blue</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label></label>
+						<visible>false</visible>
+						<onunfocus condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying] + substring(Container.FolderPath,Radio)">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onunfocus>
+						<onfocus condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying] + substring(Container.FolderPath,Radio)">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onfocus>
+                     </control>
                 </focusedlayout>
                 <!-- BIG -->
                 <focusedlayout condition="![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + !IsEmpty(Control.GetLabel(5101)) + !Skin.HasSetting(slimlist)" width="900" height="90">

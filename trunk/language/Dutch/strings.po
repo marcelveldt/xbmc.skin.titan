@@ -377,8 +377,8 @@ msgid "Skin mode"
 msgstr "Skin modus"
 
 msgctxt "#42005"
-msgid "Skin graphics"
-msgstr "Grafische instellingen"
+msgid "Advanced settings"
+msgstr "Geavanceerde instellingen"
 
 msgctxt "#42006"
 msgid "NetfliXBMC Plugin"
@@ -704,5 +704,8 @@ msgstr "Inplannen"
 
 msgctxt "#42086"
 msgid "Do not show title on home menu tiles"
-msgstr "Toon geen tiles op de tiles van het hoofdmenu"
+msgstr "Toon geen titels op de tiles van het hoofdmenu"
 
+msgctxt "#42087"
+msgid "Enable Lyrics while paying music (CU LRC Lyrics)"
+msgstr "Toon songteksten bij afspelen muziek (CU LRC Lyrics)"

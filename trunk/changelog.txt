@@ -1,3 +1,8 @@
+v.2.0.1
+- fixed issue with custom tile images for MB3 libraries
+- added support for (optional) Lyrics in music
+- cleaned up music views
+
 v.1.9.9
 - fixed several issues with dialogs and overlays
 - improved banner views

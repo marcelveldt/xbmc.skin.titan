@@ -1376,7 +1376,7 @@
         </control>--&gt;
 		<control type="image"><include>DimensionsFullscreen</include><texture background="true">overlays/fanart/fanart_overlay.png</texture><fadetime>800</fadetime></control></include>
     <include name="MusicBackground">
-        <include condition="IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + IsEmpty(ListItem.Art(fanart)) + IsEmpty(Player.Art(fanart))">GlobalBackground</include>
+        <include condition="IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + IsEmpty(ListItem.Art(fanart)) + IsEmpty(MusicPlayer.Property(Fanart_Image))">GlobalBackground</include>
         <!-- mediabrowser fanart -->
         <control type="image">
             <include>DimensionsFullscreen</include>
@@ -1397,7 +1397,7 @@
             <include>DimensionsFullscreen</include>
             <fadetime>1000</fadetime>
             <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$INFO[Player.Art(fanart)]</texture>
+            <texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
         </control>
     </include>
     <include name="GlobalBackground">

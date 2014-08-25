@@ -7,6 +7,23 @@
         <!--Fanart-->
         <include>MusicBackground</include>
         <!--Music Visualisation-->
+		<control type="visualisation" id="2">
+            <description>visualisation</description>
+            <include>DimensionsFullscreen</include>
+        </control>
+        <control type="multiimage">
+            <aspectratio>scale</aspectratio>
+            <include>DimensionsFullscreen</include>
+            <timeperimage>10000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>600</fadetime>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+            <visible>System.HasAddon(script.artistslideshow)</visible>
+            <animation effect="fade" start="100" end="65" time="0"></animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true"></animation>
+            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true"></animation>
+        </control>
         <control type="group">
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
@@ -160,7 +177,8 @@
                 <height>220</height>
                 <fadetime>200</fadetime>
                 <texture background="true" fallback="cover_default.png" diffuse="cover_matte.png">$INFO[MusicPlayer.Cover]</texture>
-                <aspectratio align="left" aligny="top">keep</aspectratio>
+                <aspectratio align="left" aligny="top">stretch</aspectratio>
+				<visible>!IsEmpty(MusicPlayer.Cover)</visible>
             </control>
             <!--Label-->
             <control type="label">
@@ -170,20 +188,29 @@
                 <align>left</align>
                 <font>Light45</font>
                 <textcolor>white</textcolor>
-                <label>[B]$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Artist, - ][/B]</label>
+                <label>[B]$INFO[MusicPlayer.Artist][/B]</label>
                 <scroll>false</scroll>
-                <visible>!IsEmpty(MusicPlayer.Album)</visible>
             </control>
-            <control type="label">
+			<control type="label">
                 <posx>550</posx>
                 <posy>770</posy>
                 <width>900</width>
                 <align>left</align>
                 <font>Light45</font>
                 <textcolor>white</textcolor>
-                <label>[B]$INFO[MusicPlayer.Artist][/B]</label>
+                <label>[B]$INFO[MusicPlayer.ChannelName][/B]</label>
                 <scroll>false</scroll>
-                <visible>IsEmpty(MusicPlayer.Album)</visible>
+            </control>
+			<control type="label">
+                <posx>550</posx>
+                <posy>770</posy>
+                <width>900</width>
+                <align>left</align>
+                <font>Light45</font>
+                <textcolor>white</textcolor>
+                <label>[B]$INFO[Window(Home).Property(streamtitle)][/B]</label>
+                <scroll>false</scroll>
+				<visible>IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.ChannelName)</visible>
             </control>
             <control type="label">
                 <posx>550</posx>
@@ -354,41 +381,28 @@
                 </control>
                 <control type="button" id="1">
                     <description>Audio Settings</description>
-                    <width>170</width>
+                    <width>200</width>
                     <height>60</height>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <textoffsetx>0</textoffsetx>
                     <font>Reg20</font>
-                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                    <textcolor>lightgrey</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
                     <onclick>XBMC.PlayerControl(Repeat)</onclick>
                 </control>
                 <control type="button" id="2">
-                    <width>180</width>
+                    <width>250</width>
                     <height>60</height>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <textoffsetx>0</textoffsetx>
                     <font>Reg20</font>
-                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                    <textcolor>lightgrey</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <label>$LOCALIZE[191]$INFO[Playlist.Random, : ]</label>
                     <onclick>XBMC.PlayerControl(Random)</onclick>
-                </control>
-                <control type="button" id="6">
-                    <description>Lyrics</description>
-                    <width>140</width>
-                    <height>60</height>
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
-                    <textoffsetx>0</textoffsetx>
-                    <font>Reg20</font>
-                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-                    <focusedcolor>white</focusedcolor>
-                    <label>24013</label>
-                    <onclick>RunScript(script.cu.lrclyrics)</onclick>
                 </control>
             </control>
             <!--Process/Seekbar-->

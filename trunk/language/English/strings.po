@@ -377,7 +377,7 @@ msgid "Skin mode"
 msgstr ""
 
 msgctxt "#42005"
-msgid "Skin graphics"
+msgid "Advanced settings"
 msgstr ""
 
 msgctxt "#42006"
@@ -703,4 +703,8 @@ msgstr ""
 
 msgctxt "#42086"
 msgid "Do not show title on home menu tiles"
+msgstr ""
+
+msgctxt "#42087"
+msgid "Enable Lyrics while paying music (CU LRC Lyrics)"
 msgstr ""
