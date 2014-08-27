@@ -63,7 +63,7 @@
                         <height>60</height>
                         <align>center</align>
                         <textoffsetx>0</textoffsetx>
-                        <label>$LOCALIZE[41092]</label>
+                        <label>$LOCALIZE[31093]</label>
                         <onclick>Skin.SetBool(youtube)</onclick>
                         <onclick>Dialog.Close(movieinformation,true)</onclick>
                         <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Title] Trailer $INFO[System.Language],return)</onclick>
@@ -437,7 +437,7 @@
                             <width>950</width>
                             <font>Reg34</font>
                             <align>left</align>
-                            <label>$INFO[ListItem.Property(unWatchedepisodes),$LOCALIZE[41033]: ,]</label>
+                            <label>$INFO[ListItem.Property(unWatchedepisodes),$LOCALIZE[31092]: ,]</label>
                             <textcolor>aawhite</textcolor>
                             <scroll>false</scroll>
                         </control>

@@ -5,8 +5,8 @@
     <!-- Header -->
     <!-- ====== -->
     <variable name="value_header">
-        <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome)">[UPPERCASE]Home[/UPPERCASE]</value>
-        <value condition="substring(Container.FolderPath,Radio)">RADIO</value>
+        <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome)">[UPPERCASE]$LOCALIZE[10000][/UPPERCASE]</value>
+        <value condition="substring(Container.FolderPath,Radio)">[UPPERCASE]$LOCALIZE[19021][/UPPERCASE]</value>
         <value condition="Container.Content(movies) + IsEmpty(ListItem.Title)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE]</value>
         <value condition="Container.Content(movies) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="Container.Content(tvshows)">[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</value>
@@ -15,9 +15,9 @@
         <value condition="Container.Content(seasons) + IsEmpty(ListItem.TVShowTitle)">[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</value>
         <value condition="Container.Content(episodes) + IsEmpty(ListItem.TVShowTitle)">[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</value>
         <value condition="Container.Content(genres)">[UPPERCASE]$LOCALIZE[515][/UPPERCASE]</value>
-        <value condition="substring(Container.FolderPath,plugin://plugin.video.netflixbmc)">NETFLIX</value>
-        <value condition="substring(Container.FolderPath,plugin://plugin.video.youtube)">YOUTUBE</value>
-        <value condition="substring(Container.FolderPath,plugin://plugin.video.xbmb3c)">MediaBrowser (XBMB3C)</value>
+        <value condition="substring(Container.FolderPath,plugin://plugin.video.netflixbmc)">[UPPERCASE]$LOCALIZE[31018][/UPPERCASE]</value>
+        <value condition="substring(Container.FolderPath,plugin://plugin.video.youtube)">[UPPERCASE]$LOCALIZE[31062][/UPPERCASE]</value>
+        <value condition="substring(Container.FolderPath,plugin://plugin.video.xbmb3c)">[UPPERCASE]$LOCALIZE[31091][/UPPERCASE]</value>
         <value condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(genres)] + Window.IsActive(MyVideoNav.xml)">[UPPERCASE]$LOCALIZE[157]- $LOCALIZE[1214][/UPPERCASE]</value>
         <value condition="Window.IsActive(MyMusicNav.xml)">[UPPERCASE]$LOCALIZE[2][/UPPERCASE]</value>
         <value condition="Window.IsActive(MyWeather.xml)">[UPPERCASE]$LOCALIZE[8][/UPPERCASE]</value>
@@ -31,7 +31,7 @@
         <value condition="Window.IsActive(SkinSettings.xml)">SKIN [UPPERCASE]$LOCALIZE[5][/UPPERCASE]</value>
         <value condition="Window.IsActive(SettingsCategory.xml)">[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</value>
         <value condition="Window.IsActive(SettingsSystemInfo.xml)">[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</value>
-        <value condition="Window.IsActive(MyPVR.xml)">[UPPERCASE]$LOCALIZE[41024][/UPPERCASE]</value>
+        <value condition="Window.IsActive(MyPVR.xml)">[UPPERCASE]$LOCALIZE[31088][/UPPERCASE]</value>
         <value condition="Window.IsActive(MyMusicPlaylistEditor.xml)">[UPPERCASE]$LOCALIZE[10503][/UPPERCASE]</value>
         <value condition="Window.IsActive(MyMusicPlaylistEditor.xml)">[UPPERCASE]$LOCALIZE[10503][/UPPERCASE]</value>--&gt;
 	</variable>
@@ -298,9 +298,9 @@
         <value condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.2.content)]</value>
     </variable>
     <variable name="EpisodesNextUpLabel">
-        <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$LOCALIZE[42043]</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$LOCALIZE[31043]</value>
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">$LOCALIZE[20387]</value>
-        <value>Recently added episodes</value>
+        <value>$LOCALIZE[20387]</value>
     </variable>
     <variable name="EpisodesNextUp">
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>

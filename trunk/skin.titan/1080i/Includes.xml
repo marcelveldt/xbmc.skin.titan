@@ -67,54 +67,6 @@
         <width>1920</width>
         <height>1080</height>
     </include>
-    <include name="Button9001">
-        <label>41070</label>
-        <height>50</height>
-        <font>Reg28</font>
-        <textcolor>white</textcolor>
-        <focusedcolor>black</focusedcolor>
-        <texturefocus>common/button-fo.png</texturefocus>
-        <texturenofocus>common/button-nf.png</texturenofocus>
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>300</width>
-        <onleft>9003</onleft>
-        <onright>9002</onright>
-        <onup>9005</onup>
-        <ondown>9005</ondown>
-    </include>
-    <include name="Button9002">
-        <label>41071</label>
-        <height>50</height>
-        <font>Reg28</font>
-        <textcolor>white</textcolor>
-        <focusedcolor>black</focusedcolor>
-        <texturefocus>common/button-fo.png</texturefocus>
-        <texturenofocus>common/button-nf.png</texturenofocus>
-        <posx>310</posx>
-        <posy>0</posy>
-        <width>300</width>
-        <onleft>9001</onleft>
-        <onright>9003</onright>
-        <onup>9005</onup>
-        <ondown>9005</ondown>
-    </include>
-    <include name="Button9003">
-        <label>41072</label>
-        <height>50</height>
-        <font>Reg28</font>
-        <textcolor>white</textcolor>
-        <focusedcolor>black</focusedcolor>
-        <texturefocus>common/button-fo.png</texturefocus>
-        <texturenofocus>common/button-nf.png</texturenofocus>
-        <posx>620</posx>
-        <posy>0</posy>
-        <width>300</width>
-        <onleft>9002</onleft>
-        <onright>9001</onright>
-        <onup>9005</onup>
-        <ondown>9005</ondown>
-    </include>
     <!--Header-->
     <include name="Header">
         <control type="image">

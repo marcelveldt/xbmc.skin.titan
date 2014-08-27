@@ -243,6 +243,7 @@
             <width>1903</width>
             <height>1033</height>
             <itemgap>3</itemgap>
+			<onback>300</onback>
             <orientation>vertical</orientation>
             <animation time="600" effect="fade">Visible</animation>
             <animation time="600" effect="fade">Hidden</animation>
@@ -269,7 +270,7 @@
                     <align>left</align>
                     <textcolor>white</textcolor>
                     <font>Bold32</font>
-                    <label>42042</label>
+                    <label>31042</label>
                 </control>
                 <control type="panel" id="4001">
                     <posx>110</posx>
@@ -279,6 +280,7 @@
                     <onleft></onleft>
                     <onright></onright>
                     <onup>300</onup>
+					<onback>300</onback>
                     <ondown>4002</ondown>
                     <orientation>horizontal</orientation>
                     <focusposition>-</focusposition>
@@ -316,7 +318,7 @@
                     <align>left</align>
                     <textcolor>white</textcolor>
                     <font>Bold32</font>
-                    <label>42044</label>
+                    <label>31044</label>
                 </control>
                 <control type="panel" id="4002">
                     <posx>110</posx>
@@ -325,6 +327,7 @@
                     <height>300</height>
                     <onleft></onleft>
                     <onright></onright>
+					<onback>300</onback>
                     <onup condition="Control.IsVisible(4001)">4001</onup>
                     <onup condition="!Control.IsVisible(4001)">300</onup>
                     <ondown>4003</ondown>
@@ -375,6 +378,7 @@
                     <onright></onright>
                     <onup>4002</onup>
                     <ondown>300</ondown>
+					<onback>300</onback>
                     <orientation>horizontal</orientation>
                     <focusposition>-</focusposition>
                     <scrolltime tween="cubic" easing="inout">500</scrolltime>

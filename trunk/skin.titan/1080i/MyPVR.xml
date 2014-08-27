@@ -82,7 +82,7 @@
                     <textoffsetx>50</textoffsetx>
                     <font>Light40</font>
                     <textcolor>mainblue</textcolor>
-                    <label>$LOCALIZE[41090]:</label>
+                    <label>$LOCALIZE[33061]:</label>
                 </control>
                 <control type="image" id="201">
                     <!--Seperator-->

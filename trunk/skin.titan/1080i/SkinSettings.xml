@@ -73,32 +73,32 @@
             <content>
                 <item id="8">
                     <!--Enable Home-Menu Button ID=8000-->
-                    <label>42002</label>
+                    <label>31002</label>
                     <onclick>noop</onclick>
                 </item>
                 <!--home button Background ID=9000-->
                 <item id="9">
-                    <label>42013</label>
+                    <label>31013</label>
                     <onclick>noop</onclick>
                 </item>
                 <item id="5">
                     <!--xbmb3c ID=7000-->
-                    <label>42004</label>
+                    <label>31004</label>
                     <onclick>noop</onclick>
                 </item>
                 <item id="6">
                     <!--skin settings ID=5000-->
-                    <label>42005</label>
+                    <label>31005</label>
                     <onclick>noop</onclick>
                 </item>
                 <item id="10">
                     <!--sort Home-Menu Button ID=4000-->
-                    <label>42072</label>
+                    <label>31072</label>
                     <onclick>noop</onclick>
                 </item>
                 <item id="7">
                     <!--xbmb3c settings-->
-                    <label>XBMB3C settings</label>
+                    <label>31089</label>
                     <onclick>Addon.OpenSettings(plugin.video.xbmb3c)</onclick>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </item>
@@ -126,7 +126,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>42073</label>
+                    <label>31073</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -136,7 +136,7 @@
                     <width>1230</width>
                     <height>130</height>
                     <font>Reg25</font>
-                    <label>42074</label>
+                    <label>31074</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -150,7 +150,7 @@
                         <font>Reg26</font>
                         <textcolor>white</textcolor>
                         <selectedcolor>white</selectedcolor>
-                        <label>42075</label>
+                        <label>31075</label>
                     </control>
                     <control type="radiobutton" id="4005">
                         <posx>300</posx>
@@ -162,7 +162,7 @@
                         <font>Light32</font>
                         <ondown>4008</ondown>
                         <onright>4006</onright>
-                        <label>42076</label>
+                        <label>31076</label>
                         <textcolor>white</textcolor>
                         <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
                         <pulseonselect>false</pulseonselect>
@@ -181,7 +181,7 @@
                         <ondown>4008</ondown>
                         <onleft>4005</onleft>
                         <font>Light32</font>
-                        <label>42077</label>
+                        <label>31077</label>
                         <textcolor>white</textcolor>
                         <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
                         <pulseonselect>false</pulseonselect>
@@ -268,7 +268,7 @@
                     <description>Music</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41001</label>
+                    <label>2</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -292,7 +292,7 @@
                     <description>Movies</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41002</label>
+                    <label>342</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -304,7 +304,7 @@
                     <description>TV-Shows</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41003</label>
+                    <label>20343</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -316,7 +316,7 @@
                     <description>Live TV</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41024</label>
+                    <label>31088</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -328,7 +328,7 @@
                     <description>Video-Addons</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41004</label>
+                    <label>1037</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -340,7 +340,7 @@
                     <description>Pictures</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41000</label>
+                    <label>10002</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -352,7 +352,7 @@
                     <description>Weather</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41005</label>
+                    <label>8</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -364,7 +364,7 @@
                     <description>Musicvideos</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>42045</label>
+                    <label>31045</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -375,7 +375,7 @@
                     <description>Favourites</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41028</label>
+                    <label>10134</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -399,7 +399,7 @@
                     <description>Programs</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41027</label>
+                    <label>350</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -411,7 +411,7 @@
                     <description>Filemanager</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>41025</label>
+                    <label>7</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -423,7 +423,7 @@
                     <description>NetfliXBMC Plugin</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>42006</label>
+                    <label>31018</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -436,7 +436,7 @@
                     <description>Youtube Plugin</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>42062</label>
+                    <label>31062</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -473,7 +473,7 @@
                     <description>XBMB3C Plugin</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>XBMB3C Plugin</label>
+                    <label>31089</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -485,7 +485,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[41006]</label>
+                    <label>5</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -509,7 +509,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>42078</label>
+                    <label>31078</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -520,7 +520,7 @@
                     <height>200</height>
                     <font>Reg25</font>
                     <posy>60</posy>
-                    <label>42079</label>
+                    <label>31079</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -530,7 +530,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>42012</label>
+                    <label>31012</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -540,7 +540,7 @@
                     <!--Mediabrowser mode-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42007</label>
+                    <label>31007</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -582,7 +582,7 @@
                     <description>Music</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[42008] $LOCALIZE[2]</label>
+                    <label>$LOCALIZE[31008] $LOCALIZE[2]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -595,7 +595,7 @@
                     <description>Movies</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[42008] $LOCALIZE[342]</label>
+                    <label>$LOCALIZE[31008] $LOCALIZE[342]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -609,7 +609,7 @@
                     <description>Tv Series</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[42008] $LOCALIZE[20343]</label>
+                    <label>$LOCALIZE[31008] $LOCALIZE[20343]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -623,7 +623,7 @@
                     <description>Pictures</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[42008] $LOCALIZE[1]</label>
+                    <label>$LOCALIZE[31008] $LOCALIZE[1]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -636,7 +636,7 @@
                     <description>MusicVideos</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[42008] $LOCALIZE[42045]</label>
+                    <label>$LOCALIZE[31008] $LOCALIZE[31045]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -649,7 +649,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>42009</label>
+                    <label>31009</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -673,7 +673,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -684,7 +684,7 @@
                 <control type="radiobutton" id="39002">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -709,7 +709,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -720,7 +720,7 @@
                 <control type="radiobutton" id="39005">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -745,7 +745,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -756,7 +756,7 @@
                 <control type="radiobutton" id="39006">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -780,7 +780,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -791,7 +791,7 @@
                 <control type="radiobutton" id="39007">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -815,7 +815,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -826,7 +826,7 @@
                 <control type="radiobutton" id="39008">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -850,7 +850,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -861,7 +861,7 @@
                 <control type="radiobutton" id="39009">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -885,7 +885,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -896,7 +896,7 @@
                 <control type="radiobutton" id="39010">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -920,7 +920,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -931,7 +931,7 @@
                 <control type="radiobutton" id="39011">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -955,7 +955,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -966,7 +966,7 @@
                 <control type="radiobutton" id="39012">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -990,7 +990,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1001,7 +1001,7 @@
                 <control type="radiobutton" id="39013">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1025,7 +1025,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1036,7 +1036,7 @@
                 <control type="radiobutton" id="39014">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1060,7 +1060,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1071,7 +1071,7 @@
                 <control type="radiobutton" id="39015">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1095,7 +1095,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1106,7 +1106,7 @@
                 <control type="radiobutton" id="37016">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1130,7 +1130,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1141,7 +1141,7 @@
                 <control type="radiobutton" id="39016">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1165,7 +1165,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1176,7 +1176,7 @@
                 <control type="radiobutton" id="39018">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1200,7 +1200,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1211,7 +1211,7 @@
                 <control type="radiobutton" id="39019">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1235,7 +1235,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1246,7 +1246,7 @@
                 <control type="radiobutton" id="29022">
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1258,7 +1258,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>42080</label>
+                    <label>31080</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1268,7 +1268,7 @@
                     <!--Netflix mode-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42081</label>
+                    <label>31081</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1283,7 +1283,7 @@
                     <description>Movies</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[42082] $LOCALIZE[342]</label>
+                    <label>$LOCALIZE[31082] $LOCALIZE[342]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1297,7 +1297,7 @@
                     <description>Tv Series</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[42082] $LOCALIZE[20343]</label>
+                    <label>$LOCALIZE[31082] $LOCALIZE[20343]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1323,7 +1323,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[2] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[2] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1335,7 +1335,7 @@
                     <!--Music-->
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1348,7 +1348,7 @@
                     <!--Music-->
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1361,7 +1361,7 @@
                     <!--Music-->
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1373,7 +1373,7 @@
                     <!--enable submenu -->
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[1035]</label>
+                    <label> --- $LOCALIZE[1035]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1386,7 +1386,7 @@
                     <description>Radio</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42019]</label>
+                    <label> $LOCALIZE[31019]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1400,7 +1400,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[342] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[342] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1411,7 +1411,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1423,7 +1423,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1435,7 +1435,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1447,7 +1447,7 @@
                     <!--enable submenu -->
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[1035]</label>
+                    <label> --- $LOCALIZE[1035]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1460,7 +1460,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[41024] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[31088] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1471,7 +1471,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1483,7 +1483,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1496,7 +1496,7 @@
                     <!--Live TV Setting-->
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42017]</label>
+                    <label> $LOCALIZE[31017]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1509,7 +1509,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[19017] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[19017] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1520,7 +1520,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1532,7 +1532,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1545,7 +1545,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[42018] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[31018] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1556,7 +1556,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1568,7 +1568,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1580,7 +1580,7 @@
                     <!--enable submenu -->
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[1035]</label>
+                    <label> --- $LOCALIZE[1035]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1593,7 +1593,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[42045] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[31045] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1604,7 +1604,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1616,7 +1616,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1628,7 +1628,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1641,7 +1641,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[20343] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[20343] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1652,7 +1652,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1664,7 +1664,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1676,7 +1676,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1689,7 +1689,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[19021] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[19021] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1700,7 +1700,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1712,7 +1712,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1725,7 +1725,7 @@
                     <description>Radio</description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42020]</label>
+                    <label> $LOCALIZE[31020]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1739,7 +1739,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[1] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[1] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1750,7 +1750,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1762,7 +1762,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1774,7 +1774,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1787,7 +1787,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[3] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[3] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1798,7 +1798,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1810,7 +1810,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1823,7 +1823,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[8] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[8] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1834,7 +1834,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1846,7 +1846,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42010]</label>
+                    <label> $LOCALIZE[31010]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1858,7 +1858,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1870,7 +1870,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42021]</label>
+                    <label> $LOCALIZE[31021]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1883,7 +1883,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[1037] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[1037] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1894,7 +1894,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1906,7 +1906,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1919,7 +1919,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[24001] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[24001] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1930,7 +1930,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1942,7 +1942,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1955,7 +1955,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[1036] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[1036] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -1966,7 +1966,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1978,7 +1978,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1991,7 +1991,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[0] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[0] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -2002,7 +2002,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2014,7 +2014,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2027,7 +2027,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[41025] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[7] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -2038,7 +2038,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2050,7 +2050,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2063,7 +2063,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[5] $LOCALIZE[42014]</label>
+                    <label>$LOCALIZE[5] $LOCALIZE[31014]</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -2073,7 +2073,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42015]</label>
+                    <label> $LOCALIZE[31015]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2085,7 +2085,7 @@
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
-                    <label> $LOCALIZE[42016]</label>
+                    <label> $LOCALIZE[31016]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2109,7 +2109,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>42022</label>
+                    <label>31022</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -2120,7 +2120,7 @@
                     <!--bluebg-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42023</label>
+                    <label>31023</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2132,7 +2132,7 @@
                     <!--defaultbg-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42024</label>
+                    <label>31024</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2144,7 +2144,7 @@
                     <!--weather bg-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42025</label>
+                    <label>31025</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2156,7 +2156,7 @@
                     <!--fanart bg-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42026</label>
+                    <label>31026</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2168,7 +2168,7 @@
                     <!--fanart bg-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42027</label>
+                    <label>31027</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2180,7 +2180,7 @@
                     <!--own image-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[42039]</label>
+                    <label>$LOCALIZE[31039]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2192,7 +2192,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>42028</label>
+                    <label>31028</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -2203,7 +2203,7 @@
                     <!--no blue bar-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42029</label>
+                    <label>31029</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2216,7 +2216,7 @@
                     <!--no blue bar-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42030</label>
+                    <label>31030</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2228,7 +2228,7 @@
                     <!--gadget rows-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42031</label>
+                    <label>31031</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2240,7 +2240,7 @@
                     <!--gadget rows-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42032</label>
+                    <label>31032</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2252,7 +2252,7 @@
                     <!--gadget rows-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42033</label>
+                    <label>31033</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2264,7 +2264,7 @@
                     <!--no titles on home tiles-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42086</label>
+                    <label>31086</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -2276,7 +2276,7 @@
                     <!--activate lyrics-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>42087</label>
+                    <label>31087</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>

@@ -315,7 +315,7 @@
                 </item>
                 <item id="3">
                     <description>Live TV</description>
-                    <label>41024</label>
+                    <label>31088</label>
                     <label2>31410</label2>
                     <onclick>ActivateWindow(PVRSettings)</onclick>
                 </item>

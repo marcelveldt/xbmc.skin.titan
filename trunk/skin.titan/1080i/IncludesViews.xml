@@ -1690,7 +1690,7 @@
                         <width>600</width>
                         <font>Reg34</font>
                         <align>left</align>
-                        <label>$INFO[ListItem.Property(unWatchedepisodes),$LOCALIZE[41033]: ,]</label>
+                        <label>$INFO[ListItem.Property(unWatchedepisodes),$LOCALIZE[31092]: ,]</label>
                         <textcolor>aawhite</textcolor>
                         <scroll>false</scroll>
                     </control>

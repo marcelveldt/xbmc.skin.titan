@@ -45,31 +45,31 @@
                 <posy>180</posy>
                 <width>380</width>
                 <height>220</height>
-                <!--1,407-->
+				<align>left</align>
                 <fadetime>600</fadetime>
                 <texture>$INFO[ListItem.Art(clearart)]</texture>
             </control>
-            <control type="image">
+			<control type="image">
                 <!--logo-->
                 <posx>90</posx>
                 <posy>180</posy>
-                <width>560</width>
-                <height>200</height>
-                <!--1,407-->
+                <width>380</width>
+                <height>220</height>
+                <align>left</align>
                 <fadetime>600</fadetime>
-                <texture>$INFO[ListItem.Art(tvshow.banner)]</texture>
-                <visible>IsEmpty(ListItem.Art(clearart))</visible>
+                <texture>$INFO[ListItem.Art(clearlogo)]</texture>
+				<visible>IsEmpty(ListItem.Art(clearart))</visible>
             </control>
             <control type="image">
                 <!--logo-->
                 <posx>90</posx>
                 <posy>180</posy>
-                <width>340</width>
-                <height>200</height>
-                <!--1,407-->
+                <width>380</width>
+                <height>220</height>
+                <align>left</align>
                 <fadetime>600</fadetime>
-                <texture diffuse="home/home_matte.png">$INFO[ListItem.Art(thumb)]</texture>
-                <visible>IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
+                <texture>$INFO[ListItem.Art(tvshow.clearart)]</texture>
+                <visible>IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(clearlogo))</visible>
             </control>
         </control>
         <!--View 50-->
