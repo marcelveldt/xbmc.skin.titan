@@ -179,10 +179,6 @@
         <value condition="IntegerGreaterThan(System.Time(mm), 5)">$INFO[WindowProperty(LatestPhotoMB3.2.Thumb)]</value>
         <value condition="IntegerGreaterThan(System.Time(mm), 1)">$INFO[Window.Property(LatestPhotoMB3.1.Thumb)]</value>
     </variable>
-    <variable name="NextUpBg">
-        <value condition="!Skin.HasSetting(NoFooterBar)">pvr/pvr_epg_panel.png</value>
-        <value condition="Skin.HasSetting(NoFooterBar)">views/nextup.png</value>
-    </variable>
     <variable name="Custom0Background">
         <value condition="!Skin.String(Custom0Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.0.image)]</value>
         <value condition="Skin.String(Custom0Background)">$INFO[Skin.String(Custom0Background)]</value>
@@ -307,41 +303,28 @@
         <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.3.content)]</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries)">videodb://recentlyaddedepisodes/</value>
     </variable>
-	
-	<variable name="BannerFanArtImage">
-		<value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(season.fanart)) + !substring(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(season.fanart)]</value>
-		<value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
-		<value>$INFO[ListItem.Thumb]</value>
-	</variable>
-	
-	<variable name="BannerLandscapeImage">
-		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
-		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-landscape.jpg]</value>
-		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
-		<value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
-		<value>$INFO[ListItem.Thumb]</value>
-	</variable>
-	
-	<variable name="ThemeFontColorMidGrey">
-		<value condition="!Skin.HasTheme(classic)">FFfffeff</value>
-		<value>FF686868</value>
-	</variable>
-	
-	<variable name="ThemeFontColorMidGrey2">
-		<value condition="!Skin.HasTheme(classic)">white</value>
-		<value>midgrey</value>
-	</variable>
-	
-	
-	<variable name="ThemeFontColorDarkGrey">
-		<value condition="!Skin.HasTheme(classic)">FFfffeff</value>
-		<value>FF3e3e3e</value>
-	</variable>
-	
-	<variable name="ThemeFontColorWhite">
-		<value condition="!Skin.HasTheme(classic)">FFfffeff</value>
-		<value>FFfffeff</value>
-	</variable>
-
-	
+    <variable name="BannerFanArtImage">
+        <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(season.fanart)) + !substring(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(season.fanart)]</value>
+        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value>$INFO[ListItem.Thumb]</value>
+    </variable>
+    <variable name="BannerLandscapeImage">
+        <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+        <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-landscape.jpg]</value>
+        <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
+        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value>$INFO[ListItem.Thumb]</value>
+    </variable>
+    <variable name="ThemeFontColorMidGrey">
+        <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
+        <value>FF686868</value>
+    </variable>
+    <variable name="ThemeFontColorDarkGrey">
+        <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
+        <value>FF3e3e3e</value>
+    </variable>
+    <variable name="ThemeFontColorWhite">
+        <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
+        <value>FFfffeff</value>
+    </variable>
 </includes>

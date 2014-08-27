@@ -17,7 +17,7 @@
                 <texture border="39">dialogs/default/bg.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
-			<control type="image">
+            <control type="image">
                 <include>animation_fade_open_close</include>
                 <animation effect="fade" time="600">WindowOpen</animation>
                 <animation effect="fade" time="600">WindowClose</animation>

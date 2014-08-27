@@ -16,7 +16,7 @@
                 <colordiffuse>FFFFFFFF</colordiffuse>
                 <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
             </control>
-			<control type="image">
+            <control type="image">
                 <animation effect="fade" time="800" start="0" end="100">WindowOpen</animation>
                 <animation effect="fade" time="800" start="100" end="0">WindowClose</animation>
                 <include>DimensionsFullscreen</include>
@@ -536,7 +536,7 @@
                     <width>315</width>
                     <height>27</height>
                     <colordiffuse>aaFFFFFF</colordiffuse>
-                    <texture fallback="rating/10stars/NA.png">$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
+                    <texture>$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
                 </control>
                 <control type="label">
                     <!--Rating Label-->
@@ -720,7 +720,7 @@
                     <posy>340</posy>
                     <width>1720</width>
                     <align>center</align>
-                    <label>42061</label>
+                    <label>31061</label>
                     <include>DialogHeader2</include>
                 </control>
             </control>

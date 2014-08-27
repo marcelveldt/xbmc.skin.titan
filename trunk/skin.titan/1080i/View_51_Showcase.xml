@@ -2,7 +2,6 @@
 <!--Titan-->
 <includes>
     <!--Default-->
-    <include file="IncludesBannerViews.xml" />
     <include name="View_51_Showcase">
         <control type="group">
             <!-- Warplist ID="51"-->

@@ -37,7 +37,7 @@
                 <align>center</align>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                 <font>Bold32</font>
-                <label>42018</label>
+                <label>31018</label>
             </control>
             <control type="list" id="1239">
                 <posx>20</posx>
@@ -83,37 +83,37 @@
                 <content>
                     <item id="10">
                         <!-- custom entry-->
-                        <label>42046</label>
+                        <label>31046</label>
                         <onclick>Dialog.Close(1238)</onclick>
                         <onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</onclick>
                     </item>
                     <item id="11">
                         <!-- custom entry-->
-                        <label>42047</label>
+                        <label>31047</label>
                         <onclick>Dialog.Close(1238)</onclick>
                         <onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</onclick>
                     </item>
                     <item id="12">
                         <!-- custom entry-->
-                        <label>42048</label>
+                        <label>31048</label>
                         <onclick>Dialog.Close(1238)</onclick>
                         <onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</onclick>
                     </item>
                     <item id="13">
                         <!-- custom entry-->
-                        <label>42049</label>
+                        <label>31049</label>
                         <onclick>Dialog.Close(1238)</onclick>
                         <onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</onclick>
                     </item>
                     <item id="14">
                         <!-- custom entry-->
-                        <label>42050</label>
+                        <label>31050</label>
                         <onclick>Dialog.Close(1238)</onclick>
                         <onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</onclick>
                     </item>
                     <item id="15">
                         <!-- custom entry-->
-                        <label>42051</label>
+                        <label>31051</label>
                         <onclick>Dialog.Close(1238)</onclick>
                         <onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</onclick>
                     </item>

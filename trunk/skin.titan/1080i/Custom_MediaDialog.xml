@@ -69,7 +69,7 @@
                 <posy>368</posy>
                 <width>644</width>
                 <height>53</height>
-                <label>[B]$LOCALIZE[42052][/B]</label>
+                <label>[B]$LOCALIZE[31052][/B]</label>
                 <align>left</align>
                 <textoffsetx>20</textoffsetx>
                 <include>DialogButton</include>
@@ -153,37 +153,37 @@
                 <content>
                     <item id="1">
                         <!--Get poster-->
-                        <label>42053</label>
+                        <label>31053</label>
                         <onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID],poster)</onclick>
                         <onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader,mode=gui,mediatype=tvshow,dbid=$INFO[ListItem.DBID],poster)</onclick>
                     </item>
                     <item id="2">
                         <!--Get fanart-->
-                        <label>42054</label>
+                        <label>31054</label>
                         <onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID],fanart)</onclick>
                         <onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader,mode=gui,mediatype=tvshow,dbid=$INFO[ListItem.DBID],fanart)</onclick>
                     </item>
                     <item id="4">
                         <!--Get landscape-->
-                        <label>42056</label>
+                        <label>31056</label>
                         <onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID],landscape)</onclick>
                         <onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader,mode=gui,mediatype=tvshow,dbid=$INFO[ListItem.DBID],landscape)</onclick>
                     </item>
                     <item id="5">
                         <!--Get clearlogo-->
-                        <label>42058</label>
+                        <label>31058</label>
                         <onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID],clearlogo)</onclick>
                         <onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader,mode=gui,mediatype=tvshow,dbid=$INFO[ListItem.DBID],clearlogo)</onclick>
                     </item>
                     <item id="6">
                         <!--Get clearart-->
-                        <label>42057</label>
+                        <label>31057</label>
                         <onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID],clearart)</onclick>
                         <onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader,mode=gui,mediatype=tvshow,dbid=$INFO[ListItem.DBID],clearart)</onclick>
                     </item>
                     <item id="7">
                         <!--Get banner-->
-                        <label>42055</label>
+                        <label>31055</label>
                         <onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID],banner)</onclick>
                         <onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader,mode=gui,mediatype=tvshow,dbid=$INFO[ListItem.DBID],banner)</onclick>
                     </item>
@@ -196,8 +196,8 @@
                 <control type="button" id="7">
                     <description>Close</description>
                     <label>$LOCALIZE[222]</label>
-					<textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-					<focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+                    <focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
                     <texturefocus>common/cancel-fo.png</texturefocus>
                     <texturenofocus>common/cancel-nf.png</texturenofocus>
                     <align>left</align>

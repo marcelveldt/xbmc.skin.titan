@@ -216,13 +216,13 @@
                     </itemlayout>
                     <focusedlayout width="900" height="50">
                         <control type="button">
+                            <label></label>
                             <width>1100</width>
                             <height>60</height>
                             <font>Reg28</font>
                             <textcolor>blue</textcolor>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <label></label>
                             <onfocus>SetProperty(CurrentPos, $INFO[Container(4008).Position])</onfocus>
                         </control>
                         <control type="label">
@@ -235,13 +235,13 @@
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="button">
+                            <label></label>
                             <width>1100</width>
                             <height>60</height>
                             <font>Reg28</font>
                             <textcolor>blue</textcolor>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <label></label>
                             <visible>false</visible>
                             <onfocus>SetProperty(CurrentPos, $INFO[Container(4008).Position])</onfocus>
                         </control>
@@ -2007,7 +2007,7 @@
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
                     <onclick>Skin.Reset(CustomProgramsFolder)</onclick>
-                    <selected>Skin.String(CustomProgramsFolder)</selected>
+                    <selected>!Skin.String(CustomProgramsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuProgramsButton)</visible>
                 </control>
                 <control type="radiobutton" id="9051">
@@ -2019,7 +2019,7 @@
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomProgramsFolder)</onclick>
-                    <selected>!Skin.String(CustomProgramsFolder, artwork) + Skin.String(CustomProgramsFolder)</selected>
+                    <selected>Skin.String(CustomProgramsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuProgramsButton)</visible>
                 </control>
                 <!-- Filemanager -->
@@ -2068,6 +2068,7 @@
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
                     <aligny>center</aligny>
+                    <visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
                 </control>
                 <control type="radiobutton" id="9056">
                     <description></description>
@@ -2091,6 +2092,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomSettingsFolder)</onclick>
                     <selected>!Skin.String(CustomSettingsFolder, artwork) + Skin.String(CustomSettingsFolder)</selected>
+                    <visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
                 </control>
             </control>
             <control type="grouplist" id="5000">
@@ -2209,7 +2211,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoFooterBar)</onclick>
                     <selected>Skin.HasSetting(NoFooterBar)</selected>
-					<visible>!!Skin.HasTheme(classic)</visible>
+                    <visible>!!Skin.HasTheme(classic)</visible>
                 </control>
                 <control type="radiobutton" id="5012">
                     <description></description>
@@ -2259,7 +2261,7 @@
                     <onclick>Skin.SetString(GadgetRows, 1)</onclick>
                     <selected>Skin.String(GadgetRows, 1)</selected>
                 </control>
-				<control type="radiobutton" id="5115">
+                <control type="radiobutton" id="5115">
                     <description></description>
                     <!--no titles on home tiles-->
                     <width>1230</width>
@@ -2271,7 +2273,7 @@
                     <onclick>Skin.ToggleSetting(NoTitleOnHomeMenuTiles)</onclick>
                     <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
                 </control>
-				<control type="radiobutton" id="5116">
+                <control type="radiobutton" id="5116">
                     <description></description>
                     <!--activate lyrics-->
                     <width>1230</width>
@@ -2282,7 +2284,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(MusicActivateLyrics)</onclick>
                     <selected>Skin.HasSetting(MusicActivateLyrics)</selected>
-					<enable>System.HasAddon(script.cu.lrclyrics)</enable>
+                    <enable>System.HasAddon(script.cu.lrclyrics)</enable>
                 </control>
             </control>
         </control>

@@ -1061,7 +1061,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>red</textcolor>
-                        <label>42083</label>
+                        <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1081,7 +1081,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>green</textcolor>
-                        <label>42084</label>
+                        <label>31084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -1169,7 +1169,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>red</textcolor>
-                        <label>42083</label>
+                        <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1189,7 +1189,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>green</textcolor>
-                        <label>42084</label>
+                        <label>31084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -1479,7 +1479,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>red</textcolor>
-                        <label>42083</label>
+                        <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1499,7 +1499,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>green</textcolor>
-                        <label>42084</label>
+                        <label>31084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -1569,7 +1569,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>red</textcolor>
-                        <label>42083</label>
+                        <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1589,7 +1589,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>green</textcolor>
-                        <label>42084</label>
+                        <label>31084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -2590,7 +2590,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>red</textcolor>
-                        <label>42083</label>
+                        <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -2610,7 +2610,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>green</textcolor>
-                        <label>42084</label>
+                        <label>31084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -2681,7 +2681,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>red</textcolor>
-                        <label>42083</label>
+                        <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -2701,7 +2701,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>green</textcolor>
-                        <label>42084</label>
+                        <label>31084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -2993,7 +2993,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>red</textcolor>
-                        <label>42083</label>
+                        <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -3013,7 +3013,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>green</textcolor>
-                        <label>42084</label>
+                        <label>31084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">
@@ -3084,7 +3084,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>red</textcolor>
-                        <label>42083</label>
+                        <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -3104,7 +3104,7 @@
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>green</textcolor>
-                        <label>42084</label>
+                        <label>31084</label>
                         <visible>ListItem.HasTimer</visible>
                     </control>
                     <control type="image">

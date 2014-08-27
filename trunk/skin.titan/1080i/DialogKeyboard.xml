@@ -2,7 +2,7 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">300</defaultcontrol>
-	 <zorder>7</zorder>
+    <zorder>7</zorder>
     <controls>
         <!--Dialog Overlay-->
         <include>DialogOverlay</include>
@@ -273,7 +273,7 @@
                 <control type="radiobutton" id="303">
                     <description>Caps lock</description>
                     <posx>0</posx>
-                    <label>42059</label>
+                    <label>31059</label>
                     <onleft>84</onleft>
                     <onright>75</onright>
                     <onup>304</onup>

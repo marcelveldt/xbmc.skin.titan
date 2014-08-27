@@ -102,14 +102,6 @@
                         <control type="image">
                             <!--Separator-->
                             <posx>0</posx>
-                            <posy>0</posy>
-                            <width>780</width>
-                            <height>20</height>
-                            <texture>common/separatorxxx.png</texture>
-                        </control>
-                        <control type="image">
-                            <!--Separator-->
-                            <posx>0</posx>
                             <posy>220</posy>
                             <width>780</width>
                             <height>20</height>

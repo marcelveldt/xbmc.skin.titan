@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
 <includes>
-    <include file="IncludesBannerViews.xml" />
     <!--Default-->
     <include name="BannerView">
         <control type="panel" id="501">

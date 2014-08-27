@@ -45,11 +45,11 @@
                 <posy>180</posy>
                 <width>380</width>
                 <height>220</height>
-				<align>left</align>
+                <align>left</align>
                 <fadetime>600</fadetime>
                 <texture>$INFO[ListItem.Art(clearart)]</texture>
             </control>
-			<control type="image">
+            <control type="image">
                 <!--logo-->
                 <posx>90</posx>
                 <posy>180</posy>
@@ -58,7 +58,7 @@
                 <align>left</align>
                 <fadetime>600</fadetime>
                 <texture>$INFO[ListItem.Art(clearlogo)]</texture>
-				<visible>IsEmpty(ListItem.Art(clearart))</visible>
+                <visible>IsEmpty(ListItem.Art(clearart))</visible>
             </control>
             <control type="image">
                 <!--logo-->
@@ -269,7 +269,7 @@
                 <posy>13</posy>
                 <width>270</width>
                 <height>25</height>
-                <texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
+                <texture>$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
             </control>
             <control type="image">
                 <!--Stars-->
@@ -278,7 +278,7 @@
                 <posy>13</posy>
                 <width>270</width>
                 <height>25</height>
-                <texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
+                <texture>$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
             </control>
             <control type="label">
                 <!--Rating-->
@@ -346,7 +346,7 @@
                 <align>right</align>
                 <font>Reg30</font>
                 <textcolor>white</textcolor>
-                <label>$INFO[Container.NumItems] $LOCALIZE[42034]</label>
+                <label>$INFO[Container.NumItems] $LOCALIZE[31034]</label>
             </control>
         </control>
         <control type="grouplist">

@@ -683,7 +683,7 @@
                 <label>MusicKaraokeLyrics.xml</label>
                 <visible>Window.IsVisible(MusicKaraokeLyrics.xml)</visible>
             </control>
-			<control type="label">
+            <control type="label">
                 <width>780</width>
                 <height>21</height>
                 <textcolor>FFFF0000</textcolor>
@@ -693,7 +693,7 @@
                 <label>script-XBMC_Lyrics-main.xml</label>
                 <visible>Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
             </control>
-			<control type="label">
+            <control type="label">
                 <width>780</width>
                 <height>21</height>
                 <textcolor>FFFF0000</textcolor>

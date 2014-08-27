@@ -88,7 +88,8 @@
             <control type="label" id="7">
                 <align>left</align>
                 <aligny>top</aligny>
-                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
+                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include>
+                <include condition="Skin.HasTheme(classic)">DialogLabel</include>
             </control>
             <control type="image" id="11">
                 <width>300</width>

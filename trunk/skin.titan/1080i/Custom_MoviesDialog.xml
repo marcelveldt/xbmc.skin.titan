@@ -153,21 +153,21 @@
                     </item>
                     <item id="7">
                         <!--In progress (mb3 only)-->
-                        <label>42035</label>
+                        <label>31035</label>
                         <onclick>Dialog.Close(1237)</onclick>
                         <onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.2.path)]</onclick>
                         <visible>Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
                     </item>
                     <item id="8">
                         <!-- Favourite movies (mb3 only)-->
-                        <label>42036</label>
+                        <label>31036</label>
                         <onclick>Dialog.Close(1237)</onclick>
                         <onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.3.path)]</onclick>
                         <visible>Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
                     </item>
                     <item id="9">
                         <!-- Trailers (mb3 only)-->
-                        <label>42037</label>
+                        <label>31037</label>
                         <onclick>Dialog.Close(1237)</onclick>
                         <onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.5.path)]</onclick>
                         <visible>Skin.HasSetting(HomeMenuUseMBforMovies) + IntegerGreaterThan(Window(Home).Property(MB3TotalTrailers), 0)</visible>

@@ -198,7 +198,7 @@
                     <include>DialogButton</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
-                    <label>42000</label>
+                    <label>31000</label>
                     <onclick>Skin.SetBool(youtube)</onclick>
                     <onclick>Dialog.Close(musicinformation,true)</onclick>
                     <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Artist],return)</onclick>

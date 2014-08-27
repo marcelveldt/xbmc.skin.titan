@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include file="IncludesBannerViews.xml" />
     <include name="View_53_PanelDetails">
         <!-- movie details -->
         <control type="group">

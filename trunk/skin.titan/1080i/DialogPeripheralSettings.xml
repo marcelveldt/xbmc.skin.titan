@@ -66,7 +66,8 @@
                     <height>60</height>
                     <textoffsetx>20</textoffsetx>
                     <align>center</align>
-                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include>
+                    <include condition="Skin.HasTheme(classic)">DialogLabel</include>
                     <label>$LOCALIZE[35004]</label>
                 </control>
                 <control type="grouplist" id="5">

@@ -74,7 +74,8 @@
                         <align>left</align>
                         <textoffsetx>20</textoffsetx>
                         <label>$LOCALIZE[21433]</label>
-                        <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
+                        <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include>
+                        <include condition="Skin.HasTheme(classic)">DialogLabel</include>
                     </control>
                     <control type="image">
                         <posx>0</posx>
@@ -128,7 +129,8 @@
                         <align>left</align>
                         <textoffsetx>20</textoffsetx>
                         <label>$LOCALIZE[21434]</label>
-                        <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
+                        <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include>
+                        <include condition="Skin.HasTheme(classic)">DialogLabel</include>
                     </control>
                     <control type="image">
                         <posx>0</posx>

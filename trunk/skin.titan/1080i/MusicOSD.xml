@@ -7,7 +7,7 @@
         <!--Fanart-->
         <include>MusicBackground</include>
         <!--Music Visualisation-->
-		<control type="visualisation" id="2">
+        <control type="visualisation" id="2">
             <description>visualisation</description>
             <include>DimensionsFullscreen</include>
         </control>
@@ -178,7 +178,7 @@
                 <fadetime>200</fadetime>
                 <texture background="true" fallback="cover_default.png" diffuse="cover_matte.png">$INFO[MusicPlayer.Cover]</texture>
                 <aspectratio align="left" aligny="top">stretch</aspectratio>
-				<visible>!IsEmpty(MusicPlayer.Cover)</visible>
+                <visible>!IsEmpty(MusicPlayer.Cover)</visible>
             </control>
             <!--Label-->
             <control type="label">
@@ -191,7 +191,7 @@
                 <label>[B]$INFO[MusicPlayer.Artist][/B]</label>
                 <scroll>false</scroll>
             </control>
-			<control type="label">
+            <control type="label">
                 <posx>550</posx>
                 <posy>770</posy>
                 <width>900</width>
@@ -201,7 +201,7 @@
                 <label>[B]$INFO[MusicPlayer.ChannelName][/B]</label>
                 <scroll>false</scroll>
             </control>
-			<control type="label">
+            <control type="label">
                 <posx>550</posx>
                 <posy>770</posy>
                 <width>900</width>
@@ -210,7 +210,7 @@
                 <textcolor>white</textcolor>
                 <label>[B]$INFO[Window(Home).Property(streamtitle)][/B]</label>
                 <scroll>false</scroll>
-				<visible>IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.ChannelName)</visible>
+                <visible>IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.ChannelName)</visible>
             </control>
             <control type="label">
                 <posx>550</posx>

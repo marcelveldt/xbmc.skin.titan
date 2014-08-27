@@ -102,13 +102,6 @@
                     <include>SubMenuButton</include>
                     <align>left</align>
                 </control>
-                <control type="image" id="206">
-                    <!--Space-->
-                    <width>458</width>
-                    <height>20</height>
-                    <align>left</align>
-                    <texture>common/menu_space.png</texture>
-                </control>
                 <control type="label" id="300">
                     <!--View:-->
                     <width>458</width>

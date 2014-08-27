@@ -56,7 +56,8 @@
         </control>
         <control type="button" id="7">
             <description>Default Button</description>
-			<include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+            <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+            <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
             <focusedcolor>black</focusedcolor>
             <font>Reg28</font>
             <align>left</align>
@@ -101,7 +102,7 @@
                 <height>50</height>
                 <font>Reg28</font>
                 <font>Reg28</font>
-                <label>42071</label>
+                <label>31071</label>
                 <textcolor>white</textcolor>
                 <align>left</align>
             </control>

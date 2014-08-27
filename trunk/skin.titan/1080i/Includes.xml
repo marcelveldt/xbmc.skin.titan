@@ -2,7 +2,6 @@
 <!--Titan-->
 <includes>
     <include file="Defaults.xml" />
-    <include file="CommonViews.xml" />
     <include file="View_50_List.xml" />
     <include file="View_55_BannerList.xml" />
     <include file="View_51_Showcase.xml" />
@@ -11,11 +10,11 @@
     <include file="View_505_BannerDetails.xml" />
     <include file="View_52_Panel.xml" />
     <include file="View_53_PanelDetails.xml" />
-    <include file="IncludesInfos.xml" />
     <include file="IncludesVariables.xml" />
     <include file="IncludesNowPlaying.xml" />
     <include file="IncludesNextUp.xml" />
     <include file="IncludesHomeMenuItems.xml" />
+    <include file="IncludesViews.xml" />
     <!--Artwork Downloader-->
     <include file="Custom_MediaDialog.xml" />
     <!--PVR-->
@@ -524,7 +523,7 @@
         <focusedcolor>FF585858</focusedcolor>
         <disabledcolor>FF585858</disabledcolor>
     </include>
-	<include name="DialogButtonAlt">
+    <include name="DialogButtonAlt">
         <!--Dialog Button-->
         <font>Light32</font>
         <textcolor>FFfffeff</textcolor>
@@ -552,7 +551,7 @@
         <!--Dialog List NF-->
         <font>Light32</font>
         <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-		<focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
+        <focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
     </include>
     <include name="DialogListFO">
         <!--Dialog List FO-->
@@ -567,7 +566,7 @@
         <disabledcolor>FF3e3e3e</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
     </include>
-	    <include name="DialogLabelAlt">
+    <include name="DialogLabelAlt">
         <!--Dialog Label-->
         <font>Reg28</font>
         <textcolor>FFfffeff</textcolor>
@@ -1272,7 +1271,7 @@
                     <height>24</height>
                     <!--27-->
                     <colordiffuse>aaFFFFFF</colordiffuse>
-                    <texture fallback="rating/10stars/NA.png">$INFO[VideoPlayer.Rating,rating/10stars_blue/,.png]</texture>
+                    <texture>$INFO[VideoPlayer.Rating,rating/10stars_blue/,.png]</texture>
                 </control>
                 <control type="label">
                     <!--Rating Label-->

@@ -142,18 +142,11 @@
                 </control>
                 <control type="radiobutton" id="317">
                     <!--Toggle Overlay-->
-                    <visible>[Control.IsVisible(53) | Control.IsVisible(52)]</visible>
+                    <visible>[Control.IsVisible(53) | Control.IsVisible(52)] + Skin.HasTheme(classic)</visible>
                     <include>SubMenuButton</include>
                     <label>31063</label>
                     <onclick>Skin.ToggleSetting(PosterViewNoOverlay)</onclick>
                     <selected>Skin.HasSetting(PosterViewNoOverlay)</selected>
-                </control>
-                <control type="image" id="206">
-                    <!--Space-->
-                    <width>458</width>
-                    <height>20</height>
-                    <align>left</align>
-                    <texture>common/menu_space.png</texture>
                 </control>
                 <control type="label" id="300">
                     <!--View:-->

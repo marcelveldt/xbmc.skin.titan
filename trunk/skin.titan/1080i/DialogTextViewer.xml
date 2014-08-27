@@ -46,7 +46,8 @@
                 <width>930</width>
                 <height>530</height>
                 <label>-</label>
-                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
+                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include>
+                <include condition="Skin.HasTheme(classic)">DialogLabel</include>
                 <align>left</align>
                 <pagecontrol>61</pagecontrol>
             </control>

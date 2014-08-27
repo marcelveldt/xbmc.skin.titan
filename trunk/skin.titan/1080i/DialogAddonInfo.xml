@@ -58,7 +58,7 @@
                 <height>200</height>
                 <fadetime>800</fadetime>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <texture background="true" fallback="coverdefault.png" diffuse="covermatte.png">$INFO[ListItem.Icon]</texture>
+                <texture background="true" fallback="cover_default.png" diffuse="cover_matte.png">$INFO[ListItem.Icon]</texture>
             </control>
             <!--Infos-->
             <control type="grouplist">
@@ -156,7 +156,8 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24022</label>
@@ -167,7 +168,8 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24021</label>
@@ -178,7 +180,8 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24020</label>
@@ -189,7 +192,8 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24069</label>
@@ -200,7 +204,8 @@
                     <height>60</height>
                     <align>right</align>
                     <textoffsetx>20</textoffsetx>
-                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                    <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                    <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                     <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>24036</label>

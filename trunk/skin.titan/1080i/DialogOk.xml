@@ -6,8 +6,8 @@
     <controls>
         <!--Dialog Overlay-->
         <include>DialogOverlay</include>
-		<include>DialogOverlay</include>
-		<include>DialogOverlay</include>
+        <include>DialogOverlay</include>
+        <include>DialogOverlay</include>
         <!--Dialog OK-->
         <control type="group">
             <include>animation_dialog</include>

@@ -65,7 +65,8 @@
                         <height>60</height>
                         <align>right</align>
                         <textoffsetx>20</textoffsetx>
-                        <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                        <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                        <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                         <texturefocus border="2">dialogs/default/highlight-grey.png</texturefocus>
                         <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     </control>
@@ -102,7 +103,8 @@
                 <height>60</height>
                 <align>left</align>
                 <textoffsetx>20</textoffsetx>
-                <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                 <texturefocus border="2">dialogs/default/highlight.png</texturefocus>
                 <texturenofocus>dialogs/default/separator.png</texturenofocus>
             </control>
@@ -113,7 +115,8 @@
                 <textoffsetx>20</textoffsetx>
                 <textwidth>844</textwidth>
                 <radioposx>852</radioposx>
-                <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                 <textureradioonfocus>common/radio/radio-light-fo.png</textureradioonfocus>
                 <textureradiooffnofocus>common/radio/radio-light-nf.png</textureradiooffnofocus>
                 <textureradioofffocus>common/radio/radio-light-nf.png</textureradioofffocus>
@@ -127,7 +130,8 @@
                 <align>left</align>
                 <spinposx>5</spinposx>
                 <textoffsetx>20</textoffsetx>
-                <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                 <textureup>common/spinctrl/arrow-light-up-nf.png</textureup>
                 <texturedown>common/spinctrl/arrow-light-down-nf.png</texturedown>
                 <textureupfocus>common/spinctrl/arrow-light-up-fo.png</textureupfocus>
@@ -142,7 +146,8 @@
                 <aligny>top</aligny>
                 <textoffsetx>20</textoffsetx>
                 <textoffsety>14</textoffsety>
-                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
+                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include>
+                <include condition="Skin.HasTheme(classic)">DialogLabel</include>
             </control>
             <control type="sliderex" id="8">
                 <description>Default Slider</description>
@@ -151,7 +156,8 @@
                 <height>60</height>
                 <align>left</align>
                 <textoffsetx>20</textoffsetx>
-                <include condition="!!Skin.HasTheme(classic)">DialogButton</include><include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
+                <include condition="!!Skin.HasTheme(classic)">DialogButton</include>
+                <include condition="!Skin.HasTheme(classic)">DialogButtonAlt</include>
                 <texturefocus border="2">dialogs/default/highlight.png</texturefocus>
                 <texturenofocus>dialogs/default/separator.png</texturenofocus>
                 <sliderwidth>150</sliderwidth>

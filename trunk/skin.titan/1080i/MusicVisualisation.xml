@@ -19,11 +19,11 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true"></animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true"></animation>
         </control>
-		<control type="visualisation" id="2">
+        <control type="visualisation" id="2">
             <description>visualisation</description>
             <include>DimensionsFullscreen</include>
         </control>
-		<!--Dialog Overlay-->
+        <!--Dialog Overlay-->
         <control type="image">
             <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
             <animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
@@ -32,7 +32,7 @@
             <texture background="true">common/black.png</texture>
             <visible>Window.IsActive(script-XBMC_Lyrics-main.xml) + Skin.HasSetting(MusicActivateLyrics)</visible>
         </control>
-		<control type="image">
+        <control type="image">
             <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
             <animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
             <include>DimensionsFullscreen</include>
@@ -40,11 +40,10 @@
             <texture background="true">common/black.png</texture>
             <visible>Window.IsActive(script-XBMC_Lyrics-main.xml) + Skin.HasSetting(MusicActivateLyrics)</visible>
         </control>
-		
-		<control type="group">
+        <control type="group">
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
-			<visible>Player.HasAudio</visible>
+            <visible>Player.HasAudio</visible>
             <!--Panel-->
             <control type="image">
                 <posx>210</posx>
@@ -219,7 +218,7 @@
                 <label>[B]$INFO[MusicPlayer.ChannelName][/B]</label>
                 <scroll>false</scroll>
             </control>
-			<control type="label">
+            <control type="label">
                 <posx>550</posx>
                 <posy>770</posy>
                 <width>900</width>
@@ -228,7 +227,7 @@
                 <textcolor>white</textcolor>
                 <label>[B]$INFO[Window(Home).Property(streamtitle)][/B]</label>
                 <scroll>false</scroll>
-				<visible>IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.ChannelName)</visible>
+                <visible>IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.ChannelName)</visible>
             </control>
             <control type="label">
                 <posx>550</posx>

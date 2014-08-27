@@ -140,7 +140,7 @@
                             <posy>10</posy>
                             <width>56</width>
                             <height>56</height>
-                            <texture background="true" fallback="DefaultProfile.png">$INFO[ListItem.Icon]</texture>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
                             <visible>!IsEmpty(ListItem.Icon)</visible>
                         </control>
                         <control type="label">

@@ -30,7 +30,7 @@
                 <width>133</width>
                 <height>133</height>
                 <fadetime>200</fadetime>
-                <texture background="true" fallback="cover_default.png" diffuse="covermatte_cdart.png">$INFO[MusicPlayer.Cover]</texture>
+                <texture background="true" fallback="cover_default.png" diffuse="cover_matte_cdart.png">$INFO[MusicPlayer.Cover]</texture>
                 <aspectratio align="center" aligny="top">stretch</aspectratio>
             </control>
             <control type="label">
@@ -41,7 +41,7 @@
                 <align>left</align>
                 <font>Reg28</font>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-                <label>42040</label>
+                <label>31040</label>
             </control>
             <control type="fadelabel">
                 <!--Title-->
@@ -65,7 +65,7 @@
                 <label>$INFO[Window(Home).Property(streamtitle)] - $INFO[MusicPlayer.Title]</label>
                 <visible>IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.Artist) + !IsEmpty(MusicPlayer.Title)</visible>
             </control>
-			<control type="fadelabel">
+            <control type="fadelabel">
                 <!--Title-->
                 <posx>255</posx>
                 <posy>75</posy>
@@ -150,7 +150,7 @@
                 <align>left</align>
                 <font>Reg28</font>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-                <label>42040</label>
+                <label>31040</label>
             </control>
             <control type="fadelabel">
                 <!--Title-->

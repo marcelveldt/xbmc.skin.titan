@@ -210,7 +210,8 @@
                                 <width>310</width>
                                 <height>60</height>
                                 <label>$INFO[ListItem.ChannelNumber,(,) ]$INFO[ListItem.ChannelName]</label>
-                                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include><include condition="Skin.HasTheme(classic)">DialogLabel</include>
+                                <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include>
+                                <include condition="Skin.HasTheme(classic)">DialogLabel</include>
                             </control>
                             <control type="image">
                                 <posx>10</posx>

@@ -6,7 +6,7 @@
             <width>200</width>
             <height>294</height>
             <texture background="true">$INFO[ListItem.Art(poster)]</texture>
-            <visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
         <control type="image">
@@ -14,7 +14,7 @@
             <width>200</width>
             <height>294</height>
             <texture background="true" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-            <visible>Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
+            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)] + IsEmpty(ListItem.Art(poster))</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
         <control type="image">
@@ -22,7 +22,7 @@
             <width>200</width>
             <height>294</height>
             <texture background="true" diffuse="poster_matte.png">$INFO[ListItem.Art(poster)]</texture>
-            <visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
         <control type="image">
@@ -30,7 +30,7 @@
             <width>200</width>
             <height>294</height>
             <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-            <visible>!Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
+            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)] + IsEmpty(ListItem.Art(poster))</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
     </include>
@@ -40,9 +40,9 @@
             <posx>90</posx>
             <width>290</width>
             <height>290</height>
-            <texture background="true" diffuse="$VAR[posterviewoverlay]">$INFO[ListItem.Icon]</texture>
+            <texture background="true" diffuse="cover_matte.png">$INFO[ListItem.Icon]</texture>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
-            <visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
         </control>
         <control type="image">
             <!--Cover-->
@@ -51,7 +51,7 @@
             <height>290</height>
             <texture background="true">$INFO[ListItem.Icon]</texture>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
-            <visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
         </control>
     </include>
     <include name="PosterViewAlbumLayoutFocus">
@@ -65,9 +65,9 @@
             <posx>90</posx>
             <width>290</width>
             <height>290</height>
-            <texture background="true" diffuse="$VAR[posterviewoverlay]">$INFO[ListItem.Icon]</texture>
+            <texture background="true" diffuse="cover_matte.png">$INFO[ListItem.Icon]</texture>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
-            <visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
         </control>
         <control type="image">
             <animation type="focus">
@@ -81,7 +81,7 @@
             <height>290</height>
             <texture background="true">$INFO[ListItem.Icon]</texture>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
-            <visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
         </control>
     </include>
     <include name="PosterViewLayoutFocus">
@@ -96,7 +96,7 @@
             <width>200</width>
             <height>294</height>
             <texture background="true">$INFO[ListItem.Art(poster)]</texture>
-            <visible>Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
         <control type="image">
@@ -110,7 +110,7 @@
             <width>200</width>
             <height>294</height>
             <texture background="true" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-            <visible>Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
+            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)] + IsEmpty(ListItem.Art(poster))</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
         <control type="image">
@@ -124,7 +124,7 @@
             <width>200</width>
             <height>294</height>
             <texture background="true" diffuse="poster_matte.png">$INFO[ListItem.Art(poster)]</texture>
-            <visible>!Skin.HasSetting(PosterViewNoOverlay)</visible>
+            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
         <control type="image">
@@ -138,7 +138,7 @@
             <width>200</width>
             <height>294</height>
             <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-            <visible>!Skin.HasSetting(PosterViewNoOverlay) + IsEmpty(ListItem.Art(poster))</visible>
+            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)] + IsEmpty(ListItem.Art(poster))</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
     </include>
@@ -334,12 +334,6 @@
         <width>430</width>
         <height>260</height>
     </include>
-	<include name="BannerViewImageSizeThumb">
-        <posx>60</posx>
-        <posy>20</posy>
-        <width>430</width>
-        <height>260</height>
-    </include>
     <include name="BannerViewOverlaySizeNormal">
         <posx>0</posx>
         <posy>0</posy>
@@ -398,7 +392,7 @@
                 <posy>15</posy>
                 <width>270</width>
                 <height>25</height>
-                <texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
+                <texture>$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
                 <visible>!Skin.HasSetting(NoFooterBar)</visible>
             </control>
             <control type="image">
@@ -406,7 +400,7 @@
                 <posy>15</posy>
                 <width>270</width>
                 <height>25</height>
-                <texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
+                <texture>$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
                 <visible>Skin.HasSetting(NoFooterBar)</visible>
             </control>
             <control type="label">
@@ -433,7 +427,7 @@
                 <align>right</align>
                 <font>Reg30</font>
                 <textcolor>white</textcolor>
-                <label>$INFO[Container.NumItems] $LOCALIZE[42034]</label>
+                <label>$INFO[Container.NumItems] $LOCALIZE[31034]</label>
             </control>
         </control>
     </include>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
 <includes>
-    <include file="IncludesViews.xml" />
     <include name="BannerViewDetails">
         <!-- movie details and footer -->
         <control type="group">
