@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
 	id="skin.titan"
-	version="2.0.1"
+	version="2.0.2"
 	name="Titan MediaBrowser"
-	provider-name="marcelveldt">
+	provider-name="marcelveldt, reazorFX">
 	<requires>
 		<import version="5.0.1" addon="xbmc.gui"/>		
 		<import addon="script.artwork.downloader" version="12.0.29" />
 		<import addon="service.skin.widgets" version="0.0.25"/>
+		<import addon="script.titanskin.helpers" version="1.0.0"/>
 	</requires>
 	<extension
     point="xbmc.gui.skin"
@@ -18,7 +19,9 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-		<summary>MediaPortal's Titan skin ported to XBMC enriched with lot's of features and full integration of MediaBrowser.</summary>
-		<description>Get the most out of your XBMC installation with the Titan skin, originally a port of the standard MediaPortal skin now has lot's of features on his own.</description>
+		<summary lang="en">MediaPortal's Titan skin ported to XBMC enriched with lot's of features and full integration of MediaBrowser.</summary>
+		<summary lang="nl">De Titan skin van MediaPortal geconverteerd naar XBMC en verrijkt met talloze functionaliteiten</summary>
+		<description lang="en">Get the most out of your XBMC installation with the Titan skin, originally a port of the standard MediaPortal skin now has lot's of features on his own.</description>
+		<description lang="nl">Haal het maximale uit je XBMC installatie met de Titan MediaBrowser skin. Begonnen als een port van Mediaportal is uitgebreid met talloze eigen functies zoals de integratie van MediaBrowser etc. </description>
 	</extension>
 </addon>
