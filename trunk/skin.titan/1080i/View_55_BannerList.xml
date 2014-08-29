@@ -97,45 +97,38 @@
                 <!-- Movies -->
                 <!-- ======= -->
                 <itemlayout height="150" width="760" condition="!Container.Content(albums)">
-                    <control type="label">
-                        <!--Label with title-->
-                        <width>700</width>
-                        <posy>50</posy>
-                        <posx>390</posx>
-                        <font>Reg60</font>
-                        <align>center</align>
-                        <info>ListItem.Label</info>
-                        <textcolor>darkgrey</textcolor>
-                    </control>
                     <control type="image">
                         <!--Poster-->
                         <width>758</width>
                         <height>140</height>
-                        <texture fallback="home/home_focus.png">$INFO[ListItem.Art(banner)]</texture>
+                        <texture fallback="banner_default.png">$INFO[ListItem.Art(banner)]</texture>
                         <aspectratio align="center" aligny="center">stretch</aspectratio>
                         <colordiffuse>FF666666</colordiffuse>
                     </control>
                     <control type="image">
-                        <!--Watched Overlay-->
-                        <width>50</width>
-                        <height>50</height>
-                        <posx>690</posx>
-                        <posy>12</posy>
-                        <colordiffuse>FF666666</colordiffuse>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/dialog_video_info_watched.png]</texture>
-                    </control>
+						<!--Watched Overlay-->
+						<posx>663</posx>
+						<posy>0</posy>
+						<width>95</width>
+						<height>95</height>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+						<texture>$VAR[WatchedImageBanner]</texture>
+						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
+					</control>
+					<control type="label">
+						<!--watched label-->
+						<posx>731</posx>
+						<posy>0</posy>
+						<width>50</width>
+						<height>60</height>
+						<font>Reg26</font>
+						<align>center</align>
+						<label>$VAR[WatchedLabel]</label>
+						<textcolor>white</textcolor>
+						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
+				</control>
                 </itemlayout>
                 <focusedlayout height="150" width="760" condition="!Container.Content(albums)">
-                    <control type="label">
-                        <!--Label with title-->
-                        <width>700</width>
-                        <posy>50</posy>
-                        <posx>390</posx>
-                        <font>Reg60</font>
-                        <align>center</align>
-                        <info>ListItem.Label</info>
-                        <textcolor>white</textcolor>
-                    </control>
                     <control type="image">
                         <!--Poster-->
                         <animation type="focus">
@@ -147,17 +140,43 @@
                         <!--Poster-->
                         <width>758</width>
                         <height>140</height>
-                        <texture fallback="home/home_focus.png">$INFO[ListItem.Art(banner)]</texture>
+                        <texture fallback="banner_default.png">$INFO[ListItem.Art(banner)]</texture>
                         <aspectratio align="center" aligny="center">stretch</aspectratio>
                     </control>
                     <control type="image">
-                        <!--Watched Overlay-->
-                        <width>50</width>
-                        <height>50</height>
-                        <posx>690</posx>
-                        <posy>12</posy>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/dialog_video_info_watched.png]</texture>
-                    </control>
+					<animation type="focus">
+                            <effect type="zoom" start="100" end="103" center="130,190" time="150" />
+                        </animation>
+                        <animation type="unfocus">
+                            <effect type="zoom" start="103" end="100" center="130,190" time="150" />
+                        </animation>
+						<!--Watched Overlay-->
+						<posx>663</posx>
+						<posy>0</posy>
+						<width>95</width>
+						<height>95</height>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+						<texture>$VAR[WatchedImageBanner]</texture>
+						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
+					</control>
+					<control type="label">
+					<animation type="focus">
+                            <effect type="zoom" start="100" end="103" center="130,190" time="150" />
+                        </animation>
+                        <animation type="unfocus">
+                            <effect type="zoom" start="103" end="100" center="130,190" time="150" />
+                        </animation>
+						<!--watched label-->
+						<posx>731</posx>
+						<posy>0</posy>
+						<width>50</width>
+						<height>60</height>
+						<font>Reg26</font>
+						<align>center</align>
+						<label>$VAR[WatchedLabel]</label>
+						<textcolor>white</textcolor>
+						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
+				</control>
                 </focusedlayout>
             </control>
         </control>

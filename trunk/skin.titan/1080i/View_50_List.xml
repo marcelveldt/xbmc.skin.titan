@@ -174,7 +174,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="image">
                         <!--Separator-->
@@ -218,7 +218,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="label">
                         <!--Label 1-->
@@ -282,7 +282,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="label">
                         <!--Label 2-->
@@ -327,7 +327,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="image">
                         <!--Separator-->
@@ -357,7 +357,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="label">
                         <!--Label 1-->
@@ -397,7 +397,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="label">
                         <!--Label 1-->
@@ -452,7 +452,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="image">
                         <!--Separator-->
@@ -492,7 +492,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="image">
                         <!--Separator-->
@@ -544,7 +544,7 @@
                         <posy>0</posy>
                         <width>60</width>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>
+                        <texture>$INFO[ListItem.Overlay,overlays/list/,]</texture>
                     </control>
                     <control type="image">
                         <!--Separator-->

@@ -310,11 +310,14 @@
     </variable>
     <variable name="BannerLandscapeImage">
         <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
-        <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-landscape.jpg]</value>
-        <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value>$INFO[ListItem.Thumb]</value>
     </variable>
+	<variable name="BannerLandscapeImageSeason">
+        <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-landscape.jpg]</value>
+        <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
+    </variable>
+	
     <variable name="ThemeFontColorMidGrey">
         <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
         <value>FF686868</value>
@@ -327,4 +330,28 @@
         <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
         <value>FFfffeff</value>
     </variable>
+	
+	<variable name="WatchedImage">
+		<value condition="!Skin.HasTheme(classic) + !Control.IsVisible(50) + SubString(ListItem.label,*)">overlays/big/OverlayUnWatched.png</value>
+		<value condition="Skin.HasTheme(classic) + !Control.IsVisible(50) + SubString(ListItem.label,*)">overlays/rounded/OverlayUnWatched.png</value>
+        <value condition="!Skin.HasTheme(classic) + !Control.IsVisible(50) + [StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)]">overlays/big/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasTheme(classic) + !Control.IsVisible(50) + [StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)]">overlays/rounded/$INFO[ListItem.Overlay]</value>
+		<value condition="Control.IsVisible(50) + [StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)]">overlays/small/$INFO[ListItem.Overlay]</value>
+    </variable>
+	
+	<variable name="WatchedImageBanner">
+		<value condition="SubString(ListItem.label,*)">overlays/big/OverlayUnWatched.png</value>
+        <value condition="[StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)]">overlays/big/$INFO[ListItem.Overlay]</value>
+    </variable>
+
+	<variable name="WatchedLabel">
+        <value condition="[Container.Content(TVShows) | Container.Content(Seasons)] + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
+		<value condition="ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png)">$INFO[ListItem.PercentPlayed]%</value>
+    </variable>
+	
+	<variable name="ShowCaseWatchedImage">
+        <value condition="!Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/big/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/rounded/$INFO[ListItem.Overlay]</value>
+    </variable>
+	
 </includes>

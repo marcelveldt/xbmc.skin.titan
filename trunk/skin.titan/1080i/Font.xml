@@ -169,6 +169,11 @@
             <filename>Regular.ttf</filename>
             <size>20</size>
         </font>
+		 <font>
+            <name>Reg24</name>
+            <filename>Regular.ttf</filename>
+            <size>24</size>
+        </font>
         <font>
             <name>Reg25</name>
             <filename>Regular.ttf</filename>

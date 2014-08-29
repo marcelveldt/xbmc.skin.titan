@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
 	id="skin.titan"
-	version="2.0.2"
+	version="2.0.3"
 	name="Titan MediaBrowser"
 	provider-name="marcelveldt, reazorFX">
 	<requires>

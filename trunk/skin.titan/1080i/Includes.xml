@@ -1458,7 +1458,6 @@
         <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforTVseries)</onload>
         <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforPictures)</onload>
         <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(WeatherOnHome)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, landscape, banner, extrafanart)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-0, 0)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-1, 1)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-2, 2)</onload>
@@ -1497,6 +1496,10 @@
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-35, 35)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults)">Skin.SetBool(HomeMenuDefaults)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
+		<onload condition="!Skin.HasTheme(classic) + !Skin.HasSetting(NoFooterBar)">Skin.SetBool(NoFooterBar)</onload>
+		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, extrafanart, poster, fanart, clearlogo, clearart, banner, seasonbanner, landscape, extrathumbs, seasonthumb, seasonposter, tvthumb, characterart, seasonlandscape)</onload>
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
 		<onload>Skin.Reset(ShowNextUppanel)</onload>
     </include>
     <include name="CastMB3Content">
