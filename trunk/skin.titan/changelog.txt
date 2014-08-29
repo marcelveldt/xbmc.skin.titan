@@ -1,3 +1,6 @@
+v.2.0.2
+- fixed small issues for compatibility with xbmc repo
+
 v.2.0.1
 - fixed issue with custom tile images for MB3 libraries
 - added support for (optional) Lyrics in music

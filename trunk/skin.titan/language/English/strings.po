@@ -371,25 +371,27 @@ msgstr ""
 
 msgctxt "#31089"
 msgid "XBMB3C add-on"
-msgstr "XBMB3C add-on"
+msgstr ""
 
 msgctxt "#31090"
 msgid "XBMB3C settings"
-msgstr "XBMB3C instellingen"
+msgstr ""
 
 msgctxt "#31091"
 msgid "Mediabrowser"
-msgstr "Mediabrowser"
+msgstr ""
 
 msgctxt "#31092"
 msgid "Unwatched Episodes"
-msgstr "Ongekeken Afleveringen"
+msgstr ""
 
 msgctxt "#31093"
 msgid "Youtube Trailer"
-msgstr "Youtube Trailer"
+msgstr ""
 
-
+msgctxt "#31094"
+msgid "Hide watched icons"
+msgstr ""
 
 
 msgctxt "#31400"

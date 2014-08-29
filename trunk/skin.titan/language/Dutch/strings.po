@@ -390,6 +390,10 @@ msgctxt "#31093"
 msgid "Youtube Trailer"
 msgstr "Youtube Trailer"
 
+msgctxt "#31094"
+msgid "Hide watched icons"
+msgstr "Verberg bekeken iconen"
+
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"
 msgstr "[B]CONFIGUREER UITERLIJKE INSTELLINGEN[/B][CR][CR][COLOR=midgrey] Verander skin · Verander taal en regio  · Verander bestandsindeling opties · Stel een screensaver in[/COLOR]"
