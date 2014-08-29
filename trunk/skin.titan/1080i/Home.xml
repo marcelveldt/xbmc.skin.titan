@@ -5,8 +5,8 @@
     <allowoverlay>yes</allowoverlay>
     <include>defaultskinsettings</include>
     <onload>Skin.Reset(youtube)</onload>
-    
 	<onload>Control.SetFocus(300,2)</onload>
+	<onload>300</onload>
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>
