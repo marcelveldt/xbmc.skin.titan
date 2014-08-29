@@ -184,6 +184,21 @@
             <colordiffuse>ccFFFFFF</colordiffuse>
             <texture>$INFO[ListItem.Overlay,overlays/,/dialog_video_info_watched.png]</texture>
         </control>
+		<control type="image">
+            <!--UnWatched image-->
+            <include>BannerViewUnWatchedSizeNormal</include>
+            <colordiffuse>ccFFFFFF</colordiffuse>
+            <texture>unwatched3.png</texture>
+			<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) </visible>
+        </control>
+		 <control type="label">
+            <!--Label with title-->
+            <include>BannerViewUnwatchedLabelSizeNormal</include>
+            <align>center</align>
+            <info>ListItem.Property(UnWatchedEpisodes)</info>
+            <textcolor>white</textcolor>
+			<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) </visible>
+        </control>
     </include>
     <include name="BannerViewImagesEpisodes">
         <control type="image">
@@ -352,6 +367,12 @@
         <width>60</width>
         <height>60</height>
     </include>
+	    <include name="BannerViewUnWatchedSizeNormal">
+        <posx>465</posx>
+        <posy>15</posy>
+        <width>95</width>
+        <height>95</height>
+    </include>
     <include name="BannerViewWatchedSizeEpisodes">
         <posx>364</posx>
         <posy>19</posy>
@@ -364,6 +385,13 @@
         <width>530</width>
         <height>100</height>
         <font>Reg42</font>
+    </include>
+	<include name="BannerViewUnwatchedLabelSizeNormal">
+        <posx>532</posx>
+        <posy>10</posy>
+        <width>60</width>
+        <height>60</height>
+        <font>Light30</font>
     </include>
     <include name="BannerViewWithOverlayLabelSizeEpisodes">
         <posx>200</posx>

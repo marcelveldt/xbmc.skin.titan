@@ -13,7 +13,8 @@
     <include file="IncludesVariables.xml" />
     <include file="IncludesNowPlaying.xml" />
     <include file="IncludesNextUp.xml" />
-    <include file="IncludesHomeMenuItems.xml" />
+    <include file="IncludesHomeMenu.xml" />
+	<include file="IncludesHomeMenuItems.xml" />
     <include file="IncludesViews.xml" />
     <!--Artwork Downloader-->
     <include file="Custom_MediaDialog.xml" />
@@ -69,7 +70,7 @@
     <!--Header-->
     <include name="Header">
         <control type="image">
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus()</visible>
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
@@ -82,7 +83,7 @@
             <texture>$VAR[value_header_icon]</texture>
         </control>
         <control type="label">
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus()</visible>
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
@@ -1458,7 +1459,45 @@
         <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforPictures)</onload>
         <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(WeatherOnHome)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, landscape, banner, extrafanart)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-0, 0)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-1, 1)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-2, 2)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-3, 3)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-4, 4)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-5, 5)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-6, 6)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-7, 7)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-8, 8)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-9, 9)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-10, 10)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-11, 11)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-12, 12)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-13, 13)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-14, 14)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-15, 15)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-16, 16)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-17, 17)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-18, 18)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-19, 19)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-20, 20)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-21, 21)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-22, 22)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-23, 23)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-24, 24)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-25, 25)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-26, 26)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-27, 27)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-28, 28)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-29, 29)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-30, 30)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-31, 31)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-32, 32)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-33, 33)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-34, 34)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-35, 35)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults)">Skin.SetBool(HomeMenuDefaults)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
+		<onload>Skin.Reset(ShowNextUppanel)</onload>
     </include>
     <include name="CastMB3Content">
         <content target="video">$INFO[ListItem.Property(CastPluginLink)]</content>

@@ -4,14 +4,12 @@
     <defaultcontrol always="true">300</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <include>defaultskinsettings</include>
-    <onload>SetFocus(300)</onload>
     <onload>Skin.Reset(youtube)</onload>
     <onload condition="!Skin.HasTheme(classic) + !Skin.HasSetting(NoFooterBar)">Skin.SetBool(NoFooterBar)</onload>
     <onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
-    <onload>SetFocus(300)</onload>
     <onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, extrafanart, poster, fanart, clearlogo, clearart, banner, seasonbanner, landscape, extrathumbs, seasonthumb, seasonposter, tvthumb, characterart, seasonlandscape)</onload>
     <onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
-    <onload>XBMC.RunScript(script.titanskin.helpers, RESTORE)</onload>
+	<onload>Control.SetFocus(300,2)</onload>
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>
@@ -42,7 +40,7 @@
                 <width>1820</width>
                 <height>84</height>
                 <texture>home/home_rss.png</texture>
-                <visible>!Skin.HasSetting(NoFooterBar) + !ControlGroup(400).HasFocus()</visible>
+                <visible>!Skin.HasSetting(NoFooterBar) + !Skin.HasSetting(ShowNextUppanel)</visible>
             </control>
         </control>
         <!--List 300-->
@@ -53,10 +51,12 @@
             <include condition="Skin.String(GadgetRows, 1)">Gadget1Row</include>
             <include condition="Skin.String(GadgetRows, 2)">Gadget2Row</include>
             <include condition="Skin.String(GadgetRows, 3)">Gadget3Row</include>
-            <animation type="Conditional" condition="ControlGroup(400).HasFocus()">
+            <animation type="Conditional" condition="Skin.HasSetting(ShowNextUppanel)">
                 <effect type="slide" start="0,-0" end="0,800" time="800" tween="cubic" easing="inout" />
             </animation>
-            <onup>400</onup>
+			
+            <onup>Skin.SetBool(ShowNextUppanel)</onup>
+			<onup>400</onup>
             <ondown>2</ondown>
             <onleft></onleft>
             <onright></onright>
@@ -203,7 +203,7 @@
                 </control>
             </focusedlayout>
             <content>
-                <include>HomeMenuItems</include>
+                <include>HomeMenu</include>
             </content>
         </control>
         <control type="button" id="2">
@@ -225,15 +225,13 @@
             <texture>views/nextup.png</texture>
             <aspectratio>stretch</aspectratio>
             <include>DimensionsFullscreen</include>
-            <visible>ControlGroup(400).HasFocus()</visible>
             <animation time="600" effect="fade">Visible</animation>
             <animation time="600" effect="fade">Hidden</animation>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
-            <animation type="Conditional" condition="!ControlGroup(400).HasFocus()">
+            <animation type="Conditional" condition="!Skin.HasSetting(ShowNextUppanel)">
                 <effect type="slide" start="0,0" end="0,-1100" time="800" tween="cubic" easing="inout" />
             </animation>
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
         </control>
         <!-- NextUp -->
         <control type="grouplist" id="400">
@@ -242,13 +240,13 @@
             <width>1903</width>
             <height>1033</height>
             <itemgap>3</itemgap>
-            <onback>300</onback>
+            <onback>Skin.Reset(ShowNextUppanel)</onback>
             <orientation>vertical</orientation>
             <animation time="600" effect="fade">Visible</animation>
             <animation time="600" effect="fade">Hidden</animation>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
-            <animation type="Conditional" condition="!ControlGroup(400).HasFocus()">
+            <animation type="Conditional" condition="!Skin.HasSetting(ShowNextUppanel)">
                 <effect type="slide" start="0,0" end="0,-1100" time="800" tween="cubic" easing="inout" />
             </animation>
             <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
@@ -278,8 +276,10 @@
                     <height>300</height>
                     <onleft></onleft>
                     <onright></onright>
-                    <onup>300</onup>
-                    <onback>300</onback>
+                    <onup>Skin.Reset(ShowNextUppanel)</onup>
+					<onup>300</onup>
+                    <onback>Skin.Reset(ShowNextUppanel)</onback>
+					<onback>300</onback>
                     <ondown>4002</ondown>
                     <orientation>horizontal</orientation>
                     <focusposition>-</focusposition>
@@ -326,7 +326,8 @@
                     <height>300</height>
                     <onleft></onleft>
                     <onright></onright>
-                    <onback>300</onback>
+                    <onback>Skin.Reset(ShowNextUppanel)</onback>
+					<onback>300</onback>
                     <onup condition="Control.IsVisible(4001)">4001</onup>
                     <onup condition="!Control.IsVisible(4001)">300</onup>
                     <ondown>4003</ondown>
@@ -376,7 +377,9 @@
                     <onleft></onleft>
                     <onright></onright>
                     <onup>4002</onup>
-                    <ondown>300</ondown>
+                    <ondown>Skin.Reset(ShowNextUppanel)</ondown>
+                    <onback>Skin.Reset(ShowNextUppanel)</onback>
+					<ondown>300</ondown>
                     <onback>300</onback>
                     <orientation>horizontal</orientation>
                     <focusposition>-</focusposition>

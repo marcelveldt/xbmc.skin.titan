@@ -160,7 +160,7 @@
                         <align>center</align>
                         <aligny>center</aligny>
                         <font>Light32</font>
-                        <ondown>4008</ondown>
+                        <ondown>300</ondown>
                         <onright>4006</onright>
                         <label>31076</label>
                         <textcolor>white</textcolor>
@@ -178,7 +178,7 @@
                         <height>60</height>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <ondown>4008</ondown>
+                        <ondown>300</ondown>
                         <onleft>4005</onleft>
                         <font>Light32</font>
                         <label>31077</label>
@@ -191,7 +191,7 @@
                         <onclick>Skin.Reset(EditModeDirectionUp)</onclick>
                     </control>
                 </control>
-                <control type="list" id="4008">
+                <control type="list" id="300">
                     <posx>0</posx>
                     <posy>420</posy>
                     <width>1230</width>
@@ -223,7 +223,7 @@
                             <textcolor>blue</textcolor>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <onfocus>SetProperty(CurrentPos, $INFO[Container(4008).Position])</onfocus>
+                            <onfocus>SetProperty(CurrentPos, $INFO[Container(300).Position], Home)</onfocus>
                         </control>
                         <control type="label">
                             <!--Label 1-->
@@ -247,7 +247,7 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <include>HomeMenuItems</include>
+                        <include>HomeMenu</include>
                     </content>
                 </control>
             </control>
