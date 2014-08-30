@@ -1498,7 +1498,7 @@
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
 		<onload condition="!Skin.HasTheme(classic) + !Skin.HasSetting(NoFooterBar)">Skin.SetBool(NoFooterBar)</onload>
 		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
-		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, extrafanart, poster, fanart, clearlogo, clearart, banner, seasonbanner, landscape, extrathumbs, seasonthumb, seasonposter, tvthumb, characterart, seasonlandscape)</onload>
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, poster, fanart, clearlogo, clearart, banner, seasonbanner, landscape, seasonthumb, seasonposter, tvthumb, characterart, seasonlandscape)</onload>
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
 		<onload>Skin.Reset(ShowNextUppanel)</onload>
     </include>
