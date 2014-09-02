@@ -16,10 +16,7 @@
     <include file="IncludesHomeMenu.xml" />
 	<include file="IncludesHomeMenuItems.xml" />
     <include file="IncludesViews.xml" />
-    <!--Artwork Downloader-->
-    <include file="Custom_MediaDialog.xml" />
     <!--PVR-->
-    <include file="MyPVR.xml" />
     <include file="ViewsPVR.xml" />
     <!--Titan Version-->
     <include name="TitanVersion">
