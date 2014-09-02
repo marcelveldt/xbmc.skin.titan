@@ -350,8 +350,8 @@
     </variable>
 	
 	<variable name="ShowCaseWatchedImage">
-        <value condition="!Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/big/$INFO[ListItem.Overlay]</value>
-		<value condition="Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/rounded/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasTheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/big/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasTheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/rounded/$INFO[ListItem.Overlay]</value>
     </variable>
 	
 </includes>
