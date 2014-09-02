@@ -4,7 +4,7 @@
 
 	<defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<visible>!Window.IsActive(Home.xml)<visible>
+	<visible>!Window.IsActive(Home.xml)</visible>
 	<controls>
 		<include>GlobalBackground</include>
 		<include>DialogOverlayExtra</include>
