@@ -9,7 +9,7 @@
         <!--Keybord-->
         <control type="group">
             <posx>424</posx>
-            <posy>294</posy>
+            <posy>394</posy>
             <include>animation_dialog</include>
             <visible>!Window.IsVisible(numericinput)</visible>
             <control type="image">
@@ -21,9 +21,9 @@
             </control>
             <control type="image">
                 <posx>0</posx>
-                <posy>18</posy>
+                <posy>-160</posy>
                 <width>1072</width>
-                <height>474</height>
+                <height>674</height>
                 <texture border="39">dialogs/default/bg.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>

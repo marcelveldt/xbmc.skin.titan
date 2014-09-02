@@ -309,6 +309,7 @@
         <value>$INFO[ListItem.Thumb]</value>
     </variable>
     <variable name="BannerLandscapeImage">
+		<value condition="!IsEmpty(ListItem.Thumb) + Container.Content(Episodes)">$INFO[ListItem.Thumb]</value>
         <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value>$INFO[ListItem.Thumb]</value>
@@ -317,6 +318,25 @@
         <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-landscape.jpg]</value>
         <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IntegerIsGreaterThan(ListItem.Season, 9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
     </variable>
+	
+	<variable name="View_Item_Header">
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>	
+	
+	<variable name="View_Item_Description">
+		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Plot)">$INFO[ListItem.Property(Addon.Description)]</value>
+		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value>Description not available</value>
+	</variable>
 	
     <variable name="ThemeFontColorMidGrey">
         <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
@@ -350,8 +370,8 @@
     </variable>
 	
 	<variable name="ShowCaseWatchedImage">
-        <value condition="!Skin.HasTheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/big/$INFO[ListItem.Overlay]</value>
-		<value condition="Skin.HasTheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/rounded/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/big/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/rounded/$INFO[ListItem.Overlay]</value>
     </variable>
 	
 </includes>

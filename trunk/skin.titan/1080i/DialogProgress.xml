@@ -1,67 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Titan-->
+<?xml version="1.0" encoding="UTF-8"?>
+
 <window id="101">
-    <defaultcontrol always="true">10</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
-    <controls>
-        <!--Bussy-->
-        <control type="group">
-            <visible>!Window.IsActive(MyPrograms.xml)</visible>
-            <posx>960</posx>
-            <!--Center-->
-            <posy>540</posy>
-            <!--Center-->
-            <control type="multiimage">
-                <animation effect="fade" start="0" end="100" time="0">WindowOpen</animation>
-                <animation effect="fade" start="100" end="0" time="500" delay="500">WindowClose</animation>
-                <posx>-40</posx>
-                <posy>-40</posy>
-                <width>81</width>
-                <height>80</height>
-                <imagepath>dialogs/busy</imagepath>
-                <timeperimage>100</timeperimage>
-                <colordiffuse></colordiffuse>
-                <fadetime>0</fadetime>
-            </control>
-        </control>
-        <!--For Artwork Downloader-->
-        <control type="group">
-            <posx>60</posx>
-            <posy>40</posy>
-            <include>animation_fade_visible_hidden</include>
-            <include>animation_fade_open_close</include>
-            <visible>Window.IsActive(MyPrograms.xml)</visible>
-            <control type="multiimage">
-                <!--Busy Image-->
-                <description>Busy animation</description>
-                <posx>0</posx>
-                <posy>15</posy>
-                <width>64</width>
-                <height>64</height>
-                <imagepath>dialogs/extended_progress_bar</imagepath>
-                <timeperimage>100</timeperimage>
-                <fadetime>0</fadetime>
-            </control>
-            <control type="label" id="1">
-                <!--Label Artwork Downloader-->
-                <posx>90</posx>
-                <posy>0</posy>
-                <width>500</width>
-                <height>50</height>
-                <font>Bold38</font>
-                <textcolor>ccmainblue</textcolor>
-                <scroll>false</scroll>
-            </control>
-            <control type="label" id="2">
-                <!--Process Item-->
-                <posx>90</posx>
-                <posy>40</posy>
-                <width>500</width>
-                <height>50</height>
-                <font>Reg30</font>
-                <textcolor>eewhite</textcolor>
-                <scroll>false</scroll>
-            </control>
-        </control>
-    </controls>
+
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<visible>!Window.IsActive(Home.xml)<visible>
+	<controls>
+		<include>GlobalBackground</include>
+		<include>DialogOverlayExtra</include>
+
+		<control type="group">
+		
+			<posx>530</posx>
+			<posy>410</posy>
+			
+			<control type="multiimage">
+            <description>Busy animation</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>200</width>
+			<height>200</height>
+			<imagepath>dialogs\extended_progress_bar</imagepath>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>ffFFFFFF</colordiffuse>
+			<timeperimage>250</timeperimage>
+			</control>
+			
+			<control type="grouplist">
+			
+			<posx>300</posx>
+			<width>880</width>
+			<itemgap>30</itemgap>
+			<orientation>vertical</orientation>
+			
+			<control type="label" id="1">
+				
+				<description>Heading</description>
+				<posx>200</posx>
+				<label>-</label>
+				<width>590</width>
+				<font>Bold55</font>
+				
+			</control>
+
+			<control type="label" id="2">
+				
+				<description>Line 1</description>
+				<posx>200</posx>
+				<posy>172</posy>
+				<width>590</width>
+				<height>20</height>
+				<label>-</label>
+				<font>Reg30</font>
+				<visible>!IsEmpty(Control.GetLabel(2))</visible>
+				
+			</control>
+
+			<control type="label" id="3">
+				
+				<description>Line 2</description>
+				<posx>200</posx>
+				<posy>144</posy>
+				<width>590</width>
+				<height>20</height>
+				<label>-</label>
+				<font>Reg30</font>
+				<visible>!IsEmpty(Control.GetLabel(3))</visible>
+				
+			</control>
+
+			<control type="label" id="4">
+
+				<description>Line 3</description>
+				<posx>200</posx>
+				<posy>146</posy>
+				<width>590</width>
+				<height>20</height>
+				<label>-</label>
+				<font>Reg30</font>
+				<visible>!IsEmpty(Control.GetLabel(4))</visible>
+				
+			</control>
+			
+		
+
+			<control type="grouplist">
+			
+				<posx>0</posx>
+				<posy>200</posy>
+				<width>400</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+			
+				<control type="button" id ="10">
+					<description>Cancel</description>
+					<width>430</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Light32</font>
+					<label>-</label>
+					<textcolor>white</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<disabledcolor>lightgrey</disabledcolor>
+					<pulseonselect>false</pulseonselect>
+					<texturefocus>common/button-fo.png</texturefocus>
+					<texturenofocus>common/button-nf.png</texturenofocus>
+					<textoffsetx>50</textoffsetx>
+					<label>222</label>
+				</control>
+
+			</control>	
+
+		</control>
+		</control>	
+
+	</controls>
+
 </window>

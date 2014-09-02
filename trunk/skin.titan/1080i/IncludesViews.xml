@@ -447,6 +447,19 @@
         <height>60</height>
     </include>
 	
+	<include name="ExtendedViewWatchedImageSizeNormalEpisodes">
+        <posx>351</posx>
+        <posy>18</posy>
+        <width>90</width>
+        <height>90</height>
+    </include>
+	 <include name="ExtendedViewWatchedImageSizeClassicEpisodes">
+        <posx>375</posx>
+        <posy>26</posy>
+        <width>60</width>
+        <height>60</height>
+    </include>
+	
 	<include name="BannerViewWatchedImageSizeNormalPoster">
         <posx>130</posx>
         <posy>0</posy>
@@ -495,6 +508,22 @@
         <height>60</height>
         <font>Reg24</font>
     </include>
+	
+	<include name="ExtendedViewWatchedLabelNormalEpisodes">
+        <posx>415</posx>
+        <posy>7</posy>
+        <width>60</width>
+        <height>60</height>
+        <font>Reg24</font>
+    </include>
+	<include name="ExtendedViewWatchedLabelClassicEpisodes">
+        <posx>405</posx>
+        <posy>20</posy>
+        <width>60</width>
+        <height>60</height>
+        <font>Light26</font>
+    </include>
+	
 	<include name="BannerViewWatchedLabelClassic">
         <posx>522</posx>
         <posy>23</posy>
@@ -509,6 +538,7 @@
         <height>60</height>
         <font>Light26</font>
     </include>
+
     <include name="BannerViewWithOverlayLabelSizeEpisodes">
         <posx>200</posx>
         <posy>180</posy>
@@ -1553,6 +1583,66 @@
             </control>
         </control>
     </include>
+	 <include name="movieflagssmall">
+        <control type="image">
+            <!--Video Resolution-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>141</width>
+            <height>30</height>
+            <colordiffuse>white</colordiffuse>
+            <texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+        </control>
+        <control type="image">
+            <!--VideoCode-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>141</width>
+            <height>30</height>
+            <colordiffuse>white</colordiffuse>
+            <texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>
+        </control>
+        <control type="image">
+            <!--Aspectration-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>141</width>
+            <height>30</height>
+            <colordiffuse>white</colordiffuse>
+            <texture fallback="flags/aspectration/default.png">$INFO[ListItem.VideoAspect,flags/aspectration/,.png]</texture>
+        </control>
+        <control type="image">
+            <!--Audio Codec-->
+            <posx>170</posx>
+            <posy>0</posy>
+            <width>82</width>
+            <height>30</height>
+            <colordiffuse>white</colordiffuse>
+            <texture fallback="flags/audiocodec/default.png">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
+            <visible>!IsEmpty(ListItem.AudioCodec)</visible>
+        </control>
+        <control type="image">
+            <!--Audio Channels-->
+            <posx>170</posx>
+            <posy>0</posy>
+            <width>82</width>
+            <height>30</height>
+            <colordiffuse>white</colordiffuse>
+            <texture fallback="flags/audiochannels/default.png">$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>
+            <visible>!IsEmpty(ListItem.AudioChannels)</visible>
+        </control>
+        <control type="image">
+            <!--Video 3D-->
+            <posx>280</posx>
+            <posy>-16</posy>
+            <width>70</width>
+            <height>60</height>
+            <colordiffuse>white</colordiffuse>
+            <texture>flags/3dbd.png</texture>
+            <visible>ListItem.IsStereoScopic | !IsEmpty(ListItem.Property(Video3DFormat))</visible>
+        </control>
+    </include>
+    
     <include name="movieflags">
         <control type="image">
             <!--Video Resolution-->
@@ -1574,7 +1664,7 @@
         </control>
         <control type="image">
             <!--Aspectration-->
-            <posx>-0</posx>
+            <posx>0</posx>
             <posy>0</posy>
             <width>212</width>
             <height>45</height>
