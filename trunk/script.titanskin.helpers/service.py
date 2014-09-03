@@ -38,7 +38,7 @@ class TitanThread ():
 
     def logMsg(self, msg, level = 1):
         if self.doDebugLog == True:
-            print msg
+            xbmc.log(msg)
 
     def findNextLink(self, linkList, startIndex, filterOnName):
         currentIndex = startIndex
@@ -428,7 +428,7 @@ class TitanThread ():
                 return False
         
             if (xbmc.abortRequested):
-                print "[TitanSkin] XBMC Shutdown detected....exiting now"
+                xbmc.log("[TitanSkin] XBMC Shutdown detected....exiting now")
                 return True
                 
             time.sleep(timeout)
@@ -491,6 +491,6 @@ class TitanThread ():
         return self._stop.isSet()    
 
 
-print "[TitanSkin] Started... fetching background images now"
+xbmc.log("[TitanSkin] Started... fetching background images now")
 pollingthread = TitanThread()
 pollingthread.run()

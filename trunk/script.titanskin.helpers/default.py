@@ -28,21 +28,20 @@ def setHomeItems(curPoslabel, idToChange, moveDirection):
         xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(nextPosId) + "," + str(curItemId) + ")")
         curWinPos = curWinPos +1
     
-   
     xbmc.executebuiltin('xbmc.ReloadSkin')
     xbmc.executebuiltin('Control.SetFocus(100,4)')
     xbmc.executebuiltin('Control.SetFocus(300, ' + str(curWinPos) + ')')    
 
 
 def setView(viewId, containerType):
-    __settings__ = xbmcaddon.Addon(id='plugin.video.xbmb3c')
     
-    
-    __settings__.setSetting(xbmc.getSkinDir()+ '_VIEW_' + viewId, containerType)
-    xbmc.executebuiltin("Container.Refresh")     
+    if xbmc.getCondVisibility("System.HasAddon(plugin.video.xbmb3c)"):
+        __settings__ = xbmcaddon.Addon(id='plugin.video.xbmb3c')
+        
+        __settings__.setSetting(xbmc.getSkinDir()+ '_VIEW_' + viewId, containerType)
+        xbmc.executebuiltin("Container.Refresh")     
 
-
-   
+  
 #script init
 action = ""
 argument1 = ""
