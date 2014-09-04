@@ -374,4 +374,10 @@
 		<value condition="Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/rounded/$INFO[ListItem.Overlay]</value>
     </variable>
 	
+	<variable name="BannerImage">
+        <value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+        <value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
+        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value>banner_default.png</value>
+    </variable>
 </includes>

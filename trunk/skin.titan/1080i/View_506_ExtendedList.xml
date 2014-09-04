@@ -107,8 +107,9 @@
 						<control type="image">
 							<posx>30</posx>
 							<posy>390</posy>
-							<width>180</width>
-							<height>40</height>
+							<width>160</width>
+							<valign>top</valign>
+							<height>35</height>
 							<texture background="true">$INFO[ListItem.StarRating]</texture>
 							<colordiffuse>white</colordiffuse>
 							<aspectratio>scale</aspectratio>
@@ -204,8 +205,9 @@
 						<control type="image">
 							<posx>30</posx>
 							<posy>390</posy>
-							<width>180</width>
-							<height>40</height>
+							<width>160</width>
+							<valign>top</valign>
+							<height>35</height>
 							<texture background="true">$INFO[ListItem.StarRating]</texture>
 							<colordiffuse>white</colordiffuse>
 							<aspectratio>scale</aspectratio>
