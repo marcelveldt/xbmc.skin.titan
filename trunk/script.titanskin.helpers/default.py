@@ -19,14 +19,16 @@ def setHomeItems(curPoslabel, idToChange, moveDirection):
     curWinPos = int(win.getProperty("CurrentPos"))
     
     if (moveDirection == "DOWN"):
-        xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(curPosId) + "," + str(prevItemId) + ")")
-        xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(prevPosId) + "," + str(curItemId) + ")")
-        curWinPos = curWinPos -1
+        if curPosId != 0:
+            xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(curPosId) + "," + str(prevItemId) + ")")
+            xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(prevPosId) + "," + str(curItemId) + ")")
+            curWinPos = curWinPos -1
         
     if (moveDirection == "UP"):
-        xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(curPosId) + "," + str(nextItemId) + ")")
-        xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(nextPosId) + "," + str(curItemId) + ")")
-        curWinPos = curWinPos +1
+        if curPosId != 45:
+            xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(curPosId) + "," + str(nextItemId) + ")")
+            xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(nextPosId) + "," + str(curItemId) + ")")
+            curWinPos = curWinPos +1
     
     xbmc.executebuiltin('xbmc.ReloadSkin')
     xbmc.executebuiltin('Control.SetFocus(100,4)')
