@@ -1,3 +1,4 @@
+1.0.2 - fixed small issue with moving home items that are top most or down
 1.0.1 - Changes for official XBMC repository
 1.0.0
 - Initial version for official repository
