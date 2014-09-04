@@ -315,7 +315,7 @@
 				<control type="button" id="335">
                     <!--View ExtendedList-->
                     <include>SubMenuButton</include>
-                    <label>Extended</label>
+                    <label>31097</label>
                     <onclick>Container.SetViewMode(506)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,506)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,506)</onclick>
@@ -326,7 +326,7 @@
 				<control type="button" id="336">
                     <!--View ExtendedList-->
                     <include>SubMenuButton</include>
-                    <label>Banner Plex</label>
+                    <label>31098</label>
                     <onclick>Container.SetViewMode(56)</onclick>
                     <onclick condition="Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,56)</onclick>
                     <onclick condition="Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,56)</onclick>

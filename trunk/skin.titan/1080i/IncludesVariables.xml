@@ -380,4 +380,52 @@
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value>banner_default.png</value>
     </variable>
+	
+	<variable name="CustomHome1">
+        <value condition="Skin.String(CustomHome.1.Label)">$INFO[Skin.String(CustomHome.1.Label)]</value>
+        <value>$LOCALIZE[31096]</value>
+    </variable>
+	<variable name="CustomHome2">
+        <value condition="Skin.String(CustomHome.2.Label)">$INFO[Skin.String(CustomHome.2.Label)]</value>
+        <value>$LOCALIZE[31096]</value>
+    </variable>
+	<variable name="CustomHome3">
+        <value condition="Skin.String(CustomHome.3.Label)">$INFO[Skin.String(CustomHome.3.Label)]</value>
+        <value>$LOCALIZE[31096]</value>
+    </variable>
+	<variable name="CustomHome4">
+        <value condition="Skin.String(CustomHome.4.Label)">$INFO[Skin.String(CustomHome.4.Label)]</value>
+        <value>$LOCALIZE[31096]</value>
+    </variable>
+	<variable name="CustomHome5">
+        <value condition="Skin.String(CustomHome.5.Label)">$INFO[Skin.String(CustomHome.5.Label)]</value>
+        <value>$LOCALIZE[31096]</value>
+    </variable>
+	
+	<variable name="CustomHome1Image">
+        <value condition="Skin.String(CustomHome1Folder)">$INFO[Skin.String(CustomHome1Folder)]</value>
+        <value>$INFO[Skin.String(CustomHome.1.Icon)]</value>
+    </variable>
+	<variable name="CustomHome2Image">
+        <value condition="Skin.String(CustomHome2Folder)">$INFO[Skin.String(CustomHome2Folder)]</value>
+        <value>$INFO[Skin.String(CustomHome.2.Icon)]</value>
+    </variable>
+	<variable name="CustomHome3Image">
+        <value condition="Skin.String(CustomHome3Folder)">$INFO[Skin.String(CustomHome3Folder)]</value>
+        <value>$INFO[Skin.String(CustomHome.3.Icon)]</value>
+    </variable>
+	<variable name="CustomHome4Image">
+        <value condition="Skin.String(CustomHome4Folder)">$INFO[Skin.String(CustomHome4Folder)]</value>
+        <value>$INFO[Skin.String(CustomHome.4.Icon)]</value>
+    </variable>
+	<variable name="CustomHome5Image">
+        <value condition="Skin.String(CustomHome5Folder)">$INFO[Skin.String(CustomHome5Folder)]</value>
+        <value>$INFO[Skin.String(CustomHome.5.Icon)]</value>
+    </variable>
+	
+	
+	
+	
+	
+	
 </includes>
