@@ -425,8 +425,8 @@
     </include>
     <include name="animation_sub_menu">
         <!--Sub Menu Slide Animation-->
-        <animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">
-            <effect type="slide" start="0" end="-600" time="450" tween="cubic" easing="inout" />
+        <animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+            <effect type="slide" start="0" end="615" time="450" tween="cubic" easing="inout" />
         </animation>
     </include>
     <include name="animation_dialog">
