@@ -1,11 +1,10 @@
-v.2.0.5
+v.2.0.6
 - added extended view
 - added bannerplex view
 - added progress dialog
 - fixed minor graphic glitches
-
-v.2.0.3
-- fixed small issues for compatibility with xbmc repo
+- added plexbmc tile
+- added method to add custom buttons to menu
 - new method for sorting home tiles 
 - added watched/unwatched icon in all views
 

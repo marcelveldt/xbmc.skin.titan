@@ -39,6 +39,16 @@
 			<include condition="Skin.String(HomeMenuPos-0, 33)">HomeItem-33</include>
 			<include condition="Skin.String(HomeMenuPos-0, 34)">HomeItem-34</include>
 			<include condition="Skin.String(HomeMenuPos-0, 35)">HomeItem-35</include>
+			<include condition="Skin.String(HomeMenuPos-0, 36)">HomeItem-36</include>
+			<include condition="Skin.String(HomeMenuPos-0, 37)">HomeItem-37</include>
+			<include condition="Skin.String(HomeMenuPos-0, 38)">HomeItem-38</include>
+			<include condition="Skin.String(HomeMenuPos-0, 39)">HomeItem-39</include>
+			<include condition="Skin.String(HomeMenuPos-0, 40)">HomeItem-40</include>
+			<include condition="Skin.String(HomeMenuPos-0, 41)">HomeItem-41</include>
+			<include condition="Skin.String(HomeMenuPos-0, 42)">HomeItem-42</include>
+			<include condition="Skin.String(HomeMenuPos-0, 43)">HomeItem-43</include>
+			<include condition="Skin.String(HomeMenuPos-0, 44)">HomeItem-44</include>
+			<include condition="Skin.String(HomeMenuPos-0, 45)">HomeItem-45</include>
 		</item>
 		
 		<item>
