@@ -366,6 +366,7 @@
 
 	<variable name="WatchedLabel">
         <value condition="[Container.Content(TVShows) | Container.Content(Seasons)] + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
+		<value condition="ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + substring(Container.FolderPath,plugin://plugin.video.xbmb3c)">$INFO[ListItem.Property(complete_percentage)]%</value>
 		<value condition="ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png)">$INFO[ListItem.PercentPlayed]%</value>
     </variable>
 	

@@ -17,18 +17,18 @@
             <!-- ID="52" -->
             <control type="panel" id="56">
                 <posx>60</posx>
-                <posy>490</posy>
-                <width>1800</width>
-                <height>500</height>
-                <onup>9000</onup>
-                <ondown>60</ondown>
-                <onleft>56</onleft>
+                <posy>340</posy>
+                <width>1860</width>
+                <height>570</height>
+                <onup>56</onup>
+                <ondown>56</ondown>
+                <onleft>9000</onleft>
                 <onright>56</onright>
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="Banner list">bigwide</viewtype>
                 <scrolltime tween="Cubic" easing="inout">500</scrolltime>
                 <focusposition>0</focusposition>
-                <orientation>horizontal</orientation>
+                <orientation>vertical</orientation>
                 <preloaditems>2</preloaditems>
                 <itemlayout height="145" width="610" condition="!Container.Content(albums)">
 					<control type="group">
@@ -42,17 +42,17 @@
 						<posy>10</posy>
 						<posx>10</posx>
                         <animation type="focus">
-                            <effect type="zoom" start="100" end="110" center="130,190" time="150" />
+                            <effect type="zoom" start="100" end="110" center="305,72" time="150" />
                         </animation>
                         <animation type="unfocus">
-                            <effect type="zoom" start="110" end="100" center="130,190" time="150" />
+                            <effect type="zoom" start="110" end="100" center="305,72" time="150" />
                         </animation>
 						<include>BannerPlexlayout</include>
 						<control type="image">
 							<posx>-10</posx>
 							<posy>-6</posy>
-							<width>600</width>
-							<height>130</height>
+							<width>612</width>
+							<height>132</height>
 							<texture>home/home_focus.png</texture>
 						</control>
                     </control>

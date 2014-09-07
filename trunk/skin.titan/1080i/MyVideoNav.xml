@@ -8,6 +8,7 @@
     <controls>
         <!-- Video Background -->
         <include>VideoBackground</include>
+		<include>DialogOverlay</include>
         <!--Time & Weather-->
         <include>TimeInfo</include>
         <!--Header-->

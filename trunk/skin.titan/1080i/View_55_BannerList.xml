@@ -103,14 +103,12 @@
                         <height>140</height>
                         <texture fallback="banner_default.png">$VAR[BannerImage]</texture>
                         <aspectratio align="center" aligny="center">scale</aspectratio>
-                        <colordiffuse>FF666666</colordiffuse>
                     </control>
 					<control type="image">
-						<left>36</left>
+						<left>16</left>
 						<top>12</top>
-						<width>740</width>
+						<width>720</width>
 						<height>110</height>
-						<colordiffuse>FF666666</colordiffuse>
 						<aspectratio scalediffuse="false" align="left">keep</aspectratio>
 						<texture background="true" diffuse="thumbs/banner_mask.png">$INFO[ListItem.Art(clearlogo)]</texture>
 						<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
@@ -161,7 +159,6 @@
                         <height>140</height>
                         <texture fallback="banner_default.png">$VAR[BannerImage]</texture>
                         <aspectratio align="center" aligny="center">scale</aspectratio>
-                        <colordiffuse>FF666666</colordiffuse>
                     </control>
 					<control type="image">
 					<animation type="focus">
@@ -170,11 +167,10 @@
                         <animation type="unfocus">
                             <effect type="zoom" start="103" end="100" center="130,190" time="150" />
                         </animation>
-						<left>36</left>
+						<left>16</left>
 						<top>12</top>
-						<width>740</width>
+						<width>720</width>
 						<height>110</height>
-						<colordiffuse>FF666666</colordiffuse>
 						<aspectratio scalediffuse="false" align="left">keep</aspectratio>
 						<texture background="true" diffuse="thumbs/banner_mask.png">$INFO[ListItem.Art(clearlogo)]</texture>
 						<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
@@ -325,10 +321,6 @@
             </control>
             <!--Flags-->
             <control type="group">
-                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
-                <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
-                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
-                <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
                 <orientation>horizontal</orientation>
                 <posy>220</posy>
                 <posx>0</posx>
