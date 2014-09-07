@@ -406,7 +406,7 @@
 		<icon>home/favourites.png</icon>
 		<thumb>$VAR[CustomHome4Image]</thumb>
 		<include>liveGadgetSetBackground</include>
-		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Skin.String(CustomHome.5.Path)]</onclick>
+		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Skin.String(CustomHome.4.Path)]</onclick>
 		<visible>Skin.String(CustomHome.4.Label)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],40,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],40,DOWN)</onclick>

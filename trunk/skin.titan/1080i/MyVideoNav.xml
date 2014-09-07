@@ -111,6 +111,17 @@
                     <include>SubMenuButton</include>
                     <align>left</align>
                 </control>
+				<control type="togglebutton" id="20">
+					<description>Update library</description>
+					<textwidth>235</textwidth>
+					<include>SubMenuButton</include>
+					<label>653</label>
+					<altlabel>13353</altlabel>
+					<alttexturefocus border="5">common/button-fo.png</alttexturefocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<usealttexture>library.isscanningvideo</usealttexture>
+					<visible>!substring(Container.FolderPath,plugin://plugin.video)</visible>
+				</control>
                 <control type="button" id="8">
                     <!--Button Search-->
                     <include>SubMenuButton</include>
