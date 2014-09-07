@@ -7,7 +7,6 @@
             <visible>Control.IsVisible(56)</visible>
             <include>animation_view_change</include>
             <include>animation_list</include>
-			<include>DialogOverlay</include>
             <!-- ID="52" -->
             <control type="panel" id="56">
                 <posx>60</posx>

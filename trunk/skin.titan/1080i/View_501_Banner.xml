@@ -4,7 +4,6 @@
     <!--Default-->
     <include name="BannerView">
 		<control type="group">
-			<include>DialogOverlay</include>
 		    <visible>Control.IsVisible(501)</visible>
             <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
 			<control type="panel" id="501">

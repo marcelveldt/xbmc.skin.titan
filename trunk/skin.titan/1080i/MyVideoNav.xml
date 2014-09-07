@@ -8,6 +8,14 @@
     <controls>
         <!-- Video Background -->
         <include>VideoBackground</include>
+		<control type="image">
+            <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
+            <animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
+            <include>DimensionsFullscreen</include>
+            <colordiffuse>99FFFFFF</colordiffuse>
+            <texture background="true">common/black.png</texture>
+			<visible>Control.IsVisible(501) | Control.IsVisible(52) | Control.IsVisible(56)</visible>
+        </control>
         <!--Time & Weather-->
         <include>TimeInfo</include>
         <!--Header-->
