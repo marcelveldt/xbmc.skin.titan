@@ -5,15 +5,9 @@
         <!--Panel-->
         <control type="group">
             <visible>Control.IsVisible(56)</visible>
-            <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <include>animation_view_change</include>
             <include>animation_list</include>
-        </control>
-        <control type="group">
-            <visible>Control.IsVisible(56)</visible>
-            <include>animation_view_change</include>
-            <include>animation_list</include>
-			<height>300</height>
+			<include>DialogOverlay</include>
             <!-- ID="52" -->
             <control type="panel" id="56">
                 <posx>60</posx>
@@ -54,6 +48,7 @@
 							<width>612</width>
 							<height>132</height>
 							<texture>home/home_focus.png</texture>
+							<visible>!Skin.HasTheme(classic)</visible>
 						</control>
                     </control>
                 </focusedlayout>

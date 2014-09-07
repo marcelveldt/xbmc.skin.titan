@@ -2,6 +2,7 @@ v.2.0.7
 - changed bannerplex to vertical scroll
 - added extra row to bannerplexview
 - fixed watched percentage wrong with MB3
+- added scrollbar to views
 
 v.2.0.6
 - added extended view

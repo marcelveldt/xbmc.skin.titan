@@ -5,15 +5,16 @@
             <visible>Control.IsVisible(52)</visible>
             <include>animation_view_change</include>
             <include>animation_list</include>
+			<include>DialogOverlay</include>
             <!-- ID="52" -->
             <control type="panel" id="52">
                 <posx>60</posx>
                 <posy>300</posy>
                 <width>1840</width>
                 <height>640</height>
-                <onup>9000</onup>
+                <onup>52</onup>
                 <ondown>52</ondown>
-                <onleft>52</onleft>
+                <onleft>9000</onleft>
                 <onright>52</onright>
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="Panel">wide</viewtype>
