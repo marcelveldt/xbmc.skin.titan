@@ -2572,6 +2572,18 @@
                     <selected>Skin.HasSetting(MusicActivateLyrics)</selected>
                     <enable>System.HasAddon(script.cu.lrclyrics)</enable>
                 </control>
+				<control type="radiobutton" id="5117">
+                    <description></description>
+                    <!--disable artwork downloader-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31099</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(EnableArtworkDownloader)</onclick>
+                    <selected>Skin.HasSetting(EnableArtworkDownloader)</selected>
+                </control>
             </control>
         </control>
     </controls>

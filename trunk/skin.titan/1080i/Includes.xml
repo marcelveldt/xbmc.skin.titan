@@ -1522,12 +1522,17 @@
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-43, 43)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-44, 44)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-45, 45)</onload>
+		<!-- download required artwork for the skin upon first run -->
+		<onload condition="!Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, clearlogo, clearart, banner, seasonbanner, landscape, seasonlandscape)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(EnableArtworkDownloader)</onload>
+		<!-- (optional) automatic run of the artwork downloader on startup -->
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + Skin.HasSetting(EnableArtworkDownloader) + Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, silent=true, mediatype=?)</onload>
+		
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults)">Skin.SetBool(HomeMenuDefaults)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(HomeMenuDefaults1)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
 		<onload condition="!Skin.HasTheme(classic) + !Skin.HasSetting(NoFooterBar)">Skin.SetBool(NoFooterBar)</onload>
 		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
-		<!--<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, poster, fanart, clearlogo, clearart, banner, seasonbanner, landscape, seasonthumb, seasonposter, tvthumb, characterart, seasonlandscape)</onload>-->
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
 		<onload>Skin.Reset(ShowNextUppanel)</onload>
     </include>

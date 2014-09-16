@@ -409,6 +409,10 @@ msgctxt "#31098"
 msgid "BannerPlex"
 msgstr ""
 
+msgctxt "#31099"
+msgid "Enable automatic download of artwork at startup"
+msgstr ""
+
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"
 msgstr ""
