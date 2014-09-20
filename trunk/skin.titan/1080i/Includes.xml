@@ -538,13 +538,13 @@
     <include name="DialogButton">
         <!--Dialog Button-->
         <font>Reg28</font>
-        <textcolor>FF585858</textcolor>
-        <focusedcolor>FF585858</focusedcolor>
+        <textcolor>FFfffeff</textcolor>
+        <focusedcolor>FFfffeff</focusedcolor>
         <disabledcolor>FF585858</disabledcolor>
     </include>
     <include name="DialogButtonAlt">
         <!--Dialog Button-->
-        <font>Light32</font>
+        <font>Reg28</font>
         <textcolor>FFfffeff</textcolor>
         <focusedcolor>FFfffeff</focusedcolor>
         <disabledcolor>FF585858</disabledcolor>
@@ -1538,5 +1538,8 @@
     </include>
     <include name="CastMB3Content">
         <content target="video">$INFO[ListItem.Property(CastPluginLink)]</content>
+    </include>
+	<include name="SettingsUnusedHomeMenuItem">
+        <label>==</label>
     </include>
 </includes>
