@@ -57,6 +57,7 @@
 	<include name="HomeItem-5">
 		<include condition="!Skin.HasSetting(HomeMenuPVRButton)">SettingsUnusedHomeMenuItem</include>
 		<label>31088</label>
+		<property name="background">special://skin/extras/backgrounds/pvr.png</property>
 		<icon>home/livetv.png</icon>
 		<thumb>$INFO[Skin.String(CustomPVRFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
@@ -68,6 +69,7 @@
 	<include name="HomeItem-6">
 		<include condition="!Skin.HasSetting(HomeMenuMusicButton)">SettingsUnusedHomeMenuItem</include>
 		<label>2</label>
+		<property name="background">special://skin/extras/backgrounds/music.png</property>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[MusicButtonThumb]</thumb>
 		<include>liveGadgetSetBackground</include>
@@ -135,6 +137,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuRadioButton)">SettingsUnusedHomeMenuItem</include>
 		<label>19021</label>
 		<icon>home/radio.png</icon>
+		<property name="background">special://skin/extras/backgrounds/music.png</property>
 		<thumb>$INFO[Skin.String(CustomRadioFolder)]</thumb>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[RadioButtonOnClick]</onclick>
 		<include>liveGadgetSetBackground</include>
@@ -167,6 +170,7 @@
 	<include name="HomeItem-15">
 		<include condition="!Skin.HasSetting(HomeMenuPicturesButton)">SettingsUnusedHomeMenuItem</include>
 		<label>1</label>
+		<property name="background">special://skin/extras/backgrounds/pictures.png</property>
 		<icon>home/pictures.png</icon>
 		<thumb>$VAR[PicturesButtonThumb]</thumb>
 		<include>liveGadgetSetBackground</include>
@@ -300,6 +304,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuVideosButton)">SettingsUnusedHomeMenuItem</include>
 		<label>3</label>
 		<icon>home/videos.png</icon>
+		<property name="background">special://skin/extras/backgrounds/videos.png</property>
 		<thumb>$INFO[Skin.String(CustomVideosFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Video,root)</onclick>
@@ -310,6 +315,7 @@
 	<include name="HomeItem-28">
 		<include condition="!Skin.HasSetting(HomeMenuVideoAddonsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>1037</label>
+		<property name="background">special://skin/extras/backgrounds/videos.png</property>
 		<icon>home/videoaddons.png</icon>
 		<thumb>$INFO[Skin.String(CustomVideoAddonsFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
@@ -322,6 +328,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuTVRecordingsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>19163</label>
 		<icon>home/tvrecordings.png</icon>
+		<property name="background">special://skin/extras/backgrounds/pvr.png</property>
 		<thumb>$INFO[Skin.String(CustomPVRRecFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
@@ -333,6 +340,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuAddonsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>10040</label>
 		<icon>home/addons.png</icon>
+		<property name="background">special://skin/extras/backgrounds/addons.png</property>
 		<thumb>$INFO[Skin.String(CustomAddonsFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(AddonBrowser)</onclick>
@@ -344,6 +352,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuProgramsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>350</label>
 		<icon>home/programs.png</icon>
+		<property name="background">special://skin/extras/backgrounds/programs.png</property>
 		<thumb>$INFO[Skin.String(CustomProgramsFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Programs)</onclick>
@@ -355,6 +364,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuXBMB3CButton)">SettingsUnusedHomeMenuItem</include>
 		<label>31089</label>
 		<icon>home/mediabrowser.png</icon>
+		<property name="background">$INFO[Window(Home).Property(MB3.Background.Global.FanArt)]</property>
 		<thumb>-</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(10025,"plugin://plugin.video.xbmb3c",return)</onclick>
@@ -366,6 +376,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuFilemanagerButton)">SettingsUnusedHomeMenuItem</include>
 		<label>7</label>
 		<icon>home/filemanager.png</icon>
+		<property name="background">special://skin/extras/backgrounds/filemanager.png</property>
 		<thumb>$INFO[Skin.String(CustomFilemanagerFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(filemanager)</onclick>
@@ -377,6 +388,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuFavouritesButton)">SettingsUnusedHomeMenuItem</include>
 		<label>10134</label>
 		<icon>home/favourites.png</icon>
+		<property name="background">special://skin/extras/backgrounds/addons.png</property>
 		<thumb>$INFO[Skin.String(CustomFavouritesFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Favourites)</onclick>
@@ -388,6 +400,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuSettingsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>5</label>
 		<icon>home/settings.png</icon>
+		<property name="background">special://skin/extras/backgrounds/settings.png</property>
 		<thumb>$INFO[Skin.String(CustomSettingsFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(settings)</onclick>

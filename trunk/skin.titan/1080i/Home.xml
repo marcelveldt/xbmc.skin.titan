@@ -16,17 +16,24 @@
             <fadetime>1000</fadetime>
             <colordiffuse>FF666666</colordiffuse>
             <texture background="true">$INFO[Container(300).ListItem.Icon]</texture>
-            <visible>Skin.String(CustomBackgroundSetting, gadget)</visible>
+            <visible>Skin.String(CustomBackgroundSetting, gadget) + IsEmpty(Container(300).ListItem.Property(background)) + !Player.HasVideo</visible>
         </control>
-        <!--Time & Weather-->
+		<control type="image">
+            <include>DimensionsFullscreen</include>
+            <fadetime>1000</fadetime>
+            <colordiffuse>FF666666</colordiffuse>
+            <texture background="true">$INFO[Container(300).ListItem.Property(background)]</texture>
+            <visible>Skin.String(CustomBackgroundSetting, gadget) + !IsEmpty(Container(300).ListItem.Property(background)) + !Player.HasVideo</visible>
+        </control>
+        <!--NowPlaying-->
+        <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
+        <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
+		<!-- Header -->
+        <include>Header</include>
+		<!--Time & Weather-->
         <include>TimeInfo</include>
         <include>WeatherInfo</include>
-        <!-- Header -->
-        <include>Header</include>
-        <!--Music_NowPlaying-->
-        <include>NowPlayingMusic</include>
-        <!--Video_NowPlaying-->
-        <include>NowPlayingVideo</include>
         <!--RSS-->
         <control type="group">
             <include>animation_home</include>

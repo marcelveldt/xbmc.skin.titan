@@ -421,6 +421,20 @@
         <value>$INFO[Skin.String(CustomHome.5.Icon)]</value>
     </variable>
 	
+	<variable name="NowPlayingTitle">
+        <value condition="IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.Title) + Player.IsInternetStream">$INFO[Window(Home).Property(streamtitle)]</value>
+		<value condition="IsEmpty(MusicPlayer.Artist) + !IsEmpty(MusicPlayer.Title) + Player.HasAudio + !Player.IsInternetStream">$INFO[Window(Home).Property(streamtitle)] - $INFO[MusicPlayer.Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.Artist) + Player.HasAudio + !Player.IsInternetStream">$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</value>
+		<value condition="!IsEmpty(VideoPlayer.TVShowTitle)">$INFO[VideoPlayer.TVShowTitle] - S$INFO[VideoPlayer.Season]E$INFO[VideoPlayer.Episode] - $INFO[VideoPlayer.Title]</value>
+		<value condition="!IsEmpty(MusicPlayer.Title) + Player.HasAudio + Player.IsInternetStream">$INFO[MusicPlayer.Title]</value>
+        <value>$INFO[Player.Title]</value>
+    </variable>
+	
+	<variable name="NowPlayingLabel">
+        <value condition="Player.IsInternetStream">[B]$LOCALIZE[31040][/B]</value>
+        <value>[B]$LOCALIZE[31040][/B]  ($INFO[Player.Time] / $INFO[Player.Duration])</value>
+    </variable>
+	
 	
 	
 	

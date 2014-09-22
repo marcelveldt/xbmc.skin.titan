@@ -38,7 +38,8 @@
         </control>
     </include>
     <include name="liveGadgetSetBackground">
-        <onclick>Skin.SetString(LiveGadgetBackground, $INFO[Container(300).ListItem.Icon])</onclick>
+		<onclick condition="!IsEmpty(Container(300).ListItem.Property(background))">Skin.SetString(LiveGadgetBackground, $INFO[Container(300).ListItem.Property(background)])</onclick>
+        <onclick condition="IsEmpty(Container(300).ListItem.Property(background))">Skin.SetString(LiveGadgetBackground, $INFO[Container(300).ListItem.Icon])</onclick>
     </include>
     <!-- Gadget Row sizes -->
     <include name="Gadget1Row">
@@ -72,7 +73,7 @@
     <!--Header-->
     <include name="Header">
         <control type="image">
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus()</visible>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888)</visible>
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
@@ -85,7 +86,7 @@
             <texture>$VAR[value_header_icon]</texture>
         </control>
         <control type="label">
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus()</visible>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888)</visible>
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
@@ -216,7 +217,7 @@
             <width>350</width>
             <height>300</height>
             <visible>Weather.IsFetched</visible>
-            <visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(WeatherOnHome) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) </visible>
+            <visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(WeatherOnHome) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) + !Control.IsVisible(88888)</visible>
             <!--Weather Today-->
             <control type="image">
                 <!--Icon-->
@@ -1327,6 +1328,12 @@
     </include>
     <!--Background-->
     <include name="VideoBackground">
+		<!-- default blue background (always show as fallback) -->
+        <control type="image">
+            <include>DimensionsFullscreen</include>
+            <texture background="true">special://skin/extras/backgrounds/global_blue.png</texture>
+            <fadetime>800</fadetime>
+        </control>
         <include condition="IsEmpty(ListItem.Art(fanart))">GlobalBackground</include>
         <!-- mediabrowser fanart -->
         <control type="image">
@@ -1343,10 +1350,16 @@
             <colordiffuse>FF666666</colordiffuse>
             <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
             <visible>IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt))</visible>
-        </control>--&gt;
-		<control type="image"><include>DimensionsFullscreen</include><texture background="true">overlays/fanart/fanart_overlay.png</texture><fadetime>800</fadetime></control></include>
+        </control>
+		<control type="image"><include>DimensionsFullscreen</include><texture background="true">overlays/fanart/fanart_overlay.png</texture><fadetime>800</fadetime></control>
+	</include>
     <include name="MusicBackground">
-        <include condition="IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + IsEmpty(ListItem.Art(fanart)) + IsEmpty(MusicPlayer.Property(Fanart_Image))">GlobalBackground</include>
+		<!-- default blue background (always show as fallback) -->
+        <control type="image">
+            <include>DimensionsFullscreen</include>
+            <texture background="true">special://skin/extras/backgrounds/global_blue.png</texture>
+            <fadetime>800</fadetime>
+        </control>
         <!-- mediabrowser fanart -->
         <control type="image">
             <include>DimensionsFullscreen</include>
@@ -1371,19 +1384,18 @@
         </control>
     </include>
     <include name="GlobalBackground">
-        <!-- default MP background -->
+        <!-- default blue background (always show as fallback) -->
+        <control type="image">
+            <include>DimensionsFullscreen</include>
+            <texture background="true">special://skin/extras/backgrounds/global_blue.png</texture>
+            <fadetime>800</fadetime>
+        </control>
+		<!-- default MP background -->
         <control type="image">
             <include>DimensionsFullscreen</include>
             <texture background="true">special://skin/extras/backgrounds/global.png</texture>
             <fadetime>800</fadetime>
             <visible>Skin.String(CustomBackgroundSetting, default)</visible>
-        </control>
-        <!-- default blue background -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <texture background="true">special://skin/extras/backgrounds/global_blue.png</texture>
-            <fadetime>800</fadetime>
-            <visible>Skin.String(CustomBackgroundSetting, blue)</visible>
         </control>
         <!-- user own background -->
         <control type="image">
@@ -1449,6 +1461,7 @@
         <animation effect="fade" time="600">Visible</animation>
         <animation effect="fade" time="600">Hidden</animation>
     </include>
+	
     <include name="defaultskinsettings">
         <!-- skin default settings -->
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomBackgroundSetting, blue)</onload>
@@ -1533,6 +1546,8 @@
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
 		<onload condition="!Skin.HasTheme(classic) + !Skin.HasSetting(NoFooterBar)">Skin.SetBool(NoFooterBar)</onload>
 		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
+
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
 		<onload>Skin.Reset(ShowNextUppanel)</onload>
     </include>

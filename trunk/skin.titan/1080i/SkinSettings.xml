@@ -235,7 +235,7 @@
                             <font>Reg28</font>
                             <textcolor>lightgrey</textcolor>
                             <selectedcolor>white</selectedcolor>
-                            <label>32000</label>
+                            <label>31100</label>
 							<visible>IsEmpty(ListItem.Label) | StringCompare(ListItem.Label,==) </visible>
                         </control>
                     </itemlayout>
@@ -266,7 +266,7 @@
                             <font>Reg28</font>
                             <textcolor>black</textcolor>
                             <selectedcolor>black</selectedcolor>
-                            <label>32000</label>
+                            <label>31100</label>
 							<visible>IsEmpty(ListItem.Label) | StringCompare(ListItem.Label,==) </visible>
                         </control>
                         <control type="button">
