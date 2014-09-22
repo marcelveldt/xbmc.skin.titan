@@ -307,7 +307,7 @@
 		<control type="videowindow">
 			<include>DimensionsFullscreen</include>
 		</control>
-		<include>DialogOverlayExtra</include>
+		<include>DialogOverlay</include>
 		
 
 

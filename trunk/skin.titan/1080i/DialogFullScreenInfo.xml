@@ -9,7 +9,8 @@
             <visible>!Window.IsActive(videoosd)</visible>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
-            <include>OSDPanel</include>
+            <include condition="Skin.HasTheme(classic)">OSDPanelClassic</include>
+			<include condition="!Skin.HasTheme(classic)">OSDPanelModern</include>
         </control>
         <!--Buttons-->
         <control type="group" id="1000">
