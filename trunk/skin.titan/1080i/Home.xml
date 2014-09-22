@@ -365,6 +365,7 @@
             <!-- episodes in progress (mediabrowser) or recently added episodes (normal)-->
             <control type="group">
                 <height>340</height>
+				<width>1920</width>
                 <control type="image">
                     <texture border="39">pvr/pvr_epg_panel.png</texture>
                     <aspectratio>stretch</aspectratio>

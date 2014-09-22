@@ -30,7 +30,7 @@
             <aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
             <fadetime>800</fadetime>
             <include>backgroundfade</include>
-			<visible>IsEmpty(ListItem.Art(fanart))</visible>
+			<visible>IsEmpty(ListItem.Art(fanart)) | !IsEmpty(ListItem.TVShowTitle)</visible>
         </control>
         <control type="image">
             <!--Panel Ovelay-->
