@@ -2532,7 +2532,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoFooterBar)</onclick>
                     <selected>Skin.HasSetting(NoFooterBar)</selected>
-                    <visible>!Skin.HasTheme(classic)</visible>
+                    <visible>Skin.HasTheme(classic)</visible>
                 </control>
                 <control type="radiobutton" id="5012">
                     <description></description>

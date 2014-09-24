@@ -174,6 +174,9 @@
 		<label>31062</label>
 		<icon>home/youtube.png</icon>
 		<thumb>-</thumb>
+		<property name="contenttype">custom</property>
+		<property name="contenttitle">YouTube Top100 Trailers</property>
+		<property name="contentpath">plugin://plugin.video.youtube/?contact=trailers&amp;external=true&amp;feed=uploads&amp;login=false&amp;path=%2froot%2fexplore%2ftrailers</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(10025,"plugin://plugin.video.youtube",return)</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuYouTubeButton) + System.HasAddon(plugin.video.youtube)</visible>
@@ -198,6 +201,7 @@
 		<icon>home/weather.png</icon>
 		<thumb>$VAR[WeatherButtonThumb]</thumb>
 		<include>liveGadgetSetBackground</include>
+		<property name="contenttype">weather</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(weather)</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuWeatherButton)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],16,UP)</onclick>
@@ -298,6 +302,9 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[MB3FavoritesBackground]</thumb>
+		<property name="contenttype">custom</property>
+		<property name="contenttitle">$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</property>
+		<property name="contentpath">$INFO[Window(Home).Property(xbmb3c.std.movies.3.content)]</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.std.movies.3.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuMB3FavouritesButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
@@ -309,6 +316,9 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[MB3ChannelsBackground]</thumb>
+		<property name="contenttype">custom</property>
+		<property name="contenttitle">$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</property>
+		<property name="contentpath">$INFO[Window(Home).Property(xbmb3c.std.channels.0.content)]</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.std.channels.0.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuMB3ChannelsButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>

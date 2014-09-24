@@ -329,6 +329,7 @@
 		<value>$INFO[ListItem.Icon]</value>
     </variable>
 	
+
 	<variable name="HomeMenuHubLabel">
 		<value condition="!IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.label2][CR]$INFO[ListItem.label]</value>
@@ -352,13 +353,18 @@
 	
 	<variable name="HomeMenuHubInfoPoster">
 		<value condition="!IsEmpty(Container(510).ListItem.Art(tvshow.poster))">$INFO[Container(510).ListItem.Art(tvshow.poster)]</value>
-		<value condition="IsEmpty(Container(510).ListItem.Property(poster))">$INFO[Container(510).ListItem.Art(poster)]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.Art(poster))">$INFO[Container(510).ListItem.Art(poster)]</value>
+		<value condition="IsEmpty(Container(510).ListItem.Property(poster))">$INFO[Container(510).ListItem.ActualIcon]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),weather)">$INFO[Container(510).ListItem.ActualIcon]</value>
 		<value>$INFO[Container(510).ListItem.Property(poster)]</value>
     </variable>
 	
 	<variable name="HomeMenuHubInfoRating">
-		<value condition="IsEmpty(Container(510).ListItem.Property(VideoRating))">$INFO[Container(510).ListItem.Rating,rating/10stars_blue/,.png]</value>
-		<value>$INFO[Container(510).ListItem.Property(VideoRating),rating/10stars_blue/,.png]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.Rating) + !skin.hastheme(classic)">$INFO[Container(510).ListItem.Rating,rating/10stars_blue/,.png]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.Rating) + skin.hastheme(classic)">$INFO[Container(510).ListItem.Rating,rating/10stars_black/,.png]</value>
+		<value condition="IsEmpty(Container(510).ListItem.Rating) + !skin.hastheme(classic)">$INFO[Container(510).ListItem.Property(VideoRating),rating/10stars_blue/,.png]</value>
+		<value condition="IsEmpty(Container(510).ListItem.Rating) + skin.hastheme(classic)">$INFO[Container(510).ListItem.Property(VideoRating),rating/10stars_black/,.png]</value>
+
     </variable>
 
 
@@ -480,6 +486,8 @@
     </variable>
 	
 	<variable name="HomeHubLabel">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(contenttitle))">$INFO[Container(300).ListItem.Property(contenttitle)]</value>
+	
 		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">$LOCALIZE[31102]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, newmovies)">$LOCALIZE[31048]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, inprogressmovies)">$LOCALIZE[31035]</value>
@@ -493,6 +501,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomalbum)">$LOCALIZE[31108]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomartist)">$LOCALIZE[31109]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, inprogress)">$LOCALIZE[31110]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, library)">$LOCALIZE[10516]</value>
+		
 		
 		
 		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, inprogressmovies)">$LOCALIZE[31047]</value>

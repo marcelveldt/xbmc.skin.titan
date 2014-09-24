@@ -200,7 +200,7 @@
 	<include name="NowPlayingModern">
         <control type="group" id="88888">
             <!--Panel-->
-            <visible>Player.HasMedia + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() </visible>
+            <visible>Player.HasMedia + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !ControlGroup(77777).HasFocus</visible>
             <include>DimensionsFullscreen</include>
 			<include>nowplayingbackground</include>
             <control type="image">
@@ -239,7 +239,7 @@
 				<width>153</width>
 				<height>133</height>
 				<fadetime>200</fadetime>
-				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<texture background="true" fallback="defaultcovers/tv.png">$INFO[VideoPlayer.Cover]</texture>
 				<aspectratio align="left" aligny="top">keep</aspectratio>
 				<visible>!VideoPlayer.Content(Movies) + !IsEmpty(VideoPlayer.Cover) + IsEmpty(Player.Art(tvshow.poster))</visible>
 			</control>
@@ -250,7 +250,7 @@
 				<width>123</width>
 				<height>123</height>
 				<fadetime>200</fadetime>
-				<texture background="true">$INFO[Player.Art(thumb)]</texture>
+				<texture background="true" fallback="defaultcovers/music_player.png">$INFO[Player.Art(thumb)]</texture>
 				<aspectratio align="left" aligny="top">keep</aspectratio>
 				<visible>Player.HasAudio</visible>
 			</control>

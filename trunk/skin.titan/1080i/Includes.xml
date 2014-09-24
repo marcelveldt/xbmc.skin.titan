@@ -1261,7 +1261,7 @@
             <width>220</width>
             <height>220</height>
             <fadetime>200</fadetime>
-            <texture background="true">$INFO[VideoPlayer.Cover]</texture>
+            <texture background="true" fallback="defaultcovers/tv.png">$INFO[VideoPlayer.Cover]</texture>
             <aspectratio align="left" aligny="top">keep</aspectratio>
             <visible>VideoPlayer.Content(livetv)</visible>
         </control>
@@ -1272,7 +1272,7 @@
             <width>220</width>
             <height>220</height>
             <fadetime>200</fadetime>
-            <texture background="true">$INFO[Player.Art(thumb)]</texture>
+            <texture background="true" fallback="defaultcovers/music_player.png">$INFO[Player.Art(thumb)]</texture>
             <aspectratio align="left" aligny="top">keep</aspectratio>
             <visible>Player.HasAudio</visible>
         </control>
@@ -1283,7 +1283,7 @@
 			<width>195</width>
             <height>260</height>
             <fadetime>200</fadetime>
-            <texture background="true">$INFO[Player.Art(tvshow.poster)]</texture>
+            <texture background="true" fallback="defaultcovers/video_play.png">$INFO[Player.Art(tvshow.poster)]</texture>
             <aspectratio align="left" aligny="top">keep</aspectratio>
             <visible>VideoPlayer.Content(episodes)</visible>
         </control>
@@ -1294,7 +1294,7 @@
 			<width>195</width>
             <height>260</height>
             <fadetime>200</fadetime>
-            <texture background="true">$INFO[VideoPlayer.Cover]</texture>
+            <texture background="true" fallback="defaultcovers/video_play.png">$INFO[VideoPlayer.Cover]</texture>
             <aspectratio align="left" aligny="top">stretch</aspectratio>
             <visible>!VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)</visible>
         </control>
@@ -1515,7 +1515,7 @@
             <font>Light32</font>
             <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
             <label>$INFO[Player.Time] - $INFO[Player.TimeRemaining]</label>
-			<visible>!Player.IsInternetStream</visible>
+			<visible>Player.HasDuration</visible>
         </control>
         <control type="grouplist">
             <!--Clock-->
@@ -1562,7 +1562,7 @@
 			<height>20</height>
             <width>800</width>
             <info>Player.Progress</info>
-            <visible>!Player.IsInternetStream</visible>
+            <visible>Player.HasDuration</visible>
         </control>
         <control type="slider" id="401">
             <description>Seekbar</description>
@@ -2311,6 +2311,7 @@
                     <texturefocus>modernosd/OSDRecordFO.png</texturefocus>
                     <texturenofocus>modernosd/OSDRecordNF.png</texturenofocus>
                     <onclick>PlayerControl(Record)</onclick>
+					<visible>Player.CanRecord</visible>
                 </control>
             </control>
 

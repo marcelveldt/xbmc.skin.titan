@@ -61,7 +61,7 @@
             <include condition="Skin.String(GadgetRows, 2)">Gadget2Row</include>
             <include condition="Skin.String(GadgetRows, 3)">Gadget3Row</include>
             <animation type="Conditional" condition="[Skin.HasSetting(ShowNextUppanel) + !Skin.HasSetting(UseHubsOnHomeScreen)] | [ControlGroup(77777).HasFocus + Skin.String(GadgetRows, 3)]">
-                <effect type="slide" start="0,-0" end="0,700" time="800" tween="cubic" easing="inout" />
+                <effect type="slide" start="0,-0" end="0,650" time="800" tween="cubic" easing="inout" />
             </animation>
 			<animation type="Conditional" condition="[Skin.HasSetting(ShowNextUppanel) + !Skin.HasSetting(UseHubsOnHomeScreen)] | [ControlGroup(77777).HasFocus + Skin.String(GadgetRows, 2)]">
                 <effect type="slide" start="0,-0" end="0,800" time="800" tween="cubic" easing="inout" />
@@ -71,8 +71,8 @@
 			<onup condition="!Skin.HasSetting(UseHubsOnHomeScreen) | IsEmpty(Container(300).ListItem.Property(contenttype))">400</onup>
 
 			<onup condition="Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(Container(300).ListItem.Property(contenttype))">510</onup>
-			<ondown condition="Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(Container(300).ListItem.Property(contenttype))">510</ondown>
-			<ondown condition="![Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(Container(300).ListItem.Property(contenttype))]">2</ondown>
+			<ondown condition="Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(Container(300).ListItem.Property(contenttype)) + !Skin.String(GadgetRows, 1)">510</ondown>
+			<ondown condition="![Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(Container(300).ListItem.Property(contenttype))] | Skin.String(GadgetRows, 1)">2</ondown>
             <onleft></onleft>
             <onright></onright>
             <orientation>horizontal</orientation>
@@ -142,17 +142,17 @@
                         <width>60</width>
                         <height>36</height>
                         <texture>arrowup.png</texture>
-						<visible>!IsEmpty(.ListItem.Property(contenttype)) + [Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,0) | StringCompare(Container(300).Position,2) | StringCompare(Container(300).Position,4)] | Skin.String(GadgetRows, 1)]</visible>
+						<visible>Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(ListItem.Property(contenttype)) + [[Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,0) | StringCompare(Container(300).Position,2) | StringCompare(Container(300).Position,4)]] | Skin.String(GadgetRows, 1)]</visible>
                     </control>
 					<control type="image">
                         <!--Submenu Arrow DOWN-->
 						<animation effect="fade" begin="0" end="100" delay="800" time="800" pulse="true">Focus</animation>
                         <posx>282</posx>
-                        <posy>260</posy>
+                        <posy>255</posy>
                         <width>60</width>
                         <height>36</height>
                         <texture>arrowdown.png</texture>
-						<visible>!IsEmpty(.ListItem.Property(contenttype)) + [Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
+						<visible>Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(ListItem.Property(contenttype)) + [Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
                     </control>
 					
                     <control type="image">
@@ -228,9 +228,7 @@
                         <height>271</height>
                         <texture>home/home_focus.png</texture>
                     </control>
-					
-					
-					
+
                     <control type="button">
                         <left>150</left>
                         <top>0</top>
@@ -259,10 +257,11 @@
             <onup>300</onup>
             <onright>300</onright>
             <onleft>300</onleft>
-            <visible>!ControlGroup(400).HasFocus() + ![!IsEmpty(Container(300).ListItem.Property(contenttype)) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
+            <visible>!ControlGroup(400).HasFocus() + ![Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(Container(300).ListItem.Property(contenttype)) + Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
             <texturefocus>icons/icon_power.png</texturefocus>
             <texturenofocus colordiffuse="black">icons/icon_power.png</texturenofocus>
             <onclick>ActivateWindow(111)</onclick>
+			<animation effect="fade" begin="0" end="100" delay="800" time="800">Visible</animation>
         </control>
         <!-- nextup overlay -->
 		<include condition="!Skin.HasSetting(UseHubsOnHomeScreen)">nextUpPanel</include>

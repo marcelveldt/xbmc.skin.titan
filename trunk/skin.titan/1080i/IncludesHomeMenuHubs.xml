@@ -57,7 +57,25 @@
 			<width>261</width>
 			<height>351</height>
 			<aspectratio>stretch</aspectratio>
-			<texture background="true">$VAR[HomeMenuHubInfoPoster]</texture>
+			<texture background="true" fallback="defaultcovers/video_play.png">$VAR[HomeMenuHubInfoPoster]</texture>
+			<visible>!StringCompare(Container(300).ListItem.Property(contenttype),music) + !StringCompare(Container(300).ListItem.Property(contenttype),weather)</visible>
+		</control>
+		<control type="image">
+			<posx>1555</posx>
+			<posy>200</posy>
+			<width>261</width>
+			<height>261</height>
+			<aspectratio>stretch</aspectratio>
+			<texture background="true" fallback="defaultcovers/music_play.png">$VAR[HomeMenuHubInfoPoster]</texture>
+			<visible>StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
+		</control>
+		<control type="image">
+			<posx>1355</posx>
+			<posy>140</posy>
+			<width>480</width>
+			<height>270</height>
+			<texture>$VAR[HomeMenuHubInfoPoster]</texture>
+			<visible>StringCompare(Container(300).ListItem.Property(contenttype),weather)</visible>
 		</control>
 		
 		</control>
@@ -71,20 +89,30 @@
 				</animation>
 				<animation time="400" effect="fade">Visible</animation>
 				<animation time="200" effect="fade">Hidden</animation>
-				<ondown>Skin.Reset(ShowHubs)</ondown>
+				<control type="image">
+                        <!--Submenu Arrow DOWN-->
+						<animation effect="fade" begin="0" end="100" delay="1800" time="1800">Visible</animation>
+                        <posx>930</posx>
+                        <posy>290</posy>
+                        <width>60</width>
+                        <height>36</height>
+                        <texture>arrowdown.png</texture>
+						<visible>ControlGroup(77777).HasFocus</visible>
+                    </control>
                 <control type="image">
 					<posx>-10</posx>
 					<width>1940</width>
                     <texture border="39">pvr/pvr_epg_panel.png</texture>
                     <aspectratio>stretch</aspectratio>
-                    <height>330</height>
+                    <height>340</height>
                 </control>
+				
 				<control type="button" id="511">
 					<posx>40</posx>
                     <width>1835</width>
 					<height>52</height>
                     <align>left</align>
-                    <textcolor>lightgrey</textcolor>
+                    <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                     <font>Bold32</font>
 					<onup>Skin.Reset(ShowHubs)</onup>
 					<onup>300</onup>
@@ -99,11 +127,12 @@
 					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + Skin.String(TvShowsWidget, latest)">Skin.SetString(TvShowsWidget, inprogress)</onclick>
 					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + Skin.String(TvShowsWidget, inprogress)">Skin.SetString(TvShowsWidget, random)</onclick>
 					
-					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, latestsong)">Skin.SetString(MusicWidget, latestalbum)</onclick>
+					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, library)">Skin.SetString(MusicWidget, latestalbum)</onclick>
 					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, latestalbum)">Skin.SetString(MusicWidget, randomalbum)</onclick>
 					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, randomartist)</onclick>
 					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, inprogress)</onclick>
 					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, inprogress)">Skin.SetString(MusicWidget, latestsong)</onclick>
+					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, latestsong)">Skin.SetString(MusicWidget, library)</onclick>
 					
 					<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, inprogress)">Skin.SetString(MusicWidget, randomalbum)</onclick>
 					<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, latestsong)</onclick>
@@ -113,6 +142,7 @@
 					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, inprogresstvshows)">Skin.SetString(NetflixWidget, random)</onclick>
 					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, random)">Skin.SetString(NetflixWidget, inprogressmovies)</onclick>
 					
+					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),weather)">ActivateWindow(weather)</onclick>
 					
 				</control>
 				<control type="image">
@@ -134,11 +164,98 @@
 				<include condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">netflixTvHubs</include>
 				
 				<include condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">normalMusicHubs</include>
-				<include condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">MediaBrowserMusicHubs</include>
+				<include condition="Skin.HasSetting(HomeMenuUseMBforMusic)">MediaBrowserMusicHubs</include>
 				
-				<include>netflixCombinedHubs</include>
+				<include>CustomHubs</include>
+				
+				<include condition="System.HasAddon(plugin.video.netflixbmc)">netflixCombinedHubs</include>
+				<include>weatherHub</include>
 				
 			</control>
+	</include>
+	
+	<include name="CustomHubs">
+		<!-- recent movies -->
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<visible>StringCompare(Container(300).ListItem.Property(contenttype),custom)</visible>
+		<content target="video">$INFO[Container(300).ListItem.Property(contentpath)]</content>
+		</control>
+	</include>
+	
+	
+	<include name="weatherHub">
+		
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<visible>StringCompare(Container(300).ListItem.Property(contenttype),weather)</visible>
+			<content>
+				<item>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)][/UPPERCASE]</label>
+				<label2>$INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label2>
+				<icon>special://skin/extras/weather/$INFO[Window(Weather).Property(Day0.FanartCode)]/weather.jpg</icon>
+				<thumb>$INFO[Window(Weather).Property(Day0.FanartCode),weather/icons/,.png]</thumb>
+				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<property name="plot">$INFO[Window(Weather).Property(Day0.Outlook)]</property>
+				<onclick>ActivateWindow(weather)</onclick>
+				</item>
+				<item>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day1.Title)][/UPPERCASE]</label>
+				<label2>$INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label2>
+				<icon>special://skin/extras/weather/$INFO[Window(Weather).Property(Day1.FanartCode)]/weather.jpg</icon>
+				<thumb>$INFO[Window(Weather).Property(Day1.FanartCode),weather/icons/,.png]</thumb>
+				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<property name="plot">$INFO[Window(Weather).Property(Day1.Outlook)]</property>
+				<onclick condition="!IsEmpty(Window(0).Property(RecentMovie.1.Play))">$INFO[Window(0).Property(RecentMovie.1.Play)]</onclick>
+				</item>
+				<item>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day2.Title)][/UPPERCASE]</label>
+				<label2>$INFO[Window(Weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label2>
+				<icon>special://skin/extras/weather/$INFO[Window(Weather).Property(Day2.FanartCode)]/weather.jpg</icon>
+				<thumb>$INFO[Window(Weather).Property(Day2.FanartCode),weather/icons/,.png]</thumb>
+				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<property name="plot">$INFO[Window(Weather).Property(Day2.Outlook)]</property>
+				<onclick>ActivateWindow(weather)</onclick>
+				</item>
+				<item>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day3.Title)][/UPPERCASE]</label>
+				<label2>$INFO[Window(Weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label2>
+				<icon>special://skin/extras/weather/$INFO[Window(Weather).Property(Day3.FanartCode)]/weather.jpg</icon>
+				<thumb>$INFO[Window(Weather).Property(Day3.FanartCode),weather/icons/,.png]</thumb>
+				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<property name="plot">$INFO[Window(Weather).Property(Day3.Outlook)]</property>
+				<onclick>ActivateWindow(weather)</onclick>
+				</item>
+				<item>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day4.Title)][/UPPERCASE]</label>
+				<label2>$INFO[Window(Weather).Property(Day4.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day4.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label2>
+				<icon>special://skin/extras/weather/$INFO[Window(Weather).Property(Day4.FanartCode)]/weather.jpg</icon>
+				<thumb>$INFO[Window(Weather).Property(Day4.FanartCode),weather/icons/,.png]</thumb>
+				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<property name="plot">$INFO[Window(Weather).Property(Day4.Outlook)]</property>
+				<onclick>ActivateWindow(weather)</onclick>
+				</item>
+				<item>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day5.Title)][/UPPERCASE]</label>
+				<label2>$INFO[Window(Weather).Property(Day5.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day5.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label2>
+				<icon>special://skin/extras/weather/$INFO[Window(Weather).Property(Day5.FanartCode)]/weather.jpg</icon>
+				<thumb>$INFO[Window(Weather).Property(Day5.FanartCode),weather/icons/,.png]</thumb>
+				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<property name="plot">$INFO[Window(Weather).Property(Day5.Outlook)]</property>
+				<onclick>ActivateWindow(weather)</onclick>
+				</item>
+				<item>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day6.Title)][/UPPERCASE]</label>
+				<label2>$INFO[Window(Weather).Property(Day6.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day6.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label2>
+				<icon>special://skin/extras/weather/$INFO[Window(Weather).Property(Day6.FanartCode)]/weather.jpg</icon>
+				<thumb>$INFO[Window(Weather).Property(Day6.FanartCode),weather/icons/,.png]</thumb>
+				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<property name="plot">$INFO[Window(Weather).Property(Day6.Outlook)]</property>
+				<onclick>ActivateWindow(weather)</onclick>
+				</item>
+			</content>
+		</control>
+
 	</include>
 	
 	<include name="normalMoviesHubs">
@@ -1828,11 +1945,6 @@
 	
 	</include>
 	
-	
-	
-	
-	
-	
 	<include name="MediaBrowserMoviesHubs">
 		<!-- recent movies -->
 		<control type="panel" id="510">
@@ -2221,11 +2333,6 @@
 	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 	<visible>!IsEmpty(Window.Property(LatestSong.12.Title))</visible>
 	</item>
-	<item>
-	<icon>DefaultAudioCover.png</icon>
-	<onclick>noop</onclick>
-	<visible>IsEmpty(Window.Property(LatestSong.1.Title))</visible>
-	</item>
 	</content>
 	</control>
 	
@@ -2390,11 +2497,6 @@
 	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 	<visible>!IsEmpty(Window(Home).Property(RecentAlbum.12.Title))</visible>
 	</item>
-	<item>
-	<icon>DefaultAudioCover.png</icon>
-	<onclick>noop</onclick>
-	<visible>IsEmpty(Window(Home).Property(RecentAlbum.1.Title))</visible>
-	</item>
 	</content>
 	</control>
 	
@@ -2524,11 +2626,6 @@
 	<onclick>$INFO[Window(Home).Property(RandomSong.12.Play)]</onclick>
 	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 	<visible>!IsEmpty(Window(Home).Property(RandomSong.12.Title))</visible>
-	</item>
-	<item>
-	<icon>DefaultAudioCover.png</icon>
-	<onclick>noop</onclick>
-	<visible>IsEmpty(Window(Home).Property(RandomSong.1.Title))</visible>
 	</item>
 	</content>
 	</control>
@@ -2694,11 +2791,6 @@
 	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 	<visible>!IsEmpty(Window(Home).Property(RandomAlbum.12.Title))</visible>
 	</item>
-	<item>
-	<icon>DefaultAudioCover.png</icon>
-	<onclick>noop</onclick>
-	<visible>IsEmpty(Window(Home).Property(RandomAlbum.1.Title))</visible>
-	</item>
 	</content>
 	</control>
 	
@@ -2826,11 +2918,6 @@
 	<onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.12.LibraryPath)])</onclick>
 	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 	<visible>!IsEmpty(Window(Home).Property(RandomArtist.12.Title))</visible>
-	</item>
-	<item>
-	<icon>DefaultAudioCover.png</icon>
-	<onclick>noop</onclick>
-	<visible>IsEmpty(Window(Home).Property(RandomArtist.1.Title))</visible>
 	</item>
 	</content>
 	</control>
@@ -2996,16 +3083,94 @@
 	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 	<visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.12.Title))</visible>
 	</item>
-	<item>
-	<icon>DefaultAudioCover.png</icon>
-	<onclick>noop</onclick>
-	<visible>IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))</visible>
-	</item>
 	</content>
 	</control>
 	
-	</include>
+	<!-- music library -->
+	<control type="panel" id="510">
+	<include>panel_layout</include>
+	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),library)</visible>
+	<content>
 	
+	<item>
+		<!--Genres-->
+		<label>135</label>
+		<icon>defaultcovers/musicgenres.png</icon>
+		<thumb>defaultcovers/musicgenres.png</thumb>
+		<onclick>ActivateWindow(Music, Genres, return)</onclick>
+	</item>
+	<item>
+		<!--Artists-->
+		<label>133</label>
+		<icon>$INFO[Window(Home).Property(RandomArtist.1.Thumb)]</icon>
+		<thumb>$INFO[Window(Home).Property(RandomArtist.1.Fanart)]</thumb>
+		<onclick>ActivateWindow(Music, Artists, return)</onclick>
+	</item>
+	<item>
+		<!--Albums-->
+		<label>132</label>
+		<icon>defaultcovers/musicalbums.png</icon>
+		<thumb>defaultcovers/musicalbums.png</thumb>
+		<onclick>ActivateWindow(Music, Albums, return)</onclick>
+	</item>
+	<item>
+		<!--Songs-->
+		<label>134</label>
+		<icon>defaultcovers/musicsongs.png</icon>
+		<thumb>defaultcovers/musicsongslandscape.png</thumb>
+		<icon>$INFO[Window(Home).Property(RandomSong.1.Thumb)]</icon>
+		<thumb>$INFO[Window(Home).Property(RandomSong.1.Fanart)]</thumb>
+		<onclick>ActivateWindow(Music, Songs, return)</onclick>
+	</item>
+	<item>
+		<!--Years-->
+		<label>652</label>
+		<icon>defaultcovers/musicyears.png</icon>
+		<thumb>defaultcovers/musicyears.png</thumb>
+		<onclick>ActivateWindow(Music, Years, return)</onclick>
+	</item>
+	<item>
+		<!--Top 100 songs-->
+		<label>10504</label>
+		<icon>defaultcovers/musictop100.png</icon>
+		<thumb>defaultcovers/musictop100.png</thumb>
+		<onclick>ActivateWindow(Music, Top100Songs, return)</onclick>
+	</item>
+	<item>
+		<!--Recently Added-->
+		<label>359</label>
+		<icon>$INFO[Window.Property(LatestSong.1.Thumb)]</icon>
+		<thumb>$INFO[Window.Property(LatestSong.1.Fanart)]</thumb>
+		<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, RecentlyAddedAlbums, return)</onclick>
+		<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.1.path)]</onclick>
+	</item>
+	<item>
+		<!--Recently Played-->
+		<label>517</label>
+		<icon>$INFO[Window(Home).Property(RecommendedAlbum.1.Thumb)]</icon>
+		<thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Art(fanart))]</thumb>
+		<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, RecentlyPlayedAlbums, return)</onclick>
+		<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.2.path)]</onclick>
+	</item>
+	<item>
+		<!-- Playlists-->
+		<label>136</label>
+		<icon>$INFO[Window(Home).Property(RandomAlbum.1.Thumb)]</icon>
+		<thumb>$INFO[Window(Home).Property(RandomAlbum.1.Art(fanart))]</thumb>
+		<onclick>ActivateWindow(Music, Playlists, return)</onclick>
+	</item>
+	<item>
+		<!-- Radio-->
+		<label>19021</label>
+		<icon>home/radio.png</icon>
+		<thumb>$INFO[Skin.String(CustomRadioFolder)]</thumb>
+		<onclick condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
+		<onclick condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+		<visible>System.GetBool(pvrmanager.enabled)</visible>
+	</item>
+	</content>
+	</control>
+	</include>
 	
 	<include name="MediaBrowserMusicHubs">
 
@@ -3185,7 +3350,6 @@
 	</content>
 	</control>
 	
-
 	<!-- in progress music -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
@@ -3229,34 +3393,50 @@
             <posx>0</posx>
             <posy>0</posy>
             <width>340</width>
-            <height>190</height>
+            <height>220</height>
             <texture>home/home_shadow.png</texture>
+        </control>
+
+		<control type="image">
+            <!--Panel Normal-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>340</width>
+            <height>220</height>
+            <texture background="true" diffuse="home/home_matte.png" fallback="banner_default.png">$VAR[HomeMenuHubImage]</texture>
+            <aspectratio scalediffuse="false" align="center" aligny="bottom">scale</aspectratio>
+            <fadetime>800</fadetime>
+            <include>backgroundfade</include>
+			<visible>!StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
         </control>
 		<control type="image">
             <!--Panel Normal-->
             <posx>0</posx>
             <posy>0</posy>
             <width>340</width>
-            <height>190</height>
-            <texture background="true" diffuse="home/home_matte.png" fallback="cover_default.png">$VAR[HomeMenuHubImage]</texture>
-            <aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+            <height>220</height>
+            <texture background="true" diffuse="home/home_matte.png" fallback="defaultcovers/musicsongslandscape.png">$VAR[HomeMenuHubImage]</texture>
+            <aspectratio scalediffuse="false" align="center" aligny="bottom">scale</aspectratio>
             <fadetime>800</fadetime>
             <include>backgroundfade</include>
+			<visible>StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
         </control>
+		
+
         <control type="image">
             <!--Panel Ovelay-->
             <posx>0</posx>
             <posy>-40</posy>
             <width>340</width>
-            <height>233</height>
+            <height>263</height>
             <colordiffuse>ccFFFFFF</colordiffuse>
             <texture diffuse="home/home_matte.png">home/home_overlay.png</texture>
-			<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) | StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
+			<visible>![StringCompare(Container(300).ListItem.Property(contenttype),movies) | StringCompare(Container(300).ListItem.Property(contenttype),custom)]</visible>
         </control>
         <control type="label">
             <!--Label-->
             <posx>170</posx>
-            <posy>100</posy>
+            <posy>120</posy>
             <width>320</width>
             <height>100</height>
             <align>center</align>
@@ -3264,7 +3444,7 @@
             <label>$VAR[HomeMenuHubLabel]</label>
             <font>Light26</font>
             <textcolor>darkgrey</textcolor>
-			<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) | StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
+			<visible>![StringCompare(Container(300).ListItem.Property(contenttype),movies) | StringCompare(Container(300).ListItem.Property(contenttype),custom)]</visible>
         </control>
     </include>
     <include name="HomeMenuHubFocuslayout">
@@ -3279,7 +3459,7 @@
                 <effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
             </animation>
             <posx>170</posx>
-            <posy>100</posy>
+            <posy>120</posy>
             <width>320</width>
             <height>100</height>
             <align>center</align>
@@ -3287,7 +3467,7 @@
             <label>$VAR[HomeMenuHubLabel]</label>
             <font>Light26</font>
             <textcolor>white</textcolor>
-			<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) | StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
+			<visible>![StringCompare(Container(300).ListItem.Property(contenttype),movies) | StringCompare(Container(300).ListItem.Property(contenttype),custom)]</visible>
         </control>
         <control type="image">
             <!--Panel Focus-->
@@ -3300,7 +3480,7 @@
             <posx>0</posx>
             <posy>0</posy>
             <width>340</width>
-            <height>190</height>
+            <height>220</height>
             <texture>home/home_focus.png</texture>
         </control>
     </include>
