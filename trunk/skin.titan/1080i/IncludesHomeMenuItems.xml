@@ -4,6 +4,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[Custom1Background]</thumb>
+		<property name="contenttype">movies</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.1.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton1) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
@@ -15,6 +16,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[Custom0Background]</thumb>
+		<property name="contenttype">movies</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.0.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton0) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
@@ -26,6 +28,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[Custom2Background]</thumb>
+		<property name="contenttype">movies</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.2.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton2) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
@@ -37,6 +40,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[Custom3Background]</thumb>
+		<property name="contenttype">movies</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.3.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton3) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
@@ -48,6 +52,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[Custom4Background]</thumb>
+		<property name="contenttype">movies</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.movies.4.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton4) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
@@ -72,6 +77,7 @@
 		<property name="background">special://skin/extras/backgrounds/music.png</property>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[MusicButtonThumb]</thumb>
+		<property name="contenttype">music</property>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MusicButtonOnClick]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuMusicButton)</visible>
@@ -84,6 +90,7 @@
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[MoviesButtonThumb]</thumb>
 		<include>liveGadgetSetBackground</include>
+		<property name="contenttype">movies</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MoviesButtonOnClick]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuMoviesButton)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],7,UP)</onclick>
@@ -93,6 +100,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuCustomButton5)">SettingsUnusedHomeMenuItem</include>
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.title)]</label>
 		<icon>home/tvseries.png</icon>
+		<property name="contenttype">tvshows</property>
 		<thumb>$VAR[Custom5Background]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.path)]</onclick>
@@ -104,6 +112,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuTVShowsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>20343</label>
 		<icon>home/tvseries.png</icon>
+		<property name="contenttype">tvshows</property>
 		<thumb>$VAR[TvseriesButtonThumb]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[TVseriesButtonOnClick]</onclick>
@@ -115,6 +124,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuNetflixButton)">SettingsUnusedHomeMenuItem</include>
 		<label>31018</label>
 		<icon>home/netflix.png</icon>
+		<property name="contenttype">netflix</property>
 		<thumb>$INFO[Skin.String(CustomNetflixFolder)]</thumb>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[NetflixButtonOnClick]</onclick>
 		<include>liveGadgetSetBackground</include>
@@ -126,6 +136,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuCustomButton6)">SettingsUnusedHomeMenuItem</include>
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.title)]</label>
 		<icon>home/tvseries.png</icon>
+		<property name="contenttype">tvshows</property>
 		<thumb>$VAR[Custom6Background]</thumb>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
@@ -141,6 +152,7 @@
 		<thumb>$INFO[Skin.String(CustomRadioFolder)]</thumb>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[RadioButtonOnClick]</onclick>
 		<include>liveGadgetSetBackground</include>
+		<property name="contenttype">music</property>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuRadioButton)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],12,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],12,DOWN)</onclick>
@@ -149,6 +161,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuCustomButton7)">SettingsUnusedHomeMenuItem</include>
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.title)]</label>
 		<icon>home/tvseries.png</icon>
+		<property name="contenttype">tvshows</property>
 		<thumb>$VAR[Custom7Background]</thumb>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
@@ -205,6 +218,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuCustomButton8)">SettingsUnusedHomeMenuItem</include>
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.title)]</label>
 		<icon>home/tvseries.png</icon>
+		<property name="contenttype">tvshows</property>
 		<thumb>$VAR[Custom8Background]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.path)]</onclick>
@@ -216,6 +230,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuCustomButton9)">SettingsUnusedHomeMenuItem</include>
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.title)]</label>
 		<icon>home/tvseries.png</icon>
+		<property name="contenttype">tvshows</property>
 		<thumb>$VAR[Custom9Background]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.path)]</onclick>

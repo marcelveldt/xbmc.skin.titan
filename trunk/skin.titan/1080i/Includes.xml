@@ -17,6 +17,7 @@
     <include file="IncludesNextUp.xml" />
     <include file="IncludesHomeMenu.xml" />
 	<include file="IncludesHomeMenuItems.xml" />
+	<include file="IncludesHomeMenuHubs.xml" />
     <include file="IncludesViews.xml" />
     <!--Artwork Downloader-->
     <include file="Custom_MediaDialog.xml" />
@@ -43,16 +44,16 @@
     </include>
     <!-- Gadget Row sizes -->
     <include name="Gadget1Row">
-        <height>300</height>
-        <posy>700</posy>
+        <height>325</height>
+        <posy>660</posy>
     </include>
     <include name="Gadget2Row">
-        <height>560</height>
-        <posy>430</posy>
+        <height>605</height>
+        <posy>400</posy>
     </include>
     <include name="Gadget3Row">
-        <height>900</height>
-        <posy>150</posy>
+        <height>945</height>
+        <posy>110</posy>
     </include>
     <!--Common-->
     <include name="HiddenButton">
@@ -73,7 +74,7 @@
     <!--Header-->
     <include name="Header">
         <control type="image">
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888)</visible>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888) + !ControlGroup(77777).HasFocus</visible>
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
@@ -86,7 +87,7 @@
             <texture>$VAR[value_header_icon]</texture>
         </control>
         <control type="label">
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888)</visible>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888) + !ControlGroup(77777).HasFocus</visible>
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
@@ -104,7 +105,7 @@
         <control type="group">
             <animation time="400" effect="fade">Visible</animation>
             <animation time="200" effect="fade">Hidden</animation>
-            <visible>!ControlGroup(400).HasFocus()</visible>
+            <visible>!ControlGroup(400).HasFocus() + !ControlGroup(77777).HasFocus</visible>
             <control type="grouplist">
                 <!--Time Grouplist Line 1-->
                 <!--animation effect="slide" start="0" end="-130" time="200" condition="Weather.IsFetched" >Conditional</animation-->
@@ -217,7 +218,7 @@
             <width>350</width>
             <height>300</height>
             <visible>Weather.IsFetched</visible>
-            <visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(WeatherOnHome) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) + !Control.IsVisible(88888)</visible>
+            <visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(WeatherOnHome) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) + !Control.IsVisible(88888) + !ControlGroup(77777).HasFocus</visible>
             <!--Weather Today-->
             <control type="image">
                 <!--Icon-->
@@ -1297,6 +1298,17 @@
             <aspectratio align="left" aligny="top">stretch</aspectratio>
             <visible>!VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)</visible>
         </control>
+		<control type="image">
+            <!--record icon-->
+            <posx>250</posx>
+            <posy>790</posy>
+			<width>120</width>
+            <height>120</height>
+            <fadetime>200</fadetime>
+            <texture background="true">pvr/icons/pvr_record.png</texture>
+            <aspectratio align="left" aligny="top">stretch</aspectratio>
+            <visible>Player.Recording</visible>
+        </control>
         <!--Label Movie-->
         <control type="label">
             <visible>VideoPlayer.Content(Movies)</visible>
@@ -1547,6 +1559,7 @@
             <description>Progress Bar</description>
             <posx>350</posx>
             <posy>950</posy>
+			<height>20</height>
             <width>800</width>
             <info>Player.Progress</info>
             <visible>!Player.IsInternetStream</visible>
@@ -1948,7 +1961,6 @@
 			<posx>700</posx>
 			<posy>905</posy>
 			<width>800</width>
-			<height>50</height>
 			<info>Player.Progress</info>
 			<visible>true</visible>
 		</control>
@@ -2289,6 +2301,17 @@
 				  <onclick>XBMC.PlayerControl(Random)</onclick>
 				  <visible>Player.HasAudio</visible>
 				</control>
+				<control type="button" id="213">
+                    <!--Record-->
+                    <include>animation_fade_visible_hidden</include>
+                    <width>90</width>
+                    <height>98</height>
+                    <label>209</label>
+                    <font>-</font>
+                    <texturefocus>modernosd/OSDRecordFO.png</texturefocus>
+                    <texturenofocus>modernosd/OSDRecordNF.png</texturenofocus>
+                    <onclick>PlayerControl(Record)</onclick>
+                </control>
             </control>
 
 	</include>
@@ -2574,8 +2597,17 @@
 		<!-- (optional) automatic run of the artwork downloader on startup -->
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + Skin.HasSetting(EnableArtworkDownloader) + Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, silent=true, mediatype=?)</onload>
 		
+		<!-- default settings for the new home widgets -->
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(MoviesWidget, newmovies)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(TvShowsWidget, inprogress)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(MusicWidget, latestalbum)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(UseHubsOnHomeScreen)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(NetflixWidget, inprogresstvshows)</onload>
+		
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults)">Skin.SetBool(HomeMenuDefaults)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(HomeMenuDefaults1)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults2)</onload>
+
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
 		<onload condition="!Skin.HasTheme(classic) + !Skin.HasSetting(NoFooterBar)">Skin.SetBool(NoFooterBar)</onload>
 		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>

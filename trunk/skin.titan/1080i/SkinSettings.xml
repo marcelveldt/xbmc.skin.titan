@@ -2560,7 +2560,6 @@
                 </control>
                 <control type="radiobutton" id="5014">
                     <description></description>
-                    <!--gadget rows-->
                     <width>1230</width>
                     <align>left</align>
                     <label>31032</label>
@@ -2581,6 +2580,18 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, 1)</onclick>
                     <selected>Skin.String(GadgetRows, 1)</selected>
+                </control>
+				<control type="radiobutton" id="5016">
+                    <description></description>
+                    <!--gadget rows-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31111</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(UseHubsOnHomeScreen)</onclick>
+                    <selected>Skin.HasSetting(UseHubsOnHomeScreen)</selected>
                 </control>
                 <control type="radiobutton" id="5115">
                     <description></description>

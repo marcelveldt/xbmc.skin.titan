@@ -1,3 +1,17 @@
+v.2.0.12
+- added widgets on homescreen
+- fixed background on splash screen
+- fixed record button in osd
+
+v.2.0.11
+- fixed fontcolors in classic theme
+- changed homemenu reorder in skin settings
+- added shortcuts to skin settings
+- added profiles in settings
+- added highres backgrounds for tile selection
+- new now playing graphics in modern theme
+- new osd panel in modern theme
+
 v.2.0.10
 - added dependency to script.favourites
 - artwork downloader now optional
