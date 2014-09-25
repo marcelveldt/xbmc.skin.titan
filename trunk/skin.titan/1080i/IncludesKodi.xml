@@ -72,7 +72,7 @@
 				<width>768</width>
 				<height>60</height>
 				<texture border="2">dialogs/default/highlight.png</texture>
-				<visible>Control.HasFocus(4)</visible>
+				<visible>Control.HasFocus(4) | Control.HasFocus(21)</visible>
 			</control>
 			<control type="image">
 				<posx>20</posx>
@@ -91,7 +91,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<scroll>false</scroll>
-				<visible>!Control.HasFocus(4) + IsEmpty(ListItem.Thumb)</visible>
+				<visible>!Control.HasFocus(4) + !Control.HasFocus(21) + IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="label">
 				<posx>75</posx>
@@ -103,7 +103,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<scroll>false</scroll>
-				<visible>!Control.HasFocus(4) + !IsEmpty(ListItem.Thumb)</visible>
+				<visible>!Control.HasFocus(4) + !Control.HasFocus(21) + !IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="label">
 				<posx>20</posx>
@@ -115,7 +115,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<scroll>false</scroll>
-				<visible>Control.HasFocus(4) + IsEmpty(ListItem.Thumb)</visible>
+				<visible>Control.HasFocus(4) | Control.HasFocus(21) + IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="label">
 				<posx>75</posx>
@@ -127,7 +127,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<scroll>false</scroll>
-				<visible>Control.HasFocus(4) + !IsEmpty(ListItem.Thumb)</visible>
+				<visible>Control.HasFocus(4) | Control.HasFocus(21) + !IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="image">
 				<posx>708</posx>

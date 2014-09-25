@@ -80,7 +80,8 @@
                     <texturedownfocus>common/spinctrl/arrow-light-down-fo.png</texturedownfocus>
                     <texturefocus border="2">dialogs/default/highlight.png</texturefocus>
                     <onup>8002</onup>
-                    <ondown>4</ondown>
+                    <ondown condition="!SubString(System.BuildVersion,14,left)">4</ondown>
+					<ondown condition="SubString(System.BuildVersion,14,left)">21</ondown>
                     <onleft>8002</onleft>
                     <onright>8002</onright>
 					<visible>!SubString(System.BuildVersion,14,left)</visible>
@@ -101,7 +102,8 @@
                     <texturedownfocus>common/spinctrl/arrow-light-down-fo.png</texturedownfocus>
                     <texturefocus border="2">dialogs/default/highlight.png</texturefocus>
                     <onup>8002</onup>
-                    <ondown>4</ondown>
+                    <ondown condition="!SubString(System.BuildVersion,14,left)">4</ondown>
+					<ondown condition="SubString(System.BuildVersion,14,left)">21</ondown>
                     <onleft>8002</onleft>
                     <onright>8002</onright>
 					<visible>SubString(System.BuildVersion,14,left)</visible>
@@ -120,6 +122,7 @@
 					<visible>!SubString(System.BuildVersion,14,left)</visible>
                 </control>
 				<control type="list" id="21">
+					<onup>20</onup>
 					<include>DialogContentSettingsList</include>
 					<visible>SubString(System.BuildVersion,14,left)</visible>
                 </control>
@@ -160,7 +163,8 @@
                     <height>300</height>
                     <orientation>vertical</orientation>
                     <itemgap>0</itemgap>
-                    <onup>4</onup>
+                    <onup condition="!SubString(System.BuildVersion,14,left)">4</onup>
+					<onup condition="SubString(System.BuildVersion,14,left)">21</onup>
                     <ondown>8002</ondown>
                     <onleft>8002</onleft>
                     <onright>8002</onright>
