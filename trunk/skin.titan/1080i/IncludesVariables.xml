@@ -31,7 +31,7 @@
         <value condition="Window.IsActive(SkinSettings.xml)">SKIN [UPPERCASE]$LOCALIZE[5][/UPPERCASE]</value>
         <value condition="Window.IsActive(SettingsCategory.xml)">[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</value>
         <value condition="Window.IsActive(SettingsSystemInfo.xml)">[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</value>
-        <value condition="Window.IsActive(MyPVR.xml)">[UPPERCASE]$LOCALIZE[31088][/UPPERCASE]</value>
+        <value condition="Window.IsActive(MyPVR.xml) | Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRSearch.xml)">[UPPERCASE]$LOCALIZE[31088][/UPPERCASE]</value>
         <value condition="Window.IsActive(MyMusicPlaylistEditor.xml)">[UPPERCASE]$LOCALIZE[10503][/UPPERCASE]</value>
         <value condition="Window.IsActive(MyMusicPlaylistEditor.xml)">[UPPERCASE]$LOCALIZE[10503][/UPPERCASE]</value>--&gt;
 	</variable>
@@ -55,7 +55,7 @@
         <value condition="Window.IsActive(SkinSettings.xml)">icons/icon_settings.png</value>
         <value condition="Window.IsActive(SettingsCategory.xml)">icons/icon_settings.png</value>
         <value condition="Window.IsActive(SettingsSystemInfo.xml)">icons/icon_settings.png</value>
-        <value condition="Window.IsActive(MyPVR.xml)">icons/icon_tvshows.png</value>
+        <value condition="Window.IsActive(MyPVR.xml) | Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRSearch.xml)">icons/icon_tvshows.png</value>
         <value condition="Window.IsActive(MyMusicPlaylistEditor.xml)">icons/icon_music.png</value>
     </variable>
     <!-- ========== -->
@@ -281,6 +281,8 @@
         <value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window.Property(xbmb3c.std.music.3.path)]</value>
     </variable>
     <variable name="LiveTVButtonOnClick">
+		<value condition="SubString(System.BuildVersion,14,left) + Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVGuide)</value>
+        <value condition="SubString(System.BuildVersion,14,left) + !Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVChannels)</value>
         <value condition="Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</value>
     </variable>

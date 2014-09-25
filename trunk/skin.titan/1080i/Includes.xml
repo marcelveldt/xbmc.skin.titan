@@ -19,11 +19,12 @@
 	<include file="IncludesHomeMenuItems.xml" />
 	<include file="IncludesHomeMenuHubs.xml" />
     <include file="IncludesViews.xml" />
+	<include file="IncludesKodi.xml" />
     <!--Artwork Downloader-->
     <include file="Custom_MediaDialog.xml" />
     <!--PVR-->
-    <include file="MyPVR.xml" />
-    <include file="ViewsPVR.xml" />
+    <include condition="!SubString(System.BuildVersion,14,left)" file="MyPVR.xml" />
+    <include condition="!SubString(System.BuildVersion,14,left)" file="ViewsPVR.xml" />
     <!--Titan Version-->
     <include name="TitanVersion">
         <control type="label">
@@ -491,7 +492,7 @@
     <include name="SubMenuTabLeft">
         <!--Sub Menu Tab Left-->
         <control type="image">
-            <visible>Control.IsVisible(50) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(52)</visible>
+            <visible>[Control.IsVisible(50) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(52)] + ![Control.IsVisible(51) | Control.IsVisible(501) | Control.IsVisible(505) | Control.IsVisible(54) | Control.IsVisible(53) | Control.IsVisible(506)]</visible>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
             <posx>0</posx>
@@ -2623,4 +2624,5 @@
 	<include name="SettingsUnusedHomeMenuItem">
         <label>==</label>
     </include>
+	
 </includes>

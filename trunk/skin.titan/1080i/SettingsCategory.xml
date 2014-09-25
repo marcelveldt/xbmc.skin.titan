@@ -167,6 +167,21 @@
             <align>left</align>
             <height>50</height>
         </control>
+		<control type="sliderex" id="13">
+			<description>Default Slider</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<include>DialogButton</include>
+			<textwidth>352</textwidth>
+			<textoffsetx>20</textoffsetx>
+			<sliderwidth>140</sliderwidth>
+			<sliderheight>20</sliderheight>
+			<align>left</align>
+			<texturesliderbar>osd/slider_back.png</texturesliderbar>
+			<textureslidernib>osd/orb_nofo.png</textureslidernib>
+			<textureslidernibfocus>osd/orb_fo.png</textureslidernibfocus>
+		</control>
+
         <control type="button" id="10">
             <description>Default Category Button</description>
             <focusedcolor>black</focusedcolor>
