@@ -62,7 +62,7 @@
 	<include name="HomeItem-5">
 		<include condition="!Skin.HasSetting(HomeMenuPVRButton)">SettingsUnusedHomeMenuItem</include>
 		<label>31088</label>
-		<property name="background">special://skin/extras/backgrounds/pvr.png</property>
+		<property name="background">special://skin/extras/backgrounds/hover_my tv.png</property>
 		<icon>home/livetv.png</icon>
 		<thumb>$INFO[Skin.String(CustomPVRFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
@@ -74,7 +74,7 @@
 	<include name="HomeItem-6">
 		<include condition="!Skin.HasSetting(HomeMenuMusicButton)">SettingsUnusedHomeMenuItem</include>
 		<label>2</label>
-		<property name="background">special://skin/extras/backgrounds/music.png</property>
+		<property name="background">special://skin/extras/backgrounds/hover_my music.png</property>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[MusicButtonThumb]</thumb>
 		<property name="contenttype">music</property>
@@ -111,7 +111,7 @@
 	<include name="HomeItem-9">
 		<include condition="!Skin.HasSetting(HomeMenuTVShowsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>20343</label>
-		<icon>home/tvseries.png</icon>
+		<icon>special://skin/extras/backgrounds/hover_my tv series.png</icon>
 		<property name="contenttype">tvshows</property>
 		<thumb>$VAR[TvseriesButtonThumb]</thumb>
 		<include>liveGadgetSetBackground</include>
@@ -124,6 +124,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuNetflixButton)">SettingsUnusedHomeMenuItem</include>
 		<label>31018</label>
 		<icon>home/netflix.png</icon>
+		<property name="background">special://skin/extras/backgrounds/hover_OnlineVideos.png</property>
 		<property name="contenttype">netflix</property>
 		<thumb>$INFO[Skin.String(CustomNetflixFolder)]</thumb>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[NetflixButtonOnClick]</onclick>
@@ -148,7 +149,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuRadioButton)">SettingsUnusedHomeMenuItem</include>
 		<label>19021</label>
 		<icon>home/radio.png</icon>
-		<property name="background">special://skin/extras/backgrounds/music.png</property>
+		<property name="background">special://skin/extras/backgrounds/hover_my radio.png</property>
 		<thumb>$INFO[Skin.String(CustomRadioFolder)]</thumb>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[RadioButtonOnClick]</onclick>
 		<include>liveGadgetSetBackground</include>
@@ -174,6 +175,7 @@
 		<label>31062</label>
 		<icon>home/youtube.png</icon>
 		<thumb>-</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_OnlineVideos.png</property>
 		<property name="contenttype">custom</property>
 		<property name="contenttitle">YouTube Top100 Trailers</property>
 		<property name="contentpath">plugin://plugin.video.youtube/?contact=trailers&amp;external=true&amp;feed=uploads&amp;login=false&amp;path=%2froot%2fexplore%2ftrailers</property>
@@ -186,7 +188,7 @@
 	<include name="HomeItem-15">
 		<include condition="!Skin.HasSetting(HomeMenuPicturesButton)">SettingsUnusedHomeMenuItem</include>
 		<label>1</label>
-		<property name="background">special://skin/extras/backgrounds/pictures.png</property>
+		<property name="background">special://skin/extras/backgrounds/hover_my pictures.png</property>
 		<icon>home/pictures.png</icon>
 		<thumb>$VAR[PicturesButtonThumb]</thumb>
 		<include>liveGadgetSetBackground</include>
@@ -200,6 +202,7 @@
 		<label>$VAR[WeatherButtonLabel]</label>
 		<icon>home/weather.png</icon>
 		<thumb>$VAR[WeatherButtonThumb]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my weather.png</property>
 		<include>liveGadgetSetBackground</include>
 		<property name="contenttype">weather</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(weather)</onclick>
@@ -212,6 +215,7 @@
 		<label>31045</label>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[MusicVideosButtonThumb]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my music.png</property>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MusicVideosButtonOnClick]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
@@ -247,6 +251,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.music.0.title)]</label>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[Custom10Background]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my music.png</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.0.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton10) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.0.title))</visible>
@@ -258,6 +263,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.music.1.title)]</label>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[Custom11Background]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my music.png</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.1.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton11) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.1.title))</visible>
@@ -269,6 +275,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.music.2.title)]</label>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[Custom12Background]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my music.png</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.2.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.2.title))</visible>
@@ -280,6 +287,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.music.3.title)]</label>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[Custom13Background]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my music.png</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.3.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.3.title))</visible>
@@ -291,6 +299,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.usr.music.4.title)]</label>
 		<icon>home/music.png</icon>
 		<thumb>$VAR[Custom14Background]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my music.png</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Window(Home).Property(xbmb3c.usr.music.4.path)]</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.4.title))</visible>
@@ -302,6 +311,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[MB3FavoritesBackground]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my videos.png</property>
 		<property name="contenttype">custom</property>
 		<property name="contenttitle">$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</property>
 		<property name="contentpath">$INFO[Window(Home).Property(xbmb3c.std.movies.3.content)]</property>
@@ -316,6 +326,7 @@
 		<label>$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</label>
 		<icon>home/movies.png</icon>
 		<thumb>$VAR[MB3ChannelsBackground]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_my videos.png</property>
 		<property name="contenttype">custom</property>
 		<property name="contenttitle">$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</property>
 		<property name="contentpath">$INFO[Window(Home).Property(xbmb3c.std.channels.0.content)]</property>
@@ -329,7 +340,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuVideosButton)">SettingsUnusedHomeMenuItem</include>
 		<label>3</label>
 		<icon>home/videos.png</icon>
-		<property name="background">special://skin/extras/backgrounds/videos.png</property>
+		<property name="background">special://skin/extras/backgrounds/hover_my videos.png</property>
 		<thumb>$INFO[Skin.String(CustomVideosFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Video,root)</onclick>
@@ -340,7 +351,7 @@
 	<include name="HomeItem-28">
 		<include condition="!Skin.HasSetting(HomeMenuVideoAddonsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>1037</label>
-		<property name="background">special://skin/extras/backgrounds/videos.png</property>
+		<property name="background">special://skin/extras/backgrounds/hover_my videos.png</property>
 		<icon>home/videoaddons.png</icon>
 		<thumb>$INFO[Skin.String(CustomVideoAddonsFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
@@ -353,7 +364,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuTVRecordingsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>19163</label>
 		<icon>home/tvrecordings.png</icon>
-		<property name="background">special://skin/extras/backgrounds/pvr.png</property>
+		<property name="background">special://skin/extras/backgrounds/hover_my tv.png</property>
 		<thumb>$INFO[Skin.String(CustomPVRRecFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
@@ -413,7 +424,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuFavouritesButton)">SettingsUnusedHomeMenuItem</include>
 		<label>10134</label>
 		<icon>home/favourites.png</icon>
-		<property name="background">special://skin/extras/backgrounds/addons.png</property>
+		<property name="background">special://skin/extras/backgrounds/hover_extensions.png</property>
 		<thumb>$INFO[Skin.String(CustomFavouritesFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(Favourites)</onclick>
@@ -425,7 +436,7 @@
 		<include condition="!Skin.HasSetting(HomeMenuSettingsButton)">SettingsUnusedHomeMenuItem</include>
 		<label>5</label>
 		<icon>home/settings.png</icon>
-		<property name="background">special://skin/extras/backgrounds/settings.png</property>
+		<property name="background">special://skin/extras/backgrounds/globalsettings.png</property>
 		<thumb>$INFO[Skin.String(CustomSettingsFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(settings)</onclick>
@@ -439,6 +450,7 @@
 		<label>31095</label>
 		<icon>home/plexbmc.png</icon>
 		<thumb>$INFO[Skin.String(CustomPlexBMCFolder)]</thumb>
+		<property name="background">special://skin/extras/backgrounds/hover_extensions.png</property>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">ActivateWindow(10025,"plugin://plugin.video.plexbmc",return)</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuPlexBMCButton)</visible>

@@ -83,17 +83,27 @@
 		<!-- hubs-->
             <control type="group" id="77777">
                 <height>440</height>
-				<posy>-300</posy>
-				<animation type="Conditional" condition="ControlGroup(77777).HasFocus">
-                <effect type="slide" start="0,0" end="0,680" time="800" tween="cubic" easing="inout" />
+				<include condition="Skin.String(GadgetRows, 1)">HubPositionNormal</include>
+				<include condition="!Skin.String(GadgetRows, 1)">HubPositionOutside</include>
+				
+				<animation type="Conditional" condition="ControlGroup(77777).HasFocus + !Skin.String(GadgetRows, 1)">
+                <effect type="slide" start="0,0" end="0,780" time="800" tween="cubic" easing="inout" />
 				</animation>
+				<animation type="Conditional" condition="ControlGroup(77777).HasFocus + Skin.String(GadgetRows, 1)">
+                <effect type="slide" start="0,0" end="0,300" time="800" tween="cubic" easing="inout" />
+				</animation>
+				
+				<animation type="conditional" condition="IsEmpty(Container(300).ListItem.Property(contenttype))" reversible="true">
+				<effect type="fade" start="100" end="0" time="800" delay="200" />
+				</animation>
+				
 				<animation time="400" effect="fade">Visible</animation>
 				<animation time="200" effect="fade">Hidden</animation>
 				<control type="image">
                         <!--Submenu Arrow DOWN-->
 						<animation effect="fade" begin="0" end="100" delay="1800" time="1800">Visible</animation>
-                        <posx>930</posx>
-                        <posy>290</posy>
+                        <posx>940</posx>
+                        <posy>296</posy>
                         <width>60</width>
                         <height>36</height>
                         <texture>arrowdown.png</texture>
@@ -107,18 +117,38 @@
                     <height>340</height>
                 </control>
 				
-				<control type="button" id="511">
+				<control type="image">
 					<posx>40</posx>
+					<width>40</width>
+					<height>50</height>
+                    <texture>common/spinctrl/arrow-down-nf.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+				<control type="image">
+					<posx>80</posx>
+					<width>40</width>
+					<height>50</height>
+                    <texture>common/spinctrl/arrow-up-nf.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+				
+				
+				
+				<control type="button" id="511">
+					<posx>80</posx>
                     <width>1835</width>
 					<height>52</height>
                     <align>left</align>
                     <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
+					<focusedcolor>$VAR[ThemeFontColorBlue]</focusedcolor>
                     <font>Bold32</font>
 					<onup>Skin.Reset(ShowHubs)</onup>
 					<onup>300</onup>
 					<ondown>510</ondown>
 					<textoffsetx>30</textoffsetx>
                     <label>$VAR[HomeHubLabel]</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
 					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">Skin.SetString(MoviesWidget, newmovies)</onclick>
 					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, newmovies)">Skin.SetString(MoviesWidget, inprogressmovies)</onclick>
 					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, inprogressmovies)">Skin.SetString(MoviesWidget, randommovies)</onclick>

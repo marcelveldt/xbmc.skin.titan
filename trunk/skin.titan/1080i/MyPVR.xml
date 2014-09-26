@@ -46,7 +46,7 @@
         <include>SubMenuTabLeft</include>
         <!--Sub Menu-->
         <control type="group">
-            <posx>-615</posx>
+            <posx>-608</posx>
             <posy>150</posy>
             <visible>!Window.IsActive(DialogKeyboard.xml)</visible>
             <include>animation_fade_visible_hidden</include>
@@ -63,7 +63,7 @@
             <control type="image">
                 <width>500</width>
                 <height>800</height>
-                <texture border="39">dialogs/default/bg-black.png</texture>
+                <texture border="39">dialogs/default/bg.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
             <!--Gouplist 9000-->
@@ -84,8 +84,8 @@
                     <width>458</width>
                     <align>left</align>
                     <textoffsetx>50</textoffsetx>
-                    <font>Light40</font>
-                    <textcolor>mainblue</textcolor>
+                    <font>Bold40</font>
+                    <textcolor>$VAR[ThemeFontColorBlack]</textcolor>
                     <label>$LOCALIZE[33061]:</label>
                 </control>
                 <control type="image" id="201">

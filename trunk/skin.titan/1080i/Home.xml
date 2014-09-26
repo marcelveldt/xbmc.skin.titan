@@ -38,32 +38,18 @@
 		<!--Time & Weather-->
         <include>TimeInfo</include>
         <include>WeatherInfo</include>
-        <!--RSS-->
-        <control type="group">
-            <include>animation_home</include>
-            <control type="image">
-                <!--RSS Background-->
-                <posx>50</posx>
-                <posy>960</posy>
-                <width>1820</width>
-                <height>84</height>
-                <texture>home/home_rss.png</texture>
-                <visible>!Skin.HasSetting(NoFooterBar) + !Skin.HasSetting(ShowNextUppanel)</visible>
-            </control>
-        </control>
+        <!--Footer-->
+        <include>RSSFooter</include>
 		
 		<!--List 300-->
         <control type="panel" id="300">
             <include>animation_home</include>
-            <posx>30</posx>
-            <width>1860</width>
+            <posx>40</posx>
+            <width>1845</width>
             <include condition="Skin.String(GadgetRows, 1)">Gadget1Row</include>
-            <include condition="Skin.String(GadgetRows, 2)">Gadget2Row</include>
-            <include condition="Skin.String(GadgetRows, 3)">Gadget3Row</include>
-            <animation type="Conditional" condition="[Skin.HasSetting(ShowNextUppanel) + !Skin.HasSetting(UseHubsOnHomeScreen)] | [ControlGroup(77777).HasFocus + Skin.String(GadgetRows, 3)]">
-                <effect type="slide" start="0,-0" end="0,650" time="800" tween="cubic" easing="inout" />
-            </animation>
-			<animation type="Conditional" condition="[Skin.HasSetting(ShowNextUppanel) + !Skin.HasSetting(UseHubsOnHomeScreen)] | [ControlGroup(77777).HasFocus + Skin.String(GadgetRows, 2)]">
+            <include condition="!Skin.String(GadgetRows, 1)">Gadget2Row</include>
+
+			<animation type="Conditional" condition="[Skin.HasSetting(ShowNextUppanel) + !Skin.HasSetting(UseHubsOnHomeScreen)] | ControlGroup(77777).HasFocus">
                 <effect type="slide" start="0,-0" end="0,800" time="800" tween="cubic" easing="inout" />
             </animation>
 
@@ -78,7 +64,7 @@
             <orientation>horizontal</orientation>
             <focusposition>-</focusposition>
             <scrolltime tween="cubic" easing="inout">500</scrolltime>
-            <itemlayout width="620" height="290">
+            <itemlayout width="615" height="265">
 				<control type="group">
 				<posy>20></posy>
 					<control type="image">
@@ -124,13 +110,13 @@
 					</control>
 				</control>
             </itemlayout>
-            <focusedlayout width="620" height="290">
+            <focusedlayout width="615" height="265">
                 <control type="group">
                     <animation type="Focus">
-                        <effect type="zoom" start="100" end="105" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
+                        <effect type="zoom" start="100" end="102" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
                     </animation>
                     <animation type="UnFocus">
-                        <effect type="zoom" start="105" end="100" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
+                        <effect type="zoom" start="102" end="100" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
                     </animation>
 					<posy>20></posy>
 					
@@ -163,6 +149,35 @@
                         <height>271</height>
                         <texture>home/home_shadow.png</texture>
                     </control>
+					
+					<!--submenu right-->
+					<control type="group">
+					
+						<animation type="Conditional" condition="Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,0) | StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,2) | StringCompare(Container(300).Position,3)]]">
+						<effect type="slide" start="0,0" end="560,0" time="200" tween="cubic" easing="inout" reversible="false"/>
+						</animation>
+						<animation type="Conditional" condition="Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 1) + [StringCompare(Container(300).Position,0) | StringCompare(Container(300).Position,1)]">
+						<effect type="slide" start="0,0" end="560,0" time="200" tween="cubic" easing="inout" />
+						</animation>
+
+						<control type="image">
+							<posx>5</posx>
+							<posy>-30</posy>
+							<width>640</width>
+							<height>330</height>
+							<texture background="true">home_submenu_right.png</texture>
+							<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<posx>5</posx>
+							<posy>-30</posy>
+							<width>640</width>
+							<height>330</height>
+							<texture background="true">home_submenu_right.png</texture>
+							<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+						</control>
+					</control>
+					
                     <control type="image">
                         <!--Panel Normal-->
                         <posx>0</posx>
@@ -241,6 +256,7 @@
                         <label>-</label>
                         <visible>false</visible>
                         <onfocus condition="Skin.String(CustomBackgroundSetting, fanart)">SetProperty(MB3.Background.Collection, $INFO[Container(300).ListItem.Label], Home)</onfocus>
+						<onfocus>Skin.Reset(HomeMenuSubMenu)</onfocus>
                     </control>
                 </control>
             </focusedlayout>
@@ -250,18 +266,20 @@
         </control>
         <control type="button" id="2">
             <description>powerbutton</description>
-            <posx>935</posx>
-            <posy>990</posy>
-            <width>50</width>
-            <height>50</height>
+            <posx>940</posx>
+            <posy>900</posy>
+            <width>60</width>
+            <height>60</height>
             <onup>300</onup>
             <onright>300</onright>
             <onleft>300</onleft>
-            <visible>!ControlGroup(400).HasFocus() + ![Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(Container(300).ListItem.Property(contenttype)) + Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
-            <texturefocus>icons/icon_power.png</texturefocus>
-            <texturenofocus colordiffuse="black">icons/icon_power.png</texturenofocus>
+            <texturefocus colordiffuse="lightgrey">icons/icon_power.png</texturefocus>
+            <texturenofocus>icons/icon_power.png</texturenofocus>
             <onclick>ActivateWindow(111)</onclick>
-			<animation effect="fade" begin="0" end="100" delay="800" time="800">Visible</animation>
+			<onfocus>ActivateWindow(111)</onfocus>
+			<animation type="conditional" condition="!ControlGroup(400).HasFocus() + ![Skin.HasSetting(UseHubsOnHomeScreen) + !IsEmpty(Container(300).ListItem.Property(contenttype)) + Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]" reversible="true">
+            <effect type="fade" start="40" end="100" time="600" delay="200" />
+			</animation>
         </control>
         <!-- nextup overlay -->
 		<include condition="!Skin.HasSetting(UseHubsOnHomeScreen)">nextUpPanel</include>

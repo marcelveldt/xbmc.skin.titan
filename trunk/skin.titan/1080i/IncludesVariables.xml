@@ -5,11 +5,15 @@
     <!-- Header -->
     <!-- ====== -->
     <variable name="value_header">
+	<value>$INFO[Skin.String(HomeMenuSubMenu)]</value>
         <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome)">[UPPERCASE]$LOCALIZE[10000][/UPPERCASE]</value>
         <value condition="substring(Container.FolderPath,Radio)">[UPPERCASE]$LOCALIZE[19021][/UPPERCASE]</value>
         <value condition="Container.Content(movies) + IsEmpty(ListItem.Title)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE]</value>
+		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Title) + Control.IsVisible(9999)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE]</value>
         <value condition="Container.Content(movies) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="Container.Content(tvshows)">[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</value>
+		<value condition="Container.Content(seasons) + Control.IsVisible(9999)">[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</value>
+		<value condition="Container.Content(seasons) + Control.IsVisible(episodes)">[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</value>
         <value condition="Container.Content(seasons) + !IsEmpty(ListItem.TVShowTitle)">[UPPERCASE]$LOCALIZE[20343]: $INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
         <value condition="Container.Content(episodes) + !IsEmpty(ListItem.TVShowTitle)">[UPPERCASE]$LOCALIZE[20343]: $INFO[ListItem.TVShowTitle] - $LOCALIZE[20373] $INFO[ListItem.Season][/UPPERCASE]</value>
         <value condition="Container.Content(seasons) + IsEmpty(ListItem.TVShowTitle)">[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</value>
@@ -259,7 +263,7 @@
     </variable>
     <variable name="MoviesButtonOnClick">
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</value>
-        <value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu)">ActivateWindow(1237)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu)">Skin.SetString(HomeMenuSubMenu, movies)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,movietitles,return)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.0.path)]</value>
     </variable>
@@ -395,8 +399,16 @@
         <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
         <value>FF3e3e3e</value>
     </variable>
+	<variable name="ThemeFontColorBlack">
+        <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
+        <value>FF1b1b1b</value>
+    </variable>
     <variable name="ThemeFontColorWhite">
         <value condition="!Skin.HasTheme(classic)">FFfffeff</value>
+        <value>FFfffeff</value>
+    </variable>
+	<variable name="ThemeFontColorBlue">
+        <value condition="!Skin.HasTheme(classic)">cc00b8ff</value>
         <value>FFfffeff</value>
     </variable>
 	

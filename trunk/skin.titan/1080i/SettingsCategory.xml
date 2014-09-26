@@ -13,6 +13,8 @@
         <include>Header</include>
         <!--Titan Version-->
         <include>TitanVersion</include>
+		<!-- Now playing -->
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
         <!--Panel-->
         <control type="image">
             <posx>0</posx>
@@ -180,6 +182,7 @@
 			<texturesliderbar>osd/slider_back.png</texturesliderbar>
 			<textureslidernib>osd/orb_nofo.png</textureslidernib>
 			<textureslidernibfocus>osd/orb_fo.png</textureslidernibfocus>
+			<visible>SubString(System.BuildVersion,14,left)</visible>
 		</control>
 
         <control type="button" id="10">

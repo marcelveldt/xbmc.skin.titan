@@ -21,6 +21,8 @@
         <include>TimeInfo</include>
         <!--Header-->
         <include>Header</include>
+		<!--Footer-->
+        <include>Footer</include>
         <!--Hidden Button-->
         <control type="radiobutton" id="50">
             <description>Filter (hidden)</description>
@@ -406,17 +408,7 @@
                 <visible>Weather.IsFetched</visible>
             </control>
         </control>
-        <!--RSS Background-->
-        <control type="image">
-            <include>animation_fade_visible_hidden</include>
-            <include>animation_list</include>
-            <posx>35</posx>
-            <posy>960</posy>
-            <width>1870</width>
-            <height>84</height>
-            <texture border="30">home/home_rss.png</texture>
-            <visible>!Skin.HasSetting(NoFooterBar)</visible>
-        </control>
+        
         <!--Location Label-->
         <control type="label">
             <include>animation_fade_visible_hidden</include>
@@ -451,7 +443,7 @@
             <control type="image">
                 <width>500</width>
                 <height>800</height>
-                <texture border="39">dialogs/default/bg-black.png</texture>
+                <texture border="39">dialogs/default/bg.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
             <!--Gouplist 9000-->

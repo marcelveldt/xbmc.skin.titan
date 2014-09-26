@@ -4,6 +4,7 @@
     <include name="LiveTVChannelView">
         <!--Live TV Channel View ID=11-->
         <control type="group">
+			<posy>45</posy>
             <control type="image">
                 <!--Panel-->
                 <visible>Control.IsVisible(11) + !Skin.HasSetting(NoFooterBar)</visible>
@@ -446,6 +447,7 @@
     <include name="EPGTimelineView">
         <!--EPG: Timeline View ID=10-->
         <control type="group">
+		<posy>35</posy>
             <control type="group">
                 <!--Panel-->
                 <visible>Control.IsVisible(10)</visible>
@@ -454,7 +456,7 @@
                 <control type="image">
                     <!--Panel Button-->
                     <posx>0</posx>
-                    <posy>450</posy>
+                    <posy>430</posy>
                     <width>1907</width>
                     <height>633</height>
                     <texture>pvr/pvr_epg_panel.png</texture>
@@ -584,7 +586,7 @@
                 <include>animation_view_change_pvr</include>
                 <include>animation_list</include>
                 <left>80</left>
-                <top>465</top>
+                <top>445</top>
                 <width>1750</width>
                 <height>560</height>
                 <pagecontrol>10</pagecontrol>
@@ -619,13 +621,14 @@
                 <channellayout height="80" width="510">
                     <!--Channel left side UNFOCUS-->
                     <animation effect="fade" start="110" time="200">UnFocus</animation>
-                    <control type="image" id="1">
+
+					<control type="image" id="1">
                         <!--Button-->
                         <posx>65</posx>
-                        <posy>0</posy>
+                        <posy>2</posy>
                         <width>430</width>
-                        <height>80</height>
-                        <texture>common/button-nf.png</texture>
+                        <height>76</height>
+                        <texture>tv_channel_bg.png</texture>
                     </control>
                     <control type="label">
                         <!--Channel Nummber-->
@@ -633,7 +636,7 @@
                         <posy>0</posy>
                         <width>100</width>
                         <height>80</height>
-                        <font>Reg30</font>
+                        <font>Light30</font>
                         <textcolor>white</textcolor>
                         <selectedcolor>white</selectedcolor>
                         <info>ListItem.ChannelNumber</info>
@@ -652,7 +655,7 @@
                         <posy>0</posy>
                         <width>320</width>
                         <height>80</height>
-                        <font>Reg29</font>
+                        <font>Light30</font>
                         <textcolor>white</textcolor>
                         <selectedcolor>white</selectedcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
@@ -664,9 +667,9 @@
                     <control type="image" id="1">
                         <!--Button-->
                         <posx>65</posx>
-                        <posy>0</posy>
+                        <posy>2</posy>
                         <width>430</width>
-                        <height>80</height>
+                        <height>76</height>
                         <texture>common/button-fo.png</texture>
                     </control>
                     <control type="label">
@@ -675,7 +678,7 @@
                         <posy>0</posy>
                         <width>100</width>
                         <height>80</height>
-                        <font>Reg30</font>
+                        <font>Light30</font>
                         <textcolor>white</textcolor>
                         <selectedcolor>white</selectedcolor>
                         <info>ListItem.ChannelNumber</info>
@@ -694,7 +697,7 @@
                         <posy>0</posy>
                         <width>320</width>
                         <height>80</height>
-                        <font>Reg29</font>
+                        <font>Light30</font>
                         <textcolor>black</textcolor>
                         <selectedcolor>black</selectedcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
@@ -704,11 +707,11 @@
                     <!--EPG UNFOCUS-->
                     <control type="image" id="14">
                         <!--Button NF-->
-                        <posx>1</posx>
-                        <posy>0</posy>
-                        <width>50</width>
-                        <height>80</height>
-                        <texture>common/button-nf.png</texture>
+                        <posx>0</posx>
+                        <posy>2</posy>
+                        <width>56</width>
+                        <height>76</height>
+                        <texture>tv_channel_bg.png</texture>
                     </control>
                     <control type="label" id="1">
                         <!--Channel Now Playing-->
@@ -718,7 +721,7 @@
                         <posy>0</posy>
                         <width>0</width>
                         <height>80</height>
-                        <font>Reg26</font>
+                        <font>Light28</font>
                         <aligny>center</aligny>
                         <textoffsetx>0</textoffsetx>
                         <textcolor>white</textcolor>
@@ -748,10 +751,10 @@
                     <!--EPG FOCUS-->
                     <control type="image" id="14">
                         <!--Button FO-->
-                        <posx>1</posx>
-                        <posy>0</posy>
-                        <width>50</width>
-                        <height>80</height>
+                        <posx>0</posx>
+                        <posy>2</posy>
+                        <width>56</width>
+                        <height>76</height>
                         <texture>common/button-fo.png</texture>
                     </control>
                     <control type="fadelabel" id="1">
@@ -762,7 +765,7 @@
                         <posy>0</posy>
                         <width>0</width>
                         <height>80</height>
-                        <font>Reg26</font>
+                        <font>Light28</font>
                         <aligny>center</aligny>
                         <textcolor>black</textcolor>
                         <selectedcolor>black</selectedcolor>
@@ -793,6 +796,7 @@
     <include name="LiveTVGuideNowNextView">
         <!--EPG: LiveTVGuideNowNextView ID=16-->
         <control type="group">
+		<posy>35</posy>
             <control type="group">
                 <!--Panel-->
                 <visible>Control.IsVisible(16)</visible>
@@ -801,7 +805,7 @@
                 <control type="image">
                     <!--Panel Button-->
                     <posx>0</posx>
-                    <posy>450</posy>
+                    <posy>430</posy>
                     <width>1907</width>
                     <height>633</height>
                     <texture>pvr/pvr_epg_panel.png</texture>
@@ -932,7 +936,7 @@
                 <include>animation_view_change_pvr</include>
                 <include>animation_list</include>
                 <posx>125</posx>
-                <posy>445</posy>
+                <posy>425</posy>
                 <control type="label">
                     <!--Time-->
                     <posx>0</posx>
@@ -983,7 +987,7 @@
                 <include>animation_view_change_pvr</include>
                 <include>animation_list</include>
                 <posx>125</posx>
-                <posy>550</posy>
+                <posy>530</posy>
                 <width>1650</width>
                 <height>470</height>
                 <onup>16</onup>
@@ -1206,6 +1210,7 @@
     <include name="LiveTVGuideChannelView">
         <!--EPG: LiveTVGuideChannelView ID=15-->
         <control type="group">
+		<posy>35</posy>
             <control type="group">
                 <!--Panel-->
                 <visible>Control.IsVisible(15)</visible>
@@ -1214,7 +1219,7 @@
                 <control type="image">
                     <!--Panel Button-->
                     <posx>0</posx>
-                    <posy>450</posy>
+                    <posy>430</posy>
                     <width>1907</width>
                     <height>633</height>
                     <texture>pvr/pvr_epg_panel.png</texture>
@@ -1418,7 +1423,7 @@
                 <include>animation_view_change_pvr</include>
                 <include>animation_list</include>
                 <posx>125</posx>
-                <posy>550</posy>
+                <posy>530</posy>
                 <width>1650</width>
                 <height>470</height>
                 <onup>15</onup>
@@ -1606,6 +1611,7 @@
     <include name="LiveRadioChannelView">
         <!--LiveRadioChannelView ID=12-->
         <control type="group">
+		<posy>45</posy>
             <control type="image">
                 <!--Panel-->
                 <visible>Control.IsVisible(12) + !Skin.HasSetting(NoFooterBar)</visible>
@@ -2046,6 +2052,7 @@
     <include name="LiveTVRecordingsView">
         <!--LiveTVRecordingsView ID=13-->
         <control type="group">
+		<posy>45</posy>
             <control type="image">
                 <!--Panel-->
                 <visible>Control.IsVisible(13) + !Skin.HasSetting(NoFooterBar)</visible>

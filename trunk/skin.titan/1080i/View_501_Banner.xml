@@ -11,7 +11,7 @@
 				<posx>55</posx>
 				<width>1800</width>
 				<height>900</height>
-				<posy>170</posy>
+				<posy>230</posy>
 				<onup>9000</onup>
 				<ondown>noop</ondown>
 				<onleft>501</onleft>
@@ -22,7 +22,7 @@
 				<focusposition>-</focusposition>
 				<scrolltime tween="cubic" easing="inout">500</scrolltime>
 				<!-- normal item layout -->
-				<itemlayout width="620" height="380" condition="!Container.Content(Episodes)">
+				<itemlayout width="620" height="350" condition="!Container.Content(Episodes)">
 					<include>BannerViewImagesNormal</include>
 				</itemlayout>
 				<!-- item layout for episodes -->
@@ -33,7 +33,7 @@
 					</control>
 				</itemlayout>
 				<!-- normal focussed layout -->
-				<focusedlayout width="620" height="380" condition="!Container.Content(Episodes)">
+				<focusedlayout width="620" height="350" condition="!Container.Content(Episodes)">
 					<control type="group">
 						<include>BannerViewImagesNormal</include>
 						<include>BannerViewOverlayFocusNormal</include>
@@ -52,7 +52,8 @@
 			<control type="group">
 				<visible>Control.IsVisible(501)</visible>
 				<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
-				<include>ViewsFooter</include>
+				<include>RSSFooter</include>
+				<include>Footer</include>
 			</control>
 			<!--Scollbar-->
 			<control type="group">

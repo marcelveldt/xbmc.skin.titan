@@ -84,6 +84,8 @@
             <height>75</height>
             <itemgap>110</itemgap>
             <align>center</align>
+			<onup>Dialog.Close(all,true)</onup>
+			<ondown>Dialog.Close(all,true)</ondown>
             <orientation>horizontal</orientation>
             <control type="button" id="3119">
                 <!--Settings-->

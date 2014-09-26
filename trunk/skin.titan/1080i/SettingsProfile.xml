@@ -6,6 +6,8 @@
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>
+		<!-- Now playing -->
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
         <!--Settings Profile-->
         <control type="group">
             <visible>!Window.IsActive(favourites)</visible>

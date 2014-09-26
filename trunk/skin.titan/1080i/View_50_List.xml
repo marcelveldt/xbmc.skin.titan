@@ -3,66 +3,72 @@
 <includes>
     <include name="View_50_List">
         <!--Panel-->
+		
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <include>animation_view_change</include>
             <include>animation_list</include>
+			<!--Footer-->
+			<include>FooterAlt</include>
             <onunfocus condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying]">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onunfocus>
             <control type="image">
                 <!-- All Other -->
-                <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + !Skin.HasSetting(NoFooterBar) + IntegerGreaterThan(Container.NumItems, 0)</visible>
+                <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + [!Skin.HasSetting(NoFooterBar) + skin.hastheme(classic)] + IntegerGreaterThan(Container.NumItems, 0)</visible>
                 <posx>10</posx>
-                <posy>220</posy>
+                <posy>255</posy>
                 <width>1903</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel_noinfo.png</texture>
             </control>
             <control type="image">
                 <!-- All Other -->
                 <posx>10</posx>
-                <posy>220</posy>
+                <posy>255</posy>
                 <width>1903</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel_noinfo1.png</texture>
-                <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + Skin.HasSetting(NoFooterBar)</visible>
+                <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + [Skin.HasSetting(NoFooterBar) | !Skin.Hastheme(classic)]</visible>
             </control>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos, seasons -->
-                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(NoFooterBar) + IntegerGreaterThan(Container.NumItems, 0)</visible>
+                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + [!Skin.HasSetting(NoFooterBar) + skin.hastheme(classic)] + IntegerGreaterThan(Container.NumItems, 0)</visible>
                 <posx>10</posx>
-                <posy>220</posy>
+                <posy>255</posy>
                 <width>1903</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel.png</texture>
             </control>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos, seasons -->
-                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(NoFooterBar) + IntegerGreaterThan(Container.NumItems, 0)</visible>
+                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + [Skin.HasSetting(NoFooterBar) | !Skin.hastheme(classic)] + IntegerGreaterThan(Container.NumItems, 0)</visible>
                 <posx>10</posx>
-                <posy>220</posy>
+                <posy>255</posy>
                 <width>1903</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel1.png</texture>
             </control>
             <control type="image">
                 <!-- Episodes, Seasons -->
-                <visible>Container.Content(episodes) + !Skin.HasSetting(NoFooterBar) + IntegerGreaterThan(Container.NumItems, 0)</visible>
+                <visible>Container.Content(episodes) + [!Skin.HasSetting(NoFooterBar) + Skin.Hastheme(classic)] + IntegerGreaterThan(Container.NumItems, 0)</visible>
                 <posx>10</posx>
-                <posy>220</posy>
+                <posy>255</posy>
                 <width>1903</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel_episodes.png</texture>
             </control>
             <control type="image">
                 <!-- Episodes, Seasons -->
-                <visible>Container.Content(episodes) + Skin.HasSetting(NoFooterBar) + IntegerGreaterThan(Container.NumItems, 0)</visible>
+                <visible>Container.Content(episodes) + [Skin.HasSetting(NoFooterBar) | !Skin.Hastheme(classic)] + IntegerGreaterThan(Container.NumItems, 0)</visible>
                 <posx>10</posx>
-                <posy>220</posy>
+                <posy>255</posy>
                 <width>1903</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel_episodes1.png</texture>
             </control>
+			
+			<!--Footer-->
+			<include>Footer</include>
         </control>
         <!--Poster,Cover,Thumb-->
         <control type="group">
@@ -714,100 +720,6 @@
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-            </control>
-        </control>
-        <control type="group">
-            <!--Rating, Label-->
-            <visible>Control.IsVisible(50)</visible>
-            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
-            <include>animation_view_change</include>
-            <include>animation_list</include>
-            <posy>955</posy>
-            <control type="image">
-                <!--Stars-->
-                <visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + !Skin.HasSetting(NoFooterBar)</visible>
-                <posx>130</posx>
-                <posy>13</posy>
-                <width>270</width>
-                <height>25</height>
-                <texture>$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
-            </control>
-            <control type="image">
-                <!--Stars-->
-                <visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + Skin.HasSetting(NoFooterBar)</visible>
-                <posx>130</posx>
-                <posy>13</posy>
-                <width>270</width>
-                <height>25</height>
-                <texture>$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
-            </control>
-            <control type="label">
-                <!--Rating-->
-                <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-                <posx>420</posx>
-                <posy>0</posy>
-                <width>100</width>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Rating]</label>
-            </control>
-            <control type="label">
-                <!--Album, Songs-->
-                <visible>Container.Content(albums) | Container.Content(songs)</visible>
-                <posx>130</posx>
-                <posy>0</posy>
-                <width>600</width>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Album]</label>
-            </control>
-        </control>
-        <control type="group">
-            <!--Title-->
-            <visible>Control.IsVisible(50)</visible>
-            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
-            <include>animation_view_change</include>
-            <include>animation_list</include>
-            <posy>955</posy>
-            <control type="label">
-                <!--Others-->
-                <visible>!Container.Content(albums) + !Container.Content(songs)</visible>
-                <posx>560</posx>
-                <posy>0</posy>
-                <width>800</width>
-                <align>center</align>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Label]</label>
-            </control>
-            <control type="label">
-                <!--Album, Songs-->
-                <visible>Container.Content(albums) | Container.Content(songs)</visible>
-                <posx>560</posx>
-                <posy>0</posy>
-                <width>800</width>
-                <align>center</align>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Artist]</label>
-            </control>
-        </control>
-        <control type="group">
-            <!--Page Control-->
-            <visible>Control.IsVisible(50)</visible>
-            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
-            <include>animation_view_change</include>
-            <include>animation_list</include>
-            <posy>955</posy>
-            <control type="label">
-                <posx>1780</posx>
-                <posy>0</posy>
-                <width>400</width>
-                <align>right</align>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <visible>!IsEmpty(ListItem.Label)</visible>
-                <label>$INFO[Container.NumItems] $LOCALIZE[31034]</label>
             </control>
         </control>
         <control type="group">

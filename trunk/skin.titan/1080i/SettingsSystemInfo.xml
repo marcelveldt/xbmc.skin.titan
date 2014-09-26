@@ -12,6 +12,8 @@
         <include>Header</include>
         <!--Titan Version-->
         <include>TitanVersion</include>
+		<!-- Now playing -->
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
         <!--Viewport Info-->
         <control type="image">
             <posx>0</posx>

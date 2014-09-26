@@ -46,16 +46,20 @@
     <!-- Gadget Row sizes -->
     <include name="Gadget1Row">
         <height>325</height>
-        <posy>660</posy>
+        <posy>590</posy>
     </include>
     <include name="Gadget2Row">
         <height>605</height>
-        <posy>400</posy>
+        <posy>310</posy>
     </include>
-    <include name="Gadget3Row">
-        <height>945</height>
-        <posy>110</posy>
+	
+	<include name="HubPositionNormal">
+        <posy>222</posy>
     </include>
+	<include name="HubPositionOutside">
+        <posy>-330</posy>
+    </include>
+	
     <!--Common-->
     <include name="HiddenButton">
         <posx>-20</posx>
@@ -72,6 +76,161 @@
         <width>1920</width>
         <height>1080</height>
     </include>
+	
+	<!-- Footer -->
+	<include name="Footer">
+			<control type="group">
+            <!--Rating, Label-->
+            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
+            <include>animation_view_change</include>
+            <include>animation_list</include>
+            <posy>990</posy>
+            <control type="image">
+                <!--Stars-->
+                <visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + skin.hastheme(classic)</visible>
+                <posx>100</posx>
+                <posy>13</posy>
+                <width>270</width>
+                <height>25</height>
+                <texture>$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
+            </control>
+            <control type="image">
+                <!--Stars-->
+                <visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + !skin.hastheme(classic)</visible>
+                <posx>100</posx>
+                <posy>13</posy>
+                <width>270</width>
+                <height>25</height>
+                <texture>$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
+            </control>
+            <control type="label">
+                <!--Rating-->
+                <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+                <posx>400</posx>
+                <posy>-4</posy>
+                <width>100</width>
+                <font>Reg30</font>
+                <textcolor>white</textcolor>
+                <label>$INFO[ListItem.Rating]</label>
+            </control>
+            <control type="label">
+                <!--Album, Songs-->
+                <visible>Container.Content(albums) | Container.Content(songs)</visible>
+                <posx>100</posx>
+                <posy>0</posy>
+                <width>600</width>
+                <font>Reg30</font>
+                <textcolor>white</textcolor>
+                <label>$INFO[ListItem.Album]</label>
+            </control>
+        </control>
+			<control type="group">
+            <!--Title-->
+            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
+            <include>animation_view_change</include>
+            <include>animation_list</include>
+            <posy>985</posy>
+            <control type="label">
+                <!--Others-->
+                <visible>!Container.Content(albums) + !Container.Content(songs)</visible>
+                <posx>560</posx>
+                <posy>0</posy>
+                <width>800</width>
+                <align>center</align>
+                <font>Reg30</font>
+                <textcolor>white</textcolor>
+                <label>$INFO[ListItem.Label]</label>
+            </control>
+            <control type="label">
+                <!--Album, Songs-->
+                <visible>Container.Content(albums) | Container.Content(songs)</visible>
+                <posx>560</posx>
+                <posy>0</posy>
+                <width>800</width>
+                <align>center</align>
+                <font>Reg30</font>
+                <textcolor>white</textcolor>
+                <label>$INFO[ListItem.Artist]</label>
+            </control>
+        </control>
+			<control type="group">
+            <!--Page Control-->
+            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
+            <include>animation_view_change</include>
+            <include>animation_list</include>
+            <posy>985</posy>
+            <control type="label">
+                <posx>1830</posx>
+                <posy>0</posy>
+                <width>400</width>
+                <align>right</align>
+                <font>Reg30</font>
+                <textcolor>white</textcolor>
+                <visible>!IsEmpty(ListItem.Label)</visible>
+                <label>$INFO[Container.NumItems] $LOCALIZE[31034]</label>
+            </control>
+        </control>
+	
+    </include>   
+
+	
+	<!-- RSS Footer -->
+	<include name="FooterAlt">
+	<!--footer alternative-->	
+		<control type="group">			
+			<include>animation_home</include>
+			<control type="image">
+				<posx>-60</posx>
+				<posy>970</posy>
+				<width>2040</width>
+				<height>180</height>
+				<texture background="true">views/filemanager_panel1.png</texture>
+				<visible>!skin.hastheme(classic) + !skin.hassetting(nofooterbar)</visible>
+			</control>
+		</control>
+	</include>
+	
+	
+	<!-- RSS Footer -->
+	<include name="RSSFooter">
+	<!--RSS-->	
+		<control type="group">			
+			<include>animation_home</include>
+			<!--RSS Background-->
+			<control type="image">	
+				<posx>50</posx>
+				<posy>960</posy>
+				<width>1820</width>
+				<height>84</height>
+				<texture>home/home_rss.png</texture>
+				<visible>[!Skin.HasSetting(NoFooterBar) + skin.hastheme(classic)]</visible>				
+			</control>
+			<control type="image">
+				<posx>-60</posx>
+				<posy>970</posy>
+				<width>2040</width>
+				<height>180</height>
+				<texture background="true">views/filemanager_panel1.png</texture>
+				<visible>!skin.hastheme(classic) + !skin.hassetting(nofooterbar)</visible>
+			</control>
+			<!--RSS Text-->			
+			<control type="rss">	
+				<description>RSS Feed</description>
+				<posx>80</posx>
+				<posy>995</posy>
+				<width>1760</width>
+				<height>50</height>
+				<font>Reg32</font>
+				<urlset>1</urlset>
+				<titlecolor>$VAR[ThemeFontColorBlack]</titlecolor>
+				<headlinecolor>$VAR[ThemeFontColorBlack]</headlinecolor>
+				<textcolor>$VAR[ThemeFontColorBlack]</textcolor>
+				<scrollspeed>40</scrollspeed>
+				<visible>Window.IsVisible(Home)</visible>				
+			</control>
+		</control>
+	</include>
+	
     <!--Header-->
     <include name="Header">
         <control type="image">
@@ -429,7 +588,7 @@
     <include name="animation_sub_menu">
         <!--Sub Menu Slide Animation-->
         <animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
-            <effect type="slide" start="0" end="615" time="450" tween="cubic" easing="inout" />
+            <effect type="slide" start="0" end="640" time="450" tween="cubic" easing="inout" />
         </animation>
     </include>
     <include name="animation_dialog">
@@ -482,12 +641,13 @@
         <!--Sub Menu Button-->
         <width>458</width>
         <align>left</align>
-        <textcolor>white</textcolor>
-        <focusedcolor>white</focusedcolor>
+        <textcolor>$VAR[ThemeFontColorBlack]</textcolor>
+        <focusedcolor>$VAR[ThemeFontColorBlack]</focusedcolor>
         <disabledcolor>77585858</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus>common/button-fo.png</texturefocus>
         <texturenofocus>-</texturenofocus>
+		<font>Reg26</font>
     </include>
     <include name="SubMenuTabLeft">
         <!--Sub Menu Tab Left-->
@@ -2611,7 +2771,6 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults2)</onload>
 
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
-		<onload condition="!Skin.HasTheme(classic) + !Skin.HasSetting(NoFooterBar)">Skin.SetBool(NoFooterBar)</onload>
 		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
 

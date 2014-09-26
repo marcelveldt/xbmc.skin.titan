@@ -15,7 +15,7 @@
             <!-- ID="52" -->
             <control type="panel" id="53">
                 <posx>80</posx>
-                <posy>600</posy>
+                <posy>610</posy>
                 <width>1760</width>
                 <height>350</height>
                 <onup>9000</onup>
@@ -23,7 +23,7 @@
                 <onleft>53</onleft>
                 <onright>53</onright>
                 <pagecontrol>60</pagecontrol>
-                <viewtype label="Poster details">biglist</viewtype>
+                <viewtype label="Panel details">biglist</viewtype>
                 <scrolltime tween="Cubic" easing="inout">500</scrolltime>
                 <focusposition>0</focusposition>
                 <orientation>horizontal</orientation>
@@ -50,7 +50,7 @@
         <control type="group">
             <visible>Control.IsVisible(53)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
-            <include>ViewsFooter</include>
+			<include>Footer</include>
         </control>
     </include>
 </includes>

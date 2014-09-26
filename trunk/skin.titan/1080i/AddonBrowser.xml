@@ -10,6 +10,8 @@
         <include>TimeInfo</include>
         <!-- Header -->
         <include>Header</include>
+		<!-- Now playing -->
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
         <!--Hidden Button-->
         <control type="radiobutton" id="19">
             <description>Filter (hidden)</description>
@@ -38,7 +40,7 @@
             <control type="image">
                 <width>500</width>
                 <height>800</height>
-                <texture border="39">dialogs/default/bg-black.png</texture>
+                <texture border="39">dialogs/default/bg.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
             <!--Gouplist 9000-->
@@ -59,8 +61,8 @@
                     <width>458</width>
                     <align>left</align>
                     <textoffsetx>50</textoffsetx>
-                    <font>Light40</font>
-                    <textcolor>mainblue</textcolor>
+                    <font>Bold40</font>
+                    <textcolor>$VAR[ThemeFontColorBlack]</textcolor>
                     <label>$LOCALIZE[33061]:</label>
                 </control>
                 <control type="image" id="201">
@@ -103,22 +105,6 @@
                     <height>20</height>
                     <align>left</align>
                     <texture>common/menu-space.png</texture>
-                </control>
-                <control type="label" id="300">
-                    <!--View:-->
-                    <width>458</width>
-                    <align>left</align>
-                    <textoffsetx>50</textoffsetx>
-                    <font>Light40</font>
-                    <textcolor>mainblue</textcolor>
-                    <label>$LOCALIZE[457]</label>
-                </control>
-                <control type="image" id="301">
-                    <!--Seperator-->
-                    <width>458</width>
-                    <height>20</height>
-                    <align>left</align>
-                    <texture>common/menu-separator.png</texture>
                 </control>
                 <control type="button" id="302">
                     <!--View List-->

@@ -8,27 +8,31 @@
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <include>animation_view_change</include>
             <include>animation_list</include>
+			<!--Footer-->
+			<include>RSSFooter</include>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos -->
-                <visible>[Container.Content(MusicVideos) | Container.Content(movies) | container.Content(tvshows) | container.content(seasons)] + !Skin.HasSetting(NoFooterBar) + !IsEmpty(ListItem.Label)</visible>
+                <visible>[Container.Content(MusicVideos) | Container.Content(movies) | container.Content(tvshows) | container.content(seasons)] + [!Skin.HasSetting(NoFooterBar) + skin.hastheme(classic)] + !IsEmpty(ListItem.Label)</visible>
                 <posx>10</posx>
-                <posy>100</posy>
+                <posy>165</posy>
                 <width>1903</width>
-                <height>910</height>
+                <height>885</height>
                 <texture>views/filemanager_panel.png</texture>
             </control>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos -->
-                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.Content(tvshows) | container.Content(seasons)] + Skin.HasSetting(NoFooterBar) + !IsEmpty(ListItem.Label)</visible>
+                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.Content(tvshows) | container.Content(seasons)] + [Skin.HasSetting(NoFooterBar) | !Skin.Hastheme(classic)] + !IsEmpty(ListItem.Label)</visible>
                 <posx>10</posx>
-                <posy>100</posy>
+                <posy>165</posy>
                 <width>1903</width>
-                <height>910</height>
+                <height>800</height>
                 <texture>views/filemanager_panel1.png</texture>
             </control>
+			<include>Footer</include>
         </control>
         <!--Poster,Cover,Thumb-->
         <control type="group">
+			
             <visible>Control.IsVisible(55)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <!--no hide at addons-->
@@ -42,7 +46,7 @@
             <control type="image">
                 <!--logo-->
                 <posx>90</posx>
-                <posy>180</posy>
+                <posy>240</posy>
                 <width>380</width>
                 <height>220</height>
                 <align>left</align>
@@ -52,7 +56,7 @@
             <control type="image">
                 <!--logo-->
                 <posx>90</posx>
-                <posy>180</posy>
+                <posy>240</posy>
                 <width>380</width>
                 <height>220</height>
                 <align>left</align>
@@ -63,7 +67,7 @@
             <control type="image">
                 <!--logo-->
                 <posx>90</posx>
-                <posy>180</posy>
+                <posy>240</posy>
                 <width>380</width>
                 <height>220</height>
                 <align>left</align>
@@ -80,9 +84,9 @@
             <!-- ID="52" -->
             <control type="panel" id="55">
                 <posx>1070</posx>
-                <posy>180</posy>
+                <posy>240</posy>
                 <width>800</width>
-                <height>740</height>
+                <height>600</height>
                 <onup>52</onup>
                 <ondown>52</ondown>
                 <onleft>9000</onleft>
@@ -238,6 +242,7 @@
 						<width>783</width>
 						<height>150</height>
 						<texture>home/home_focus.png</texture>
+						<visible>!skin.hastheme(classic)</visible>
 					</control>
                 </focusedlayout>
             </control>
@@ -257,7 +262,7 @@
             <onright>noop</onright>
             <orientation>vertical</orientation>
             <posx>90</posx>
-            <posy>430</posy>
+            <posy>520</posy>
             <control type="label">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -302,7 +307,7 @@
             <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
             <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
             <posx>90</posx>
-            <posy>640</posy>
+            <posy>690</posy>
             <width>900</width>
             <height>200</height>
             <control type="textbox">
@@ -330,102 +335,7 @@
                 <include>movieflags</include>
             </control>
         </control>
-        <control type="group">
-            <!--Rating, Label-->
-            <visible>Control.IsVisible(55)</visible>
-            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
-            <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
-            <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
-            <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-            <posy>955</posy>
-            <control type="image">
-                <!--Stars-->
-                <visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + !Skin.HasSetting(NoFooterBar)</visible>
-                <posx>130</posx>
-                <posy>13</posy>
-                <width>270</width>
-                <height>25</height>
-                <texture>$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
-            </control>
-            <control type="image">
-                <!--Stars-->
-                <visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + Skin.HasSetting(NoFooterBar)</visible>
-                <posx>130</posx>
-                <posy>13</posy>
-                <width>270</width>
-                <height>25</height>
-                <texture>$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
-            </control>
-            <control type="label">
-                <!--Rating-->
-                <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-                <posx>420</posx>
-                <posy>0</posy>
-                <width>100</width>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Rating]</label>
-            </control>
-            <control type="label">
-                <!--Album, Songs-->
-                <visible>Container.Content(albums) | Container.Content(songs)</visible>
-                <posx>130</posx>
-                <posy>0</posy>
-                <width>600</width>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Album]</label>
-            </control>
-        </control>
-        <control type="group">
-            <!--Title-->
-            <visible>Control.IsVisible(55)</visible>
-            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
-            <include>animation_view_change</include>
-            <include>animation_list</include>
-            <posy>955</posy>
-            <control type="label">
-                <!--Others-->
-                <visible>!Container.Content(albums) + !Container.Content(songs)</visible>
-                <posx>560</posx>
-                <posy>0</posy>
-                <width>800</width>
-                <align>center</align>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Label]</label>
-            </control>
-            <control type="label">
-                <!--Album, Songs-->
-                <visible>Container.Content(albums) | Container.Content(songs)</visible>
-                <posx>560</posx>
-                <posy>0</posy>
-                <width>800</width>
-                <align>center</align>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Artist]</label>
-            </control>
-        </control>
-        <control type="group">
-            <!--Page Control-->
-            <visible>Control.IsVisible(55)</visible>
-            <visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
-            <include>animation_view_change</include>
-            <include>animation_list</include>
-            <posy>955</posy>
-            <control type="label">
-                <visible>IntegerGreaterThan(Container.NumItems, 1)</visible>
-                <posx>1780</posx>
-                <posy>0</posy>
-                <width>400</width>
-                <align>right</align>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[Container.NumItems] $LOCALIZE[31034]</label>
-            </control>
-        </control>
+        
         <control type="grouplist">
             <control type="label" id="5101">
                 <include>HiddenButton</include>
@@ -474,7 +384,7 @@
                 <!--Scrollbar ID60-->
                 <visible>IntegerGreaterThan(Container(55).NumItems,30)</visible>
                 <visible>!Container.Content(songs)</visible>
-                <posx>1835</posx>
+                <posx>1845</posx>
                 <posy>320</posy>
                 <height>570</height>
                 <onleft>50</onleft>

@@ -7,20 +7,13 @@
         <!--Dialog Context Menu-->
         <control type="group">
             <posx>710</posx>
-            <posy>150</posy>
+            <posy>200</posy>
             <include>animation_dialog</include>
             <!--Panel-->
             <control type="image">
-                <posx>460</posx>
-                <posy>360</posy>
-                <width>60</width>
-                <height>80</height>
-                <texture flipx="true">dialogs/default/arrow-left-black.png</texture>
-            </control>
-            <control type="image">
                 <width>500</width>
-                <height>860</height>
-                <texture border="39">dialogs/default/bg-black.png</texture>
+                <height>800</height>
+                <texture border="39">dialogs/default/bg.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
             <!--Label Menu: -->
@@ -31,8 +24,8 @@
                 <width>458</width>
                 <align>left</align>
                 <textoffsetx>50</textoffsetx>
-                <font>Light40</font>
-                <textcolor>mainblue</textcolor>
+                <font>Bold40</font>
+                <textcolor>$VAR[ThemeFontColorBlack]</textcolor>
                 <label>$LOCALIZE[33061]:</label>
             </control>
             <control type="image" id="201">
@@ -47,7 +40,7 @@
             <control type="grouplist" id="996">
                 <width></width>
                 <posx>21</posx>
-                <posy>170</posy>
+                <posy>140</posy>
                 <height>630</height>
                 <itemgap>3</itemgap>
                 <!--Buttons-->

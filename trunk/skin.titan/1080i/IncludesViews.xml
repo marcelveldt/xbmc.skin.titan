@@ -160,7 +160,7 @@
         <control type="image">
             <!--Poster-->
             <animation type="focus">
-                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
             </animation>
             <animation type="unfocus">
                 <effect type="zoom" start="140" end="100" center="130,190" time="150" />
@@ -174,7 +174,7 @@
         <control type="image">
             <!--Poster-->
             <animation type="focus">
-                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
             </animation>
             <animation type="unfocus">
                 <effect type="zoom" start="140" end="100" center="130,190" time="150" />
@@ -188,7 +188,7 @@
         <control type="image">
             <!--Poster-->
             <animation type="focus">
-                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
             </animation>
             <animation type="unfocus">
                 <effect type="zoom" start="140" end="100" center="130,190" time="150" />
@@ -202,7 +202,7 @@
         <control type="image">
             <!--Poster-->
             <animation type="focus">
-                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
             </animation>
             <animation type="unfocus">
                 <effect type="zoom" start="140" end="100" center="130,190" time="150" />
@@ -216,7 +216,7 @@
 		<control type="image">
             <!--Watched Overlay-->
 			<animation type="focus">
-                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
             </animation>
             <animation type="unfocus">
                 <effect type="zoom" start="140" end="100" center="130,190" time="150" />
@@ -230,7 +230,7 @@
 		<control type="label">
             <!--watched label-->
 			<animation type="focus">
-                <effect type="zoom" start="100" end="140" center="130,190" time="150" />
+                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
             </animation>
             <animation type="unfocus">
                 <effect type="zoom" start="140" end="100" center="130,190" time="150" />
@@ -600,65 +600,6 @@
         <width>380</width>
         <height>60</height>
         <font>Reg28</font>
-    </include>
-    <include name="ViewsFooter">
-        <control type="group">
-            <!-- Rating -->
-            <include>animation_view_change</include>
-            <include>animation_list</include>
-            <posy>950</posy>
-            <control type="image">
-                <!--RSS Background-->
-                <posx>50</posx>
-                <posy>-26</posy>
-                <width>1820</width>
-                <height>84</height>
-                <texture>home/home_rss.png</texture>
-                <visible>!Skin.HasSetting(NoFooterBar) + [Control.IsVisible(501) | Control.IsVisible(51)| Control.IsVisible(52)]</visible>
-            </control>
-            <control type="image">
-                <posx>130</posx>
-                <posy>15</posy>
-                <width>270</width>
-                <height>25</height>
-                <texture>$INFO[ListItem.Rating,rating/10stars_black/,.png]</texture>
-                <visible>!Skin.HasSetting(NoFooterBar)</visible>
-            </control>
-            <control type="image">
-                <posx>130</posx>
-                <posy>15</posy>
-                <width>270</width>
-                <height>25</height>
-                <texture>$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
-                <visible>Skin.HasSetting(NoFooterBar)</visible>
-            </control>
-            <control type="label">
-                <posx>420</posx>
-                <width>100</width>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Rating]</label>
-            </control>
-            <control type="label">
-                <posx>560</posx>
-                <width>800</width>
-                <align>center</align>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Label]</label>
-            </control>
-            <!-- Page Control -->
-            <control type="label">
-                <visible>!IsEmpty(ListItem.Label)</visible>
-                <posx>1780</posx>
-                <posy>0</posy>
-                <width>400</width>
-                <align>right</align>
-                <font>Reg30</font>
-                <textcolor>white</textcolor>
-                <label>$INFO[Container.NumItems] $LOCALIZE[31034]</label>
-            </control>
-        </control>
     </include>
     <!-- Movie Showcase Variables: Main thumbs -->
     <include name="MovieShowcaseThumb">
@@ -1764,29 +1705,31 @@
             <include>animation_list</include>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos -->
-                <visible>!Skin.HasSetting(NoFooterBar) + !IsEmpty(ListItem.Label)</visible>
+                <visible>Skin.Hastheme(classic) + !IsEmpty(ListItem.Label)</visible>
                 <posx>10</posx>
-                <posy>100</posy>
+                <posy>165</posy>
                 <width>1903</width>
-                <height>910</height>
+                <height>885</height>
                 <texture>views/filemanager_panel.png</texture>
             </control>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos -->
-                <visible>Skin.HasSetting(NoFooterBar) + !IsEmpty(ListItem.Label)</visible>
+                <visible>!Skin.Hastheme(classic) + !IsEmpty(ListItem.Label)</visible>
                 <posx>10</posx>
-                <posy>100</posy>
+                <posy>165</posy>
                 <width>1903</width>
-                <height>910</height>
+                <height>830</height>
                 <texture>views/filemanager_panel1.png</texture>
             </control>
+			<!--Footer-->
+			<include>FooterAlt</include>
             <!--Info-->
             <control type="grouplist">
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
                 <posx>100</posx>
-                <posy>180</posy>
+                <posy>260</posy>
                 <width>800</width>
                 <height>700</height>
                 <orientation>vertical</orientation>
@@ -1980,7 +1923,7 @@
             <!--Flags-->
             <control type="group">
                 <orientation>horizontal</orientation>
-                <posy>470</posy>
+                <posy>520</posy>
                 <posx>105</posx>
                 <!--Flags Video-->
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
@@ -1993,14 +1936,14 @@
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
                 <posx>1050</posx>
-                <posy>180</posy>
+                <posy>260</posy>
                 <width>780</width>
                 <height>495</height>
                 <control type="textbox">
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>780</width>
-                    <height>355</height>
+                    <height>287</height>
                     <label>$INFO[ListItem.Plot]</label>
                     <textcolor>bbwhite</textcolor>
                     <align>justify</align>

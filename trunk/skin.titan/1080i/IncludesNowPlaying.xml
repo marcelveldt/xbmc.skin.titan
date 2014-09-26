@@ -3,7 +3,7 @@
 <includes>
     <!--NowPlayingMusic-->
     <include name="NowPlayingMusicClassic">
-        <control type="group">
+        <control type="group" id="9999">
             <!--Panel-->
             <visible>Player.HasAudio</visible>
             <visible>!Window.IsActive(Settings.xml) + !Window.IsActive(SettingsCategory.xml)  + !Window.IsActive(SettingsSystemInfo.xml) + !Window.IsActive(SkinSettings.xml)</visible>
@@ -107,7 +107,7 @@
     </include>
     <!--NowPlayingVideo-->
     <include name="NowPlayingVideoClassic">
-        <control type="group">
+        <control type="group" id="9999">
             <!--Panel-->
             <visible>Player.HasVideo</visible>
             <visible>!Window.IsActive(Settings.xml) + !Window.IsActive(SettingsCategory.xml)  + !Window.IsActive(SettingsSystemInfo.xml) + !Window.IsActive(SkinSettings.xml)</visible>
@@ -198,11 +198,11 @@
     </include>
 
 	<include name="NowPlayingModern">
+		<include>nowplayingbackground</include>
         <control type="group" id="88888">
             <!--Panel-->
             <visible>Player.HasMedia + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !ControlGroup(77777).HasFocus</visible>
             <include>DimensionsFullscreen</include>
-			<include>nowplayingbackground</include>
             <control type="image">
 				<posx>-60</posx>
 				<posy>-20</posy>
@@ -298,9 +298,17 @@
         </control>
 		<control type="videowindow">
 			<include>DimensionsFullscreen</include>
+			<visible>Player.HasVideo</visible>
 		</control>
-		<include>DialogOverlay</include>
-		
+		<!--Dialog Overlay-->
+        <control type="image">
+            <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
+            <animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
+            <include>DimensionsFullscreen</include>
+            <colordiffuse>99FFFFFF</colordiffuse>
+            <texture background="true">common/black.png</texture>
+            <visible>Player.HasMedia</visible>
+        </control>
 
 
 	</include>

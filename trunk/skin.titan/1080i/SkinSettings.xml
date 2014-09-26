@@ -13,6 +13,8 @@
         <include>Header</include>
         <!--Titan Version-->
         <include>TitanVersion</include>
+		<!-- Now playing -->
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
         <!--Panel-->
         <control type="image">
             <posx>0</posx>
@@ -2532,7 +2534,6 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoFooterBar)</onclick>
                     <selected>Skin.HasSetting(NoFooterBar)</selected>
-                    <visible>Skin.HasTheme(classic)</visible>
                 </control>
                 <control type="radiobutton" id="5012">
                     <description></description>
@@ -2557,17 +2558,6 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, 2)</onclick>
                     <selected>Skin.String(GadgetRows, 2) | !Skin.String(GadgetRows)</selected>
-                </control>
-                <control type="radiobutton" id="5014">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31032</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(GadgetRows, 3)</onclick>
-                    <selected>Skin.String(GadgetRows, 3)</selected>
                 </control>
                 <control type="radiobutton" id="5015">
                     <description></description>

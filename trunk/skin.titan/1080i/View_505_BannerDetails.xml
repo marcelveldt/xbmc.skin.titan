@@ -7,7 +7,7 @@
             <visible>Control.IsVisible(505)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <include>MovieDetails</include>
-            <include>ViewsFooter</include>
+			<include>Footer</include>
         </control>
         <control type="panel" id="505">
             <include>animation_home</include>
