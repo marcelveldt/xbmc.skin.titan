@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
 	id="skin.titan"
-	version="2.0.15"
+	version="2.0.16"
 	name="Titan MediaBrowser"
 	provider-name="marcelveldt">
 	<requires>
@@ -9,7 +9,7 @@
 		<import addon="script.artwork.downloader" version="12.0.29" />
 		<import addon="service.skin.widgets" version="0.0.25"/>
 		<import addon="script.favourites" version="4.0.9"/>
-		<import addon="script.titanskin.helpers" version="1.0.1"/>
+		<import addon="script.titanskin.helpers" version="1.0.4"/>
 	</requires>
 	<extension
     point="xbmc.gui.skin"

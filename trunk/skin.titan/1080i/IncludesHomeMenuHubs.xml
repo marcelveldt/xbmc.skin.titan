@@ -8,9 +8,10 @@
             </animation>
 			<height>540</height>
 			<posy>-700</posy>
+			<posx>20</posx>
 			<control type="image">
-					<posx>-10</posx>
-					<width>1940</width>
+					<posx>-13</posx>
+					<width>1908</width>
                     <texture border="39">pvr/pvr_epg_panel.png</texture>
                     <aspectratio>stretch</aspectratio>
                     <height>527</height>
@@ -84,6 +85,7 @@
 		<!-- hubs-->
             <control type="group" id="77777">
                 <height>440</height>
+				<posx>15</posx>
 				<include condition="Skin.String(GadgetRows, 1)">HubPositionNormal</include>
 				<include condition="!Skin.String(GadgetRows, 1)">HubPositionOutside</include>
 				
@@ -103,7 +105,7 @@
 				<control type="image">
                         <!--Submenu Arrow DOWN-->
 						<animation effect="fade" begin="0" end="100" delay="1800" time="1800">Visible</animation>
-                        <posx>940</posx>
+                        <posx>915</posx>
                         <posy>296</posy>
                         <width>60</width>
                         <height>36</height>
@@ -112,7 +114,7 @@
                     </control>
                 <control type="image">
 					<posx>-10</posx>
-					<width>1940</width>
+					<width>1910</width>
                     <texture border="39">pvr/pvr_epg_panel.png</texture>
                     <aspectratio>stretch</aspectratio>
                     <height>340</height>
@@ -173,18 +175,57 @@
 				<include condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">normalMusicHubs</include>
 				<include condition="Skin.HasSetting(HomeMenuUseMBforMusic)">MediaBrowserMusicHubs</include>
 				
-				<include>CustomHubs</include>
-				<include>weatherHub</include>
+				<include>CustomHub</include>
+				
+				<include condition="System.HasAddon(plugin.video.xbmb3c)">MB3CustomHubs</include>
+				
+				<include condition="System.HasAddon(plugin.video.netflixbmc) + Skin.HasSetting(HomeMenuNetflixButton)">NetflixHubGeneral</include>
+				<include condition="System.HasAddon(plugin.video.netflixbmc) + Skin.HasSetting(HomeMenuUseNetflixforMovies)">NetflixHubMovies</include>
+				<include condition="System.HasAddon(plugin.video.netflixbmc) + Skin.HasSetting(HomeMenuUseNetflixforTVseries)">NetflixHubTvShows</include>
+				
+				<include condition="Skin.HasSetting(HomeMenuWeatherButton)">weatherHub</include>
 
 				
 			</control>
 	</include>
 	
-	<include name="CustomHubs">
+	<include name="CustomHub">
 		<control type="panel" id="510">
 		<include>panel_layout</include>
-		<content target="video">$VAR[CustomHomeHubContent]</content>
-		<visible>!StringCompare(Container(300).ListItem.Property(widgettype),weather) | !Skin.String(MoviesWidget, randommovies)</visible>
+		<content target="video">$INFO[Container(300).ListItem.Property(contentpath)]</content>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),custom) + !IsEmpty(Container(300).ListItem.Property(contentpath))</visible>
+		</control>
+	</include>
+	
+	<include name="MB3CustomHubs">
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<content target="video">$VAR[MB3CustomHomeHubContent]</content>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),mb3custom)</visible>
+		</control>
+	</include>
+	
+	<include name="NetflixHubGeneral">
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<content target="video">$VAR[NetflixHubContentGeneral]</content>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),netflix)</visible>
+		</control>
+	</include>
+	
+	<include name="NetflixHubMovies">
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<content target="video">$VAR[NetflixHubContentMovies]</content>
+		<visible>Skin.HasSetting(HomeMenuUseNetflixforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies)</visible>
+		</control>
+	</include>
+	
+	<include name="NetflixHubTvShows">
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<content target="video">$VAR[NetflixHubContentTvShows]</content>
+		<visible>Skin.HasSetting(HomeMenuUseNetflixforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows)</visible>
 		</control>
 	</include>
 	
@@ -720,10 +761,10 @@
 	</item>
 	</content>
 	</control>
-	<!-- recommended movies -->
+	<!-- in progress movies -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)</visible>
+	<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + [StringCompare(skin.string(MoviesWidget),recommended) | StringCompare(skin.string(MoviesWidget),inprogressmovies)]</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(0).Property(RecommendedMovie.1.Title)]</label>
@@ -941,14 +982,9 @@
 	<onclick>$INFO[Window(0).Property(RecommendedMovie.12.Play)]</onclick>
 	<visible>!IsEmpty(Window(0).Property(RecommendedMovie.12.Title))</visible>
 	</item>
-	<item>
-	<thumb>DefaultVideoPoster.png</thumb>
-	<onclick>noop</onclick>
-	<visible>IsEmpty(Window(0).Property(RecommendedMovie.1.Title))</visible>
-	</item>
 	</content>
 	</control>
-
+	
 	</include>
 	
 	<include name="normalTvHubs">
@@ -1403,7 +1439,7 @@
 				</item>
 				</content>
 				</control>
-				<!-- recommended episodes -->
+				<!-- inprogress episodes -->
 				<control type="panel" id="510">
 					<include>panel_layout</include>
 					<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)</visible>
@@ -1659,239 +1695,917 @@
 	</include>
 
 	<include name="mediaBrowserTvHubs">
-				<!-- random series -->
-				<control type="panel" id="510">
-				<include>panel_layout</include>
-				<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),random)</visible>
-				<content>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.1.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.1.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.1.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.1.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.1.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.1.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.1.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.1.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.1.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.2.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.2.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.2.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.2.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.2.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.2.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.2.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.2.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.2.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.3.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.3.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.3.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.3.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.3.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.3.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.3.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.3.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.3.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.4.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.4.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.4.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.4.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.4.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.4.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.4.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.4.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.4.EpisodeTitle)) + [SubString(skin.string(widgetsnumber),4) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.EpisodeTitle)) | SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.5.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.5.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.5.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.5.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.5.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.5.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.5.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.5.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.5.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.6.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.6.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.6.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.6.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.6.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.6.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.6.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.6.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.6.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.7.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.7.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.7.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.7.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.7.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.7.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.7.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.7.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.7.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.8.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.8.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.8.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.8.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.8.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.8.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.8.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.8.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.8.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.9.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.9.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.9.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.9.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.9.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.9.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.9.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.9.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.9.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.10.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.10.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.10.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.10.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.10.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.10.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.10.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.10.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.10.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.11.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.11.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.11.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.11.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.11.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.11.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.11.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.11.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.11.EpisodeTitle))</visible>
-				</item>
-				<item>
-				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.12.EpisodeTitle)]</label>
-				<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.12.ShowTitle)]</label2>
-				<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.12.Thumb)]</thumb>
-				<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Thumb)]</property>
-				<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.12.Art(tvshow.fanart))]</icon>
-				<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Genre)]</property>
-				<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Runtime)]</property>
-				<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Rating)]</property>
-				<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Plot)]</property>
-				<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Premiered)]</property>
-				<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Art(tvshow.poster))]</property>
-				<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.12.File)]</property>
-				<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.12.VideoCodec)]</property>
-				<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.12.EpisodeNo)]</property>
-				<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.12.Play)]</onclick>
-				<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.12.EpisodeTitle)) + [IsEmpty(Window(Home).Property(RecommendedEpisode.1.EpisodeTitle)) | Skin.HasSetting(noprogresswidget)]</visible>
-				</item>
-				<item>
-				<thumb>DefaultVideoPoster.png</thumb>
-				<onclick>noop</onclick>
-				<visible>IsEmpty(Window(Home).Property(RandomEpisodeMB3.1.EpisodeTitle))</visible>
-				</item>
-				</content>
-				
-				</control>
+		<!-- random series -->
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),random)</visible>
+		<content>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.1.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.1.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.1.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.1.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.1.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.1.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.1.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.1.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.1.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.1.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.2.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.2.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.2.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.2.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.2.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.2.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.2.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.2.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.2.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.3.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.3.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.3.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.3.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.3.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.3.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.3.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.3.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.3.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.4.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.4.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.4.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.4.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.4.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.4.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.4.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.4.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.4.EpisodeTitle)) + [SubString(skin.string(widgetsnumber),4) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.EpisodeTitle)) | SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.5.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.5.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.5.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.5.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.5.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.5.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.5.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.5.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.5.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.6.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.6.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.6.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.6.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.6.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.6.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.6.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.6.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.6.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.7.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.7.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.7.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.7.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.7.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.7.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.7.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.7.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.7.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.8.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.8.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.8.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.8.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.8.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.8.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.8.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.8.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.8.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.8.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.9.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.9.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.9.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.9.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.9.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.9.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.9.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.9.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.9.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.9.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.10.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.10.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.10.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.10.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.10.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.10.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.10.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.10.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.10.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.10.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.11.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.11.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.11.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.11.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.11.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.11.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.11.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.11.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.11.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.11.EpisodeTitle))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(Home).Property(RandomEpisodeMB3.12.EpisodeTitle)]</label>
+		<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.12.ShowTitle)]</label2>
+		<thumb>$INFO[Window(Home).Property(RandomEpisodeMB3.12.Thumb)]</thumb>
+		<property name="Thumbnail">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Thumb)]</property>
+		<icon>$INFO[Window(Home).Property(RandomEpisodeMB3.12.Art(tvshow.fanart))]</icon>
+		<property name="Genre">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Genre)]</property>
+		<property name="Runtime">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Rating)]</property>
+		<property name="Plot">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Plot)]</property>
+		<property name="Year">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Premiered)]</property>
+		<property name="poster">$INFO[Window(Home).Property(RandomEpisodeMB3.12.Art(tvshow.poster))]</property>
+		<property name="File">$INFO[Window(Home).Property(RandomEpisodeMB3.12.File)]</property>
+		<property name="Codec">$INFO[Window(Home).Property(RandomEpisodeMB3.12.VideoCodec)]</property>
+		<property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisodeMB3.12.EpisodeNo)]</property>
+		<onclick>$INFO[Window(Home).Property(RandomEpisodeMB3.12.Play)]</onclick>
+		<visible>!IsEmpty(Window(Home).Property(RandomEpisodeMB3.12.EpisodeTitle)) + [IsEmpty(Window(Home).Property(RecommendedEpisode.1.EpisodeTitle)) | Skin.HasSetting(noprogresswidget)]</visible>
+		</item>
+		<item>
+		<thumb>DefaultVideoPoster.png</thumb>
+		<onclick>noop</onclick>
+		<visible>IsEmpty(Window(Home).Property(RandomEpisodeMB3.1.EpisodeTitle))</visible>
+		</item>
+		</content>
+		
+		</control>
+		
+		<!-- recent episodes -->
+		<control type="panel" id="510">
+			<include>panel_layout</include>
+			<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),latest)</visible>
+			<content>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.1.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.1.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.1.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.1.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.1.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.1.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.1.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.1.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.1.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.1.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.1.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.1.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.1.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.1.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.1.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.1.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.2.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.2.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.2.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.2.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.2.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.2.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.2.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.2.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.2.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.2.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.2.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.2.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.2.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.2.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.2.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.2.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.3.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.3.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.3.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.3.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.3.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.3.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.3.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.3.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.3.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.3.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.3.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.3.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.3.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.3.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.3.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.3.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.4.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.4.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.4.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.4.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.4.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.4.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.4.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.4.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.4.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.4.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.4.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.4.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.4.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.4.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.4.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.4.EpisodeTitle)) + [SubString(skin.string(widgetsnumber),4) + IsEmpty(Window(0).Property(RecommendedEpisode.1.EpisodeTitle)) | SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.5.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.5.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.5.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.5.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.5.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.5.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.5.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.5.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.5.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.5.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.5.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.5.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.5.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.5.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.5.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.5.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.6.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.6.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.6.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.6.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.6.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.6.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.6.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.6.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.6.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.6.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.6.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.6.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.6.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.6.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.6.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.6.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.7.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.7.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.7.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.7.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.7.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.7.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.7.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.7.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.7.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.7.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.7.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.7.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.7.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.7.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.7.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.7.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.8.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.8.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.8.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.8.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.8.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.8.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.8.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.8.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.8.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.8.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.8.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.8.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.8.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.8.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.8.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.8.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.9.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.9.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.9.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.9.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.9.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.9.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.9.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.9.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.9.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.9.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.9.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.9.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.9.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.9.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.9.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.9.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.10.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.10.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.10.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.10.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.10.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.10.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.10.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.10.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.10.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.10.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.10.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.10.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.10.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.10.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.10.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.10.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.11.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.11.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.11.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.11.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.11.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.11.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.11.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.11.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.11.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.11.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.11.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.11.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.11.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.11.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.11.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.11.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(LatestEpisodeMB3.12.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(LatestEpisodeMB3.12.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(LatestEpisodeMB3.12.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(LatestEpisodeMB3.12.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(LatestEpisodeMB3.12.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(LatestEpisodeMB3.12.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(LatestEpisodeMB3.12.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(LatestEpisodeMB3.12.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(LatestEpisodeMB3.12.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(LatestEpisodeMB3.12.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(LatestEpisodeMB3.12.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(LatestEpisodeMB3.12.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(LatestEpisodeMB3.12.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(LatestEpisodeMB3.12.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(LatestEpisodeMB3.12.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(LatestEpisodeMB3.12.EpisodeTitle)) + [IsEmpty(Window(0).Property(RecommendedEpisode.1.EpisodeTitle)) | Skin.HasSetting(noprogresswidget)]</visible>
+			</item>
+			</content>
+			</control>
+		
+		<!-- nextup episodes -->
+		<control type="panel" id="510">
+			<include>panel_layout</include>
+			<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)</visible>
+			<content>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.1.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.1.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.1.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.1.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.1.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.1.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.1.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.1.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.1.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.1.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.1.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.1.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.1.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.1.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.1.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.1.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.2.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.2.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.2.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.2.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.2.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.2.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.2.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.2.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.2.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.2.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.2.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.2.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.2.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.2.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.2.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.2.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.3.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.3.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.3.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.3.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.3.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.3.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.3.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.3.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.3.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.3.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.3.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.3.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.3.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.3.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.3.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.3.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.4.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.4.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.4.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.4.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.4.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.4.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.4.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.4.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.4.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.4.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.4.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.4.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.4.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.4.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.4.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.4.EpisodeTitle)) + [SubString(skin.string(widgetsnumber),4) + IsEmpty(Window(0).Property(RecommendedEpisode.1.EpisodeTitle)) | SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.5.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.5.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.5.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.5.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.5.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.5.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.5.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.5.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.5.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.5.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.5.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.5.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.5.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.5.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.5.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.5.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.6.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.6.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.6.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.6.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.6.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.6.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.6.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.6.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.6.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.6.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.6.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.6.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.6.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.6.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.6.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.6.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.7.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.7.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.7.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.7.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.7.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.7.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.7.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.7.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.7.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.7.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.7.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.7.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.7.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.7.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.7.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.7.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.8.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.8.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.8.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.8.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.8.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.8.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.8.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.8.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.8.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.8.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.8.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.8.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.8.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.8.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.8.Path)])</onclick>
+								<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.8.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.9.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.9.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.9.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.9.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.9.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.9.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.9.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.9.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.9.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.9.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.9.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.9.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.9.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.9.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.9.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.9.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.10.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.10.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.10.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.10.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.10.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.10.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.10.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.10.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.10.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.10.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.10.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.10.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.10.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.10.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.10.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.10.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.11.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.11.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.11.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.11.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.11.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.11.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.11.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.11.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.11.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.11.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.11.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.11.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.11.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.11.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.11.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.11.EpisodeTitle))</visible>
+			</item>
+			<item>
+			<label>$INFO[Window(0).Property(NextUpEpisodeMB3.12.EpisodeTitle)]</label>
+			<label2>$INFO[Window(0).Property(NextUpEpisodeMB3.12.ShowTitle)]</label2>
+			<thumb>$INFO[Window(0).Property(NextUpEpisodeMB3.12.Art(thumb))]</thumb>
+			<property name="Thumbnail">$INFO[Window(0).Property(NextUpEpisodeMB3.12.Art(thumb))]</property>
+			<icon>$INFO[Window(0).Property(NextUpEpisodeMB3.12.Art(tvshow.fanart))]</icon>
+			<property name="Genre">$INFO[Window(0).Property(NextUpEpisodeMB3.12.Genre)]</property>
+			<property name="Runtime">$INFO[Window(0).Property(NextUpEpisodeMB3.12.Runtime)]</property>
+			<property name="VideoRating">$INFO[Window(0).Property(NextUpEpisodeMB3.12.Rating)]</property>
+			<property name="Plot">$INFO[Window(0).Property(NextUpEpisodeMB3.12.Plot)]</property>
+			<property name="Year">$INFO[Window(0).Property(NextUpEpisodeMB3.12.Premiered)]</property>
+			<property name="poster">$INFO[Window(0).Property(NextUpEpisodeMB3.12.Art(tvshow.poster))]</property>
+			<property name="File">$INFO[Window(0).Property(NextUpEpisodeMB3.12.File)]</property>
+			<property name="Codec">$INFO[Window(0).Property(NextUpEpisodeMB3.12.VideoCodec)]</property>
+			<property name="EpisodeNumber">$INFO[Window(0).Property(NextUpEpisodeMB3.12.EpisodeNo)]</property>
+			<onclick>PlayMedia($ESCINFO[Window(0).Property(NextUpEpisodeMB3.12.Path)])</onclick>
+			<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.12.EpisodeTitle)) + [IsEmpty(Window(0).Property(RecommendedEpisode.1.EpisodeTitle)) | Skin.HasSetting(noprogresswidget)]</visible>
+			</item>
+			</content>
+			</control>
+			
+		
 	</include>
 	
 	<include name="MediaBrowserMoviesHubs">
-
+		<!-- recent movies -->
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)</visible>
+		<content>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.1.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.1.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.1.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.1.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.1.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.1.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.1.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.1.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.1.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.1.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.1.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.1.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.1.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.1.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.1.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.1.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.2.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.2.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.2.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.2.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.2.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.2.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.2.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.2.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.2.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.2.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.2.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.2.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.2.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.2.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.2.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.2.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.3.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.3.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.3.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.3.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.3.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.3.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.3.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.3.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.3.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.3.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.3.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.3.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.3.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.3.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.3.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.3.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.4.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.4.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.4.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.4.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.4.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.4.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.4.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.4.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.4.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.4.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.4.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.4.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.4.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.4.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.4.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.4.Title)) + [SubString(skin.string(widgetsnumber),4) + IsEmpty(Window(0).Property(RecommendedMovie.1.Title)) | SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.5.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.5.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.5.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.5.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.5.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.5.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.5.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.5.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.5.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.5.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.5.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.5.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.5.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.5.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.5.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.5.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.6.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.6.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.6.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.6.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.6.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.6.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.6.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.6.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.6.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.6.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.6.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.6.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.6.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.6.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.6.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.6.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.7.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.7.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.7.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.7.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.7.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.7.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.7.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.7.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.7.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.7.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.7.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.7.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.7.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.7.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.7.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.7.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.8.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.8.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.8.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.8.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.8.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.8.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.8.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.8.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.8.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.8.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.8.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.8.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.8.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.8.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.8.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.8.Title)) + [SubString(skin.string(widgetsnumber),8) + IsEmpty(Window(0).Property(RecommendedMovie.1.Title)) | SubString(skin.string(widgetsnumber),12)]</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.9.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.9.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.9.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.9.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.9.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.9.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.9.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.9.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.9.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.9.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.9.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.9.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.9.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.9.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.9.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.9.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.10.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.10.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.10.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.10.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.10.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.10.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.10.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.10.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.10.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.10.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.10.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.10.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.10.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.10.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.10.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.10.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.11.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.11.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.11.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.11.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.11.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.11.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.11.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.11.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.11.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.11.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.11.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.11.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.11.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.11.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.11.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.11.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(LatestMovieMB3.12.Title)]</label>
+		<label2>$INFO[Window(0).Property(LatestMovieMB3.12.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(LatestMovieMB3.12.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(LatestMovieMB3.12.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(LatestMovieMB3.12.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(LatestMovieMB3.12.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(LatestMovieMB3.12.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(LatestMovieMB3.12.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(LatestMovieMB3.12.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(LatestMovieMB3.12.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(LatestMovieMB3.12.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(LatestMovieMB3.12.VideoCodec)]</property>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(0).Property(LatestMovieMB3.12.DBID)])</onclick>
+		<onclick condition="!IsEmpty(Window(0).Property(LatestMovieMB3.12.Path))">PlayMedia($ESCINFO[Window(0).Property(LatestMovieMB3.12.Path)])</onclick>
+		
+		<visible>!IsEmpty(Window(0).Property(LatestMovieMB3.12.Title)) + [IsEmpty(Window(0).Property(RecommendedMovie.1.Title)) | Skin.HasSetting(noprogresswidget)]</visible>
+		</item>
+		<item>
+		<thumb>DefaultVideoPoster.png</thumb>
+		<onclick>noop</onclick>
+		<visible>IsEmpty(Window(0).Property(LatestMovieMB3.1.Title))</visible>
+		</item>
+		</content>
+		</control>
+	
 		<!-- random movies -->
 		<control type="panel" id="510">
 		<include>panel_layout</include>
@@ -2036,8 +2750,8 @@
 		<property name="poster">$INFO[Window(Home).Property(RandomMovieMB3.8.Art(poster))]</property>
 		<property name="File">$INFO[Window(Home).Property(RandomMovieMB3.8.File)]</property>
 		<property name="Codec">$INFO[Window(Home).Property(RandomMovieMB3.8.VideoCodec)]</property>
-		<onclick>Skin.SetString(custom_id,$INFO[Window(Home).Property(RandomMovieMB3.8.DBID)])</onclick>
-		<onclick condition="!IsEmpty(Window(Home).Property(RandomMovieMB3.8.Path))">PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.8.Path)])</onclick>
+		<onclick>Skin.SetString(custom_id,$INFO[Window(Home).Property					<visible>!IsEmpty(Window(0).Property(NextUpEpisodeMB3.8.EpisodeTitle))</visible>
+				andomMovieMB3.8.Path))">PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.8.Path)])</onclick>
 		
 		<visible>!IsEmpty(Window(Home).Property(RandomMovieMB3.8.Title))</visible>
 		</item>
@@ -2116,6 +2830,467 @@
 
 		</content>
 		</control>
+		
+		<!-- recommended movies -->
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),recommended)</visible>
+		<content>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.1.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.1.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.1.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.1.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.1.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.1.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.1.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.1.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.1.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.1.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.1.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.1.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.1.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.1.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.1.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.2.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.2.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.2.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.2.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.2.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.2.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.2.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.2.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.2.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.2.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.2.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.2.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.2.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.2.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.2.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.3.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.3.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.3.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.3.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.3.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.3.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.3.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.3.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.3.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.3.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.3.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.3.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.3.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.3.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.3.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.4.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.4.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.4.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.4.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.4.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.4.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.4.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.4.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.4.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.4.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.4.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.4.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.4.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.4.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.4.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.5.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.5.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.5.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.5.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.5.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.5.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.5.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.5.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.5.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.5.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.5.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.5.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.5.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.5.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.5.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.6.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.6.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.6.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.6.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.6.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.6.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.6.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.6.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.6.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.6.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.6.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.6.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.6.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.6.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.6.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.7.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.7.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.7.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.7.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.7.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.7.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.7.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.7.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.7.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.7.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.7.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.7.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.7.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.7.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.7.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.8.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.8.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.8.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.8.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.8.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.8.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.8.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.8.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.8.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.8.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.8.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.8.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.8.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.8.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.8.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.9.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.9.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.9.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.9.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.9.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.9.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.9.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.9.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.9.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.9.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.9.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.9.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.9.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.9.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.9.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.10.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.10.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.10.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.10.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.10.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.10.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.10.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.10.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.10.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.10.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.10.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.10.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.10.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.10.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.10.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.11.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.11.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.11.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.11.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.11.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.11.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.11.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.11.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.11.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.11.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.11.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.11.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.11.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.11.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.11.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(SuggestedMovieMB3.12.Title)]</label>
+		<label2>$INFO[Window(0).Property(SuggestedMovieMB3.12.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(SuggestedMovieMB3.12.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(SuggestedMovieMB3.12.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(SuggestedMovieMB3.12.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(SuggestedMovieMB3.12.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(SuggestedMovieMB3.12.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(SuggestedMovieMB3.12.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(SuggestedMovieMB3.12.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(SuggestedMovieMB3.12.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(SuggestedMovieMB3.12.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(SuggestedMovieMB3.12.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(SuggestedMovieMB3.12.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(SuggestedMovieMB3.12.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(SuggestedMovieMB3.12.Title))</visible>
+		</item>
+		<item>
+		<thumb>DefaultVideoPoster.png</thumb>
+		<onclick>noop</onclick>
+		<visible>IsEmpty(Window(0).Property(SuggestedMovieMB3.1.Title))</visible>
+		</item>
+		</content>
+		</control>
+
+		<!-- inprogress movies -->
+		<control type="panel" id="510">
+		<include>panel_layout</include>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)</visible>
+		<content>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.1.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.1.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.1.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.1.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.1.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.1.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.1.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.1.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.1.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.1.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.1.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.1.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.1.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.1.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.1.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.2.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.2.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.2.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.2.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.2.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.2.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.2.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.2.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.2.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.2.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.2.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.2.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.2.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.2.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.2.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.3.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.3.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.3.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.3.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.3.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.3.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.3.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.3.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.3.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.3.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.3.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.3.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.3.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.3.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.3.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.4.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.4.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.4.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.4.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.4.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.4.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.4.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.4.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.4.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.4.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.4.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.4.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.4.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.4.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.4.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.5.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.5.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.5.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.5.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.5.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.5.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.5.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.5.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.5.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.5.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.5.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.5.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.5.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.5.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.5.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.6.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.6.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.6.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.6.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.6.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.6.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.6.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.6.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.6.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.6.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.6.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.6.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.6.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.6.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.6.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.7.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.7.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.7.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.7.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.7.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.7.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.7.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.7.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.7.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.7.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.7.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.7.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.7.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.7.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.7.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.8.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.8.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.8.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.8.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.8.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.8.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.8.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.8.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.8.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.8.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.8.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.8.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.8.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.8.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.8.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.9.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.9.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.9.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.9.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.9.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.9.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.9.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.9.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.9.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.9.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.9.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.9.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.9.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.9.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.9.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.10.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.10.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.10.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.10.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.10.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.10.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.10.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.10.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.10.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.10.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.10.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.10.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.10.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.10.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.10.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.11.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.11.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.11.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.11.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.11.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.11.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.11.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.11.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.11.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.11.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.11.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.11.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.11.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.11.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.11.Title))</visible>
+		</item>
+		<item>
+		<label>$INFO[Window(0).Property(InProgressMovieMB3.12.Title)]</label>
+		<label2>$INFO[Window(0).Property(InProgressMovieMB3.12.Tagline)]</label2>
+		<thumb>$INFO[Window(0).Property(InProgressMovieMB3.12.Art(landscape))]</thumb>
+		<icon>$INFO[Window(0).Property(InProgressMovieMB3.12.Art(fanart))]</icon>
+		<property name="Genre">$INFO[Window(0).Property(InProgressMovieMB3.12.Genre)]</property>
+		<property name="Runtime">$INFO[Window(0).Property(InProgressMovieMB3.12.Runtime)]</property>
+		<property name="VideoRating">$INFO[Window(0).Property(InProgressMovieMB3.12.Rating)]</property>
+		<property name="Plot">$INFO[Window(0).Property(InProgressMovieMB3.12.Plot)]</property>
+		<property name="Year">$INFO[Window(0).Property(InProgressMovieMB3.12.Year)]</property>
+		<property name="poster">$INFO[Window(0).Property(InProgressMovieMB3.12.Art(poster))]</property>
+		<property name="File">$INFO[Window(0).Property(InProgressMovieMB3.12.Path)]</property>
+		<property name="Codec">$INFO[Window(0).Property(InProgressMovieMB3.12.VideoCodec)]</property>
+		<property name="Percent">$INFO[Window(0).Property(InProgressMovieMB3.12.PercentPlayed)]</property>
+		
+		<onclick>PlayMedia($ESCINFO[Window(0).Property(InProgressMovieMB3.12.Path)])</onclick>
+		<visible>!IsEmpty(Window(0).Property(InProgressMovieMB3.12.Title))</visible>
+		</item>
+		<item>
+		<thumb>DefaultVideoPoster.png</thumb>
+		<onclick>noop</onclick>
+		<visible>IsEmpty(Window(0).Property(InProgressMovieMB3.1.Title))</visible>
+		</item>
+		</content>
+		</control>
+
+		
+	.
 	</include>
 	
 	<include name="normalMusicHubs">
@@ -2413,8 +3588,6 @@
 	
 	<!-- random songs -->
 	<control type="panel" id="510">
-	
-	<!-- random songs -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),randomsong)</visible>
 	<content>
@@ -3085,6 +4258,170 @@
 	
 	<include name="MediaBrowserMusicHubs">
 
+	<!-- latest albums -->
+	<control type="panel" id="510">
+	<include>panel_layout</include>
+	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),latestalbum)</visible>
+	<content>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.1.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.1.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.1.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.1.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.1.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.1.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.1.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.1.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.1.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.1.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.2.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.2.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.2.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.2.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.2.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.2.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.2.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.2.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.2.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.2.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.3.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.3.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.3.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.3.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.3.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.3.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.3.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.3.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.3.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.3.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.4.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.4.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.4.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.4.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.4.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.4.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.4.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.4.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.4.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.4.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.5.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.5.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.5.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.5.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.5.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.5.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.5.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.5.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.5.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.5.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.6.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.6.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.6.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.6.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.6.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.6.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.6.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.6.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.6.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.6.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.7.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.7.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.7.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.7.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.7.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.7.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.7.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.7.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.7.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.7.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.8.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.8.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.8.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.8.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.8.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.8.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.8.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.8.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.8.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.8.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.9.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.9.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.9.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.9.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.9.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.9.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.9.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.9.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.9.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.9.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.10.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.10.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.10.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.10.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.10.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.10.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.10.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.10.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.10.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.10.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.11.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.11.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.11.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.11.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.11.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.11.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.11.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.11.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.11.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.11.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(Home).Property(LatestAlbumMB3.12.Title)]</label>
+	<label2>$INFO[Window(Home).Property(LatestAlbumMB3.12.Artist)]</label2>
+	<icon>$INFO[Window(Home).Property(LatestAlbumMB3.12.Thumb)]</icon>
+	<thumb>$INFO[Window(Home).Property(LatestAlbumMB3.12.Art(fanart))]</thumb>
+	<property name="Genre">$INFO[Window(Home).Property(LatestAlbumMB3.12.Genre)]</property>
+	<property name="MusicRating">$INFO[Window(Home).Property(LatestAlbumMB3.12.Rating)]</property>
+	<property name="Plot">$INFO[Window(Home).Property(LatestAlbumMB3.12.Plot)]</property>
+	<property name="Year">$INFO[Window(Home).Property(LatestAlbumMB3.12.Year)]</property>
+	<onclick>PlayMedia($INFO[Window(Home).Property(LatestAlbumMB3.12.Path)])</onclick>
+	<onclick condition="System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+	<visible>!IsEmpty(Window(Home).Property(LatestAlbumMB3.12.Title))</visible>
+	</item>
+	</content>
+	</control>
+	
 	<!-- random album -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
@@ -3253,6 +4590,13 @@
 	</item>
 	</content>
 	</control>
+	
+	<!-- in progress music -->
+	<control type="panel" id="510">
+		<include>panel_layout</include>
+		<content target="video">$INFO[Window.Property(xbmb3c.std.music.2.content)]</content>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),inprogress)</visible>
+		</control>
 	
 	</include>
 	

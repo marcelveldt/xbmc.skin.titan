@@ -1799,6 +1799,18 @@
                     <selected>!Skin.String(CustomTVShowsFolder, artwork) + Skin.String(CustomTVShowsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
                 </control>
+				<control type="radiobutton" id="9825">
+                    <!--enable submenu -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[1035]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseTVseriesSubmenu)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseTVseriesSubmenu)</selected>
+                    <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
+                </control>
                 <!-- radio button -->
                 <control type="label" id="9026">
                     <width>1230</width>
@@ -2631,6 +2643,18 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableArtworkDownloader)</onclick>
                     <selected>Skin.HasSetting(EnableArtworkDownloader)</selected>
+                </control>
+				<control type="radiobutton" id="5118">
+                    <description></description>
+                    <!--enable auto show submenus-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31113</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(EnableAutoSubMenu)</onclick>
+                    <selected>Skin.HasSetting(EnableAutoSubMenu)</selected>
                 </control>
             </control>
         </control>

@@ -7,9 +7,9 @@
         <!--Panel-->
         <control type="image">
             <include>animation_dialog_button</include>
-            <posx>0</posx>
+            <posx>-5</posx>
             <posy>486</posy>
-            <width>1920</width>
+            <width>1930</width>
             <height>260</height>
             <texture>dialogs/button/panel.png</texture>
         </control>
@@ -74,19 +74,46 @@
                 <animation effect="fade" time="250">WindowOpen</animation>
                 <animation effect="fade" time="250">WindowClose</animation>
             </control>
+			<control type="label">
+                <!--Logoff-->
+                <label>Switch user</label>
+                <width>560</width>
+                <height>55</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Reg42</font>
+                <textcolor>white</textcolor>
+                <visible>Control.HasFocus(3120)</visible>
+                <animation effect="fade" time="450" delay="250">Visible</animation>
+                <animation effect="fade" time="250">WindowOpen</animation>
+                <animation effect="fade" time="250">WindowClose</animation>
+            </control>
         </control>
         <!--Button Grouplist-->
         <control type="grouplist" id="3110">
             <include>animation_dialog_button</include>
             <posx>672</posx>
             <posy>580</posy>
-            <width>650</width>
+            <width>800</width>
             <height>75</height>
             <itemgap>110</itemgap>
             <align>center</align>
 			<onup>Dialog.Close(all,true)</onup>
 			<ondown>Dialog.Close(all,true)</ondown>
             <orientation>horizontal</orientation>
+			<control type="button" id="3120">
+                <!--LogOff-->
+                <description>Settings menu</description>
+                <width>64</width>
+                <height>64</height>
+                <font>-</font>
+                <label>-</label>
+                <onclick>System.LogOff</onclick>
+                <texturefocus>common/lock.png</texturefocus>
+                <texturenofocus colordiffuse="black">common/lock.png</texturenofocus>
+                <pulseonselect>yes</pulseonselect>
+				<visible>System.HasLoginScreen</visible>
+            </control>
             <control type="button" id="3119">
                 <!--Settings-->
                 <description>Settings menu</description>

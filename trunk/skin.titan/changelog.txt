@@ -1,3 +1,11 @@
+v.2.0.16
+- added Big Panel view
+- fixed several graphical glitches
+- fixed home submenu
+- added option to auto show submenu
+- added support for profiles/switch user
+- moved widgets load to startup to improve speed
+
 v.2.0.15
 - NOW compatible with xbmc/kodi 14 (helix)
 - new enhanced home screen widgets

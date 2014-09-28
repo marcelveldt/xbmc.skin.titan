@@ -60,7 +60,7 @@
             <!--Poster-->
             <width>200</width>
             <height>294</height>
-            <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+            <texture background="true">$VAR[PosterThumb]</texture>
             <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
@@ -76,7 +76,7 @@
             <!--Poster-->
             <width>200</width>
             <height>294</height>
-            <texture background="true" diffuse="poster_matte.png">$INFO[ListItem.Art(poster)]</texture>
+            <texture background="true" diffuse="poster_matte.png">$VAR[PosterThumb]</texture>
             <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
@@ -167,7 +167,7 @@
             </animation>
             <width>200</width>
             <height>294</height>
-            <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+            <texture background="true">$VAR[PosterThumb]</texture>
             <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
@@ -195,7 +195,7 @@
             </animation>
             <width>200</width>
             <height>294</height>
-            <texture background="true" diffuse="poster_matte.png">$INFO[ListItem.Art(poster)]</texture>
+            <texture background="true" diffuse="poster_matte.png">$VAR[PosterThumb]</texture>
             <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>

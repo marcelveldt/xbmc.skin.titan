@@ -269,23 +269,23 @@
         <value condition="Skin.String(MB3ChannelsBackground)">$INFO[Skin.String(MB3ChannelsBackground)]</value>
     </variable>
     <variable name="MusicButtonOnClick">
+		<value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.HasSetting(EnableAutoSubMenu)">SetProperty(submenu,show,Home)</value>
         <value condition="Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(Music, $INFO[Skin.String(HomeMenuUseMusicCollection)], return)</value>
-        <value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.String(HomeMenuUseMusicCollection)">Skin.SetString(HomeMenuSubMenu, music)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">ActivateWindow(Music, MusicLibrary, return)</value>
         <value condition="Skin.HasSetting(MediaBrowserMode) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">$INFO[Window.Property(xbmb3c.std.music.0.path)]</value>
     </variable>
     <variable name="NetflixButtonOnClick">
-        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu)">Skin.SetString(HomeMenuSubMenu, netflix)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu) + !SubString(Window(Home).Property(submenu),loading)">SetProperty(submenu,show,Home)</value>
         <value>ActivateWindow(10025,"plugin://plugin.video.netflixbmc",return)</value>
     </variable>
     <variable name="MoviesButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies) + Skin.HasSetting(HomeMenuUseMoviesSubmenu)">Skin.SetString(HomeMenuSubMenu, netflix)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(EnableAutoSubMenu)">SetProperty(submenu,show,Home)</value>
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</value>
-        <value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu)">Skin.SetString(HomeMenuSubMenu, movies)</value>
-        <value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,movietitles,return)</value>
-        <value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.0.path)]</value>
+        <value condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,movietitles,return)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.0.path)]</value>
     </variable>
     <variable name="TVseriesButtonOnClick">
+		<value condition="Skin.HasSetting(HomeMenuUseTVseriesSubmenu) + !Skin.HasSetting(EnableAutoSubMenu)">SetProperty(submenu,show,Home)</value>
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries)">ActivateWindow(Video,tvshowtitles,return)</value>
         <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.0.path)]</value>
@@ -303,7 +303,7 @@
         <value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window.Property(xbmb3c.std.music.3.path)]</value>
     </variable>
     <variable name="LiveTVButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuLiveTVSubmenu)">Skin.SetString(HomeMenuSubMenu, livetv)</value>
+		<value condition="Skin.HasSetting(HomeMenuLiveTVSubmenu) + !Skin.HasSetting(EnableAutoSubMenu)">SetProperty(submenu,show,Home)</value>
 		<value condition="SubString(System.BuildVersion,14,left) + Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVGuide)</value>
         <value condition="SubString(System.BuildVersion,14,left) + !Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVChannels)</value>
         <value condition="Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</value>
@@ -388,6 +388,13 @@
 		<value condition="IsEmpty(Container(510).ListItem.Property(poster))">$INFO[Container(510).ListItem.ActualIcon]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),weather)">$INFO[Container(510).ListItem.Thumb]</value>
 		<value>$INFO[Container(510).ListItem.Property(poster)]</value>
+    </variable>
+	
+	<variable name="PosterThumb">
+		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+		<value condition="!IsEmpty(ListItem.Property(poster))">$INFO[ListItem.Property(poster)]</value>
+		<value>$INFO[ListItem.Thumb]</value>
     </variable>
 	
 	<variable name="HomeMenuHubInfoRating">
@@ -530,6 +537,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">$LOCALIZE[31102]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, newmovies)">$LOCALIZE[31048]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, inprogressmovies)">$LOCALIZE[31035]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, recommended)">Recommended Movies</value>
 		
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, random) | !Skin.String(TvShowsWidget)">$LOCALIZE[31103]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, latest)">$LOCALIZE[31105]</value>
@@ -561,7 +569,9 @@
 		<!-- movies -->
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">Skin.SetString(MoviesWidget, newmovies)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, newmovies)">Skin.SetString(MoviesWidget, inprogressmovies)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, inprogressmovies)">Skin.SetString(MoviesWidget, randommovies)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, inprogressmovies) + !Skin.HasSetting(HomeMenuUseMBforMovies)">Skin.SetString(MoviesWidget, randommovies)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, inprogressmovies) + Skin.HasSetting(HomeMenuUseMBforMovies)">Skin.SetString(MoviesWidget, recommended)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, recommended) + Skin.HasSetting(HomeMenuUseMBforMovies)">Skin.SetString(MoviesWidget, randommovies)</value>
 		
 		<!-- tvshows -->
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, random) | !Skin.String(TvShowsWidget)">Skin.SetString(TvShowsWidget, latest)</value>
@@ -599,46 +609,92 @@
 
 	</variable>
 	
-	
-	<variable name="CustomHomeHubContent">
+	<variable name="NetflixHubContentGeneral">
+		<value condition="StringCompare(skin.string(NetflixWidget),random)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=both&amp;url=slider_3</value>
+		<value condition="StringCompare(skin.string(NetflixWidget),inprogresstvshows)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
+		<value condition="StringCompare(skin.string(NetflixWidget),inprogressmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
+	 </variable>
+	 
+	 <variable name="NetflixHubContentMovies">
+		<value condition="StringCompare(skin.string(MoviesWidget),newmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
+		<value condition="StringCompare(skin.string(MoviesWidget),randommovies)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=movie&amp;url=slider_3</value>
+		<value condition="StringCompare(skin.string(MoviesWidget),inprogressmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
+	 </variable>
+	 
+	 <variable name="NetflixHubContentTvShows">
+		<value condition="Skin.HasSetting(SubString(skin.string(TvShowsWidget),latest)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
+		<value condition="SubString(skin.string(TvShowsWidget),random)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=tv&amp;url=slider_3</value>
+		<value condition="SubString(skin.string(TvShowsWidget),inprogress)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
+	 </variable>
+
+	 <variable name="MB3CustomHomeHubContent">
 		<!-- mb3 custom content -->
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + [StringCompare(Container(300).ListItem.Property(type),photos) | StringCompare(Container(300).ListItem.Property(type),virtual)]">$INFO[Container(300).ListItem.Property(recent)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(skin.string(mb3customwidgettv),recent) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(300).ListItem.Property(recent)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(skin.string(mb3customwidgettv),inprogress) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(300).ListItem.Property(nextepisodes)]</value>
-		
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(skin.string(mb3customwidget),recent)">$INFO[Container(300).ListItem.Property(recent)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(skin.string(mb3customwidget),inprogress)">$INFO[Container(300).ListItem.Property(inprogress)]</value>
-
-		<!-- other custom items -->
-		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),custom)">$INFO[Container(300).ListItem.Property(contentpath)]</value>
-		
-		<!-- mb3 standard content -->
-		<value condition="Skin.HasSetting(HomeMenuUseMBforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),latest)">$INFO[Window.Property(xbmb3c.std.tvshows.1.content)]</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)">$INFO[Window.Property(xbmb3c.std.tvshows.3.content)]</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)">$INFO[Window.Property(xbmb3c.std.movies.1.content)]</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)">$INFO[Window.Property(xbmb3c.std.movies.2.content)]</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),latestalbum)">$INFO[Window.Property(xbmb3c.std.music.1.content)]</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),inprogress)">$INFO[Window.Property(xbmb3c.std.music.2.content)]</value>
-
-		<!-- netflix content -->
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),randommovies)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=movie&amp;url=slider_3</value>
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),latest)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),random)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=tv&amp;url=slider_3</value>
-		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
-		
-		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),random)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=both&amp;url=slider_3</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),inprogresstvshows)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),inprogressmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
-		<value></value>
 	 </variable>
+	
+	
 	
 	<variable name="musicvideoscontentpath">
 		<value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(xbmb3c.std.music.3.content)]</value>
 		<value>videodb://recentlyaddedmusicvideos/</value>
 	</variable>
 	
-	
+	<variable name="Banner" description="TV Banners">
+		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+		<value condition="Skin.HasSetting(plexbmc)">$INFO[ListItem.Property(banner)]</value>
+		<value>$INFO[ListItem.Art(thumb)]</value>
+	 </variable>
+  
+	<variable name="Details" description="Shown Above Plots and descriptions">
+    <value condition="!Container.content(Addons) + Window.IsActive(MyPics.xml)">$INFO[ListItem.Date,, • ]$INFO[ListItem.Size]</value>
+    <value condition="Container.content(Albums)">$INFO[ListItem.Artist]</value>
+    <value condition="Container.Content(Episodes)">$INFO[ListItem.Premiered,,  • ]$INFO[ListItem.Duration,, $LOCALIZE[12391]]$INFO[ListItem.Rating,  • ]</value>
+    <value condition="Container.Content(Addons)">$INFO[ListItem.Property(Addon.Creator),$LOCALIZE[21863] : ]</value>
+    <value condition="Container.Content(songs) + !IsEmpty(ListItem.Album)">[COLOR=Grey]$LOCALIZE[558]:[/COLOR] $INFO[ListItem.Album]</value>
+    <value condition="Container.Content(Artists) + !IsEmpty(ListItem.Property(artist_genre))">$INFO[ListItem.Property(artist_genre),[COLOR=Grey]$LOCALIZE[515]: [/COLOR]]</value>
+    <value condition="Container.Content(Artists) + !IsEmpty(ListItem.Property(artist_style))">$INFO[ListItem.Property(artist_style),[COLOR=Grey]$LOCALIZE[176]: [/COLOR]]</value>
+    <value condition="Container.Content(MusicVideos)">$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration,, $LOCALIZE[31297]]</value>
+    <value condition="Container.Content(Movies)">$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration,, $LOCALIZE[31297]]$INFO[ListItem.Rating, • ]$INFO[ListItem.MPAA, • ]</value>
+    <value condition="IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(Seasons) | Container.Content(TVShows)]">$INFO[ListItem.Year,, • ]$INFO[ListItem.MPAA,, • ]$INFO[ListItem.Property(TotalEpisodes),$LOCALIZE[20360] • ] [COLOR=Orange]$INFO[ListItem.Property(UnWatchedEpisodes), (,) ][/COLOR]</value>
+    <value condition="!IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(Seasons) | Container.Content(TVShows)]">$INFO[ListItem.Year,, • ]$INFO[ListItem.MPAA,, • ]$INFO[ListItem.Property(TotalEpisodes),$LOCALIZE[20360] • ]</value>
+    <value>$INFO[ListItem.Label2]</value>
+  </variable>
+  
+  <variable name="Plots" description="Plots and descriptions">
+    <value condition="Container.content(addons) + !IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
+    <value condition="SubString(ListItem.Path,videodb://movies/sets/)">$LOCALIZE[20457]</value>
+    <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Plot) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Plot]</value>
+	<value condition="Container.Content(Seasons) + !IsEmpty(Container.ShowPlot) + !IsEmpty(ListItem.Title)">$INFO[Container.ShowPlot]</value>
+    <value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+    <value condition="Container.Content(albums) + IsEmpty(ListItem.Property(Album_Description))">$LOCALIZE[414]</value>
+    <value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+    <value condition="Window.IsActive(MyPics.xml) + !IsEmpty(ListItem.PictureDesc)">$INFO[ListItem.PictureDesc]</value>
+    <value condition="Window.IsActive(MyPics.xml) + !IsEmpty(ListItem.PictureComment)">$INFO[ListItem.PictureComment]</value>
+    <value condition="Window.IsActive(MyPics.xml) + !IsEmpty(ListItem.PictureKeywords)">$INFO[ListItem.PictureKeywords]</value>
+    <value condition="Window.IsActive(MyPics.xml)">[COLOR=Grey]$LOCALIZE[21821]:[/COLOR][CR][CR]   $LOCALIZE[416]</value>
+    <value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+  </variable>
+  
+  <variable name="HomeSubMenuTV">
+		<value condition="Skin.HasSetting(HomeMenuUseTVseriesSubmenu)">tvshows</value>
+   </variable>
+    <variable name="HomeSubMenuNetflix">
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu)">netflix</value>
+   </variable>
+   <variable name="HomeSubMenuMovies">
+		<value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu)">movies</value>
+   </variable>
+   <variable name="HomeSubMenuPVR">
+		<value condition="Skin.HasSetting(HomeMenuLiveTVSubmenu)">livetv</value>
+   </variable>
+   <variable name="HomeSubMenuMusic">
+		<value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu)">music</value>
+   </variable>
+   
+   
 	
 </includes>

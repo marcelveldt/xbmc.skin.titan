@@ -97,8 +97,8 @@
 		<thumb>$INFO[Skin.String(CustomPVRFolder)]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[LiveTVButtonOnClick]</onclick>
-		<property name="submenu">$INFO[Skin.String(HomeMenuSubMenu)]</property>
-		<include>HomeSubMenuClickActions</include>
+		<property name="submenu">$VAR[HomeSubMenuPVR]</property>
+		<onclick>Control.SetFocus(4444,0)</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuPVRButton)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],5,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],5,DOWN)</onclick>
@@ -113,9 +113,8 @@
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MusicButtonOnClick]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuMusicButton)</visible>
-		<property name="submenu">$INFO[Skin.String(HomeMenuSubMenu)]</property>
-		
-		<include>HomeSubMenuClickActions</include>
+		<property name="submenu">$VAR[HomeSubMenuMusic]</property>
+		<onclick>Control.SetFocus(4444,0)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],6,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],6,DOWN)</onclick>
 	</include>
@@ -127,8 +126,8 @@
 		<include>liveGadgetSetBackground</include>
 		<property name="widgettype">movies</property>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[MoviesButtonOnClick]</onclick>
-		<property name="submenu">$INFO[Skin.String(HomeMenuSubMenu)]</property>
-		<include>HomeSubMenuClickActions</include>
+		<property name="submenu">$VAR[HomeSubMenuMovies]</property>
+		<onclick>Control.SetFocus(4444,0)</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuMoviesButton)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],7,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],7,DOWN)</onclick>
@@ -156,9 +155,11 @@
 		<label>20343</label>
 		<icon>special://skin/extras/backgrounds/hover_my tv series.png</icon>
 		<property name="widgettype">tvshows</property>
+		<property name="submenu">$VAR[HomeSubMenuTV]</property>
 		<thumb>$VAR[TvseriesButtonThumb]</thumb>
 		<include>liveGadgetSetBackground</include>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[TVseriesButtonOnClick]</onclick>
+		<onclick>Control.SetFocus(4444,1)</onclick>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuTVShowsButton)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],9,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],9,DOWN)</onclick>
@@ -171,8 +172,8 @@
 		<property name="widgettype">netflix</property>
 		<thumb>$INFO[Skin.String(CustomNetflixFolder)]</thumb>
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$VAR[NetflixButtonOnClick]</onclick>
-		<property name="submenu">$INFO[Skin.String(HomeMenuSubMenu)]</property>
-		<include>HomeSubMenuClickActions</include>
+		<property name="submenu">$VAR[HomeSubMenuNetflix]</property>
+		<onclick>Control.SetFocus(4444,1)</onclick>
 		<include>liveGadgetSetBackground</include>
 		<visible>Control.IsVisible(4006) | Skin.HasSetting(HomeMenuNetflixButton)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],10,UP)</onclick>

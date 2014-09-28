@@ -465,6 +465,14 @@ msgctxt "#31112"
 msgid "Finishes at:"
 msgstr ""
 
+msgctxt "#31113"
+msgid "Auto show the submenus on the home tiles"
+msgstr ""
+
+msgctxt "#31114"
+msgid "Show large thumbnail"
+msgstr ""
+
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"
 msgstr ""

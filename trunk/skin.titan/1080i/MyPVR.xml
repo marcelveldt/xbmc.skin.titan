@@ -56,9 +56,10 @@
             <control type="image">
                 <posx>-19</posx>
                 <posy>360</posy>
-                <width>60</width>
-                <height>80</height>
-                <texture>dialogs/default/arrow-left-black.png</texture>
+                <width>80</width>
+                <height>60</height>
+                <texture>dialogs/default/arrow.png</texture>
+				<visible>skin.hastheme(classic)</visible>
             </control>
             <control type="image">
                 <width>500</width>

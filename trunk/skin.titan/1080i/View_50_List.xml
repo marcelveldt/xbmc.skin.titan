@@ -91,7 +91,7 @@
                 <height>500</height>
                 <!--1,407-->
                 <fadetime>600</fadetime>
-                <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+                <texture background="true">$VAR[PosterThumb]</texture>
             </control>
             <control type="image">
                 <!--Poster-->

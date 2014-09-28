@@ -466,6 +466,14 @@ msgctxt "#31112"
 msgid "Finishes at:"
 msgstr "Klaar om:"
 
+msgctxt "#31113"
+msgid "Auto show the submenus on the home tiles"
+msgstr "Automatisch de submenu's laten zien voor de home tiles"
+
+msgctxt "#31114"
+msgid "Show large thumbnail"
+msgstr "grote thumbnail tonen"
+
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"
 msgstr "[B]CONFIGUREER UITERLIJKE INSTELLINGEN[/B][CR][CR][COLOR=midgrey] Verander skin · Verander taal en regio  · Verander bestandsindeling opties · Stel een screensaver in[/COLOR]"

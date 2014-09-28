@@ -12,6 +12,7 @@
     <include file="View_52_Panel.xml" />
     <include file="View_53_PanelDetails.xml" />
 	<include file="View_56_BannerPlex.xml" />
+	<include file="View_57_BigPanel.xml" />
     <include file="IncludesVariables.xml" />
     <include file="IncludesNowPlaying.xml" />
     <include file="IncludesNextUp.xml" />
@@ -653,7 +654,7 @@
     <include name="SubMenuTabLeft">
         <!--Sub Menu Tab Left-->
         <control type="image">
-            <visible>[Control.IsVisible(50) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(52)] + ![Control.IsVisible(51) | Control.IsVisible(501) | Control.IsVisible(505) | Control.IsVisible(54) | Control.IsVisible(53) | Control.IsVisible(506)]</visible>
+            <visible>[Control.IsVisible(50) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(52) | Control.IsVisible(57)] + ![Control.IsVisible(51) | Control.IsVisible(501) | Control.IsVisible(505) | Control.IsVisible(54) | Control.IsVisible(53) | Control.IsVisible(506)]</visible>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
             <posx>0</posx>
@@ -2710,6 +2711,7 @@
 	
     <include name="defaultskinsettings">
         <!-- skin default settings -->
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(showsplash,true,Home)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomBackgroundSetting, blue)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomMusicFolder, artwork)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomMoviesFolder, artwork)</onload>
@@ -2795,7 +2797,7 @@
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(NetflixWidget, inprogresstvshows)</onload>
 		
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults3)">Skin.SetString(mb3customwidget, recent)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults4)">Skin.SetString(mb3customwidgettv, inprogress)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults3)">Skin.SetString(mb3customwidgettv, inprogress)</onload>
 		
 		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, latestalbum)">Skin.SetString(MusicWidget, latestalbum)</value>
 		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, library)">Skin.SetString(MusicWidget, latestalbum)</value>
@@ -2851,5 +2853,5 @@
 			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,4)]">Control.SetFocus(4451,1)</onclick>
 			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,5)]">Control.SetFocus(4452,1)</onclick>
 		</include>
-	
+		
 </includes>
