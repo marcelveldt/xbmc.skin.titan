@@ -1,4 +1,5 @@
-1.0.3 
+1.0.4
+- added method for autofocus submenus
 - new methods for retrieving the artwork
 - support for custom collection widgets
 1.0.2 - fixed small issue with moving home items that are top most or down

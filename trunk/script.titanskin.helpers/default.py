@@ -82,7 +82,25 @@ def setView(containerType,viewId):
         
         #xbmc.executebuiltin("Container.Refresh")
     
- 
+
+def showSubmenu():
+    
+    win = xbmcgui.Window( 10000 )
+    submenu = win.getProperty("submenutype")
+    submenuloading = win.getProperty("submenuloading")
+    
+    if submenuloading != "loading":
+        if submenu != "":
+            win.setProperty("submenu", "show")
+            xbmc.executebuiltin('Control.SetFocus(4444,0)')
+        else:
+            win.setProperty("submenu", "hide")
+    
+    else:
+        win.setProperty("submenuloading", "")
+   
+
+        
 #script init
 action = ""
 argument1 = ""
@@ -117,5 +135,7 @@ elif action == "SETVIEW":
     setView(argument1, argument2)
 elif action == "RESTORE":
     restoreHomeItems()
+elif action == "SHOWSUBMENU":
+    showSubmenu()
 else:
     xbmc.executebuiltin("Notification(Titan Mediabrowser,you can not run this script directly)") 
