@@ -35,15 +35,54 @@ def setHomeItems(curPoslabel, idToChange, moveDirection):
     xbmc.executebuiltin('Control.SetFocus(300, ' + str(curWinPos) + ')')    
 
 
-def setView(viewId, containerType):
+def setView(containerType,viewId):
     
+    if viewId=="00":
+        curView = xbmc.getInfoLabel("Container.Viewmode")
+        if curView == "Showcase":
+            viewId="51"
+        if curView == "Panel details":
+            viewId="53"  
+        if curView == "Showcase Details":
+            viewId="54"
+        if curView == "Panel":
+            viewId="52"
+        if curView == "Titan Banner details":
+            viewId="505"
+        if curView == "Banner list":
+            viewId="55"
+        if curView == "Extended":
+            viewId="506"           
+        if curView == "Banner Plex":
+            viewId="56"
+        if curView == "Titan Banner":
+            viewId="501"
+        if curView == "list":
+            viewId="50"
+    else:
+        viewId=viewId    
+      
     if xbmc.getCondVisibility("System.HasAddon(plugin.video.xbmb3c)"):
         __settings__ = xbmcaddon.Addon(id='plugin.video.xbmb3c')
+        __settings__.setSetting(xbmc.getSkinDir()+ '_VIEW_' + containerType, viewId)
         
-        __settings__.setSetting(xbmc.getSkinDir()+ '_VIEW_' + viewId, containerType)
-        xbmc.executebuiltin("Container.Refresh")     
-
-  
+    if xbmc.getCondVisibility("System.HasAddon(plugin.video.netflixbmc)"):
+        __settings__ = xbmcaddon.Addon(id='plugin.video.netflixbmc')
+        
+        if containerType=="MOVIES":
+            __settings__.setSetting('viewIdVideos', viewId)
+        elif containerType=="SERIES":
+            __settings__.setSetting('viewIdEpisodesNew', viewId)
+        elif containerType=="SEASONS":
+            __settings__.setSetting('viewIdEpisodesNew', viewId)
+        elif containerType=="EPISODES":
+            __settings__.setSetting('viewIdEpisodesNew', viewId)
+        else:
+            __settings__.setSetting('viewIdActivity', viewId) 
+        
+        #xbmc.executebuiltin("Container.Refresh")
+    
+ 
 #script init
 action = ""
 argument1 = ""
