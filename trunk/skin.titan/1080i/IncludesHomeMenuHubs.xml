@@ -70,11 +70,12 @@
 			<visible>StringCompare(Container(300).ListItem.Property(widgettype),music)</visible>
 		</control>
 		<control type="image">
-			<posx>1355</posx>
-			<posy>140</posy>
-			<width>480</width>
-			<height>270</height>
+			<posx>1500</posx>
+			<posy>110</posy>
+			<width>320</width>
+			<height>320</height>
 			<texture>$VAR[HomeMenuHubInfoPoster]</texture>
+			<aspectratio>keep</aspectratio>
 			<visible>StringCompare(Container(300).ListItem.Property(widgettype),weather)</visible>
 		</control>
 		
@@ -183,6 +184,7 @@
 		<control type="panel" id="510">
 		<include>panel_layout</include>
 		<content target="video">$VAR[CustomHomeHubContent]</content>
+		<visible>!StringCompare(Container(300).ListItem.Property(widgettype),weather) | !Skin.String(MoviesWidget, randommovies)</visible>
 		</control>
 	</include>
 	

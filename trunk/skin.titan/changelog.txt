@@ -1,7 +1,8 @@
-v.2.0.14
+v.2.0.15
 - NOW compatible with xbmc/kodi 14 (helix)
 - new enhanced home screen widgets
-- fixed fontcolors in classic theme
+- option for submenus in home
+- overall polishing of classic theme
 - changed homemenu reorder in skin settings
 - added shortcuts to skin settings
 - added profiles in settings

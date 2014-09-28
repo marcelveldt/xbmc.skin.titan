@@ -213,7 +213,7 @@
             <control type="fadelabel">
                 <!--Now Playing-->
                 <posx>310</posx>
-                <posy>5</posy>
+                <posy>15</posy>
                 <width>885</width>
                 <align>left</align>
                 <font>Reg28</font>
@@ -223,7 +223,7 @@
             <control type="fadelabel">
                 <!--Title-->
                 <posx>310</posx>
-                <posy>60</posy>
+                <posy>70</posy>
                 <width>1100</width>
                 <align>left</align>
                 <font>Bold45</font>
@@ -267,7 +267,7 @@
 			</control>
 			<control type="image">
 				<!--episode-->
-				<posx>60</posx>
+				<posx>70</posx>
 				<posy>30</posy>
 				<width>220</width>
 				<height>80</height>

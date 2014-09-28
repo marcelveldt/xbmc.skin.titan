@@ -348,12 +348,18 @@
     </variable>
 	
 	<variable name="HomeMenuHubImage">
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),weather)">$INFO[ListItem.ActualIcon]</value>
         <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
 		<value>$INFO[ListItem.Icon]</value>
     </variable>
 	
+	<variable name="HomeMenuHubBackground">
+        <value condition="!IsEmpty(Container(510).ListItem.Art(fanart))">$INFO[Container(510).ListItem.Art(fanart)]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.ActualIcon)">$INFO[Container(510).ListItem.ActualIcon]</value>
+		<value>$INFO[Container(510).ListItem.Icon]</value>
+    </variable>
 
 	<variable name="HomeMenuHubLabel">
 		<value condition="!IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
@@ -380,7 +386,7 @@
 		<value condition="!IsEmpty(Container(510).ListItem.Art(tvshow.poster))">$INFO[Container(510).ListItem.Art(tvshow.poster)]</value>
 		<value condition="!IsEmpty(Container(510).ListItem.Art(poster))">$INFO[Container(510).ListItem.Art(poster)]</value>
 		<value condition="IsEmpty(Container(510).ListItem.Property(poster))">$INFO[Container(510).ListItem.ActualIcon]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),weather)">$INFO[Container(510).ListItem.ActualIcon]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),weather)">$INFO[Container(510).ListItem.Thumb]</value>
 		<value>$INFO[Container(510).ListItem.Property(poster)]</value>
     </variable>
 	
@@ -625,7 +631,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),random)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=both&amp;url=slider_3</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),inprogresstvshows)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),inprogressmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
-
+		<value></value>
 	 </variable>
 	
 	<variable name="musicvideoscontentpath">

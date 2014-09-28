@@ -28,7 +28,15 @@
             <include>animation_fade_open_close</include>
             <posx>60</posx>
             <posy>40</posy>
-            <visible>!Window.IsActive(fullscreenvideo) + !Window.IsVisible(startup) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
+            <visible>!Window.IsActive(fullscreenvideo) + !Window.IsVisible(startup) + !Window.IsActive(DialogExtendedProgressBar.xml) + !Control.IsVisible(77778)</visible>
+			<control type="image">
+				<posx>-120</posx>
+				<posy>-60</posy>
+				<width>2040</width>
+				<height>180</height>
+				<texture background="true">views/filemanager_panel1.png</texture>
+				<visible>!skin.hastheme(classic)</visible>
+			</control>
             <control type="group">
                 <control type="image">
                     <description>Icon</description>
