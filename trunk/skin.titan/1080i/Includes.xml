@@ -18,6 +18,7 @@
     <include file="IncludesHomeMenu.xml" />
 	<include file="IncludesHomeMenuItems.xml" />
 	<include file="IncludesHomeMenuHubs.xml" />
+	<include file="IncludesHomeMenuSubMenu.xml" />
     <include file="IncludesViews.xml" />
 	<include file="IncludesKodi.xml" />
     <!--Artwork Downloader-->
@@ -1175,7 +1176,7 @@
         </control>
         <control type="label">
             <!--Right Time Remaining-->
-            <posx>1660</posx>
+            <posx>1680</posx>
             <posy>880</posy>
             <width>200</width>
             <align>right</align>
@@ -1190,13 +1191,13 @@
             <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
             <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
             <animation effect="slide" start="0" end="160" time="0" condition="Window.IsActive(DialogSeekbar.xml)">Conditional</animation>
-            <posx>1500</posx>
+            <posx>1690</posx>
             <posy>955</posy>
             <width>300</width>
             <align>right</align>
             <font>Light32</font>
             <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-            <label>$LOCALIZE[41155] $INFO[Player.FinishTime]</label>
+            <label>$LOCALIZE[31112] $INFO[Player.FinishTime]</label>
         </control>
         <control type="label">
             <!--End Time DialogSeekbar-->
@@ -1204,17 +1205,17 @@
             <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
             <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
             <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-            <posx>1660</posx>
+            <posx>1690</posx>
             <posy>955</posy>
             <width>300</width>
             <align>right</align>
             <font>Light32</font>
             <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-            <label>$LOCALIZE[41155] $INFO[Player.FinishTime]</label>
+            <label>$LOCALIZE[31112] $INFO[Player.FinishTime]</label>
         </control>
         <control type="grouplist">
             <!--Clock-->
-            <posx>1400</posx>
+            <posx>1395</posx>
             <posy>770</posy>
             <width>400</width>
             <height>100</height>
@@ -1667,15 +1668,42 @@
         </control>
         <!--Time-->
        <!--Time-->
-        <control type="label">
-            <!--Play Time-->
+	   <control type="label">
+            <!--End Time DialogFullscreenInfo-->
+            <visible>Window.IsActive(DialogFullscreenInfo.xml) | Window.IsActive(VideoOSD.xml)</visible>
+            <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+            <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
+            <animation effect="slide" start="0" end="160" time="0" condition="Window.IsActive(DialogSeekbar.xml)">Conditional</animation>
             <posx>1850</posx>
             <posy>890</posy>
-            <width>400</width>
+            <width>890</width>
             <align>right</align>
-            <font>Light32</font>
+            <font>Light30</font>
             <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
-            <label>$INFO[Player.Time] - $INFO[Player.TimeRemaining]</label>
+            <label>$LOCALIZE[31112] $INFO[Player.FinishTime]</label>
+        </control>
+	   
+        <control type="label">
+            <!--Play Time-->
+            <posx>350</posx>
+            <posy>928</posy>
+            <width>400</width>
+            <align>left</align>
+            <font>Light28</font>
+            <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
+            <label>$INFO[Player.Time]</label>
+			<visible>Player.HasDuration</visible>
+        </control>
+		<control type="label">
+            <!--Play Time-->
+            <posx>980</posx>
+            <posy>928</posy>
+            <width>400</width>
+            <align>left</align>
+            <font>Light28</font>
+            <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
+            <label>$INFO[Player.TimeRemaining]</label>
 			<visible>Player.HasDuration</visible>
         </control>
         <control type="grouplist">
@@ -1718,10 +1746,10 @@
         <!--Process/Seekbar-->
         <control type="progress" id="23">
             <description>Progress Bar</description>
-            <posx>350</posx>
+            <posx>450</posx>
             <posy>950</posy>
 			<height>20</height>
-            <width>800</width>
+            <width>493</width>
             <info>Player.Progress</info>
             <visible>Player.HasDuration</visible>
         </control>
@@ -2755,9 +2783,9 @@
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-45, 45)</onload>
 		<!-- download required artwork for the skin upon first run -->
 		<onload condition="!Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, clearlogo, clearart, banner, seasonbanner, landscape, seasonlandscape)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(EnableArtworkDownloader)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun)">Skin.Reset(EnableArtworkDownloader)</onload>
 		<!-- (optional) automatic run of the artwork downloader on startup -->
-		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + Skin.HasSetting(EnableArtworkDownloader) + Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, silent=true, mediatype=?)</onload>
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + Skin.HasSetting(EnableArtworkDownloader) + Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, silent=true, clearlogo, clearart, banner, seasonbanner, landscape, seasonlandscape)</onload>
 		
 		<!-- default settings for the new home widgets -->
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(MoviesWidget, newmovies)</onload>
@@ -2766,9 +2794,18 @@
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(UseHubsOnHomeScreen)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(NetflixWidget, inprogresstvshows)</onload>
 		
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults3)">Skin.SetString(mb3customwidget, recent)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults4)">Skin.SetString(mb3customwidgettv, inprogress)</onload>
+		
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, latestalbum)">Skin.SetString(MusicWidget, latestalbum)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, library)">Skin.SetString(MusicWidget, latestalbum)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, latestalbum)</value>
+
+		
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults)">Skin.SetBool(HomeMenuDefaults)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(HomeMenuDefaults1)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults2)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults3)</onload>
 
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
 		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
@@ -2777,11 +2814,42 @@
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
 		<onload>Skin.Reset(ShowNextUppanel)</onload>
     </include>
+	
     <include name="CastMB3Content">
         <content target="video">$INFO[ListItem.Property(CastPluginLink)]</content>
     </include>
 	<include name="SettingsUnusedHomeMenuItem">
         <label>==</label>
     </include>
+	
+	<include name="HomeSubMenuClickActions">
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,0)]">Control.SetFocus(4444,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,1)]">Control.SetFocus(4445,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,2)]">Control.SetFocus(4446,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,0)]">Control.SetFocus(4447,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,1)]">Control.SetFocus(4448,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,2)]">Control.SetFocus(4449,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,3)]">Control.SetFocus(4450,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,4)]">Control.SetFocus(4451,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,5)]">Control.SetFocus(4452,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,0)]">Control.SetFocus(4444,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,1)]">Control.SetFocus(4445,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,2)]">Control.SetFocus(4446,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,0)]">Control.SetFocus(4447,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,1)]">Control.SetFocus(4448,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,2)]">Control.SetFocus(4449,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,3)]">Control.SetFocus(4450,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,4)]">Control.SetFocus(4451,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,5)]">Control.SetFocus(4452,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,0)]">Control.SetFocus(4444,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,1)]">Control.SetFocus(4445,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,2)]">Control.SetFocus(4446,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,0)]">Control.SetFocus(4447,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,1)]">Control.SetFocus(4448,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,2)]">Control.SetFocus(4449,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,3)]">Control.SetFocus(4450,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,4)]">Control.SetFocus(4451,1)</onclick>
+			<onclick condition="[Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,5)]">Control.SetFocus(4452,1)</onclick>
+		</include>
 	
 </includes>

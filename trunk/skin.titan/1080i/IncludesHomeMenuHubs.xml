@@ -58,7 +58,7 @@
 			<height>351</height>
 			<aspectratio>stretch</aspectratio>
 			<texture background="true" fallback="defaultcovers/video_play.png">$VAR[HomeMenuHubInfoPoster]</texture>
-			<visible>!StringCompare(Container(300).ListItem.Property(contenttype),music) + !StringCompare(Container(300).ListItem.Property(contenttype),weather)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(widgettype),music) + !StringCompare(Container(300).ListItem.Property(widgettype),weather)</visible>
 		</control>
 		<control type="image">
 			<posx>1555</posx>
@@ -67,7 +67,7 @@
 			<height>261</height>
 			<aspectratio>stretch</aspectratio>
 			<texture background="true" fallback="defaultcovers/music_play.png">$VAR[HomeMenuHubInfoPoster]</texture>
-			<visible>StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
+			<visible>StringCompare(Container(300).ListItem.Property(widgettype),music)</visible>
 		</control>
 		<control type="image">
 			<posx>1355</posx>
@@ -75,7 +75,7 @@
 			<width>480</width>
 			<height>270</height>
 			<texture>$VAR[HomeMenuHubInfoPoster]</texture>
-			<visible>StringCompare(Container(300).ListItem.Property(contenttype),weather)</visible>
+			<visible>StringCompare(Container(300).ListItem.Property(widgettype),weather)</visible>
 		</control>
 		
 		</control>
@@ -93,7 +93,7 @@
                 <effect type="slide" start="0,0" end="0,300" time="800" tween="cubic" easing="inout" />
 				</animation>
 				
-				<animation type="conditional" condition="IsEmpty(Container(300).ListItem.Property(contenttype))" reversible="true">
+				<animation type="conditional" condition="IsEmpty(Container(300).ListItem.Property(widgettype))" reversible="true">
 				<effect type="fade" start="100" end="0" time="800" delay="200" />
 				</animation>
 				
@@ -149,30 +149,8 @@
                     <label>$VAR[HomeHubLabel]</label>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">Skin.SetString(MoviesWidget, newmovies)</onclick>
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, newmovies)">Skin.SetString(MoviesWidget, inprogressmovies)</onclick>
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, inprogressmovies)">Skin.SetString(MoviesWidget, randommovies)</onclick>
+					<onclick>$VAR[HomeHubClickActions]</onclick>
 					
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + Skin.String(TvShowsWidget, random) | !Skin.String(TvShowsWidget)">Skin.SetString(TvShowsWidget, latest)</onclick>
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + Skin.String(TvShowsWidget, latest)">Skin.SetString(TvShowsWidget, inprogress)</onclick>
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + Skin.String(TvShowsWidget, inprogress)">Skin.SetString(TvShowsWidget, random)</onclick>
-					
-					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, library)">Skin.SetString(MusicWidget, latestalbum)</onclick>
-					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, latestalbum)">Skin.SetString(MusicWidget, randomalbum)</onclick>
-					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, randomartist)</onclick>
-					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, inprogress)</onclick>
-					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, inprogress)">Skin.SetString(MusicWidget, latestsong)</onclick>
-					<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, latestsong)">Skin.SetString(MusicWidget, library)</onclick>
-					
-					<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, inprogress)">Skin.SetString(MusicWidget, randomalbum)</onclick>
-					<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, latestsong)</onclick>
-					<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, latestsong)">Skin.SetString(MusicWidget, inprogress)</onclick>
-					
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, inprogressmovies)">Skin.SetString(NetflixWidget, inprogresstvshows)</onclick>
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, inprogresstvshows)">Skin.SetString(NetflixWidget, random)</onclick>
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, random)">Skin.SetString(NetflixWidget, inprogressmovies)</onclick>
-					
-					<onclick condition="StringCompare(Container(300).ListItem.Property(contenttype),weather)">ActivateWindow(weather)</onclick>
 					
 				</control>
 				<control type="image">
@@ -187,29 +165,24 @@
 				
 				<include condition="![Skin.HasSetting(HomeMenuUseMBforMovies) | Skin.HasSetting(HomeMenuUseNetflixforMovies)]">normalMoviesHubs</include>
 				<include condition="Skin.HasSetting(HomeMenuUseMBforMovies)">MediaBrowserMoviesHubs</include>
-				<include condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">netFlixMoviesHubs</include>
 				
 				<include condition="![Skin.HasSetting(HomeMenuUseMBforTVseries) | Skin.HasSetting(HomeMenuUseNetflixforTVseries)]">normalTvHubs</include>
 				<include condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">mediaBrowserTvHubs</include>
-				<include condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">netflixTvHubs</include>
-				
+
 				<include condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">normalMusicHubs</include>
 				<include condition="Skin.HasSetting(HomeMenuUseMBforMusic)">MediaBrowserMusicHubs</include>
 				
 				<include>CustomHubs</include>
-				
-				<include condition="System.HasAddon(plugin.video.netflixbmc)">netflixCombinedHubs</include>
 				<include>weatherHub</include>
+
 				
 			</control>
 	</include>
 	
 	<include name="CustomHubs">
-		<!-- recent movies -->
 		<control type="panel" id="510">
 		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),custom)</visible>
-		<content target="video">$INFO[Container(300).ListItem.Property(contentpath)]</content>
+		<content target="video">$VAR[CustomHomeHubContent]</content>
 		</control>
 	</include>
 	
@@ -218,7 +191,7 @@
 		
 		<control type="panel" id="510">
 		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),weather)</visible>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),weather)</visible>
 			<content>
 				<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)][/UPPERCASE]</label>
@@ -292,7 +265,7 @@
 	<!-- recent movies -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)</visible>
+	<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(0).Property(RecentMovie.1.Title)]</label>
@@ -520,7 +493,7 @@
 	<!-- random movies -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),randommovies)</visible>
+	<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),randommovies)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(0).Property(RandomMovie.1.Title)]</label>
@@ -748,7 +721,7 @@
 	<!-- recommended movies -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)</visible>
+	<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(0).Property(RecommendedMovie.1.Title)]</label>
@@ -980,7 +953,7 @@
 	<!-- recent episodes -->
 				<control type="panel" id="510">
 					<include>panel_layout</include>
-					<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),latest)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),latest)</visible>
 					<content>
 					<item>
 					<label>$INFO[Window(0).Property(RecentEpisode.1.Title)]</label>
@@ -1203,7 +1176,7 @@
 				<!-- random series -->
 				<control type="panel" id="510">
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),random)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),random)</visible>
 				<content>
 				<item>
 				<label>$INFO[Window(0).Property(RandomEpisode.1.Title)]</label>
@@ -1431,7 +1404,7 @@
 				<!-- recommended episodes -->
 				<control type="panel" id="510">
 					<include>panel_layout</include>
-					<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)</visible>
 					<content>
 					<item>
 					<label>$INFO[Window(0).Property(RecommendedEpisode.1.Title)]</label>
@@ -1682,18 +1655,12 @@
 					</control>
 	
 	</include>
-	
+
 	<include name="mediaBrowserTvHubs">
-	<!-- recent episodes -->
-				<control type="panel" id="510">
-					<include>panel_layout</include>
-					<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),latest)</visible>
-					<content target="video">$INFO[Window.Property(xbmb3c.std.tvshows.1.content)]</content>
-				</control>
 				<!-- random series -->
 				<control type="panel" id="510">
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),random)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),random)</visible>
 				<content>
 				<item>
 				<label>$INFO[Window(Home).Property(RandomEpisodeMB3.1.EpisodeTitle)]</label>
@@ -1919,73 +1886,14 @@
 				</content>
 				
 				</control>
-				<!-- recommended episodes -->
-				<control type="panel" id="510">
-					<include>panel_layout</include>
-					<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)</visible>
-				<content target="video">$INFO[Window.Property(xbmb3c.std.tvshows.3.content)]</content>
-				</control>
-	
-	</include>
-	
-	<include name="netflixTvHubs">
-	<!-- recent episodes -->
-				<control type="panel" id="510">
-					<include>panel_layout</include>
-					<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),latest)</visible>
-					<content target="video">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</content>
-				</control>
-				<!-- random series -->
-				<control type="panel" id="510">
-				<include>panel_layout</include>
-				<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),random)</visible>
-				<content target="video">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=tv&amp;url=slider_3</content>
-				
-				</control>
-				<!-- in progress episodes -->
-				<control type="panel" id="510">
-					<include>panel_layout</include>
-					<visible>StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)</visible>
-				<content target="video">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</content>
-				</control>
-	
-	</include>
-	
-	<include name="netflixCombinedHubs">
-
-	<!-- recommended -->
-	<control type="panel" id="510">
-	<include>panel_layout</include>
-	<visible>StringCompare(Container(300).ListItem.Property(contenttype),netflix) + SubString(skin.string(NetflixWidget),random)</visible>
-	<content target="video">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=both&amp;url=slider_3</content>
-	
-	</control>
-	<!-- in progress episodes -->
-	<control type="panel" id="510">
-		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),netflix) + SubString(skin.string(NetflixWidget),inprogresstvshows)</visible>
-	<content target="video">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</content>
-	</control>
-	<!-- in progress movies -->
-	<control type="panel" id="510">
-	<include>panel_layout</include>
-	<visible>StringCompare(Container(300).ListItem.Property(contenttype),netflix) + StringCompare(skin.string(NetflixWidget),inprogressmovies)</visible>
-	<content target="video">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</content>
-	</control>
-	
 	</include>
 	
 	<include name="MediaBrowserMoviesHubs">
-		<!-- recent movies -->
-		<control type="panel" id="510">
-		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)</visible>
-		<content target="video">$INFO[Window.Property(xbmb3c.std.movies.1.content)]</content>
-		</control>
+
 		<!-- random movies -->
 		<control type="panel" id="510">
 		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),randommovies)</visible>
+		<visible>StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),randommovies)</visible>
 		<content>
 		<item>
 		<label>$INFO[Window(Home).Property(RandomMovieMB3.1.Title)]</label>
@@ -2206,42 +2114,13 @@
 
 		</content>
 		</control>
-		<!-- in progress movies -->
-		<control type="panel" id="510">
-		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)</visible>
-		<content target="video">$INFO[Window.Property(xbmb3c.std.movies.2.content)]</content>
-		</control>
-
-	</include>
-	
-	<include name="netFlixMoviesHubs">
-		<!-- recent movies -->
-		<control type="panel" id="510">
-		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)</visible>
-		<content target="video">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</content>
-		</control>
-		<!-- random movies -->
-		<control type="panel" id="510">
-		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),randommovies)</visible>
-		<content target="video">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=movie&amp;url=slider_3</content>
-		</control>
-		<!-- in progress movies -->
-		<control type="panel" id="510">
-		<include>panel_layout</include>
-		<visible>StringCompare(Container(300).ListItem.Property(contenttype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)</visible>
-		<content target="video">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</content>
-		</control>
-
 	</include>
 	
 	<include name="normalMusicHubs">
 	<!-- latest songs -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),latestsong)</visible>
+	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),latestsong)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window.Property(LatestSong.1.Title)]</label>
@@ -2369,7 +2248,7 @@
 	<!-- latest albums -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),latestalbum)</visible>
+	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),latestalbum)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(Home).Property(RecentAlbum.1.Title)]</label>
@@ -2535,7 +2414,7 @@
 	
 	<!-- random songs -->
 	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),randomsong)</visible>
+	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),randomsong)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(Home).Property(RandomSong.1.Title)]</label>
@@ -2663,7 +2542,7 @@
 	<!-- random album -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),randomalbum)</visible>
+	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),randomalbum)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
@@ -2827,7 +2706,7 @@
 	<!-- random artist -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),randomartist)</visible>
+	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),randomartist)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(Home).Property(RandomArtist.1.Title)]</label>
@@ -2955,7 +2834,7 @@
 	<!-- in progress music -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),inprogress)</visible>
+	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),inprogress)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(Home).Property(RecommendedAlbum.1.Title)]</label>
@@ -3119,7 +2998,7 @@
 	<!-- music library -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),library)</visible>
+	<visible>SubString(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),library)</visible>
 	<content>
 	
 	<item>
@@ -3204,17 +3083,10 @@
 	
 	<include name="MediaBrowserMusicHubs">
 
-	<!-- latest albums -->
-	<control type="panel" id="510">
-	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),latestalbum)</visible>
-	<content target="video">$INFO[Window.Property(xbmb3c.std.music.1.content)]</content>
-	</control>
-	
 	<!-- random album -->
 	<control type="panel" id="510">
 	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),randomalbum)</visible>
+	<visible>StringCompare(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),randomalbum)</visible>
 	<content>
 	<item>
 	<label>$INFO[Window(Home).Property(RandomAlbumMB3.1.Title)]</label>
@@ -3380,11 +3252,6 @@
 	</content>
 	</control>
 	
-	<!-- in progress music -->
-	<control type="panel" id="510">
-	<include>panel_layout</include>
-	<visible>SubString(Container(300).ListItem.Property(contenttype),music) + StringCompare(skin.string(MusicWidget),inprogress)</visible>
-	<content target="video">$INFO[Window.Property(xbmb3c.std.music.2.content)]</content></control>
 	</include>
 	
 	<include name="panel_layout">
@@ -3434,10 +3301,10 @@
             <width>340</width>
             <height>220</height>
             <texture background="true" diffuse="home/home_matte.png" fallback="banner_default.png">$VAR[HomeMenuHubImage]</texture>
-            <aspectratio scalediffuse="false" align="center" aligny="bottom">scale</aspectratio>
+            <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
             <fadetime>800</fadetime>
             <include>backgroundfade</include>
-			<visible>!StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(widgettype),music)</visible>
         </control>
 		<control type="image">
             <!--Panel Normal-->
@@ -3446,10 +3313,10 @@
             <width>340</width>
             <height>220</height>
             <texture background="true" diffuse="home/home_matte.png" fallback="defaultcovers/musicsongslandscape.png">$VAR[HomeMenuHubImage]</texture>
-            <aspectratio scalediffuse="false" align="center" aligny="bottom">scale</aspectratio>
+            <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
             <fadetime>800</fadetime>
             <include>backgroundfade</include>
-			<visible>StringCompare(Container(300).ListItem.Property(contenttype),music)</visible>
+			<visible>StringCompare(Container(300).ListItem.Property(widgettype),music)</visible>
         </control>
 		
 
@@ -3461,7 +3328,7 @@
             <height>263</height>
             <colordiffuse>ccFFFFFF</colordiffuse>
             <texture diffuse="home/home_matte.png">home/home_overlay.png</texture>
-			<visible>![StringCompare(Container(300).ListItem.Property(contenttype),movies) | StringCompare(Container(300).ListItem.Property(contenttype),custom)]</visible>
+			<visible>![StringCompare(Container(300).ListItem.Property(widgettype),movies) | StringCompare(Container(300).ListItem.Property(widgettype),custom) | StringCompare(Container(300).ListItem.Property(widgettype),mb3custom)]</visible>
         </control>
         <control type="label">
             <!--Label-->
@@ -3474,7 +3341,7 @@
             <label>$VAR[HomeMenuHubLabel]</label>
             <font>Light26</font>
             <textcolor>darkgrey</textcolor>
-			<visible>![StringCompare(Container(300).ListItem.Property(contenttype),movies) | StringCompare(Container(300).ListItem.Property(contenttype),custom)]</visible>
+			<visible>![StringCompare(Container(300).ListItem.Property(widgettype),movies) | StringCompare(Container(300).ListItem.Property(widgettype),custom) | StringCompare(Container(300).ListItem.Property(widgettype),mb3custom)]</visible>
         </control>
     </include>
     <include name="HomeMenuHubFocuslayout">
@@ -3497,7 +3364,7 @@
             <label>$VAR[HomeMenuHubLabel]</label>
             <font>Light26</font>
             <textcolor>white</textcolor>
-			<visible>![StringCompare(Container(300).ListItem.Property(contenttype),movies) | StringCompare(Container(300).ListItem.Property(contenttype),custom)]</visible>
+			<visible>![StringCompare(Container(300).ListItem.Property(widgettype),movies) | StringCompare(Container(300).ListItem.Property(widgettype),custom) | StringCompare(Container(300).ListItem.Property(widgettype),mb3custom)]</visible>
         </control>
         <control type="image">
             <!--Panel Focus-->

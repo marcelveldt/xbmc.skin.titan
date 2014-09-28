@@ -66,6 +66,14 @@
                 <height>800</height>
                 <texture border="39">dialogs/default/bg.png</texture>
                 <aspectratio>stretch</aspectratio>
+				<visible>skin.hastheme(classic)</visible>
+            </control>
+			<control type="image">
+                <width>500</width>
+                <height>800</height>
+                <texture border="39">dialogs/default/bg-black.png</texture>
+                <aspectratio>stretch</aspectratio>
+				<visible>!skin.hastheme(classic)</visible>
             </control>
             <!--Gouplist 9000-->
             <control type="grouplist" id="9000">
@@ -129,75 +137,12 @@
                     <label>View: $INFO[Container.Viewmode]</label>
                     <onclick>Container.NextViewMode</onclick>
 					
-					<onclick condition="StringCompare(Container.Viewmode, list) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,50)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, list) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,50)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, list) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,50)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, list) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,50)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, list) + Container.Content(Sets) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,50)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Titan Banner) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,501)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Titan Banner) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,501)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Titan Banner) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,501)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Titan Banner) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,501)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Titan Banner) + Container.Content(Sets) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,501)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Titan Banner details) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,505)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Titan Banner details) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,505)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Titan Banner details) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,505)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Titan Banner details) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,505)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Titan Banner details) + Container.Content(Sets) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,505)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,52)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,52)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,52)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,52)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(Sets) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,52)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,52)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,52)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,52)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,52)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel) + Container.Content(Sets) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,52)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Panel details) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,53)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel details) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,53)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel details) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,53)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel details) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,53)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Panel details) + Container.Content(Sets) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,53)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Showcase) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,51)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Showcase) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,51)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Showcase) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,51)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Showcase) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,51)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Showcase Details) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,54)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Showcase Details) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,54)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Showcase Details) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,54)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Showcase Details) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,54)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Banner list) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,55)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner list) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,55)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner list) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,55)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner list) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,55)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Banner list) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,55)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner list) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,55)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner list) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,55)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner list) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,55)</onclick>
-					
-					
-					<onclick condition="StringCompare(Container.Viewmode, Extended) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,506)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Extended) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,506)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Extended) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,506)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Extended) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,506)</onclick>
-					<onclick condition="StringCompare(Container.Viewmode, Extended) + Container.Content(Sets) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,506)</onclick>
-					
-					<onclick condition="StringCompare(Container.Viewmode, Banner Plex) + Container.Content(Movies) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,56)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner Plex) + Container.Content(seasons) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,56)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner Plex) + Container.Content(TVShows) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,56)</onclick>
-                    <onclick condition="StringCompare(Container.Viewmode, Banner Plex) + Container.Content(Episodes) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,56)</onclick>
-					<onclick condition="StringCompare(Container.Viewmode, Banner Plex) + Container.Content(Sets) + Skin.HasSetting(MediaBrowserMode)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,56)</onclick>
-				
+					<onclick condition="Container.Content(Movies)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,00)</onclick>
+                    <onclick condition="Container.Content(seasons)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,00)</onclick>
+                    <onclick condition="Container.Content(TVShows)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,00)</onclick>
+                    <onclick condition="Container.Content(Episodes)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,00)</onclick>
+                    <onclick condition="Container.Content(Sets)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,00)</onclick>
+
 				</control>
 				
 				<control type="radiobutton" id="341">

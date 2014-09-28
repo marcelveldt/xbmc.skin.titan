@@ -462,6 +462,10 @@ msgctxt "#31111"
 msgid "Use advanced homescreen (with hubs)"
 msgstr "Gebruik geavanceerd startscherm met widgets"
 
+msgctxt "#31112"
+msgid "Finishes at:"
+msgstr "Klaar om:"
+
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"
 msgstr "[B]CONFIGUREER UITERLIJKE INSTELLINGEN[/B][CR][CR][COLOR=midgrey] Verander skin · Verander taal en regio  · Verander bestandsindeling opties · Stel een screensaver in[/COLOR]"

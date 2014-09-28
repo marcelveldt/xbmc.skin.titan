@@ -18,15 +18,15 @@
                 <posx>10</posx>
                 <posy>255</posy>
                 <width>1903</width>
-                <height>750</height>
+                <height>792</height>
                 <texture>views/view_50_list_panel_noinfo.png</texture>
             </control>
             <control type="image">
                 <!-- All Other -->
                 <posx>10</posx>
-                <posy>255</posy>
+                <posy>225</posy>
                 <width>1903</width>
-                <height>750</height>
+                <height>792</height>
                 <texture>views/view_50_list_panel_noinfo1.png</texture>
                 <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + [Skin.HasSetting(NoFooterBar) | !Skin.Hastheme(classic)]</visible>
             </control>
@@ -34,18 +34,18 @@
                 <!-- Movies, TV-Shows, Music-Videos, seasons -->
                 <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + [!Skin.HasSetting(NoFooterBar) + skin.hastheme(classic)] + IntegerGreaterThan(Container.NumItems, 0)</visible>
                 <posx>10</posx>
-                <posy>255</posy>
+                <posy>200</posy>
                 <width>1903</width>
-                <height>750</height>
+                <height>792</height>
                 <texture>views/view_50_list_panel.png</texture>
             </control>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos, seasons -->
                 <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + [Skin.HasSetting(NoFooterBar) | !Skin.hastheme(classic)] + IntegerGreaterThan(Container.NumItems, 0)</visible>
                 <posx>10</posx>
-                <posy>255</posy>
+                <posy>200</posy>
                 <width>1903</width>
-                <height>750</height>
+                <height>792</height>
                 <texture>views/view_50_list_panel1.png</texture>
             </control>
             <control type="image">
@@ -54,16 +54,16 @@
                 <posx>10</posx>
                 <posy>255</posy>
                 <width>1903</width>
-                <height>750</height>
+                <height>792</height>
                 <texture>views/view_50_list_panel_episodes.png</texture>
             </control>
             <control type="image">
                 <!-- Episodes, Seasons -->
                 <visible>Container.Content(episodes) + [Skin.HasSetting(NoFooterBar) | !Skin.Hastheme(classic)] + IntegerGreaterThan(Container.NumItems, 0)</visible>
                 <posx>10</posx>
-                <posy>255</posy>
+                <posy>200</posy>
                 <width>1903</width>
-                <height>750</height>
+                <height>792</height>
                 <texture>views/view_50_list_panel_episodes1.png</texture>
             </control>
 			

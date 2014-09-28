@@ -5,7 +5,6 @@
     <!-- Header -->
     <!-- ====== -->
     <variable name="value_header">
-	<value>$INFO[Skin.String(HomeMenuSubMenu)]</value>
         <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome)">[UPPERCASE]$LOCALIZE[10000][/UPPERCASE]</value>
         <value condition="substring(Container.FolderPath,Radio)">[UPPERCASE]$LOCALIZE[19021][/UPPERCASE]</value>
         <value condition="Container.Content(movies) + IsEmpty(ListItem.Title)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE]</value>
@@ -167,7 +166,8 @@
     </variable>
     <variable name="PicturesButtonThumb">
         <value condition="!Skin.String(CustomPicturesFolder, artwork)">$INFO[Skin.String(CustomPicturesFolder)]</value>
-        <value condition="Skin.String(CustomPicturesFolder, artwork) + Skin.HasSetting(MediaBrowserMode)">$VAR[randompicturegenerate]</value>
+		<value condition="Skin.String(CustomPicturesFolder, artwork) + Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.photo.0.image))">$INFO[Window(Home).Property(xbmb3c.std.photo.0.image)]</value>
+        <value condition="Skin.String(CustomPicturesFolder, artwork) + Skin.HasSetting(MediaBrowserMode22)">$VAR[randompicturegenerate]</value>
     </variable>
     <variable name="randompicturegenerate">
         <value condition="IntegerGreaterThan(System.Time(mm), 55)">$INFO[Window.Property(LatestPhotoMB3.6.Thumb)]</value>
@@ -183,66 +183,83 @@
         <value condition="IntegerGreaterThan(System.Time(mm), 5)">$INFO[WindowProperty(LatestPhotoMB3.2.Thumb)]</value>
         <value condition="IntegerGreaterThan(System.Time(mm), 1)">$INFO[Window.Property(LatestPhotoMB3.1.Thumb)]</value>
     </variable>
-    <variable name="Custom0Background">
-        <value condition="!Skin.String(Custom0Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.0.image)]</value>
+    
+	<variable name="Custom0Background">
+        <value condition="!Skin.String(Custom0Background) + !IsEmpty(Window(Home).Property(titanmb3.0.image))">$INFO[Window(Home).Property(titanmb3.0.image)]</value>
+		<value condition="!Skin.String(Custom0Background) + !IsEmpty(Window(Home).Property(titanmb3.0.fanart))">$INFO[Window(Home).Property(titanmb3.0.fanart)]</value>
         <value condition="Skin.String(Custom0Background)">$INFO[Skin.String(Custom0Background)]</value>
     </variable>
     <variable name="Custom1Background">
-        <value condition="!Skin.String(Custom0Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.1.image)]</value>
+        <value condition="!Skin.String(Custom1Background) + !IsEmpty(Window(Home).Property(titanmb3.1.image))">$INFO[Window(Home).Property(titanmb3.1.image)]</value>
+		<value condition="!Skin.String(Custom1Background) + !IsEmpty(Window(Home).Property(titanmb3.1.fanart))">$INFO[Window(Home).Property(titanmb3.1.fanart)]</value>
         <value condition="Skin.String(Custom1Background)">$INFO[Skin.String(Custom1Background)]</value>
     </variable>
     <variable name="Custom2Background">
-        <value condition="!Skin.String(Custom2Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.2.image)]</value>
+        <value condition="!Skin.String(Custom2Background) + !IsEmpty(Window(Home).Property(titanmb3.2.image))">$INFO[Window(Home).Property(titanmb3.2.image)]</value>
+		<value condition="!Skin.String(Custom2Background) + !IsEmpty(Window(Home).Property(titanmb3.2.fanart))">$INFO[Window(Home).Property(titanmb3.2.fanart)]</value>
         <value condition="Skin.String(Custom2Background)">$INFO[Skin.String(Custom2Background)]</value>
     </variable>
     <variable name="Custom3Background">
-        <value condition="!Skin.String(Custom3Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.3.image)]</value>
+        <value condition="!Skin.String(Custom3Background) + !IsEmpty(Window(Home).Property(titanmb3.3.image))">$INFO[Window(Home).Property(titanmb3.3.image)]</value>
+		<value condition="!Skin.String(Custom3Background) + !IsEmpty(Window(Home).Property(titanmb3.3.fanart))">$INFO[Window(Home).Property(titanmb3.3.fanart)]</value>
         <value condition="Skin.String(Custom3Background)">$INFO[Skin.String(Custom3Background)]</value>
     </variable>
     <variable name="Custom4Background">
-        <value condition="!Skin.String(Custom4Background)">$INFO[Window(Home).Property(xbmb3c.usr.movies.4.image)]</value>
+        <value condition="!Skin.String(Custom4Background) + !IsEmpty(Window(Home).Property(titanmb3.4.image))">$INFO[Window(Home).Property(titanmb3.4.image)]</value>
+		<value condition="!Skin.String(Custom4Background) + !IsEmpty(Window(Home).Property(titanmb3.4.fanart))">$INFO[Window(Home).Property(titanmb3.4.fanart)]</value>
         <value condition="Skin.String(Custom4Background)">$INFO[Skin.String(Custom4Background)]</value>
     </variable>
     <variable name="Custom5Background">
-        <value condition="!Skin.String(Custom5Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.image)]</value>
+        <value condition="!Skin.String(Custom5Background) + !IsEmpty(Window(Home).Property(titanmb3.5.image))">$INFO[Window(Home).Property(titanmb3.5.image)]</value>
+		<value condition="!Skin.String(Custom5Background) + !IsEmpty(Window(Home).Property(titanmb3.5.fanart))">$INFO[Window(Home).Property(titanmb3.5.fanart)]</value>
         <value condition="Skin.String(Custom5Background)">$INFO[Skin.String(Custom5Background)]</value>
     </variable>
     <variable name="Custom6Background">
-        <value condition="!Skin.String(Custom6Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.image)]</value>
+        <value condition="!Skin.String(Custom6Background) + !IsEmpty(Window(Home).Property(titanmb3.6.image))">$INFO[Window(Home).Property(titanmb3.6.image)]</value>
+		<value condition="!Skin.String(Custom6Background) + !IsEmpty(Window(Home).Property(titanmb3.6.fanart))">$INFO[Window(Home).Property(titanmb3.6.fanart)]</value>
         <value condition="Skin.String(Custom6Background)">$INFO[Skin.String(Custom6Background)]</value>
     </variable>
     <variable name="Custom7Background">
-        <value condition="!Skin.String(Custom7Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.image)]</value>
+        <value condition="!Skin.String(Custom7Background) + !IsEmpty(Window(Home).Property(titanmb3.7.image))">$INFO[Window(Home).Property(titanmb3.7.image)]</value>
+		<value condition="!Skin.String(Custom7Background) + !IsEmpty(Window(Home).Property(titanmb3.7.fanart))">$INFO[Window(Home).Property(titanmb3.7.fanart)]</value>
         <value condition="Skin.String(Custom7Background)">$INFO[Skin.String(Custom7Background)]</value>
     </variable>
     <variable name="Custom8Background">
-        <value condition="!Skin.String(Custom8Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.image)]</value>
+        <value condition="!Skin.String(Custom8Background) + !IsEmpty(Window(Home).Property(titanmb3.8.image))">$INFO[Window(Home).Property(titanmb3.8.image)]</value>
+		<value condition="!Skin.String(Custom8Background) + !IsEmpty(Window(Home).Property(titanmb3.8.fanart))">$INFO[Window(Home).Property(titanmb3.8.fanart)]</value>
         <value condition="Skin.String(Custom8Background)">$INFO[Skin.String(Custom8Background)]</value>
     </variable>
     <variable name="Custom9Background">
-        <value condition="!Skin.String(Custom9Background)">$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.image)]</value>
+        <value condition="!Skin.String(Custom9Background) + !IsEmpty(Window(Home).Property(titanmb3.9.image))">$INFO[Window(Home).Property(titanmb3.9.image)]</value>
+		<value condition="!Skin.String(Custom9Background) + !IsEmpty(Window(Home).Property(titanmb3.9.fanart))">$INFO[Window(Home).Property(titanmb3.9.fanart)]</value>
         <value condition="Skin.String(Custom9Background)">$INFO[Skin.String(Custom9Background)]</value>
     </variable>
     <variable name="Custom10Background">
-        <value condition="!Skin.String(Custom10Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.0.image)]</value>
+        <value condition="!Skin.String(Custom10Background) + !IsEmpty(Window(Home).Property(titanmb3.10.image))">$INFO[Window(Home).Property(titanmb3.10.image)]</value>
+		<value condition="!Skin.String(Custom10Background) + !IsEmpty(Window(Home).Property(titanmb3.10.fanart))">$INFO[Window(Home).Property(titanmb3.10.fanart)]</value>
         <value condition="Skin.String(Custom10Background)">$INFO[Skin.String(Custom10Background)]</value>
     </variable>
     <variable name="Custom11Background">
-        <value condition="!Skin.String(Custom11Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.1.image)]</value>
+        <value condition="!Skin.String(Custom11Background) + !IsEmpty(Window(Home).Property(titanmb3.11.image))">$INFO[Window(Home).Property(titanmb3.11.image)]</value>
+		<value condition="!Skin.String(Custom11Background) + !IsEmpty(Window(Home).Property(titanmb3.11.fanart))">$INFO[Window(Home).Property(titanmb3.11.fanart)]</value>
         <value condition="Skin.String(Custom11Background)">$INFO[Skin.String(Custom11Background)]</value>
     </variable>
     <variable name="Custom12Background">
-        <value condition="!Skin.String(Custom12Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.2.image)]</value>
+        <value condition="!Skin.String(Custom12Background) + !IsEmpty(Window(Home).Property(titanmb3.12.image))">$INFO[Window(Home).Property(titanmb3.12.image)]</value>
+		<value condition="!Skin.String(Custom12Background) + !IsEmpty(Window(Home).Property(titanmb3.12.fanart))">$INFO[Window(Home).Property(titanmb3.12.fanart)]</value>
         <value condition="Skin.String(Custom12Background)">$INFO[Skin.String(Custom12Background)]</value>
     </variable>
     <variable name="Custom13Background">
-        <value condition="!Skin.String(Custom13Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.3.image)]</value>
+        <value condition="!Skin.String(Custom13Background) + !IsEmpty(Window(Home).Property(titanmb3.13.image))">$INFO[Window(Home).Property(titanmb3.13.image)]</value>
+		<value condition="!Skin.String(Custom13Background) + !IsEmpty(Window(Home).Property(titanmb3.13.fanart))">$INFO[Window(Home).Property(titanmb3.13.fanart)]</value>
         <value condition="Skin.String(Custom13Background)">$INFO[Skin.String(Custom13Background)]</value>
     </variable>
     <variable name="Custom14Background">
-        <value condition="!Skin.String(Custom14Background)">$INFO[Window(Home).Property(xbmb3c.usr.music.4.image)]</value>
+        <value condition="!Skin.String(Custom14Background) + !IsEmpty(Window(Home).Property(titanmb3.14.image))">$INFO[Window(Home).Property(titanmb3.14.image)]</value>
+		<value condition="!Skin.String(Custom14Background) + !IsEmpty(Window(Home).Property(titanmb3.14.fanart))">$INFO[Window(Home).Property(titanmb3.14.fanart)]</value>
         <value condition="Skin.String(Custom14Background)">$INFO[Skin.String(Custom14Background)]</value>
     </variable>
+	
     <variable name="MB3FavoritesBackground">
         <value condition="!Skin.String(MB3FavoritesBackground)">$INFO[Window(Home).Property(xbmb3c.std.movies.3.image)]</value>
         <value condition="Skin.String(MB3FavoritesBackground)">$INFO[Skin.String(MB3FavoritesBackground)]</value>
@@ -253,15 +270,16 @@
     </variable>
     <variable name="MusicButtonOnClick">
         <value condition="Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(Music, $INFO[Skin.String(HomeMenuUseMusicCollection)], return)</value>
-        <value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(1234)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.String(HomeMenuUseMusicCollection)">Skin.SetString(HomeMenuSubMenu, music)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">ActivateWindow(Music, MusicLibrary, return)</value>
         <value condition="Skin.HasSetting(MediaBrowserMode) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">$INFO[Window.Property(xbmb3c.std.music.0.path)]</value>
     </variable>
     <variable name="NetflixButtonOnClick">
-        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu)">ActivateWindow(1238)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu)">Skin.SetString(HomeMenuSubMenu, netflix)</value>
         <value>ActivateWindow(10025,"plugin://plugin.video.netflixbmc",return)</value>
     </variable>
     <variable name="MoviesButtonOnClick">
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies) + Skin.HasSetting(HomeMenuUseMoviesSubmenu)">Skin.SetString(HomeMenuSubMenu, netflix)</value>
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</value>
         <value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu)">Skin.SetString(HomeMenuSubMenu, movies)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,movietitles,return)</value>
@@ -285,6 +303,7 @@
         <value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window.Property(xbmb3c.std.music.3.path)]</value>
     </variable>
     <variable name="LiveTVButtonOnClick">
+		<value condition="Skin.HasSetting(HomeMenuLiveTVSubmenu)">Skin.SetString(HomeMenuSubMenu, livetv)</value>
 		<value condition="SubString(System.BuildVersion,14,left) + Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVGuide)</value>
         <value condition="SubString(System.BuildVersion,14,left) + !Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVChannels)</value>
         <value condition="Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</value>
@@ -348,7 +367,7 @@
 	
 	<variable name="HomeMenuHubInfoLabel2">
 		<value condition="!IsEmpty(Container(510).ListItem.TvShowTitle)">$INFO[Container(510).ListItem.TvShowTitle]</value>
-		<value condition="IsEmpty($INFO[Container(510).ListItem.Label2])">$INFO[Container(510).ListItem.Tagline]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.Tagline)">$INFO[Container(510).ListItem.Tagline]</value>
 		<value>$INFO[Container(510).ListItem.Label2]</value>
     </variable>
 	
@@ -361,7 +380,7 @@
 		<value condition="!IsEmpty(Container(510).ListItem.Art(tvshow.poster))">$INFO[Container(510).ListItem.Art(tvshow.poster)]</value>
 		<value condition="!IsEmpty(Container(510).ListItem.Art(poster))">$INFO[Container(510).ListItem.Art(poster)]</value>
 		<value condition="IsEmpty(Container(510).ListItem.Property(poster))">$INFO[Container(510).ListItem.ActualIcon]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),weather)">$INFO[Container(510).ListItem.ActualIcon]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),weather)">$INFO[Container(510).ListItem.ActualIcon]</value>
 		<value>$INFO[Container(510).ListItem.Property(poster)]</value>
     </variable>
 	
@@ -502,28 +521,118 @@
 	<variable name="HomeHubLabel">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(contenttitle))">$INFO[Container(300).ListItem.Property(contenttitle)]</value>
 	
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">$LOCALIZE[31102]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, newmovies)">$LOCALIZE[31048]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),movies) + Skin.String(MoviesWidget, inprogressmovies)">$LOCALIZE[31035]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">$LOCALIZE[31102]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, newmovies)">$LOCALIZE[31048]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, inprogressmovies)">$LOCALIZE[31035]</value>
 		
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + Skin.String(TvShowsWidget, random) | !Skin.String(TvShowsWidget)">$LOCALIZE[31103]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + Skin.String(TvShowsWidget, latest)">$LOCALIZE[31105]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),tvshows) + Skin.String(TvShowsWidget, inprogress)">$LOCALIZE[31104]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, random) | !Skin.String(TvShowsWidget)">$LOCALIZE[31103]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, latest)">$LOCALIZE[31105]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, inprogress)">$LOCALIZE[31104]</value>
 		
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, latestsong)">$LOCALIZE[31106]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, latestalbum)">$LOCALIZE[31107]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomalbum)">$LOCALIZE[31108]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, randomartist)">$LOCALIZE[31109]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, inprogress)">$LOCALIZE[31110]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),music) + Skin.String(MusicWidget, library)">$LOCALIZE[10516]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, latestsong)">$LOCALIZE[31106]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, latestalbum)">$LOCALIZE[31107]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, randomalbum)">$LOCALIZE[31108]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, randomartist)">$LOCALIZE[31109]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, inprogress)">$LOCALIZE[31110]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, library)">$LOCALIZE[10516]</value>
+
 		
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + Skin.String(NetflixWidget, inprogressmovies)">$LOCALIZE[31047]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + Skin.String(NetflixWidget, random)">$LOCALIZE[31101]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + Skin.String(NetflixWidget, inprogresstvshows)">$LOCALIZE[31046]</value>
 		
-		
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, inprogressmovies)">$LOCALIZE[31047]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, random)">$LOCALIZE[31101]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(contenttype),netflix) + Skin.String(NetflixWidget, inprogresstvshows)">$LOCALIZE[31046]</value>
-		
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(Container(300).ListItem.Property(type), virtual) | StringCompare(Container(300).ListItem.Property(type),photos)">$INFO[Container(300).ListItem.Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidget, recent) + StringCompare(Container(300).ListItem.Property(type),musicvideos)">$LOCALIZE[20390]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidget, recent) + StringCompare(Container(300).ListItem.Property(type),music)">$LOCALIZE[359]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidgettv, recent) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31105]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidgettv, inprogress) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[575]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidget, recent) + !StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[20386]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidget, inprogress) + !StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[575]</value>
+
     </variable>
+	
+	<variable name="HomeHubClickActions">
+		<!-- movies -->
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">Skin.SetString(MoviesWidget, newmovies)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, newmovies)">Skin.SetString(MoviesWidget, inprogressmovies)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, inprogressmovies)">Skin.SetString(MoviesWidget, randommovies)</value>
+		
+		<!-- tvshows -->
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, random) | !Skin.String(TvShowsWidget)">Skin.SetString(TvShowsWidget, latest)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, latest)">Skin.SetString(TvShowsWidget, inprogress)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + Skin.String(TvShowsWidget, inprogress)">Skin.SetString(TvShowsWidget, random)</value>
+		
+		<!-- music normal -->
+		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, library)">Skin.SetString(MusicWidget, latestalbum)</value>
+		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, latestalbum)">Skin.SetString(MusicWidget, randomalbum)</value>
+		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, randomartist)</value>
+		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, inprogress)</value>
+		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, inprogress)">Skin.SetString(MusicWidget, latestsong)</value>
+		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, latestsong)">Skin.SetString(MusicWidget, library)</value>
+		
+		<!-- music MB3 -->
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, inprogress)">Skin.SetString(MusicWidget, latestalbum)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + Skin.String(MusicWidget, latestalbum)">Skin.SetString(MusicWidget, inprogress)</value>
+		
+		<!-- Netflix -->
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + Skin.String(NetflixWidget, inprogressmovies)">Skin.SetString(NetflixWidget, inprogresstvshows)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + Skin.String(NetflixWidget, inprogresstvshows)">Skin.SetString(NetflixWidget, random)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + Skin.String(NetflixWidget, random)">Skin.SetString(NetflixWidget, inprogressmovies)</value>
+		
+		<!-- weather -->
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),weather)">ActivateWindow(weather)</value>
+		
+		<!-- custom MB3 items -->
+		<value condition="[StringCompare(Container(300).ListItem.Property(type),virtual) | StringCompare(Container(300).ListItem.Property(type),photos)] + StringCompare(Container(300).ListItem.Property(widgettype),mb3custom)">noop</value>
+		
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidgettv, inprogress) + StringCompare(Container(300).ListItem.Property(type),tvshows)">Skin.SetString(mb3customwidgettv, recent)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidgettv, recent) + StringCompare(Container(300).ListItem.Property(type),tvshows)">Skin.SetString(mb3customwidgettv, inprogress)</value>
+		
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidget, inprogress) + !StringCompare(Container(300).ListItem.Property(type),tvshows)">Skin.SetString(mb3customwidget, recent)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + Skin.String(mb3customwidget, recent) + !StringCompare(Container(300).ListItem.Property(type),tvshows)">Skin.SetString(mb3customwidget, inprogress)</value>
+
+	</variable>
+	
+	
+	<variable name="CustomHomeHubContent">
+		<!-- mb3 custom content -->
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + [StringCompare(Container(300).ListItem.Property(type),photos) | StringCompare(Container(300).ListItem.Property(type),virtual)]">$INFO[Container(300).ListItem.Property(recent)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(skin.string(mb3customwidgettv),recent) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(300).ListItem.Property(recent)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(skin.string(mb3customwidgettv),inprogress) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(300).ListItem.Property(nextepisodes)]</value>
+		
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(skin.string(mb3customwidget),recent)">$INFO[Container(300).ListItem.Property(recent)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),mb3custom) + StringCompare(skin.string(mb3customwidget),inprogress)">$INFO[Container(300).ListItem.Property(inprogress)]</value>
+
+		<!-- other custom items -->
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),custom)">$INFO[Container(300).ListItem.Property(contentpath)]</value>
+		
+		<!-- mb3 standard content -->
+		<value condition="Skin.HasSetting(HomeMenuUseMBforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),latest)">$INFO[Window.Property(xbmb3c.std.tvshows.1.content)]</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)">$INFO[Window.Property(xbmb3c.std.tvshows.3.content)]</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)">$INFO[Window.Property(xbmb3c.std.movies.1.content)]</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)">$INFO[Window.Property(xbmb3c.std.movies.2.content)]</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),latestalbum)">$INFO[Window.Property(xbmb3c.std.music.1.content)]</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + StringCompare(Container(300).ListItem.Property(widgettype),music) + StringCompare(skin.string(MusicWidget),inprogress)">$INFO[Window.Property(xbmb3c.std.music.2.content)]</value>
+
+		<!-- netflix content -->
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),newmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),randommovies)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=movie&amp;url=slider_3</value>
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies) + StringCompare(Container(300).ListItem.Property(widgettype),movies) + StringCompare(skin.string(MoviesWidget),inprogressmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),latest)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),random)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=tv&amp;url=slider_3</value>
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows) + SubString(skin.string(TvShowsWidget),inprogress)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
+		
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),random)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=both&amp;url=slider_3</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),inprogresstvshows)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),netflix) + StringCompare(skin.string(NetflixWidget),inprogressmovies)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
+
+	 </variable>
+	
+	<variable name="musicvideoscontentpath">
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(xbmb3c.std.music.3.content)]</value>
+		<value>videodb://recentlyaddedmusicvideos/</value>
+	</variable>
+	
 	
 	
 </includes>

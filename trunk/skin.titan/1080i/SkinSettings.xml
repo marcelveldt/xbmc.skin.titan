@@ -835,14 +835,14 @@
                     <!--custom 0-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.0.title)]</label>
                     <height>50</height>
                     <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton0)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton0)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.0.title))</visible>
                 </control>
                 <control type="radiobutton" id="29006">
                     <description></description>
@@ -871,13 +871,13 @@
                 <control type="radiobutton" id="19007">
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.1.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton1)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton1)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.1.title))</visible>
                 </control>
                 <control type="radiobutton" id="29007">
                     <description></description>
@@ -906,13 +906,13 @@
                     <!--custom 2-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.2.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton2)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton2)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.2.title))</visible>
                 </control>
                 <control type="radiobutton" id="29008">
                     <description></description>
@@ -941,13 +941,13 @@
                     <!--custom 3-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.3.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton3)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton3)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.3.title))</visible>
                 </control>
                 <control type="radiobutton" id="29009">
                     <description></description>
@@ -976,13 +976,13 @@
                     <!--custom 4-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.4.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton4)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton4)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.4.title))</visible>
                 </control>
                 <control type="radiobutton" id="29010">
                     <description></description>
@@ -1011,13 +1011,13 @@
                     <!--custom 5-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.0.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.5.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton5)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton5)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.0.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.5.title))</visible>
                 </control>
                 <control type="radiobutton" id="29011">
                     <description></description>
@@ -1046,13 +1046,13 @@
                     <!--custom 6-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.1.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.6.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton6)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton6)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.1.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.6.title))</visible>
                 </control>
                 <control type="radiobutton" id="29012">
                     <description></description>
@@ -1081,13 +1081,13 @@
                     <!--custom 7-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.2.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.7.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton7)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton7)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.2.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.7.title))</visible>
                 </control>
                 <control type="radiobutton" id="29013">
                     <description></description>
@@ -1116,13 +1116,13 @@
                     <!--custom 8-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.3.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.8.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton8)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton8)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.3.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.8.title))</visible>
                 </control>
                 <control type="radiobutton" id="29014">
                     <description></description>
@@ -1151,13 +1151,13 @@
                     <!--custom 9-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.tvshows.4.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.9.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton9)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton9)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.tvshows.4.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.9.title))</visible>
                 </control>
                 <control type="radiobutton" id="29015">
                     <description></description>
@@ -1186,13 +1186,13 @@
                     <!--custom 10-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.music.0.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.10.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton10)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton10)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.0.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.10.title))</visible>
                 </control>
                 <control type="radiobutton" id="29116">
                     <description></description>
@@ -1221,13 +1221,13 @@
                     <!--custom 11-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.music.1.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.11.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton11)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton11)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.1.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.11.title))</visible>
                 </control>
                 <control type="radiobutton" id="29016">
                     <description></description>
@@ -1256,13 +1256,13 @@
                     <!--custom 12-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.music.2.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.12.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton12)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton12)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.2.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.12.title))</visible>
                 </control>
                 <control type="radiobutton" id="29018">
                     <description></description>
@@ -1291,13 +1291,13 @@
                     <!--custom 13-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.music.3.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.13.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton13)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton13)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.3.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.13.title))</visible>
                 </control>
                 <control type="radiobutton" id="29021">
                     <description></description>
@@ -1326,13 +1326,13 @@
                     <!--custom 14-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.usr.music.4.title)]</label>
+                    <label>$INFO[Window(Home).Property(xbmb3c.14.title)]</label>
                     <height>50</height>
                     <textcolor>white</textcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuCustomButton14)</onclick>
                     <selected>Skin.HasSetting(HomeMenuCustomButton14)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.4.title))</visible>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.14.title))</visible>
                 </control>
                 <control type="radiobutton" id="29019">
                     <description></description>
@@ -1605,6 +1605,18 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseGuideOnTV)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseGuideOnTV)</selected>
+                    <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
+                </control>
+				<control type="radiobutton" id="90092">
+                    <!--enable submenu -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[1035]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuLiveTVSubmenu)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuLiveTVSubmenu)</selected>
                     <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
                 </control>
                 <!-- tv recordings button -->

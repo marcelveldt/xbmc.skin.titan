@@ -461,6 +461,10 @@ msgctxt "#31111"
 msgid "Use advanced homescreen (with hubs)"
 msgstr ""
 
+msgctxt "#31112"
+msgid "Finishes at:"
+msgstr ""
+
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"
 msgstr ""
