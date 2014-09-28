@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Titan-->
+<includes>
+
+	<include name="HomeMenuSubMenu">
+		<control type="group">
+			<animation effect="fade" start="0" end="100" time="400" tween="sine" delay="0" easing="in" condition="Skin.String(HomeMenuSubMenu)" reversible="true">Conditional</animation>
+			<!--submenu right 1-row pos 0-->
+			<control type="group">
+				<posx>603</posx>
+				<posy>599</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,0)]</visible>
+				<animation effect="fade" start="100" end="0" time="100" tween="sine" delay="100" easing="in">WindowClose</animation>
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <control type="list" id="4444">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu right 1 row pos 1-->
+			<control type="group">
+				<posx>1213</posx>
+				<posy>598</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,1)]</visible>
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <control type="list" id="4445">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu left 1-row pos 2-->
+			<control type="group">
+				<posx>622</posx>
+				<posy>600</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 1) + StringCompare(Container(300).Position,2)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuLeft</include>
+					 <control type="list" id="4446">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				 <include>HomeMenuFocusButtonRight</include>
+			</control>
+			<!--submenu right 2-row pos 0-->
+			<control type="group">
+				<posx>603</posx>
+				<posy>324</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,0)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <control type="list" id="4447">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			
+			<!--submenu right 2-row pos 1-->
+			<control type="group">
+				<posx>609</posx>
+				<posy>585</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,1)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <control type="list" id="4448">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu right 2-row pos 2-->
+			<control type="group">
+				<posx>1220</posx>
+				<posy>320</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,2)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <control type="list" id="4449">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu right 2-row pos 3-->
+			<control type="group">
+				<posx>1220</posx>
+				<posy>585</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,3)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <control type="list" id="4450">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu left 2 row pos 4-->
+			<control type="group">
+				<posx>624</posx>
+				<posy>323</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,4)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuLeft</include>
+					 <control type="list" id="4451">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				<include>HomeMenuFocusButtonRight</include>
+				
+			</control>
+			<!--submenu left 2 row pos 5-->
+			<control type="group">
+				<posx>620</posx>
+				<posy>585</posy>
+				<visible>Skin.String(HomeMenuSubMenu) + [Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,5)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuLeft</include>
+					 <control type="list" id="4452">
+						<include>HomeMenuSubMenuLayout</include>
+						<include>HomeMenuSubmenuItems</include>        
+					 </control>
+				</control>
+				 <include>HomeMenuFocusButtonRight</include>
+			</control>
+		</control>
+	</include>
+	
+	<include name="HomeMenuSubMenuLayout">
+		<posx>50</posx>
+		<posy>30</posy>
+		<width>560</width>
+		<height>215</height>
+		<onleft>300</onleft>
+		<onright>300</onright>
+		<onback>300</onback>
+		<itemlayout height="40">
+			<control type="label">
+				<posx>50</posx>
+				<width>600</width>
+				<height>60</height>
+				<textcolor>black</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<selectedcolor>black</selectedcolor>
+				<disabledcolor>black</disabledcolor>
+				<info>ListItem.Label</info>
+				<font>Reg32</font>
+			</control>
+		</itemlayout>
+		<focusedlayout height="40">
+			<control type="label">
+				<posx>50</posx>
+				<width>600</width>
+				<height>60</height>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<selectedcolor>white</selectedcolor>
+				<disabledcolor>white</disabledcolor>
+				<info>ListItem.Label</info>
+				<font>Reg32</font>
+			</control>
+		</focusedlayout>
+	</include>
+
+	<include name="HomeMenuSubMenuRight">
+			<control type="image">
+				<posx>0</posx>
+				<posy>-24</posy>
+				<width>720</width>
+				<height>341</height>
+				<texture background="true">home_submenu_right.png</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>-24</posy>
+				<width>720</width>
+				<height>341</height>
+				<texture background="true">home_submenu_right.png</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+			</control>
+	</include>
+	
+	<include name="HomeMenuSubMenuLeft">
+	<control type="image">
+				<posx>-10</posx>
+				<posy>-30</posy>
+				<width>725</width>
+				<height>349</height>
+				<texture background="true">home_submenu_left.png</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>-10</posx>
+				<posy>-30</posy>
+				<width>725</width>
+				<height>349</height>
+				<texture background="true">home_submenu_left.png</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+			</control>
+	</include>
+	
+	<include name="HomeMenuSubmenuItems">
+	<content>
+	<!-- Movies Items -->
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.5.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.5.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.5.title))</visible>
+		</item>
+		<item>
+			<!-- All Movietitles-->
+			<label>342</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,MovieTitles, return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!--Genres-->
+			<label>135</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(Video, MovieGenres, return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!--BoxSets-->
+			<label>20457</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(Video, MovieSets, return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!--Recently Added-->
+			<label>20386</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video, RecentlyAddedMovies, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.1.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies)</visible>
+		</item>
+		<item>
+			<!--In progress (mb3 only)-->
+			<label>31035</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.2.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!-- Favourite movies (mb3 only)-->
+			<label>31036</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.3.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!-- Trailers (mb3 only)-->
+			<label>31037</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.5.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + IntegerGreaterThan(Window(Home).Property(MB3TotalTrailers), 0)</visible>
+		</item>
+		<item>
+			<!-- All Movies-->
+			<label>20314</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,VideoLibrary, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.0.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, movies)</visible>
+		</item>
+		<!-- Music items -->
+		 <item>
+			<!-- MB custom 1-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.music.0.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.music.0.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music) + Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.0.title))</visible>
+		</item>
+		<item>
+			<!-- MB custom 2-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.music.1.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.music.1.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music) + Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.1.title))</visible>
+		</item>
+		<item>
+			<!-- MB custom 3-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.music.2.title)]</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.music.2.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music) + Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(xbmb3c.usr.music.2.title))</visible>
+		</item>
+		<item>
+			<!--Genres-->
+			<label>135</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(Music, Genres, return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</item>
+		<item>
+			<!--Artists-->
+			<label>133</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(Music, Artists, return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</item>
+		<item>
+			<!--Recently Added-->
+			<label>359</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, RecentlyAddedAlbums, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.1.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music)</visible>
+		</item>
+		<item>
+			<!--Recently Played-->
+			<label>517</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, RecentlyPlayedAlbums, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.2.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music) + IntegerGreaterThan(Window(Home).Property(MB3TotalPlayedMusicSongs),0) + Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</item>
+		<item>
+			<!-- Playlists-->
+			<label>136</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(Music, Playlists, return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</item>
+		<item>
+			<!-- Radio-->
+			<label>19021</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music) + System.GetBool(pvrmanager.enabled)</visible>
+		</item>
+		<item>
+			<!-- All Music-->
+			<label>10516</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, MusicLibrary, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.0.path)]</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, music)</visible>
+		</item>
+		
+		<!-- Netflix items -->
+		<item>
+			<!-- custom entry-->
+			<label>31046</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31047</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31101</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=wiHome&amp;thumb&amp;type=both&amp;url",return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31048</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31049</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31050</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31051</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, netflix)</visible>
+		</item>
+		
+		<!-- LiveTv entries -->
+		<item>
+			<label>19019</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVChannels)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, livetv)</visible>
+		</item>
+		<item>
+			<label>22020</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVGuide)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, livetv)</visible>
+		</item>
+		<item>
+			<label>19163</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVRecordings)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, livetv)</visible>
+		</item>
+		<item>
+			<label>19021</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, livetv)</visible>
+		</item>
+		<item>
+			<label>19040</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVTimers)</onclick>
+			<visible>SubString(System.BuildVersion,14,left) + Skin.String(HomeMenuSubMenu, livetv)</visible>
+		</item>
+		<item>
+			<label>137</label>
+			<onclick>Skin.Reset(HomeMenuSubMenu)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVSearch)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">XBMC.ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
+			<visible>Skin.String(HomeMenuSubMenu, livetv)</visible>
+		</item>
+
+	
+		
+		
+	</content>
+	</include>
+	
+	
+	
+		<include name="HomeSubMenuButton">
+			<!--Sub Menu Button-->
+			<width>458</width>
+			<align>left</align>
+			<height>30</height>
+			<textcolor>$VAR[ThemeFontColorBlack]</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<disabledcolor>77585858</disabledcolor>
+			<pulseonselect>true</pulseonselect>
+			<texturefocus>common/button-fo.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<font>Light26</font>
+		</include>
+		
+		<include name="HomeMenuFocusButtonLayout">
+			<control type="image">
+                        <!--Panel Shadow-->
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>623</width>
+                        <height>271</height>
+                        <texture>home/home_shadow.png</texture>
+                    </control>
+					
+                    <control type="image" id="4470">
+                        <!--Panel Normal-->
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>623</width>
+                        <height>271</height>
+                        <texture background="true" diffuse="home/home_matte.png">$INFO[Container(300).ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+                        <fadetime>800</fadetime>
+                        <include>backgroundfade</include>
+                    </control>
+                    <control type="image">
+                        <!--Panel Ovelay-->
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>623</width>
+                        <height>271</height>
+                        <colordiffuse>ccFFFFFF</colordiffuse>
+                        <texture diffuse="home/home_matte.png">home/home_overlay.png</texture>
+                        <visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
+                    </control>
+                    <control type="label">
+                        <!--Label White-->
+                        <posx>17</posx>
+                        <posy>170</posy>
+                        <width>600</width>
+                        <height>100</height>
+                        <align>center</align>
+                        <info>Container(300).ListItem.Label</info>
+                        <font>Reg45</font>
+                        <textcolor>white</textcolor>
+                        <visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
+                    </control>
+                    <control type="image">
+                        <!--Panel Focus-->
+                        <posx>1</posx>
+                        <posy>1</posy>
+                        <width>622</width>
+                        <height>271</height>
+                        <texture>home/home_focus.png</texture>
+                    </control>
+		</include>
+		
+		<include name="HomeMenuFocusButtonLeft">
+		
+			    <control type="group">
+                   <animation type="Conditional" condition="true">
+                        <effect type="zoom" start="100" end="102" time="50" center="auto" delay="50" tween="cubic" easing="inout" />
+                    </animation>
+					<posy>13</posy>
+					<posx>-550</posx>
+					
+                    <include>HomeMenuFocusButtonLayout</include>
+
+                </control>
+		
+		</include>
+		
+		<include name="HomeMenuFocusButtonRight">
+		
+			    <control type="group">
+                   <animation type="Conditional" condition="true">
+                        <effect type="zoom" start="100" end="102" time="50" center="auto" delay="50" tween="cubic" easing="inout" />
+                    </animation>
+					<posy>13</posy>
+					<posx>650</posx>
+					
+                    <include>HomeMenuFocusButtonLayout</include>
+
+                </control>
+		
+		</include>
+		
+
+</includes>
