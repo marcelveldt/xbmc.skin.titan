@@ -73,29 +73,34 @@
                 </control>
             </focusedlayout>
             <content>
-                <item id="8">
-                    <!--Enable Home-Menu Button ID=8000-->
-                    <label>31002</label>
+				<!--home menu layout-->
+                <item id="12">
+                    <label>31115</label>
                     <onclick>noop</onclick>
                 </item>
-                <!--home button Background ID=9000-->
+                <!--tile settings-->
                 <item id="9">
                     <label>31013</label>
                     <onclick>noop</onclick>
                 </item>
-                <item id="5">
-                    <!--xbmb3c ID=7000-->
-                    <label>31004</label>
+				<item id="10">
+                    <!--sort Home-Menu Button ID=4000-->
+                    <label>31072</label>
                     <onclick>noop</onclick>
                 </item>
-                <item id="6">
+				<!--background settings-->
+                <item id="8">
+                    <label>31022</label>
+                    <onclick>noop</onclick>
+                </item>
+				<item id="6">
                     <!--skin settings ID=5000-->
                     <label>31005</label>
                     <onclick>noop</onclick>
                 </item>
-                <item id="10">
-                    <!--sort Home-Menu Button ID=4000-->
-                    <label>31072</label>
+                <item id="5">
+                    <!--skin mode ID=7000-->
+                    <label>31004</label>
                     <onclick>noop</onclick>
                 </item>
                 <item id="7">
@@ -117,6 +122,282 @@
             <posy>200</posy>
             <include>animation_fade_visible_hidden</include>
             <include>animation_list</include>
+			<!--home menu layout-->
+			<control type="grouplist" id="13000">
+                <description>Control Area</description>
+                <width>1230</width>
+                <height>720</height>
+                <itemgap>3</itemgap>
+                <onup>8000</onup>
+                <ondown>8000</ondown>
+                <onleft>100</onleft>
+                <onright>noop</onright>
+                <orientation>vertical</orientation>
+                <visible>Container(100).Hasfocus(12)</visible>
+                
+				<control type="label" id="4001">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label>31121</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                </control>
+				
+				<control type="textbox" id="2311">
+                    <width>1230</width>
+                    <height min="50">auto</height>
+                    <font>Reg25</font>
+                    <posy>60</posy>
+                    <label>31124</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                </control>
+
+				<control type="radiobutton" id="15015">
+                    <description></description>
+                    <!-- 1 rows-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31033</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetString(GadgetRows, 1)</onclick>
+                    <selected>Skin.String(GadgetRows, 1)</selected>
+                </control>
+				<control type="radiobutton" id="5013">
+                    <description></description>
+                    <!--gadget rows-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31031</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetString(GadgetRows, 2)</onclick>
+					<onclick>Skin.Reset(AutoShowSubmenu)</onclick>
+                    <selected>Skin.String(GadgetRows, 2) | !Skin.String(GadgetRows)</selected>
+                </control>
+				<control type="image" id="201">
+                    <!--Seperator-->
+                    <width>1200</width>
+					<posx>-60</posx>
+                    <height>20</height>
+                    <align>left</align>
+					<valign>bottom</valign>
+                    <texture>blankspace.png</texture>
+					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
+                </control>
+				
+                <control type="label" id="4002">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label>31122</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                </control>
+				<control type="textbox" id="2310">
+                    <width>1230</width>
+                    <height min="150">auto</height>
+                    <font>Reg25</font>
+                    <posy>60</posy>
+                    <label>31123</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                </control>
+				
+				<!-- auto show widgets-->
+				<control type="radiobutton" id="5016">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31111</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(AutoShowHubs)</onclick>
+                    <selected>Skin.HasSetting(AutoShowHubs)</selected>
+                </control>
+
+				<!--enable auto show submenus-->
+				<control type="radiobutton" id="5118">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31113</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(AutoShowSubmenu)</onclick>
+                    <selected>Skin.HasSetting(AutoShowSubmenu)</selected>
+					<enable>[Skin.String(GadgetRows, 2) + skin.hastheme(classic)] | Skin.String(GadgetRows, 1)</enable>
+                </control>
+				
+							
+				<control type="image" id="203">
+                    <!--Seperator-->
+                    <width>1200</width>
+					<posx>-60</posx>
+                    <height>20</height>
+                    <align>left</align>
+					<valign>bottom</valign>
+                    <texture>blankspace.png</texture>
+					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
+                </control>
+				
+				<!-- other home settings -->
+				<control type="label" id="4003">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label>31125</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                </control>
+				
+				<!--no titles on home tiles-->
+                <control type="radiobutton" id="5115">
+                    <description></description>
+                    
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31086</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(NoTitleOnHomeMenuTiles)</onclick>
+                    <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
+                </control>
+				
+				 <!--weather on home-->
+				<control type="radiobutton" id="5012">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31030</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(WeatherOnHome)</onclick>
+                    <selected>Skin.HasSetting(WeatherOnHome)</selected>
+                </control>
+				
+				
+            </control>
+			
+			<!--background settings-->
+			<control type="grouplist" id="14000">
+                <description>Control Area</description>
+                <width>1230</width>
+                <height>720</height>
+                <itemgap>3</itemgap>
+                <onup>8000</onup>
+                <ondown>8000</ondown>
+                <onleft>100</onleft>
+                <onright>noop</onright>
+                <orientation>vertical</orientation>
+                <visible>Container(100).Hasfocus(8)</visible>
+                
+				<!-- skin background -->
+                <control type="label" id="5001">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label>31022</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="radiobutton" id="5003">
+                    <description></description>
+                    <!--bluebg-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31023</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetString(CustomBackgroundSetting, blue)</onclick>
+                    <selected>Skin.String(CustomBackgroundSetting, blue)</selected>
+                </control>
+                <control type="radiobutton" id="5002">
+                    <description></description>
+                    <!--defaultbg-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31024</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetString(CustomBackgroundSetting, default)</onclick>
+                    <selected>Skin.String(CustomBackgroundSetting, default)</selected>
+                </control>
+                <control type="radiobutton" id="5004">
+                    <description></description>
+                    <!--weather bg-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31025</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetString(CustomBackgroundSetting, weather)</onclick>
+                    <selected>Skin.String(CustomBackgroundSetting, weather)</selected>
+                </control>
+                <control type="radiobutton" id="5005">
+                    <description></description>
+                    <!--fanart bg-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31026</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetString(CustomBackgroundSetting, fanart)</onclick>
+                    <selected>Skin.String(CustomBackgroundSetting, fanart)</selected>
+                </control>
+                <control type="radiobutton" id="5007">
+                    <description></description>
+                    <!--fanart bg-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31027</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetString(CustomBackgroundSetting, gadget)</onclick>
+                    <selected>Skin.String(CustomBackgroundSetting, gadget)</selected>
+                </control>
+                <control type="radiobutton" id="5006">
+                    <description></description>
+                    <!--own image-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31039]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(CustomBackgroundSetting)</onclick>
+                    <selected>!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart) + !Skin.String(CustomBackgroundSetting, gadget)</selected>
+                </control>
+				
+				
+            </control>
+			
+			<!--sort Home-Menu ID=4000-->
             <control type="group" id="4000">
                 <description>Control Area</description>
                 <width>1230</width>
@@ -128,7 +409,6 @@
                 <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <visible>Container(100).Hasfocus(10)</visible>
-                <!-- skin background -->
                 <control type="label" id="4001">
                     <width>1230</width>
                     <height>50</height>
@@ -288,316 +568,8 @@
                     </content>
                 </control>
             </control>
-            <control type="grouplist" id="8000">
-                <!--Skin Setting: Home-Menu Button-->
-                <description>Control Area</description>
-                <width>1230</width>
-                <height>720</height>
-                <itemgap>3</itemgap>
-                <onup>8000</onup>
-                <ondown>8000</ondown>
-                <onleft>100</onleft>
-                <onright>noop</onright>
-                <orientation>vertical</orientation>
-                <visible>Container(100).Hasfocus(8)</visible>
-                <control type="radiobutton" id="8001">
-                    <!--Music-->
-                    <description>Music</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>2</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuMusicButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuMusicButton)</selected>
-                </control>
-                <control type="radiobutton" id="8002">
-                    <!--Video-->
-                    <description>Video</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>3</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuVideosButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuVideosButton)</selected>
-                </control>
-                <control type="radiobutton" id="8003">
-                    <!--Movies-->
-                    <description>Movies</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>342</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuMoviesButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuMoviesButton)</selected>
-                </control>
-                <control type="radiobutton" id="8004">
-                    <!--TV-Shows-->
-                    <description>TV-Shows</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>20343</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuTVShowsButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuTVShowsButton)</selected>
-                </control>
-                <control type="radiobutton" id="8008">
-                    <!--Live-TV-->
-                    <description>Live TV</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31088</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuPVRButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuPVRButton)</selected>
-                </control>
-                <control type="radiobutton" id="8005">
-                    <!--Video-Addons-->
-                    <description>Video-Addons</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>1037</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuVideoAddonsButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuVideoAddonsButton)</selected>
-                </control>
-                <control type="radiobutton" id="8006">
-                    <!--Pictures-->
-                    <description>Pictures</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>10002</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuPicturesButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuPicturesButton)</selected>
-                </control>
-                <control type="radiobutton" id="8007">
-                    <!--Weather-->
-                    <description>Weather</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>8</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuWeatherButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuWeatherButton)</selected>
-                </control>
-                <control type="radiobutton" id="81008">
-                    <!--MusicVideos-->
-                    <description>Musicvideos</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31045</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuMusicVideosButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuMusicVideosButton)</selected>
-                </control>
-                <control type="radiobutton" id="8015">
-                    <description>Favourites</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>10134</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuFavouritesButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuFavouritesButton)</selected>
-                </control>
-                <control type="radiobutton" id="8009">
-                    <!--Addons-->
-                    <description>Addons</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>24001</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuAddonsButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuAddonsButton)</selected>
-                </control>
-                <control type="radiobutton" id="8010">
-                    <!--Programs-->
-                    <description>Programs</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>350</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuProgramsButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuProgramsButton)</selected>
-                </control>
-                <control type="radiobutton" id="8011">
-                    <!--Filemanager-->
-                    <description>Filemanager</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>7</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuFilemanagerButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuFilemanagerButton)</selected>
-                </control>
-                <control type="radiobutton" id="8013">
-                    <!--Netflix-->
-                    <description>NetfliXBMC Plugin</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31018</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuNetflixButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuNetflixButton)</selected>
-                    <visible>System.HasAddon(plugin.video.netflixbmc)</visible>
-                </control>
-                <control type="radiobutton" id="8313">
-                    <!--YouTube-->
-                    <description>Youtube Plugin</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31062</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuYouTubeButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuYouTubeButton)</selected>
-                    <visible>System.HasAddon(plugin.video.youtube)</visible>
-                </control>
-                <control type="radiobutton" id="8014">
-                    <!--TV-Recordings-->
-                    <description>Recordings</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>19163</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuTVRecordingsButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuTVRecordingsButton)</selected>
-                </control>
-                <control type="radiobutton" id="8018">
-                    <!--Radio-->
-                    <description>Radio</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>19021</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuRadioButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuRadioButton)</selected>
-                </control>
-                <control type="radiobutton" id="8028">
-                    <!--Radio-->
-                    <description>XBMB3C Plugin</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31089</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuXBMB3CButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuXBMB3CButton)</selected>
-                    <visible>System.HasAddon(plugin.video.xbmb3c)</visible>
-                </control>
-                <control type="radiobutton" id="8019">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>5</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuSettingsButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuSettingsButton)</selected>
-                </control>
-				<control type="radiobutton" id="8020">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>PleXBMC</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuPlexBMCButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuPlexBMCButton)</selected>
-                </control>
-				<control type="radiobutton" id="8021">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$VAR[CustomHome1]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.1)</onclick>
-                    <selected>Skin.String(CustomHome.1.Label)</selected>
-                </control>
-				<control type="radiobutton" id="8022">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$VAR[CustomHome2]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.2)</onclick>
-                    <selected>Skin.String(CustomHome.2.Label)</selected>
-                </control>
-				<control type="radiobutton" id="8023">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$VAR[CustomHome3]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.3)</onclick>
-                    <selected>Skin.String(CustomHome.3.Label)</selected>
-                </control>
-				<control type="radiobutton" id="8024">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$VAR[CustomHome4]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.4)</onclick>
-                    <selected>Skin.String(CustomHome.4.Label)</selected>
-                </control>
-				<control type="radiobutton" id="8025">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$VAR[CustomHome5]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.5)</onclick>
-                    <selected>Skin.String(CustomHome.5.Label)</selected>
-                </control>
-            </control>
-            <control type="grouplist" id="7000">
-                <!--Skin Setting: XBMB3C-->
+             <!-- skin mode-->
+			<control type="grouplist" id="7000">
                 <description>Control Area</description>
                 <width>1230</width>
                 <height>720</height>
@@ -747,616 +719,6 @@
                     <selected>Skin.HasSetting(HomeMenuUseMBforMusicVideos)</selected>
                     <visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </control>
-                <!-- add custom library buttons for MB -->
-                <control type="label" id="19001">
-                    <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>31009</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(MediaBrowserMode)</visible>
-                </control>
-                <control type="radiobutton" id="19002">
-                    <!--mb3 favourite movies-->
-                    <label>$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</label>
-                    <width>1230</width>
-                    <align>left</align>
-                    <height>50</height>
-                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuMB3FavouritesButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuMB3FavouritesButton)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
-                </control>
-                <control type="radiobutton" id="29002">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(MB3FavoritesBackground)</onclick>
-                    <selected>!Skin.String(MB3FavoritesBackground)</selected>
-                    <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton)</visible>
-                </control>
-                <control type="radiobutton" id="39002">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(MB3FavoritesBackground)</onclick>
-                    <selected>Skin.String(MB3FavoritesBackground)</selected>
-                    <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton)</visible>
-                </control>
-                <control type="radiobutton" id="19005">
-                    <!--mb3 channels-->
-                    <label>$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</label>
-                    <width>1230</width>
-                    <align>left</align>
-                    <height>50</height>
-                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuMB3ChannelsButton)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuMB3ChannelsButton)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
-                </control>
-                <control type="radiobutton" id="29005">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(MB3ChannelsBackground)</onclick>
-                    <selected>!Skin.String(MB3ChannelsBackground)</selected>
-                    <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton)</visible>
-                </control>
-                <control type="radiobutton" id="39005">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(MB3ChannelsBackground)</onclick>
-                    <selected>Skin.String(MB3ChannelsBackground)</selected>
-                    <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton)</visible>
-                </control>
-                <control type="radiobutton" id="19006">
-                    <!--custom 0-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.0.title)]</label>
-                    <height>50</height>
-                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton0)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton0)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.0.title))</visible>
-                </control>
-                <control type="radiobutton" id="29006">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom0Background)</onclick>
-                    <selected>!Skin.String(Custom0Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton0)</visible>
-                </control>
-                <control type="radiobutton" id="39006">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom0Background)</onclick>
-                    <selected>Skin.String(Custom0Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton0)</visible>
-                </control>
-                <!-- custom 1 -->
-                <control type="radiobutton" id="19007">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.1.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton1)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton1)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.1.title))</visible>
-                </control>
-                <control type="radiobutton" id="29007">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom1Background)</onclick>
-                    <selected>!Skin.String(Custom1Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton1)</visible>
-                </control>
-                <control type="radiobutton" id="39007">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom1Background)</onclick>
-                    <selected>Skin.String(Custom1Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton1)</visible>
-                </control>
-                <control type="radiobutton" id="19008">
-                    <!--custom 2-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.2.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton2)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton2)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.2.title))</visible>
-                </control>
-                <control type="radiobutton" id="29008">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom2Background)</onclick>
-                    <selected>!Skin.String(Custom2Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton2)</visible>
-                </control>
-                <control type="radiobutton" id="39008">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom2Background)</onclick>
-                    <selected>Skin.String(Custom2Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton2)</visible>
-                </control>
-                <control type="radiobutton" id="19009">
-                    <!--custom 3-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.3.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton3)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton3)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.3.title))</visible>
-                </control>
-                <control type="radiobutton" id="29009">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom3Background)</onclick>
-                    <selected>!Skin.String(Custom3Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton3)</visible>
-                </control>
-                <control type="radiobutton" id="39009">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom3Background)</onclick>
-                    <selected>Skin.String(Custom3Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton3)</visible>
-                </control>
-                <control type="radiobutton" id="19010">
-                    <!--custom 4-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.4.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton4)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton4)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.4.title))</visible>
-                </control>
-                <control type="radiobutton" id="29010">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom4Background)</onclick>
-                    <selected>!Skin.String(Custom4Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton4)</visible>
-                </control>
-                <control type="radiobutton" id="39010">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom4Background)</onclick>
-                    <selected>Skin.String(Custom4Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton4)</visible>
-                </control>
-                <control type="radiobutton" id="19011">
-                    <!--custom 5-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.5.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton5)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton5)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.5.title))</visible>
-                </control>
-                <control type="radiobutton" id="29011">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom5Background)</onclick>
-                    <selected>!Skin.String(Custom5Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton5)</visible>
-                </control>
-                <control type="radiobutton" id="39011">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom5Background)</onclick>
-                    <selected>Skin.String(Custom5Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton5)</visible>
-                </control>
-                <control type="radiobutton" id="19012">
-                    <!--custom 6-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.6.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton6)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton6)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.6.title))</visible>
-                </control>
-                <control type="radiobutton" id="29012">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom6Background)</onclick>
-                    <selected>!Skin.String(Custom6Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton6)</visible>
-                </control>
-                <control type="radiobutton" id="39012">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom6Background)</onclick>
-                    <selected>Skin.String(Custom6Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton6)</visible>
-                </control>
-                <control type="radiobutton" id="19013">
-                    <!--custom 7-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.7.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton7)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton7)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.7.title))</visible>
-                </control>
-                <control type="radiobutton" id="29013">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom7Background)</onclick>
-                    <selected>!Skin.String(Custom7Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton7)</visible>
-                </control>
-                <control type="radiobutton" id="39013">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom7Background)</onclick>
-                    <selected>Skin.String(Custom7Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton7)</visible>
-                </control>
-                <control type="radiobutton" id="19014">
-                    <!--custom 8-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.8.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton8)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton8)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.8.title))</visible>
-                </control>
-                <control type="radiobutton" id="29014">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom8Background)</onclick>
-                    <selected>!Skin.String(Custom8Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton8)</visible>
-                </control>
-                <control type="radiobutton" id="39014">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom8Background)</onclick>
-                    <selected>Skin.String(Custom8Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton8)</visible>
-                </control>
-                <control type="radiobutton" id="19015">
-                    <!--custom 9-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.9.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton9)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton9)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.9.title))</visible>
-                </control>
-                <control type="radiobutton" id="29015">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom9Background)</onclick>
-                    <selected>!Skin.String(Custom9Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton9)</visible>
-                </control>
-                <control type="radiobutton" id="39015">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom9Background)</onclick>
-                    <selected>Skin.String(Custom9Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton9)</visible>
-                </control>
-                <control type="radiobutton" id="19016">
-                    <!--custom 10-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.10.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton10)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton10)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.10.title))</visible>
-                </control>
-                <control type="radiobutton" id="29116">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom10Background)</onclick>
-                    <selected>!Skin.String(Custom10Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton10)</visible>
-                </control>
-                <control type="radiobutton" id="37016">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom10Background)</onclick>
-                    <selected>Skin.String(Custom10Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton10)</visible>
-                </control>
-                <control type="radiobutton" id="19017">
-                    <!--custom 11-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.11.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton11)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton11)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.11.title))</visible>
-                </control>
-                <control type="radiobutton" id="29016">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom11Background)</onclick>
-                    <selected>!Skin.String(Custom11Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton11)</visible>
-                </control>
-                <control type="radiobutton" id="39016">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom11Background)</onclick>
-                    <selected>Skin.String(Custom11Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton11)</visible>
-                </control>
-                <control type="radiobutton" id="19018">
-                    <!--custom 12-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.12.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton12)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton12)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.12.title))</visible>
-                </control>
-                <control type="radiobutton" id="29018">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom12Background)</onclick>
-                    <selected>!Skin.String(Custom12Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton12)</visible>
-                </control>
-                <control type="radiobutton" id="39018">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom12Background)</onclick>
-                    <selected>Skin.String(Custom12Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton12)</visible>
-                </control>
-                <control type="radiobutton" id="19019">
-                    <!--custom 13-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.13.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton13)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton13)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.13.title))</visible>
-                </control>
-                <control type="radiobutton" id="29021">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom13Background)</onclick>
-                    <selected>!Skin.String(Custom13Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton13)</visible>
-                </control>
-                <control type="radiobutton" id="39019">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom13Background)</onclick>
-                    <selected>Skin.String(Custom13Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton13)</visible>
-                </control>
-                <control type="radiobutton" id="19020">
-                    <!--custom 14-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$INFO[Window(Home).Property(xbmb3c.14.title)]</label>
-                    <height>50</height>
-                    <textcolor>white</textcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton14)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuCustomButton14)</selected>
-                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.14.title))</visible>
-                </control>
-                <control type="radiobutton" id="29019">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31010]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(Custom14Background)</onclick>
-                    <selected>!Skin.String(Custom14Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton14)</visible>
-                </control>
-                <control type="radiobutton" id="29022">
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(Custom14Background)</onclick>
-                    <selected>Skin.String(Custom14Background)</selected>
-                    <visible>Skin.HasSetting(HomeMenuCustomButton14)</visible>
-                </control>
                 <control type="label" id="2301">
                     <width>1230</width>
                     <height>50</height>
@@ -1410,7 +772,8 @@
                     <visible>Skin.HasSetting(NetflixMode)</visible>
                 </control>
             </control>
-            <control type="grouplist" id="9000">
+             <!--tile settings-->
+			<control type="grouplist" id="9000">
                 <description>Control Area</description>
                 <width>1230</width>
                 <height>720</height>
@@ -1421,17 +784,29 @@
                 <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <visible>Container(100).Hasfocus(9)</visible>
-                <!-- music button -->
-                <control type="label" id="9002">
+				<!-- custom favorite tiles -->
+                <control type="label" id="368">
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$LOCALIZE[2] $LOCALIZE[31014]</label>
+                    <label>31120</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
+                </control>
+                <!-- music button -->
+				<control type="radiobutton" id="9002">
+                    <!--Music-->
+                    <description>Music</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <font>Bold30</font>
+                    <label>$LOCALIZE[2] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <onclick>Skin.ToggleSetting(HomeMenuMusicButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuMusicButton)</selected>
                 </control>
                 <control type="radiobutton" id="9003">
                     <description></description>
@@ -1476,12 +851,24 @@
                     <!--enable submenu -->
                     <width>1230</width>
                     <align>left</align>
-                    <label> --- $LOCALIZE[1035]</label>
+                    <label> --- $LOCALIZE[31116]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMusicSubmenu)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMusicSubmenu)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
+                </control>
+				<control type="radiobutton" id="9330">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseMusicWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseMusicWidget)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
                 </control>
                 <control type="radiobutton" id="9328">
@@ -1499,16 +886,16 @@
                     <visible>Skin.HasSetting(HomeMenuMusicButton)</visible>
                 </control>
                 <!-- movies button -->
-                <control type="label" id="9006">
+                <control type="radiobutton" id="8003">
+                    <description>Movies</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[342] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
+                    <label>$LOCALIZE[342] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuMoviesButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuMoviesButton)</selected>
                 </control>
                 <control type="radiobutton" id="9007">
                     <description></description>
@@ -1550,7 +937,7 @@
                     <!--enable submenu -->
                     <width>1230</width>
                     <align>left</align>
-                    <label> --- $LOCALIZE[1035]</label>
+                    <label> --- $LOCALIZE[31116]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1558,17 +945,29 @@
                     <selected>Skin.HasSetting(HomeMenuUseMoviesSubmenu)</selected>
                     <visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
                 </control>
-                <!-- livetv button -->
-                <control type="label" id="9010">
+				<control type="radiobutton" id="90092">
+                    <!--enable widget -->
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[31088] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseMoviesWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseMoviesWidget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMoviesButton)</visible>
+                </control>
+                <!-- livetv button -->
+                <control type="radiobutton" id="8008">
+                    <description>Live TV</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31088] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuPVRButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuPVRButton)</selected>
                 </control>
                 <control type="radiobutton" id="9012">
                     <description></description>
@@ -1607,11 +1006,11 @@
                     <selected>Skin.HasSetting(HomeMenuUseGuideOnTV)</selected>
                     <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
                 </control>
-				<control type="radiobutton" id="90092">
+				<control type="radiobutton" id="9016">
                     <!--enable submenu -->
                     <width>1230</width>
                     <align>left</align>
-                    <label> --- $LOCALIZE[1035]</label>
+                    <label> --- $LOCALIZE[31116]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1620,16 +1019,17 @@
                     <visible>Skin.HasSetting(HomeMenuPVRButton)</visible>
                 </control>
                 <!-- tv recordings button -->
-                <control type="label" id="9016">
+                <control type="radiobutton" id="8014">
+                    <!--TV-Recordings-->
+                    <description>Recordings</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[19017] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuTVRecordingsButton)</visible>
+                    <label>$LOCALIZE[19163] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuTVRecordingsButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuTVRecordingsButton)</selected>
                 </control>
                 <control type="radiobutton" id="9017">
                     <description></description>
@@ -1655,65 +1055,19 @@
                     <selected>!Skin.String(CustomPVRRecFolder, artwork) + Skin.String(CustomPVRRecFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuTVRecordingsButton)</visible>
                 </control>
-                <!-- netflix button -->
-                <control type="label" id="9019">
-                    <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[31018] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
-                </control>
-                <control type="radiobutton" id="9020">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31015]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(CustomNetflixFolder)</onclick>
-                    <selected>!Skin.String(CustomNetflixFolder)</selected>
-                    <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
-                </control>
-                <control type="radiobutton" id="9021">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(CustomNetflixFolder)</onclick>
-                    <selected>!Skin.String(CustomNetflixFolder, artwork) + Skin.String(CustomNetflixFolder)</selected>
-                    <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
-                </control>
-                <control type="radiobutton" id="29">
-                    <!--enable submenu -->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> --- $LOCALIZE[1035]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(HomeMenuUseNetflixSubmenu)</onclick>
-                    <selected>Skin.HasSetting(HomeMenuUseNetflixSubmenu)</selected>
-                    <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
-                </control>
+                
                 <!-- musicvideos button -->
-                <control type="label" id="72301">
+                <control type="radiobutton" id="81008">
+                    <!--MusicVideos-->
+                    <description>Musicvideos</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[31045] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
+                    <label>$LOCALIZE[31045] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuMusicVideosButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuMusicVideosButton)</selected>
                 </control>
                 <control type="radiobutton" id="72302">
                     <description></description>
@@ -1751,17 +1105,30 @@
                     <selected>!Skin.String(CustomMusicVideosFolder, artwork) + Skin.String(CustomMusicVideosFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
                 </control>
-                <!-- tv series button -->
-                <control type="label" id="9022">
+				<control type="radiobutton" id="518">
+                    <!--enable widget -->
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[20343] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseMusicVideosWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseMusicVideosWidget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMusicVideosButton)</visible>
+                </control>
+                <!-- tv series button -->
+                <control type="radiobutton" id="8004">
+                    <!--TV-Shows-->
+                    <description>TV-Shows</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[20343] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuTVShowsButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuTVShowsButton)</selected>
                 </control>
                 <control type="radiobutton" id="9023">
                     <description></description>
@@ -1803,7 +1170,7 @@
                     <!--enable submenu -->
                     <width>1230</width>
                     <align>left</align>
-                    <label> --- $LOCALIZE[1035]</label>
+                    <label> --- $LOCALIZE[31116]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
@@ -1811,17 +1178,30 @@
                     <selected>Skin.HasSetting(HomeMenuUseTVseriesSubmenu)</selected>
                     <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
                 </control>
-                <!-- radio button -->
-                <control type="label" id="9026">
+				<control type="radiobutton" id="9826">
+                    <!--enable widget -->
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[19021] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuRadioButton)</visible>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseTVseriesWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseTVseriesWidget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuTVShowsButton)</visible>
+                </control>
+                <!-- radio button -->
+                <control type="radiobutton" id="8018">
+                    <!--Radio-->
+                    <description>Radio</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[19021] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuRadioButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuRadioButton)</selected>
                 </control>
                 <control type="radiobutton" id="9027">
                     <description></description>
@@ -1862,16 +1242,17 @@
                     <visible>Skin.HasSetting(HomeMenuRadioButton)</visible>
                 </control>
                 <!-- Pictures button -->
-                <control type="label" id="9029">
+                <control type="radiobutton" id="8006">
+                    <!--Pictures-->
+                    <description>Pictures</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[1] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuPicturesButton)</visible>
+                    <label>$LOCALIZE[10002] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuPicturesButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuPicturesButton)</selected>
                 </control>
                 <control type="radiobutton" id="9030">
                     <description></description>
@@ -1910,16 +1291,17 @@
                     <visible>Skin.HasSetting(HomeMenuPicturesButton)</visible>
                 </control>
                 <!-- Videos button -->
-                <control type="label" id="9033">
+                <control type="radiobutton" id="8002">
+                    <!--Video-->
+                    <description>Video</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[3] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuVideosButton)</visible>
+                    <label>$LOCALIZE[3] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuVideosButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuVideosButton)</selected>
                 </control>
                 <control type="radiobutton" id="9034">
                     <description></description>
@@ -1946,16 +1328,17 @@
                     <visible>Skin.HasSetting(HomeMenuVideosButton)</visible>
                 </control>
                 <!-- Weather button -->
-                <control type="label" id="9036">
+                <control type="radiobutton" id="8007">
+                    <!--Weather-->
+                    <description>Weather</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[8] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
+                    <label>$LOCALIZE[8] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuWeatherButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuWeatherButton)</selected>
                 </control>
                 <control type="radiobutton" id="9037">
                     <description></description>
@@ -2005,17 +1388,30 @@
                     <selected>Skin.HasSetting(WeatherButtonDisplayTemp)</selected>
                     <visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
                 </control>
-                <!-- Video-addons button -->
-                <control type="label" id="9040">
+				<control type="radiobutton" id="9140">
+                    <!--enable widget -->
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[1037] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuVideoAddonsButton)</visible>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseWeatherWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseWeatherWidget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuWeatherButton)</visible>
+                </control>
+                <!-- Video-addons button -->
+                 <control type="radiobutton" id="8005">
+                    <!--Video-Addons-->
+                    <description>Video-Addons</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[1037] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuVideoAddonsButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuVideoAddonsButton)</selected>
                 </control>
                 <control type="radiobutton" id="9041">
                     <description></description>
@@ -2042,16 +1438,17 @@
                     <visible>Skin.HasSetting(HomeMenuVideoAddonsButton)</visible>
                 </control>
                 <!-- Addons button -->
-                <control type="label" id="9043">
+                <control type="radiobutton" id="8009">
+                    <!--Addons-->
+                    <description>Addons</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[24001] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuAddonsButton)</visible>
+                    <label>$LOCALIZE[24001] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuAddonsButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuAddonsButton)</selected>
                 </control>
                 <control type="radiobutton" id="9044">
                     <description></description>
@@ -2078,16 +1475,16 @@
                     <visible>Skin.HasSetting(HomeMenuAddonsButton)</visible>
                 </control>
                 <!-- Favourites button -->
-                <control type="label" id="9046">
+               <control type="radiobutton" id="8015">
+                    <description>Favourites</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[1036] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuFavouritesButton)</visible>
+                    <label>$LOCALIZE[10134] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuFavouritesButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuFavouritesButton)</selected>
                 </control>
                 <control type="radiobutton" id="9047">
                     <description></description>
@@ -2114,16 +1511,17 @@
                     <visible>Skin.HasSetting(HomeMenuFavouritesButton)</visible>
                 </control>
                 <!-- Programs -->
-                <control type="label" id="9049">
+                <control type="radiobutton" id="8010">
+                    <!--Programs-->
+                    <description>Programs</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[0] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuProgramsButton)</visible>
+                    <label>$LOCALIZE[350] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuProgramsButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuProgramsButton)</selected>
                 </control>
                 <control type="radiobutton" id="9050">
                     <description></description>
@@ -2150,16 +1548,17 @@
                     <visible>Skin.HasSetting(HomeMenuProgramsButton)</visible>
                 </control>
                 <!-- Filemanager -->
-                <control type="label" id="9052">
+                <control type="radiobutton" id="8011">
+                    <!--Filemanager-->
+                    <description>Filemanager</description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[7] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuFilemanagerButton)</visible>
+                    <label>$LOCALIZE[7] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuFilemanagerButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuFilemanagerButton)</selected>
                 </control>
                 <control type="radiobutton" id="9053">
                     <description></description>
@@ -2186,16 +1585,16 @@
                     <visible>Skin.HasSetting(HomeMenuFilemanagerButton)</visible>
                 </control>
                 <!-- Settings -->
-                <control type="label" id="9055">
+                <control type="radiobutton" id="8019">
+                    <description></description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[5] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
+                    <label>$LOCALIZE[5] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuSettingsButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuSettingsButton)</selected>
                 </control>
                 <control type="radiobutton" id="9056">
                     <description></description>
@@ -2209,7 +1608,7 @@
                     <selected>!Skin.String(CustomSettingsFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
                 </control>
-                <control type="radiobutton" id="9057">
+                <control type="radiobutton" id="17057">
                     <description></description>
                     <width>1230</width>
                     <align>left</align>
@@ -2222,54 +1621,41 @@
                     <visible>Skin.HasSetting(HomeMenuSettingsButton)</visible>
                 </control>
 				
-				<!-- PleXBMC -->
-                <control type="label" id="9058">
-                    <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$LOCALIZE[31095] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
+				<control type="image" id="2103">
+                    <!--Seperator-->
+                    <width>1200</width>
+					<posx>-60</posx>
+                    <height>40</height>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.HasSetting(HomeMenuPlexBMCButton)</visible>
-                </control>
-                <control type="radiobutton" id="9059">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31015]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.Reset(CustomPlexBMCFolder)</onclick>
-                    <selected>!Skin.String(CustomPlexBMCFolder)</selected>
-                    <visible>Skin.HasSetting(HomeMenuPlexBMCButton)</visible>
-                </control>
-                <control type="radiobutton" id="9060">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31016]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(CustomPlexBMCFolder)</onclick>
-                    <selected>Skin.String(CustomPlexBMCFolder)</selected>
-                    <visible>Skin.HasSetting(HomeMenuPlexBMCButton)</visible>
+					<valign>bottom</valign>
+                    <texture>blankspace.png</texture>
+					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
                 </control>
 				
-				<!-- Custom 1 -->
-                <control type="label" id="9061">
+				<!-- custom favorite tiles -->
+                <control type="label" id="369">
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>$INFO[Skin.String(CustomHome.1.Label)] $LOCALIZE[31014]</label>
+                    <label>31118</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <visible>Skin.String(CustomHome.1.Label)</visible>
+                </control>
+
+				
+				<!-- Custom 1 -->
+                <control type="radiobutton" id="8021">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$VAR[CustomHome1]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.1)</onclick>
+                    <selected>Skin.String(CustomHome.1.Label)</selected>
                 </control>
                 <control type="radiobutton" id="9062">
                     <description></description>
@@ -2297,16 +1683,16 @@
                 </control>
 				
 				<!-- Custom 2 -->
-                <control type="label" id="9064">
+                <control type="radiobutton" id="8022">
+                    <description></description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$INFO[Skin.String(CustomHome.2.Label)] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.String(CustomHome.2.Label)</visible>
+                    <label>$VAR[CustomHome2]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.2)</onclick>
+                    <selected>Skin.String(CustomHome.2.Label)</selected>
                 </control>
                 <control type="radiobutton" id="9065">
                     <description></description>
@@ -2333,16 +1719,16 @@
                     <visible>Skin.String(CustomHome.2.Label)</visible>
                 </control>
 				<!-- Custom 3 -->
-                <control type="label" id="9067">
+                <control type="radiobutton" id="8023">
+                    <description></description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$INFO[Skin.String(CustomHome.3.Label)] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.String(CustomHome.3.Label)</visible>
+                    <label>$VAR[CustomHome3]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.3)</onclick>
+                    <selected>Skin.String(CustomHome.3.Label)</selected>
                 </control>
                 <control type="radiobutton" id="9068">
                     <description></description>
@@ -2369,16 +1755,16 @@
                     <visible>Skin.String(CustomHome.3.Label)</visible>
                 </control>
 				<!-- Custom 4 -->
-                <control type="label" id="9070">
+                <control type="radiobutton" id="8024">
+                    <description></description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$INFO[Skin.String(CustomHome.4.Label)] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.String(CustomHome.4.Label)</visible>
+                    <label>$VAR[CustomHome4]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.4)</onclick>
+                    <selected>Skin.String(CustomHome.4.Label)</selected>
                 </control>
                 <control type="radiobutton" id="9071">
                     <description></description>
@@ -2405,16 +1791,16 @@
                     <visible>Skin.String(CustomHome.4.Label)</visible>
                 </control>
 				<!-- Custom 5 -->
-                <control type="label" id="9073">
+                <control type="radiobutton" id="8025">
+                    <description></description>
                     <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>$INFO[Skin.String(CustomHome.5.Label)] $LOCALIZE[31014]</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>Skin.String(CustomHome.5.Label)</visible>
+                    <label>$VAR[CustomHome5]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomHome.5)</onclick>
+                    <selected>Skin.String(CustomHome.5.Label)</selected>
                 </control>
                 <control type="radiobutton" id="9074">
                     <description></description>
@@ -2440,9 +1826,971 @@
                     <selected>Skin.String(CustomHome5Folder)</selected>
                     <visible>Skin.String(CustomHome.5.Label)</visible>
                 </control>
+				<control type="image" id="18000">
+                    <!--Seperator-->
+                    <width>1200</width>
+					<posx>-60</posx>
+                    <height>40</height>
+                    <align>left</align>
+					<valign>bottom</valign>
+                    <texture>blankspace.png</texture>
+					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
+                </control>
+				
+				<!-- 3th party tiles -->
+                <control type="label" id="18001">
+                    <width>1230</width>
+                    <height>50</height>
+					<posy>80</posy>
+                    <font>Bold38</font>
+                    <label>31119</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
+                </control>
+				<!-- netflix button -->
+                <control type="radiobutton" id="18002">
+                    <!--Netflix-->
+                    <description>NetfliXBMC Plugin</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31018] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuNetflixButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuNetflixButton)</selected>
+                    <visible>System.HasAddon(plugin.video.netflixbmc)</visible>
+                </control>
+                <control type="radiobutton" id="18003">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31015]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(CustomNetflixFolder)</onclick>
+                    <selected>!Skin.String(CustomNetflixFolder)</selected>
+                    <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
+                </control>
+                <control type="radiobutton" id="18004">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(CustomNetflixFolder)</onclick>
+                    <selected>!Skin.String(CustomNetflixFolder, artwork) + Skin.String(CustomNetflixFolder)</selected>
+                    <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
+                </control>
+                <control type="radiobutton" id="18005">
+                    <!--enable submenu -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31116]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseNetflixSubmenu)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseNetflixSubmenu)</selected>
+                    <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
+                </control>
+				<control type="radiobutton" id="18006">
+                    <!--enable submenu -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseNetflixWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseNetflixWidget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuNetflixButton)</visible>
+                </control>
+				<!-- PleXBMC -->
+                <control type="radiobutton" id="18007">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[PleXBMC] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuPlexBMCButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuPlexBMCButton)</selected>
+					<visible>System.HasAddon(plugin.video.plexbmc)</visible>
+                </control>
+				<control type="radiobutton" id="18008">
+                    <!--YouTube-->
+                    <description>Youtube Plugin</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31062] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuYouTubeButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuYouTubeButton)</selected>
+                    <visible>System.HasAddon(plugin.video.youtube)</visible>
+                </control>
+				<control type="radiobutton" id="18009">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseYouTubeWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseYouTubeWidget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuYouTubeButton)</visible>
+                </control>
+                <control type="radiobutton" id="18010">
+                    <!--xbmb3c-->
+                    <description>XBMB3C Plugin</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31089] $LOCALIZE[31014]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuXBMB3CButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuXBMB3CButton)</selected>
+                    <visible>System.HasAddon(plugin.video.xbmb3c)</visible>
+                </control>
+				<control type="image" id="19000">
+                    <!--Seperator-->
+                    <width>1200</width>
+					<posx>-60</posx>
+                    <height>40</height>
+                    <align>left</align>
+					<valign>bottom</valign>
+                    <texture>blankspace.png</texture>
+					<visible>Skin.HasSetting(MediaBrowserMode)</visible>
+                </control>
+				<!-- add custom library buttons for MB -->
+                <control type="label" id="19001">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label>31009</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <visible>Skin.HasSetting(MediaBrowserMode)</visible>
+                </control>
+                <control type="radiobutton" id="19002">
+                    <!--mb3 favourite movies-->
+                    <label>$INFO[Window(Home).Property(xbmb3c.std.movies.3.title)]</label>
+                    <width>1230</width>
+                    <align>left</align>
+                    <height>50</height>
+                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuMB3FavouritesButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuMB3FavouritesButton)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
+                </control>
+                <control type="radiobutton" id="19003">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(MB3FavoritesBackground)</onclick>
+                    <selected>!Skin.String(MB3FavoritesBackground)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
+                </control>
+                <control type="radiobutton" id="19004">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(MB3FavoritesBackground)</onclick>
+                    <selected>Skin.String(MB3FavoritesBackground)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
+                </control>
+				<control type="radiobutton" id="19005">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseMB3FavoritesWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseMB3FavoritesWidget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMB3FavouritesButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.movies.3.title))</visible>
+                </control>
+                <control type="radiobutton" id="19006">
+                    <!--mb3 channels-->
+                    <label>$INFO[Window(Home).Property(xbmb3c.std.channels.0.title)]</label>
+                    <width>1230</width>
+                    <align>left</align>
+                    <height>50</height>
+                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuMB3ChannelsButton)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuMB3ChannelsButton)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
+                </control>
+                <control type="radiobutton" id="19007">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(MB3ChannelsBackground)</onclick>
+                    <selected>!Skin.String(MB3ChannelsBackground)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
+                </control>
+                <control type="radiobutton" id="19008">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(MB3ChannelsBackground)</onclick>
+                    <selected>Skin.String(MB3ChannelsBackground)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
+                </control>
+				<control type="radiobutton" id="19009">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuUseMB3ChannelsWidget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseMB3ChannelsWidget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuMB3ChannelsButton) + !IsEmpty(Window(Home).Property(xbmb3c.std.channels.0.title))</visible>
+                </control>
+                <control type="radiobutton" id="19010">
+                    <!--custom 0-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.0.title)]</label>
+                    <height>50</height>
+                    <focusedcolor>$VAR[ThemeFontColorWhite]</focusedcolor>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton0)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton0)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.0.title))</visible>
+                </control>
+                <control type="radiobutton" id="19011">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom0Background)</onclick>
+                    <selected>!Skin.String(Custom0Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton0) + !IsEmpty(Window(Home).Property(titanmb3.0.title))</visible>
+                </control>
+                <control type="radiobutton" id="19012">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom0Background)</onclick>
+                    <selected>Skin.String(Custom0Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton0) + !IsEmpty(Window(Home).Property(titanmb3.0.title))</visible>
+                </control>
+				<control type="radiobutton" id="19013">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom0Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom0Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton0) + !IsEmpty(Window(Home).Property(titanmb3.0.title))</visible>
+                </control>
+                <!-- custom 1 -->
+                <control type="radiobutton" id="19014">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.1.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton1)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton1)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.1.title))</visible>
+                </control>
+                <control type="radiobutton" id="19015">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom1Background)</onclick>
+                    <selected>!Skin.String(Custom1Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton1) + !IsEmpty(Window(Home).Property(titanmb3.1.title))</visible>
+                </control>
+                <control type="radiobutton" id="19016">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom1Background)</onclick>
+                    <selected>Skin.String(Custom1Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton1) + !IsEmpty(Window(Home).Property(titanmb3.1.title))</visible>
+                </control>
+				<control type="radiobutton" id="19017">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom1Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom1Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton1) + !IsEmpty(Window(Home).Property(titanmb3.1.title))</visible>
+                </control>
+                <control type="radiobutton" id="19018">
+                    <!--custom 2-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.2.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                   <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton2)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton2)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.2.title))</visible>
+                </control>
+                <control type="radiobutton" id="19019">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom2Background)</onclick>
+                    <selected>!Skin.String(Custom2Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton2) + !IsEmpty(Window(Home).Property(titanmb3.2.title))</visible>
+                </control>
+                <control type="radiobutton" id="19020">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom2Background)</onclick>
+                    <selected>Skin.String(Custom2Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton2) + !IsEmpty(Window(Home).Property(titanmb3.2.title))</visible>
+                </control>
+				<control type="radiobutton" id="19021">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom2Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom2Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton2) + !IsEmpty(Window(Home).Property(titanmb3.2.title))</visible>
+                </control>
+                <control type="radiobutton" id="19022">
+                    <!--custom 3-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.3.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton3)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton3)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.3.title))</visible>
+                </control>
+                <control type="radiobutton" id="19023">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom3Background)</onclick>
+                    <selected>!Skin.String(Custom3Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton3) + !IsEmpty(Window(Home).Property(titanmb3.3.title))</visible>
+                </control>
+                <control type="radiobutton" id="19024">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom3Background)</onclick>
+                    <selected>Skin.String(Custom3Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton3) + !IsEmpty(Window(Home).Property(titanmb3.3.title))</visible>
+                </control>
+				<control type="radiobutton" id="19025">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom3Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom3Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton3) + !IsEmpty(Window(Home).Property(titanmb3.3.title))</visible>
+                </control>
+                <control type="radiobutton" id="19026">
+                    <!--custom 4-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.4.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton4)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton4)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.4.title))</visible>
+                </control>
+                <control type="radiobutton" id="19027">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom4Background)</onclick>
+                    <selected>!Skin.String(Custom4Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton4) + !IsEmpty(Window(Home).Property(titanmb3.4.title))</visible>
+                </control>
+                <control type="radiobutton" id="19028">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom4Background)</onclick>
+                    <selected>Skin.String(Custom4Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton4) + !IsEmpty(Window(Home).Property(titanmb3.4.title))</visible>
+                </control>
+				<control type="radiobutton" id="19029">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom4Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom4Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton4) + !IsEmpty(Window(Home).Property(titanmb3.4.title))</visible>
+                </control>
+                <control type="radiobutton" id="19030">
+                    <!--custom 5-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.5.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton5)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton5)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.5.title))</visible>
+                </control>
+                <control type="radiobutton" id="19031">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom5Background)</onclick>
+                    <selected>!Skin.String(Custom5Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton5) + !IsEmpty(Window(Home).Property(titanmb3.5.title))</visible>
+                </control>
+                <control type="radiobutton" id="19032">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom5Background)</onclick>
+                    <selected>Skin.String(Custom5Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton5) + !IsEmpty(Window(Home).Property(titanmb3.5.title))</visible>
+                </control>
+				<control type="radiobutton" id="19038">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom5Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom5Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton5) + !IsEmpty(Window(Home).Property(titanmb3.5.title))</visible>
+                </control>
+                <control type="radiobutton" id="19040">
+                    <!--custom 6-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.6.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton6)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton6)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.6.title))</visible>
+                </control>
+                <control type="radiobutton" id="19041">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom6Background)</onclick>
+                    <selected>!Skin.String(Custom6Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton6) + !IsEmpty(Window(Home).Property(titanmb3.6.title))</visible>
+                </control>
+                <control type="radiobutton" id="19042">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom6Background)</onclick>
+                    <selected>Skin.String(Custom6Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton6) + !IsEmpty(Window(Home).Property(titanmb3.6.title))</visible>
+                </control>
+				<control type="radiobutton" id="19043">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom6Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom6Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton6) + !IsEmpty(Window(Home).Property(titanmb3.6.title))</visible>
+                </control>
+                <control type="radiobutton" id="19045">
+                    <!--custom 7-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.7.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton7)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton7)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.7.title))</visible>
+                </control>
+                <control type="radiobutton" id="19046">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom7Background)</onclick>
+                    <selected>!Skin.String(Custom7Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton7) + !IsEmpty(Window(Home).Property(titanmb3.7.title))</visible>
+                </control>
+                <control type="radiobutton" id="19047">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom7Background)</onclick>
+                    <selected>Skin.String(Custom7Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton7) + !IsEmpty(Window(Home).Property(titanmb3.7.title))</visible>
+                </control>
+				<control type="radiobutton" id="19048">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom7Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom7Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton7) + !IsEmpty(Window(Home).Property(titanmb3.7.title))</visible>
+                </control>
+                <control type="radiobutton" id="19050">
+                    <!--custom 8-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.8.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton8)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton8)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.8.title))</visible>
+                </control>
+                <control type="radiobutton" id="19051">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom8Background)</onclick>
+                    <selected>!Skin.String(Custom8Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton8) + !IsEmpty(Window(Home).Property(titanmb3.8.title))</visible>
+                </control>
+                <control type="radiobutton" id="19052">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom8Background)</onclick>
+                    <selected>Skin.String(Custom8Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton8) + !IsEmpty(Window(Home).Property(titanmb3.8.title))</visible>
+                </control>
+				<control type="radiobutton" id="19053">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom8Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom8Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton8) + !IsEmpty(Window(Home).Property(titanmb3.8.title))</visible>
+                </control>
+                <control type="radiobutton" id="19055">
+                    <!--custom 9-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.9.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton9)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton9)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.9.title))</visible>
+                </control>
+                <control type="radiobutton" id="19056">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom9Background)</onclick>
+                    <selected>!Skin.String(Custom9Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton9) + !IsEmpty(Window(Home).Property(titanmb3.9.title))</visible>
+                </control>
+                <control type="radiobutton" id="19057">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom9Background)</onclick>
+                    <selected>Skin.String(Custom9Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton9) + !IsEmpty(Window(Home).Property(titanmb3.9.title))</visible>
+                </control>
+				<control type="radiobutton" id="19058">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom9Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom9Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton9) + !IsEmpty(Window(Home).Property(titanmb3.9.title))</visible>
+                </control>
+                <control type="radiobutton" id="19060">
+                    <!--custom 10-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.10.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton10)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton10)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.10.title))</visible>
+                </control>
+                <control type="radiobutton" id="19061">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom10Background)</onclick>
+                    <selected>!Skin.String(Custom10Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton10) + !IsEmpty(Window(Home).Property(titanmb3.10.title))</visible>
+                </control>
+                <control type="radiobutton" id="19062">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom10Background)</onclick>
+                    <selected>Skin.String(Custom10Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton10) + !IsEmpty(Window(Home).Property(titanmb3.10.title))</visible>
+                </control>
+				<control type="radiobutton" id="19063">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom10Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom10Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton10) + !IsEmpty(Window(Home).Property(titanmb3.10.title))</visible>
+                </control>
+                <control type="radiobutton" id="19065">
+                    <!--custom 11-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.11.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton11)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton11)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.11.title))</visible>
+                </control>
+                <control type="radiobutton" id="19066">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom11Background)</onclick>
+                    <selected>!Skin.String(Custom11Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton11) + !IsEmpty(Window(Home).Property(titanmb3.11.title))</visible>
+                </control>
+                <control type="radiobutton" id="19067">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom11Background)</onclick>
+                    <selected>Skin.String(Custom11Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton11) + !IsEmpty(Window(Home).Property(titanmb3.11.title))</visible>
+                </control>
+				<control type="radiobutton" id="19068">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom11Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom11Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton11) + !IsEmpty(Window(Home).Property(titanmb3.11.title))</visible>
+                </control>
+                <control type="radiobutton" id="19070">
+                    <!--custom 12-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.12.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton12)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton12)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.12.title))</visible>
+                </control>
+                <control type="radiobutton" id="19071">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom12Background)</onclick>
+                    <selected>!Skin.String(Custom12Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(titanmb3.12.title))</visible>
+                </control>
+                <control type="radiobutton" id="19072">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom12Background)</onclick>
+                    <selected>Skin.String(Custom12Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(titanmb3.12.title))</visible>
+                </control>
+				<control type="radiobutton" id="19073">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom12Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom12Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton12) + !IsEmpty(Window(Home).Property(titanmb3.12.title))</visible>
+                </control>
+                <control type="radiobutton" id="19075">
+                    <!--custom 13-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.13.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton13)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton13)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.13.title))</visible>
+                </control>
+                <control type="radiobutton" id="19076">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom13Background)</onclick>
+                    <selected>!Skin.String(Custom13Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton13) + !IsEmpty(Window(Home).Property(titanmb3.13.title))</visible>
+                </control>
+                <control type="radiobutton" id="19077">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom13Background)</onclick>
+                    <selected>Skin.String(Custom13Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton13) + !IsEmpty(Window(Home).Property(titanmb3.13.title))</visible>
+                </control>
+				<control type="radiobutton" id="19078">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom13Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom13Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton13) + !IsEmpty(Window(Home).Property(titanmb3.13.title))</visible>
+                </control>
+                <control type="radiobutton" id="19080">
+                    <!--custom 14-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$INFO[Window(Home).Property(titanmb3.14.title)]</label>
+                    <height>50</height>
+                    <textcolor>white</textcolor>
+                    <font>Bold30</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustomButton14)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustomButton14)</selected>
+                    <visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.14.title))</visible>
+                </control>
+                <control type="radiobutton" id="19081">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31010]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(Custom14Background)</onclick>
+                    <selected>!Skin.String(Custom14Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton14) + !IsEmpty(Window(Home).Property(titanmb3.14.title))</visible>
+                </control>
+                <control type="radiobutton" id="19082">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> $LOCALIZE[31016]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(Custom14Background)</onclick>
+                    <selected>Skin.String(Custom14Background)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton14) + !IsEmpty(Window(Home).Property(titanmb3.14.title))</visible>
+                </control>
+				<control type="radiobutton" id="19083">
+                    <!--enable widget -->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label> --- $LOCALIZE[31117]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(HomeMenuCustom14Widget)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuCustom14Widget)</selected>
+                    <visible>Skin.HasSetting(HomeMenuCustomButton14) + !IsEmpty(Window(Home).Property(titanmb3.14.title))</visible>
+                </control>
 				
             </control>
-            <control type="grouplist" id="5000">
+             <!--advanced settings-->
+			<control type="grouplist" id="5000">
                 <description>Control Area</description>
                 <width>1230</width>
                 <height>720</height>
@@ -2453,89 +2801,7 @@
                 <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <visible>Container(100).Hasfocus(6)</visible>
-                <!-- skin background -->
-                <control type="label" id="5001">
-                    <width>1230</width>
-                    <height>50</height>
-                    <font>Bold38</font>
-                    <label>31022</label>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                </control>
-                <control type="radiobutton" id="5003">
-                    <description></description>
-                    <!--bluebg-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31023</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(CustomBackgroundSetting, blue)</onclick>
-                    <selected>Skin.String(CustomBackgroundSetting, blue)</selected>
-                </control>
-                <control type="radiobutton" id="5002">
-                    <description></description>
-                    <!--defaultbg-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31024</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(CustomBackgroundSetting, default)</onclick>
-                    <selected>Skin.String(CustomBackgroundSetting, default)</selected>
-                </control>
-                <control type="radiobutton" id="5004">
-                    <description></description>
-                    <!--weather bg-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31025</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(CustomBackgroundSetting, weather)</onclick>
-                    <selected>Skin.String(CustomBackgroundSetting, weather)</selected>
-                </control>
-                <control type="radiobutton" id="5005">
-                    <description></description>
-                    <!--fanart bg-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31026</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(CustomBackgroundSetting, fanart)</onclick>
-                    <selected>Skin.String(CustomBackgroundSetting, fanart)</selected>
-                </control>
-                <control type="radiobutton" id="5007">
-                    <description></description>
-                    <!--fanart bg-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31027</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(CustomBackgroundSetting, gadget)</onclick>
-                    <selected>Skin.String(CustomBackgroundSetting, gadget)</selected>
-                </control>
-                <control type="radiobutton" id="5006">
-                    <description></description>
-                    <!--own image-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>$LOCALIZE[31039]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetImage(CustomBackgroundSetting)</onclick>
-                    <selected>!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart) + !Skin.String(CustomBackgroundSetting, gadget)</selected>
-                </control>
+                
                 <!-- skin tweaks -->
                 <control type="label" id="5010">
                     <width>1230</width>
@@ -2558,66 +2824,6 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoFooterBar)</onclick>
                     <selected>Skin.HasSetting(NoFooterBar)</selected>
-                </control>
-                <control type="radiobutton" id="5012">
-                    <description></description>
-                    <!--no blue bar-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31030</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(WeatherOnHome)</onclick>
-                    <selected>Skin.HasSetting(WeatherOnHome)</selected>
-                </control>
-                <control type="radiobutton" id="5013">
-                    <description></description>
-                    <!--gadget rows-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31031</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(GadgetRows, 2)</onclick>
-                    <selected>Skin.String(GadgetRows, 2) | !Skin.String(GadgetRows)</selected>
-                </control>
-                <control type="radiobutton" id="5015">
-                    <description></description>
-                    <!--gadget rows-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31033</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(GadgetRows, 1)</onclick>
-                    <selected>Skin.String(GadgetRows, 1)</selected>
-                </control>
-				<control type="radiobutton" id="5016">
-                    <description></description>
-                    <!--gadget rows-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31111</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(UseHubsOnHomeScreen)</onclick>
-                    <selected>Skin.HasSetting(UseHubsOnHomeScreen)</selected>
-                </control>
-                <control type="radiobutton" id="5115">
-                    <description></description>
-                    <!--no titles on home tiles-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31086</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(NoTitleOnHomeMenuTiles)</onclick>
-                    <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
                 </control>
                 <control type="radiobutton" id="5116">
                     <description></description>
@@ -2646,15 +2852,15 @@
                 </control>
 				<control type="radiobutton" id="5118">
                     <description></description>
-                    <!--enable auto show submenus-->
+                    <!--enable info on osd-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>31113</label>
+                    <label>31133</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(EnableAutoSubMenu)</onclick>
-                    <selected>Skin.HasSetting(EnableAutoSubMenu)</selected>
+                    <onclick>Skin.ToggleSetting(EnableOSDInfo)</onclick>
+                    <selected>Skin.HasSetting(EnableOSDInfo)</selected>
                 </control>
             </control>
         </control>

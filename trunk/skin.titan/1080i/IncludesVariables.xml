@@ -167,7 +167,7 @@
     <variable name="PicturesButtonThumb">
         <value condition="!Skin.String(CustomPicturesFolder, artwork)">$INFO[Skin.String(CustomPicturesFolder)]</value>
 		<value condition="Skin.String(CustomPicturesFolder, artwork) + Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(xbmb3c.std.photo.0.image))">$INFO[Window(Home).Property(xbmb3c.std.photo.0.image)]</value>
-        <value condition="Skin.String(CustomPicturesFolder, artwork) + Skin.HasSetting(MediaBrowserMode22)">$VAR[randompicturegenerate]</value>
+        <value condition="Skin.String(CustomPicturesFolder, artwork) + Skin.HasSetting(MediaBrowserMode)">$VAR[randompicturegenerate]</value>
     </variable>
     <variable name="randompicturegenerate">
         <value condition="IntegerGreaterThan(System.Time(mm), 55)">$INFO[Window.Property(LatestPhotoMB3.6.Thumb)]</value>
@@ -269,23 +269,23 @@
         <value condition="Skin.String(MB3ChannelsBackground)">$INFO[Skin.String(MB3ChannelsBackground)]</value>
     </variable>
     <variable name="MusicButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.HasSetting(EnableAutoSubMenu)">SetProperty(submenu,show,Home)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
         <value condition="Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(Music, $INFO[Skin.String(HomeMenuUseMusicCollection)], return)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">ActivateWindow(Music, MusicLibrary, return)</value>
         <value condition="Skin.HasSetting(MediaBrowserMode) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">$INFO[Window.Property(xbmb3c.std.music.0.path)]</value>
     </variable>
     <variable name="NetflixButtonOnClick">
-        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu) + !SubString(Window(Home).Property(submenu),loading)">SetProperty(submenu,show,Home)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
         <value>ActivateWindow(10025,"plugin://plugin.video.netflixbmc",return)</value>
     </variable>
     <variable name="MoviesButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(EnableAutoSubMenu)">SetProperty(submenu,show,Home)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,movietitles,return)</value>
         <value condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.0.path)]</value>
     </variable>
     <variable name="TVseriesButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseTVseriesSubmenu) + !Skin.HasSetting(EnableAutoSubMenu)">SetProperty(submenu,show,Home)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseTVseriesSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries)">ActivateWindow(Video,tvshowtitles,return)</value>
         <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.0.path)]</value>
@@ -303,7 +303,7 @@
         <value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window.Property(xbmb3c.std.music.3.path)]</value>
     </variable>
     <variable name="LiveTVButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuLiveTVSubmenu) + !Skin.HasSetting(EnableAutoSubMenu)">SetProperty(submenu,show,Home)</value>
+		<value condition="Skin.HasSetting(HomeMenuLiveTVSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
 		<value condition="SubString(System.BuildVersion,14,left) + Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVGuide)</value>
         <value condition="SubString(System.BuildVersion,14,left) + !Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVChannels)</value>
         <value condition="Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</value>
@@ -443,7 +443,7 @@
         <value condition="!Skin.HasTheme(classic)">cc00b8ff</value>
         <value>FFfffeff</value>
     </variable>
-	
+
 	<variable name="WatchedImage">
 		<value condition="!Skin.HasTheme(classic) + !Control.IsVisible(50) + SubString(ListItem.label,*)">overlays/big/OverlayUnWatched.png</value>
 		<value condition="Skin.HasTheme(classic) + !Control.IsVisible(50) + SubString(ListItem.label,*)">overlays/rounded/OverlayUnWatched.png</value>
@@ -463,16 +463,12 @@
 		<value condition="ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png)">$INFO[ListItem.PercentPlayed]%</value>
     </variable>
 	
-	<variable name="ShowCaseWatchedImage">
-        <value condition="!Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/big/$INFO[ListItem.Overlay]</value>
-		<value condition="Skin.HasTheme(classic) + [StringCompare(ListItem.Overlay,OverlayWatched.png)">overlays/rounded/$INFO[ListItem.Overlay]</value>
-    </variable>
-	
+
 	<variable name="BannerImage">
         <value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
         <value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-        <value>banner_default.png</value>
+		<value condition="!IsEmpty(FanArt.Image)">$INFO[FanArt.Image]</value>
     </variable>
 	
 	<variable name="CustomHome1">
@@ -533,7 +529,8 @@
 	
 	<variable name="HomeHubLabel">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(contenttitle))">$INFO[Container(300).ListItem.Property(contenttitle)]</value>
-	
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),weather)">$LOCALIZE[8]</value>
+		
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, randommovies) | !Skin.String(MoviesWidget)">$LOCALIZE[31102]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, newmovies)">$LOCALIZE[31048]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),movies) + Skin.String(MoviesWidget, inprogressmovies)">$LOCALIZE[31035]</value>
@@ -643,12 +640,6 @@
 		<value>videodb://recentlyaddedmusicvideos/</value>
 	</variable>
 	
-	<variable name="Banner" description="TV Banners">
-		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
-		<value condition="Skin.HasSetting(plexbmc)">$INFO[ListItem.Property(banner)]</value>
-		<value>$INFO[ListItem.Art(thumb)]</value>
-	 </variable>
-  
 	<variable name="Details" description="Shown Above Plots and descriptions">
     <value condition="!Container.content(Addons) + Window.IsActive(MyPics.xml)">$INFO[ListItem.Date,, • ]$INFO[ListItem.Size]</value>
     <value condition="Container.content(Albums)">$INFO[ListItem.Artist]</value>
@@ -679,6 +670,7 @@
     <value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
   </variable>
   
+  <!-- home submenu variables-->
   <variable name="HomeSubMenuTV">
 		<value condition="Skin.HasSetting(HomeMenuUseTVseriesSubmenu)">tvshows</value>
    </variable>
@@ -695,6 +687,108 @@
 		<value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu)">music</value>
    </variable>
    
+   <!-- home widget variables-->
+   <variable name="HomeWidgetTV">
+		<value condition="Skin.HasSetting(HomeMenuUseTVseriesWidget)">tvshows</value>
+   </variable>
+    <variable name="HomeWidgetNetflix">
+		<value condition="Skin.HasSetting(HomeMenuUseNetflixWidget)">netflix</value>
+   </variable>
+   <variable name="HomeWidgetMovies">
+		<value condition="Skin.HasSetting(HomeMenuUseMoviesWidget)">movies</value>
+   </variable>
+   <variable name="HomeWidgetMusic">
+		<value condition="Skin.HasSetting(HomeMenuUseMusicWidget)">music</value>
+   </variable>
+   <variable name="HomeWidgetWeather">
+		<value condition="Skin.HasSetting(HomeMenuUseWeatherWidget)">weather</value>
+   </variable>
+   <variable name="HomeWidgetYouTube">
+		<value condition="Skin.HasSetting(HomeMenuUseYouTubeWidget)">custom</value>
+   </variable>
+   <variable name="HomeWidgetMusicVideos">
+		<value condition="Skin.HasSetting(HomeMenuUseMusicVideosWidget)">custom</value>
+   </variable>
+   
+   <variable name="HomeWidgetMB3Favorites">
+		<value condition="Skin.HasSetting(HomeMenuUseMB3FavoritesWidget)">custom</value>
+   </variable>
+   <variable name="HomeWidgetMB3Channels">
+		<value condition="Skin.HasSetting(HomeMenuUseMB3ChannelsWidget)">custom</value>
+   </variable>
+
+   <variable name="Custom0Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom0Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom1Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom1Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom2Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom2Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom3Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom3Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom4Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom4Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom5Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom5Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom6Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom6Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom7Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom7Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom8Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom8Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom9Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom9Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom10Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom10Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom11Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom11Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom12Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom12Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom13Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom13Widget)">mb3custom</value>
+   </variable>
+   <variable name="Custom14Widget">
+		<value condition="Skin.HasSetting(HomeMenuCustom14Widget)">mb3custom</value>
+   </variable>
+   
+   
+   <variable name="HomeButtonDownAction">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgettype)) + [Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]">Control.SetFocus(77777)</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(submenu)) + !skin.hastheme(classic) + !Skin.String(GadgetRows, 2)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
+		<value>ActivateWindow(111)</value>
+   </variable>
+   
+   <variable name="HomeButtonUpAction">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgettype)) + [[Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,0) | StringCompare(Container(300).Position,2) | StringCompare(Container(300).Position,4)]] | Skin.String(GadgetRows, 1)]">Control.SetFocus(77777)</value>
+   </variable>
+   
+   <variable name="PVRFooterProgress">
+   <value condition="Control.IsVisible(12)">Container(12).ListItem.Progress</value>
+		<value condition="Control.IsVisible(11)">Container(11).ListItem.Progress</value>
+		
+   </variable>
+   <variable name="PVRFooterStartTime">
+	<value condition="Control.IsVisible(12)">$INFO[Container(12).ListItem.StartTime]</value>
+		<value condition="Control.IsVisible(11)">$INFO[Container(11).ListItem.StartTime]</value>
+		
+   </variable>
+   <variable name="PVRFooterEndTime">
+		<value condition="Control.IsVisible(12)">$INFO[Container(12).ListItem.EndTime]</value>
+		<value condition="Control.IsVisible(11)">$INFO[Container(11).ListItem.EndTime]</value>
+		
+   </variable>
    
 	
 </includes>

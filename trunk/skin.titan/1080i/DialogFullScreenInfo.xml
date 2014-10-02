@@ -3,6 +3,8 @@
 <window type="dialog" id="142">
     <defaultcontrol always="true">102</defaultcontrol>
     <controls>
+		
+		<include condition="Skin.HasSetting(EnableOSDInfo)">OSDInfoPanel</include>
         <!--OSD Panel-->
         <control type="group">
             <visible>!Window.IsActive(filebrowser)</visible>
@@ -19,7 +21,7 @@
             <visible>!Window.IsActive(videoosd)</visible>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
-            <include>OSDInfoPanel</include>
+            
         </control>
     </controls>
 </window>

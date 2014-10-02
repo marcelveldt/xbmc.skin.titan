@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+
+	<include name="HubPositionNormal">
+        <posy>222</posy>
+    </include>
+	
+	<include name="HubPositionOutside">
+        <posy>-300</posy>
+		<animation type="Conditional" condition="ControlGroup(77777).HasFocus + !Skin.HasSetting(AutoShowHubs)">
+                <effect type="slide" start="0,0" end="0,800" time="800" tween="cubic" easing="inout" />
+		</animation>
+    </include>
+	
+	<include name="HubPositionTop">
+        <posy>-4</posy>
+		<animation type="Conditional" condition="!IsEmpty(Container(300).ListItem.Property(widgettype))">
+                <effect type="slide" start="0,-400" end="0,-4" time="800" tween="cubic" easing="inout" />
+		</animation>
+		<animation type="Conditional" condition="ControlGroup(77777).HasFocus + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowHubs)">
+                <effect type="slide" start="0,-4" end="0,504" time="800" tween="cubic" easing="inout" />
+		</animation>
+    </include>
+
+
 	<include name="HomeMenuHub">
 		<!-- infopanel -->
 		<control type="group" id="77778">
@@ -14,8 +37,10 @@
 					<width>1908</width>
                     <texture border="39">pvr/pvr_epg_panel.png</texture>
                     <aspectratio>stretch</aspectratio>
-                    <height>527</height>
+                    <height>587</height>
             </control>
+			
+			
 			
 			<control type="label">
             <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
@@ -86,55 +111,75 @@
             <control type="group" id="77777">
                 <height>440</height>
 				<posx>15</posx>
-				<include condition="Skin.String(GadgetRows, 1)">HubPositionNormal</include>
-				<include condition="!Skin.String(GadgetRows, 1)">HubPositionOutside</include>
+				<defaultcontrol>510</defaultcontrol>
+				<include condition="!Skin.HasSetting(AutoShowHubs)">HubPositionOutside</include>
+				<include condition="Skin.String(GadgetRows, 1) + Skin.HasSetting(AutoShowHubs)">HubPositionNormal</include>
+				<include condition="Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowHubs)">HubPositionTop</include>
+				<visible>!IsEmpty(Container(300).ListItem.Property(widgettype))</visible>
 				
-				<animation type="Conditional" condition="ControlGroup(77777).HasFocus + !Skin.String(GadgetRows, 1)">
-                <effect type="slide" start="0,0" end="0,780" time="800" tween="cubic" easing="inout" />
-				</animation>
-				<animation type="Conditional" condition="ControlGroup(77777).HasFocus + Skin.String(GadgetRows, 1)">
-                <effect type="slide" start="0,0" end="0,300" time="800" tween="cubic" easing="inout" />
-				</animation>
-				
-				<animation type="conditional" condition="IsEmpty(Container(300).ListItem.Property(widgettype))" reversible="true">
-				<effect type="fade" start="100" end="0" time="800" delay="200" />
-				</animation>
-				
+			
 				<animation time="400" effect="fade">Visible</animation>
 				<animation time="200" effect="fade">Hidden</animation>
+				
 				<control type="image">
-                        <!--Submenu Arrow DOWN-->
-						<animation effect="fade" begin="0" end="100" delay="1800" time="1800">Visible</animation>
-                        <posx>915</posx>
-                        <posy>296</posy>
-                        <width>60</width>
-                        <height>36</height>
-                        <texture>arrowdown.png</texture>
-						<visible>ControlGroup(77777).HasFocus</visible>
-                    </control>
+					<!--widget Arrow DOWN-->
+					<animation effect="fade" begin="0" end="100" delay="1600" time="1600" pulse="true">Visible</animation>
+					<posx>872</posx>
+					<posy>297</posy>
+					<width>149</width>
+					<height>30</height>
+					<texture>basichome_down.png</texture>
+					<visible>ControlGroup(77777).HasFocus + !skin.hastheme(classic)</visible>
+				</control>
+				
+				<control type="image">
+					<!--widget Arrow DOWN-->
+					<animation effect="fade" begin="0" end="100" delay="1600" time="1600" pulse="true">Visible</animation>
+					<posx>872</posx>
+					<posy>301</posy>
+					<width>149</width>
+					<height>30</height>
+					<texture>basichome_down.png</texture>
+					<visible>ControlGroup(77777).HasFocus + skin.hastheme(classic)</visible>
+				</control>
+
+				
                 <control type="image">
 					<posx>-10</posx>
 					<width>1910</width>
                     <texture border="39">pvr/pvr_epg_panel.png</texture>
                     <aspectratio>stretch</aspectratio>
                     <height>340</height>
+					<visible>skin.hastheme(classic)</visible>
                 </control>
 				
 				<control type="image">
-					<posx>40</posx>
-					<width>40</width>
-					<height>50</height>
-                    <texture>common/spinctrl/arrow-down-nf.png</texture>
+					<posx>-80</posx>
+					<width>2050</width>
+                    <texture border="39">pvr/pvr_epg_panel.png</texture>
                     <aspectratio>stretch</aspectratio>
-                </control>
-				<control type="image">
-					<posx>80</posx>
-					<width>40</width>
-					<height>50</height>
-                    <texture>common/spinctrl/arrow-up-nf.png</texture>
-                    <aspectratio>stretch</aspectratio>
+                    <height>340</height>
+					<visible>!skin.hastheme(classic)</visible>
                 </control>
 				
+				<control type="image">
+					<posx>50</posx>
+					<posy>10</posy>
+					<width>37</width>
+					<height>38</height>
+                    <texture>arrow_round_right_focus.png</texture>
+                    <aspectratio>stretch</aspectratio>
+					<visible>skin.hastheme(classic)</visible>
+                </control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>10</posy>
+					<width>37</width>
+					<height>38</height>
+                    <texture>arrow_round_right_nofocus.png</texture>
+                    <aspectratio>stretch</aspectratio>
+					<visible>!skin.hastheme(classic)</visible>
+                </control>
 				
 				
 				<control type="button" id="511">
@@ -4727,4 +4772,7 @@
             <texture>home/home_focus.png</texture>
         </control>
     </include>
-</includes>
+
+	
+	
+	</includes>

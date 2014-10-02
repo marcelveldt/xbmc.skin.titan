@@ -26,29 +26,9 @@
         </control>
         <!--PVR Views-->
         <control type="group" id="50">
+		<visible>Control.IsVisible(11)</visible>
             <control type="group">
-            <control type="image">
-                <!--Panel-->
-                <visible>Control.IsVisible(11) + !Skin.HasSetting(NoFooterBar)</visible>
-                <include>animation_view_change_pvr</include>
-                <include>animation_list</include>
-                <posx>10</posx>
-                <posy>220</posy>
-                <width>1903</width>
-                <height>790</height>
-                <texture>views/view_50_list_panel_episodes.png</texture>
-            </control>
-            <control type="image">
-                <!--Panel-->
-                <visible>Control.IsVisible(11) + Skin.HasSetting(NoFooterBar)</visible>
-                <include>animation_view_change_pvr</include>
-                <include>animation_list</include>
-                <posx>10</posx>
-                <posy>220</posy>
-                <width>1903</width>
-                <height>790</height>
-                <texture>views/view_50_list_panel_episodes1.png</texture>
-            </control>
+            <include>PVRpanelBackground</include>
             <control type="group">
                 <!--Video Window-->
                 <visible>Control.IsVisible(11)</visible>
@@ -57,16 +37,10 @@
                 <posx>105</posx>
                 <posy>320</posy>
                 <control type="image">
-                    <width>300</width>
-                    <height>188</height>
-                    <texture background="true" diffuse="home/home_matte.png">home/livetv.png</texture>
-					<visible>IsEmpty(ListItem.Icon)</visible>
-                </control>
-				<control type="image">
                     <width>200</width>
                     <height>200</height>
-                    <texture background="true" diffuse="home/home_matte.png">$INFO[ListItem.Icon]</texture>
-					<visible>!IsEmpty(ListItem.Icon)</visible>
+                    <texture background="true" diffuse="home/home_matte.png" fallback="home/livetv.png">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
                 </control>
 				 <!--Video Window
                 <control type="videowindow">

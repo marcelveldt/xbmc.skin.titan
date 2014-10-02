@@ -231,7 +231,7 @@
                     <selectedcolor>white</selectedcolor>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>$INFO[ListItem.Title] boem</label>
+                    <label>$INFO[ListItem.Title]</label>
                 </control>
                 <control type="label">
                     <!--Time: Start, End (RIGHT)-->

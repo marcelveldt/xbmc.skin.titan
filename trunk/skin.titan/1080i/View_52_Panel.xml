@@ -42,8 +42,7 @@
         <control type="group">
             <visible>Control.IsVisible(52)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
-            <include>RSSFooter</include>
-			<include>Footer</include>
+            <include condition="!skin.hassetting(nofooterbar)">Footer</include>
         </control>
     </include>
 </includes>

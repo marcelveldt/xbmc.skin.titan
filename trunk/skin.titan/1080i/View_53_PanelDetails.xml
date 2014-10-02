@@ -50,7 +50,7 @@
         <control type="group">
             <visible>Control.IsVisible(53)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
-			<include>Footer</include>
+			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
         </control>
     </include>
 </includes>

@@ -28,28 +28,8 @@
 		<control type="group" id="50">
 			 <!--LiveTVRecordingsView ID=13-->
 			<control type="group">
-				<control type="image">
-					<!--Panel-->
-					<visible>Control.IsVisible(15) + !Skin.HasSetting(NoFooterBar)</visible>
-					<include>animation_view_change_pvr</include>
-					<include>animation_list</include>
-					<posx>10</posx>
-					<posy>220</posy>
-					<width>1903</width>
-					<height>790</height>
-					<texture>views/view_50_list_panel_episodes.png</texture>
-				</control>
-				<control type="image">
-					<!--Panel-->
-					<visible>Control.IsVisible(15) + Skin.HasSetting(NoFooterBar)</visible>
-					<include>animation_view_change_pvr</include>
-					<include>animation_list</include>
-					<posx>10</posx>
-					<posy>220</posy>
-					<width>1903</width>
-					<height>790</height>
-					<texture>views/view_50_list_panel_episodes1.png</texture>
-				</control>
+				<visible>Control.IsVisible(15)</visible>
+				<include>PVRpanelBackground</include>
 				<control type="group">
 					<!--Video Window-->
 					<visible>Control.IsVisible(15)</visible>

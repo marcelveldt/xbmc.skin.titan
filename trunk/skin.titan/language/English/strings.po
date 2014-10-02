@@ -49,7 +49,7 @@ msgid "Use MediaBrowser mode for"
 msgstr ""
 
 msgctxt "#31009"
-msgid "Mediabrowser tiles for own collection"
+msgid "Custom tiles for MediaBrowser collections"
 msgstr ""
 
 msgctxt "#31010"
@@ -65,7 +65,7 @@ msgid "Mediabrowser integration (XBMB3C)"
 msgstr ""
 
 msgctxt "#31013"
-msgid "Tile settings"
+msgid "Configure Home tiles"
 msgstr ""
 
 msgctxt "#31014"
@@ -102,7 +102,7 @@ msgid "--- Display temperature in tile"
 msgstr ""
 
 msgctxt "#31022"
-msgid "Skin background settings"
+msgid "Background settings"
 msgstr ""
 
 msgctxt "#31023"
@@ -138,15 +138,11 @@ msgid "Display weather on home"
 msgstr ""
 
 msgctxt "#31031"
-msgid "Show 2 rows of tiles on homescreen (default)"
-msgstr ""
-
-msgctxt "#31032"
-msgid "Show 3 rows of tiles on homescreen"
+msgid "2 rows of tiles on homescreen"
 msgstr ""
 
 msgctxt "#31033"
-msgid "Show just 1 row of tiles on homescreen"
+msgid "1 row of tiles on homescreen"
 msgstr ""
 
 msgctxt "#31034"
@@ -302,7 +298,7 @@ msgid "Setting level"
 msgstr ""
 
 msgctxt "#31072"
-msgid "Sort home menu"
+msgid "Sort Home tiles"
 msgstr ""
 
 msgctxt "#31073"
@@ -458,19 +454,95 @@ msgid "Recently played music"
 msgstr ""
 
 msgctxt "#31111"
-msgid "Use advanced homescreen (with hubs)"
-msgstr ""
+msgid "Auto show the widget for the selected home tile"
+msgstr "Automatisch de widget tonen voor de geselecteerde tile"
 
 msgctxt "#31112"
 msgid "Finishes at:"
-msgstr ""
+msgstr "Klaar om:"
 
 msgctxt "#31113"
-msgid "Auto show the submenus on the home tiles"
-msgstr ""
+msgid "Auto show the submenu for the selected home tile"
+msgstr "Automatisch het submenu tonen voor de geselecteerde home tile"
 
 msgctxt "#31114"
 msgid "Show large thumbnail"
+msgstr ""
+
+msgctxt "#31115"
+msgid "Homescreen layout"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Enable submenu on tile"
+msgstr ""
+
+msgctxt "#31117"
+msgid "Enable widget for this tile"
+msgstr ""
+
+msgctxt "#31118"
+msgid "User defined custom tiles (favorites):"
+msgstr ""
+
+msgctxt "#31119"
+msgid "Tiles for 3th party applications:"
+msgstr ""
+
+msgctxt "#31120"
+msgid "Tiles for default XBMC/Kodi features:"
+msgstr ""
+
+msgctxt "#31121"
+msgid "Tiles layout"
+msgstr ""
+
+msgctxt "#31122"
+msgid "Widgets and submenus for home tiles"
+msgstr ""
+
+msgctxt "#31123"
+msgid "You can enable the optional widgets and submenus on several tiles though the tile-settings for easier navigation. By default the widget will be shown after pressing the arrow button, the submenu will default be shown after you click on a tile. Only if you're using one row of tiles you can choose to show the submenu/widgets automatically as you hover over a tile."
+msgstr ""
+
+msgctxt "#31124"
+msgid "Please select how many rows with tiles you want to show. 1 row is the default setting for the skin."
+msgstr ""
+
+msgctxt "#31125"
+msgid "Other home screen settings"
+msgstr ""
+
+msgctxt "#31126"
+msgid "Use vertical submenu layout (instead of default horizontal)"
+msgstr ""
+
+msgctxt "#31127"
+msgid "Recently added"
+msgstr ""
+
+msgctxt "#31128"
+msgid "Recently played"
+msgstr ""
+
+msgctxt "#31129"
+msgid "My TV Shows"
+msgstr ""
+
+msgctxt "#31130"
+msgid "My Movies"
+msgstr ""
+
+msgctxt "#31131"
+msgid "Suggestions"
+msgstr ""
+
+msgctxt "#31132"
+msgid "Enable Item Background"
+msgstr ""
+
+msgctxt "#31133"
+msgid "Show video information on OSD"
 msgstr ""
 
 msgctxt "#31400"

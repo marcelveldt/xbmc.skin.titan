@@ -2,7 +2,63 @@
 
 <includes>
 
+	<include name="FontColorWhite">
+	<textcolor>white</textcolor>
+	</include>
+	<include name="FontColorGray">
+	<textcolor>black</textcolor>
+	</include>
+	
+	<include name="thumblayoutclassic">
+		<control type="image">
+			<!--Panel icon image-->
+			<posx>18</posx>
+			<posy>18</posy>
+			<width>423</width>
+			<height>250</height>
+			<texture background="true" diffuse="home/home_matte.png" fallback="banner_default.png">$VAR[BannerLandscapeImage]</texture>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+		</control>
+		<control type="image">
+			<!--season image legacy-->
+			<posx>18</posx>
+			<posy>18</posy>
+			<width>423</width>
+			<height>250</height>
+			<texture background="true" diffuse="home/home_matte.png">$VAR[BannerLandscapeImageSeason]</texture>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<visible>Container.Content(Seasons) + !substring(Container.FolderPath,plugin://plugin.video)</visible>
+		</control>
+	</include>
+	
+	<include name="thumblayoutmodern">
+		<control type="image">
+			<!--Panel icon image-->
+			<posx>18</posx>
+			<posy>18</posy>
+			<width>423</width>
+			<height>250</height>
+			<texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$VAR[BannerLandscapeImage]</texture>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+		</control>
+		<control type="image">
+			<!--season image legacy-->
+			<posx>18</posx>
+			<posy>18</posy>
+			<width>423</width>
+			<height>250</height>
+			<texture background="true" diffuse="home/home_matte2.png">$VAR[BannerLandscapeImageSeason]</texture>
+			<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
+			<visible>Container.Content(Seasons) + !substring(Container.FolderPath,plugin://plugin.video)</visible>
+		</control>
+	</include>
+	
+	
+
 	<include name="ViewExtendedList">
+	
+	<!--Footer-->
+			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
 	
 		<control type="group">
 		
@@ -17,6 +73,7 @@
 				<effect type="slide" start="1920,0" end="0,0" time="600" tween="cubic" easing="out"/>
 			</animation>	
 		
+			
 		
 			<control type="panel" id="506">
 					
@@ -51,42 +108,25 @@
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>460</width>
-							<height>840</height>
+							<height>780</height>
 							<texture border="39">dialogs/default/bg.png</texture>
 						</control>
 						
-						<control type="image">
-							<!--Panel icon image-->
-							<posx>18</posx>
-							<posy>18</posy>
-							<width>423</width>
-							<height>250</height>
-							<texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$VAR[BannerLandscapeImage]</texture>
-							<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
-						</control>
-						<control type="image">
-							<!--season image legacy-->
-							<posx>18</posx>
-							<posy>18</posy>
-							<width>423</width>
-							<height>250</height>
-							<texture background="true" diffuse="home/home_matte2.png">$VAR[BannerLandscapeImageSeason]</texture>
-							<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
-							<visible>Container.Content(Seasons) + !substring(Container.FolderPath,plugin://plugin.video)</visible>
-						</control>
+						<include condition="!skin.hastheme(classic)">thumblayoutmodern</include>
+						<include condition="skin.hastheme(classic)">thumblayoutclassic</include>
 						
 						<control type="image">
 							<!--Watched Overlay-->
-							<include condition="Skin.HasTheme(classic)">ExtendedViewWatchedImageSizeClassicEpisodes</include>
-							<include condition="!Skin.HasTheme(classic)">ExtendedViewWatchedImageSizeNormalEpisodes</include>
+							<include condition="Skin.HasTheme(classic)">ExtendedViewWatchedImageSizeClassic</include>
+							<include condition="!Skin.HasTheme(classic)">ExtendedViewWatchedImageSizeNormal</include>
 							<colordiffuse>ccFFFFFF</colordiffuse>
 							<texture>$VAR[WatchedImage]</texture>
 							<visible>!Skin.HasSetting(HideWatchedOverlayExtended)</visible>
 						</control>
 						<control type="label">
 							<!--watched label-->
-							<include condition="!Skin.HasTheme(classic)">ExtendedViewWatchedLabelNormalEpisodes</include>
-							<include condition="Skin.HasTheme(classic)">ExtendedViewWatchedLabelClassicEpisodes</include>
+							<include condition="!Skin.HasTheme(classic)">ExtendedViewWatchedLabelNormal</include>
+							<include condition="Skin.HasTheme(classic)">ExtendedViewWatchedLabelClassic</include>
 							<align>center</align>
 							<label>$VAR[WatchedLabel]</label>
 							<textcolor>white</textcolor>
@@ -100,19 +140,16 @@
 							<height>140</height>
 							<label>$VAR[View_Item_Header]</label>
 							<font>Bold32</font>
-							<textcolor>white</textcolor>
+							<include condition="!skin.hastheme(classic)">FontColorWhite</include>
+							<include condition="skin.hastheme(classic)">FontColorGray</include>
 							<aligny>top</aligny>
 						</control>
 						
-						<control type="image">
-							<posx>30</posx>
-							<posy>390</posy>
-							<width>160</width>
-							<valign>top</valign>
-							<height>35</height>
-							<texture background="true">$INFO[ListItem.StarRating]</texture>
-							<colordiffuse>white</colordiffuse>
-							<aspectratio>scale</aspectratio>
+						<control type="group">
+						<posy>390</posy>
+						<posx>30</posx>
+						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<include>movieflagssmall</include>
 						</control>
 						
 						<control type="textbox">
@@ -122,17 +159,13 @@
 							<height>305</height>
 							<label>$VAR[View_Item_Description]</label>
 							<font>Reg24</font>
-							<textcolor>white</textcolor>
+							<include condition="!skin.hastheme(classic)">FontColorWhite</include>
+							<include condition="skin.hastheme(classic)">FontColorGray</include>
 							<aligny>top</aligny>
 							<autoscroll>false</autoscroll>
 						</control>
 						
-						<control type="group">
-						<posy>760</posy>
-						<posx>30</posx>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<include>movieflagssmall</include>
-						</control>
+						
 					</control>
 				</itemlayout>
 
@@ -148,43 +181,27 @@
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>460</width>
-							<height>840</height>
+							<height>780</height>
 							<texture border="39">dialogs/default/bg.png</texture>
 							<colordiffuse>mainblue</colordiffuse>
 						</control>
 						
-						<control type="image">
-							<!--Panel icon image-->
-							<posx>18</posx>
-							<posy>18</posy>
-							<width>423</width>
-							<height>250</height>
-							<texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$VAR[BannerLandscapeImage]</texture>
-							<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
-						</control>
-						<control type="image">
-							<!--season image legacy-->
-							<posx>18</posx>
-							<posy>18</posy>
-							<width>423</width>
-							<height>250</height>
-							<texture background="true" diffuse="home/home_matte2.png">$VAR[BannerLandscapeImageSeason]</texture>
-							<aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
-							<visible>Container.Content(Seasons) + !substring(Container.FolderPath,plugin://plugin.video)</visible>
-						</control>
+						<include condition="!skin.hastheme(classic)">thumblayoutmodern</include>
+						<include condition="skin.hastheme(classic)">thumblayoutclassic</include>
+						
 						
 						<control type="image">
 							<!--Watched Overlay-->
-							<include condition="Skin.HasTheme(classic)">ExtendedViewWatchedImageSizeClassicEpisodes</include>
-							<include condition="!Skin.HasTheme(classic)">ExtendedViewWatchedImageSizeNormalEpisodes</include>
+							<include condition="Skin.HasTheme(classic)">ExtendedViewWatchedImageSizeClassic</include>
+							<include condition="!Skin.HasTheme(classic)">ExtendedViewWatchedImageSizeNormal</include>
 							<colordiffuse>ccFFFFFF</colordiffuse>
 							<texture>$VAR[WatchedImage]</texture>
 							<visible>!Skin.HasSetting(HideWatchedOverlayExtended)</visible>
 						</control>
 						<control type="label">
 							<!--watched label-->
-							<include condition="!Skin.HasTheme(classic)">ExtendedViewWatchedLabelNormalEpisodes</include>
-							<include condition="Skin.HasTheme(classic)">ExtendedViewWatchedLabelClassicEpisodes</include>
+							<include condition="!Skin.HasTheme(classic)">ExtendedViewWatchedLabelNormal</include>
+							<include condition="Skin.HasTheme(classic)">ExtendedViewWatchedLabelClassic</include>
 							<align>center</align>
 							<label>$VAR[WatchedLabel]</label>
 							<textcolor>white</textcolor>
@@ -202,15 +219,11 @@
 							<aligny>top</aligny>
 						</control>
 						
-						<control type="image">
-							<posx>30</posx>
-							<posy>390</posy>
-							<width>160</width>
-							<valign>top</valign>
-							<height>35</height>
-							<texture background="true">$INFO[ListItem.StarRating]</texture>
-							<colordiffuse>white</colordiffuse>
-							<aspectratio>scale</aspectratio>
+						<control type="group">
+						<posy>390</posy>
+						<posx>30</posx>
+						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<include>movieflagssmall</include>
 						</control>
 						
 						<control type="textbox">
@@ -224,13 +237,7 @@
 							<aligny>top</aligny>
 						</control>
 						
-						<control type="group">
-						<posy>760</posy>
-						<posx>30</posx>
-						<include>movieflagssmall</include>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						</control>
-    
+ 
 					
 					</control>	
 					

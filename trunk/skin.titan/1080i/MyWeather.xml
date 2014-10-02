@@ -22,7 +22,7 @@
         <!--Header-->
         <include>Header</include>
 		<!--Footer-->
-        <include>Footer</include>
+        <include condition="!skin.hassetting(nofooterbar)">Footer</include>
         <!--Hidden Button-->
         <control type="radiobutton" id="50">
             <description>Filter (hidden)</description>

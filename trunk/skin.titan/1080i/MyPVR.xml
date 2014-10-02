@@ -14,6 +14,13 @@
         <include>TimeInfo</include>
         <!--Header-->
         <include>Header</include>
+		
+		<!--Footer-->
+		<control type="group">
+			<visible>Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
+			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
+		</control>
+		
         <!--Hidden-->
         <control type="label" id="29">
             <description>Empty so we can pass the values up one level</description>

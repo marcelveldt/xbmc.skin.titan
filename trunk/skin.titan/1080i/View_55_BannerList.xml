@@ -8,27 +8,17 @@
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <include>animation_view_change</include>
             <include>animation_list</include>
-			<!--Footer-->
-			<include>RSSFooter</include>
-            <control type="image">
-                <!-- Movies, TV-Shows, Music-Videos -->
-                <visible>[Container.Content(MusicVideos) | Container.Content(movies) | container.Content(tvshows) | container.content(seasons)] + [!Skin.HasSetting(NoFooterBar) + skin.hastheme(classic)] + !IsEmpty(ListItem.Label)</visible>
-                <posx>10</posx>
+			
+			<control type="image">
+                <visible>Control.IsVisible(55) + !IsEmpty(ListItem.Label)</visible>
+                <posx>8</posx>
                 <posy>165</posy>
-                <width>1903</width>
-                <height>885</height>
-                <texture>views/filemanager_panel.png</texture>
-            </control>
-            <control type="image">
-                <!-- Movies, TV-Shows, Music-Videos -->
-                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.Content(tvshows) | container.Content(seasons)] + [Skin.HasSetting(NoFooterBar) | !Skin.Hastheme(classic)] + !IsEmpty(ListItem.Label)</visible>
-                <posx>10</posx>
-                <posy>165</posy>
-                <width>1903</width>
-                <height>800</height>
+                <width>1902</width>
+                <height>890</height>
                 <texture>views/filemanager_panel1.png</texture>
             </control>
-			<include>Footer</include>
+			<!--Footer-->
+			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
         </control>
         <!--Poster,Cover,Thumb-->
         <control type="group">
@@ -45,7 +35,7 @@
             <include>animation_view_change</include>
             <control type="image">
                 <!--logo-->
-                <posx>90</posx>
+                <posx>100</posx>
                 <posy>240</posy>
                 <width>380</width>
                 <height>220</height>
@@ -55,7 +45,7 @@
             </control>
             <control type="image">
                 <!--logo-->
-                <posx>90</posx>
+                <posx>100</posx>
                 <posy>240</posy>
                 <width>380</width>
                 <height>220</height>
@@ -66,7 +56,7 @@
             </control>
             <control type="image">
                 <!--logo-->
-                <posx>90</posx>
+                <posx>100</posx>
                 <posy>240</posy>
                 <width>380</width>
                 <height>220</height>
@@ -83,10 +73,10 @@
             <include>animation_list</include>
             <!-- ID="52" -->
             <control type="panel" id="55">
-                <posx>1070</posx>
-                <posy>240</posy>
+                <posx>1061</posx>
+                <posy>245</posy>
                 <width>800</width>
-                <height>600</height>
+                <height>720</height>
                 <onup>52</onup>
                 <ondown>52</ondown>
                 <onleft>9000</onleft>
@@ -100,7 +90,7 @@
                 <!-- =======-->
                 <!-- Movies -->
                 <!-- ======= -->
-                <itemlayout height="150" width="760" condition="!Container.Content(albums)">
+                <itemlayout height="145" width="760" condition="!Container.Content(albums)">
                     <control type="image">
                         <!--Poster-->
                         <width>758</width>
@@ -151,7 +141,7 @@
 						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
 				</control>
                 </itemlayout>
-                <focusedlayout height="150" width="760" condition="!Container.Content(albums)">
+                <focusedlayout height="145" width="760" condition="!Container.Content(albums)">
 					<control type="image">
                        <animation type="focus">
                             <effect type="zoom" start="100" end="103" center="130,190" time="150" />
@@ -261,7 +251,7 @@
             <onleft>100</onleft>
             <onright>noop</onright>
             <orientation>vertical</orientation>
-            <posx>90</posx>
+            <posx>100</posx>
             <posy>520</posy>
             <control type="label">
                 <posx>0</posx>
@@ -306,7 +296,7 @@
             <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
             <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
             <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-            <posx>90</posx>
+            <posx>100</posx>
             <posy>690</posy>
             <width>900</width>
             <height>200</height>

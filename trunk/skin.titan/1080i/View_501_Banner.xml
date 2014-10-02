@@ -52,8 +52,7 @@
 			<control type="group">
 				<visible>Control.IsVisible(501)</visible>
 				<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
-				<include>RSSFooter</include>
-				<include>Footer</include>
+				<include condition="!skin.hassetting(nofooterbar)">Footer</include>
 			</control>
 			<!--Scollbar-->
 			<control type="group">
@@ -65,10 +64,10 @@
                 <!--Scrollbar ID60-->
                 <visible>IntegerGreaterThan(Container(501).NumItems,30)</visible>
                 <visible>!Container.Content(songs)</visible>
-                <posx>60</posx>
-				<width>1800</width>
-                <posy>1040</posy>
-                <height>15</height>
+                <posx>0</posx>
+				<width>1920</width>
+                <posy>1050</posy>
+                <height>35</height>
                 <onup>501</onup>
                 <onright>noop</onright>
 				<orientation>horizontal</orientation>

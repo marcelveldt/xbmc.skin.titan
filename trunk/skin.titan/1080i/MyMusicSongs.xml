@@ -3,10 +3,10 @@
 <window id="501">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50,57</views>
+    <views>50,57,501</views>
     <controls>
         <!--Global Background-->
-        <include>GlobalBackground</include>
+        <include>MusicBackground</include>
 		<!--NowPlaying-->
         <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
         <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
@@ -23,8 +23,10 @@
         <!--Views-->
         <include>View_50_List</include>
 		<include>View_57_BigPanel</include>
+		<include>BannerView</include>
         <!--Sub Menu Tab Left-->
         <include>SubMenuTabLeft</include>
+		<include>SubMenuTabTop</include>
         <!--Sub Menu-->
         <control type="group">
             <posx>-608</posx>
@@ -104,13 +106,6 @@
                     <!--Button Search-->
                     <include>SubMenuButton</include>
                     <label>600</label>
-                </control>
-                <control type="image" id="203">
-                    <!--Space-->
-                    <width>458</width>
-                    <height>20</height>
-                    <align>left</align>
-                    <texture>common/menu-space.png</texture>
                 </control>
                 <control type="button" id="400">
                     <!--Set View-->

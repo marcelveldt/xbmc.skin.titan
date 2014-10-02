@@ -359,10 +359,10 @@
     </include>
     <include name="BannerViewOverlayFocusNormal">
         <animation type="Focus">
-            <effect type="zoom" start="100" end="108" time="300" center="auto" delay="0" />
+            <effect type="zoom" start="100" end="104" time="300" center="auto" delay="0" />
         </animation>
         <animation type="UnFocus">
-            <effect type="zoom" start="108" end="100" time="300" center="auto" delay="0" />
+            <effect type="zoom" start="104" end="100" time="300" center="auto" delay="0" />
         </animation>
         <control type="label">
             <!--Label White-->
@@ -386,6 +386,8 @@
             <animation type="UnFocus">
                 <effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
             </animation>
+			<posy>3</posy>
+			<posx>-1</posx>
             <include>BannerViewImageSizeNormalFocus</include>
             <texture>home/home_focus.png</texture>
         </control>
@@ -413,6 +415,7 @@
             <animation type="UnFocus">
                 <effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
             </animation>
+			
             <include>BannerViewImageSizeEpisodes</include>
             <texture>home/home_focus.png</texture>
         </control>
@@ -502,15 +505,15 @@
         <height>60</height>
     </include>
 	
-	<include name="ExtendedViewWatchedImageSizeNormalEpisodes">
+	<include name="ExtendedViewWatchedImageSizeNormal">
         <posx>351</posx>
         <posy>18</posy>
         <width>90</width>
         <height>90</height>
     </include>
-	 <include name="ExtendedViewWatchedImageSizeClassicEpisodes">
-        <posx>375</posx>
-        <posy>26</posy>
+	 <include name="ExtendedViewWatchedImageSizeClassic">
+        <posx>367</posx>
+        <posy>35</posy>
         <width>60</width>
         <height>60</height>
     </include>
@@ -564,16 +567,16 @@
         <font>Reg24</font>
     </include>
 	
-	<include name="ExtendedViewWatchedLabelNormalEpisodes">
+	<include name="ExtendedViewWatchedLabelNormal">
         <posx>415</posx>
         <posy>7</posy>
         <width>60</width>
         <height>60</height>
         <font>Reg24</font>
     </include>
-	<include name="ExtendedViewWatchedLabelClassicEpisodes">
-        <posx>405</posx>
-        <posy>20</posy>
+	<include name="ExtendedViewWatchedLabelClassic">
+        <posx>396</posx>
+        <posy>30</posy>
         <width>60</width>
         <height>60</height>
         <font>Light26</font>
@@ -1704,25 +1707,15 @@
             <include>animation_view_change</include>
             <include>animation_list</include>
             <control type="image">
-                <!-- Movies, TV-Shows, Music-Videos -->
-                <visible>Skin.Hastheme(classic) + !IsEmpty(ListItem.Label)</visible>
-                <posx>10</posx>
+                <visible>!IsEmpty(ListItem.Label)</visible>
+                <posx>8</posx>
                 <posy>165</posy>
-                <width>1903</width>
-                <height>885</height>
-                <texture>views/filemanager_panel.png</texture>
-            </control>
-            <control type="image">
-                <!-- Movies, TV-Shows, Music-Videos -->
-                <visible>!Skin.Hastheme(classic) + !IsEmpty(ListItem.Label)</visible>
-                <posx>10</posx>
-                <posy>165</posy>
-                <width>1903</width>
-                <height>830</height>
+                <width>1902</width>
+                <height>890</height>
                 <texture>views/filemanager_panel1.png</texture>
             </control>
 			<!--Footer-->
-			<include>FooterAlt</include>
+			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
             <!--Info-->
             <control type="grouplist">
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>

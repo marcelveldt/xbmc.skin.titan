@@ -8,12 +8,11 @@
             <include>animation_view_change</include>
             <include>animation_list</include>
 			
-			<include>RSSFooter</include>
-			<include>Footer</include>
+			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
 			
             <!-- ID="52" -->
             <control type="panel" id="56">
-                <posx>60</posx>
+                <posx>45</posx>
                 <posy>340</posy>
                 <width>1860</width>
                 <height>570</height>

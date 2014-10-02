@@ -8,7 +8,7 @@
             <visible>Control.IsVisible(54)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <include>MovieDetails</include>
-			<include>Footer</include>
+			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
         </control>
         <control type="group">
             <!-- Warplist ID="54"-->

@@ -296,6 +296,10 @@
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true"></animation>
 			<visible>Player.HasAudio + !IsEmpty(MusicPlayer.Title) + System.HasAddon(script.artistslideshow)</visible>
         </control>
+		<control type="visualisation" id="2">
+            <description>visualisation</description>
+            <include>DimensionsFullscreen</include>
+        </control>
 		<control type="videowindow">
 			<include>DimensionsFullscreen</include>
 			<visible>Player.HasVideo</visible>

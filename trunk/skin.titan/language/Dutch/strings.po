@@ -49,8 +49,8 @@ msgid "Use MediaBrowser mode for"
 msgstr "Gebruik mediabrowser modus voor"
 
 msgctxt "#31009"
-msgid "Mediabrowser tiles for own collection"
-msgstr "Mediabrowser eigen tiles voor collectie"
+msgid "Custom tiles for MediaBrowser collections"
+msgstr "Aangepaste tiles voor MediaBrowser collecties"
 
 msgctxt "#31010"
 msgid "--- Use random fanart for tile image"
@@ -65,8 +65,8 @@ msgid "Mediabrowser integration (XBMB3C)"
 msgstr "Mediabrowser integratie (XBMB3C)"
 
 msgctxt "#31013"
-msgid "Tile settings"
-msgstr "Tile instellingen"
+msgid "Configure Home tiles"
+msgstr "Tiles op startscherm"
 
 msgctxt "#31014"
 msgid "tile"
@@ -101,8 +101,8 @@ msgid "--- Display temperature in tile"
 msgstr "--- Temperatuur weergeven in de tile"
 
 msgctxt "#31022"
-msgid "Skin background settings"
-msgstr "Achtergrondinstellingen voor skin"
+msgid "Background settings"
+msgstr "Achtergrond instellen"
 
 msgctxt "#31023"
 msgid "Use blue skin background (default)"
@@ -138,17 +138,12 @@ msgstr "Toon weerbericht op startscherm"
 
 
 msgctxt "#31031"
-msgid "Show 2 rows of tiles on homescreen (default)"
-msgstr "Toon 2 rijen met tiles op startscherm (standaard)"
-
-
-msgctxt "#31032"
-msgid "Show 3 rows of tiles on homescreen"
-msgstr "Toon 3 rijen met tiles op startscherm"
+msgid "2 rows of tiles on homescreen"
+msgstr "2 rijen met tegels op het startscherm"
 
 msgctxt "#31033"
-msgid "Show just 1 row of tiles on homescreen"
-msgstr "Toon slechts 1 rij met tegels op startscherm"
+msgid "1 row of tiles on homescreen"
+msgstr "1 rij met tegels op het startscherm"
 
 msgctxt "#31034"
 msgid "items total"
@@ -208,11 +203,11 @@ msgstr "Mijn lijst - Films"
 
 msgctxt "#31048"
 msgid "Latest Movies"
-msgstr "Laatste nieuwe films"
+msgstr "Nieuwe films"
 
 msgctxt "#31049"
 msgid "Latest TV Shows"
-msgstr "Laatste nieuwe TV Series"
+msgstr "Nieuwe TV Series"
 
 msgctxt "#31050"
 msgid "All Movies"
@@ -303,8 +298,8 @@ msgid "Setting level"
 msgstr "Instellingen niveau"
 
 msgctxt "#31072"
-msgid "Sort home menu"
-msgstr "Sorteer hoofdmenu"
+msgid "Sort Home tiles"
+msgstr "Sorteer tiles op home"
 
 msgctxt "#31073"
 msgid "Sort the home menu tiles"
@@ -459,20 +454,97 @@ msgid "Recently played music"
 msgstr "Onlangs afgespeelde muziek"
 
 msgctxt "#31111"
-msgid "Use advanced homescreen (with hubs)"
-msgstr "Gebruik geavanceerd startscherm met widgets"
+msgid "Auto show the widget for the selected home tile"
+msgstr "Automatisch de widget tonen voor de geselecteerde tile"
 
 msgctxt "#31112"
 msgid "Finishes at:"
 msgstr "Klaar om:"
 
 msgctxt "#31113"
-msgid "Auto show the submenus on the home tiles"
-msgstr "Automatisch de submenu's laten zien voor de home tiles"
+msgid "Auto show the submenu for the selected home tile"
+msgstr "Automatisch het submenu tonen voor de geselecteerde home tile"
 
 msgctxt "#31114"
 msgid "Show large thumbnail"
 msgstr "grote thumbnail tonen"
+
+msgctxt "#31115"
+msgid "Homescreen layout"
+msgstr "Startscherm lay-out"
+
+msgctxt "#31116"
+msgid "Enable submenu on tile"
+msgstr "Submenu inschakelen"
+
+msgctxt "#31117"
+msgid "Enable widget for this tile"
+msgstr "Widget inschakelen voor deze tile"
+
+msgctxt "#31118"
+msgid "User defined custom tiles (favorites):"
+msgstr "Aangepaste tiles (favorieten):"
+
+msgctxt "#31119"
+msgid "Tiles for 3th party applications:"
+msgstr "Tiles voor andere applicaties:"
+
+msgctxt "#31120"
+msgid "Tiles for default XBMC/Kodi features:"
+msgstr "Tiles voor standaard XBMC/Kodi functionaliteit:"
+
+msgctxt "#31121"
+msgid "Tiles layout"
+msgstr "Lay-out van de tiles "
+
+msgctxt "#31122"
+msgid "Widgets and submenus for home tiles"
+msgstr "Widgets en submenu's voor tiles op home"
+
+msgctxt "#31123"
+msgid "You can enable the optional widgets and submenus on several tiles though the tile-settings for easier navigation. By default the widget will be shown after pressing the arrow button, the submenu will default be shown after you click on a tile. Only if you're using one row of tiles you can choose to show the submenu/widgets automatically as you hover over a tile."
+msgstr "Je kunt optioneel widgets en submenu's inschakelen op tiles om makkelijker en sneller te navigeren. Het standaardgedrag is dat widgets pas getoond worden na het indrukken van een pijltjestoets en submenu's na klikken op een tile. Indien je gebruik maakt van 1 rij met tiles kun je er voor kiezen om de submenu's en widgets automatisch te tonen zodra je een tile selecteert."
+
+msgctxt "#31124"
+msgid "Please select how many rows with tiles you want to show. 1 row is the default setting for the skin."
+msgstr "Selecteer het aantal rijen met tegels die je wil tonen op het homescherm. De standaardinstelling is 1 rij met tiles"
+
+msgctxt "#31125"
+msgid "Other home screen settings"
+msgstr "Andere instellingen voor het homescherm"
+
+msgctxt "#31126"
+msgid "Use vertical submenu layout (instead of default horizontal)"
+msgstr "Gebruik verticaal submenu (in plaats van standaard horizontaal)"
+
+
+msgctxt "#31127"
+msgid "Recently added"
+msgstr "Nieuw toegevoegd"
+
+msgctxt "#31128"
+msgid "Recently played"
+msgstr "Recent afgespeeld"
+
+msgctxt "#31129"
+msgid "My TV Shows"
+msgstr "Mijn TV Series"
+
+msgctxt "#31130"
+msgid "My Movies"
+msgstr "Mijn Films"
+
+msgctxt "#31131"
+msgid "Suggestions"
+msgstr "Suggesties"
+
+msgctxt "#31132"
+msgid "Enable Item Background"
+msgstr "Item Achtergrond"
+
+msgctxt "#31133"
+msgid "Show video information on OSD"
+msgstr "Toon video informatie op OSD"
 
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"

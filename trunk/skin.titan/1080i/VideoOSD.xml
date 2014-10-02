@@ -4,6 +4,9 @@
     <defaultcontrol always="true">203</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <controls>
+		<!-- video info -->
+		<include condition="Skin.HasSetting(EnableOSDInfo)">OSDInfoPanel</include>
+	
         <!--OSD Panel-->
         <control type="group">
             <visible>!Window.IsActive(filebrowser)</visible>
