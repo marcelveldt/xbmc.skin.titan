@@ -577,7 +577,6 @@ class TitanThread ():
             orgmbstring = "xbmb3c." + str(linkCount)
             mbstring = "titanmb3." + str(linkCount)
             
-            # only real user collections - no virtual items
             if "mediabrowser" in win.getProperty(orgmbstring + ".recent.path"):
                 win.setProperty(mbstring + ".title", win.getProperty(orgmbstring + ".title"))
                 win.setProperty(mbstring + ".type", win.getProperty(orgmbstring + ".type"))
@@ -606,27 +605,7 @@ class TitanThread ():
                 link = link.replace("ActivateWindow(VideoLibrary,", "")
                 link = link.replace(",return)", "")
                 win.setProperty(mbstring + ".nextepisodes.content", link)
-                
-               
-            else: #virtual items add at end of collection
-                if "Recent" in win.getProperty(orgmbstring + ".title"):
-                    win.setProperty(mbstring + ".title", win.getProperty(orgmbstring + ".title"))
-                    win.setProperty(mbstring + ".fanart", win.getProperty(orgmbstring + ".fanart"))
-                    win.setProperty(mbstring + ".path", win.getProperty(orgmbstring + ".path"))
-                    win.setProperty(mbstring + ".type", "virtual")
-                    link = win.getProperty(orgmbstring + ".path")
-                    link = link.replace("ActivateWindow(VideoLibrary,", "")
-                    link = link.replace(",return)", "")
-                    win.setProperty(mbstring + ".recent.content", link)
-                if "Progress" in win.getProperty(orgmbstring + ".title"):
-                    win.setProperty(mbstring + ".title", win.getProperty(orgmbstring + ".title"))
-                    win.setProperty(mbstring + ".fanart", win.getProperty(orgmbstring + ".fanart"))
-                    win.setProperty(mbstring + ".path", win.getProperty(orgmbstring + ".path"))
-                    win.setProperty(mbstring + ".type", "virtual")
-                    link = win.getProperty(orgmbstring + ".path")
-                    link = link.replace("ActivateWindow(VideoLibrary,", "")
-                    link = link.replace(",return)", "")
-                    win.setProperty(mbstring + ".recent.content", link)             
+       
 
             linkCount += 1
 

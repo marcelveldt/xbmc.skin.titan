@@ -3,6 +3,7 @@ import xbmcgui
 import shutil
 import xbmcaddon
 import os
+import time
 
 def setHomeItems(curPoslabel, idToChange, moveDirection):
 
@@ -31,7 +32,7 @@ def setHomeItems(curPoslabel, idToChange, moveDirection):
             curWinPos = curWinPos +1
     
     xbmc.executebuiltin('xbmc.ReloadSkin')
-    xbmc.executebuiltin('Control.SetFocus(100,4)')
+    xbmc.executebuiltin('Control.SetFocus(100,2)')
     xbmc.executebuiltin('Control.SetFocus(300, ' + str(curWinPos) + ')')    
 
 
@@ -84,20 +85,27 @@ def setView(containerType,viewId):
     
 
 def showSubmenu():
-    
+
     win = xbmcgui.Window( 10000 )
     submenu = win.getProperty("submenutype")
-    submenuloading = win.getProperty("submenuloading")
+    submenuloading = ""
+    if xbmc.getCondVisibility("Skin.HasSetting(AutoShowSubmenu)"):
+        submenuloading = win.getProperty("submenuloading")
     
     if submenuloading != "loading":
         if submenu != "":
             win.setProperty("submenu", "show")
             xbmc.executebuiltin('Control.SetFocus(4444,0)')
+            time.sleep(0.2)
+            xbmc.executebuiltin('Control.SetFocus(4444,0)')
+        
         else:
             win.setProperty("submenu", "hide")
+            
     
     else:
         win.setProperty("submenuloading", "")
+
    
 
         
