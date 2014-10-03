@@ -1,10 +1,13 @@
-v.2.0.17
+v.2.0.18
 - added Big Panel view
 - fixed several graphical glitches
 - fixed home submenu
 - added option to auto show submenu
-- added support for profiles/switch user
+- optional button on home for profiles/switch user
 - moved widgets load to startup to improve speed
+- cleanup of settings
+- changed notify sound
+
 
 v.2.0.15
 - NOW compatible with xbmc/kodi 14 (helix)
