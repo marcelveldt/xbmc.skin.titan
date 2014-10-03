@@ -18,11 +18,11 @@
                 <width>1902</width>
                 <height>790</height>
                 <texture>views/view_50_list_panel_noinfo1.png</texture>
-                <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)]</visible>
+                <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + IntegerGreaterThan(Container(50).NumItems,0)</visible>
             </control>
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos, seasons -->
-                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)]</visible>
+                <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + IntegerGreaterThan(Container(50).NumItems,0)</visible>
                 <posx>8</posx>
                 <posy>256</posy>
                 <width>1902</width>
@@ -31,7 +31,7 @@
             </control>
             <control type="image">
                 <!-- Episodes -->
-                <visible>Container.Content(episodes)</visible>
+                <visible>Container.Content(episodes) + IntegerGreaterThan(Container(50).NumItems,0)</visible>
                 <posx>8</posx>
                 <posy>256</posy>
                 <width>1902</width>

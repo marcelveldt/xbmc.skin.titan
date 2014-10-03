@@ -422,7 +422,54 @@
             </control>
         </control>
     </include>
-    <include name="WeatherInfo">
+    
+	<include name="ProfileInfo">
+	<control type="group" id="891">
+			<defaultcontrol>890</defaultcontrol>
+			<posx>35</posx>
+			<posy>30</posy>
+			<visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(ShowProfile) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowHubs)] + !ControlGroup(77777).HasFocus</visible>
+			<width>150</width>
+				<height>80</height>
+				<control type="image" id="888">	
+				<width>150</width>
+				<height>80</height>
+				<texture colordiffuse="lightgrey" fallback="common/profil/avatar.png">$INFO[System.ProfileThumb]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>!Control.HasFocus(890)</visible>	
+			</control>
+			<control type="image" id="889">
+				<width>150</width>
+				<height>80</height>
+				<texture fallback="common/profil/avatar.png">$INFO[System.ProfileThumb]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>Control.HasFocus(890)</visible>			
+			</control>
+			<control type="button" id="890">
+				<ondown>300</ondown>
+				<width>150</width>
+				<height>80</height>
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
+				<onclick>System.LogOff</onclick>
+				<aspectratio>keep</aspectratio>			
+			</control>
+			<control type="label">
+				<!--Profile name-->
+				<posx>-50</posx>
+				<posy>55</posy>
+				<width>250</width>
+				<height>50</height>
+				<label>$VAR[ProfileLabel]</label>
+				<align>center</align>
+				<font>Light30</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
+	</include>
+	
+	<include name="WeatherInfo">
         <!-- weather info -->
         <control type="group">
             <posx>35</posx>
@@ -2574,6 +2621,7 @@
 			</control>
             <!--Rating-->
             <control type="group">
+				<visible>!Window.IsVisible(VideoOSD.xml)</visible>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
@@ -2797,6 +2845,52 @@
             </control>
 	</include>
 	
+		<include name="SideBladeModern">
+		<posx>-660</posx>
+		<posy>150</posy>
+		<visible>!Window.IsActive(DialogKeyboard.xml)</visible>
+		<include>animation_fade_visible_hidden</include>
+		<include>animation_fade_open_close</include>
+		<include>animation_sub_menu</include>
+		<!--Panel-->
+		<control type="image">
+			<posy>-250</posy>
+			<width>495</width>
+			<height>1300</height>
+			<texture border="0">views/filemanager_panel1.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+			<posy>-250</posy>
+			<width>495</width>
+			<height>1300</height>
+			<texture border="0">views/filemanager_panel1.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+	</include>
+	
+	<include name="SideBladeClassic">
+		<posx>-608</posx>
+		<posy>150</posy>
+		<visible>!Window.IsActive(DialogKeyboard.xml)</visible>
+		<include>animation_fade_visible_hidden</include>
+		<include>animation_fade_open_close</include>
+		<include>animation_sub_menu</include>
+		<!--Panel-->
+		<control type="image">
+			<posx>-19</posx>
+			<posy>360</posy>
+			<width>80</width>
+			<height>60</height>
+			<texture>dialogs/default/arrow.png</texture>
+		</control>
+		<control type="image">
+			<width>500</width>
+			<height>800</height>
+			<texture border="39">dialogs/default/bg.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+	</include>
 	
     <include name="defaultskinsettings">
         <!-- skin default settings -->

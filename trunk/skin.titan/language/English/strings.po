@@ -33,7 +33,7 @@ msgid "Skin mode"
 msgstr ""
 
 msgctxt "#31005"
-msgid "Advanced settings"
+msgid "General skin settings"
 msgstr ""
 
 msgctxt "#31006"
@@ -41,7 +41,7 @@ msgid "NetfliXBMC Plugin"
 msgstr ""
 
 msgctxt "#31007"
-msgid "Enable mediabrowser integration"
+msgid "MediaBrowser Mode"
 msgstr ""
 
 msgctxt "#31008"
@@ -543,6 +543,15 @@ msgstr ""
 
 msgctxt "#31133"
 msgid "Show video information on OSD"
+msgstr ""
+
+msgctxt "#31134"
+msgid "Show Profile button"
+msgstr ""
+
+
+msgctxt "#31399"
+msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from XBMC."
 msgstr ""
 
 msgctxt "#31400"

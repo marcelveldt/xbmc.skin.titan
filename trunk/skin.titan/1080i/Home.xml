@@ -47,6 +47,7 @@
 		<!--Time & Weather-->
         <include>TimeInfo</include>
         <include>WeatherInfo</include>
+		<include>ProfileInfo</include>
         <!--Footer-->
         <include condition="!skin.hassetting(nofooterbar)">Footer</include>
 		

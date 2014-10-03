@@ -33,20 +33,20 @@ msgid "Skin mode"
 msgstr "Skin modus"
 
 msgctxt "#31005"
-msgid "Advanced settings"
-msgstr "Geavanceerde instellingen"
+msgid "General skin settings"
+msgstr "Algemene instellingen"
 
 msgctxt "#31006"
 msgid "NetfliXBMC Plugin"
 msgstr "NetfliXBMC Plugin"
 
 msgctxt "#31007"
-msgid "Enable mediabrowser integration"
-msgstr "Activeer mediabrowser integratie"
+msgid "MediaBrowser Mode"
+msgstr "MediaBrowser modus"
 
 msgctxt "#31008"
 msgid "Use MediaBrowser mode for"
-msgstr "Gebruik mediabrowser modus voor"
+msgstr "Gebruik MediaBrowser modus voor"
 
 msgctxt "#31009"
 msgid "Custom tiles for MediaBrowser collections"
@@ -545,6 +545,14 @@ msgstr "Item Achtergrond"
 msgctxt "#31133"
 msgid "Show video information on OSD"
 msgstr "Toon video informatie op OSD"
+
+msgctxt "#31134"
+msgid "Show Profile button"
+msgstr "Profielknop weergeven"
+
+msgctxt "#31399"
+msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from XBMC."
+msgstr "De skin heeft twee verschillende thema’s waarmee het uiterlijk van de skin kan worden aangepast. [CR] [CR][B]Classic:[/B] Is de originele look-and-feel van MediaPortal. [CR][B]Default/Modern:[/B] Is de evolutie van de skin naar een meer moderne aanpak door de maker van deze skin.[CR] [CR]Je kunt zelf beslissen welk thema je het beste vind. [CR]Om het thema te wisselen klik op de knop in het linkse menu of ga naar de weergave instellingen van XBMC."
 
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"

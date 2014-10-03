@@ -4,7 +4,9 @@
     <defaultcontrol always="true">3</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <include>defaultskinsettings</include>
+	
     <controls>
+
         <!--Global Background-->
         <include>GlobalBackground</include>
         <!--Time & Weather-->
@@ -15,6 +17,11 @@
         <include>TitanVersion</include>
 		<!-- Now playing -->
 		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
+		
+		
+		<control type="group">
+		<posy>30</posy>
+		
         <!--Panel-->
         <control type="image">
             <posx>0</posx>
@@ -173,5 +180,6 @@
                 <onclick>SettingsReset</onclick>
             </control>
         </control>
+		 </control>
     </controls>
 </window>

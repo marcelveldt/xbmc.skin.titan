@@ -386,12 +386,17 @@
             <animation type="UnFocus">
                 <effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
             </animation>
-			<posy>3</posy>
-			<posx>-1</posx>
+			<include condition="skin.hastheme(classic)">BannerViewFocusSizeClassic</include>
             <include>BannerViewImageSizeNormalFocus</include>
             <texture>home/home_focus.png</texture>
         </control>
     </include>
+	
+	<include name="BannerViewFocusSizeClassic">
+		<posy>3</posy>
+		<posx>-1</posx>
+	</include>
+	
     <include name="BannerViewOverlayFocusEpisodes">
         <control type="label">
             <!--Label White-->

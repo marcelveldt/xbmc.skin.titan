@@ -5,7 +5,7 @@
     <!-- Header -->
     <!-- ====== -->
     <variable name="value_header">
-        <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome)">[UPPERCASE]$LOCALIZE[10000][/UPPERCASE]</value>
+        <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome) + !Skin.HasSetting(ShowProfile)">[UPPERCASE]$LOCALIZE[10000][/UPPERCASE]</value>
         <value condition="substring(Container.FolderPath,Radio)">[UPPERCASE]$LOCALIZE[19021][/UPPERCASE]</value>
         <value condition="Container.Content(movies) + IsEmpty(ListItem.Title)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE]</value>
 		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Title) + Control.IsVisible(9999)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE]</value>
@@ -39,7 +39,7 @@
         <value condition="Window.IsActive(MyMusicPlaylistEditor.xml)">[UPPERCASE]$LOCALIZE[10503][/UPPERCASE]</value>--&gt;
 	</variable>
     <variable name="value_header_icon">
-        <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome)">icons/icon_home.png</value>
+        <value condition="Window.IsActive(Home.xml) + !Skin.HasSetting(WeatherOnHome) + !Skin.HasSetting(ShowProfile)">icons/icon_home.png</value>
         <value condition="Container.Content(movies)">icons/icon_movies.png</value>
         <value condition="Container.Content(tvshows)">icons/icon_tvshows.png</value>
         <value condition="Container.Content(seasons)">icons/icon_tvshows.png</value>
@@ -772,6 +772,7 @@
    
    <variable name="HomeButtonUpAction">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgettype)) + [[Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,0) | StringCompare(Container(300).Position,2) | StringCompare(Container(300).Position,4)]] | Skin.String(GadgetRows, 1)]">Control.SetFocus(77777)</value>
+		<value>Control.SetFocus(891,0)</value>
    </variable>
    
    <variable name="PVRFooterProgress">
@@ -787,8 +788,11 @@
    <variable name="PVRFooterEndTime">
 		<value condition="Control.IsVisible(12)">$INFO[Container(12).ListItem.EndTime]</value>
 		<value condition="Control.IsVisible(11)">$INFO[Container(11).ListItem.EndTime]</value>
-		
    </variable>
    
+    <variable name="ProfileLabel">
+		<value condition="!Control.HasFocus(890)">$INFO[System.ProfileName]</value>
+		<value condition="Control.HasFocus(890)">[B]$INFO[System.ProfileName][/B]</value>
+   </variable>
 	
 </includes>

@@ -330,7 +330,7 @@
         </focusedlayout>
       </control>
       <control type="group" description="57 Info">
-        <visible>Control.IsVisible(57)</visible>
+        <visible>Control.IsVisible(57) + IntegerGreaterThan(Container(57).NumItems,0)</visible>
         <control type="group">
           <visible>!Skin.HasSetting(57_SmallFanart)</visible>
           <posx>60</posx>
