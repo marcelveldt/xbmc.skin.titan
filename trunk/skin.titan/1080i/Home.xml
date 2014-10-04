@@ -219,7 +219,8 @@
 						<onfocus>SetProperty(submenupos,$INFO[Container(300).Position],Home)</onfocus>
 						<onfocus>SetProperty(submenutype,$INFO[Container(300).ListItem.Property(submenu)],Home)</onfocus>
                         <onfocus condition="Skin.String(CustomBackgroundSetting, fanart)">SetProperty(MB3.Background.Collection, $INFO[Container(300).ListItem.Label], Home)</onfocus>
-						<onfocus condition="Skin.HasSetting(AutoShowSubmenu)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</onfocus>
+						<onfocus condition="Skin.HasSetting(AutoShowSubmenu) + skin.hastheme(classic)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW,4444)</onfocus>
+						<onfocus condition="Skin.HasSetting(AutoShowSubmenu) + !skin.hastheme(classic)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW)</onfocus>
                     </control>
                 </control>
             </focusedlayout>

@@ -8,7 +8,7 @@
 		<posy>945</posy>
 		<height>180</height>
 		<defaultcontrol>4444</defaultcontrol>
-		<visible>SubString(Window(Home).Property(submenu),show) + !IsEmpty(Container(300).ListItem.Property(submenu)) + !Control.HasFocus(510)</visible>
+		<visible>SubString(Window(Home).Property(submenu),show) + !IsEmpty(Container(300).ListItem.Property(submenu)) + !Control.HasFocus(510) + !(Control.HasFocus(2)</visible>
 
 			<animation effect="fade" start="100" end="0" time="400" tween="sine" delay="0" easing="in" condition="!SubString(Window(Home).Property(submenu),show)">Conditional</animation>
 			
@@ -65,22 +65,10 @@
 				<scrolltime tween="cubic" easing="inout">500</scrolltime>
 				<onleft>4444</onleft>
 				<onright>4444</onright>
-				<onback condition="Skin.HasSetting(AutoShowSubmenu) + Skin.HasSetting(UseVerticalSubmenu)">SetProperty(submenuloading,loading,Home)</onback>
-				<onup condition="Skin.HasSetting(AutoShowSubmenu) + Skin.HasSetting(UseVerticalSubmenu)">SetProperty(submenuloading,loading,Home)</onup>
-				<ondown condition="Skin.HasSetting(AutoShowSubmenu) + Skin.HasSetting(UseVerticalSubmenu)">SetProperty(submenuloading,loading,Home)</ondown>
-				<ondown condition="Skin.HasSetting(AutoShowSubmenu) + Skin.HasSetting(UseVerticalSubmenu)">2</ondown>
-				
-				<onleft>SetProperty(submenu,hide,Home)</onleft>
-				<onright>SetProperty(submenu,hide,Home)</onright>
-				<onback>SetProperty(submenu,hide,Home)</onback>
-				<onup>SetProperty(submenu,hide,Home)</onup>
-				<ondown>SetProperty(submenu,hide,Home)</ondown>
-				
-				<onleft>300</onleft>
-				<onright>300</onright>
-				<onup>300</onup>
-				<ondown>300</ondown>
-				<onback>300</onback>
+				<onback>XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,HIDE,300)</onback>
+				<onup>XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,HIDE,300)</onup>
+				<ondown>XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,HIDE,2)</ondown>			
+
 				<itemgap>0</itemgap>
 				<include>HomeMenuSubmenuItemsHorizontal</include>        
 			 </control>

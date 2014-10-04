@@ -269,23 +269,23 @@
         <value condition="Skin.String(MB3ChannelsBackground)">$INFO[Skin.String(MB3ChannelsBackground)]</value>
     </variable>
     <variable name="MusicButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMusicSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW,4444)</value>
         <value condition="Skin.String(HomeMenuUseMusicCollection)">ActivateWindow(Music, $INFO[Skin.String(HomeMenuUseMusicCollection)], return)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">ActivateWindow(Music, MusicLibrary, return)</value>
         <value condition="Skin.HasSetting(MediaBrowserMode) + !Skin.String(HomeMenuUseMusicCollection) + !Skin.HasSetting(HomeMenuUseMusicSubmenu)">$INFO[Window.Property(xbmb3c.std.music.0.path)]</value>
     </variable>
     <variable name="NetflixButtonOnClick">
-        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
+        <value condition="Skin.HasSetting(HomeMenuUseNetflixSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW,4444)</value>
         <value>ActivateWindow(10025,"plugin://plugin.video.netflixbmc",return)</value>
     </variable>
     <variable name="MoviesButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMoviesSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW,4444)</value>
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,movietitles,return)</value>
         <value condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window.Property(xbmb3c.std.movies.0.path)]</value>
     </variable>
     <variable name="TVseriesButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuUseTVseriesSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseTVseriesSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW,4444)</value>
         <value condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</value>
         <value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries)">ActivateWindow(Video,tvshowtitles,return)</value>
         <value condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">$INFO[Window.Property(xbmb3c.std.tvshows.0.path)]</value>
@@ -303,7 +303,7 @@
         <value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window.Property(xbmb3c.std.music.3.path)]</value>
     </variable>
     <variable name="LiveTVButtonOnClick">
-		<value condition="Skin.HasSetting(HomeMenuLiveTVSubmenu) + !Skin.HasSetting(AutoShowSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
+		<value condition="Skin.HasSetting(HomeMenuLiveTVSubmenu) + !SubString(Window(Home).Property(submenu),loading)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW,4444)</value>
 		<value condition="SubString(System.BuildVersion,14,left) + Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVGuide)</value>
         <value condition="SubString(System.BuildVersion,14,left) + !Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindow(TVChannels)</value>
         <value condition="Skin.HasSetting(HomeMenuUseGuideOnTV)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</value>
@@ -766,7 +766,7 @@
    
    <variable name="HomeButtonDownAction">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgettype)) + [Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]">Control.SetFocus(77777)</value>
-		<value condition="!IsEmpty(Container(300).ListItem.Property(submenu)) + !skin.hastheme(classic) + !Skin.String(GadgetRows, 2)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU)</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(submenu)) + !skin.hastheme(classic) + !Skin.String(GadgetRows, 2)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW,4444)</value>
 		<value>ActivateWindow(111)</value>
    </variable>
    

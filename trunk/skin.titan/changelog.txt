@@ -1,4 +1,4 @@
-v.2.0.18
+v.2.0.19
 - added Big Panel view
 - fixed several graphical glitches
 - fixed home submenu

@@ -216,7 +216,6 @@
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, 2)</onclick>
-					<onclick>Skin.Reset(AutoShowSubmenu)</onclick>
                     <selected>Skin.String(GadgetRows, 2) | !Skin.String(GadgetRows)</selected>
                 </control>
 				<control type="image" id="201">
@@ -276,7 +275,6 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(AutoShowSubmenu)</onclick>
                     <selected>Skin.HasSetting(AutoShowSubmenu)</selected>
-					<enable>[Skin.String(GadgetRows, 2) + skin.hastheme(classic)] | Skin.String(GadgetRows, 1)</enable>
                 </control>
 				
 							

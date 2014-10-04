@@ -3,6 +3,9 @@
 
 	<include name="HubPositionNormal">
         <posy>222</posy>
+		<animation type="Conditional" condition="ControlGroup(77777).HasFocus">
+                <effect type="slide" start="0,-4" end="0,304" time="800" tween="cubic" easing="inout" />
+		</animation>
     </include>
 	
 	<include name="HubPositionOutside">
