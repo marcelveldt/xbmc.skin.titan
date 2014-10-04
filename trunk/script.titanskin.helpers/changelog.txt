@@ -1,4 +1,4 @@
-1.0.7
+1.0.8
 - fixed script error  for non mediabrowser users
 - optimized some code
 - added method for autofocus submenus
