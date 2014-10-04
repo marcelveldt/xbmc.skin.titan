@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
 	id="skin.titan"
-	version="2.0.19"
-	name="Titan MediaBrowser"
+	version="2.0.20"
+	name="Titan MediaBrowser (Gotham)"
 	provider-name="marcelveldt">
 	<requires>
 		<import version="5.0.1" addon="xbmc.gui"/>		
 		<import addon="script.artwork.downloader" version="12.0.29" />
 		<import addon="service.skin.widgets" version="0.0.25"/>
 		<import addon="script.favourites" version="4.0.9"/>
-		<import addon="script.titanskin.helpers" version="1.0.6"/>
+		<import addon="script.titanskin.helpers" version="1.0.7"/>
 	</requires>
 	<extension
     point="xbmc.gui.skin"

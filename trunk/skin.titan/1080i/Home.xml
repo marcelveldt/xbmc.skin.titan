@@ -105,7 +105,8 @@
 					</control>
 					<control type="label">
 						<!--Label-->
-						<posx>315</posx>
+						<include condition="!SubString(System.BuildVersion,14,left)">HomeTileLabelPosGotham</include>
+						<include condition="SubString(System.BuildVersion,14,left)">HomeTileLabelPosHelix</include>
 						<posy>170</posy>
 						<width>600</width>
 						<height>100</height>
@@ -175,7 +176,8 @@
                     </control>
                     <control type="label">
                         <!--Label Grey-->
-                        <posx>315</posx>
+                        <include condition="!SubString(System.BuildVersion,14,left)">HomeTileLabelPosGotham</include>
+						<include condition="SubString(System.BuildVersion,14,left)">HomeTileLabelPosHelix</include>
                         <posy>170</posy>
                         <width>600</width>
                         <height>100</height>
@@ -187,7 +189,8 @@
                     </control>
                     <control type="label">
                         <!--Label White-->
-                        <posx>315</posx>
+                        <include condition="!SubString(System.BuildVersion,14,left)">HomeTileLabelPosGotham</include>
+						<include condition="SubString(System.BuildVersion,14,left)">HomeTileLabelPosHelix</include>
                         <posy>170</posy>
                         <width>600</width>
                         <height>100</height>

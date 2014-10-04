@@ -86,6 +86,7 @@
     <width>342</width>
     <height>246</height>
   </include>
+  
   <include name="View_57_BigPanel">
     <control type="group" description="Content">
       <visible>Control.IsVisible(57)</visible>
@@ -204,7 +205,8 @@
 				<texture diffuse="home/home_matte2.png">home/home_overlay.png</texture>
 			</control>
 			<control type="label">
-				<posx>191</posx>
+				<include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
+				<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
 				<posy>200</posy>
 				<width>320</width>
 				<height>60</height>
@@ -255,7 +257,8 @@
 				<texture diffuse="home/home_matte2.png">home/home_overlay.png</texture>
 			</control>
 			<control type="label">
-				<posx>191</posx>
+				<include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
+				<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
 				<posy>200</posy>
 				<width>320</width>
 				<height>60</height>
@@ -296,7 +299,8 @@
             <aspectratio>keep</aspectratio>
           </control>
           <control type="label" description="Title Label">
-            <posx>177</posx>
+            <include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
+			<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
             <posy>270</posy>
             <width>320</width>
             <height>30</height>
@@ -318,7 +322,8 @@
             <aspectratio>keep</aspectratio>
           </control>
           <control type="label" description="Title Label">
-            <posx>177</posx>
+            <include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
+			<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
             <posy>270</posy>
             <width>320</width>
             <height>30</height>

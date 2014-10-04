@@ -92,11 +92,20 @@
                 <!-- ======= -->
                 <itemlayout height="145" width="760" condition="!Container.Content(albums)">
                     <control type="image">
-                        <!--Poster-->
+                        <!--Banner-->
                         <width>758</width>
                         <height>140</height>
                         <texture fallback="banner_default.png">$VAR[BannerImage]</texture>
+                        <aspectratio align="center" aligny="center">stretch</aspectratio>
+						<visible>!IsEmpty(ListItem.Art(banner)) | !IsEmpty(ListItem.Art(tvshow.banner))</visible>
+                    </control>
+					<control type="image">
+                        <!--Banner fallback-->
+                        <width>758</width>
+                        <height>140</height>
+                        <texture fallback="banner_default.png">$VAR[BannerImageFallback]</texture>
                         <aspectratio align="center" aligny="center">scale</aspectratio>
+						<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
                     </control>
 					<control type="image">
 						<left>16</left>
@@ -108,7 +117,8 @@
 						<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
 					</control>
 					<control type="label">
-						<left>379</left>
+						<include condition="!SubString(System.BuildVersion,14,left)">BannerListLabelPosGotham</include>
+						<include condition="SubString(System.BuildVersion,14,left)">HomeTileLabelPosHelix</include>
 						<top>8</top>
 						<width>758</width>
 						<height>105</height>
@@ -130,7 +140,8 @@
 					</control>
 					<control type="label">
 						<!--watched label-->
-						<posx>731</posx>
+						<include condition="!SubString(System.BuildVersion,14,left)">BannerListWatchedLabelPosGotham</include>
+						<include condition="SubString(System.BuildVersion,14,left)">BannerListWatchedLabelPosHelix</include>
 						<posy>0</posy>
 						<width>50</width>
 						<height>60</height>
@@ -142,25 +153,31 @@
 				</control>
                 </itemlayout>
                 <focusedlayout height="145" width="760" condition="!Container.Content(albums)">
+				<control type="group">
+					<animation type="focus">
+						<effect type="zoom" start="100" end="103" center="auto,auto" time="150" />
+					</animation>
+					<animation type="unfocus">
+						<effect type="zoom" start="103" end="100" center="auto,auto" time="150" />
+					</animation>
+				
 					<control type="image">
-                       <animation type="focus">
-                            <effect type="zoom" start="100" end="103" center="130,190" time="150" />
-                        </animation>
-                        <animation type="unfocus">
-                            <effect type="zoom" start="103" end="100" center="130,190" time="150" />
-                        </animation>
+                        <!--Banner-->
                         <width>758</width>
                         <height>140</height>
                         <texture fallback="banner_default.png">$VAR[BannerImage]</texture>
-                        <aspectratio align="center" aligny="center">scale</aspectratio>
+                        <aspectratio align="center" aligny="center">stretch</aspectratio>
+						<visible>!IsEmpty(ListItem.Art(banner)) | !IsEmpty(ListItem.Art(tvshow.banner))</visible>
                     </control>
 					<control type="image">
-					<animation type="focus">
-                        <effect type="zoom" start="100" end="103" center="130,190" time="150" />
-                        </animation>
-                        <animation type="unfocus">
-                            <effect type="zoom" start="103" end="100" center="130,190" time="150" />
-                        </animation>
+                        <!--Banner fallback-->
+                        <width>758</width>
+                        <height>140</height>
+                        <texture fallback="banner_default.png">$VAR[BannerImageFallback]</texture>
+                        <aspectratio align="center" aligny="center">scale</aspectratio>
+						<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
+                    </control>
+					<control type="image">
 						<left>16</left>
 						<top>12</top>
 						<width>720</width>
@@ -170,13 +187,8 @@
 						<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
 					</control>
 					<control type="label">
-					<animation type="focus">
-                            <effect type="zoom" start="100" end="103" center="130,190" time="150" />
-                        </animation>
-                        <animation type="unfocus">
-                            <effect type="zoom" start="103" end="100" center="130,190" time="150" />
-                        </animation>
-						<left>379</left>
+						<include condition="!SubString(System.BuildVersion,14,left)">BannerListLabelPosGotham</include>
+						<include condition="SubString(System.BuildVersion,14,left)">HomeTileLabelPosHelix</include>
 						<top>8</top>
 						<width>758</width>
 						<height>105</height>
@@ -187,12 +199,6 @@
 						<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
                     <control type="image">
-					<animation type="focus">
-                            <effect type="zoom" start="100" end="103" center="130,190" time="150" />
-                        </animation>
-                        <animation type="unfocus">
-                            <effect type="zoom" start="103" end="100" center="130,190" time="150" />
-                        </animation>
 						<!--Watched Overlay-->
 						<posx>663</posx>
 						<posy>0</posy>
@@ -203,14 +209,9 @@
 						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
 					</control>
 					<control type="label">
-					<animation type="focus">
-                            <effect type="zoom" start="100" end="103" center="130,190" time="150" />
-                        </animation>
-                        <animation type="unfocus">
-                            <effect type="zoom" start="103" end="100" center="130,190" time="150" />
-                        </animation>
 						<!--watched label-->
-						<posx>731</posx>
+						<include condition="!SubString(System.BuildVersion,14,left)">BannerListWatchedLabelPosGotham</include>
+						<include condition="SubString(System.BuildVersion,14,left)">BannerListWatchedLabelPosHelix</include>
 						<posy>0</posy>
 						<width>50</width>
 						<height>60</height>
@@ -221,12 +222,6 @@
 						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
 					</control>
 					<control type="image">
-						<animation type="focus">
-                            <effect type="zoom" start="100" end="103" center="130,190" time="150" />
-                        </animation>
-                        <animation type="unfocus">
-                            <effect type="zoom" start="103" end="100" center="130,190" time="150" />
-                        </animation>
 						<posx>-12</posx>
 						<posy>-6</posy>
 						<width>783</width>
@@ -234,6 +229,7 @@
 						<texture>home/home_focus.png</texture>
 						<visible>!skin.hastheme(classic)</visible>
 					</control>
+				</control>
                 </focusedlayout>
             </control>
         </control>

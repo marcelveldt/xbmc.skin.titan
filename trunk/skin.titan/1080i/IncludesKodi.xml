@@ -1279,4 +1279,127 @@
        
 	</include>
 	
+	<include name="HomeTileLabelPosGotham">
+		<posx>315</posx>
+	</include>
+	
+	<include name="HomeTileLabelPosHelix">
+		<posx>20</posx>
+	</include>
+	
+	<include name="BannerViewLabelPosGotham">
+		<posx>287</posx>
+	</include>
+	
+	<include name="BannerViewLabelPosHelix">
+		<posx>20</posx>
+	</include>
+	
+	<include name="BannerListLabelPosGotham">
+		<left>379</left>
+	</include>
+	<include name="BannerListLabelPosHelix">
+		<left>20</left>
+	</include>
+	
+	<include name="BannerListWatchedLabelPosGotham">
+		<posx>731</posx>
+	</include>
+	<include name="BannerListWatchedLabelPosHelix">
+		<posx>701</posx>
+	</include>
+	
+
+	<include name="BigPanelLabelPosGotham">
+		<posx>191</posx>
+	</include>
+	<include name="BigPanelabelPosHelix">
+		<posx>25</posx>
+	</include>
+	
+	<include name="BannerViewLabelPosEpisodesGotham">
+		<posx>200</posx>
+	</include>
+	
+	<include name="BannerViewLabelPosEpisodesHelix">
+		<posx>20</posx>
+	</include>
+	
+	<include name="BannerPlexLabelPosGotham">
+		<left>290</left>
+	</include>
+	
+	<include name="BannerPlexLabelPosHelix">
+		<left>20</left>
+	</include>
+	
+	<include name="BannerPlexWatchedLabelPosGotham">
+		<posx>560</posx>
+	</include>
+	
+	<include name="BannerPlexWatchedLabelPosHelix">
+		<posx>530</posx>
+	</include>
+	
+	
+	
+	
+	<include name="WidgetLabelPosGotham">
+		<posx>170</posx>
+	</include>
+	
+	<include name="WidgetLabelPosHelix">
+		<posx>10</posx>
+	</include>
+	
+	
+	<include name="BannerViewWatchedLabelNormalPosGotham">
+		<posx>532</posx>
+	</include>
+	
+	<include name="BannerViewWatchedLabelNormalPosHelix">
+		<posx>502</posx>
+	</include>
+	
+	<include name="BannerViewWatchedLabelClassicPosGotham">
+		<posx>522</posx>
+	</include>
+	
+	<include name="BannerViewWatchedLabelClassicPosHelix">
+		<posx>492</posx>
+	</include>
+	
+	
+	<include name="ExtendedViewWatchedLabelNormalPosGotham">
+		<posx>415</posx>
+	</include>
+	
+	<include name="ExtendedViewWatchedLabelNormalPosHelix">
+		<posx>385</posx>
+	</include>
+	
+	<include name="ExtendedViewWatchedLabelClassicPosGotham">
+		<posx>396</posx>
+	</include>
+	
+	<include name="ExtendedViewWatchedLabelClassicPosHelix">
+		<posx>366</posx>
+	</include>
+	
+	<include name="BannerViewWatchedLabelNormalPosterPosGotham">
+		<posx>179</posx>
+	</include>
+	
+	<include name="BannerViewWatchedLabelNormalPosterPosHelix">
+		<posx>149</posx>
+	</include>
+	
+	<include name="BannerViewWatchedLabelClassicPosterPosGotham">
+		<posx>169</posx>
+	</include>
+	
+	<include name="BannerViewWatchedLabelClassicPosterPosHelix">
+		<posx>139</posx>
+	</include>
+	
 </includes>

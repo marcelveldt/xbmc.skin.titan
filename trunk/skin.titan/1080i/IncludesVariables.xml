@@ -467,9 +467,15 @@
 	<variable name="BannerImage">
         <value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
         <value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
+    </variable>
+	
+	<variable name="BannerImageFallback">
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(FanArt.Image)">$INFO[FanArt.Image]</value>
+		<value>$INFO[ListItem.Thumb]</value>
     </variable>
+	
+	
 	
 	<variable name="CustomHome1">
         <value condition="Skin.String(CustomHome.1.Label)">$INFO[Skin.String(CustomHome.1.Label)]</value>

@@ -4695,9 +4695,7 @@
             <width>340</width>
             <height>220</height>
             <texture background="true" diffuse="home/home_matte.png" fallback="banner_default.png">$VAR[HomeMenuHubImage]</texture>
-            <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
-            <fadetime>800</fadetime>
-            <include>backgroundfade</include>
+            <aspectratio scalediffuse="false" align="center" aligny="center">stretch</aspectratio>
 			<visible>!StringCompare(Container(300).ListItem.Property(widgettype),music)</visible>
         </control>
 		<control type="image">
@@ -4708,8 +4706,6 @@
             <height>220</height>
             <texture background="true" diffuse="home/home_matte.png" fallback="defaultcovers/musicsongslandscape.png">$VAR[HomeMenuHubImage]</texture>
             <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
-            <fadetime>800</fadetime>
-            <include>backgroundfade</include>
 			<visible>StringCompare(Container(300).ListItem.Property(widgettype),music)</visible>
         </control>
 		
@@ -4726,7 +4722,8 @@
         </control>
         <control type="label">
             <!--Label-->
-            <posx>170</posx>
+            <include condition="!SubString(System.BuildVersion,14,left)">WidgetLabelPosGotham</include>
+			<include condition="SubString(System.BuildVersion,14,left)">WidgetLabelPosHelix</include>
             <posy>120</posy>
             <width>320</width>
             <height>100</height>
@@ -4749,7 +4746,8 @@
             <animation type="UnFocus">
                 <effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout" />
             </animation>
-            <posx>170</posx>
+            <include condition="!SubString(System.BuildVersion,14,left)">WidgetLabelPosGotham</include>
+			<include condition="SubString(System.BuildVersion,14,left)">WidgetLabelPosHelix</include>
             <posy>120</posy>
             <width>320</width>
             <height>100</height>

@@ -2998,6 +2998,7 @@
 
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
 		<onload>Skin.Reset(ShowNextUppanel)</onload>
+		<onload>AlarmClock(CloseStartup,ClearProperty(showsplash,Home),00:08,silent)</onload>
     </include>
 	
     <include name="CastMB3Content">

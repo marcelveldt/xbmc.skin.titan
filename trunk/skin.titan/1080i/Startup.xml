@@ -2,7 +2,6 @@
 <!--Titan-->
 <window>
 <!--Splash Screen-->
-	<onload>AlarmClock(CloseStartup,ClearProperty(showsplash,Home),00:08,silent)</onload>
 	<onload>ReplaceWindow(Home)</onload>
     <include>defaultskinsettings</include>
 	<controls>

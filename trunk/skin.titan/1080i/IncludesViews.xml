@@ -10,8 +10,18 @@
 			<width>590</width>
 			<height>120</height>
 			<texture background="true" fallback="banner_default.png">$VAR[BannerImage]</texture>
-			<aspectratio scalediffuse="false" align="left">scale</aspectratio>
+			<aspectratio scalediffuse="false" align="left">stretch</aspectratio>
+			<visible>!IsEmpty(ListItem.Art(banner)) | !IsEmpty(ListItem.Art(tvshow.banner))</visible>
 		</control>
+		<control type="image">
+			<width>590</width>
+			<height>120</height>
+			<texture background="true" fallback="banner_default.png">$VAR[BannerImageFallback]</texture>
+			<aspectratio scalediffuse="false" align="left">scale</aspectratio>
+			<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
+		</control>
+		
+		
 		<control type="image">
 			<left>20</left>
 			<top>12</top>
@@ -22,7 +32,8 @@
 			<visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
 		</control>
 		<control type="label">
-			<left>290</left>
+			<include condition="!SubString(System.BuildVersion,14,left)">BannerPlexLabelPosGotham</include>
+			<include condition="SubString(System.BuildVersion,14,left)">BannerPlexLabelPosHelix</include>
 			<top>8</top>
 			<width>580</width>
 			<height>105</height>
@@ -44,7 +55,8 @@
 		</control>
 		<control type="label">
 			<!--watched label-->
-			<posx>560</posx>
+			<include condition="!SubString(System.BuildVersion,14,left)">BannerPlexWatchedLabelPosGotham</include>
+			<include condition="SubString(System.BuildVersion,14,left)">BannerPlexWatchedLabelPosHelix</include>
 			<posy>-10</posy>
 			<width>50</width>
 			<height>60</height>
@@ -537,50 +549,52 @@
     </include>
 	
     <include name="BannerViewWithOverlayLabelSizeNormal">
-        <posx>287</posx>
+        <include condition="!SubString(System.BuildVersion,14,left)">BannerViewLabelPosGotham</include>
+		<include condition="SubString(System.BuildVersion,14,left)">BannerViewLabelPosHelix</include>
         <posy>222</posy>
         <width>530</width>
         <height>100</height>
         <font>Reg42</font>
     </include>
 	<include name="BannerViewWatchedLabelNormal">
-        <posx>532</posx>
+        <include condition="!SubString(System.BuildVersion,14,left)">BannerViewWatchedLabelNormalPosGotham</include>
+		<include condition="SubString(System.BuildVersion,14,left)">BannerViewWatchedLabelNormalPosHelix</include>
         <posy>10</posy>
         <width>60</width>
         <height>60</height>
         <font>Reg28</font>
     </include>
+	
+	
+	
 	<include name="BannerViewWatchedLabelNormalPoster">
-        <posx>179</posx>
+        <include condition="!SubString(System.BuildVersion,14,left)">BannerViewWatchedLabelNormalPosterPosGotham</include>
+		<include condition="SubString(System.BuildVersion,14,left)">BannerViewWatchedLabelNormalPosterPosHelix</include>
         <posy>-4</posy>
         <width>60</width>
         <height>40</height>
         <font>Reg20</font>
     </include>
 	<include name="BannerViewWatchedLabelClassicPoster">
-        <posx>169</posx>
+        <include condition="!SubString(System.BuildVersion,14,left)">BannerViewWatchedLabelClassicPosterPosGotham</include>
+		<include condition="SubString(System.BuildVersion,14,left)">BannerViewWatchedLabelClassicPosterPosHelix</include>
         <posy>-2</posy>
         <width>60</width>
         <height>60</height>
         <font>Reg20</font>
     </include>
-	<include name="BannerViewWatchedLabelNormalEpisodes">
-        <posx>395</posx>
-        <posy>7</posy>
-        <width>60</width>
-        <height>60</height>
-        <font>Reg24</font>
-    </include>
 	
 	<include name="ExtendedViewWatchedLabelNormal">
-        <posx>415</posx>
+        <include condition="!SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelNormalPosGotham</include>
+		<include condition="SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelNormalHelix</include>
         <posy>7</posy>
         <width>60</width>
         <height>60</height>
         <font>Reg24</font>
     </include>
 	<include name="ExtendedViewWatchedLabelClassic">
-        <posx>396</posx>
+        <include condition="!SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelClassicPosGotham</include>
+		<include condition="SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelClassicHelix</include>
         <posy>30</posy>
         <width>60</width>
         <height>60</height>
@@ -588,22 +602,17 @@
     </include>
 	
 	<include name="BannerViewWatchedLabelClassic">
-        <posx>522</posx>
+        <include condition="!SubString(System.BuildVersion,14,left)">BannerViewWatchedLabelClassicPosGotham</include>
+		<include condition="SubString(System.BuildVersion,14,left)">BannerViewWatchedLabelClassicPosHelix</include>
         <posy>23</posy>
-        <width>60</width>
-        <height>60</height>
-        <font>Light26</font>
-    </include>
-	<include name="BannerViewWatchedLabelClassicEpisodes">
-        <posx>385</posx>
-        <posy>20</posy>
         <width>60</width>
         <height>60</height>
         <font>Light26</font>
     </include>
 
     <include name="BannerViewWithOverlayLabelSizeEpisodes">
-        <posx>200</posx>
+        <include condition="!SubString(System.BuildVersion,14,left)">BannerViewLabelPosEpisodesGotham</include>
+		<include condition="SubString(System.BuildVersion,14,left)">BannerListLabelPosEpisodesHelix</include>
         <posy>180</posy>
         <width>380</width>
         <height>60</height>
