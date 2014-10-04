@@ -84,27 +84,36 @@ def setView(containerType,viewId):
         #xbmc.executebuiltin("Container.Refresh")
     
 
-def showSubmenu():
+def showSubmenu(showOrHide,doFocus):
 
     win = xbmcgui.Window( 10000 )
     submenu = win.getProperty("submenutype")
     submenuloading = ""
     if xbmc.getCondVisibility("Skin.HasSetting(AutoShowSubmenu)"):
         submenuloading = win.getProperty("submenuloading")
-    
-    if submenuloading != "loading":
-        if submenu != "":
-            win.setProperty("submenu", "show")
-            xbmc.executebuiltin('Control.SetFocus(4444,0)')
-            time.sleep(0.2)
-            xbmc.executebuiltin('Control.SetFocus(4444,0)')
         
+    # SHOW SUBMENU    
+    if showOrHide == "SHOW":
+        if submenuloading != "loading":
+            if submenu != "":
+                win.setProperty("submenu", "show")
+                if doFocus != None:
+                    xbmc.executebuiltin('Control.SetFocus('+ doFocus +',0)')
+                    time.sleep(0.2)
+                    xbmc.executebuiltin('Control.SetFocus('+ doFocus +',0)')
+            else:
+                win.setProperty("submenu", "hide")
         else:
-            win.setProperty("submenu", "hide")
-            
+            win.setProperty("submenuloading", "")
     
-    else:
-        win.setProperty("submenuloading", "")
+    #HIDE SUBMENU
+    elif showOrHide == "HIDE":
+        win.setProperty("submenuloading", "loading")
+        win.setProperty("submenu", "hide")
+        if doFocus != None:
+            time.sleep(0.8)
+            xbmc.executebuiltin('Control.SetFocus('+ doFocus +',0)')
+
 
    
 
@@ -144,6 +153,6 @@ elif action == "SETVIEW":
 elif action == "RESTORE":
     restoreHomeItems()
 elif action == "SHOWSUBMENU":
-    showSubmenu()
+    showSubmenu(argument1,argument2)
 else:
     xbmc.executebuiltin("Notification(Titan Mediabrowser,you can not run this script directly)") 

@@ -1,7 +1,6 @@
-1.0.6
+1.0.7
 - fixed script error  for non mediabrowser users
 - optimized some code
-1.0.4
 - added method for autofocus submenus
 - new methods for retrieving the artwork
 - support for custom collection widgets
