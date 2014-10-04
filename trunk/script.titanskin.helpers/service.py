@@ -15,10 +15,6 @@ __cwd__ = __settings__.getAddonInfo('path')
 BASE_RESOURCE_PATH = xbmc.translatePath( os.path.join( __cwd__, 'lib' ) )
 sys.path.append(BASE_RESOURCE_PATH)
 
-from DownloadUtils import DownloadUtils
-downloadUtils = DownloadUtils()
-
-
 
 class TitanThread ():
 
@@ -79,6 +75,9 @@ class TitanThread ():
 
 
     def updateCollectionArtLinks(self):
+        
+        from DownloadUtils import DownloadUtils
+        downloadUtils = DownloadUtils()        
 
         addonSettings = xbmcaddon.Addon(id='plugin.video.xbmb3c')
 
@@ -289,7 +288,9 @@ class TitanThread ():
 
 
     def updateTypeArtLinks(self):
-
+        
+        from DownloadUtils import DownloadUtils
+        downloadUtils = DownloadUtils()        
         addonSettings = xbmcaddon.Addon(id='plugin.video.xbmb3c')
 
         mb3Host = addonSettings.getSetting('ipaddress')
