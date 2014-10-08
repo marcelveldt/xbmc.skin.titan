@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Titan-->
+<window type="dialog" id="142">
+    <defaultcontrol always="true">102</defaultcontrol>
+    <controls>
+		
+		
+        <!--OSD Panel-->
+        <control type="group">
+            <visible>!Window.IsActive(filebrowser)</visible>
+            <visible>!Window.IsActive(videoosd)</visible>
+            <include>animation_fade_visible_hidden</include>
+            <include>animation_fade_open_close</include>
+            <include condition="Skin.HasTheme(classic)">OSDPanelClassic</include>
+			<include condition="!Skin.HasTheme(classic)">OSDPanelModern</include>
+        </control>
+       <!--Info Panel-->
+        <control type="group">
+			<visible>!skin.hastheme(classic)</visible>
+            <visible>!Window.IsActive(filebrowser)</visible>
+            <visible>!Window.IsActive(videoosd)</visible>
+            <include>animation_fade_visible_hidden</include>
+            <include>animation_fade_open_close</include>
+        </control>
+		<include condition="Skin.HasSetting(EnableOSDInfo)">OSDInfoPanel</include>
+    </controls>
+</window>

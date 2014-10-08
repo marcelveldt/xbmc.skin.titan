@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Titan-->
+<window id="2006">
+    <defaultcontrol always="true">-</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <onload condition="System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
+    <controls>
+        <include>MusicBackground</include>
+        <control type="multiimage">
+            <aspectratio>scale</aspectratio>
+            <include>DimensionsFullscreen</include>
+            <timeperimage>10000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>600</fadetime>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+            <visible>System.HasAddon(script.artistslideshow)</visible>
+            <animation effect="fade" start="100" end="65" time="0"></animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true"></animation>
+            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true"></animation>
+        </control>
+        <control type="visualisation" id="2">
+            <description>visualisation</description>
+            <include>DimensionsFullscreen</include>
+        </control>
+        <!--Dialog Overlay-->
+        <control type="image">
+            <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
+            <animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
+            <include>DimensionsFullscreen</include>
+            <colordiffuse>99FFFFFF</colordiffuse>
+            <texture background="true">common/black.png</texture>
+            <visible>Window.IsActive(script-XBMC_Lyrics-main.xml) + Skin.HasSetting(MusicActivateLyrics)</visible>
+        </control>
+        <control type="image">
+            <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
+            <animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
+            <include>DimensionsFullscreen</include>
+            <colordiffuse>99FFFFFF</colordiffuse>
+            <texture background="true">common/black.png</texture>
+            <visible>Window.IsActive(script-XBMC_Lyrics-main.xml) + Skin.HasSetting(MusicActivateLyrics)</visible>
+        </control>
+        <control type="group">
+			<include>DimensionsFullscreen</include>
+			<include condition="skin.hastheme(classic)">MusicOSDClassic</include>
+			<include condition="!skin.hastheme(classic)">OSDPanelModern</include>
+		</control>
+	</controls>
+</window>

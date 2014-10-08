@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Titan-->
+<includes>
+
+	<include name="HomeMenuSubMenuHorizontal">
+		<control type="group" id="445">
+		<posx>-5</posx>
+		<posy>945</posy>
+		<height>180</height>
+		<defaultcontrol>4444</defaultcontrol>
+		<visible>SubString(Window(Home).Property(submenu),show) + !IsEmpty(Container(300).ListItem.Property(submenu)) + !Control.HasFocus(510) + !Control.HasFocus(2)</visible>
+
+			<animation type="Visible">
+            <effect type="slide" start="0,500" end="0" tween="cubic" easing="inout" time="550" />
+            <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="slide" start="0,0" end="0,500" tween="cubic" easing="inout" time="550" />
+				<effect type="fade" start="100" end="0" tween="sine" easing="out" time="450" />
+			</animation>
+			
+			<control type="image">
+				<!--Submenu Arrow DOWN-->
+				<animation effect="fade" start="0" end="100" delay="1800" time="1800">Visible</animation>
+				<posx>826</posx>
+				<posy>0</posy>
+				<width>149</width>
+				<height>36</height>
+				<texture>basichome_down.png</texture>
+				<visible>ControlGroup(77777).HasFocus</visible>
+			</control>
+			
+		
+			<!-- title -->
+			<control type="label">
+				<posx>52</posx>
+				<posy>-30</posy>
+				<width>250</width>
+				<height>80</height>
+				<align>left</align>
+				<label>$INFO[Container(300).ListItem.Label]</label>
+				<aligny>center</aligny>
+				<font>Reg49</font>
+				<textcolor>lightgrey</textcolor>
+				<selectedcolor>white</selectedcolor>
+				<visible>IsEmpty(Window(Home).Property(shutdownmenuactive))</visible>
+			</control>
+
+			
+			<control type="grouplist" id="4444">
+				<posx>53</posx>
+				<posy>50</posy>
+				<width>1825</width>
+				<height>100</height>
+				<orientation>horizontal</orientation>
+				<focusposition>-</focusposition>
+				<scrolltime tween="cubic" easing="inout">500</scrolltime>
+				<onleft>4444</onleft>
+				<onright>4444</onright>
+				<onback>XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,HIDE,300)</onback>
+				<onup>XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,HIDE,300)</onup>
+				<ondown>XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,HIDE,2)</ondown>			
+
+				<itemgap>0</itemgap>
+				<include>HomeMenuSubmenuItemsHorizontal</include>        
+			 </control>
+			
+		</control>
+	</include>
+
+	<include name="HomeMenuSubMenuVertical">
+		<control type="group" id="444">
+		<defaultcontrol>4444</defaultcontrol>
+			<visible>!IsEmpty(Container(300).ListItem.Property(submenu)</visible>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" delay="0" easing="in" condition="!SubString(Window(Home).Property(submenu),show)">Conditional</animation>
+			
+			<!--submenu right 1-row pos 0-->
+			<control type="group">
+				<posx>590</posx>
+				<posy>570</posy>
+				<visible>[Skin.String(GadgetRows, 1) + SubString(Window(Home).Property(submenupos),0)]</visible>
+				<animation type="Visible">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
+				</animation>
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					<include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu right 1 row pos 1-->
+			<control type="group">
+				<posx>1201</posx>
+				<posy>570</posy>
+				<visible>[Skin.String(GadgetRows, 1) + SubString(Window(Home).Property(submenupos),1)]</visible>
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu left 1-row pos 2-->
+			<control type="group">
+				<posx>612</posx>
+				<posy>570</posy>
+				<visible>[Skin.String(GadgetRows, 1) + SubString(Window(Home).Property(submenupos),2)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuLeft</include>
+					<include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonRight</include>
+			</control>
+			<!--submenu right 2-row pos 0-->
+			<control type="group">
+				<posx>590</posx>
+				<posy>319</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),0)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					<include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			
+			<!--submenu right 2-row pos 1-->
+			<control type="group">
+				<posx>590</posx>
+				<posy>585</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),1)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu right 2-row pos 2-->
+			<control type="group">
+				<posx>1201</posx>
+				<posy>319</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),2)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu right 2-row pos 3-->
+			<control type="group">
+				<posx>1201</posx>
+				<posy>585</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),3)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					<include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			<!--submenu left 2 row pos 4-->
+			<control type="group">
+				<posx>612</posx>
+				<posy>319</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),4)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuLeft</include>
+					 <include>SubMenuLayoutVertical</include>
+				</control>
+				<include>HomeMenuFocusButtonRight</include>
+				
+			</control>
+			<!--submenu left 2 row pos 5-->
+			<control type="group">
+				<posx>612</posx>
+				<posy>585</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),5)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuLeft</include>
+					<include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonRight</include>
+			</control>
+		</control>
+	</include>
+	
+	<include name="SubMenuLayoutVertical">
+	<control type="list" id="4444">
+		<posx>50</posx>
+		<posy>30</posy>
+		<width>560</width>
+		<height>215</height>
+		
+		<onleft>SetProperty(submenuloading,loading,Home)</onleft>
+		<onright>SetProperty(submenuloading,loading,Home)</onright>
+		<onback>SetProperty(submenuloading,loading,Home)</onback>
+		<onup>SetProperty(submenuloading,loading,Home)</onup>
+		<ondown>SetProperty(submenuloading,loading,Home)</ondown>
+		
+		
+		<onleft>SetProperty(submenu,hide,Home)</onleft>
+		<onright>SetProperty(submenu,hide,Home)</onright>
+		<onback>SetProperty(submenu,hide,Home)</onback>
+		<onup>SetProperty(submenu,hide,Home)</onup>
+		<ondown>SetProperty(submenu,hide,Home)</ondown>
+		
+		<onleft>300</onleft>
+		<onright>300</onright>
+		<onup>300</onup>
+		<ondown>300</ondown>
+		<onback>300</onback>
+		<itemlayout height="40">
+			<control type="label">
+				<posx>50</posx>
+				<width>600</width>
+				<height>60</height>
+				<textcolor>black</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<selectedcolor>black</selectedcolor>
+				<disabledcolor>black</disabledcolor>
+				<info>ListItem.Label</info>
+				<font>Reg32</font>
+			</control>
+		</itemlayout>
+		<focusedlayout height="40">
+			<control type="label">
+				<posx>50</posx>
+				<width>600</width>
+				<height>60</height>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<selectedcolor>white</selectedcolor>
+				<disabledcolor>white</disabledcolor>
+				<info>ListItem.Label</info>
+				<font>Reg32</font>
+			</control>
+		</focusedlayout>
+		<include>HomeMenuSubmenuItems</include>        
+	 </control>
+	</include>
+	
+	<include name="HomeMenuSubMenuRight">
+			<control type="image">
+				<posx>0</posx>
+				<posy>-24</posy>
+				<width>720</width>
+				<height>341</height>
+				<texture background="true">home_submenu_right.png</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>-24</posy>
+				<width>720</width>
+				<height>341</height>
+				<texture background="true">home_submenu_right.png</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+			</control>
+	</include>
+	
+	<include name="HomeMenuSubMenuLeft">
+	<control type="image">
+				<posx>-3</posx>
+				<posy>-22</posy>
+				<width>725</width>
+				<height>341</height>
+				<texture background="true">home_submenu_left.png</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>-3</posx>
+				<posy>-22</posy>
+				<width>725</width>
+				<height>341</height>
+				<texture background="true">home_submenu_left.png</texture>
+				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+			</control>
+	</include>
+	
+
+	<include name="HomeMenuSubmenuItems">
+	<content>
+		<!--<include condition="!skin.hastheme(classic)">EmptyEntry</include>-->
+		<!-- Movies Items -->
+		
+		<item>
+			<!-- All Movietitles-->
+			<label>342</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,MovieTitles, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!--Genres-->
+			<label>135</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Video, MovieGenres, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!--BoxSets-->
+			<label>20457</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Video, MovieSets, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!--Recently Added-->
+			<label>31127</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video, RecentlyAddedMovies, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.1.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies)</visible>
+		</item>
+		<item>
+			<!--In progress (mb3 only)-->
+			<label>575</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.2.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!-- Favourite movies (mb3 only)-->
+			<label>1036</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.3.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<!-- Trailers (mb3 only)-->
+			<label>31037</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.5.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + IntegerGreaterThan(Window(Home).Property(MB3TotalTrailers), 0)</visible>
+		</item>
+		<item>
+			<!-- All Movies-->
+			<label>20314</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,VideoLibrary, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.0.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.title)]</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.title)]</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.title)]</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.title)]</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.title)]</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.5.title)]</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.5.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.5.title))</visible>
+		</item>
+		<!-- Music items -->
+		<item>
+			<!--Genres-->
+			<label>135</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Music, Genres, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</item>
+		<item>
+			<!--Artists-->
+			<label>133</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Music, Artists, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</item>
+		<item>
+			<!--Recently Added-->
+			<label>31127</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, RecentlyAddedAlbums, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.1.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music)</visible>
+		</item>
+		<item>
+			<!--Recently Played-->
+			<label>31128</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, RecentlyPlayedAlbums, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.2.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + IntegerGreaterThan(Window(Home).Property(MB3TotalPlayedMusicSongs),0) + Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</item>
+		<item>
+			<!-- Playlists-->
+			<label>136</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Music, Playlists, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</item>
+		<item>
+			<!-- Radio-->
+			<label>19021</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + System.GetBool(pvrmanager.enabled)</visible>
+		</item>
+		<item>
+			<!-- All Music-->
+			<label>10516</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, MusicLibrary, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.0.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music)</visible>
+		</item>
+		
+		<!-- Netflix items -->
+		<item>
+			<!-- custom entry-->
+			<label>31129</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31130</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31131</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=wiHome&amp;thumb&amp;type=both&amp;url",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31048</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31049</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31050</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</item>
+		<item>
+			<!-- custom entry-->
+			<label>31051</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</item>
+		<item>
+			<label>19019</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVChannels)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</item>
+		<item>
+			<label>22020</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVGuide)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</item>
+		<item>
+			<label>19163</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVRecordings)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</item>
+		<item>
+			<label>19021</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</item>
+		<item>
+			<label>19040</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVTimers)</onclick>
+			<visible>SubString(System.BuildVersion,14,left) + StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</item>
+		<item>
+			<label>137</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVSearch)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">XBMC.ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</item>
+		<!-- tv shows items -->
+		<item>
+			<label>31051</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,TvShowTitles, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforTVSeries)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.1.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows)</visible>
+		</item>
+		<item>
+			<label>31127</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,RecentlyAddedEpisodes, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforTVSeries)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.0.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows)</visible>
+		</item>
+		<item>
+			<label>135</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,TvShowGenres, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforTVSeries)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.8.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows)</visible>
+		</item>
+		<item>
+			<label>575</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.3.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+		<item>
+			<label>16101</label>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.7.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</item>
+	</content>
+	</include>
+	
+	
+	
+	
+
+		<include name="HomeMenuFocusButtonLayout">
+			<control type="group">
+			<posy>-3</posy>
+			<width>612</width>
+			<height>265</height>
+                    <control type="label">
+                        <!--Label Grey-->
+                        <posx>13</posx>
+                        <posy>170</posy>
+                        <width>600</width>
+                        <height>100</height>
+                        <align>center</align>
+                        <label>$INFO[Container(300).ListItem.Label]</label>
+                        <font>Reg45</font>
+                        <textcolor>white</textcolor>
+                        <visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>1</posx>
+                        <posy>3</posy>
+                        <width>622</width>
+                        <height>271</height>
+                        <texture>home/home_focus.png</texture>
+                    </control>
+				</control>
+		</include>
+		
+		<include name="HomeMenuFocusButtonLeft">
+		
+			    <control type="group">
+					<posy>13</posy>
+					<posx>-550</posx>
+					
+                    <include>HomeMenuFocusButtonLayout</include>
+
+                </control>
+		
+		</include>
+		
+		<include name="HomeMenuFocusButtonRight">
+		
+			    <control type="group">
+					<posy>13</posy>
+					<posx>650</posx>
+					
+                    <include>HomeMenuFocusButtonLayout</include>
+
+                </control>
+		
+		</include>
+		
+		<include name="HomeMenuSubmenuItemsHorizontal">
+		<!--<include condition="!skin.hastheme(classic)">EmptyEntry</include>-->
+		<!-- Movies Items -->
+		
+		<control type="button" id="301">
+			<!-- All Movietitles-->
+			<label>342</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,MovieTitles, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</control>
+		<control type="button" id="302">
+			<!--Genres-->
+			<label>135</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Video, MovieGenres, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</control>
+		<control type="button" id="303">
+			<!--BoxSets-->
+			<label>20457</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Video, MovieSets, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</control>
+		<control type="button" id="304">
+			<!--Recently Added-->
+			<label>31127</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video, RecentlyAddedMovies, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.1.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies)</visible>
+		</control>
+		<control type="button" id="305">
+			<!--In progress (mb3 only)-->
+			<label>575</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.2.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</control>
+		<control type="button" id="306">
+			<!-- Favourite movies (mb3 only)-->
+			<label>1036</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.3.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</control>
+		<control type="button" id="307">
+			<!-- Trailers (mb3 only)-->
+			<label>31037</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.std.movies.5.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + IntegerGreaterThan(Window(Home).Property(MB3TotalTrailers), 0)</visible>
+		</control>
+		<control type="button" id="308">
+			<!-- All Movies-->
+			<label>20314</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,VideoLibrary, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.0.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies)</visible>
+		</control>
+		<control type="button" id="309">
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.title)]</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.0.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.0.title))</visible>
+		</control>
+		<control type="button" id="310">
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.title)]</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.1.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.1.title))</visible>
+		</control>
+		<control type="button" id="311">
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.title)]</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.2.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.2.title))</visible>
+		</control>
+		<control type="button" id="312">
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.title)]</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.3.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.3.title))</visible>
+		</control>
+		<control type="button" id="313">
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.title)]</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.4.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.4.title))</visible>
+		</control>
+		<control type="button" id="314">
+			<!-- custom entry-->
+			<label>$INFO[Window(Home).Property(xbmb3c.usr.movies.5.title)]</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>$INFO[Window(Home).Property(xbmb3c.usr.movies.5.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), movies) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(xbmb3c.usr.movies.5.title))</visible>
+		</control>
+		<!-- Music items -->
+		<control type="button" id="315">
+			<!--Genres-->
+			<label>135</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Music, Genres, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</control>
+		<control type="button" id="316">
+			<!--Artists-->
+			<label>133</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Music, Artists, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</control>
+		<control type="button" id="317">
+			<!--Recently Added-->
+			<label>31127</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, RecentlyAddedAlbums, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.1.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music)</visible>
+		</control>
+		<control type="button" id="318">
+			<!--Recently Played-->
+			<label>31128</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, RecentlyPlayedAlbums, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.2.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + IntegerGreaterThan(Window(Home).Property(MB3TotalPlayedMusicSongs),0) + Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</control>
+		<control type="button" id="319">
+			<!-- Playlists-->
+			<label>136</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(Music, Playlists, return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + !Skin.HasSetting(HomeMenuUseMBforMusic)</visible>
+		</control>
+		<control type="button" id="320">
+			<!-- Radio-->
+			<label>19021</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + System.GetBool(pvrmanager.enabled)</visible>
+		</control>
+		<control type="button" id="321">
+			<!-- All Music-->
+			<label>10516</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">ActivateWindow(Music, MusicLibrary, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMusic)">$INFO[Window(Home).Property(xbmb3c.std.music.0.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music)</visible>
+		</control>
+		
+		<!-- Netflix items -->
+		<control type="button" id="322">
+			<!-- custom entry-->
+			<label>31129</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</control>
+		<control type="button" id="323">
+			<!-- custom entry-->
+			<label>31130</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</control>
+		<control type="button" id="324">
+			<!-- custom entry-->
+			<label>31131</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=wiHome&amp;thumb&amp;type=both&amp;url",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</control>
+		<control type="button" id="325">
+			<!-- custom entry-->
+			<label>31048</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</control>
+		<control type="button" id="326">
+			<!-- custom entry-->
+			<label>31049</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</control>
+		<control type="button" id="327">
+			<!-- custom entry-->
+			<label>31050</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</control>
+		<control type="button" id="328">
+			<!-- custom entry-->
+			<label>31051</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), netflix)</visible>
+		</control>
+		<control type="button" id="329">
+			<label>19019</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVChannels)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</control>
+		<control type="button" id="330">
+			<label>22020</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVGuide)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</control>
+		<control type="button" id="331">
+			<label>19163</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVRecordings)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</control>
+		<control type="button" id="332">
+			<label>19021</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</control>
+		<control type="button" id="333">
+			<label>19040</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVTimers)</onclick>
+			<visible>SubString(System.BuildVersion,14,left) + StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</control>
+		<control type="button" id="334">
+			<label>137</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(TVSearch)</onclick>
+			<onclick condition="!SubString(System.BuildVersion,14,left)">XBMC.ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
+		</control>
+		<!-- tv shows items -->
+		<control type="button" id="335">
+			<label>31051</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,TvShowTitles, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforTVSeries)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.1.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows)</visible>
+		</control>
+		<control type="button" id="336">
+			<label>31127</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,RecentlyAddedEpisodes, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforTVSeries)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.0.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows)</visible>
+		</control>
+		<control type="button" id="337">
+			<label>135</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,TvShowGenres, return)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforTVSeries)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.8.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows)</visible>
+		</control>
+		<control type="button" id="338">
+			<label>575</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.3.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</control>
+		<control type="button" id="339">
+			<label>16101</label><width>365</width><focusedcolor>black</focusedcolor>
+			<onclick>SetProperty(submenu,hide,Home)</onclick>
+			<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.7.path)]</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), tvshows) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+		</control>
+	</include>
+		
+		
+		
+		
+		
+</includes>
