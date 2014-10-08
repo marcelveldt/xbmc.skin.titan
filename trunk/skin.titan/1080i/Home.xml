@@ -5,6 +5,7 @@
     <allowoverlay>yes</allowoverlay>
     <include>defaultskinsettings</include>
 	<onload condition="Skin.HasSetting(AutoShowSubmenu)">SetProperty(submenuloading,loading,Home)</onload>
+	<onload condition="System.HasAddon(plugin.video.xbmb3c)">RunScript(plugin.video.xbmb3c,skin)</onload>
     <onload>Skin.Reset(youtube)</onload>
 	<backgroundcolor>0</backgroundcolor>
 	<onload>Control.SetFocus(300,2)</onload>
@@ -124,7 +125,7 @@
 					
 					<control type="image">
                         <!--widget Arrow UP-->
-						<animation effect="fade" begin="0" end="100" delay="800" time="800" pulse="true">Focus</animation>
+						<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="true">Focus</animation>
                         <posx>233</posx>
                         <posy>-16</posy>
                         <width>149</width>
@@ -134,7 +135,7 @@
                     </control>
 					<control type="image">
                         <!--widget Arrow DOWN-->
-						<animation effect="fade" begin="0" end="100" delay="800" time="800" pulse="true">Focus</animation>
+						<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="true">Focus</animation>
                         <posx>233</posx>
                         <posy>263</posy>
                         <width>149</width>
@@ -246,7 +247,7 @@
             <texturenofocus>icons/icon_power.png</texturenofocus>
             <onclick>ActivateWindow(111)</onclick>
 			<onfocus>ActivateWindow(111)</onfocus>
-			<visible>!Control.IsVisible(445) + !ControlGroup(77777).HasFocus() + !Control.HasFocus(4444)</visible>
+			<visible>!Control.IsVisible(445) + !ControlGroup(77777).HasFocus() + !Control.HasFocus(4444)+ !Window.IsVisible(DialogButtonMenu.xml)</visible>
 			<animation time="400" effect="fade">Visible</animation>
 			<animation time="200" effect="fade">Hidden</animation>
         </control>
@@ -255,37 +256,5 @@
 		<include condition="Skin.HasTheme(classic)">HomeMenuSubMenuVertical</include>
 		<include condition="!Skin.HasTheme(classic)">HomeMenuSubMenuHorizontal</include>
 		
-		<!-- splash screen -->
-		<control type="group">
-		<animation type="Hidden">
-		<effect type="fade" start="100" end="0" time="2000" delay="200" />
-		</animation>
-		<visible>!IsEmpty(Window.Property(showsplash))</visible>
-		<include>GlobalBackground</include>
-		<control type="multiimage">
-            <description>Busy animation</description>
-			<posx>860</posx>
-			<posy>450</posy>
-			<width>200</width>
-			<height>200</height>
-			<imagepath>dialogs\extended_progress_bar</imagepath>
-			<aspectratio>keep</aspectratio>
-			<colordiffuse>ffFFFFFF</colordiffuse>
-			<timeperimage>250</timeperimage>
-        </control>
-		<control type="label">
-            <posx>0</posx>
-            <posy>1015</posy>
-            <width>1920</width>
-            <align>center</align>
-            <font>Bold55</font>
-            <textcolor>white</textcolor>
-            <label>Titan Mediabrowser v$INFO[System.AddonVersion(skin.titan)]</label>
-            <include>animation_fade_visible_hidden</include>
-            <include>animation_fade_open_close</include>
-        </control>
-		</control>
-	
-
 	</controls>
 </window>

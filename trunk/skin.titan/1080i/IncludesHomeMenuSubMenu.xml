@@ -8,10 +8,8 @@
 		<posy>945</posy>
 		<height>180</height>
 		<defaultcontrol>4444</defaultcontrol>
-		<visible>SubString(Window(Home).Property(submenu),show) + !IsEmpty(Container(300).ListItem.Property(submenu)) + !Control.HasFocus(510) + !(Control.HasFocus(2)</visible>
+		<visible>SubString(Window(Home).Property(submenu),show) + !IsEmpty(Container(300).ListItem.Property(submenu)) + !Control.HasFocus(510) + !Control.HasFocus(2)</visible>
 
-			<animation effect="fade" start="100" end="0" time="400" tween="sine" delay="0" easing="in" condition="!SubString(Window(Home).Property(submenu),show)">Conditional</animation>
-			
 			<animation type="Visible">
             <effect type="slide" start="0,500" end="0" tween="cubic" easing="inout" time="550" />
             <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
@@ -23,7 +21,7 @@
 			
 			<control type="image">
 				<!--Submenu Arrow DOWN-->
-				<animation effect="fade" begin="0" end="100" delay="1800" time="1800">Visible</animation>
+				<animation effect="fade" start="0" end="100" delay="1800" time="1800">Visible</animation>
 				<posx>826</posx>
 				<posy>0</posy>
 				<width>149</width>
@@ -32,13 +30,7 @@
 				<visible>ControlGroup(77777).HasFocus</visible>
 			</control>
 			
-			<!--Panel
-			<control type="image">
-            <width>1930</width>
-            <height>160</height>
-            <texture>dialogs/button/panel.png</texture>
-			</control>-->
-			
+		
 			<!-- title -->
 			<control type="label">
 				<posx>52</posx>
@@ -47,11 +39,11 @@
 				<height>80</height>
 				<align>left</align>
 				<label>$INFO[Container(300).ListItem.Label]</label>
-				<align>center</align>
 				<aligny>center</aligny>
 				<font>Reg49</font>
 				<textcolor>lightgrey</textcolor>
 				<selectedcolor>white</selectedcolor>
+				<visible>IsEmpty(Window(Home).Property(shutdownmenuactive))</visible>
 			</control>
 
 			
@@ -277,7 +269,6 @@
 				<height>341</height>
 				<texture background="true">home_submenu_right.png</texture>
 				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
-				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -286,7 +277,6 @@
 				<height>341</height>
 				<texture background="true">home_submenu_right.png</texture>
 				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
-				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
 			</control>
 	</include>
 	
@@ -298,7 +288,6 @@
 				<height>341</height>
 				<texture background="true">home_submenu_left.png</texture>
 				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
-				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
 			</control>
 			<control type="image">
 				<posx>-3</posx>
@@ -307,19 +296,10 @@
 				<height>341</height>
 				<texture background="true">home_submenu_left.png</texture>
 				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
-				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
 			</control>
 	</include>
 	
-	<include name="EmptyEntry">
-	<item>
-			<label></label>
-			<onclick></onclick>
-			<visible>!Skin.hastheme(classic)</visible>
-		</item>
-	</include>
-	
-	
+
 	<include name="HomeMenuSubmenuItems">
 	<content>
 		<!--<include condition="!skin.hastheme(classic)">EmptyEntry</include>-->

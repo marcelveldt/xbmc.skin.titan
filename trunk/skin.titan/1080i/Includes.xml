@@ -13,6 +13,7 @@
     <include file="View_53_PanelDetails.xml" />
 	<include file="View_56_BannerPlex.xml" />
 	<include file="View_57_BigPanel.xml" />
+	<include file="View_58_LargePoster.xml" />
     <include file="IncludesVariables.xml" />
     <include file="IncludesNowPlaying.xml" />
     <include file="IncludesNextUp.xml" />
@@ -39,6 +40,19 @@
             <label>Titan Mediabrowser v$INFO[System.AddonVersion(skin.titan)]</label>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
+			<visible>!SubString(System.BuildVersion,14,left)</visible>
+        </control>
+		<control type="label">
+            <posx>1860</posx>
+            <posy>1015</posy>
+            <width>500</width>
+            <align>right</align>
+            <font>Light40</font>
+            <textcolor>white</textcolor>
+            <label>Titan Mediabrowser v$INFO[System.AddonVersion(skin.titan.helix)]</label>
+            <include>animation_fade_visible_hidden</include>
+            <include>animation_fade_open_close</include>
+			<visible>SubString(System.BuildVersion,14,left)</visible>
         </control>
     </include>
     <include name="liveGadgetSetBackground">
@@ -120,13 +134,13 @@
 			<posy>995</posy>
 			<width>1760</width>
 			<height>50</height>
-			<font>Reg32</font>
+			<font>Reg28</font>
 			<urlset>1</urlset>
 			<titlecolor>$VAR[ThemeFontColorBlack]</titlecolor>
 			<headlinecolor>$VAR[ThemeFontColorBlack]</headlinecolor>
 			<textcolor>$VAR[ThemeFontColorBlack]</textcolor>
 			<scrollspeed>40</scrollspeed>
-			<visible>Window.IsVisible(Home) + ![SubString(Window(Home).Property(submenu),show) + !IsEmpty(Container(300).ListItem.Property(submenu)) + !Control.HasFocus(510)]</visible>
+			<visible>Window.IsVisible(Home) + ![SubString(Window(Home).Property(submenu),show) + !IsEmpty(Container(300).ListItem.Property(submenu)) + !Control.HasFocus(510)] + !Window.IsVisible(DialogButtonMenu.xml)</visible>
 			<animation time="1500" effect="fade" delay="1500">Visible</animation>
 			<animation time="200" effect="fade">Hidden</animation>				
 		</control>
@@ -165,7 +179,7 @@
 			<texturebg border="6">pvr/ProgressBackBlue.png</texturebg>
 			<midtexture border="6">pvr/ProgressMidWhite.png</midtexture>
 			<info>$VAR[PVRFooterProgress]</info>
-			<visible>!Skin.HasTheme(classic)</visible>
+			<visible>!Skin.HasTheme(classic) + !Window.IsActive(MyMusicSongs.xml) + !Window.IsActive(MyMusicNav.xml)</visible>
 		</control>
 		<control type="label">
 			<!--End-->
@@ -266,7 +280,7 @@
 			<align>right</align>
 			<font>Reg30</font>
 			<textcolor>white</textcolor>
-			<visible>!IsEmpty(ListItem.Label)</visible>
+			<visible>!IsEmpty(ListItem.Label) + !Control.IsVisible(58)</visible>
 			<label>$INFO[Container.NumItems] $LOCALIZE[31034]</label>
 		</control>
 	</control>
@@ -452,7 +466,6 @@
 				<texturefocus></texturefocus>
 				<texturenofocus></texturenofocus>
 				<onclick>System.LogOff</onclick>
-				<aspectratio>keep</aspectratio>			
 			</control>
 			<control type="label">
 				<!--Profile name-->
@@ -676,14 +689,27 @@
     <include name="animation_dialog_button">
         <!--Shutdown Menu Open/Close-->
         <animation type="WindowOpen">
-            <effect type="slide" start="0,500" end="0" tween="cubic" easing="inout" time="550" />
+            <effect type="slide" start="0,1100" end="0,510" tween="cubic" easing="inout" time="550" />
             <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
         </animation>
         <animation type="WindowClose">
-            <effect type="slide" start="0,0" end="0,500" tween="cubic" easing="inout" time="550" />
+            <effect type="slide" start="0,510" end="0,1100" tween="cubic" easing="inout" time="550" />
             <effect type="fade" start="100" end="0" tween="sine" easing="out" time="450" />
         </animation>
     </include>
+	<include name="animation_dialog_button_modern">
+        <!--Shutdown Menu Open/Close-->
+        <animation type="WindowOpen">
+            <effect type="slide" start="0,1100" end="0,1000" tween="cubic" easing="inout" time="550" />
+            <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="600" />
+        </animation>
+        <animation type="WindowClose">
+            <effect type="slide" start="0,1000" end="0,1100" tween="cubic" easing="inout" time="550" />
+            <effect type="fade" start="100" end="0" tween="sine" easing="out" time="450" />
+        </animation>
+    </include>
+	
+	
     <include name="animation_sub_menu">
         <!--Sub Menu Slide Animation-->
         <animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
@@ -770,7 +796,7 @@
     <include name="SubMenuTabTop">
         <!--Sub Menu Tab Top-->
         <control type="image">
-            <visible>Control.IsVisible(51) | Control.IsVisible(501) | Control.IsVisible(505) | Control.IsVisible(54) | Control.IsVisible(53) | Control.IsVisible(506)</visible>
+            <visible>Control.IsVisible(51) | Control.IsVisible(501) | Control.IsVisible(505) | Control.IsVisible(54) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(58)</visible>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
             <posx>860</posx>
@@ -1555,7 +1581,7 @@
             <height>260</height>
             <fadetime>200</fadetime>
             <texture background="true" fallback="defaultcovers/video_play.png">$INFO[VideoPlayer.Cover]</texture>
-            <aspectratio align="left" aligny="top">stretch</aspectratio>
+            <aspectratio align="left" aligny="top">scale</aspectratio>
             <visible>!VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)</visible>
         </control>
 		<control type="image">
@@ -1781,7 +1807,7 @@
             <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
             <label>$LOCALIZE[31112] $INFO[Player.FinishTime]</label>
         </control>
-	   
+
         <control type="label">
             <!--Play Time-->
             <posx>350</posx>
@@ -1844,7 +1870,7 @@
         <!--Process/Seekbar-->
         <control type="progress" id="23">
             <description>Progress Bar</description>
-            <posx>450</posx>
+            <posx>465</posx>
             <posy>950</posy>
 			<height>20</height>
             <width>493</width>
@@ -1853,9 +1879,10 @@
         </control>
         <control type="slider" id="401">
             <description>Seekbar</description>
-            <posx>350</posx>
+            <posx>465</posx>
             <posy>950</posy>
-            <width>800</width>
+			<height>20</height>
+            <width>493</width>
             <visible>Player.Seeking</visible>
         </control>
     </include>
@@ -2424,7 +2451,6 @@
                     <texturefocus>modernosd/OSDAudioFO.png</texturefocus>
                     <texturenofocus>modernosd/OSDAudioNF.png</texturenofocus>
                     <onclick>ActivateWindow(124)</onclick>
-					<valign>top</valign>
                 </control>
                 <control type="button" id="102">
                     <!--Video Settings-->
@@ -2571,7 +2597,7 @@
 				  <visible>Playlist.IsRepeat + Player.HasAudio</visible>
 				  <onclick>XBMC.PlayerControl(Repeat)</onclick>
 				</control>
-				<control type="togglebutton" id="212" description="Random">
+				<control type="togglebutton" id="212">
 				  <include>animation_fade_visible_hidden</include>
 				  <posx>375</posx>
 				  <posy>1</posy>
@@ -2892,9 +2918,33 @@
 		</control>
 	</include>
 	
+	<include name="PVRpanelBackground">
+		<control type="image">
+                <!--Panel-->
+                <include>animation_view_change_pvr</include>
+                <include>animation_list</include>
+                <posx>8</posx>
+                <posy>210</posy>
+                <width>1902</width>
+                <height>790</height>
+                <texture>views/view_50_list_panel_episodes1.png</texture>
+				<visible>skin.hastheme(classic)</visible>
+            </control>
+			<control type="image">
+                <!--Panel-->
+                <include>animation_view_change_pvr</include>
+                <include>animation_list</include>
+                <posx>-60</posx>
+                <posy>210</posy>
+                <width>2050</width>
+                <height>790</height>
+                <texture>views/view_50_list_panel_episodes1.png</texture>
+				<visible>!skin.hastheme(classic)</visible>
+            </control>
+	</include>
+	
     <include name="defaultskinsettings">
         <!-- skin default settings -->
-		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(showsplash,true,Home)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomBackgroundSetting, blue)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomMusicFolder, artwork)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomMoviesFolder, artwork)</onload>
@@ -2993,12 +3043,11 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults3)</onload>
 
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
-		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,skin)</onload>
+		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,check_server)</onload>
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
 
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
 		<onload>Skin.Reset(ShowNextUppanel)</onload>
-		<onload>AlarmClock(CloseStartup,ClearProperty(showsplash,Home),00:08,silent)</onload>
     </include>
 	
     <include name="CastMB3Content">

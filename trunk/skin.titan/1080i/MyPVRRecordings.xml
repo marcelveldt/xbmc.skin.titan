@@ -26,10 +26,18 @@
         </control>
         <!--PVR Views-->
 		<control type="group" id="50">
+			
+			<include>BannerView</include>
+			<include>BannerViewDetails</include>
+			<include>ViewExtendedList</include>
+		
+		
 			 <!--LiveTVRecordingsView ID=13-->
 			<control type="group">
+				<posy>45</posy>
 				<visible>Control.IsVisible(15)</visible>
 				<include>PVRpanelBackground</include>
+			
 				<control type="group">
 					<!--Video Window-->
 					<visible>Control.IsVisible(15)</visible>
@@ -44,13 +52,6 @@
 						<texture>$INFO[ListItem.Thumb]</texture>
 						<!--<visible>!Player.HasVideo</visible>-->
 					</control>
-					<!--Video Window
-					<control type="videowindow">
-						<width>300</width>
-						<height>168</height>
-						<visible>Player.HasVideo</visible>
-						<animation effect="slide" start="0,0" end="-4500,0" time="0">WindowClose</animation>
-					</control>-->
 				</control>
 				<control type="group">
 					<!--Start, End, Next-->
@@ -108,7 +109,7 @@
 						<posx>120</posx>
 						<posy>560</posy>
 						<width>830</width>
-						<height>190</height>
+						<height>240</height>
 						<font>Light32</font>
 						<textcolor>white</textcolor>
 						<autoscroll>false</autoscroll>
@@ -226,56 +227,8 @@
 						</control>
 					</focusedlayout>
 				</control>
-				<control type="group">
-					<!-- Title -->
-					<visible>Control.IsVisible(15)</visible>
-					<include>animation_view_change_pvr</include>
-					<include>animation_list</include>
-					<posy>955</posy>
-					<control type="label">
-						<!--Others-->
-						<visible>!IsEmpty(ListItem.StartDate)</visible>
-						<posx>560</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<align>center</align>
-						<font>Reg30</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<!--No Recordings-->
-						<visible>IsEmpty(ListItem.StartDate)</visible>
-						<posx>560</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<align>center</align>
-						<font>Reg30</font>
-						<textcolor>white</textcolor>
-						<label>$LOCALIZE[231] $LOCALIZE[19163]</label>
-					</control>
-				</control>
-				<control type="group">
-					<!-- Page Control -->
-					<visible>Control.IsVisible(15)</visible>
-					<visible>![Window.IsActive(DialogVideoInfo.xml) + !substring(ListItem.Path,plugin)]</visible>
-					<include>animation_view_change_pvr</include>
-					<include>animation_list</include>
-					<posy>955</posy>
-					<control type="label">
-						<posx>1780</posx>
-						<posy>0</posy>
-						<width>400</width>
-						<align>right</align>
-						<font>Reg30</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
-					</control>
-				</control>
+
 			</control>
-			<include>BannerView</include>
-			<include>BannerViewDetails</include>
-			<include>ViewExtendedList</include>
 		</control>
 
 			<!--Sub Menu-->

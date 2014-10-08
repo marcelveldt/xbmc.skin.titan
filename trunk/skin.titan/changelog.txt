@@ -1,5 +1,5 @@
-v.2.0.20
-- added Big Panel view
+v.2.0.21
+- added Big Panel & Large Poster view
 - fixed several graphical glitches
 - fixed home submenu
 - added option to auto show submenu
@@ -7,7 +7,6 @@ v.2.0.20
 - moved widgets load to startup to improve speed
 - cleanup of settings
 - changed notify sound
-- fixes for Helix compatability
 
 
 v.2.0.15

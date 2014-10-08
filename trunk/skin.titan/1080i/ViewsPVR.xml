@@ -2,30 +2,7 @@
 <!--Titan-->
 <includes>
 	
-	<include name="PVRpanelBackground">
-		<control type="image">
-                <!--Panel-->
-                <include>animation_view_change_pvr</include>
-                <include>animation_list</include>
-                <posx>8</posx>
-                <posy>210</posy>
-                <width>1902</width>
-                <height>790</height>
-                <texture>views/view_50_list_panel_episodes1.png</texture>
-				<visible>skin.hastheme(classic)</visible>
-            </control>
-			<control type="image">
-                <!--Panel-->
-                <include>animation_view_change_pvr</include>
-                <include>animation_list</include>
-                <posx>-60</posx>
-                <posy>210</posy>
-                <width>2050</width>
-                <height>790</height>
-                <texture>views/view_50_list_panel_episodes1.png</texture>
-				<visible>!skin.hastheme(classic)</visible>
-            </control>
-	</include>
+	
 
     <include name="LiveTVChannelView">
         <!--Live TV Channel View ID=11-->

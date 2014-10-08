@@ -5,7 +5,7 @@
     <aspectratio aligny="top">stretch</aspectratio>
   </include>
   <include name="FanartThumb">
-			<control type="image" description="FA">
+			<control type="image">
               <posx>-8</posx>
               <posy>15</posy>
               <width>591</width>
@@ -14,7 +14,7 @@
               <aspectratio aligny="bottom" scalediffuse="false">stretch</aspectratio>
 			  <visible>skin.hastheme(classic)</visible>
             </control>
-			<control type="image" description="BG">
+			<control type="image">
               <posx>-13</posx>
               <posy>32</posy>
               <width>603</width>
@@ -23,7 +23,7 @@
 			  <aspectratio>stretch</aspectratio>
 			  <visible>!skin.hastheme(classic)</visible>
             </control>
-			<control type="image" description="FA">
+			<control type="image">
               <posx>4</posx>
               <posy>55</posy>
               <width>568</width>
@@ -88,11 +88,11 @@
   </include>
   
   <include name="View_57_BigPanel">
-    <control type="group" description="Content">
+    <control type="group">
       <visible>Control.IsVisible(57)</visible>
       <include>animation_fade_open_close</include>
 	  <include>animation_fade_visible_hidden</include>
-      <control type="panel" id="57" description="Big Panel">
+      <control type="panel" id="57">
         <viewtype label="Big Panel">Big Panel</viewtype>
         <posx>760</posx>
         <posy>140</posy>
@@ -298,14 +298,14 @@
             <bordersize>27</bordersize>
             <aspectratio>keep</aspectratio>
           </control>
-          <control type="label" description="Title Label">
+          <control type="label">
             <include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
 			<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
             <posy>270</posy>
             <width>320</width>
             <height>30</height>
             <align>center</align>
-            <font>ListDetails</font>
+            <font>Reg32</font>
             <scroll>false</scroll>
             <label>$INFO[ListItem.Label]</label>
           </control>
@@ -321,33 +321,33 @@
             <bordersize>27</bordersize>
             <aspectratio>keep</aspectratio>
           </control>
-          <control type="label" description="Title Label">
+          <control type="label">
             <include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
 			<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
             <posy>270</posy>
             <width>320</width>
             <height>30</height>
             <align>center</align>
-            <font>ListDetails</font>
+            <font>Reg32</font>
             <textcolor>white</textcolor>
             <label>$INFO[ListItem.Label]</label>
           </control>
         </focusedlayout>
       </control>
-      <control type="group" description="57 Info">
+      <control type="group">
         <visible>Control.IsVisible(57) + IntegerGreaterThan(Container(57).NumItems,0)</visible>
         <control type="group">
           <visible>!Skin.HasSetting(57_SmallFanart)</visible>
           <posx>60</posx>
           <posy>100</posy>
-          <control type="label" description="Details">
+          <control type="label">
             <posy>108</posy>
             <height>33</height>
             <width>630</width>
             <font>Reg31</font>
             <label>$VAR[Details]</label>
           </control>
-          <control type="label" description="Genre">
+          <control type="label">
             <posy>153</posy>
             <height>33</height>
             <width>630</width>
@@ -355,7 +355,7 @@
             <font>Reg31</font>
             <label>$INFO[ListItem.Genre]</label>
           </control>
-          <control type="textbox" description="Plot51">
+          <control type="textbox">
             <posx>0</posx>
             <posy>207</posy>
             <width>630</width>
@@ -363,7 +363,7 @@
             <align>left</align>
             <label>$VAR[Plots]</label>
           </control>
-          <control type="label" description="Addon version">
+          <control type="label">
             <visible>Container.Content(addons)</visible>
             <posy>840</posy>
             <width>800</width>
@@ -376,16 +376,16 @@
           <visible>Skin.HasSetting(57_SmallFanart) + ![Container.Content(tvshows) + Skin.HasSetting(57_UseBanners)]</visible>
           <posx>60</posx>
           <posy>140</posy>
-          <control type="group" description="Info with Fanart">
+          <control type="group">
 			<include>FanartThumb</include>
-            <control type="label" description="Details">
+            <control type="label">
               <posy>400</posy>
               <height>33</height>
               <width>630</width>
               <font>Reg31</font>
               <label>$VAR[Details]</label>
             </control>
-            <control type="textbox" description="Plot51 shorter">
+            <control type="textbox">
               <posx>0</posx>
               <posy>450</posy>
               <width>630</width>
@@ -399,16 +399,16 @@
           <visible>Skin.HasSetting(57_SmallFanart) + [Container.Content(tvshows) + Skin.HasSetting(57_UseBanners)]</visible>
           <posx>60</posx>
           <posy>100</posy>
-          <control type="group" description="Info with Fanart">
+          <control type="group">
             <include>FanartThumb</include>
-            <control type="label" description="Details">
+            <control type="label">
               <posy>531</posy>
               <height>33</height>
               <width>720</width>
               <font>Reg31</font>
               <label>$VAR[Details]</label>
             </control>
-            <control type="textbox" description="Plot51 shorter">
+            <control type="textbox">
               <posx>0</posx>
               <posy>585</posy>
               <width>720</width>
@@ -418,7 +418,7 @@
             </control>
           </control>
           </control>
-        <control type="group" description="Flags">
+        <control type="group">
           <posx>65</posx>
           <posy>920</posy>
 		  <visible>!IsEmpty(ListItem.VideoResolution)</visible>

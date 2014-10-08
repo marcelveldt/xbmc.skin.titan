@@ -224,7 +224,6 @@
 					<posx>-60</posx>
                     <height>20</height>
                     <align>left</align>
-					<valign>bottom</valign>
                     <texture>blankspace.png</texture>
 					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
                 </control>
@@ -284,7 +283,6 @@
 					<posx>-60</posx>
                     <height>20</height>
                     <align>left</align>
-					<valign>bottom</valign>
                     <texture>blankspace.png</texture>
 					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
                 </control>
@@ -1675,7 +1673,6 @@
 					<posx>-60</posx>
                     <height>40</height>
                     <align>left</align>
-					<valign>bottom</valign>
                     <texture>blankspace.png</texture>
 					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
                 </control>
@@ -1880,7 +1877,6 @@
 					<posx>-60</posx>
                     <height>40</height>
                     <align>left</align>
-					<valign>bottom</valign>
                     <texture>blankspace.png</texture>
 					<visible>System.HasAddon(plugin.video.netflixbmc) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.youtube) | System.HasAddon(plugin.video.xbmb3c)</visible>
                 </control>
@@ -2017,7 +2013,6 @@
 					<posx>-60</posx>
                     <height>40</height>
                     <align>left</align>
-					<valign>bottom</valign>
                     <texture>blankspace.png</texture>
 					<visible>Skin.HasSetting(MediaBrowserMode)</visible>
                 </control>
@@ -2873,9 +2868,9 @@
                     <onclick>Skin.ToggleSetting(NoFooterBar)</onclick>
                     <selected>Skin.HasSetting(NoFooterBar)</selected>
                 </control>
+				<!--activate lyrics
                 <control type="radiobutton" id="5116">
                     <description></description>
-                    <!--activate lyrics-->
                     <width>1230</width>
                     <align>left</align>
                     <label>31087</label>
@@ -2885,7 +2880,7 @@
                     <onclick>Skin.ToggleSetting(MusicActivateLyrics)</onclick>
                     <selected>Skin.HasSetting(MusicActivateLyrics)</selected>
                     <enable>System.HasAddon(script.cu.lrclyrics)</enable>
-                </control>
+                </control>-->
 				<control type="radiobutton" id="5117">
                     <description></description>
                     <!--disable artwork downloader-->

@@ -25,15 +25,15 @@
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="Panel details">biglist</viewtype>
                 <scrolltime tween="Cubic" easing="inout">500</scrolltime>
-                <focusposition>0</focusposition>
+                <focusposition>6</focusposition>
                 <orientation>horizontal</orientation>
                 <preloaditems>2</preloaditems>
                 <!-- itemlayout movies -->
-                <itemlayout height="320" width="223" condition="!Container.Content(albums)">
+                <itemlayout height="380" width="223" condition="!Container.Content(albums)">
                     <include>PosterViewLayout</include>
                 </itemlayout>
                 <!-- focussed layout movies -->
-                <focusedlayout height="320" width="223" condition="!Container.Content(albums)">
+                <focusedlayout height="380" width="223" condition="!Container.Content(albums)">
                     <include>PosterViewLayoutFocus</include>
                 </focusedlayout>
                 <!-- itemlayout albums -->

@@ -314,7 +314,7 @@
                 </item>
 				<item id="11">
 					<description>Skin Settings</description>
-					<label>Skin</label>
+					<label>166</label>
 					<label2>31407</label2>
 					<onclick>activatewindow(skinsettings)</onclick>
 				</item>

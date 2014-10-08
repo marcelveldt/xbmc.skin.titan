@@ -1249,15 +1249,28 @@
 					<label>19270</label>
 					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 				</control>
-				<control type="button" id="2">
+				<control type="button" id="400">
 					<description>View As button</description>
 					<left>0</left>
 					<right>40</right>
 					<textwidth>400</textwidth>
 					<include>SubMenuButton</include>
-					<label>-</label>
-					<!-- <visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible> -->
+					 <label>View: $INFO[Container.Viewmode]</label>
+					<onclick>Container.NextViewMode</onclick>
+					<onclick>SetFocus(15)</onclick>
+					<onclick>SetFocus(501)</onclick>
+					<onclick>SetFocus(505)</onclick>
+					<onclick>SetFocus(506)</onclick>
+					<!-- <visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible>-->
 				</control>
+				
+				<!-- <control type="button" id="400">
+                    <include>SubMenuButton</include>
+                    <label>View: $INFO[Container.Viewmode]</label>
+                    <onclick>Container.NextViewMode</onclick>
+				</control> -->
+				
+				
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<include>SubMenuButton</include>
@@ -1400,6 +1413,24 @@
 	
 	<include name="BannerViewWatchedLabelClassicPosterPosHelix">
 		<posx>139</posx>
+	</include>
+	
+	
+	
+	<include name="WatchedLabelNormalLargePosterPosGotham">
+		<posx>448</posx>
+	</include>
+	
+	<include name="WatchedLabelNormalLargePosterPosHelix">
+		<posx>415</posx>
+	</include>
+	
+	<include name="WatchedLabelClassicLargePosterPosGotham">
+		<posx>423</posx>
+	</include>
+	
+	<include name="WatchedLabelClassicLargePosterPosHelix">
+		<posx>393</posx>
 	</include>
 	
 </includes>

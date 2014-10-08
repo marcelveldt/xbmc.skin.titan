@@ -68,38 +68,24 @@
 		</control>
 	</include>
     <include name="PosterViewLayout">
+	
         <control type="image">
             <!--Poster-->
             <width>200</width>
             <height>294</height>
-            <texture background="true">$VAR[PosterThumb]</texture>
-            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
+            <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[PosterThumb]</texture>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
-        <control type="image">
-            <!--Poster-->
-            <width>200</width>
+		<control type="image">
+		<!-- poster shadow -->
+			<width>200</width>
             <height>294</height>
-            <texture background="true" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)] + IsEmpty(ListItem.Art(poster))</visible>
-            <aspectratio align="center" aligny="center">stretch</aspectratio>
-        </control>
-        <control type="image">
-            <!--Poster-->
-            <width>200</width>
-            <height>294</height>
-            <texture background="true" diffuse="poster_matte.png">$VAR[PosterThumb]</texture>
-            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
-            <aspectratio align="center" aligny="center">stretch</aspectratio>
-        </control>
-        <control type="image">
-            <!--Poster-->
-            <width>200</width>
-            <height>294</height>
-            <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)] + IsEmpty(ListItem.Art(poster))</visible>
-            <aspectratio align="center" aligny="center">stretch</aspectratio>
-        </control>
+			<posy>310</posy>
+			<colordiffuse>52FFFFFF</colordiffuse>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[PosterThumb]</texture>
+			<visible>Control.IsVisible(53)</visible>
+		</control>
 		<control type="image">
             <!--Watched Overlay-->
             <include condition="Skin.HasTheme(classic)">BannerViewWatchedImageSizeClassicPoster</include>
@@ -169,70 +155,35 @@
         </control>
     </include>
     <include name="PosterViewLayoutFocus">
-        <control type="image">
+	<control type="image">
+		<!-- poster shadow -->
+			<width>200</width>
+            <height>294</height>
+			<posy>310</posy>
+			<colordiffuse>52FFFFFF</colordiffuse>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[PosterThumb]</texture>
+			<visible>Control.IsVisible(53)</visible>
+		</control>
+	<control type="group">
             <!--Poster-->
             <animation type="focus">
-                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
+                <effect type="zoom" start="100" end="110" center="auto" time="150" />
             </animation>
             <animation type="unfocus">
-                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
+                <effect type="zoom" start="110" end="100" center="auto" time="150" />
             </animation>
-            <width>200</width>
-            <height>294</height>
-            <texture background="true">$VAR[PosterThumb]</texture>
-            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
-            <aspectratio align="center" aligny="center">stretch</aspectratio>
-        </control>
+
         <control type="image">
             <!--Poster-->
-            <animation type="focus">
-                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
-            </animation>
-            <animation type="unfocus">
-                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
-            </animation>
             <width>200</width>
             <height>294</height>
-            <texture background="true" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-            <visible>[Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)] + IsEmpty(ListItem.Art(poster))</visible>
+            <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[PosterThumb]</texture>
             <aspectratio align="center" aligny="center">stretch</aspectratio>
         </control>
-        <control type="image">
-            <!--Poster-->
-            <animation type="focus">
-                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
-            </animation>
-            <animation type="unfocus">
-                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
-            </animation>
-            <width>200</width>
-            <height>294</height>
-            <texture background="true" diffuse="poster_matte.png">$VAR[PosterThumb]</texture>
-            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)]</visible>
-            <aspectratio align="center" aligny="center">stretch</aspectratio>
-        </control>
-        <control type="image">
-            <!--Poster-->
-            <animation type="focus">
-                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
-            </animation>
-            <animation type="unfocus">
-                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
-            </animation>
-            <width>200</width>
-            <height>294</height>
-            <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$INFO[ListItem.Icon]</texture>
-            <visible>![Skin.HasSetting(PosterViewNoOverlay) + !Skin.HasTheme(classic)] + IsEmpty(ListItem.Art(poster))</visible>
-            <aspectratio align="center" aligny="center">stretch</aspectratio>
-        </control>
+		
 		<control type="image">
             <!--Watched Overlay-->
-			<animation type="focus">
-                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
-            </animation>
-            <animation type="unfocus">
-                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
-            </animation>
             <include condition="Skin.HasTheme(classic)">BannerViewWatchedImageSizeClassicPoster</include>
 			<include condition="!Skin.HasTheme(classic)">BannerViewWatchedImageSizeNormalPoster</include>
             <colordiffuse>ccFFFFFF</colordiffuse>
@@ -241,12 +192,6 @@
         </control>
 		<control type="label">
             <!--watched label-->
-			<animation type="focus">
-                <effect type="zoom" start="100" end="115" center="130,190" time="150" />
-            </animation>
-            <animation type="unfocus">
-                <effect type="zoom" start="140" end="100" center="130,190" time="150" />
-            </animation>
             <include condition="!Skin.HasTheme(classic)">BannerViewWatchedLabelNormalPoster</include>
 			 <include condition="Skin.HasTheme(classic)">BannerViewWatchedLabelClassicPoster</include>
             <align>center</align>
@@ -254,6 +199,24 @@
             <textcolor>white</textcolor>
 			<visible>!Skin.HasSetting(HideWatchedOverlayPoster)</visible>
         </control>
+		<!-- focus panel -->
+		<control type="image">
+            <posx>-8</posx>
+			<posy>-8</posy>
+			<width>216</width>
+			<height>310</height>
+			<texture>poster_focus.png</texture>
+			<visible>!skin.hastheme(classic)</visible>
+          </control>
+		  <control type="image">
+            <posx>-3</posx>
+			<posy>0</posy>
+			<width>206</width>
+			<height>300</height>
+			<texture>poster_focus.png</texture>
+			<visible>skin.hastheme(classic)</visible>
+          </control>
+		</control>
     </include>
     <include name="BannerViewImagesNormal">
         <control type="image">
@@ -357,15 +320,6 @@
 			<include condition="!Skin.HasTheme(classic)">BannerViewWatchedImageSizeNormalEpisodes</include>
             <colordiffuse>ccFFFFFF</colordiffuse>
             <texture>$VAR[WatchedImage]</texture>
-			<visible>!Skin.HasSetting(HideWatchedOverlayLandscape)</visible>
-        </control>
-		<control type="label">
-            <!--watched label-->
-            <include condition="!Skin.HasTheme(classic)">BannerViewWatchedLabelNormalEpisodes</include>
-			<include condition="Skin.HasTheme(classic)">BannerViewWatchedLabelClassicEpisodes</include>
-            <align>center</align>
-            <label>$VAR[WatchedLabel]</label>
-            <textcolor>white</textcolor>
 			<visible>!Skin.HasSetting(HideWatchedOverlayLandscape)</visible>
         </control>
     </include>
@@ -586,7 +540,7 @@
 	
 	<include name="ExtendedViewWatchedLabelNormal">
         <include condition="!SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelNormalPosGotham</include>
-		<include condition="SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelNormalHelix</include>
+		<include condition="SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelNormalPosHelix</include>
         <posy>7</posy>
         <width>60</width>
         <height>60</height>
@@ -594,7 +548,7 @@
     </include>
 	<include name="ExtendedViewWatchedLabelClassic">
         <include condition="!SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelClassicPosGotham</include>
-		<include condition="SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelClassicHelix</include>
+		<include condition="SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelClassicPosHelix</include>
         <posy>30</posy>
         <width>60</width>
         <height>60</height>
@@ -612,7 +566,7 @@
 
     <include name="BannerViewWithOverlayLabelSizeEpisodes">
         <include condition="!SubString(System.BuildVersion,14,left)">BannerViewLabelPosEpisodesGotham</include>
-		<include condition="SubString(System.BuildVersion,14,left)">BannerListLabelPosEpisodesHelix</include>
+		<include condition="SubString(System.BuildVersion,14,left)">BannerViewLabelPosEpisodesHelix</include>
         <posy>180</posy>
         <width>380</width>
         <height>60</height>

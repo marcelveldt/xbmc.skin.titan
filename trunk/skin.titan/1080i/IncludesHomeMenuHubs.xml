@@ -126,7 +126,7 @@
 				
 				<control type="image">
 					<!--widget Arrow DOWN-->
-					<animation effect="fade" begin="0" end="100" delay="1600" time="1600" pulse="true">Visible</animation>
+					<animation effect="fade" start="0" end="100" delay="1600" time="1600" pulse="true">Visible</animation>
 					<posx>872</posx>
 					<posy>297</posy>
 					<width>149</width>
@@ -137,7 +137,7 @@
 				
 				<control type="image">
 					<!--widget Arrow DOWN-->
-					<animation effect="fade" begin="0" end="100" delay="1600" time="1600" pulse="true">Visible</animation>
+					<animation effect="fade" start="0" end="100" delay="1600" time="1600" pulse="true">Visible</animation>
 					<posx>872</posx>
 					<posy>301</posy>
 					<width>149</width>
@@ -4728,7 +4728,6 @@
             <width>320</width>
             <height>100</height>
             <align>center</align>
-			<valign>center</valign>
             <label>$VAR[HomeMenuHubLabel]</label>
             <font>Light26</font>
             <textcolor>darkgrey</textcolor>
@@ -4752,7 +4751,6 @@
             <width>320</width>
             <height>100</height>
             <align>center</align>
-			<valign>center</valign>
             <label>$VAR[HomeMenuHubLabel]</label>
             <font>Light26</font>
             <textcolor>white</textcolor>
