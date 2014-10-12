@@ -4,6 +4,7 @@
     <defaultcontrol always="true">401</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <controls>
+
         <control type="group">
             <posx>60</posx>
             <posy>40</posy>
@@ -53,5 +54,8 @@
                 <scroll>false</scroll>
             </control>
         </control>
-    </controls>
+    
+		<include>TimeInfo</include>
+	
+	</controls>
 </window>

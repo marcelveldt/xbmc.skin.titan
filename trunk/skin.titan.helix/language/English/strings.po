@@ -549,6 +549,71 @@ msgctxt "#31134"
 msgid "Show Profile button"
 msgstr ""
 
+msgctxt "#31135"
+msgid "Record this episode only"
+msgstr ""
+
+msgctxt "#31136"
+msgid "Record all episodes (series recording)"
+msgstr ""
+
+msgctxt "#31137"
+msgid "Settings for recordings"
+msgstr ""
+
+msgctxt "#31138"
+msgid "Cancel recording of this episode only"
+msgstr ""
+
+msgctxt "#31139"
+msgid "Cancel recording of all episodes"
+msgstr ""
+
+msgctxt "#31140"
+msgid "Disable the Now Playing background"
+msgstr ""
+
+msgctxt "#31141"
+msgid "Show Fanart background"
+msgstr ""
+
+msgctxt "#31142"
+msgid "Use global background for all sections"
+msgstr ""
+
+msgctxt "#31143"
+msgid "Enable section-based backgrounds"
+msgstr ""
+
+msgctxt "#31144"
+msgid "Section:"
+msgstr ""
+
+msgctxt "#31145"
+msgid "Default background image for this section"
+msgstr ""
+
+msgctxt "#31146"
+msgid "Random FanArt image"
+msgstr ""
+
+msgctxt "#31147"
+msgid "Custom background image"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Empty - please select image"
+msgstr ""
+
+msgctxt "#31149"
+msgid "Current section background:"
+msgstr ""
+
+msgctxt "#31150"
+msgid "Custom Image:"
+msgstr ""
+
+
 
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from XBMC."

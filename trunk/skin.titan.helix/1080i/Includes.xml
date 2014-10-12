@@ -14,6 +14,7 @@
 	<include file="View_56_BannerPlex.xml" />
 	<include file="View_57_BigPanel.xml" />
 	<include file="View_58_LargePoster.xml" />
+	<include file="View_59_BigPanelDetails.xml" />
     <include file="IncludesVariables.xml" />
     <include file="IncludesNowPlaying.xml" />
     <include file="IncludesNextUp.xml" />
@@ -54,10 +55,6 @@
             <include>animation_fade_open_close</include>
 			<visible>SubString(System.BuildVersion,14,left)</visible>
         </control>
-    </include>
-    <include name="liveGadgetSetBackground">
-		<onclick condition="!IsEmpty(Container(300).ListItem.Property(background))">Skin.SetString(LiveGadgetBackground, $INFO[Container(300).ListItem.Property(background)])</onclick>
-        <onclick condition="IsEmpty(Container(300).ListItem.Property(background))">Skin.SetString(LiveGadgetBackground, $INFO[Container(300).ListItem.Icon])</onclick>
     </include>
     <!-- Gadget Row sizes -->
     <include name="Gadget1Row">
@@ -2699,26 +2696,15 @@
     </include>
     <!--Background-->
     <include name="VideoBackground">
-		<!-- default blue background (always show as fallback) -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <texture background="true">special://skin/extras/backgrounds/global_blue.png</texture>
-            <fadetime>800</fadetime>
-        </control>
-		<control type="image">
-            <include>DimensionsFullscreen</include>
-            <colordiffuse>FF666666</colordiffuse>
-            <fadetime>800</fadetime>
-			<visible>Skin.String(CustomBackgroundSetting, gadget)</visible>
-        </control>
-        <include condition="IsEmpty(ListItem.Art(fanart))">GlobalBackground</include>
+		<!-- default background (always show as fallback) -->
+        <include>GlobalBackground</include>
         <!-- mediabrowser fanart -->
         <control type="image">
             <include>DimensionsFullscreen</include>
             <fadetime>1000</fadetime>
             <colordiffuse>FF666666</colordiffuse>
             <texture background="true">$INFO[Window(Home).Property(MB3.Background.Item.FanArt)]</texture>
-            <visible>!IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt))</visible>
+            <visible>!IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)</visible>
         </control>
         <!-- normal fanart -->
         <control type="image">
@@ -2726,31 +2712,20 @@
             <fadetime>1000</fadetime>
             <colordiffuse>FF666666</colordiffuse>
             <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-            <visible>IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt))</visible>
+            <visible>IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)</visible>
         </control>
 		<control type="image"><include>DimensionsFullscreen</include><texture background="true">overlays/fanart/fanart_overlay.png</texture><fadetime>800</fadetime></control>
 	</include>
     <include name="MusicBackground">
-		<!-- default blue background (always show as fallback) -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <texture background="true">special://skin/extras/backgrounds/global_blue.png</texture>
-            <fadetime>800</fadetime>
-        </control>
-		<control type="image">
-            <include>DimensionsFullscreen</include>
-            <colordiffuse>FF666666</colordiffuse>
-            <fadetime>800</fadetime>
-            <texture background="true">$INFO[Skin.String(LiveGadgetBackground)]</texture>
-			<visible>Skin.String(CustomBackgroundSetting, gadget)</visible>
-        </control>
+		<!-- default background (always show as fallback) -->
+        <include>GlobalBackground</include>
         <!-- mediabrowser fanart -->
         <control type="image">
             <include>DimensionsFullscreen</include>
             <fadetime>1000</fadetime>
             <colordiffuse>FF666666</colordiffuse>
             <texture background="true">$INFO[Window(Home).Property(MB3.Background.Item.FanArt)]</texture>
-            <visible>!IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt))</visible>
+            <visible>!IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)</visible>
         </control>
         <!-- normal fanart -->
         <control type="image">
@@ -2758,13 +2733,7 @@
             <fadetime>1000</fadetime>
             <colordiffuse>FF666666</colordiffuse>
             <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-        </control>
-        <!-- normal fanart -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <fadetime>1000</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+			<visible>IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)</visible>
         </control>
     </include>
     <include name="GlobalBackground">
@@ -2832,13 +2801,16 @@
             <include>DimensionsFullscreen</include>
             <texture background="true">overlays/fanart/fanart_overlay.png</texture>
             <fadetime>800</fadetime>
+			<visible>skin.hastheme(classic)</visible>
         </control>
+		<!-- section background -->
         <control type="image">
             <include>DimensionsFullscreen</include>
             <colordiffuse>FF666666</colordiffuse>
-            <fadetime>800</fadetime>
-            <texture background="true">$INFO[Skin.String(LiveGadgetBackground)]</texture>
-            <visible>Skin.String(CustomBackgroundSetting, gadget)</visible>
+            <fadetime>600</fadetime>
+            <texture background="true">$VAR[SectionBackgroundImage]</texture>
+			<aspectratio>scale</aspectratio>
+            <visible>Skin.HasSetting(UseSectionBackground)</visible>
         </control>
     </include>
     <include name="backgroundfade">
@@ -2958,17 +2930,16 @@
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuTVShowsButton)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuPicturesButton)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuWeatherButton)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuUseWeatherWidget)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuFavouritesButton)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuMusicButton)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuMoviesButton)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuUseMoviesWidget)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuTVShowsButton)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuUseTVseriesWidget)</onload>
         <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuSettingsButton)</onload>
         <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.netflixbmc)">Skin.SetBool(HomeMenuNetflixButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(MediaBrowserMode)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforMusic)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforMovies)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforTVseries)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforPictures)</onload>
+		<onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.netflixbmc)">Skin.SetBool(HomeMenuUseNetflixWidget)</onload>
         <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(WeatherOnHome)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-0, 0)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-1, 1)</onload>
@@ -3016,9 +2987,11 @@
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-43, 43)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-44, 44)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-45, 45)</onload>
+		
 		<!-- download required artwork for the skin upon first run -->
 		<onload condition="!Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, clearlogo, clearart, banner, seasonbanner, landscape, seasonlandscape)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun)">Skin.Reset(EnableArtworkDownloader)</onload>
+		
 		<!-- (optional) automatic run of the artwork downloader on startup -->
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + Skin.HasSetting(EnableArtworkDownloader) + Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, silent=true, clearlogo, clearart, banner, seasonbanner, landscape, seasonlandscape)</onload>
 		
@@ -3028,26 +3001,48 @@
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(MusicWidget, latestalbum)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(AutoShowHubs)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(NetflixWidget, inprogresstvshows)</onload>
-		
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults3)">Skin.SetString(mb3customwidget, recent)</onload>
 		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults3)">Skin.SetString(mb3customwidgettv, inprogress)</onload>
 		
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, latestalbum)">Skin.SetString(MusicWidget, latestalbum)</value>
+		<!-- correct music widgets on MB3 mode -->
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, latestalbum)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, latestalbum)</value>
+		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, latestsong)">Skin.SetString(MusicWidget, latestalbum)</value>
 		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, library)">Skin.SetString(MusicWidget, latestalbum)</value>
 		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, latestalbum)</value>
-
 		
+		<!-- <onload>Skin.Reset(HomeMenuDefaults5)</onload> -->
+		<!-- other default settings -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults4)">Skin.SetBool(ShowFanartBackground)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults4)">Skin.SetBool(59_SmallFanart)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(PVRSectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(MoviesSectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(TVshowsSectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(MusicSectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(AddonssectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(VideoAddonssectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(SettingssectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(MusicVideossectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(PicturessectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(WeathersectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(FileManagersectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(VideossectionBackground, default)]</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(FavoritessectionBackground, default)]</onload>
+		
+		<!-- initialize 3th party addons -->
+		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,check_server)</onload>
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
+
+		<!-- finish default settings -->
+        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults)">Skin.SetBool(HomeMenuDefaults)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(HomeMenuDefaults1)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults2)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults3)</onload>
-
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
-		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,check_server)</onload>
-		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
-
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults4)">Skin.SetBool(HomeMenuDefaults4)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetBool(HomeMenuDefaults5)</onload>
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
-		<onload>Skin.Reset(ShowNextUppanel)</onload>
+
     </include>
 	
     <include name="CastMB3Content">

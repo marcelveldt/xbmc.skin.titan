@@ -1,5 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+	
+	<include name="PosterThumb">
+    <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[PosterThumb]</texture>
+    <aspectratio aligny="top">stretch</aspectratio>
+  </include>
+  <include name="FanartThumb">
+			<control type="image">
+              <posx>-8</posx>
+              <posy>15</posy>
+              <width>591</width>
+              <height>327</height>
+              <texture background="true" diffuse="home/home_matte2.png">$VAR[BannerLandscapeImage]</texture>
+              <aspectratio aligny="bottom" scalediffuse="false">stretch</aspectratio>
+			  <visible>skin.hastheme(classic)</visible>
+            </control>
+			<control type="image">
+              <posx>-13</posx>
+              <posy>32</posy>
+              <width>603</width>
+              <height>349</height>
+              <texture border="8">banner_default.png</texture>
+			  <aspectratio>stretch</aspectratio>
+			  <visible>!skin.hastheme(classic)</visible>
+            </control>
+			<control type="image">
+              <posx>4</posx>
+              <posy>55</posy>
+              <width>568</width>
+              <height>304</height>
+              <texture background="true">$VAR[BannerLandscapeImage]</texture>
+              <aspectratio aligny="bottom">stretch</aspectratio>
+			  <visible>!skin.hastheme(classic)</visible>
+            </control>
+  </include>
+  <include name="PosterThumbBG">
+    <bordersize>-6</bordersize>
+   <texture border="8" diffuse="poster_matte.png">poster_default.png</texture>
+  </include>
+  <include name="PosterThumbFO">
+    <bordersize>-4</bordersize>
+    <texture border="8">cover_panel_matte_fo.png</texture>
+  </include>
+  <include name="EpisodeThumb">
+    <texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$INFO[ListItem.Art(thumb)]</texture>
+    <aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+  </include>
+  <include name="EpisodeThumbBG">
+    <bordersize>-6</bordersize>
+    <texture border="8" diffuse="home/home_matte2.png">banner_default.png</texture>
+  </include>
+  <include name="EpisodeThumbFO">
+    <bordersize>-4</bordersize>
+    <texture border="8">home/home_matte2.png</texture>
+  </include>
+  <include name="SquareThumb">
+    <texture background="true" diffuse="cover_matte.png" fallback="cover_default.png">$INFO[ListItem.Art(thumb)]</texture>
+    <aspectratio aligny="top">stretch</aspectratio>
+  </include>
+  <include name="SquareThumbBG">
+    <bordersize>-6</bordersize>
+    <!--<texture>thumbs/PosterBG_NF.png</texture>-->
+	<texture border="8" diffuse="cover_matte.png">cover_default.png</texture>
+  </include>
+  <include name="SquareThumbFO">
+    <bordersize>-6</bordersize>
+    <!--<texture>thumbs/PosterBG_FO.png</texture>-->
+	<texture border="8">cover_panel_fo.png</texture>
+  </include>
+  <include name="BigPanelPosterDimensions">
+    <posx>18</posx>
+    <posy>40</posy>
+    <width>246</width>
+    <height>369</height>
+  </include>
+  <include name="BigPanelSquareDimensions">
+    <posx>18</posx>
+    <posy>18</posy>
+    <width>247</width>
+    <height>247</height>
+    <aspectratio aligny="top">scale</aspectratio>
+  </include>
+  <include name="BigPanelEpisodeDimensions">
+    <posx>18</posx>
+    <posy>18</posy>
+    <width>342</width>
+    <height>246</height>
+  </include>
+	
 	<include name="BannerPlexlayout">
 		<control type="image">
 			<width>604</width>

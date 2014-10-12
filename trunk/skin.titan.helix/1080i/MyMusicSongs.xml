@@ -3,7 +3,7 @@
 <window id="501">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50,57,501</views>
+    <views>50,57,59,501</views>
     <controls>
         <!--Global Background-->
         <include>MusicBackground</include>
@@ -23,6 +23,7 @@
         <!--Views-->
         <include>View_50_List</include>
 		<include>View_57_BigPanel</include>
+		<include>View_59_BigPanelDetails</include>
 		<include>BannerView</include>
         <!--Sub Menu Tab Left-->
         <include>SubMenuTabLeft</include>
@@ -94,6 +95,13 @@
                     <label>View: $INFO[Container.Viewmode]</label>
                     <onclick>Container.NextViewMode</onclick>
 				</control>
+				<control type="radiobutton" id="320">
+                    <!--Show Fanart Background-->
+                    <include>SubMenuButton</include>
+                    <label>31141</label>
+                    <onclick>Skin.ToggleSetting(ShowFanartBackground)</onclick>
+                    <selected>Skin.HasSetting(ShowFanartBackground)</selected>
+                </control>
             </control>
         </control>
         <!--Youtube Search Overlay

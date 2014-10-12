@@ -31,7 +31,7 @@
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>white</textcolor>
-			<label>$ADDON[pvr.wmc 30120]$ADDON[pvr.dvblink 32014]</label>
+			<label>31137</label>
         </control>
         <control type="group">
             <posx>40</posx>
@@ -44,7 +44,7 @@
                 <posy>0</posy>
                 <height>40</height>
                 <width>720</width>
-                <label>$ADDON[pvr.wmc 30121]$ADDON[pvr.dvblink 32015]</label>
+                <label>31138</label>
                 <font>Reg27</font>
                 <textcolor>white</textcolor>
                 <align>left</align>
@@ -60,7 +60,7 @@
                 <posy>45</posy>
                 <height>40</height>
                 <width>720</width>
-                <label>$ADDON[pvr.wmc 30122]$ADDON[pvr.dvblink 32016]</label>
+                <label>31139</label>
                 <font>Reg27</font>
                 <textcolor>white</textcolor>
                 <align>left</align>

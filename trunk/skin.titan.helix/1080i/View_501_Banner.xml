@@ -18,7 +18,7 @@
 				<onleft>501</onleft>
 				<onright>501</onright>
 				<pagecontrol>64</pagecontrol>
-				<viewtype label="Titan Banner">bigwrap</viewtype>
+				<viewtype label="Landscape">bigwrap</viewtype>
 				<orientation>horizontal</orientation>
 				<focusposition>-</focusposition>
 				<scrolltime tween="cubic" easing="inout">500</scrolltime>

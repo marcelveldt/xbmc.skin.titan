@@ -30,7 +30,7 @@
             <include>DimensionsFullscreen</include>
             <colordiffuse>99FFFFFF</colordiffuse>
             <texture background="true">common/black.png</texture>
-            <visible>Window.IsActive(script-XBMC_Lyrics-main.xml) + Skin.HasSetting(MusicActivateLyrics)</visible>
+            <visible>Window.IsActive(script-XBMC_Lyrics-main.xml)</visible>
         </control>
         <control type="image">
             <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
@@ -38,7 +38,7 @@
             <include>DimensionsFullscreen</include>
             <colordiffuse>99FFFFFF</colordiffuse>
             <texture background="true">common/black.png</texture>
-            <visible>Window.IsActive(script-XBMC_Lyrics-main.xml) + Skin.HasSetting(MusicActivateLyrics)</visible>
+            <visible>Window.IsActive(script-XBMC_Lyrics-main.xml)</visible>
         </control>
         <control type="group">
 			<include>DimensionsFullscreen</include>
