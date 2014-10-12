@@ -2295,9 +2295,6 @@
 			<include condition="Skin.String(HomeMenuPos-45, 44)">HomeItem-44</include>
 			<include condition="Skin.String(HomeMenuPos-45, 45)">HomeItem-45</include>
 		</item>
-	
-		
-	
 		
 	</include>
 	
