@@ -586,7 +586,6 @@
 		<property name="fanartbackground">$VAR[CustomHome1Image]</property>
 		<property name="section">Favorites</property>
 		<thumb>$VAR[CustomHome1Image]</thumb>
-		
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Skin.String(CustomHome.1.path)]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.String(CustomHome.1.Label)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],37,UP)</onclick>
@@ -599,7 +598,6 @@
 		<property name="fanartbackground">$VAR[CustomHome2Image]</property>
 		<property name="section">Favorites</property>
 		<thumb>$VAR[CustomHome2Image]</thumb>
-		
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Skin.String(CustomHome.2.path)]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.String(CustomHome.2.Label)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],38,UP)</onclick>
@@ -612,7 +610,6 @@
 		<property name="fanartbackground">$VAR[CustomHome3Image]</property>
 		<property name="section">Favorites</property>
 		<thumb>$VAR[CustomHome3Image]</thumb>
-		
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Skin.String(CustomHome.3.path)]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.String(CustomHome.3.Label)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],39,UP)</onclick>
@@ -625,7 +622,6 @@
 		<property name="fanartbackground">$VAR[CustomHome4Image]</property>
 		<property name="section">Favorites</property>
 		<thumb>$VAR[CustomHome4Image]</thumb>
-		
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Skin.String(CustomHome.4.Path)]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.String(CustomHome.4.Label)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],40,UP)</onclick>
@@ -638,7 +634,6 @@
 		<property name="fanartbackground">$VAR[CustomHome5Image]</property>
 		<property name="section">Favorites</property>
 		<thumb>$VAR[CustomHome5Image]</thumb>
-		
 		<onclick condition="!Window.IsActive(SkinSettings.xml)">$INFO[Skin.String(CustomHome.5.Path)]</onclick>
 		<visible>Control.IsVisible(4006) | Skin.String(CustomHome.5.Label)</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],41,UP)</onclick>
@@ -652,8 +647,7 @@
 		<property name="fanartbackground"></property>
 		<property name="section"></property>
 		<thumb></thumb>
-		
-		<onclick condition="!Window.IsActive(SkinSettings.xml)"></onclick>
+		<onclick condition="!Window.IsActive(SkinSettings.xml)">noop</onclick>
 		<visible>Control.IsVisible(4006) | false</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],42,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],42,DOWN)</onclick>
@@ -661,13 +655,12 @@
 	<include name="HomeItem-43">
 	<!-- spare item -->
 		<include>SettingsUnusedHomeMenuItem</include>
-		<label>$INFO[Skin.String(CustomHome.5.Label)]</label>
+		<label></label>
 		<icon>home/favourites.png</icon>
 		<property name="fanartbackground"></property>
 		<property name="section"></property>
 		<thumb></thumb>
-		
-		<onclick condition="!Window.IsActive(SkinSettings.xml)"></onclick>
+		<onclick condition="!Window.IsActive(SkinSettings.xml)">noop</onclick>
 		<visible>Control.IsVisible(4006) | false</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],43,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],43,DOWN)</onclick>
@@ -680,8 +673,7 @@
 		<property name="fanartbackground"></property>
 		<property name="section"></property>
 		<thumb></thumb>
-		
-		<onclick condition="!Window.IsActive(SkinSettings.xml)"></onclick>
+		<onclick condition="!Window.IsActive(SkinSettings.xml)">noop</onclick>
 		<visible>Control.IsVisible(4006) | false</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],44,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],44,DOWN)</onclick>
@@ -694,8 +686,7 @@
 		<property name="fanartbackground"></property>
 		<property name="section"></property>
 		<thumb></thumb>
-		
-		<onclick condition="!Window.IsActive(SkinSettings.xml)"></onclick>
+		<onclick condition="!Window.IsActive(SkinSettings.xml)">noop</onclick>
 		<visible>Control.IsVisible(4006) | false</visible>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionUp)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],45,UP)</onclick>
 		<onclick condition="Window.IsActive(SkinSettings.xml) + Skin.HasSetting(EditModeDirectionDown)">XBMC.RunScript(script.titanskin.helpers,SETHOMEITEMS,$INFO[Container(300).ListItem.label2],45,DOWN)</onclick>

@@ -916,43 +916,43 @@
    <variable name="SectionBackgroundCustomImageLabel">
 		<!-- PVR -->
 		<value condition="StringCompare(Container(50).ListItem.label2, PVR) + !Skin.String(PVRSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, PVR)">$INFO[Skin.String(PVRSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR)">$INFO[Skin.String(PVRSectionCustomBackground)]</value>
 		<!-- Movies -->
 		<value condition="StringCompare(Container(50).ListItem.label2, Movies) + !Skin.String(MoviesSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, Movies)">$INFO[Skin.String(MoviesSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies)">$INFO[Skin.String(MoviesSectionCustomBackground)]</value>
 		<!-- TVshows -->
 		<value condition="StringCompare(Container(50).ListItem.label2, TVshows) + !Skin.String(TVshowsSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, TVshows)">$INFO[Skin.String(TVshowsSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows)">$INFO[Skin.String(TVshowsSectionCustomBackground)]</value>
 		<!-- Music -->
 		<value condition="StringCompare(Container(50).ListItem.label2, Music) + !Skin.String(MusicSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, Music)">$INFO[Skin.String(MusicSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Music)">$INFO[Skin.String(MusicSectionCustomBackground)]</value>
 		<!-- Addons -->
 		<value condition="StringCompare(Container(50).ListItem.label2, Addons) + !Skin.String(AddonsSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, Addons)">$INFO[Skin.String(AddonsSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons)">$INFO[Skin.String(AddonsSectionCustomBackground)]</value>
 		<!-- VideoAddons -->
 		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons) + !Skin.String(VideoAddonsSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons)">$INFO[Skin.String(VideoAddonsSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons)">$INFO[Skin.String(VideoAddonsSectionCustomBackground)]</value>
 		<!-- Settings -->
 		<value condition="StringCompare(Container(50).ListItem.label2, Settings) + !Skin.String(SettingsSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, Settings)">$INFO[Skin.String(SettingsSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings)">$INFO[Skin.String(SettingsSectionCustomBackground)]</value>
 		<!-- MusicVideos -->
 		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos) + !Skin.String(MusicVideosSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos)">$INFO[Skin.String(MusicVideosSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos)">$INFO[Skin.String(MusicVideosSectionCustomBackground)]</value>
 		<!-- Pictures -->
 		<value condition="StringCompare(Container(50).ListItem.label2, Pictures) + !Skin.String(PicturesSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, Pictures)">$INFO[Skin.String(PicturesSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures)">$INFO[Skin.String(PicturesSectionCustomBackground)]</value>
 		<!-- Weather -->
 		<value condition="StringCompare(Container(50).ListItem.label2, Weather) + !Skin.String(WeatherSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, Weather)">$INFO[Skin.String(WeatherSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather)">$INFO[Skin.String(WeatherSectionCustomBackground)]</value>
 		<!-- FileManager -->
 		<value condition="StringCompare(Container(50).ListItem.label2, FileManager) + !Skin.String(FileManagerSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, FileManager)">$INFO[Skin.String(FileManagerSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager)">$INFO[Skin.String(FileManagerSectionCustomBackground)]</value>
 		<!-- Videos -->
 		<value condition="StringCompare(Container(50).ListItem.label2, Videos) + !Skin.String(VideosSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, Videos)">$INFO[Skin.String(VideosSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos)">$INFO[Skin.String(VideosSectionCustomBackground)]</value>
 		<!-- Favorites -->
 		<value condition="StringCompare(Container(50).ListItem.label2, Favorites) + !Skin.String(FavoritesSectionCustomBackground)">$LOCALIZE[31148]</value>
-		<value condition="StringCompare(Container(50).ListItem.label2, Favorites)">$INFO[Skin.String(FavoritesSectionCustomBackground]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites)">$INFO[Skin.String(FavoritesSectionCustomBackground)]</value>
 
    </variable>
    
