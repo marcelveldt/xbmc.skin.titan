@@ -8,31 +8,17 @@
 	<onload condition="System.HasAddon(plugin.video.xbmb3c)">RunScript(plugin.video.xbmb3c,skin)</onload>
     <onload>Skin.Reset(youtube)</onload>
 	<backgroundcolor>0</backgroundcolor>
-	<onload>Control.SetFocus(300,2)</onload>
 	<onload>300</onload>
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>
-        <!-- live gadget background -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <fadetime>1000</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$INFO[Container(300).ListItem.Icon]</texture>
-            <visible>Skin.String(CustomBackgroundSetting, gadget) + IsEmpty(Container(300).ListItem.Property(background)) + !Player.HasVideo</visible>
-        </control>
-		<control type="image">
-            <include>DimensionsFullscreen</include>
-            <fadetime>1000</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$INFO[Container(300).ListItem.Property(background)]</texture>
-            <visible>Skin.String(CustomBackgroundSetting, gadget) + !IsEmpty(Container(300).ListItem.Property(background)) + !Player.HasVideo</visible>
-        </control>
+		<!-- hubs background -->
 		<control type="image">
             <include>DimensionsFullscreen</include>
             <fadetime>1000</fadetime>
             <colordiffuse>FF666666</colordiffuse>
             <texture background="true">$VAR[HomeMenuHubBackground]</texture>
+			<aspectratio>scale</aspectratio>
             <visible>ControlGroup(77777).HasFocus</visible>
         </control>
         <!--NowPlaying-->
@@ -220,6 +206,7 @@
                         <aligny>center</aligny>
                         <label>-</label>
                         <visible>false</visible>
+						<onfocus condition="Skin.HasSetting(UseSectionBackground)">Skin.SetString(SectionBackground,$VAR[SectionBackgroundImage])</onfocus>
 						<onfocus>SetProperty(submenupos,$INFO[Container(300).Position],Home)</onfocus>
 						<onfocus>SetProperty(submenutype,$INFO[Container(300).ListItem.Property(submenu)],Home)</onfocus>
                         <onfocus condition="Skin.String(CustomBackgroundSetting, fanart)">SetProperty(MB3.Background.Collection, $INFO[Container(300).ListItem.Label], Home)</onfocus>

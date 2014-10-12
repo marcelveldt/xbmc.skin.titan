@@ -807,5 +807,335 @@
 		<value condition="Control.HasFocus(890)">[B]$INFO[System.ProfileName][/B]</value>
    </variable>
    
+    <variable name="SectionBackgroundLabel">
+		<!-- PVR -->
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR) + Skin.String(PVRSectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR) + Skin.String(PVRSectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR) + Skin.String(PVRSectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- Movies -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies) + Skin.String(MoviesSectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies) + Skin.String(MoviesSectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies) + Skin.String(MoviesSectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- TVshows -->
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows) + Skin.String(TVshowsSectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows) + Skin.String(TVshowsSectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows) + Skin.String(TVshowsSectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- Music -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Music) + Skin.String(MusicSectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Music) + Skin.String(MusicSectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Music) + Skin.String(MusicSectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- Addons -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons) + Skin.String(AddonssectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons) + Skin.String(AddonssectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons) + Skin.String(AddonssectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- VideoAddons -->
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons) + Skin.String(VideoAddonssectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons) + Skin.String(VideoAddonssectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- Settings -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings) + Skin.String(SettingssectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings) + Skin.String(SettingssectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings) + Skin.String(SettingssectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- MusicVideos -->
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos) + Skin.String(MusicVideossectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos) + Skin.String(MusicVideossectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos) + Skin.String(MusicVideossectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- Pictures -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures) + Skin.String(PicturessectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures) + Skin.String(PicturessectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures) + Skin.String(PicturessectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- Weather -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather) + Skin.String(WeathersectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather) + Skin.String(WeathersectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather) + Skin.String(WeathersectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- FileManager -->
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager) + Skin.String(FileManagersectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager) + Skin.String(FileManagersectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager) + Skin.String(FileManagersectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- Videos -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos) + Skin.String(VideossectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos) + Skin.String(VideossectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos) + Skin.String(VideossectionBackground, custom)">$LOCALIZE[31147]</value>
+		<!-- Favorites -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites) + Skin.String(FavoritessectionBackground, default)">$LOCALIZE[31145]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites) + Skin.String(FavoritessectionBackground, fanart)">$LOCALIZE[31146]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites) + Skin.String(FavoritessectionBackground, custom)">$LOCALIZE[31147]</value>
+   </variable>
+   
+   <variable name="SectionBackgroundClick">
+		<!-- PVR -->
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR) + Skin.String(PVRSectionBackground, default)">Skin.SetString(PVRSectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR) + Skin.String(PVRSectionBackground, custom)">Skin.SetString(PVRSectionBackground, default)</value>
+		<!-- Movies -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies) + Skin.String(MoviesSectionBackground, default)">Skin.SetString(MoviesSectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies) + Skin.String(MoviesSectionBackground, fanart)">Skin.SetString(MoviesSectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies) + Skin.String(MoviesSectionBackground, custom)">Skin.SetString(MoviesSectionBackground, default)</value>
+		<!-- TVshows -->
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows) + Skin.String(TVshowsSectionBackground, default)">Skin.SetString(TVshowsSectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows) + Skin.String(TVshowsSectionBackground, fanart)">Skin.SetString(TVshowsSectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows) + Skin.String(TVshowsSectionBackground, custom)">Skin.SetString(TVshowsSectionBackground, default)</value>
+		<!-- Music -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Music) + Skin.String(MusicSectionBackground, default)">Skin.SetString(MusicSectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Music) + Skin.String(MusicSectionBackground, fanart)">Skin.SetString(MusicSectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Music) + Skin.String(MusicSectionBackground, custom)">Skin.SetString(MusicSectionBackground, default)</value>
+		<!-- Addons -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons) + Skin.String(AddonssectionBackground, default)">Skin.SetString(AddonssectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons) + Skin.String(AddonssectionBackground, fanart)">Skin.SetString(AddonssectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons) + Skin.String(AddonssectionBackground, custom)">Skin.SetString(AddonssectionBackground, default)</value>
+		<!-- VideoAddons -->
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons) + Skin.String(VideoAddonssectionBackground, default)">Skin.SetString(VideoAddonssectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart)">Skin.SetString(VideoAddonssectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons) + Skin.String(VideoAddonssectionBackground, custom)">Skin.SetString(VideoAddonssectionBackground, default)</value>
+		<!-- Settings -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings) + Skin.String(SettingssectionBackground, default)">Skin.SetString(SettingssectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings) + Skin.String(SettingssectionBackground, custom)">Skin.SetString(SettingssectionBackground, default)</value>
+		<!-- MusicVideos -->
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos) + Skin.String(MusicVideossectionBackground, default)">Skin.SetString(MusicVideossectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos) + Skin.String(MusicVideossectionBackground, fanart)">Skin.SetString(MusicVideossectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos) + Skin.String(MusicVideossectionBackground, custom)">Skin.SetString(MusicVideossectionBackground, default)</value>
+		<!-- Pictures -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures) + Skin.String(PicturessectionBackground, default)">Skin.SetString(PicturessectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures) + Skin.String(PicturessectionBackground, fanart)">Skin.SetString(PicturessectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures) + Skin.String(PicturessectionBackground, custom)">Skin.SetString(PicturessectionBackground, default)</value>
+		<!-- Weather -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather) + Skin.String(WeathersectionBackground, default)">Skin.SetString(WeathersectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather) + Skin.String(WeathersectionBackground, fanart)">Skin.SetString(WeathersectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather) + Skin.String(WeathersectionBackground, custom)">Skin.SetString(WeathersectionBackground, default)</value>
+		<!-- FileManager -->
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager) + Skin.String(FileManagersectionBackground, default)">Skin.SetString(FileManagersectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager) + Skin.String(FileManagersectionBackground, custom)">Skin.SetString(FileManagersectionBackground, default)</value>
+		<!-- Videos -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos) + Skin.String(VideossectionBackground, default)">Skin.SetString(VideossectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos) + Skin.String(VideossectionBackground, custom)">Skin.SetString(VideossectionBackground, default)</value>
+		<!-- Favorites -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites) + Skin.String(FavoritessectionBackground, default)">Skin.SetString(FavoritessectionBackground, fanart)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites) + Skin.String(FavoritessectionBackground, fanart)">Skin.SetString(FavoritessectionBackground, custom)</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites) + Skin.String(FavoritessectionBackground, custom)">Skin.SetString(FavoritessectionBackground, default)</value>
+   </variable>   
+   
+   <variable name="SectionBackgroundCustomImageLabel">
+		<!-- PVR -->
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR) + !Skin.String(PVRSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR)">$INFO[Skin.String(PVRSectionCustomBackground]</value>
+		<!-- Movies -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies) + !Skin.String(MoviesSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies)">$INFO[Skin.String(MoviesSectionCustomBackground]</value>
+		<!-- TVshows -->
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows) + !Skin.String(TVshowsSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows)">$INFO[Skin.String(TVshowsSectionCustomBackground]</value>
+		<!-- Music -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Music) + !Skin.String(MusicSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Music)">$INFO[Skin.String(MusicSectionCustomBackground]</value>
+		<!-- Addons -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons) + !Skin.String(AddonsSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons)">$INFO[Skin.String(AddonsSectionCustomBackground]</value>
+		<!-- VideoAddons -->
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons) + !Skin.String(VideoAddonsSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons)">$INFO[Skin.String(VideoAddonsSectionCustomBackground]</value>
+		<!-- Settings -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings) + !Skin.String(SettingsSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings)">$INFO[Skin.String(SettingsSectionCustomBackground]</value>
+		<!-- MusicVideos -->
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos) + !Skin.String(MusicVideosSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos)">$INFO[Skin.String(MusicVideosSectionCustomBackground]</value>
+		<!-- Pictures -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures) + !Skin.String(PicturesSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures)">$INFO[Skin.String(PicturesSectionCustomBackground]</value>
+		<!-- Weather -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather) + !Skin.String(WeatherSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather)">$INFO[Skin.String(WeatherSectionCustomBackground]</value>
+		<!-- FileManager -->
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager) + !Skin.String(FileManagerSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager)">$INFO[Skin.String(FileManagerSectionCustomBackground]</value>
+		<!-- Videos -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos) + !Skin.String(VideosSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos)">$INFO[Skin.String(VideosSectionCustomBackground]</value>
+		<!-- Favorites -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites) + !Skin.String(FavoritesSectionCustomBackground)">$LOCALIZE[31148]</value>
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites)">$INFO[Skin.String(FavoritesSectionCustomBackground]</value>
+
+   </variable>
+   
+   <variable name="SectionBackgroundCustomImageClick">
+		<!-- PVR -->
+		<value condition="StringCompare(Container(50).ListItem.label2, PVR)">Skin.SetImage(PVRSectionCustomBackground)</value>
+		<!-- Movies -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Movies)">Skin.SetImage(MoviesSectionCustomBackground)</value>
+		<!-- TVshows -->
+		<value condition="StringCompare(Container(50).ListItem.label2, TVshows)">Skin.SetImage(TVshowsSectionCustomBackground)</value>
+		<!-- Music -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Music)">Skin.SetImage(MusicSectionCustomBackground)</value>
+		<!-- Addons -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Addons)">Skin.SetImage(AddonsSectionCustomBackground)</value>
+		<!-- VideoAddons -->
+		<value condition="StringCompare(Container(50).ListItem.label2, VideoAddons)">Skin.SetImage(VideoAddonsSectionCustomBackground)</value>
+		<!-- Settings -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Settings)">Skin.SetImage(SettingsSectionCustomBackground)</value>
+		<!-- MusicVideos -->
+		<value condition="StringCompare(Container(50).ListItem.label2, MusicVideos)">Skin.SetImage(MusicVideosSectionCustomBackground)</value>
+		<!-- Pictures -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Pictures)">Skin.SetImage(PicturesSectionCustomBackground)</value>
+		<!-- Weather -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Weather)">Skin.SetImage(WeatherSectionCustomBackground)</value>
+		<!-- FileManager -->
+		<value condition="StringCompare(Container(50).ListItem.label2, FileManager)">Skin.SetImage(FileManagerSectionCustomBackground)</value>
+		<!-- Videos -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Videos)">Skin.SetImage(VideosSectionCustomBackground)</value>
+		<!-- Favorites -->
+		<value condition="StringCompare(Container(50).ListItem.label2, Favorites)">Skin.SetImage(FavoritesSectionCustomBackground)</value>
+   </variable>
+   
+   
+   <variable name="SectionBackgroundImage">
+   <!-- PVR -->
+		<value condition="[Window.IsActive(MyPVR.xml) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyPVRTimers.xml)] + Skin.String(PVRSectionBackground, custom) + !IsEmpty(Skin.String(PVRSectionCustomBackground))">$INFO[Skin.String(PVRSectionCustomBackground)]</value>
+		<value condition="[Window.IsActive(MyPVR.xml) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyPVRTimers.xml)]">special://skin/extras/backgrounds/hover_my tv.png</value>
+		<!-- Movies -->
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(Movies)] + Skin.String(MoviesSectionBackground, custom) + !IsEmpty(Skin.String(MoviesSectionCustomBackground))">$INFO[Skin.String(PVRSectionCustomBackground)]</value>
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(Movies)] + Skin.String(MoviesSectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(Movies)] + Skin.String(MoviesSectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(MB3.Background.Movie.FanArt))">$INFO[Window(Home).Property(MB3.Background.Movie.FanArt)]</value>
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(Movies)] + Skin.String(MoviesSectionBackground, fanart) + !Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(Movies)]">special://skin/extras/backgrounds/hover_moving pictures.png</value>
+		<!-- TVshows -->
+		<value condition="Window.IsActive(MyVideoNav.xml) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.String(TVshowsSectionBackground, custom) + !IsEmpty(Skin.String(TVshowsSectionCustomBackground))">$INFO[Skin.String(TVshowsSectionCustomBackground)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.String(TVshowsSectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]+ Skin.String(TVshowsSectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforTVseries) + !IsEmpty(Window(Home).Property(MB3.Background.TV.FanArt))">$INFO[Window(Home).Property(MB3.Background.TV.FanArt)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.String(TVshowsSectionBackground, fanart) + !Skin.HasSetting(HomeMenuUseMBforTVseries) + !IsEmpty(Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart)))">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]">special://skin/extras/backgrounds/hover_moving pictures.png</value>
+		<!-- Music -->
+		<value condition="[Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MusicVisualisation.xml)] + Skin.String(MusicSectionBackground, custom) + !IsEmpty(Skin.String(MusicSectionCustomBackground))">$INFO[Skin.String(MusicSectionCustomBackground)]</value>
+		<value condition="[Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MusicVisualisation.xml)] + Skin.String(MusicSectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="[Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MusicVisualisation.xml)] + Skin.String(MusicSectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(MB3.Background.Music.FanArt))">$INFO[Window(Home).Property(MB3.Background.Music.FanArt)]</value>
+		<value condition="[Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MusicVisualisation.xml)] + Skin.String(MusicSectionBackground, fanart) + !Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(RandomArtist.5.FanArt))">$INFO[Window(Home).Property(RandomArtist.5.FanArt)]</value>
+		<value condition="[Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MusicVisualisation.xml)]">special://skin/extras/backgrounds/hover_my radio.png</value>
+		<!-- Addons -->
+		<value condition="Window.IsActive(AddonBrowser.xml) + Skin.String(AddonssectionBackground, custom) + !IsEmpty(Skin.String(AddonsSectionCustomBackground))">$INFO[Skin.String(AddonsSectionCustomBackground)]</value>
+		<value condition="Window.IsActive(AddonBrowser.xml) + Skin.String(AddonssectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="Window.IsActive(AddonBrowser.xml) + Skin.String(AddonssectionBackground, fanart) + !IsEmpty(Window(Home).Property(RandomAddon.1.Fanart))">$INFO[Window(Home).Property(RandomAddon.1.Fanart)]</value>
+		<value condition="Window.IsActive(AddonBrowser.xml)">special://skin/extras/backgrounds/addons.png</value>
+		<!-- VideoAddons -->
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, custom) + !IsEmpty(Skin.String(AddonsSectionCustomBackground))">$INFO[Skin.String(AddonsSectionCustomBackground)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.1.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.1.Fanart))">$INFO[Window(Home).Property(RandomAddon.1.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.2.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.2.Fanart))">$INFO[Window(Home).Property(RandomAddon.2.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.3.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.3.Fanart))">$INFO[Window(Home).Property(RandomAddon.3.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.4.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.4.Fanart))">$INFO[Window(Home).Property(RandomAddon.4.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.5.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.5.Fanart))">$INFO[Window(Home).Property(RandomAddon.5.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.6.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.6.Fanart))">$INFO[Window(Home).Property(RandomAddon.6.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.7.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.7.Fanart))">$INFO[Window(Home).Property(RandomAddon.7.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.8.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.8.Fanart))">$INFO[Window(Home).Property(RandomAddon.8.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.9.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.9.Fanart))">$INFO[Window(Home).Property(RandomAddon.9.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.10.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.10.Fanart))">$INFO[Window(Home).Property(RandomAddon.10.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.11.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.11.Fanart))">$INFO[Window(Home).Property(RandomAddon.11.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.12.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.12.Fanart))">$INFO[Window(Home).Property(RandomAddon.12.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.13.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.13.Fanart))">$INFO[Window(Home).Property(RandomAddon.13.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.14.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.14.Fanart))">$INFO[Window(Home).Property(RandomAddon.14.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.15.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.15.Fanart))">$INFO[Window(Home).Property(RandomAddon.15.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.16.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.16.Fanart))">$INFO[Window(Home).Property(RandomAddon.16.Fanart)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + substring(Container.FolderPath,plugin://plugin.video)">special://skin/extras/backgrounds/hover_OnlineVideos.png</value>
+		<!-- Settings -->
+		<value condition="[Window.IsActive(Settings.xml) | Window.IsActive(SkinSettings.xml) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(SettingsSystemInfo.xml) | Window.IsActive(SettingsProfile.xml)]+ Skin.String(SettingssectionBackground, custom) + !IsEmpty(Skin.String(SettingsSectionCustomBackground))">$INFO[Skin.String(SettingsSectionCustomBackground)]</value>
+		<value condition="[Window.IsActive(Settings.xml) | Window.IsActive(SkinSettings.xml) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(SettingsSystemInfo.xml) | Window.IsActive(SettingsProfile.xml)]">special://skin/extras/backgrounds/systeminfo.png</value>
+		<!-- MusicVideos -->
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(musicvideos)] + Skin.String(MusicVideossectionBackground, custom) + !IsEmpty(Skin.String(MusicVideosSectionCustomBackground))">$INFO[Skin.String(MusicVideosSectionCustomBackground)]</value>
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(musicvideos)] + Skin.String(MusicVideossectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(musicvideos)] + Skin.String(MusicVideossectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(xbmb3c.std.music.3.image)]</value>
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(musicvideos)] + Skin.String(MusicVideossectionBackground, fanart) + !Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(RandomMusicVideo.2.Fanart)]</value>
+		<value condition="[Window.IsActive(MyVideoNav.xml) + Container.Content(musicvideos)]">special://skin/extras/backgrounds/hover_my music.png</value>
+		<!-- Pictures -->
+		<value condition="Window.IsActive(MyPics.xml) + Skin.String(PicturessectionBackground, custom) + !IsEmpty(Skin.String(PicturesSectionCustomBackground))">$INFO[Skin.String(PicturesSectionCustomBackground)]</value>
+		<value condition="Window.IsActive(MyPics.xml) + Skin.String(PicturessectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="Window.IsActive(MyPics.xml) + Skin.String(PicturessectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforPictures)">$VAR[PicturesButtonThumb]</value>
+		<value condition="Window.IsActive(MyPics.xml)">special://skin/extras/backgrounds/hover_my pictures.png</value>
+		<!-- Weather -->
+		<value condition="Window.IsActive(MyWeather.xml) + Skin.String(WeathersectionBackground, custom) + !IsEmpty(Skin.String(WeatherSectionCustomBackground))">$INFO[Skin.String(WeatherSectionCustomBackground)]</value>
+		<value condition="Window.IsActive(MyWeather.xml) + Skin.String(WeathersectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="Window.IsActive(MyWeather.xml) + Skin.String(WeathersectionBackground, fanart)">special://skin/extras/weather/$INFO[Weather.FanartCode]/weather.jpg</value>
+		<value condition="Window.IsActive(MyWeather.xml)">special://skin/extras/backgrounds/weather.png</value>
+		<!-- FileManager -->
+		<value condition="[Window.IsActive(FileBrowser.xml) | Window.IsActive(FileManager.xml)] + Skin.String(WeathersectionBackground, custom) + !IsEmpty(Skin.String(FileManagerSectionCustomBackground))">$INFO[Skin.String(FileManagerSectionCustomBackground)]</value>
+		<value condition="Window.IsActive(FileBrowser.xml) | Window.IsActive(FileManager.xml)">special://skin/extras/backgrounds/filemanager.png</value>
+		<!-- Videos -->
+		<value condition="Window.IsActive(MyVideoNav.xml) + Skin.String(VideossectionBackground, custom) + !IsEmpty(Skin.String(VideosSectionCustomBackground))">$INFO[Skin.String(VideosSectionCustomBackground)]</value>
+		<value condition="Window.IsActive(MyVideoNav.xml)">special://skin/extras/backgrounds/videos.png</value>
+		<!-- PVR -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), PVR) + Skin.String(PVRSectionBackground, custom) + !IsEmpty(Skin.String(PVRSectionCustomBackground))">$INFO[Skin.String(PVRSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), PVR)">special://skin/extras/backgrounds/hover_my tv.png</value>
+		<!-- Movies -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Movies) + Skin.String(MoviesSectionBackground, custom) + !IsEmpty(Skin.String(MoviesSectionCustomBackground))">$INFO[Skin.String(PVRSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Movies) + Skin.String(MoviesSectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Movies) + Skin.String(MoviesSectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(MB3.Background.Movie.FanArt))">$INFO[Window(Home).Property(MB3.Background.Movie.FanArt)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Movies) + Skin.String(MoviesSectionBackground, fanart) + !Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Movies)">special://skin/extras/backgrounds/hover_moving pictures.png</value>
+		<!-- TVshows -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), TVshows) + Skin.String(TVshowsSectionBackground, custom) + !IsEmpty(Skin.String(TVshowsSectionCustomBackground))">$INFO[Skin.String(TVshowsSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), TVshows) + Skin.String(TVshowsSectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), TVshows) + Skin.String(TVshowsSectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforTVseries) + !IsEmpty(Window(Home).Property(MB3.Background.TV.FanArt))">$INFO[Window(Home).Property(MB3.Background.TV.FanArt)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), TVshows) + Skin.String(TVshowsSectionBackground, fanart) + !Skin.HasSetting(HomeMenuUseMBforTVseries) + !IsEmpty(Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart)))">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), TVshows)">special://skin/extras/backgrounds/hover_moving pictures.png</value>
+		<!-- Music -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Music) + Skin.String(MusicSectionBackground, custom) + !IsEmpty(Skin.String(MusicSectionCustomBackground))">$INFO[Skin.String(MusicSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Music) + Skin.String(MusicSectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Music) + Skin.String(MusicSectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(MB3.Background.Music.FanArt))">$INFO[Window(Home).Property(MB3.Background.Music.FanArt)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Music) + Skin.String(MusicSectionBackground, fanart) + !Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(RandomArtist.5.FanArt))">$INFO[Window(Home).Property(RandomArtist.5.FanArt)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Music)">special://skin/extras/backgrounds/hover_my radio.png</value>
+		<!-- Addons -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Addons) + Skin.String(AddonssectionBackground, custom) + !IsEmpty(Skin.String(AddonsSectionCustomBackground))">$INFO[Skin.String(AddonsSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Addons) + Skin.String(AddonssectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Addons) + Skin.String(AddonssectionBackground, fanart) + !IsEmpty(Window(Home).Property(RandomAddon.1.Fanart))">$INFO[Window(Home).Property(RandomAddon.1.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Addons)">special://skin/extras/backgrounds/addons.png</value>
+		<!-- VideoAddons -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, custom) + !IsEmpty(Skin.String(AddonsSectionCustomBackground))">$INFO[Skin.String(AddonsSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.1.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.1.Fanart))">$INFO[Window(Home).Property(RandomAddon.1.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.2.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.2.Fanart))">$INFO[Window(Home).Property(RandomAddon.2.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.3.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.3.Fanart))">$INFO[Window(Home).Property(RandomAddon.3.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.4.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.4.Fanart))">$INFO[Window(Home).Property(RandomAddon.4.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.5.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.5.Fanart))">$INFO[Window(Home).Property(RandomAddon.5.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.6.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.6.Fanart))">$INFO[Window(Home).Property(RandomAddon.6.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.7.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.7.Fanart))">$INFO[Window(Home).Property(RandomAddon.7.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.8.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.8.Fanart))">$INFO[Window(Home).Property(RandomAddon.8.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.9.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.9.Fanart))">$INFO[Window(Home).Property(RandomAddon.9.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.10.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.10.Fanart))">$INFO[Window(Home).Property(RandomAddon.10.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.11.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.11.Fanart))">$INFO[Window(Home).Property(RandomAddon.11.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.12.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.12.Fanart))">$INFO[Window(Home).Property(RandomAddon.12.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.13.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.13.Fanart))">$INFO[Window(Home).Property(RandomAddon.13.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.14.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.14.Fanart))">$INFO[Window(Home).Property(RandomAddon.14.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.15.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.15.Fanart))">$INFO[Window(Home).Property(RandomAddon.15.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons) + Skin.String(VideoAddonssectionBackground, fanart) + StringCompare(Window(Home).Property(RandomAddon.16.Type), xbmc.python.pluginsource) + !IsEmpty(Window(Home).Property(RandomAddon.16.Fanart))">$INFO[Window(Home).Property(RandomAddon.16.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), VideoAddons)">special://skin/extras/backgrounds/hover_OnlineVideos.png</value>
+		<!-- Settings -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Settings) + Skin.String(SettingssectionBackground, custom) + !IsEmpty(Skin.String(SettingsSectionCustomBackground))">$INFO[Skin.String(SettingsSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Settings)">special://skin/extras/backgrounds/systeminfo.png</value>
+		<!-- MusicVideos -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), MusicVideos) + Skin.String(MusicVideossectionBackground, custom) + !IsEmpty(Skin.String(MusicVideosSectionCustomBackground))">$INFO[Skin.String(MusicVideosSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), MusicVideos) + Skin.String(MusicVideossectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), MusicVideos) + Skin.String(MusicVideossectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(xbmb3c.std.music.3.image)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), MusicVideos) + Skin.String(MusicVideossectionBackground, fanart) + !Skin.HasSetting(HomeMenuUseMBforMusicVideos)">$INFO[Window(Home).Property(RandomMusicVideo.2.Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), MusicVideos)">special://skin/extras/backgrounds/hover_my music.png</value>
+		<!-- Pictures -->
+		<value condition="[StringCompare(Container(300).ListItem.Property(section), Pictures) | StringCompare(Container(300).ListItem.Property(section), photos)] + Skin.String(PicturessectionBackground, custom) + !IsEmpty(Skin.String(PicturesSectionCustomBackground))">$INFO[Skin.String(PicturesSectionCustomBackground)]</value>
+		<value condition="[StringCompare(Container(300).ListItem.Property(section), Pictures) | StringCompare(Container(300).ListItem.Property(section), photos)] + Skin.String(PicturessectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="[StringCompare(Container(300).ListItem.Property(section), Pictures) | StringCompare(Container(300).ListItem.Property(section), photos)] + Skin.String(PicturessectionBackground, fanart) + Skin.HasSetting(HomeMenuUseMBforPictures)">$VAR[PicturesButtonThumb]</value>
+		<value condition="[StringCompare(Container(300).ListItem.Property(section), Pictures) | StringCompare(Container(300).ListItem.Property(section), photos)]">special://skin/extras/backgrounds/hover_my pictures.png</value>
+		<!-- Weather -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Weather) + Skin.String(WeathersectionBackground, custom) + !IsEmpty(Skin.String(WeatherSectionCustomBackground))">$INFO[Skin.String(WeatherSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Weather) + Skin.String(WeathersectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Weather) + Skin.String(WeathersectionBackground, fanart)">special://skin/extras/weather/$INFO[Weather.FanartCode]/weather.jpg</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Weather)">special://skin/extras/backgrounds/weather.png</value>
+		<!-- FileManager -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), FileManager) + Skin.String(WeathersectionBackground, custom) + !IsEmpty(Skin.String(FileManagerSectionCustomBackground))">$INFO[Skin.String(FileManagerSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), FileManager)">special://skin/extras/backgrounds/filemanager.png</value>
+		<!-- Videos -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Videos) + Skin.String(VideossectionBackground, custom) + !IsEmpty(Skin.String(VideosSectionCustomBackground))">$INFO[Skin.String(VideosSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Videos)">special://skin/extras/backgrounds/videos.png</value>
+		<!-- Favorites -->
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Favorites) + Skin.String(FavoritessectionBackground, custom) + !IsEmpty(Skin.String(FavoritesSectionCustomBackground))">$INFO[Skin.String(FavoritesSectionCustomBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Favorites) + Skin.String(FavoritessectionBackground, fanart) + !IsEmpty(Container(300).ListItem.Property(fanartbackground))">$INFO[Container(300).ListItem.Property(fanartbackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(section), Favorites)">special://skin/extras/backgrounds/hover_extensions.png</value>
+		<value>$INFO[Skin.String(SectionBackground)]</value>
+   </variable>
+   
+   
 	
 </includes>

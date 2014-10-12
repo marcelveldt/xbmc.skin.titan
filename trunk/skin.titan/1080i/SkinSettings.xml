@@ -367,6 +367,21 @@
                     <align>left</align>
                     <aligny>center</aligny>
                 </control>
+				
+				<control type="radiobutton" id="5009">
+                    <description></description>
+                    <!--use global background-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31142</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <onclick>Skin.ToggleSetting(UseSectionBackground)</onclick>
+                    <selected>!Skin.HasSetting(UseSectionBackground)</selected>
+					<font>Bold30</font>
+					<textoffsetx>5</textoffsetx>
+                </control>
+				
                 <control type="radiobutton" id="5003">
                     <description></description>
                     <!--bluebg-->
@@ -378,6 +393,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, blue)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, blue)</selected>
+					<visible>!Skin.HasSetting(UseSectionBackground)</visible>
                 </control>
                 <control type="radiobutton" id="5002">
                     <description></description>
@@ -390,6 +406,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, default)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, default)</selected>
+					<visible>!Skin.HasSetting(UseSectionBackground)</visible>
                 </control>
                 <control type="radiobutton" id="5004">
                     <description></description>
@@ -402,6 +419,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, weather)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, weather)</selected>
+					<visible>!Skin.HasSetting(UseSectionBackground)</visible>
                 </control>
                 <control type="radiobutton" id="5005">
                     <description></description>
@@ -414,18 +432,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, fanart)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, fanart)</selected>
-                </control>
-                <control type="radiobutton" id="5007">
-                    <description></description>
-                    <!--fanart bg-->
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31027</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick>Skin.SetString(CustomBackgroundSetting, gadget)</onclick>
-                    <selected>Skin.String(CustomBackgroundSetting, gadget)</selected>
+					<visible>!Skin.HasSetting(UseSectionBackground)</visible>
                 </control>
                 <control type="radiobutton" id="5006">
                     <description></description>
@@ -438,7 +445,234 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomBackgroundSetting)</onclick>
                     <selected>!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart) + !Skin.String(CustomBackgroundSetting, gadget)</selected>
+					<visible>!Skin.HasSetting(UseSectionBackground)</visible>
                 </control>
+				
+				<control type="radiobutton" id="5010">
+                    <description></description>
+                    <!--use section background-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31143</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <onclick>Skin.ToggleSetting(UseSectionBackground)</onclick>
+                    <selected>Skin.HasSetting(UseSectionBackground)</selected>
+					<font>Bold30</font>
+					<textoffsetx>5</textoffsetx>
+                </control>
+				
+				
+				<!-- move list button -->
+				<control type="group" id="5011">
+					<width>1230</width>
+					<height>50</height>
+					<visible>Skin.HasSetting(UseSectionBackground)</visible>
+					<defaultcontrol>5012</defaultcontrol>
+					<control type="button" id="5012">
+						<onclick>Control.Move(50,1)</onclick>
+						<label>$LOCALIZE[31144] $INFO[Container(50).ListItem.Label]</label>
+						<width>1230</width>
+						<align>left</align>
+						<height>50</height>
+						<focusedcolor>black</focusedcolor>
+						<font>Reg28</font>
+						<onup>5010</onup>
+						<onright>5013</onright>
+						<ondown>5030</ondown>
+					</control>
+					<control type="button" id="5013">
+						<onclick>Control.Move(50,-1)</onclick>
+						<label></label>
+						<posx>1115</posx>
+						<posy>-5</posy>
+						<width>50</width>
+						<height>60</height>
+						<texturenofocus>common/spinctrl/arrow-down-nf.png</texturenofocus>
+						<texturefocus>common/spinctrl/arrow-down-fo.png</texturefocus>
+						<onup>5010</onup>
+						<onright>5014</onright>
+						<onleft>5012</onleft>
+						<ondown>5030</ondown>
+					</control>
+					<control type="button" id="5014">
+						<onclick>Control.Move(50,1)</onclick>
+						<label></label>
+						<posx>1165</posx>
+						<posy>-5</posy>
+						<width>50</width>
+						<height>60</height>
+						<texturenofocus>common/spinctrl/arrow-up-nf.png</texturenofocus>
+						<texturefocus>common/spinctrl/arrow-up-fo.png</texturefocus>
+						<onup>5010</onup>
+						<onleft>5013</onleft>
+						<ondown>5030</ondown>
+					</control>
+				</control>
+				
+
+				<!-- Background option button -->
+				<control type="group" id="5030">
+					<width>1230</width>
+					<height>50</height>
+					<visible>Skin.HasSetting(UseSectionBackground)</visible>
+					<defaultcontrol>5012</defaultcontrol>
+					<control type="button" id="5031">
+						<onclick>$VAR[SectionBackgroundClick]</onclick>
+						<label>$LOCALIZE[31149] $VAR[SectionBackgroundLabel]</label>
+						<width>1230</width>
+						<align>left</align>
+						<height>50</height>
+						<focusedcolor>black</focusedcolor>
+						<font>Reg28</font>
+						<onup>5011</onup>
+						<onright>5032</onright>
+						<ondown>5035</ondown>
+					</control>
+					<control type="button" id="5032">
+						<onclick>$VAR[SectionBackgroundClick]</onclick>
+						<label></label>
+						<posx>1115</posx>
+						<posy>-5</posy>
+						<width>50</width>
+						<height>60</height>
+						<texturenofocus>common/spinctrl/arrow-down-nf.png</texturenofocus>
+						<texturefocus>common/spinctrl/arrow-down-fo.png</texturefocus>
+						<onup>5011</onup>
+						<onright>5033</onright>
+						<onleft>5031</onleft>
+						<ondown>5035</ondown>
+					</control>
+					<control type="button" id="5033">
+						<onclick>$VAR[SectionBackgroundClick]</onclick>
+						<label></label>
+						<posx>1165</posx>
+						<posy>-5</posy>
+						<width>50</width>
+						<height>60</height>
+						<texturenofocus>common/spinctrl/arrow-up-nf.png</texturenofocus>
+						<texturefocus>common/spinctrl/arrow-up-fo.png</texturefocus>
+						<onup>5011</onup>
+						<onleft>5032</onleft>
+						<ondown>5035</ondown>
+					</control>
+				</control>
+				
+				<!-- custom image selection -->
+				<control type="button" id="5035">
+					<onclick>$VAR[SectionBackgroundCustomImageClick]</onclick>
+					<label>$LOCALIZE[31150] $VAR[SectionBackgroundCustomImageLabel]</label>
+					<width>1230</width>
+					<align>left</align>
+					<height>50</height>
+					<focusedcolor>black</focusedcolor>
+					<font>Reg28</font>
+					<onup>5010</onup>
+					<onright>5013</onright>
+					<ondown>5030</ondown>
+					<visible>
+					[StringCompare(Container(50).ListItem.label2, PVR) + ![Skin.String(PVRSectionBackground, default) | Skin.String(PVRSectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, Movies) + ![Skin.String(MoviesSectionBackground, default) | Skin.String(MoviesSectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, TVshows) + ![Skin.String(TVshowsSectionBackground, default) | Skin.String(TVshowsSectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, Music) + ![Skin.String(MusicSectionBackground, default) | Skin.String(MusicSectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, Addons) + ![Skin.String(AddonssectionBackground, default) | Skin.String(AddonssectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, VideoAddons) + ![Skin.String(VideoAddonssectionBackground, default) | Skin.String(VideoAddonssectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, Settings) + ![Skin.String(SettingssectionBackground, default) | Skin.String(SettingssectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, MusicVideos) + ![Skin.String(MusicVideossectionBackground, default) | Skin.String(MusicVideossectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, Pictures) + ![Skin.String(PicturessectionBackground, default) | Skin.String(PicturessectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, Weather) + ![Skin.String(WeathersectionBackground, default) | Skin.String(WeathersectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, FileManager) + ![Skin.String(FileManagersectionBackground, default) | Skin.String(FileManagersectionBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, Videos) + ![Skin.String(VideosSectionCustomBackground, default) | Skin.String(VideosSectionCustomBackground, fanart)] | 
+					[StringCompare(Container(50).ListItem.label2, Favorites) + ![Skin.String(FavoritessectionBackground, default) | Skin.String(FavoritessectionBackground, fanart)]
+					</visible>
+				</control>
+				
+				<!-- hidden list with sections -->
+				<control type="list" id="50">
+					<posx>80</posx>
+					<posy>60</posy>
+					<width>1230</width>
+					<height>250</height>
+					<visible>false</visible>
+					<orientation>vertical</orientation>
+					<autoscroll>false</autoscroll>
+					<scrolltime tween="sine" easing="out">200</scrolltime>
+					<itemlayout width="1230" height="250">
+					</itemlayout>
+					<focusedlayout height="1230" width="250">
+					</focusedlayout>
+					<content>
+					  <item>
+						<label>31088</label>
+						<label2>PVR</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>342</label>
+						<label2>Movies</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>20343</label>
+						<label2>TVshows</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>2</label>
+						<label2>Music</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>$LOCALIZE[0] - $LOCALIZE[24001]</label>
+						<label2>Addons</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>1037</label>
+						<label2>VideoAddons</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>21417</label>
+						<label2>Settings</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>20389</label>
+						<label2>MusicVideos</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>1</label>
+						<label2>Pictures</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>8</label>
+						<label2>Weather</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>10126</label>
+						<label2>FileManager</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>10006</label>
+						<label2>Videos</label2>
+						<onclick>noop</onclick>
+					  </item>
+					  <item>
+						<label>1036</label>
+						<label2>Favorites</label2>
+						<onclick>noop</onclick>
+					  </item>
+					</content>
+				</control>
+				
+				
+				
+	
 				
 				
             </control>
@@ -2904,6 +3138,19 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableOSDInfo)</onclick>
                     <selected>Skin.HasSetting(EnableOSDInfo)</selected>
+                </control>
+				<control type="radiobutton" id="5119">
+                    <description></description>
+                    <!--disable now playing background-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31140</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(DisableNowPlayingBackground)</onclick>
+                    <selected>Skin.HasSetting(DisableNowPlayingBackground)</selected>
+					<visible>!skin.hastheme(classic)</visible>
                 </control>
 				
             </control>

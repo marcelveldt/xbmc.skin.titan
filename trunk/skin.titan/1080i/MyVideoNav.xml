@@ -3,7 +3,7 @@
 <window id="6">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50,51,52,501,505,53,54,55,506,56,57,58</views>
+    <views>50,51,52,501,505,53,54,55,506,56,57,58,59</views>
     <onload>Skin.Reset(youtube)</onload>
     <controls>
         <!-- Video Background -->
@@ -42,7 +42,7 @@
 		<include>View_56_BannerPlex</include>
 		<include>View_57_BigPanel</include>
 		<include>View_58_LargePoster</include>
-		
+		<include>View_59_BigPanelDetails</include>
         <!--Sub Menu Tab Left-->
         <include>SubMenuTabLeft</include>
         <!--Sub Menu Tab Top-->
@@ -210,12 +210,12 @@
                     <selected>Skin.HasSetting(BoxViewNoOverlay)</selected>
                 </control>
 				<control type="radiobutton" id="318">
-                    <!--show fanart in view 57-->
-                    <visible>Control.IsVisible(57)</visible>
+                    <!--show fanart thumb in view 59-->
+                    <visible>Control.IsVisible(59)</visible>
                     <include>SubMenuButton</include>
                     <label>31114</label>
-                    <onclick>Skin.ToggleSetting(57_SmallFanart)</onclick>
-                    <selected>Skin.HasSetting(57_SmallFanart)</selected>
+                    <onclick>Skin.ToggleSetting(59_SmallFanart)</onclick>
+                    <selected>Skin.HasSetting(59_SmallFanart)</selected>
                 </control>
 				<control type="radiobutton" id="319">
                     <!--Toggle Overlay-->
@@ -224,6 +224,13 @@
                     <onclick>Skin.ToggleSetting(HideWatchedOverlayLargePoster)</onclick>
                     <selected>Skin.HasSetting(HideWatchedOverlayLargePoster)</selected>
 					 <visible>Control.IsVisible(58)</visible>
+                </control>
+				<control type="radiobutton" id="320">
+                    <!--Show Fanart Background-->
+                    <include>SubMenuButton</include>
+                    <label>31141</label>
+                    <onclick>Skin.ToggleSetting(ShowFanartBackground)</onclick>
+                    <selected>Skin.HasSetting(ShowFanartBackground)</selected>
                 </control>
             </control>
         </control>

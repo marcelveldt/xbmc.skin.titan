@@ -1,4 +1,4 @@
-v.2.0.21
+v.2.0.22
 - added Big Panel & Large Poster view
 - fixed several graphical glitches
 - fixed home submenu
@@ -7,7 +7,8 @@ v.2.0.21
 - moved widgets load to startup to improve speed
 - cleanup of settings
 - changed notify sound
-- support for series recordings in DVBlink PVR
+- setting for custom backgrounds
+- setting to disable now playing background
 
 
 v.2.0.15

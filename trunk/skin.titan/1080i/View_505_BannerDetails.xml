@@ -23,7 +23,7 @@
 				<pagecontrol>65</pagecontrol>
 				<orientation>horizontal</orientation>
 				<focusposition>-</focusposition>
-				<viewtype label="Titan Banner details">wide</viewtype>
+				<viewtype label="Landscape details">wide</viewtype>
 				<scrolltime tween="cubic" easing="inout">500</scrolltime>
 				<!-- normal item layout -->
 				<itemlayout width="590" height="470" condition="!Container.Content(Episodes)">

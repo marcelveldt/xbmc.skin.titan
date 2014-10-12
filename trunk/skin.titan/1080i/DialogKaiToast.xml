@@ -71,5 +71,8 @@
                 </control>
             </control>
         </control>
-    </controls>
+    
+		<include>TimeInfo</include>
+		
+	</controls>
 </window>

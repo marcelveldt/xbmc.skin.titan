@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
   
-  
-  <include name="View_57_BigPanel">
+  <include name="View_59_BigPanelDetails">
     <control type="group">
-      <visible>Control.IsVisible(57)</visible>
+      <visible>Control.IsVisible(59)</visible>
       <include>animation_fade_open_close</include>
 	  <include>animation_fade_visible_hidden</include>
-      <control type="panel" id="57">
-        <viewtype label="Big Panel">Big Panel</viewtype>
-        <posx>45</posx>
-        <posy>175</posy>
-        <width>1836</width>
-        <height>800</height>
+      <control type="panel" id="59">
+        <viewtype label="Big Panel details">Big Panel details</viewtype>
+        <posx>760</posx>
+        <posy>140</posy>
+        <width>1136</width>
+        <height>830</height>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
         <onright>60</onright>
-        <onup>57</onup>
-        <ondown>57</ondown>
+        <onup>59</onup>
+        <ondown>59</ondown>
         <preloaditems>4</preloaditems>
         <pagecontrol>60</pagecontrol>
-        <itemlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="382" width="258">
+        <itemlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="410" width="282">
           <control type="image">
             <include>BigPanelPosterDimensions</include>
             <include>PosterThumbBG</include>
@@ -50,7 +49,7 @@
 				<visible>!skin.hastheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
         </itemlayout>
-        <focusedlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="382" width="258">
+        <focusedlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="410" width="282">
           <control type="image">
             <include>BigPanelPosterDimensions</include>
             <include>PosterThumbFO</include>
@@ -80,7 +79,7 @@
 				<visible>!skin.hastheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
         </focusedlayout>
-        <itemlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MyPics.xml)" height="259" width="258">
+        <itemlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MyPics.xml)" height="280" width="284">
           <control type="image">
             <include>BigPanelSquareDimensions</include>
             <include>SquareThumbBG</include>
@@ -90,7 +89,7 @@
             <include>SquareThumb</include>
           </control>
         </itemlayout>
-        <focusedlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MyPics.xml)" height="259" width="258">
+        <focusedlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MyPics.xml)" height="280" width="284">
           <control type="image">
             <include>BigPanelSquareDimensions</include>
             <include>SquareThumbFO</include>
@@ -100,7 +99,7 @@
             <include>SquareThumb</include>
           </control>
         </focusedlayout>
-        <itemlayout condition="container.content(episodes)" height="260" width="365">
+        <itemlayout condition="container.content(episodes)" height="270" width="378">
           <control type="group">
 			<posy>20</posy>
 			  <control type="image">
@@ -152,7 +151,7 @@
 			</control>
 		</control>
         </itemlayout>
-        <focusedlayout condition="container.content(episodes)" height="260" width="365">
+        <focusedlayout condition="container.content(episodes)" height="270" width="378">
           <control type="group">
 			<posy>20</posy>
 			  <control type="image">
@@ -249,7 +248,98 @@
           </control>
         </focusedlayout>
       </control>
-      <control type="scrollbar" id="60">
+      <control type="group">
+        <visible>Control.IsVisible(59) + IntegerGreaterThan(Container(59).NumItems,0)</visible>
+        <control type="group">
+          <visible>!Skin.HasSetting(59_SmallFanart)</visible>
+          <posx>60</posx>
+          <posy>100</posy>
+          <control type="label">
+            <posy>108</posy>
+            <height>33</height>
+            <width>630</width>
+            <font>Reg31</font>
+            <label>$VAR[Details]</label>
+          </control>
+          <control type="label">
+            <posy>153</posy>
+            <height>33</height>
+            <width>630</width>
+            <scroll>false</scroll>
+            <font>Reg31</font>
+            <label>$INFO[ListItem.Genre]</label>
+          </control>
+          <control type="textbox">
+            <posx>0</posx>
+            <posy>207</posy>
+            <width>630</width>
+            <height>280</height>
+            <align>left</align>
+            <label>$VAR[Plots]</label>
+          </control>
+          <control type="label">
+            <visible>Container.Content(addons)</visible>
+            <posy>840</posy>
+            <width>800</width>
+            <height>33</height>
+            <font>Reg31</font>
+            <label>$INFO[ListItem.Label2,$LOCALIZE[19114] : ]</label>
+          </control>
+        </control>
+        <control type="group">
+          <visible>Skin.HasSetting(59_SmallFanart) + ![Container.Content(tvshows) + Skin.HasSetting(59_UseBanners)]</visible>
+          <posx>60</posx>
+          <posy>140</posy>
+          <control type="group">
+			<include>FanartThumb</include>
+            <control type="label">
+              <posy>400</posy>
+              <height>33</height>
+              <width>630</width>
+              <font>Reg31</font>
+              <label>$VAR[Details]</label>
+            </control>
+            <control type="textbox">
+              <posx>0</posx>
+              <posy>450</posy>
+              <width>630</width>
+              <height>280</height>
+              <align>left</align>
+              <label>$VAR[Plots]</label>
+            </control>
+          </control>
+         </control>
+        <control type="group">
+          <visible>Skin.HasSetting(59_SmallFanart) + [Container.Content(tvshows) + Skin.HasSetting(59_UseBanners)]</visible>
+          <posx>60</posx>
+          <posy>100</posy>
+          <control type="group">
+            <include>FanartThumb</include>
+            <control type="label">
+              <posy>531</posy>
+              <height>33</height>
+              <width>720</width>
+              <font>Reg31</font>
+              <label>$VAR[Details]</label>
+            </control>
+            <control type="textbox">
+              <posx>0</posx>
+              <posy>585</posy>
+              <width>720</width>
+              <height>280</height>
+              <align>left</align>
+              <label>$VAR[Plots]</label>
+            </control>
+          </control>
+          </control>
+        <control type="group">
+          <posx>65</posx>
+          <posy>920</posy>
+		  <visible>!IsEmpty(ListItem.VideoResolution)</visible>
+          <include>movieflagssmall</include>
+        </control>
+      </control>
+	  <control type="scrollbar" id="60">
         <animation effect="slide" start="0,0" end="-8,0" time="150">Focus</animation>
         <animation effect="slide" start="-8,0" end="0,0" time="300">UnFocus</animation>
         <posx>20r</posx>
@@ -263,7 +353,7 @@
         <textureslidernibfocus border="18">OSD/ScrollbarNibFO.png</textureslidernibfocus>
         <showonepage>false</showonepage>
         <orientation>vertical</orientation>
-        <onleft>57</onleft>
+        <onleft>59</onleft>
         <onright>9000</onright>
       </control>
     </control>
@@ -271,7 +361,7 @@
 	<control type="group">
 		<include>animation_fade_open_close</include>
 		 <include>animation_fade_visible_hidden</include>
-		<visible>Control.IsVisible(57)</visible>
+		<visible>Control.IsVisible(59)</visible>
 		<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
 		<include condition="!skin.hassetting(nofooterbar)">Footer</include>
 	</control>
