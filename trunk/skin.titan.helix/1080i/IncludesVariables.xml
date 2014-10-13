@@ -348,22 +348,26 @@
     </variable>
 	
 	<variable name="HomeMenuHubImage">
-		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),weather)">$INFO[ListItem.ActualIcon]</value>
         <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Property(landscape))">$INFO[ListItem.Property(landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Property(EpisodeThumb))">$INFO[ListItem.Property(EpisodeThumb)]</value>
+		<value condition="!IsEmpty(ListItem.Property(SeriesThumb))">$INFO[ListItem.Property(SeriesThumb)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Property(medium_fanart))">$INFO[ListItem.Property(medium_fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Property(fanart))">$INFO[ListItem.Property(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
-		<value>$INFO[ListItem.Icon]</value>
+		<value>$INFO[ListItem.ActualIcon]</value>
     </variable>
 	
 	<variable name="HomeMenuHubBackground">
         <value condition="!IsEmpty(Container(510).ListItem.Art(fanart))">$INFO[Container(510).ListItem.Art(fanart)]</value>
-		<value condition="!IsEmpty(Container(510).ListItem.ActualIcon)">$INFO[Container(510).ListItem.ActualIcon]</value>
-		<value>$INFO[Container(510).ListItem.Icon]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.Property(fanart))">$INFO[Container(510).ListItem.Property(fanart)]</value>
     </variable>
 
 	<variable name="HomeMenuHubLabel">
 		<value condition="!IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-		<value>$INFO[ListItem.label2][CR]$INFO[ListItem.label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widgettype),tvshows)]">$INFO[ListItem.label2][CR]$INFO[ListItem.label]</value>
+		<value>$INFO[ListItem.label]</value>
     </variable>
 	
 	<variable name="HomeMenuHubInfoLabel">
@@ -372,13 +376,15 @@
     </variable>
 	
 	<variable name="HomeMenuHubInfoLabel2">
-		<value condition="!IsEmpty(Container(510).ListItem.TvShowTitle)">$INFO[Container(510).ListItem.TvShowTitle]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.TvShowTitle) + IsEmpty(Container(510).ListItem.Property(clearlogo))">$INFO[Container(510).ListItem.TvShowTitle]</value>
 		<value condition="!IsEmpty(Container(510).ListItem.Tagline)">$INFO[Container(510).ListItem.Tagline]</value>
-		<value>$INFO[Container(510).ListItem.Label2]</value>
+		<value condition="![!IsEmpty(Container(510).ListItem.Property(clearlogo)) + StringCompare(Container(300).ListItem.Property(widgettype),tvshows)]">$INFO[Container(510).ListItem.Label2]</value>
     </variable>
 	
 	<variable name="HomeMenuHubInfoPlot">
-		<value condition="IsEmpty(Container(510).ListItem.Property(Plot))">$INFO[Container(510).ListItem.Plot]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.Property(ShortPlot))">$INFO[Container(510).ListItem.Property(ShortPlot)]</value>
+		<!-- <value condition="!IsEmpty(Container(510).ListItem.Property(Plot))">$INFO[Container(510).Property(Plot)]</value> -->
+		<value condition="!IsEmpty(Container(510).ListItem.Plot)">$INFO[Container(510).ListItem.Plot]</value>
 		<value>$INFO[Container(510).ListItem.Property(Plot)]</value>
     </variable>
 	
