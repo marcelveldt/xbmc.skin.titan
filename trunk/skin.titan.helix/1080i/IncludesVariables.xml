@@ -1142,6 +1142,14 @@
 		<value>$INFO[Skin.String(SectionBackground)]</value>
    </variable>
    
+   <variable name="VideoPlayerCover">
+	<value condition="!IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
+	<value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
+	<value condition="!IsEmpty(Player.Art(landscape))">$INFO[Player.Art(landscape)]</value>
+	<value condition="!IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+	<value condition="!IsEmpty(VideoPlayer.Cover)">$INFO[VideoPlayer.Cover]</value>
+	<value>$INFO[Player.Art(thumb)]</value>
+   </variable>
    
 	
 </includes>

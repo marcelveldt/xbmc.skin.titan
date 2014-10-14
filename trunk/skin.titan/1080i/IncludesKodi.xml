@@ -1189,7 +1189,8 @@
                     <include>SubMenuButton</include>
 					<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
 					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
-					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
+					<onclick condition="!IsEmpty(Window.Property(IsRadio)) + !Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(RadioChannels)</onclick>
+					<onclick condition="!IsEmpty(Window.Property(IsRadio)) + Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
                 </control>
                 <control type="button" id="101">
 					<description>TV Guide</description>

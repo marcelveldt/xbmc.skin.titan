@@ -231,18 +231,6 @@
                 <label>$VAR[NowPlayingTitle]</label>
                 <scroll>false</scroll>
             </control>
-			 <!--Cover-->
-			<control type="image">
-				<!--tv channel logo-->
-				<posx>60</posx>
-                <posy>0</posy>
-				<width>153</width>
-				<height>133</height>
-				<fadetime>200</fadetime>
-				<texture background="true" fallback="defaultcovers/tv.png">$INFO[VideoPlayer.Cover]</texture>
-				<aspectratio align="left" aligny="top">keep</aspectratio>
-				<visible>!VideoPlayer.Content(Movies) + !IsEmpty(VideoPlayer.Cover) + IsEmpty(Player.Art(tvshow.poster))</visible>
-			</control>
 			<control type="image">
 				<!--music cover-->
 				<posx>60</posx>
@@ -255,26 +243,15 @@
 				<visible>Player.HasAudio</visible>
 			</control>
 			<control type="image">
-				<!--Movie-->
+				<!--Cover for all other-->
 				<posx>60</posx>
                 <posy>20</posy>
 				<width>200</width>
 				<height>110</height>
 				<fadetime>200</fadetime>
-				<texture background="true">$INFO[Player.Art(landscape)]</texture>
-				<aspectratio align="left" aligny="top">stretch</aspectratio>
-				<visible>VideoPlayer.Content(Movies)</visible>
-			</control>
-			<control type="image">
-				<!--episode-->
-				<posx>70</posx>
-				<posy>30</posy>
-				<width>220</width>
-				<height>80</height>
-				<fadetime>200</fadetime>
-				<texture background="true">$INFO[Player.Art(tvshow.banner)]</texture>
-				<aspectratio align="left" aligny="top">stretch</aspectratio>
-				<visible>VideoPlayer.Content(episodes)</visible>
+				<texture background="true">$VAR[VideoPlayerCover]</texture>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
+				<visible>Player.HasVideo</visible>
 			</control>
         </control>
         

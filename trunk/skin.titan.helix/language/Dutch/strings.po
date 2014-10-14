@@ -93,8 +93,8 @@ msgid "--- Open folderpath with music instead of library"
 msgstr "--- Gebruik bestandsmap met muziek in plaats van bibliotheek"
 
 msgctxt "#31020"
-msgid "--- Open folderpath with radio streams instead of PVR"
-msgstr "--- Gebruik bestandsmap met radiostreams in plaats van PVR"
+msgid "Open folderpath with radio streams instead of PVR for Radio"
+msgstr "Gebruik bestandsmap met radiostreams in plaats van PVR voor Radio"
 
 msgctxt "#31021"
 msgid "--- Display temperature in tile"

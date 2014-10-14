@@ -94,7 +94,7 @@ msgstr ""
 
 
 msgctxt "#31020"
-msgid "--- Open folderpath with radio streams instead of PVR"
+msgid "Open folderpath with radio streams instead of PVR for Radio"
 msgstr ""
 
 msgctxt "#31021"

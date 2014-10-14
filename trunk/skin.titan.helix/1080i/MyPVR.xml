@@ -91,10 +91,11 @@
                     <include>SubMenuButton</include>
                 </control>
                 <control type="button" id="33">
-                    <!--Settings-->
+                    <!--Radio-->
                     <description>Settings</description>
                     <label>19024</label>
                     <include>SubMenuButton</include>
+					<visible>!Skin.String(HomeMenuUseRadioCollection)</visible>
                 </control>
                 <control type="button" id="31">
                     <!--TV Guide-->

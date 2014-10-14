@@ -1507,20 +1507,6 @@
                     <selected>!Skin.String(CustomRadioFolder, artwork) + Skin.String(CustomRadioFolder)</selected>
                     <visible>Skin.HasSetting(HomeMenuRadioButton)</visible>
                 </control>
-                <control type="radiobutton" id="9128">
-                    <!--Radio use path-->
-                    <description>Radio</description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label> $LOCALIZE[31020]</label>
-                    <height>50</height>
-                    <focusedcolor>black</focusedcolor>
-                    <font>Reg28</font>
-                    <onclick condition="!Skin.String(HomeMenuUseRadioCollection)">Skin.SetPath(HomeMenuUseRadioCollection)</onclick>
-                    <onclick condition="Skin.String(HomeMenuUseRadioCollection)">Skin.Reset(HomeMenuUseRadioCollection)</onclick>
-                    <selected>Skin.String(HomeMenuUseRadioCollection)</selected>
-                    <visible>Skin.HasSetting(HomeMenuRadioButton)</visible>
-                </control>
                 <!-- Pictures button -->
                 <control type="radiobutton" id="8006">
                     <!--Pictures-->
@@ -3152,7 +3138,19 @@
                     <selected>Skin.HasSetting(DisableNowPlayingBackground)</selected>
 					<visible>!skin.hastheme(classic)</visible>
                 </control>
-				
+				<control type="radiobutton" id="5120">
+                    <!--Radio use path-->
+                    <description>Radio</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31020]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick condition="!Skin.String(HomeMenuUseRadioCollection)">Skin.SetPath(HomeMenuUseRadioCollection)</onclick>
+                    <onclick condition="Skin.String(HomeMenuUseRadioCollection)">Skin.Reset(HomeMenuUseRadioCollection)</onclick>
+                    <selected>Skin.String(HomeMenuUseRadioCollection)</selected>
+                </control>
             </control>
         </control>
 		</control>

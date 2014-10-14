@@ -448,8 +448,9 @@
 			<label>19021</label>
 			<onclick>SetProperty(submenu,hide,Home)</onclick>
 			<onclick condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
-			<onclick condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
-			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + System.GetBool(pvrmanager.enabled)</visible>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection) + !SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection) + SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
+			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + [System.GetBool(pvrmanager.enabled) | Skin.String(HomeMenuUseRadioCollection)]</visible>
 		</item>
 		<item>
 			<!-- All Music-->
@@ -534,8 +535,9 @@
 		<item>
 			<label>19021</label>
 			<onclick>SetProperty(submenu,hide,Home)</onclick>
-			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
-			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<onclick condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection) + !SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection) + SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
 			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
 		</item>
 		<item>
@@ -790,7 +792,8 @@
 			<label>19021</label><width>365</width><focusedcolor>black</focusedcolor>
 			<onclick>SetProperty(submenu,hide,Home)</onclick>
 			<onclick condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
-			<onclick condition="!Skin.String(HomeMenuUseRadioCollection)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection) + !SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection) + SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
 			<visible>StringCompare(Container(300).ListItem.Property(submenu), music) + System.GetBool(pvrmanager.enabled)</visible>
 		</control>
 		<control type="button" id="321">
@@ -876,8 +879,9 @@
 		<control type="button" id="332">
 			<label>19021</label><width>365</width><focusedcolor>black</focusedcolor>
 			<onclick>SetProperty(submenu,hide,Home)</onclick>
-			<onclick condition="SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
-			<onclick condition="!SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<onclick condition="Skin.String(HomeMenuUseRadioCollection)">ActivateWindow(Music,$INFO[Skin.String(HomeMenuUseRadioCollection)],return)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection) + !SubString(System.BuildVersion,14,left)">ActivateWindowAndFocus(MyPVR, 33,0, 10,0)</onclick>
+			<onclick condition="!Skin.String(HomeMenuUseRadioCollection) + SubString(System.BuildVersion,14,left)">ActivateWindow(RadioChannels)</onclick>
 			<visible>StringCompare(Container(300).ListItem.Property(submenu), livetv)</visible>
 		</control>
 		<control type="button" id="333">
