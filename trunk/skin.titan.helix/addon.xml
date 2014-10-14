@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
-	id="skin.titan.helix"
-	version="2.0.24"
+	id="skin.titan"
+	version="3.0.1"
 	name="Titan MediaBrowser (Helix)"
 	provider-name="marcelveldt">
 	<requires>
