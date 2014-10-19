@@ -7,14 +7,15 @@
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>
-        <!--Time & Weather-->
+        
+		<!-- Now playing -->
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
+		<!--Time & Weather-->
         <include>TimeInfo</include>
         <!--Header-->
         <include>Header</include>
         <!--Titan Version-->
         <include>TitanVersion</include>
-		<!-- Now playing -->
-		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
 		
 		<control type="group">
 		<posy>30</posy>

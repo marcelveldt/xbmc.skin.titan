@@ -259,6 +259,7 @@
             <height>33</height>
             <width>630</width>
             <font>Reg31</font>
+			<textcolor>$VAR[Views_FontColor]</textcolor>
             <label>$VAR[Details]</label>
           </control>
           <control type="label">
@@ -267,6 +268,7 @@
             <width>630</width>
             <scroll>false</scroll>
             <font>Reg31</font>
+			<textcolor>$VAR[Views_FontColor]</textcolor>
             <label>$INFO[ListItem.Genre]</label>
           </control>
           <control type="textbox">
@@ -275,6 +277,7 @@
             <width>630</width>
             <height>280</height>
             <align>left</align>
+			<textcolor>$VAR[Views_FontColor]</textcolor>
             <label>$VAR[Plots]</label>
           </control>
           <control type="label">
@@ -283,6 +286,7 @@
             <width>800</width>
             <height>33</height>
             <font>Reg31</font>
+			<textcolor>$VAR[Views_FontColor]</textcolor>
             <label>$INFO[ListItem.Label2,$LOCALIZE[19114] : ]</label>
           </control>
         </control>
@@ -297,6 +301,7 @@
               <height>33</height>
               <width>630</width>
               <font>Reg31</font>
+			  <textcolor>$VAR[Views_FontColor]</textcolor>
               <label>$VAR[Details]</label>
             </control>
             <control type="textbox">
@@ -305,6 +310,7 @@
               <width>630</width>
               <height>280</height>
               <align>left</align>
+			  <textcolor>$VAR[Views_FontColor]</textcolor>
               <label>$VAR[Plots]</label>
             </control>
           </control>
@@ -320,6 +326,7 @@
               <height>33</height>
               <width>720</width>
               <font>Reg31</font>
+			  <textcolor>$VAR[Views_FontColor]</textcolor>
               <label>$VAR[Details]</label>
             </control>
             <control type="textbox">
@@ -328,6 +335,7 @@
               <width>720</width>
               <height>280</height>
               <align>left</align>
+			  <textcolor>$VAR[Views_FontColor]</textcolor>
               <label>$VAR[Plots]</label>
             </control>
           </control>

@@ -16,6 +16,7 @@
                 <width>1902</width>
                 <height>890</height>
                 <texture>views/filemanager_panel1.png</texture>
+				<visible>!Skin.HasSetting(View55_HidePanel)</visible>
             </control>
 			
 			<!--Footer-->
@@ -43,6 +44,7 @@
                 <align>left</align>
                 <fadetime>600</fadetime>
                 <texture>$INFO[ListItem.Art(clearart)]</texture>
+				<visible>!Skin.HasSetting(View55_HidePanel)</visible>
             </control>
             <control type="image">
                 <!--logo-->
@@ -53,7 +55,7 @@
                 <align>left</align>
                 <fadetime>600</fadetime>
                 <texture>$INFO[ListItem.Art(clearlogo)]</texture>
-                <visible>IsEmpty(ListItem.Art(clearart))</visible>
+                <visible>IsEmpty(ListItem.Art(clearart)) + !Skin.HasSetting(View55_HidePanel)</visible>
             </control>
             <control type="image">
                 <!--logo-->
@@ -64,7 +66,7 @@
                 <align>left</align>
                 <fadetime>600</fadetime>
                 <texture>$INFO[ListItem.Art(tvshow.clearart)]</texture>
-                <visible>IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(clearlogo))</visible>
+                <visible>IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(View55_HidePanel)</visible>
             </control>
         </control>
         <!--View 50-->
@@ -222,14 +224,6 @@
 						<textcolor>white</textcolor>
 						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
 					</control>
-					<control type="image">
-						<posx>-12</posx>
-						<posy>-6</posy>
-						<width>783</width>
-						<height>150</height>
-						<texture>home/home_focus.png</texture>
-						<visible>!skin.hastheme(classic)</visible>
-					</control>
 				</control>
                 </focusedlayout>
             </control>
@@ -250,23 +244,53 @@
             <orientation>vertical</orientation>
             <posx>100</posx>
             <posy>520</posy>
+			<!-- label light -->
             <control type="label">
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
+				<font>Reg31</font>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[COLOR=mainblue]$VAR[value_ground1_label][/COLOR][COLOR=white] $VAR[value_ground1_value][/COLOR]</label>
-                <visible>!IsEmpty(Control.GetLabel(5301))</visible>
+                <visible>!IsEmpty(Control.GetLabel(5301)) + ![Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
             </control>
+			<!-- label dark -->
+			<control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>600</width>
+                <height>40</height>
+                <textcolor>mainblue</textcolor>
+				<font>Reg31</font>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                <label>[B][COLOR=black]$VAR[value_ground1_label][/COLOR][/B][COLOR=darkgrey] $VAR[value_ground1_value][/COLOR]</label>
+                <visible>!IsEmpty(Control.GetLabel(5301)) + [Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
+            </control>
+			<!-- label light -->
             <control type="label">
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
+				<font>Reg31</font>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[COLOR=mainblue]$VAR[value_ground2_label][/COLOR][COLOR=white] $VAR[value_ground2_value][/COLOR]</label>
-                <visible>!IsEmpty(Control.GetLabel(5302))</visible>
+                <visible>!IsEmpty(Control.GetLabel(5302)) + ![Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
+            </control>
+			<!-- label dark -->
+			<control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>600</width>
+                <height>40</height>
+                <textcolor>mainblue</textcolor>
+				<font>Reg31</font>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                <label>[B][COLOR=black]$VAR[value_ground2_label][/COLOR][/B][COLOR=darkgrey] $VAR[value_ground2_value][/COLOR]</label>
+                <visible>!IsEmpty(Control.GetLabel(5302)) + [Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
             </control>
             <control type="label">
                 <posx>0</posx>
@@ -274,8 +298,21 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
+				<font>Reg31</font>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[COLOR=mainblue]$VAR[value_ground3_label][/COLOR][COLOR=white] $VAR[value_ground3_value][/COLOR]</label>
-                <visible>!IsEmpty(Control.GetLabel(5303))</visible>
+                <visible>!IsEmpty(Control.GetLabel(5303)) + ![Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
+            </control>
+			<control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>600</width>
+                <height>40</height>
+                <textcolor>mainblue</textcolor>
+				<font>Reg31</font>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                <label>[B][COLOR=black]$VAR[value_ground3_label][/COLOR][/B][COLOR=darkgrey] $VAR[value_ground3_value][/COLOR]</label>
+                <visible>!IsEmpty(Control.GetLabel(5303)) + [Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
             </control>
             <control type="label">
                 <posx>0</posx>
@@ -283,8 +320,21 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
+				<font>Reg31</font>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[COLOR=mainblue]$VAR[value_ground4_label][/COLOR][COLOR=white] $VAR[value_ground4_value][/COLOR]</label>
-                <visible>!IsEmpty(Control.GetLabel(5304))</visible>
+                <visible>!IsEmpty(Control.GetLabel(5304)) + ![Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
+            </control>
+			<control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>600</width>
+                <height>40</height>
+                <textcolor>mainblue</textcolor>
+				<font>Reg31</font>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                <label>[B][COLOR=black]$VAR[value_ground4_label][/COLOR][/B][COLOR=darkgrey] $VAR[value_ground4_value][/COLOR]</label>
+                <visible>!IsEmpty(Control.GetLabel(5304)) + [Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
             </control>
         </control>
         <control type="group">
@@ -301,11 +351,12 @@
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>900</width>
-                <height>200</height>
+                <height>185</height>
                 <label>$INFO[ListItem.Plot]</label>
-                <textcolor>bbwhite</textcolor>
+                <textcolor>$VAR[Views_FontColor]</textcolor>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <align>justify</align>
-                <font>Light32</font>
+                <font>Reg31</font>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
@@ -372,17 +423,18 @@
                 <visible>IntegerGreaterThan(Container(55).NumItems,30)</visible>
                 <visible>!Container.Content(songs)</visible>
                 <posx>1845</posx>
-                <posy>320</posy>
-                <height>570</height>
+                <posy>243</posy>
+                <height>720</height>
                 <onleft>50</onleft>
                 <onright>noop</onright>
+				<texturesliderbar>colors/color_black.png</texturesliderbar>
                 <visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
                 <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling">Conditional</animation>
             </control>
             <control type="image">
                 <!--Scrolling Letter Background-->
                 <visible>Container(55).Scrolling</visible>
-                <posx>1450</posx>
+                <posx>1390</posx>
                 <posy>555</posy>
                 <width>100</width>
                 <height>100</height>
@@ -393,7 +445,7 @@
             <control type="label">
                 <!--Scrolling Letter-->
                 <visible>Container(55).Scrolling</visible>
-                <posx>1450</posx>
+                <posx>1390</posx>
                 <posy>555</posy>
                 <width>100</width>
                 <height>100</height>

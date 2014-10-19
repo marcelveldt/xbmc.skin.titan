@@ -5,9 +5,7 @@
     <zorder>5</zorder>
     <controls>
         <!--Dialog Overlay-->
-        <include>DialogOverlay</include>
-        <include>DialogOverlay</include>
-        <include>DialogOverlay</include>
+        <include>DialogOverlayExtra</include>
         <!--Dialog Yes/No-->
         <control type="group">
             <include>animation_dialog</include>
@@ -15,17 +13,10 @@
                 <posx>590</posx>
                 <posy>460</posy>
                 <control type="image">
-                    <posx>330</posx>
-                    <posy>13</posy>
-                    <width>80</width>
-                    <height>60</height>
-                    <texture>dialogs/default/arrow.png</texture>
-                </control>
-                <control type="image">
-                    <posx>42</posx>
-                    <posy>33</posy>
-                    <width>656</width>
-                    <height>154</height>
+                    <posx>-650</posx>
+                    <posy>-200</posy>
+                    <width>2050</width>
+                    <height>440</height>
                     <texture border="39">dialogs/default/bg.png</texture>
                 </control>
                 <control type="button" id="11">

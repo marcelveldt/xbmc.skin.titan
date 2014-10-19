@@ -14,12 +14,12 @@
             <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 			<visible>Skin.HasSetting(ItemFanartBg)</visible>
         </control>
-        <!--Time & Weather-->
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
+		<!--Time & Weather-->
         <include>TimeInfo</include>
         <!-- Header -->
         <include>Header</include>
 		<!-- Now playing -->
-		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
         <!--Hidden Button-->
         <control type="radiobutton" id="19">
             <description>Filter (hidden)</description>

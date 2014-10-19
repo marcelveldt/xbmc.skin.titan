@@ -105,8 +105,8 @@ msgid "Background settings"
 msgstr "Achtergrond instellen"
 
 msgctxt "#31023"
-msgid "Use blue skin background (default)"
-msgstr "Gebruik blauwe achtergrond (standaard)"
+msgid "Use default skin background"
+msgstr "Gebruik de standaardachtergrond van de skin"
 
 msgctxt "#31024"
 msgid "Use original Mediaportal's Titan skin background"
@@ -163,7 +163,7 @@ msgstr "Film trailers"
 
 msgctxt "#31038"
 msgid "Use custom image for skin background"
-msgstr ""
+msgstr "Gebruik eigen afbeelding"
 
 msgctxt "#31039"
 msgid "Use custom image for skin background"
@@ -394,8 +394,8 @@ msgid "PleXBMC"
 msgstr "PleXBMC"
 
 msgctxt "#31096"
-msgid "[CUSTOM BUTTON] click to select favorite as content"
-msgstr "[AANGEPASTE KNOP] klik om actie te selecteren"
+msgid "[CUSTOM COLLECTION] title only available in home"
+msgstr "[AANGEPASTE COLLECTIE] titel alleen in home zichtbaar"
 
 msgctxt "#31097"
 msgid "Extended"
@@ -614,6 +614,72 @@ msgstr "Huidige achtergrond voor deze sectie"
 msgctxt "#31150"
 msgid "Custom Image:"
 msgstr "Aangepaste achtergrond:"
+
+msgctxt "#31151"
+msgid "Background overlay"
+msgstr "Achtergrond overlay"
+
+msgctxt "#31152"
+msgid "Use default colors"
+msgstr "Gebruik standaard kleuren"
+
+msgctxt "#31153"
+msgid "Use light colors"
+msgstr "Gebruik lichte kleuren"
+
+msgctxt "#31154"
+msgid "Use dark colors"
+msgstr "Gebruik donkere kleuren"
+
+msgctxt "#31155"
+msgid "Hide panel background"
+msgstr "Verberg paneelachtergrond"
+
+msgctxt "#31156"
+msgid "Next episodes"
+msgstr "Volgende afleveringen"
+
+msgctxt "#31157"
+msgid "Favourite Shows"
+msgstr "Favoriete Series"
+
+msgctxt "#31158"
+msgid "Favourite Episodes"
+msgstr "Favoriete afleveringen"
+
+msgctxt "#31159"
+msgid "Upcoming TV"
+msgstr "Binnenkort op TV"
+
+msgctxt "#31160"
+msgid "Networks"
+msgstr "Zenders"
+
+msgctxt "#31161"
+msgid "Collections"
+msgstr "Collecties"
+
+msgctxt "#31162"
+msgid "Kodi Library"
+msgstr "Kodi Bibliotheek"
+
+msgctxt "#31163"
+msgid "MediaBrowser Library"
+msgstr "MediaBrowser Bibliotheek"
+
+msgctxt "#31164"
+msgid "Netflix Library"
+msgstr "Netflix Bibliotheek"
+
+
+msgctxt "#31165"
+msgid "Edit Main Menu"
+msgstr "Hoofdmenu bewerken"
+
+msgctxt "#31166"
+msgid "Edit Submenu"
+msgstr "Submenu bewerken"
+
 
 
 msgctxt "#31399"

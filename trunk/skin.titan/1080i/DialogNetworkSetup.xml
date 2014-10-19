@@ -13,13 +13,6 @@
             <include>animation_dialog</include>
             <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(numericinput) + !Window.IsVisible(okdialog) + ![Window.IsVisible(filebrowser) + !IsEmpty(Window(Home).Property(ShowDialog))]</visible>
             <control type="image">
-                <posx>920</posx>
-                <posy>292</posy>
-                <width>80</width>
-                <height>60</height>
-                <texture>dialogs/default/arrow.png</texture>
-            </control>
-            <control type="image">
                 <posx>445</posx>
                 <posy>312</posy>
                 <width>1030</width>

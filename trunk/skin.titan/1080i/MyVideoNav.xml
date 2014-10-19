@@ -8,14 +8,6 @@
     <controls>
         <!-- Video Background -->
         <include>VideoBackground</include>
-		<control type="image">
-            <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
-            <animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
-            <include>DimensionsFullscreen</include>
-            <colordiffuse>99FFFFFF</colordiffuse>
-            <texture background="true">common/black.png</texture>
-			<visible>Control.IsVisible(501) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(57)</visible>
-        </control>
 		<!--NowPlaying-->
         <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
         <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
@@ -112,12 +104,11 @@
                     <include>SubMenuButton</include>
                     <label>View: $INFO[Container.Viewmode]</label>
                     <onclick>Container.NextViewMode</onclick>
-					<onclick condition="Container.Content(Movies)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,00)</onclick>
-                    <onclick condition="Container.Content(seasons)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,00)</onclick>
-                    <onclick condition="Container.Content(TVShows)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,00)</onclick>
-                    <onclick condition="Container.Content(Episodes)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,00)</onclick>
-                    <onclick condition="Container.Content(Sets)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,00)</onclick>
-
+					<onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Movies)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(seasons)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(TVShows)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Episodes)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Sets)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,00)</onclick>
 				</control>
 				
 				<control type="radiobutton" id="341">
@@ -223,7 +214,7 @@
                     <label>31094</label>
                     <onclick>Skin.ToggleSetting(HideWatchedOverlayLargePoster)</onclick>
                     <selected>Skin.HasSetting(HideWatchedOverlayLargePoster)</selected>
-					 <visible>Control.IsVisible(58)</visible>
+					<visible>Control.IsVisible(58)</visible>
                 </control>
 				<control type="radiobutton" id="320">
                     <!--Show Fanart Background-->
@@ -231,6 +222,22 @@
                     <label>31141</label>
                     <onclick>Skin.ToggleSetting(ShowFanartBackground)</onclick>
                     <selected>Skin.HasSetting(ShowFanartBackground)</selected>
+                </control>
+				<control type="radiobutton" id="321">
+                    <!--Hide panel Background-->
+                    <include>SubMenuButton</include>
+                    <label>31155</label>
+                    <onclick>Skin.ToggleSetting(View55_HidePanel)</onclick>
+                    <selected>Skin.HasSetting(View55_HidePanel)</selected>
+					<visible>Control.IsVisible(55)</visible>
+                </control>
+				<control type="radiobutton" id="322">
+                    <!--Hide panel Background-->
+                    <include>SubMenuButton</include>
+                    <label>31155</label>
+                    <onclick>Skin.ToggleSetting(MovieDetailsView_HidePanel)</onclick>
+                    <selected>Skin.HasSetting(MovieDetailsView_HidePanel)</selected>
+					<visible>Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(505)</visible>
                 </control>
             </control>
         </control>

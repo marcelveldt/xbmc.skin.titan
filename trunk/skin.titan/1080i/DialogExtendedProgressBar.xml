@@ -12,14 +12,6 @@
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
             <visible>!Window.IsActive(DialogKayToast.xml) + !Control.IsVisible(77778)</visible>
-			<control type="image">
-				<posx>-120</posx>
-				<posy>-60</posy>
-				<width>2040</width>
-				<height>180</height>
-				<texture background="true">views/filemanager_panel1.png</texture>
-				<visible>!skin.hastheme(classic)</visible>
-			</control>
             <control type="multiimage">
                 <!--Busy Image-->
                 <description>Busy animation</description>
@@ -54,8 +46,6 @@
                 <scroll>false</scroll>
             </control>
         </control>
-    
-		<include>TimeInfo</include>
 	
 	</controls>
 </window>
