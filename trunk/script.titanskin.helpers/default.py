@@ -5,37 +5,6 @@ import xbmcaddon
 import os
 import time
 
-def setHomeItems(curPoslabel, idToChange, moveDirection):
-
-    win = xbmcgui.Window( 10000 )
-    
-    curPosId = int(curPoslabel.split("-")[1]);
-    nextPosId = curPosId +1
-    prevPosId = curPosId -1    
-
-    curItemId = int(xbmc.getInfoLabel("Skin.String(HomeMenuPos-" + str(curPosId) + ")"))
-    nextItemId = int(xbmc.getInfoLabel("Skin.String(HomeMenuPos-" + str(nextPosId) + ")"))
-    prevItemId = int(xbmc.getInfoLabel("Skin.String(HomeMenuPos-" + str(prevPosId) + ")"))
-    
-    curWinPos = int(win.getProperty("CurrentPos"))
-    
-    if (moveDirection == "DOWN"):
-        if curPosId != 0:
-            xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(curPosId) + "," + str(prevItemId) + ")")
-            xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(prevPosId) + "," + str(curItemId) + ")")
-            curWinPos = curWinPos -1
-        
-    if (moveDirection == "UP"):
-        if curPosId != 45:
-            xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(curPosId) + "," + str(nextItemId) + ")")
-            xbmc.executebuiltin("Skin.SetString(HomeMenuPos-" + str(nextPosId) + "," + str(curItemId) + ")")
-            curWinPos = curWinPos +1
-    
-    xbmc.executebuiltin('xbmc.ReloadSkin')
-    xbmc.executebuiltin('Control.SetFocus(100,2)')
-    xbmc.executebuiltin('Control.SetFocus(300, ' + str(curWinPos) + ')')    
-
-
 def setView(containerType,viewId):
     
     if viewId=="00":
@@ -111,6 +80,7 @@ def showSubmenu(showOrHide,doFocus):
         win.setProperty("submenuloading", "loading")
         win.setProperty("submenu", "hide")
         if doFocus != None:
+            xbmc.executebuiltin('Control.SetFocus('+ doFocus +',0)')
             time.sleep(0.8)
             xbmc.executebuiltin('Control.SetFocus('+ doFocus +',0)')
 

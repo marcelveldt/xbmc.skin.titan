@@ -574,7 +574,7 @@ class TitanThread ():
     def updateMB3links(self):
         win = xbmcgui.Window( 10000 )
         linkCount = 0
-        while linkCount !=20:
+        while linkCount !=10:
             orgmbstring = "xbmb3c." + str(linkCount)
             mbstring = "titanmb3." + str(linkCount)
             
