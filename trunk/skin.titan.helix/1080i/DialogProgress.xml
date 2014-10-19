@@ -20,6 +20,14 @@
 			<posx>530</posx>
 			<posy>410</posy>
 			
+			<control type="image">
+                    <posx>-600</posx>
+                    <posy>-100</posy>
+                    <width>2050</width>
+                    <height>440</height>
+                    <texture border="39">dialogs/default/bg.png</texture>
+                </control>
+			
 			<control type="multiimage">
             <description>Busy animation</description>
 			<posx>0</posx>

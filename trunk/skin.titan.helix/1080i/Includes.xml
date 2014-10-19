@@ -17,13 +17,11 @@
 	<include file="View_59_BigPanelDetails.xml" />
     <include file="IncludesVariables.xml" />
     <include file="IncludesNowPlaying.xml" />
-    <include file="IncludesNextUp.xml" />
-    <include file="IncludesHomeMenu.xml" />
-	<include file="IncludesHomeMenuItems.xml" />
-	<include file="IncludesHomeMenuHubs.xml" />
+	<include file="IncludesHomeMenuWidgets.xml" />
 	<include file="IncludesHomeMenuSubMenu.xml" />
     <include file="IncludesViews.xml" />
 	<include file="IncludesKodi.xml" />
+	<include file="script-skinshortcuts-includes.xml"/>
     <!--Artwork Downloader-->
     <include file="Custom_MediaDialog.xml" />
     <!--PVR-->
@@ -88,20 +86,6 @@
 	<!-- Footer -->
 	<include name="Footer">
 	
-	<!--footer alternative	
-		<control type="group">
-			<visible>!skin.hastheme(classic) + !skin.hassetting(nofooterbar)</visible>		
-			<include>animation_home</include>
-			<control type="image">
-				<posx>-60</posx>
-				<posy>970</posy>
-				<width>2040</width>
-				<height>180</height>
-				<texture background="true">views/filemanager_panel1.png</texture>
-				
-			</control>
-		</control>-->
-	
 	<!--Footer Background-->
 	<control type="group">			
 		<include>animation_home</include>
@@ -128,7 +112,7 @@
 		<control type="rss">	
 			<description>RSS Feed</description>
 			<posx>80</posx>
-			<posy>995</posy>
+			<posy>1002</posy>
 			<width>1760</width>
 			<height>50</height>
 			<font>Reg28</font>
@@ -137,7 +121,7 @@
 			<headlinecolor>$VAR[ThemeFontColorBlack]</headlinecolor>
 			<textcolor>$VAR[ThemeFontColorBlack]</textcolor>
 			<scrollspeed>40</scrollspeed>
-			<visible>Window.IsVisible(Home) + ![SubString(Window(Home).Property(submenu),show) + !IsEmpty(Container(300).ListItem.Property(submenu)) + !Control.HasFocus(510)] + !Window.IsVisible(DialogButtonMenu.xml)</visible>
+			<visible>Window.IsVisible(Home) + !SubString(Window(Home).Property(submenu),show) + !Window.IsVisible(DialogButtonMenu.xml)</visible>
 			<animation time="1500" effect="fade" delay="1500">Visible</animation>
 			<animation time="200" effect="fade">Hidden</animation>				
 		</control>
@@ -237,7 +221,7 @@
 	</control>
 		<control type="group">
 		<!--Title-->
-		<visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
+		<visible>!Window.IsActive(DialogVideoInfo.xml) + !Window.IsVisible(DialogFavourites.xml)</visible>
 		<include>animation_view_change</include>
 		<include>animation_list</include>
 		<posy>985</posy>
@@ -266,7 +250,7 @@
 	</control>
 		<control type="group">
 		<!--Page Control-->
-		<visible>![Window.IsActive(DialogVideoInfo.xml)]</visible>
+		<visible>!Window.IsActive(DialogVideoInfo.xml) + !Window.IsVisible(DialogFavourites.xml)</visible>
 		<include>animation_view_change</include>
 		<include>animation_list</include>
 		<posy>985</posy>
@@ -297,7 +281,7 @@
 			<visible>Pvr.IsRecording</visible>
 		</control>
         <control type="image">
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowHubs)] + !ControlGroup(77777).HasFocus</visible>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
@@ -306,11 +290,11 @@
             <height>64</height>
             <width>64</width>
             <aligny>center</aligny>
-            <colordiffuse>white</colordiffuse>
+            <colordiffuse>$VAR[TextColor_white]</colordiffuse>
             <texture>$VAR[value_header_icon]</texture>
         </control>
         <control type="label">
-            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowHubs)] + !ControlGroup(77777).HasFocus</visible>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
@@ -320,7 +304,7 @@
             <height>100</height>
             <font>Bold45</font>
             <align>left</align>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[TextColor_white]</textcolor>
             <label>$VAR[value_header]</label>
         </control>
     </include>
@@ -328,7 +312,7 @@
         <control type="group">
             <animation time="400" effect="fade">Visible</animation>
             <animation time="200" effect="fade">Hidden</animation>
-            <visible>!ControlGroup(400).HasFocus() + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowHubs)] + !ControlGroup(77777).HasFocus</visible>
+            <visible>!ControlGroup(400).HasFocus() + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
             <control type="grouplist">
                 <!--Time Grouplist Line 1-->
                 <!--animation effect="slide" start="0" end="-130" time="200" condition="Weather.IsFetched" >Conditional</animation-->
@@ -348,7 +332,7 @@
                     <height>100</height>
                     <info>System.Time(hh:mm)</info>
                     <font>Bold55</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <!--AM-->
@@ -357,7 +341,7 @@
                     <height>100</height>
                     <label>378</label>
                     <font>Bold55</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <!--PM-->
@@ -366,7 +350,7 @@
                     <height>100</height>
                     <label>379</label>
                     <font>Bold55</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
             </control>
             <control type="grouplist">
@@ -389,14 +373,14 @@
                     <height>50</height>
                     <info>System.Date(DDD)</info>
                     <font>Light30</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <width min="0" max="400">auto</width>
                     <height>50</height>
                     <label>, </label>
                     <font>Light30</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <!--Date-->
@@ -404,7 +388,7 @@
                     <height>50</height>
                     <info>System.Date(d)</info>
                     <font>Light30</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <visible>SubString(System.Language,German)</visible>
@@ -412,7 +396,7 @@
                     <height>50</height>
                     <label>. </label>
                     <font>Light30</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <label></label>
@@ -420,7 +404,7 @@
                     <width min="0" max="400">auto</width>
                     <height>50</height>
                     <font>Light30</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <!--Month-->
@@ -428,7 +412,7 @@
                     <height>50</height>
                     <info>System.Date(MMM)</info>
                     <font>Light30</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
             </control>
         </control>
@@ -439,7 +423,7 @@
 			<defaultcontrol>890</defaultcontrol>
 			<posx>35</posx>
 			<posy>30</posy>
-			<visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(ShowProfile) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowHubs)] + !ControlGroup(77777).HasFocus</visible>
+			<visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(ShowProfile) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
 			<width>150</width>
 				<height>80</height>
 				<control type="image" id="888">	
@@ -473,7 +457,7 @@
 				<label>$VAR[ProfileLabel]</label>
 				<align>center</align>
 				<font>Light30</font>
-				<textcolor>white</textcolor>
+				<textcolor>$VAR[TextColor_white]</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
@@ -487,7 +471,7 @@
             <width>350</width>
             <height>300</height>
             <visible>Weather.IsFetched</visible>
-            <visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(WeatherOnHome) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowHubs)] + !ControlGroup(77777).HasFocus</visible>
+            <visible>!Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(WeatherOnHome) + !ControlGroup(400).HasFocus() + !Window.IsActive(DialogKaiToast.xml) + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
             <!--Weather Today-->
             <control type="image">
                 <!--Icon-->
@@ -504,7 +488,7 @@
                 <posx>130</posx>
                 <posy>25</posy>
                 <font>Bold38</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[TextColor_white]</textcolor>
                 <align>left</align>
                 <label>$INFO[Weather.Temperature]</label>
                 <visible>Weather.IsFetched</visible>
@@ -516,7 +500,7 @@
                 <posx>124</posx>
                 <posy>70</posy>
                 <font>Reg28</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[TextColor_white]</textcolor>
                 <align>center</align>
                 <label>$INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label>
                 <visible>Weather.IsFetched</visible>
@@ -596,30 +580,48 @@
     <include name="DialogOverlay">
         <!--Dialog Overlay-->
         <control type="image">
-            <animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
-            <animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
             <include>DimensionsFullscreen</include>
-            <colordiffuse>99FFFFFF</colordiffuse>
-            <texture background="true">common/black.png</texture>
-            <!--texture background="true">overlays/fanart/semi_trans_back_general_menu.png</texture-->
+			<texture background="true">$VAR[ColorOverlay]</texture>
         </control>
+	
     </include>
 	<include name="DialogOverlayExtra">
 		<control type="image">
             <animation effect="fade" time="50" start="0" end="100">WindowOpen</animation>
             <animation effect="fade" time="50" start="100" end="0">WindowClose</animation>
             <include>DimensionsFullscreen</include>
-            <colordiffuse>99FFFFFF</colordiffuse>
-            <texture background="true">common/black.png</texture>
+            <texture background="true">$VAR[ColorOverlayExtra]</texture>
         </control>
 		<control type="image">
             <animation effect="fade" time="50" start="0" end="100">WindowOpen</animation>
             <animation effect="fade" time="50" start="100" end="0">WindowClose</animation>
             <include>DimensionsFullscreen</include>
-            <colordiffuse>99FFFFFF</colordiffuse>
-            <texture background="true">common/black.png</texture>
+            <texture background="true">$VAR[ColorOverlayExtra]</texture>
         </control>
     </include>
+	
+	<include name="FadeandZoom">
+	
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="300" delay="400" />
+			<effect type="zoom" start="95" end="100" center="960,540" time="200" delay="400" />
+		</animation>
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="200" />
+			<effect type="zoom" start="100" end="95" center="960,540" time="200" />
+		</animation>
+	
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="300" delay="400" />
+			<effect type="zoom" start="120" end="100" center="960,540" time="200" delay="400" />
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200" />
+			<effect type="zoom" start="100" end="110" center="960,540" time="200" />
+		</animation>
+			
+	</include>
+
     <!--Animation-->
     <include name="animation_view_change">
         <!--View Change -->
@@ -764,7 +766,7 @@
         <width>458</width>
         <align>left</align>
         <textcolor>$VAR[ThemeFontColorBlack]</textcolor>
-        <focusedcolor>$VAR[ThemeFontColorBlack]</focusedcolor>
+        <focusedcolor>black</focusedcolor>
         <disabledcolor>77585858</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus>common/button-fo.png</texturefocus>
@@ -813,7 +815,7 @@
     <include name="DialogHeader">
         <!--Dialog Header-->
         <font>Bold38</font>
-        <textcolor>aawhite</textcolor>
+        <textcolor>$VAR[ThemeFontColorBlack]</textcolor>
     </include>
     <include name="DialogHeader2">
         <!--Dialog Header2 (Yes/No)-->
@@ -2698,120 +2700,57 @@
     <include name="VideoBackground">
 		<!-- default background (always show as fallback) -->
         <include>GlobalBackground</include>
-        <!-- mediabrowser fanart -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <fadetime>1000</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$INFO[Window(Home).Property(MB3.Background.Item.FanArt)]</texture>
-            <visible>!IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)</visible>
-        </control>
-        <!-- normal fanart -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <fadetime>1000</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-            <visible>IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)</visible>
-        </control>
-		<control type="image"><include>DimensionsFullscreen</include><texture background="true">overlays/fanart/fanart_overlay.png</texture><fadetime>800</fadetime></control>
 	</include>
     <include name="MusicBackground">
 		<!-- default background (always show as fallback) -->
         <include>GlobalBackground</include>
-        <!-- mediabrowser fanart -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <fadetime>1000</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$INFO[Window(Home).Property(MB3.Background.Item.FanArt)]</texture>
-            <visible>!IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)</visible>
-        </control>
-        <!-- normal fanart -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <fadetime>1000</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-			<visible>IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)</visible>
-        </control>
     </include>
     <include name="GlobalBackground">
-        <!-- default blue background (always show as fallback) -->
+        
+		<!-- single image background -->
         <control type="image">
             <include>DimensionsFullscreen</include>
-            <texture background="true">special://skin/extras/backgrounds/global_blue.png</texture>
+			<include>backgroundfade</include>
+            <texture background="true">$VAR[varBackground]</texture>
             <fadetime>800</fadetime>
         </control>
-		<!-- default MP background -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <texture background="true">special://skin/extras/backgrounds/global.png</texture>
-            <fadetime>800</fadetime>
-            <visible>Skin.String(CustomBackgroundSetting, default)</visible>
-        </control>
-        <!-- user own background -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <texture background="true">$INFO[Skin.String(CustomBackgroundSetting)]</texture>
-            <fadetime>800</fadetime>
-            <visible>!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart)</visible>
-        </control>
-        <!-- MB3 fanart background -->
-        <control type="image">
-            <description>MB3 FanArt Background</description>
-            <include>DimensionsFullscreen</include>
-            <width>1920</width>
-            <height>1080</height>
-            <texture>$INFO[Window(Home).Property(MB3.Background.Global.FanArt)]</texture>
-            <visible>Skin.String(CustomBackgroundSetting, fanart)</visible>
-            <aspectratio>scale</aspectratio>
-            <fadetime>800</fadetime>
-            <include>backgroundfade</include>
-            <colordiffuse>FF666666</colordiffuse>
-            <visible>Skin.String(CustomBackgroundSetting, fanart) + Skin.HasSetting(MediaBrowserMode)</visible>
-        </control>
-        <!-- normal fanart background -->
-        <control type="image">
-            <include>DimensionsFullscreen</include>
-            <width>1920</width>
-            <height>1080</height>
-            <texture>$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</texture>
-            <visible>Skin.String(CustomBackgroundSetting, fanart)</visible>
-            <aspectratio>scale</aspectratio>
-            <fadetime>800</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <visible>Skin.String(CustomBackgroundSetting, fanart) + !Skin.HasSetting(MediaBrowserMode)</visible>
-        </control>
+		
+		<!-- multi image background -->
         <control type="multiimage">
             <posx>0</posx>
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <imagepath>special://skin/extras/weather/$INFO[Weather.FanartCode]</imagepath>
+            <imagepath>$VAR[varBackground]</imagepath>
             <aspectratio>scale</aspectratio>
-            <timeperimage>60000</timeperimage>
+            <timeperimage>25000</timeperimage>
             <fadetime>800</fadetime>
             <randomize>true</randomize>
             <include>backgroundfade</include>
-            <colordiffuse>FF666666</colordiffuse>
-            <visible>Skin.String(CustomBackgroundSetting, weather)</visible>
         </control>
+		
+		<!-- listItem fanart -->
         <control type="image">
             <include>DimensionsFullscreen</include>
-            <texture background="true">overlays/fanart/fanart_overlay.png</texture>
-            <fadetime>800</fadetime>
-			<visible>skin.hastheme(classic)</visible>
+			<include>backgroundfade</include>
+            <fadetime>1000</fadetime>
+            <texture background="true">$VAR[itemFanartBackground]</texture>
+            <visible>Skin.HasSetting(ShowFanartBackground)</visible>
         </control>
-		<!-- section background -->
-        <control type="image">
+
+
+		<!-- Widgets background -->
+		<control type="image">
             <include>DimensionsFullscreen</include>
-            <colordiffuse>FF666666</colordiffuse>
-            <fadetime>600</fadetime>
-            <texture background="true">$VAR[SectionBackgroundImage]</texture>
+			<include>backgroundfade</include>
+            <fadetime>1000</fadetime>
+            <texture background="true">$VAR[HomeMenuWidgetBackground]</texture>
 			<aspectratio>scale</aspectratio>
-            <visible>Skin.HasSetting(UseSectionBackground)</visible>
+            <visible>ControlGroup(77777).HasFocus</visible>
         </control>
+		
+		<include>DialogOverlay</include>
+		
     </include>
     <include name="backgroundfade">
         <animation effect="fade" time="600">Visible</animation>
@@ -2917,141 +2856,53 @@
 	
     <include name="defaultskinsettings">
         <!-- skin default settings -->
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomBackgroundSetting, blue)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomMusicFolder, artwork)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomMoviesFolder, artwork)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomWeatherFolder, artwork)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(CustomTVShowsFolder, artwork)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetString(GadgetRows, 1)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.GetBool(pvrmanager.enabled)">Skin.SetBool(HomeMenuPVRButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.GetBool(pvrmanager.enabled)">Skin.SetBool(HomeMenuTVRecordingsButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.GetBool(pvrmanager.enabled)">Skin.SetBool(HomeMenuRadioButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.GetBool(pvrmanager.enabled)">Skin.SetBool(HomeMenuUseGuideOnTV)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuTVShowsButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuPicturesButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuWeatherButton)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuUseWeatherWidget)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuFavouritesButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuMusicButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuMoviesButton)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuUseMoviesWidget)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuTVShowsButton)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuUseTVseriesWidget)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(HomeMenuSettingsButton)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.netflixbmc)">Skin.SetBool(HomeMenuNetflixButton)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.netflixbmc)">Skin.SetBool(HomeMenuUseNetflixWidget)</onload>
-        <onload condition="!Skin.HasSetting(FirstRun) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(WeatherOnHome)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-0, 0)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-1, 1)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-2, 2)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-3, 3)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-4, 4)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-5, 5)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-6, 6)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-7, 7)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-8, 8)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-9, 9)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-10, 10)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-11, 11)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-12, 12)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-13, 13)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-14, 14)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-15, 15)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-16, 16)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-17, 17)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-18, 18)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-19, 19)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-20, 20)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-21, 21)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-22, 22)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-23, 23)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-24, 24)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-25, 25)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-26, 26)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-27, 27)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-28, 28)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-29, 29)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-30, 30)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-31, 31)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-32, 32)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-33, 33)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-34, 34)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults)">Skin.SetString(HomeMenuPos-35, 35)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-36, 36)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-37, 37)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-38, 38)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-39, 39)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-40, 40)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-41, 41)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-42, 42)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-43, 43)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-44, 44)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(HomeMenuPos-45, 45)</onload>
-		
+        <onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(CustomBackgroundSetting, default)</onload>
+        <onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetString(GadgetRows, 1)</onload>
+        <onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(WeatherOnHome)</onload>
+
 		<!-- download required artwork for the skin upon first run -->
-		<onload condition="!Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, clearlogo, clearart, banner, seasonbanner, landscape, seasonlandscape)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun)">Skin.Reset(EnableArtworkDownloader)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">XBMC.runscript(script.artwork.downloader, mode=custom, silent=true, clearlogo, clearart, banner, seasonbanner, landscape, seasonlandscape)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.Reset(EnableArtworkDownloader)</onload>
 		
 		<!-- (optional) automatic run of the artwork downloader on startup -->
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + Skin.HasSetting(EnableArtworkDownloader) + Skin.HasSetting(FirstRun)">XBMC.runscript(script.artwork.downloader, silent=true, clearlogo, clearart, banner, seasonbanner, landscape, seasonlandscape)</onload>
 		
 		<!-- default settings for the new home widgets -->
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(MoviesWidget, newmovies)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(TvShowsWidget, inprogress)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(MusicWidget, latestalbum)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(AutoShowHubs)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(NetflixWidget, inprogresstvshows)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults3)">Skin.SetString(mb3customwidget, recent)</onload>
-		<onload condition="!Skin.HasSetting(FirstRun) | !Skin.HasSetting(HomeMenuDefaults3)">Skin.SetString(mb3customwidgettv, inprogress)</onload>
-		
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(MoviesWidget, newmovies)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(TvShowsWidget, inprogress)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(MusicWidget, latestalbum)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(AutoShowWidgets)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1) | !Skin.HasSetting(HomeMenuDefaults2)">Skin.SetString(NetflixWidget, inprogresstvshows)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetString(YoutubeWidget, trending)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(UseSectionBackground)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetString(ColorTheme, default)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(ShowFanartBackground)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(59_SmallFanart)</onload>
+
 		<!-- correct music widgets on MB3 mode -->
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, latestalbum)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, latestalbum)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, latestsong)">Skin.SetString(MusicWidget, latestalbum)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, library)">Skin.SetString(MusicWidget, latestalbum)</value>
-		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, latestalbum)</value>
-		
-		<!-- <onload>Skin.Reset(HomeMenuDefaults5)</onload> -->
-		<!-- other default settings -->
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults4)">Skin.SetBool(ShowFanartBackground)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults4)">Skin.SetBool(59_SmallFanart)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(PVRSectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(MoviesSectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(TVshowsSectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(MusicSectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(AddonssectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(VideoAddonssectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(SettingssectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(MusicVideossectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(PicturessectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(WeathersectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(FileManagersectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(VideossectionBackground, default)]</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetString(FavoritessectionBackground, default)]</onload>
+		<onload condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, latestalbum)</onload>
+		<onload condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, latestalbum)</onload>
+		<onload condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, latestsong)">Skin.SetString(MusicWidget, latestalbum)</onload>
+		<onload condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, library)">Skin.SetString(MusicWidget, latestalbum)</onload>
+		<onload condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, latestalbum)</onload>
 		
 		<!-- initialize 3th party addons -->
 		<onload condition="System.HasAddon(plugin.video.xbmb3c) + !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(plugin.video.xbmb3c,check_server)</onload>
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded) + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
-
+		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">RunScript(script.grab.fanart,mode=random, refresh=60)</onload>
+		
 		<!-- finish default settings -->
-        <onload condition="!Skin.HasSetting(FirstRun)">Skin.SetBool(FirstRun)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults)">Skin.SetBool(HomeMenuDefaults)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(HomeMenuDefaults1)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults2)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults2)">Skin.SetBool(HomeMenuDefaults3)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults4)">Skin.SetBool(HomeMenuDefaults4)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetBool(HomeMenuDefaults5)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(HomeMenuDefaults6)</onload>
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
-
     </include>
 	
     <include name="CastMB3Content">
         <content target="video">$INFO[ListItem.Property(CastPluginLink)]</content>
     </include>
-	<include name="SettingsUnusedHomeMenuItem">
-        <label>==</label>
-    </include>
-	
-
 		
 </includes>

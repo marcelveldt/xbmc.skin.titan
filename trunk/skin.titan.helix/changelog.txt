@@ -1,2 +1,12 @@
+v.3.1.0
+- script skinshortcuts is now used for maximized flexibility
+- improved submenus and widgets
+- fixed several bugs
+- custom background for tiles
+- custom backgrounds for loginscreen
+- german translation
+- selectable background overlay
+
 v.3.0.1
-- initial version of the skin for Kodi Helix
+- first version for helix
+based on gotham version of the skin

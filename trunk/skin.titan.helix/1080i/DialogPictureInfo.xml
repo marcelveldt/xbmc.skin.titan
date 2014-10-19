@@ -14,36 +14,23 @@
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                 </control>
-                <control type="label">
+                
+                <!--Panel-->
+                <control type="image">
+                    <posx>638</posx>
+                    <posy>240</posy>
+                    <width>644</width>
+                    <height>541</height>
+                    <texture border="5">dialogs/default/inner.png</texture>
+                </control>
+				<control type="label">
                     <description>Heading</description>
                     <posx>473</posx>
-                    <posy>200</posy>
+                    <posy>230</posy>
                     <width>974</width>
                     <label>$LOCALIZE[13406]</label>
                     <include>DialogHeader</include>
                     <align>center</align>
-                </control>
-                <!--Panel-->
-                <control type="image">
-                    <posx>920</posx>
-                    <posy>246</posy>
-                    <width>80</width>
-                    <height>60</height>
-                    <texture>dialogs/default/arrow.png</texture>
-                </control>
-                <control type="image">
-                    <posx>604</posx>
-                    <posy>266</posy>
-                    <width>712</width>
-                    <height>548</height>
-                    <texture border="39">dialogs/default/bg.png</texture>
-                </control>
-                <control type="image">
-                    <posx>638</posx>
-                    <posy>300</posy>
-                    <width>644</width>
-                    <height>481</height>
-                    <texture border="5">dialogs/default/inner.png</texture>
                 </control>
                 <control type="list" id="5">
                     <posx>638</posx>

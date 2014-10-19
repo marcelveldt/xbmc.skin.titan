@@ -23,10 +23,6 @@
         <itemlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="382" width="258">
           <control type="image">
             <include>BigPanelPosterDimensions</include>
-            <include>PosterThumbBG</include>
-          </control>
-          <control type="image">
-            <include>BigPanelPosterDimensions</include>
             <include>PosterThumb</include>
           </control>
           <control type="image">

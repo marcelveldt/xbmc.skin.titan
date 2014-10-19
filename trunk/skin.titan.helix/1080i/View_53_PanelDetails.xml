@@ -14,9 +14,9 @@
             <include>animation_list</include>
             <!-- ID="52" -->
             <control type="panel" id="53">
-                <posx>80</posx>
+                <posx>100</posx>
                 <posy>610</posy>
-                <width>1760</width>
+                <width>1720</width>
                 <height>350</height>
                 <onup>9000</onup>
                 <ondown></ondown>
@@ -29,19 +29,19 @@
                 <orientation>horizontal</orientation>
                 <preloaditems>2</preloaditems>
                 <!-- itemlayout movies -->
-                <itemlayout height="380" width="223" condition="!Container.Content(albums)">
+                <itemlayout height="380" width="217" condition="!Container.Content(albums)">
                     <include>PosterViewLayout</include>
                 </itemlayout>
                 <!-- focussed layout movies -->
-                <focusedlayout height="380" width="223" condition="!Container.Content(albums)">
+                <focusedlayout height="380" width="217" condition="!Container.Content(albums)">
                     <include>PosterViewLayoutFocus</include>
                 </focusedlayout>
                 <!-- itemlayout albums -->
-                <itemlayout height="290" width="223" condition="Container.Content(albums)">
+                <itemlayout height="213" width="217" condition="Container.Content(albums)">
                     <include>PosterViewAlbumLayout</include>
                 </itemlayout>
                 <!-- focussed layout albums -->
-                <focusedlayout height="290" width="223" condition="Container.Content(albums)">
+                <focusedlayout height="213" width="217" condition="Container.Content(albums)">
                     <include>PosterViewAlbumLayoutFocus</include>
                 </focusedlayout>
             </control>

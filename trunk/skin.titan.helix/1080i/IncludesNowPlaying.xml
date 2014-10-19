@@ -201,7 +201,7 @@
 		<include>nowplayingbackground</include>
         <control type="group" id="88888">
             <!--Panel-->
-            <visible>Player.HasMedia + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + ![!IsEmpty(Container(300).ListItem.property(widgettype)) + Skin.HasSetting(AutoShowHubs)] + !ControlGroup(77777).HasFocus</visible>
+            <visible>Player.HasMedia + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + ![!IsEmpty(Container(300).ListItem.property(widget)) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
             <include>DimensionsFullscreen</include>
             <control type="image">
 				<posx>-60</posx>
@@ -284,14 +284,7 @@
 				<visible>Player.HasVideo</visible>
 			</control>
 			<!--Dialog Overlay-->
-			<control type="image">
-				<animation effect="fade" time="300" start="0" end="100">WindowOpen</animation>
-				<animation effect="fade" time="300" start="100" end="0">WindowClose</animation>
-				<include>DimensionsFullscreen</include>
-				<colordiffuse>99FFFFFF</colordiffuse>
-				<texture background="true">common/black.png</texture>
-				<visible>Player.HasMedia</visible>
-			</control>
+			<include>DialogOverlay</include>
 		</control>
 
 

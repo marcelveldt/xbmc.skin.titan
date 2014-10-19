@@ -13,13 +13,6 @@
             <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(pvrgroupmanager) + !Window.IsVisible(filebrowser) + !Window.IsVisible(yesnodialog) + !Window.IsVisible(okdialog) + !Window.IsVisible(progressdialog)</visible>
             <!--Panel-->
             <control type="image">
-                <posx>920</posx>
-                <posy>151</posy>
-                <width>80</width>
-                <height>60</height>
-                <texture>dialogs/default/arrow.png</texture>
-            </control>
-            <control type="image">
                 <posx>319</posx>
                 <posy>171</posy>
                 <width>1282</width>

@@ -26,13 +26,6 @@
                 <effect type="fade" start="100" end="0" delay="200" time="100" />
             </animation>
             <control type="image">
-                <posx>120</posx>
-                <posy>-4</posy>
-                <width>80</width>
-                <height>60</height>
-                <texture>dialogs/default/arrow.png</texture>
-            </control>
-            <control type="image">
                 <posx>0</posx>
                 <posy>16</posy>
                 <width>320</width>

@@ -162,6 +162,7 @@
                 <height>64</height>
                 <font>-</font>
                 <label>-</label>
+				<onclick condition="Skin.HasSetting(UseSectionBackground)">Skin.SetString(SectionBackground,settings)</onclick>
                 <onclick>ActivateWindow(settings)</onclick>
                 <texturefocus>common/settings1.png</texturefocus>
                 <texturenofocus colordiffuse="black">common/settings1.png</texturenofocus>

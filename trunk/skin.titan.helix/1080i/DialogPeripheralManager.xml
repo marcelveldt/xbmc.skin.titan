@@ -17,13 +17,6 @@
             <include>animation_dialog</include>
             <visible>!Window.IsVisible(DialogPeripheralSettings.xml)</visible>
             <control type="image">
-                <posx>920</posx>
-                <posy>336</posy>
-                <width>80</width>
-                <height>60</height>
-                <texture>dialogs/default/arrow.png</texture>
-            </control>
-            <control type="image">
                 <posx>445</posx>
                 <posy>356</posy>
                 <width>1030</width>

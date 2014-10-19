@@ -77,9 +77,9 @@
 		
 			<control type="panel" id="506">
 					
-				<posx>0</posx>
+				<posx>-200</posx>
 				<posy>0</posy>
-				<width>1920</width>
+				<width>2100</width>
 				<height>900</height>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -96,7 +96,7 @@
 					<effect type="fade" start="100" end="10" delay="2000" time="400" />
 				</animation>
 
-				<itemlayout width="470" height="900">
+				<itemlayout width="460" height="900">
 				
 										<control type="group">
 						<posx>0</posx>
@@ -178,7 +178,7 @@
 					</control>
 				</itemlayout>
 
-				<focusedlayout width="470" height="900">
+				<focusedlayout width="460" height="900">
 				
 					<control type="group">
 						<posx>0</posx>
@@ -265,9 +265,9 @@
                 <!--Scrollbar ID60-->
                 <visible>IntegerGreaterThan(Container(506).NumItems,30)</visible>
                 <visible>!Container.Content(songs)</visible>
-                <posx>60</posx>
-				<width>1800</width>
-                <posy>1040</posy>
+                <posx>0</posx>
+				<width>1920</width>
+                <posy>960</posy>
                 <height>15</height>
                 <onup>506</onup>
                 <onright>noop</onright>

@@ -16,17 +16,17 @@
 			  <visible>skin.hastheme(classic)</visible>
             </control>
 			<control type="image">
-              <posx>-13</posx>
-              <posy>32</posy>
-              <width>603</width>
-              <height>349</height>
+              <posx>0</posx>
+              <posy>37</posy>
+              <width>588</width>
+              <height>325</height>
               <texture border="8">banner_default.png</texture>
 			  <aspectratio>stretch</aspectratio>
 			  <visible>!skin.hastheme(classic)</visible>
             </control>
 			<control type="image">
-              <posx>4</posx>
-              <posy>55</posy>
+              <posx>10</posx>
+              <posy>47</posy>
               <width>568</width>
               <height>304</height>
               <texture background="true">$VAR[BannerLandscapeImage]</texture>
@@ -39,8 +39,9 @@
    <texture border="8" diffuse="poster_matte.png">poster_default.png</texture>
   </include>
   <include name="PosterThumbFO">
-    <bordersize>-4</bordersize>
-    <texture border="8">cover_panel_matte_fo.png</texture>
+    <bordersize>-6</bordersize>
+    <texture border="10">cover_panel_matte_fo.png</texture>
+	<colordiffuse>$VAR[Views_PanelFocusColor]</colordiffuse>
   </include>
   <include name="EpisodeThumb">
     <texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$INFO[ListItem.Art(thumb)]</texture>
@@ -294,6 +295,7 @@
 			<width>216</width>
 			<height>310</height>
 			<texture>poster_focus.png</texture>
+			<colordiffuse>$VAR[Views_PanelFocusColor]</colordiffuse>
 			<visible>!skin.hastheme(classic)</visible>
           </control>
 		  <control type="image">
@@ -302,6 +304,7 @@
 			<width>206</width>
 			<height>300</height>
 			<texture>poster_focus.png</texture>
+			<colordiffuse>$VAR[Views_PanelFocusColor]</colordiffuse>
 			<visible>skin.hastheme(classic)</visible>
           </control>
 		</control>
@@ -443,6 +446,7 @@
 			<include condition="skin.hastheme(classic)">BannerViewFocusSizeClassic</include>
             <include>BannerViewImageSizeNormalFocus</include>
             <texture>home/home_focus.png</texture>
+			<colordiffuse>$VAR[Views_PanelFocusColor]</colordiffuse>
         </control>
     </include>
 	
@@ -530,7 +534,7 @@
     <include name="BannerViewOverlaySizeNormal">
         <posx>0</posx>
         <posy>0</posy>
-        <width>575</width>
+        <width>573</width>
         <height>340</height>
     </include>
     <include name="BannerViewOverlaySizeEpisodes">
@@ -1645,7 +1649,7 @@
             <posy>0</posy>
             <width>141</width>
             <height>30</height>
-            <colordiffuse>white</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
         </control>
         <control type="image">
@@ -1654,7 +1658,7 @@
             <posy>0</posy>
             <width>141</width>
             <height>30</height>
-            <colordiffuse>white</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>
         </control>
         <control type="image">
@@ -1663,7 +1667,7 @@
             <posy>0</posy>
             <width>141</width>
             <height>30</height>
-            <colordiffuse>white</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/aspectration/default.png">$INFO[ListItem.VideoAspect,flags/aspectration/,.png]</texture>
         </control>
         <control type="image">
@@ -1672,7 +1676,7 @@
             <posy>0</posy>
             <width>82</width>
             <height>30</height>
-            <colordiffuse>white</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/audiocodec/default.png">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
             <visible>!IsEmpty(ListItem.AudioCodec)</visible>
         </control>
@@ -1682,7 +1686,7 @@
             <posy>0</posy>
             <width>82</width>
             <height>30</height>
-            <colordiffuse>white</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/audiochannels/default.png">$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>
             <visible>!IsEmpty(ListItem.AudioChannels)</visible>
         </control>
@@ -1692,7 +1696,7 @@
             <posy>-16</posy>
             <width>70</width>
             <height>60</height>
-            <colordiffuse>white</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture>flags/3dbd.png</texture>
             <visible>ListItem.IsStereoScopic | !IsEmpty(ListItem.Property(Video3DFormat))</visible>
         </control>
@@ -1705,7 +1709,7 @@
             <posy>0</posy>
             <width>212</width>
             <height>45</height>
-            <colordiffuse>video_info_flag</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
         </control>
         <control type="image">
@@ -1714,7 +1718,7 @@
             <posy>0</posy>
             <width>212</width>
             <height>45</height>
-            <colordiffuse>video_info_flag</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>
         </control>
         <control type="image">
@@ -1723,7 +1727,7 @@
             <posy>0</posy>
             <width>212</width>
             <height>45</height>
-            <colordiffuse>video_info_flag</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/aspectration/default.png">$INFO[ListItem.VideoAspect,flags/aspectration/,.png]</texture>
         </control>
         <control type="image">
@@ -1732,7 +1736,7 @@
             <posy>0</posy>
             <width>124</width>
             <height>45</height>
-            <colordiffuse>video_info_flag</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/audiocodec/default.png">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
             <visible>!IsEmpty(ListItem.AudioCodec)</visible>
         </control>
@@ -1742,7 +1746,7 @@
             <posy>0</posy>
             <width>124</width>
             <height>45</height>
-            <colordiffuse>video_info_flag</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture fallback="flags/audiochannels/default.png">$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>
             <visible>!IsEmpty(ListItem.AudioChannels)</visible>
         </control>
@@ -1752,14 +1756,14 @@
             <posy>-21</posy>
             <width>100</width>
             <height>85</height>
-            <colordiffuse>video_info_flag</colordiffuse>
+            <colordiffuse>$VAR[Views_FontColor]</colordiffuse>
             <texture>flags/3dbd.png</texture>
             <visible>ListItem.IsStereoScopic | !IsEmpty(ListItem.Property(Video3DFormat))</visible>
         </control>
     </include>
     <include name="MovieDetails">
         <!-- movie details -->
-        <control type="group">
+        <control type="group" id="888">
             <include>animation_view_change</include>
             <include>animation_list</include>
             <control type="image">
@@ -1769,6 +1773,7 @@
                 <width>1902</width>
                 <height>890</height>
                 <texture>views/filemanager_panel1.png</texture>
+				<visible>!Skin.HasSetting(MovieDetailsView_HidePanel)</visible>
             </control>
 			<!--Footer-->
 			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
@@ -1777,7 +1782,7 @@
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-                <posx>100</posx>
+                <posx>92</posx>
                 <posy>260</posy>
                 <width>800</width>
                 <height>700</height>
@@ -1792,6 +1797,7 @@
                         <posy>3</posy>
                         <width>49</width>
                         <height>49</height>
+						<colordiffuse>$VAR[Views_FontColor]</colordiffuse>
                         <texture>dialogs/videoinfo/premiered-icon.png</texture>
                     </control>
                     <control type="label">
@@ -1801,7 +1807,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Year]</label>
-                        <textcolor>aawhite</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1815,6 +1822,7 @@
                         <posy>3</posy>
                         <width>49</width>
                         <height>49</height>
+						<colordiffuse>$VAR[Views_FontColor]</colordiffuse>
                         <texture>dialogs/videoinfo/premiered-icon.png</texture>
                     </control>
                     <control type="label">
@@ -1824,7 +1832,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Premiered]</label>
-                        <textcolor>aawhite</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1832,12 +1841,13 @@
                     <!--Runtime: Movie, Episodes-->
                     <width>600</width>
                     <height>40</height>
-                    <visible>Container.Content(Movies) | Container.Content(episodes)</visible>
+                    <visible>[Container.Content(Movies) | Container.Content(episodes)] + !IsEmpty(ListItem.Duration)</visible>
                     <control type="image">
                         <posx>0</posx>
                         <posy>3</posy>
                         <width>49</width>
                         <height>49</height>
+						<colordiffuse>$VAR[Views_FontColor]</colordiffuse>
                         <texture>dialogs/videoinfo/time-icon.png</texture>
                     </control>
                     <control type="label">
@@ -1847,7 +1857,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                        <textcolor>aawhite</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1861,6 +1872,7 @@
                         <posy>3</posy>
                         <width>49</width>
                         <height>49</height>
+						<colordiffuse>$VAR[Views_FontColor]</colordiffuse>
                         <texture>dialogs/videoinfo/genre-icon.png</texture>
                     </control>
                     <control type="label">
@@ -1870,7 +1882,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Genre]</label>
-                        <textcolor>aawhite</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1884,6 +1897,7 @@
                         <posy>5</posy>
                         <width>49</width>
                         <height>49</height>
+						<colordiffuse>$VAR[Views_FontColor]</colordiffuse>
                         <texture>dialogs/videoinfo/director-icon.png</texture>
                     </control>
                     <control type="label">
@@ -1893,7 +1907,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Director]</label>
-                        <textcolor>aawhite</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1907,6 +1922,7 @@
                         <posy>2</posy>
                         <width>49</width>
                         <height>49</height>
+						<colordiffuse>$VAR[Views_FontColor]</colordiffuse>
                         <texture>dialogs/videoinfo/writer-icon.png</texture>
                     </control>
                     <control type="label">
@@ -1916,7 +1932,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Writer]</label>
-                        <textcolor>aawhite</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1932,7 +1949,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Studio,$LOCALIZE[572]: ,]</label>
-                        <textcolor>aawhite</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1948,7 +1966,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Property(TotalEpisodes),$LOCALIZE[20360]: ,]</label>
-                        <textcolor>aawhite</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1964,7 +1983,8 @@
                         <font>Reg34</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Property(unWatchedepisodes),$LOCALIZE[31092]: ,]</label>
-                        <textcolor>aawhite</textcolor>
+                        <textcolor>$VAR[Views_FontColor]</textcolor>
+						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                         <scroll>false</scroll>
                     </control>
                 </control>
@@ -1973,7 +1993,7 @@
             <control type="group">
                 <orientation>horizontal</orientation>
                 <posy>520</posy>
-                <posx>105</posx>
+                <posx>100</posx>
                 <!--Flags Video-->
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                 <visible>!IsEmpty(ListItem.VideoCodec)</visible>
@@ -1984,7 +2004,7 @@
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-                <posx>1050</posx>
+                <posx>1040</posx>
                 <posy>260</posy>
                 <width>780</width>
                 <height>495</height>
@@ -1994,9 +2014,10 @@
                     <width>780</width>
                     <height>287</height>
                     <label>$INFO[ListItem.Plot]</label>
-                    <textcolor>bbwhite</textcolor>
+                    <textcolor>$VAR[Views_FontColor]</textcolor>
+					<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                     <align>justify</align>
-                    <font>Light32</font>
+                    <font>Reg31</font>
                 </control>
             </control>
         </control>

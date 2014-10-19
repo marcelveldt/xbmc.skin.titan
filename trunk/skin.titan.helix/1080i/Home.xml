@@ -4,30 +4,23 @@
     <defaultcontrol always="true">300</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <include>defaultskinsettings</include>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;levels=0)</onload>
 	<onload condition="Skin.HasSetting(AutoShowSubmenu)">SetProperty(submenuloading,loading,Home)</onload>
 	<onload condition="System.HasAddon(plugin.video.xbmb3c)">RunScript(plugin.video.xbmb3c,skin)</onload>
-    <onload>Skin.Reset(youtube)</onload>
+	<onunload>XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,HIDE)</onunload>
 	<backgroundcolor>0</backgroundcolor>
 	<onload>300</onload>
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>
-		<!-- hubs background -->
-		<control type="image">
-            <include>DimensionsFullscreen</include>
-            <fadetime>1000</fadetime>
-            <colordiffuse>FF666666</colordiffuse>
-            <texture background="true">$VAR[HomeMenuHubBackground]</texture>
-			<aspectratio>scale</aspectratio>
-            <visible>ControlGroup(77777).HasFocus</visible>
-        </control>
+		
         <!--NowPlaying-->
         <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
         <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
 		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
 		
-		<!-- home menu hubs -->
-		<include>HomeMenuHub</include>
+		<!-- home menu Widgets -->
+		<include>HomeMenuWidget</include>
 		
 		<!-- Header -->
         <include>Header</include>
@@ -46,7 +39,7 @@
             <include condition="Skin.String(GadgetRows, 1)">Gadget1Row</include>
             <include condition="!Skin.String(GadgetRows, 1)">Gadget2Row</include>
 
-			<animation type="Conditional" condition="[Skin.HasSetting(ShowNextUppanel) + !Skin.HasSetting(AutoShowHubs)] | ControlGroup(77777).HasFocus">
+			<animation type="Conditional" condition="[Skin.HasSetting(ShowNextUppanel) + !Skin.HasSetting(AutoShowWidgets)] | ControlGroup(77777).HasFocus">
                 <effect type="slide" start="0,-0" end="0,800" time="800" tween="cubic" easing="inout" />
             </animation>
 
@@ -117,7 +110,7 @@
                         <width>149</width>
                         <height>30</height>
                         <texture>basichome_up.png</texture>
-						<visible>!IsEmpty(ListItem.Property(widgettype)) + [[Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,0) | StringCompare(Container(300).Position,2) | StringCompare(Container(300).Position,4)]] | Skin.String(GadgetRows, 1)]</visible>
+						<visible>!IsEmpty(ListItem.Property(widget)) + [[Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,0) | StringCompare(Container(300).Position,2) | StringCompare(Container(300).Position,4)]] | Skin.String(GadgetRows, 1)]</visible>
                     </control>
 					<control type="image">
                         <!--widget Arrow DOWN-->
@@ -128,7 +121,7 @@
                         <height>30</height>
                         <texture>basichome_down.png</texture>
 						<!-- show arrow down button if submenu available or widget at 2 rows of home tiles -->
-						<visible>[!IsEmpty(ListItem.Property(submenu)) + !skin.hastheme(classic) + !Skin.String(GadgetRows, 2)] | [!IsEmpty(ListItem.Property(widgettype)) + Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
+						<visible>[SubString(ListItem.Property(HasSubMenu), True) + Skin.String(GadgetRows, 1)] | [!IsEmpty(ListItem.Property(widget)) + Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
 					</control>
 					
                     <control type="image">
@@ -206,17 +199,20 @@
                         <aligny>center</aligny>
                         <label>-</label>
                         <visible>false</visible>
-						<onfocus condition="Skin.HasSetting(UseSectionBackground)">Skin.SetString(SectionBackground,$VAR[SectionBackgroundImage])</onfocus>
+						<onfocus>Skin.SetString(customwidget, recent)</onfocus>
+						<onfocus condition="Skin.HasSetting(UseSectionBackground)">Skin.SetString(SectionBackground,$VAR[varBackground])</onfocus>
+						<onfocus condition="!Skin.HasSetting(UseSectionBackground)">Skin.Reset(SectionBackground)</onfocus>
 						<onfocus>SetProperty(submenupos,$INFO[Container(300).Position],Home)</onfocus>
-						<onfocus>SetProperty(submenutype,$INFO[Container(300).ListItem.Property(submenu)],Home)</onfocus>
-                        <onfocus condition="Skin.String(CustomBackgroundSetting, fanart)">SetProperty(MB3.Background.Collection, $INFO[Container(300).ListItem.Label], Home)</onfocus>
+						<onfocus condition="SubString(Container(300).ListItem.Property(hasSubmenu), True)">SetProperty(submenutype,$INFO[Container(300).ListItem.Property(submenuVisibility)],Home)</onfocus>
+						<onfocus condition="!SubString(Container(300).ListItem.Property(hasSubmenu), True)">ClearProperty(submenutype,Home)</onfocus>
+                        <onfocus condition="SubString(Container(300).ListItem.Property(labelID),info-window-home-property-titanmb3)">SetProperty(MB3.Background.Collection, $INFO[Container(300).ListItem.Label], Home)</onfocus>
 						<onfocus condition="Skin.HasSetting(AutoShowSubmenu) + skin.hastheme(classic)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW,4444)</onfocus>
 						<onfocus condition="Skin.HasSetting(AutoShowSubmenu) + !skin.hastheme(classic)">XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,SHOW)</onfocus>
                     </control>
                 </control>
             </focusedlayout>
             <content>
-                <include>HomeMenu</include>
+				<include>skinshortcuts-mainmenu</include>
             </content>
         </control>
 		
@@ -231,7 +227,7 @@
             <onright>300</onright>
             <onleft>300</onleft>
             <texturefocus colordiffuse="lightgrey">icons/icon_power.png</texturefocus>
-            <texturenofocus>icons/icon_power.png</texturenofocus>
+            <texturenofocus colordiffuse="$VAR[TextColor_white]">icons/icon_power.png</texturenofocus>
             <onclick>ActivateWindow(111)</onclick>
 			<onfocus>ActivateWindow(111)</onfocus>
 			<visible>!Control.IsVisible(445) + !ControlGroup(77777).HasFocus() + !Control.HasFocus(4444)+ !Window.IsVisible(DialogButtonMenu.xml)</visible>

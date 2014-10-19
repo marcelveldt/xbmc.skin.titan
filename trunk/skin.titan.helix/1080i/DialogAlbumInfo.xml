@@ -11,13 +11,6 @@
             <include>animation_dialog</include>
             <!--Panel-->
             <control type="image">
-                <posx>920</posx>
-                <posy>249</posy>
-                <width>80</width>
-                <height>60</height>
-                <texture>dialogs/default/arrow.png</texture>
-            </control>
-            <control type="image">
                 <posx>284</posx>
                 <posy>269</posy>
                 <width>1352</width>
