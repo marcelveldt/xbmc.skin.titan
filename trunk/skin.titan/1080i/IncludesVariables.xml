@@ -414,7 +414,7 @@
     </variable>
 	
 	<variable name="HomeMenuWidgetInfoLabel2">
-		<value condition="[!IsEmpty(Container(510).ListItem.Property(EpisodeNo)) | !IsEmpty(Container(510).ListItem.Season))] + [!IsEmpty(Container(510).ListItem.Property(clearlogo)) | !IsEmpty(Container(510).ListItem.Art(clearlogo))]">[CR]</value>
+		<value condition="[!IsEmpty(Container(510).ListItem.Property(EpisodeNo)) | !IsEmpty(Container(510).ListItem.Season)] + [!IsEmpty(Container(510).ListItem.Property(clearlogo)) | !IsEmpty(Container(510).ListItem.Art(clearlogo))]">[CR]</value>
 		<value condition="!IsEmpty(Container(510).ListItem.TvShowTitle)">$INFO[Container(510).ListItem.TvShowTitle]</value>
 		<value condition="!IsEmpty(Container(510).ListItem.Tagline)">$INFO[Container(510).ListItem.Tagline]</value>
 		<value condition="IsEmpty(Container(510).ListItem.Art(clearlogo)) + StringCompare(Container(300).ListItem.Property(widget),tvshows)">$INFO[Container(510).ListItem.Label2]</value>
@@ -663,7 +663,7 @@
 	 </variable>
 	 
 	 <variable name="NetflixWidgetContentTvShows">
-		<value condition="Skin.HasSetting(SubString(skin.string(TvShowsWidget),latest)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
+		<value condition="Skin.HasSetting(SubString(skin.string(TvShowsWidget),latest))">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson</value>
 		<value condition="SubString(skin.string(TvShowsWidget),random)">plugin://plugin.video.netflixbmc/?mode=listSliderVideos&amp;thumb&amp;type=tv&amp;url=slider_3</value>
 		<value condition="SubString(skin.string(TvShowsWidget),inprogress)">plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall</value>
 	 </variable>
@@ -880,7 +880,7 @@
 		<value condition="SubString(Container(300).ListItem.Property(defaultID),$LOCALIZE[31036]) + StringCompare(Container(300).ListItem.Property(Background),fanart)">$INFO[Window(Home).Property(xbmb3c.std.movies.3.image)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(Background),fanart)">$VAR[globalFanartBackground]</value>
 		<!-- custom background -->
-		<value condition="!IsEmpty(Container(300).ListItem.Property(Background) + ![StringCompare(Container(300).ListItem.Property(Background),fanart) | StringCompare(Container(300).ListItem.Property(Background),global | StringCompare(Container(300).ListItem.Property(Background),default))]">$INFO[Container(300).ListItem.Property(Background)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(Background)) + ![StringCompare(Container(300).ListItem.Property(Background),fanart) | StringCompare(Container(300).ListItem.Property(Background),global) | StringCompare(Container(300).ListItem.Property(Background),default)]">$INFO[Container(300).ListItem.Property(Background)]</value>
 		<!-- always fallback to global -->
 		<value>$VAR[globalBackground]</value>
 	</variable>
