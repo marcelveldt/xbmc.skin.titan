@@ -13,7 +13,7 @@
 		<visible>!Window.IsActive(DialogButtonMenu.xml)</visible>
 		<visible>!Window.IsActive(DialogKaiToast.xml)</visible>
 		<include>GlobalBackground</include>
-		<include>DialogOverlayExtra</include>
+		<include>DialogOverlay</include>
 		
 		<control type="group">
 			
@@ -25,7 +25,7 @@
                     <posy>-100</posy>
                     <width>2050</width>
                     <height>440</height>
-                    <texture border="39">dialogs/default/bg.png</texture>
+                    <texture border="39">views/filemanager_panel1.png</texture>
                 </control>
 			
 			<control type="multiimage">

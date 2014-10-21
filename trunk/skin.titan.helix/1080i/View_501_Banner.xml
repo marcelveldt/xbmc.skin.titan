@@ -27,7 +27,7 @@
 					<include>BannerViewImagesNormal</include>
 				</itemlayout>
 				<!-- item layout for episodes -->
-				<itemlayout width="450" height="320" condition="Container.Content(Episodes)">
+				<itemlayout width="462" height="320" condition="Container.Content(Episodes)">
 					<control type="group">
 						<posy>80</posy>
 						<include>BannerViewImagesEpisodes</include>
@@ -41,7 +41,7 @@
 					</control>
 				</focusedlayout>
 				<!-- focussed layout for episodes -->
-				<focusedlayout width="450" height="320" condition="Container.Content(Episodes)">
+				<focusedlayout width="462" height="320" condition="Container.Content(Episodes)">
 					<control type="group">
 						<posy>80</posy>
 						<include>BannerViewImagesEpisodes</include>

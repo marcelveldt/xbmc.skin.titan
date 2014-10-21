@@ -1,5 +1,21 @@
 <shortcuts>
 	<shortcut>
+		<label>19069</label>
+		<label2>32017</label2>
+		<icon>DefaultTVShows.png</icon>
+		<thumb />
+		<action>ActivateWindowAndFocus(MyPVR,31,0 ,10,0)</action>
+		<version>13</version>
+	</shortcut>
+	<shortcut>
+		<label>22020</label>
+		<label2>32017</label2>
+		<icon>DefaultTVShows.png</icon>
+		<thumb />
+		<action>ActivateWindow(TVGuide)</action>
+		<version>14</version>
+	</shortcut>
+	<shortcut>
 		<label>19023</label>
 		<label2>32017</label2>
 		<icon>DefaultTVShows.png</icon>
@@ -22,22 +38,6 @@
 		<thumb />
 		<action>ActivateWindowAndFocus(MyPVR,33,0 ,12,0)</action>
 		<version>13</version>
-	</shortcut>
-	<shortcut>
-		<label>19069</label>
-		<label2>32017</label2>
-		<icon>DefaultTVShows.png</icon>
-		<thumb />
-		<action>ActivateWindowAndFocus(MyPVR,31,0 ,10,0)</action>
-		<version>13</version>
-	</shortcut>
-	<shortcut>
-		<label>22020</label>
-		<label2>32017</label2>
-		<icon>DefaultTVShows.png</icon>
-		<thumb />
-		<action>ActivateWindow(TVGuide)</action>
-		<version>14</version>
 	</shortcut>
 	<shortcut>
 		<label>19163</label>

@@ -153,12 +153,13 @@
 					<width>465</width>
 					<align>center</align>
 					<onclick>noop</onclick>
+					<visible>false</visible>
 				</control>
 				
 				<control type="button" id="301"> <!--new shortcut-->
 					<width>465</width>
 					<align>center</align>
-					<onclick>noop</onclick>
+					<onclick>AlarmClock(setshortcut,SendClick(401),00:01,silent) </onclick>
 					<label>$ADDON[script.skinshortcuts 32000]</label>
 				</control>
 				
@@ -194,23 +195,7 @@
 					<width>465</width>
 					<align>center</align>
 					<onclick>noop</onclick>
-					<label>$ADDON[script.skinshortcuts 32026]</label>
-					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-				</control>
-				
-				<control type="button" id="307"> <!--edit action-->
-					<width>465</width>
-					<align>center</align>
-					<onclick>noop</onclick>
-					<label>$ADDON[script.skinshortcuts 32027]</label>
-				</control>
-
-				<control type="button" id="1308"> <!--reset-->
-					<width>465</width>
-					<align>center</align>
-					<onclick>Dialog.Close(all, true)</onclick>
-					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
-					<label>$ADDON[script.skinshortcuts 32028]</label>
+					<label>31011</label>
 					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 				</control>
 				
@@ -226,8 +211,16 @@
 					<width>465</width>
 					<align>center</align>
 					<onclick>noop</onclick>
-					<label>$ADDON[script.skinshortcuts 32045]</label>
-					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+					<label>31169</label>
+					<visible>StringCompare(Window.Property(groupname),mainmenu) + Skin.HasSetting(UseSectionBackground)</visible>
+				</control>
+				
+				<control type="button" id="1310"> <!--background-->
+					<width>465</width>
+					<align>center</align>
+					<onclick>Notification(Section backgrounds are disabled, please enable section backgrounds to set custom backgrounds for tiles) </onclick>
+					<label>31169</label>
+					<visible>StringCompare(Window.Property(groupname),mainmenu) + !Skin.HasSetting(UseSectionBackground)</visible>
 				</control>
 
 				<control type="button" id="405"> <!--sub menu-->
@@ -235,6 +228,22 @@
 					<align>center</align>
 					<onclick>noop</onclick>
 					<label>$ADDON[script.skinshortcuts 32072]</label>
+					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				</control>
+				
+				<control type="button" id="307"> <!--edit action-->
+					<width>465</width>
+					<align>center</align>
+					<onclick>noop</onclick>
+					<label>$ADDON[script.skinshortcuts 32027]</label>
+				</control>
+				
+				<control type="button" id="1308"> <!--reset-->
+					<width>465</width>
+					<align>center</align>
+					<onclick>Dialog.Close(all, true)</onclick>
+					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+					<label>$ADDON[script.skinshortcuts 32028]</label>
 					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 				</control>
 

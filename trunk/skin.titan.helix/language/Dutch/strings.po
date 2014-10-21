@@ -57,20 +57,20 @@ msgid "--- Use random fanart for tile image"
 msgstr "--- Gebruik willekeurige fanart voor tile afbeelding"
 
 msgctxt "#31011"
-msgid "--- Use own image for tile"
-msgstr "--- Gebruik eigen afbeelding voor tile"
+msgid "Set custom tile image"
+msgstr "Gebruik eigen afbeelding voor tile"
 
 msgctxt "#31012"
 msgid "Mediabrowser integration (XBMB3C)"
 msgstr "Mediabrowser integratie (XBMB3C)"
 
 msgctxt "#31013"
-msgid "Configure Home tiles"
-msgstr "Tiles op startscherm"
+msgid "Homescreen tiles (menu)"
+msgstr "Startscherm tegels (menu)"
 
 msgctxt "#31014"
-msgid "tile"
-msgstr "tile"
+msgid "Configure menu tiles"
+msgstr "Configureer menu tegels"
 
 msgctxt "#31015"
 msgid "--- Use default tile picture"
@@ -121,8 +121,8 @@ msgid "Use random fanart background"
 msgstr "Gebruik willekeurige fanart afbeeldingen voor achtergrond"
 
 msgctxt "#31027"
-msgid "Use background based on selected tile"
-msgstr "Gebruik achtergrond op basis van geselecteerde tile"
+msgid "Use default background for this section"
+msgstr "Gebruik standaard achtergrond voor deze sectie"
 
 msgctxt "#31028"
 msgid "Other skin tweaks"
@@ -579,16 +579,16 @@ msgid "Show Fanart background"
 msgstr "Toon Fanart achtergrond"
 
 msgctxt "#31142"
-msgid "Use global background for all sections"
-msgstr "Gebruik algemene achtergrond voor alle secties"
+msgid "Global background settings"
+msgstr "Algemene achtergrond instellingen"
 
 msgctxt "#31143"
-msgid "Enable section-based backgrounds"
-msgstr "Gebruik achtergrond afhankelijk van de sectie"
+msgid "The global background you selected is applied everywhere in the skin. It is possible to override the global background on different sections of the skin. If you enable the section based backgrounds you can set a different background on a tile, so if you hover over that tile in the homescreen you will get that background. Also your override will be applied to whatever section that tile opens. So, for example if you have chosen a custom background for the Live TV tile and you click that tile, you will also get your selected background in the Live TV section. Off course if no background is chosen for a tile, it will always fallback to the global background. You can set your own overrides in the configuration page for the home tiles."
+msgstr De algemene achtergrond die je kiest wordt overal in de skin toegepast. Het is mogelijk om de algemene achtergrond te overrulen op basis van de sectie waar je je bevind. Indien je de sectie-gebaseerde achtergronden inschakelt kun je een achtergrond kiezen op basis van een tegel op het startscherm. Als je dan bijvoorbeeld een aangepaste achtergrond instelt op de Live TV tegel, en je gaat over de tegel in het startscherm zal de achtergrond veranderen naar jouw keuze. Ook zal die achtergrond worden toegepast zodra je Live TV opent. Je kunt je eigen achtergrond instellen op de tegels in het configuratiescherm voor de startmenu tegels.
 
 msgctxt "#31144"
-msgid "Section:"
-msgstr "Sectie:"
+msgid "Enable section based backgrounds"
+msgstr "Gebruik achtergrond afhankelijk van de tile"
 
 
 msgctxt "#31145"
@@ -680,6 +680,34 @@ msgctxt "#31166"
 msgid "Edit Submenu"
 msgstr "Submenu bewerken"
 
+msgctxt "#31167"
+msgid "Configure the Home screen menu layout"
+msgstr "Het startscherm menu aanpassen"
+
+msgctxt "#31168"
+msgid "This skin is integrated with the skinshortcuts script to provide you maximized flexibility in how you want to arrange your homescreen menu’s. You’re able to add and delete tiles on the homescreen, change the images, define submenus etc. Click the button below to get started modifying the skin menu’s to your own preferences."
+msgstr "Deze skin maakt gebruik van de zeer krachtige skinshortcuts-addon zodat je bent voorzien van maximale mogelijkheden om de startscherm menu’s naar je eigen wens in te richten. Zo kun je knoppen (tegels) toevoegen en verwijderen, submenu’s en widgets instellen etc. Klik op de onderstaande knop om te beginnen met het aanpassen van het menu naar jouw smaak."
+
+msgctxt "#31169"
+msgid "Override background"
+msgstr "Aangepaste achtergrond"
+
+msgctxt "#31170"
+msgid "Reset menu to skin's defaults"
+msgstr ""
+
+msgctxt "#31171"
+msgid "One of the main advantages of using the skinshortcuts-script is that your menu layout is shared across skins that support this addon. This is not always convenient as you won’t get the skins default menu layout which is optimized for the skin or you have played a bit in another skin and you don’t like the menu layout now. If you see weird behavior on your home menu or you just want to start fresh and get the most out of this skin, you can reset the menu structures to the skins default settings with the button below."
+msgstr "Eén van de voordelen van de integratie van de skinshortcuts-addon is dat de menu-layout wordt gedeeld tussen skins die deze addon ondersteunen. Dit is echter niet altijd handig. Bijvoorbeeld als je eerst hebt geëxperimenteerd met een andere skin en nu deze skin wilt gaan gebruiken. Je ontvangt dan niet de standaard-inrichting van het menu welke helemaal is geoptimaliseerd voor deze skin. Indien je niet tevreden bent over de menu structuur, je vreemd gedrag van het menu ziet of indien je gewoon even vers wilt beginnen, kun je de menustructuur resetten naar de standaardinstellingen van de skin met onderstaande knop."
+
+
+msgctxt "#31172"
+msgid "Do not use overlay"
+msgstr "Geen overlay gebruiken"
+
+msgctxt "#31173"
+msgid "Use custom overlay"
+msgstr "Gebruik eigen overlay"
 
 
 msgctxt "#31399"

@@ -12,7 +12,7 @@
         <posx>45</posx>
         <posy>175</posy>
         <width>1836</width>
-        <height>800</height>
+        <height>761</height>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
         <onright>60</onright>
@@ -20,33 +20,18 @@
         <ondown>57</ondown>
         <preloaditems>4</preloaditems>
         <pagecontrol>60</pagecontrol>
-        <itemlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="382" width="258">
+        <itemlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="380" width="259">
+          <control type="image">
+            <include>BigPanelPosterDimensions</include>
+            <include>PosterThumbBG</include>
+          </control>
           <control type="image">
             <include>BigPanelPosterDimensions</include>
             <include>PosterThumb</include>
           </control>
-          <control type="image">
-				<!--Watched Overlay-->
-				<posx>218</posx>
-				<posy>49</posy>
-				<width>40</width>
-				<height>40</height>
-				<colordiffuse>ccFFFFFF</colordiffuse>
-				<texture>$VAR[WatchedImage]</texture>
-				<visible>skin.hastheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-			</control>
-			<control type="image">
-				<!--Watched Overlay-->
-				<posx>204</posx>
-				<posy>41</posy>
-				<width>60</width>
-				<height>60</height>
-				<colordiffuse>ccFFFFFF</colordiffuse>
-				<texture>$VAR[WatchedImage]</texture>
-				<visible>!skin.hastheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-			</control>
+          <include>BigpanelWatchedLabel</include>
         </itemlayout>
-        <focusedlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="382" width="258">
+        <focusedlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="380" width="259">
           <control type="image">
             <include>BigPanelPosterDimensions</include>
             <include>PosterThumbFO</include>
@@ -55,28 +40,9 @@
             <include>BigPanelPosterDimensions</include>
             <include>PosterThumb</include>
           </control>
-          <control type="image">
-				<!--Watched Overlay-->
-				<posx>218</posx>
-				<posy>49</posy>
-				<width>40</width>
-				<height>40</height>
-				<colordiffuse>ccFFFFFF</colordiffuse>
-				<texture>$VAR[WatchedImage]</texture>
-				<visible>skin.hastheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-			</control>
-			<control type="image">
-				<!--Watched Overlay-->
-				<posx>204</posx>
-				<posy>41</posy>
-				<width>60</width>
-				<height>60</height>
-				<colordiffuse>ccFFFFFF</colordiffuse>
-				<texture>$VAR[WatchedImage]</texture>
-				<visible>!skin.hastheme(classic) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-			</control>
+          <include>BigpanelWatchedLabel</include>
         </focusedlayout>
-        <itemlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MyPics.xml)" height="259" width="258">
+        <itemlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml)" height="266" width="270">
           <control type="image">
             <include>BigPanelSquareDimensions</include>
             <include>SquareThumbBG</include>
@@ -86,7 +52,7 @@
             <include>SquareThumb</include>
           </control>
         </itemlayout>
-        <focusedlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MyPics.xml)" height="259" width="258">
+        <focusedlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml)" height="266" width="270">
           <control type="image">
             <include>BigPanelSquareDimensions</include>
             <include>SquareThumbFO</include>
@@ -96,9 +62,8 @@
             <include>SquareThumb</include>
           </control>
         </focusedlayout>
-        <itemlayout condition="container.content(episodes)" height="260" width="365">
+        <itemlayout condition="![Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml)]" height="253" width="366">
           <control type="group">
-			<posy>20</posy>
 			  <control type="image">
 				<include>BigPanelEpisodeDimensions</include>
 				<include>EpisodeThumbBG</include>
@@ -109,16 +74,16 @@
 			  </control>
 			<control type="image">
 				<posx>18</posx>
-				<posy>58</posy>
+				<posy>45</posy>
 				<width>342</width>
-				<height>206</height>
+				<height>195</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
 				<texture diffuse="home/home_matte2.png">home/home_overlay.png</texture>
 			</control>
 			<control type="label">
 				<include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
 				<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
-				<posy>200</posy>
+				<posy>175</posy>
 				<width>320</width>
 				<height>60</height>
 				<font>Reg25</font>
@@ -129,7 +94,7 @@
 			<control type="image">
 				<!--Watched Overlay-->
 				<posx>315</posx>
-				<posy>25</posy>
+				<posy>18</posy>
 				<width>40</width>
 				<height>40</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
@@ -139,7 +104,7 @@
 			<control type="image">
 				<!--Watched Overlay-->
 				<posx>301</posx>
-				<posy>17</posy>
+				<posy>10</posy>
 				<width>60</width>
 				<height>60</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
@@ -148,9 +113,8 @@
 			</control>
 		</control>
         </itemlayout>
-        <focusedlayout condition="container.content(episodes)" height="260" width="365">
+        <focusedlayout condition="![Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml)]" height="253" width="366">
           <control type="group">
-			<posy>20</posy>
 			  <control type="image">
 				<include>BigPanelEpisodeDimensions</include>
 				<include>EpisodeThumbFO</include>
@@ -161,16 +125,16 @@
 			  </control>
 			  <control type="image">
 				<posx>18</posx>
-				<posy>58</posy>
+				<posy>45</posy>
 				<width>342</width>
-				<height>206</height>
+				<height>195</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
 				<texture diffuse="home/home_matte2.png">home/home_overlay.png</texture>
 			</control>
 			<control type="label">
 				<include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
 				<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
-				<posy>200</posy>
+				<posy>175</posy>
 				<width>320</width>
 				<height>60</height>
 				<font>Reg25</font>
@@ -181,7 +145,7 @@
 			<control type="image">
 				<!--Watched Overlay-->
 				<posx>315</posx>
-				<posy>25</posy>
+				<posy>18</posy>
 				<width>40</width>
 				<height>40</height>
 				<texture>$VAR[WatchedImage]</texture>
@@ -190,7 +154,7 @@
 			<control type="image">
 				<!--Watched Overlay-->
 				<posx>301</posx>
-				<posy>17</posy>
+				<posy>10</posy>
 				<width>60</width>
 				<height>60</height>
 				<texture>$VAR[WatchedImage]</texture>
@@ -198,53 +162,7 @@
 			</control>
 		</control>
         </focusedlayout>
-        <itemlayout condition="![Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons) | container.content(episodes) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MyPics.xml)]" height="280" width="354">
-          <control type="image">
-            <posx>2</posx>
-            <posy>12</posy>
-            <width>350</width>
-            <height>276</height>
-            <texture fallback="DefaultFolder.png" background="true">$INFO[ListItem.thumb]</texture>
-            <bordertexture border="25">img/FrameNF.png</bordertexture>
-            <bordersize>27</bordersize>
-            <aspectratio>keep</aspectratio>
-          </control>
-          <control type="label">
-            <include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
-			<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
-            <posy>270</posy>
-            <width>320</width>
-            <height>30</height>
-            <align>center</align>
-            <font>Reg32</font>
-            <scroll>false</scroll>
-            <label>$INFO[ListItem.Label]</label>
-          </control>
-        </itemlayout>
-        <focusedlayout condition="![Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons) | container.content(episodes) Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(MyPics.xml)]" height="280" width="354">
-          <control type="image">
-            <posx>2</posx>
-            <posy>12</posy>
-            <width>350</width>
-            <height>276</height>
-            <texture fallback="DefaultFolder.png" background="true">$INFO[ListItem.thumb]</texture>
-            <bordertexture border="25">img/Frame.png</bordertexture>
-            <bordersize>27</bordersize>
-            <aspectratio>keep</aspectratio>
-          </control>
-          <control type="label">
-            <include condition="!SubString(System.BuildVersion,14,left)">BigPanelLabelPosGotham</include>
-			<include condition="SubString(System.BuildVersion,14,left)">BigPanelabelPosHelix</include>
-            <posy>270</posy>
-            <width>320</width>
-            <height>30</height>
-            <align>center</align>
-            <font>Reg32</font>
-            <textcolor>white</textcolor>
-            <label>$INFO[ListItem.Label]</label>
-          </control>
-        </focusedlayout>
-      </control>
+	  </control>
       <control type="scrollbar" id="60">
         <animation effect="slide" start="0,0" end="-8,0" time="150">Focus</animation>
         <animation effect="slide" start="-8,0" end="0,0" time="300">UnFocus</animation>

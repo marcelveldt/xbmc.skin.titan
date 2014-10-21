@@ -52,7 +52,7 @@
 			<control type="image">
                 <visible>Control.IsVisible(58) + !IsEmpty(ListItem.Label)</visible>
                 <posx>-60</posx>
-                <posy>665</posy>
+                <posy>668</posy>
                 <width>2100</width>
                 <height>340</height>
                 <texture>views/filemanager_panel1.png</texture>
@@ -97,7 +97,7 @@
                 <orientation>horizontal</orientation>
                 <preloaditems>2</preloaditems>
 
-                <itemlayout height="800" width="500" condition="!Container.Content(albums)">
+                <itemlayout height="800" width="500" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
                     <control type="image">
 						<!--Poster-->
 						<width>480</width>
@@ -123,7 +123,7 @@
 						<visible>!Skin.HasSetting(HideWatchedOverlayLargePoster)</visible>
 					</control>
                 </itemlayout>
-                <focusedlayout height="800" width="500" condition="!Container.Content(albums)">
+                <focusedlayout height="800" width="500" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
 					<control type="image">
 						<!--Poster-->
 						<width>480</width>
@@ -199,12 +199,19 @@
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
             </control>
+			<control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1100</width>
+                <height>40</height>
+                <label></label>
+            </control>
 			 <!--Flags-->
             <control type="group">
                 <orientation>horizontal</orientation>
-                <posy>30</posy>
+                <posy>60</posy>
                 <posx>0</posx>
-				<height>30</height>
+				<height>60</height>
                 <!--Flags Video-->
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                 <visible>!IsEmpty(ListItem.VideoCodec)</visible>

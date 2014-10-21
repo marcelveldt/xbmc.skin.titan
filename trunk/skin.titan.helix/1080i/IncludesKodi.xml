@@ -1331,8 +1331,15 @@
 		<posx>25</posx>
 	</include>
 	
-	<include name="BannerViewLabelPosEpisodesGotham">
+	<include name="BigPanelWatchedLabelPosGotham">
+		<posx>250</posx>
+	</include>
+	<include name="BigPanelWatchedlabelPosHelix">
 		<posx>200</posx>
+	</include>
+	
+	<include name="BannerViewLabelPosEpisodesGotham">
+		<posx>210</posx>
 	</include>
 	
 	<include name="BannerViewLabelPosEpisodesHelix">

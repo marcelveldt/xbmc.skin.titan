@@ -35,7 +35,7 @@
 			<control type="label">
 				<posx>52</posx>
 				<posy>-30</posy>
-				<width>250</width>
+				<width>500</width>
 				<height>80</height>
 				<align>left</align>
 				<label>$INFO[Container(300).ListItem.Label]</label>
@@ -121,7 +121,7 @@
 		<defaultcontrol>4444</defaultcontrol>
 			<visible>SubString(Container(300).ListItem.Property(hasSubmenu), True)</visible>
 			<animation effect="fade" start="100" end="0" time="400" tween="sine" delay="0" easing="in" condition="!SubString(Window(Home).Property(submenu),show)">Conditional</animation>
-			
+			<posy>30</posy>
 			<!--submenu right 1-row pos 0-->
 			<control type="group">
 				<posx>590</posx>

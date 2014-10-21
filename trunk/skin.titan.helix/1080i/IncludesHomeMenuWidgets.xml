@@ -2,26 +2,26 @@
 <includes>
 
 	<include name="WidgetPositionNormal">
-        <posy>222</posy>
+        <posy>202</posy>
 		<animation type="Conditional" condition="ControlGroup(77777).HasFocus">
-                <effect type="slide" start="0,-4" end="0,304" time="800" tween="cubic" easing="inout" />
+                <effect type="slide" start="0,-4" end="0,324" time="800" tween="cubic" easing="inout" />
 		</animation>
     </include>
 	
 	<include name="WidgetPositionOutside">
-        <posy>-350</posy>
+        <posy>-370</posy>
 		<animation type="Conditional" condition="ControlGroup(77777).HasFocus + !Skin.HasSetting(AutoShowWidgets)">
-                <effect type="slide" start="0,0" end="0,850" time="800" tween="cubic" easing="inout" />
+                <effect type="slide" start="0,0" end="0,870" time="800" tween="cubic" easing="inout" />
 		</animation>
     </include>
 	
 	<include name="WidgetPositionTop">
-        <posy>0</posy>
+        <posy>15</posy>
 		<animation type="Conditional" condition="!IsEmpty(Container(300).ListItem.Property(widget))">
-                <effect type="slide" start="0,-400" end="0,-4" time="800" tween="cubic" easing="inout" />
+                <effect type="slide" start="0,-420" end="0,-4" time="800" tween="cubic" easing="inout" />
 		</animation>
 		<animation type="Conditional" condition="ControlGroup(77777).HasFocus + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)">
-                <effect type="slide" start="0,-4" end="0,504" time="800" tween="cubic" easing="inout" />
+                <effect type="slide" start="0,-4" end="0,524" time="800" tween="cubic" easing="inout" />
 		</animation>
     </include>
 
@@ -32,6 +32,7 @@
 			<animation type="Conditional" condition="ControlGroup(77777).HasFocus">
                 <effect type="slide" start="0,-0" end="0,600" time="800" tween="cubic" easing="inout" />
             </animation>
+			 <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
 			<height>560</height>
 			<posy>-700</posy>
 			<posx>20</posx>
@@ -41,6 +42,15 @@
                     <texture border="39">views/filemanager_panel1.png</texture>
                     <aspectratio>stretch</aspectratio>
                     <height>587</height>
+					<visible>skin.hastheme(classic)</visible>
+            </control>
+			<control type="image">
+					<posx>-100</posx>
+					<width>2050</width>
+                    <texture border="39">views/filemanager_panel1.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                    <height>587</height>
+					<visible>!skin.hastheme(classic)</visible>
             </control>
 
 			<control type="label">
@@ -125,7 +135,7 @@
 				<include condition="!Skin.HasSetting(AutoShowWidgets)">WidgetPositionOutside</include>
 				<include condition="Skin.String(GadgetRows, 1) + Skin.HasSetting(AutoShowWidgets)">WidgetPositionNormal</include>
 				<include condition="Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)">WidgetPositionTop</include>
-				<visible>!IsEmpty(Container(300).ListItem.Property(widget))</visible>
+				<visible>!IsEmpty(Container(300).ListItem.Property(widget)) + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</visible>
 				
 			
 				<animation time="400" effect="fade">Visible</animation>
@@ -165,21 +175,21 @@
 				
 				<control type="image">
 					<!--Panel Shadow-->
-					<posx>-25</posx>
-					<posy>-30</posy>
-					<width>1931</width>
-					<height>358</height>
+					<posx>-100</posx>
+					<posy>-41</posy>
+					<width>2080</width>
+					<height>368</height>
 					<texture>home/home_shadow.png</texture>
 					<visible>!skin.hastheme(classic)</visible>
 				</control>
 				
 				<control type="image">
-					<posx>-15</posx>
-					<posy>-40</posy>
-					<width>1925</width>
+					<posx>-100</posx>
+					<posy>-60</posy>
+					<width>2080</width>
                     <texture border="39">views/filemanager_panel1.png</texture>
                     <aspectratio>stretch</aspectratio>
-                    <height>400</height>
+                    <height>420</height>
 					<visible>!skin.hastheme(classic)</visible>
                 </control>
 				

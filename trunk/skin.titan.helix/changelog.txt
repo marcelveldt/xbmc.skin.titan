@@ -1,4 +1,4 @@
-v.3.1.0
+v.3.1.1
 - script skinshortcuts is now used for maximized flexibility
 - improved submenus and widgets
 - fixed several bugs

@@ -104,11 +104,11 @@
                     <include>SubMenuButton</include>
                     <label>View: $INFO[Container.Viewmode]</label>
                     <onclick>Container.NextViewMode</onclick>
-					<onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Movies)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,00)</onclick>
-                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(seasons)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,00)</onclick>
-                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(TVShows)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,00)</onclick>
-                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Episodes)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,00)</onclick>
-                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Sets)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,00)</onclick>
+					<onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Movies)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(seasons)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(TVShows)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Episodes)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Sets)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,00)</onclick>
 				</control>
 				
 				<control type="radiobutton" id="341">
