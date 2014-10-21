@@ -269,7 +269,7 @@ class TitanThread ():
                 self.current_channel_art = next
                 backGroundUrl = nextItem["url"]
         elif (filterOnCollectionName == "musicvideos"):
-            if(len(self.channels_art_links) > 0):
+            if(len(self.musicvideo_art_links) > 0):
                 next, nextItem = self.findNextLink(self.musicvideo_art_links, self.current_musicvideo_art, "")
                 self.current_musicvideo_art = next
                 backGroundUrl = nextItem["url"] 
@@ -582,6 +582,11 @@ class TitanThread ():
                 win.setProperty(mbstring + ".title", win.getProperty(orgmbstring + ".title"))
                 win.setProperty(mbstring + ".type", win.getProperty(orgmbstring + ".type"))
                 win.setProperty(mbstring + ".fanart", win.getProperty(orgmbstring + ".fanart"))
+                win.setProperty(mbstring + ".recent.path", win.getProperty(orgmbstring + ".recent.path"))
+                win.setProperty(mbstring + ".unwatched.path", win.getProperty(orgmbstring + ".unwatched.path"))
+                win.setProperty(mbstring + ".inprogress.path", win.getProperty(orgmbstring + ".inprogress.path"))
+                win.setProperty(mbstring + ".genre.path", win.getProperty(orgmbstring + ".genre.path"))
+                win.setProperty(mbstring + ".nextepisodes.path", win.getProperty(orgmbstring + ".nextepisodes.path"))
                 win.setProperty(mbstring + ".path", win.getProperty(orgmbstring + ".path"))
                 
                 link = win.getProperty(orgmbstring + ".recent.path")

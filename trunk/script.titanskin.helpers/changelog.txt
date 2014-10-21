@@ -1,5 +1,6 @@
-1.0.9
-- fixes for new menu system
+1.0.10
+- support for new menu system
+- fixes for collection backgrounds from MB3
 1.0.8
 - fixed script error  for non mediabrowser users
 - optimized some code
