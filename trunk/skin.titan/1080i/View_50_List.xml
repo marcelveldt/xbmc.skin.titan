@@ -13,29 +13,33 @@
             <onunfocus condition="SubString(ListItem.FileExtension,strm) + [ListItem.IsSelected | ListItem.IsPlaying]">SetProperty(streamtitle, $INFO[ListItem.Label], Home)</onunfocus>
             <control type="image">
                 <!-- All Other -->
+				<include condition="!skin.hastheme(classic)">panelPosModern</include>
                 <posx>8</posx>
-                <posy>256</posy>
+                <posy>296</posy>
                 <width>1902</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel_noinfo1.png</texture>
                 <visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes)] + IntegerGreaterThan(Container(50).NumItems,0)</visible>
             </control>
+
             <control type="image">
                 <!-- Movies, TV-Shows, Music-Videos, seasons -->
                 <visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + IntegerGreaterThan(Container(50).NumItems,0)</visible>
-                <posx>8</posx>
-                <posy>256</posy>
+                <include condition="!skin.hastheme(classic)">panelPosModern</include>
+				<posx>8</posx>
+                <posy>296</posy>
                 <width>1902</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel1.png</texture>
             </control>
             <control type="image">
                 <!-- Episodes -->
                 <visible>Container.Content(episodes) + IntegerGreaterThan(Container(50).NumItems,0)</visible>
-                <posx>8</posx>
-                <posy>256</posy>
+                <include condition="!skin.hastheme(classic)">panelPosModern</include>
+				<posx>8</posx>
+                <posy>296</posy>
                 <width>1902</width>
-                <height>790</height>
+                <height>750</height>
                 <texture>views/view_50_list_panel_episodes1.png</texture>
             </control>
 			
@@ -58,7 +62,7 @@
                 <!--Poster-->
                 <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                 <posx>102</posx>
-                <posy>340</posy>
+                <posy>420</posy>
                 <width>355</width>
                 <height>500</height>
                 <!--1,407-->
@@ -69,7 +73,7 @@
                 <!--Episodes Thumb-->
                 <visible>Container.Content(episodes)</visible>
                 <posx>112</posx>
-                <posy>342</posy>
+                <posy>422</posy>
                 <width>300</width>
                 <height>168</height>
                 <!--1,78-->
@@ -81,7 +85,7 @@
                 <!--Music Cover-->
                 <visible>Container.Content(songs) | Container.Content(artists) |  Container.Content(albums)</visible>
                 <posx>130</posx>
-                <posy>410</posy>
+                <posy>490</posy>
                 <width>360</width>
                 <height>360</height>
                 <fadetime>600</fadetime>
@@ -92,7 +96,7 @@
                 <!--Others-->
                 <visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(albums) + !Container.Content(genres)</visible>
                 <posx>130</posx>
-                <posy>410</posy>
+                <posy>490</posy>
                 <width>360</width>
                 <height>360</height>
                 <fadetime>600</fadetime>
@@ -108,8 +112,8 @@
             <include>animation_list</include>
             <!-- ID="50" -->
             <control type="list" id="50">
-                <posx>0</posx>
-                <posy>320</posy>
+                <include condition="!skin.hastheme(classic)">list50posModern</include>
+                <posy>400</posy>
                 <width>1920</width>
                 <height>570</height>
                 <onleft>9000</onleft>
@@ -541,7 +545,7 @@
             <onright>noop</onright>
             <orientation>vertical</orientation>
             <posx>510</posx>
-            <posy>330</posy>
+            <posy>410</posy>
             <control type="label">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -587,7 +591,7 @@
             <include>animation_view_change</include>
             <include>animation_list</include>
             <posx>490</posx>
-            <posy>330</posy>
+            <posy>410</posy>
             <itemgap>0</itemgap>
             <onup>500</onup>
             <ondown>500</ondown>
@@ -633,7 +637,7 @@
         </control>
         <control type="group">
             <posx>510</posx>
-            <posy>550</posy>
+            <posy>590</posy>
             <width>600</width>
             <height>278</height>
             <!--Info Plot: Movies, TV-Shows, Music-Videos-->
@@ -661,7 +665,7 @@
         </control>
         <control type="group">
             <posx>110</posx>
-            <posy>520</posy>
+            <posy>600</posy>
             <width>800</width>
             <height>270</height>
             <!--Info Plot: Movies, TV-Shows, Music-Videos-->
@@ -690,7 +694,7 @@
             <include>animation_view_change</include>
             <include>animation_list</include>
             <posx>510</posx>
-            <posy>870</posy>
+            <posy>920</posy>
             <visible>!IsEmpty(ListItem.VideoCodec)</visible>
             <include>movieflags</include>
         </control>
@@ -702,7 +706,7 @@
             <include>animation_view_change</include>
             <include>animation_list</include>
             <posx>120</posx>
-            <posy>840</posy>
+            <posy>920</posy>
             <visible>!IsEmpty(ListItem.VideoCodec)</visible>
             <include>movieflags</include>
         </control>
@@ -748,7 +752,7 @@
         <!--Scollbar-->
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
-            <visible>![Window.IsActive(DialogVideoInfo.xml)<!-- + [!substring(ListItem.Path,plugin)]]--></visible>
+            <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
             <visible>IntegerGreaterThan(Container(50).NumItems,30)</visible>
             <visible>!Container.Content(songs)</visible>
             <control type="scrollbar" id="60">
@@ -756,7 +760,7 @@
                 <visible>IntegerGreaterThan(Container(50).NumItems,30)</visible>
                 <visible>!Container.Content(songs)</visible>
                 <posx>1835</posx>
-                <posy>320</posy>
+                <posy>390</posy>
                 <height>570</height>
                 <onleft>50</onleft>
                 <onright>noop</onright>
@@ -767,7 +771,7 @@
                 <!--Scrolling Letter Background-->
                 <visible>Container(50).Scrolling</visible>
                 <posx>1450</posx>
-                <posy>555</posy>
+                <posy>595</posy>
                 <width>100</width>
                 <height>100</height>
                 <texture>common/scrollbar-letter.png</texture>
@@ -778,7 +782,7 @@
                 <!--Scrolling Letter-->
                 <visible>Container(50).Scrolling</visible>
                 <posx>1450</posx>
-                <posy>555</posy>
+                <posy>595</posy>
                 <width>100</width>
                 <height>100</height>
                 <align>center</align>

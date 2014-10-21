@@ -5,6 +5,16 @@
     <texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[PosterThumb]</texture>
     <aspectratio aligny="top">stretch</aspectratio>
   </include>
+  
+  <include name="panelPosModern">
+   <posx>-80</posx>
+   <width>2070</width>
+  </include>
+  
+  <include name="list50posModern">
+   <posx>15</posx>
+  </include>
+  
   <include name="FanartThumb">
 			<control type="image">
               <posx>-8</posx>
@@ -56,37 +66,36 @@
     <texture border="8">home/home_matte2.png</texture>
   </include>
   <include name="SquareThumb">
-    <texture background="true" diffuse="cover_matte.png" fallback="cover_default.png">$INFO[ListItem.Art(thumb)]</texture>
-    <aspectratio aligny="top">stretch</aspectratio>
+    <texture background="true" diffuse="cover_matte.png" fallback="cover_default.png">$VAR[MusicSquareThumb]</texture>
+    <aspectratio aligny="top">scale</aspectratio>
   </include>
   <include name="SquareThumbBG">
     <bordersize>-6</bordersize>
-    <!--<texture>thumbs/PosterBG_NF.png</texture>-->
+    <aspectratio aligny="top">stretch</aspectratio>
 	<texture border="8" diffuse="cover_matte.png">cover_default.png</texture>
   </include>
   <include name="SquareThumbFO">
     <bordersize>-6</bordersize>
-    <!--<texture>thumbs/PosterBG_FO.png</texture>-->
+    <aspectratio aligny="top">stretch</aspectratio>
 	<texture border="8">cover_panel_fo.png</texture>
   </include>
   <include name="BigPanelPosterDimensions">
     <posx>18</posx>
-    <posy>40</posy>
-    <width>246</width>
-    <height>369</height>
+    <posy>7</posy>
+    <width>234</width>
+    <height>355</height>
   </include>
   <include name="BigPanelSquareDimensions">
     <posx>18</posx>
-    <posy>18</posy>
-    <width>247</width>
-    <height>247</height>
-    <aspectratio aligny="top">scale</aspectratio>
+    <posy>5</posy>
+    <width>236</width>
+    <height>236</height>
   </include>
   <include name="BigPanelEpisodeDimensions">
     <posx>18</posx>
-    <posy>18</posy>
+    <posy>10</posy>
     <width>342</width>
-    <height>246</height>
+    <height>230</height>
   </include>
 	
 	<include name="BannerPlexlayout">
@@ -630,6 +639,32 @@
         <font>Reg20</font>
     </include>
 	
+	<include name="BigpanelWatchedLabel">
+			<control type="image">
+				<!--Watched Overlay-->
+				<posx>192</posx>
+				<posy>7</posy>
+				<width>60</width>
+				<height>60</height>
+				<colordiffuse>ccFFFFFF</colordiffuse>
+				<texture>$VAR[WatchedImage]</texture>
+				<visible>!Skin.HasSetting(HideWatchedOverlayPoster) + !skin.hastheme(classic)</visible>
+			</control>
+			<control type="label">
+				<!--watched label-->
+				<include condition="!SubString(System.BuildVersion,14,left)">BigPanelWatchedLabelPosGotham</include>
+				<include condition="SubString(System.BuildVersion,14,left)">BigPanelWatchedlabelPosHelix</include>
+				<posy>-10</posy>
+				<width>50</width>
+				<align>right</align>
+				<label>$VAR[WatchedLabel]</label>
+				<textcolor>white</textcolor>
+				<font>Reg20</font>
+				<visible>!Skin.HasSetting(HideWatchedOverlayPoster) + !skin.hastheme(classic)</visible>
+			</control>
+	</include>
+	
+		
 	<include name="ExtendedViewWatchedLabelNormal">
         <include condition="!SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelNormalPosGotham</include>
 		<include condition="SubString(System.BuildVersion,14,left)">ExtendedViewWatchedLabelNormalPosHelix</include>
@@ -1767,6 +1802,7 @@
             <include>animation_view_change</include>
             <include>animation_list</include>
             <control type="image">
+				<include condition="!skin.hastheme(classic)">panelPosModern</include>
                 <visible>!IsEmpty(ListItem.Label)</visible>
                 <posx>8</posx>
                 <posy>165</posy>
@@ -1804,7 +1840,7 @@
                         <posx>60</posx>
                         <posy>0</posy>
                         <width>600</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Year]</label>
 						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
@@ -1829,7 +1865,7 @@
                         <posx>60</posx>
                         <posy>0</posy>
                         <width>600</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Premiered]</label>
 						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
@@ -1854,7 +1890,7 @@
                         <posx>60</posx>
                         <posy>0</posy>
                         <width>600</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
 						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
@@ -1879,7 +1915,7 @@
                         <posx>60</posx>
                         <posy>0</posy>
                         <width>800</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Genre]</label>
 						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
@@ -1904,7 +1940,7 @@
                         <posx>60</posx>
                         <posy>0</posy>
                         <width>800</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Director]</label>
 						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
@@ -1929,7 +1965,7 @@
                         <posx>60</posx>
                         <posy>0</posy>
                         <width>800</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Writer]</label>
 						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
@@ -1946,7 +1982,7 @@
                         <posx>8</posx>
                         <posy>0</posy>
                         <width>800</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Studio,$LOCALIZE[572]: ,]</label>
 						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
@@ -1963,7 +1999,7 @@
                         <posx>8</posx>
                         <posy>0</posy>
                         <width>600</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Property(TotalEpisodes),$LOCALIZE[20360]: ,]</label>
 						<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
@@ -1980,7 +2016,7 @@
                         <posx>8</posx>
                         <posy>0</posy>
                         <width>600</width>
-                        <font>Reg34</font>
+                        
                         <align>left</align>
                         <label>$INFO[ListItem.Property(unWatchedepisodes),$LOCALIZE[31092]: ,]</label>
                         <textcolor>$VAR[Views_FontColor]</textcolor>
@@ -2017,7 +2053,6 @@
                     <textcolor>$VAR[Views_FontColor]</textcolor>
 					<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                     <align>justify</align>
-                    <font>Reg31</font>
                 </control>
             </control>
         </control>

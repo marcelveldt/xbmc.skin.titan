@@ -11,7 +11,8 @@
 			
 			<control type="image">
                 <visible>Control.IsVisible(55) + !IsEmpty(ListItem.Label)</visible>
-                <posx>8</posx>
+                <include condition="!skin.hastheme(classic)">panelPosModern</include>
+				<posx>8</posx>
                 <posy>165</posy>
                 <width>1902</width>
                 <height>890</height>
@@ -93,7 +94,7 @@
                 <!-- =======-->
                 <!-- Movies -->
                 <!-- ======= -->
-                <itemlayout height="145" width="760" condition="!Container.Content(albums)">
+                <itemlayout height="145" width="760" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
                     <control type="image">
                         <!--Banner-->
                         <width>758</width>
@@ -155,7 +156,7 @@
 						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
 				</control>
                 </itemlayout>
-                <focusedlayout height="145" width="760" condition="!Container.Content(albums)">
+                <focusedlayout height="145" width="760" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
 				<control type="group">
 					<animation type="focus">
 						<effect type="zoom" start="100" end="103" center="auto,auto" time="150" />
@@ -251,7 +252,7 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
-				<font>Reg31</font>
+				
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[COLOR=mainblue]$VAR[value_ground1_label][/COLOR][COLOR=white] $VAR[value_ground1_value][/COLOR]</label>
                 <visible>!IsEmpty(Control.GetLabel(5301)) + ![Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
@@ -263,7 +264,7 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
-				<font>Reg31</font>
+				
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[B][COLOR=black]$VAR[value_ground1_label][/COLOR][/B][COLOR=darkgrey] $VAR[value_ground1_value][/COLOR]</label>
                 <visible>!IsEmpty(Control.GetLabel(5301)) + [Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
@@ -275,7 +276,7 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
-				<font>Reg31</font>
+				
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[COLOR=mainblue]$VAR[value_ground2_label][/COLOR][COLOR=white] $VAR[value_ground2_value][/COLOR]</label>
                 <visible>!IsEmpty(Control.GetLabel(5302)) + ![Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
@@ -287,7 +288,7 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
-				<font>Reg31</font>
+				
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[B][COLOR=black]$VAR[value_ground2_label][/COLOR][/B][COLOR=darkgrey] $VAR[value_ground2_value][/COLOR]</label>
                 <visible>!IsEmpty(Control.GetLabel(5302)) + [Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
@@ -298,7 +299,7 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
-				<font>Reg31</font>
+				
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[COLOR=mainblue]$VAR[value_ground3_label][/COLOR][COLOR=white] $VAR[value_ground3_value][/COLOR]</label>
                 <visible>!IsEmpty(Control.GetLabel(5303)) + ![Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
@@ -309,7 +310,7 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
-				<font>Reg31</font>
+				
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[B][COLOR=black]$VAR[value_ground3_label][/COLOR][/B][COLOR=darkgrey] $VAR[value_ground3_value][/COLOR]</label>
                 <visible>!IsEmpty(Control.GetLabel(5303)) + [Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
@@ -320,7 +321,7 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
-				<font>Reg31</font>
+				
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[COLOR=mainblue]$VAR[value_ground4_label][/COLOR][COLOR=white] $VAR[value_ground4_value][/COLOR]</label>
                 <visible>!IsEmpty(Control.GetLabel(5304)) + ![Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
@@ -331,7 +332,7 @@
                 <width>600</width>
                 <height>40</height>
                 <textcolor>mainblue</textcolor>
-				<font>Reg31</font>
+				
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <label>[B][COLOR=black]$VAR[value_ground4_label][/COLOR][/B][COLOR=darkgrey] $VAR[value_ground4_value][/COLOR]</label>
                 <visible>!IsEmpty(Control.GetLabel(5304)) + [Skin.HasSetting(View55_HidePanel) + Skin.String(ColorTheme, light)]</visible>
@@ -351,12 +352,12 @@
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>900</width>
-                <height>185</height>
+                <height>195</height>
                 <label>$INFO[ListItem.Plot]</label>
                 <textcolor>$VAR[Views_FontColor]</textcolor>
 				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
                 <align>justify</align>
-                <font>Reg31</font>
+                
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                 <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="0" easing="in">WindowClose</animation>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>

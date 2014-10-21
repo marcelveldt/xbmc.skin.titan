@@ -155,6 +155,91 @@
                 </control>
 			</control>
 			
+			<!-- configure menu -->
+			<control type="grouplist" id="6000">
+                <description>Control Area</description>
+                <width>1230</width>
+                <height>720</height>
+                <itemgap>3</itemgap>
+                <onup>8000</onup>
+                <ondown>8000</ondown>
+                <onleft>100</onleft>
+                <onright>noop</onright>
+                <orientation>vertical</orientation>
+                <visible>Container(100).Hasfocus(9)</visible>
+                
+				<control type="label" id="6001">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label>31167</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                </control>
+				
+				<control type="textbox" id="6002">
+                    <width>1100</width>
+                    <height min="160">auto</height>
+                    <font>Reg25</font>
+                    <posy>60</posy>
+                    <label>31168</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                </control>
+				
+				<control type="button" id="6003">
+					<width>1100</width>
+					<top>50</top>
+					<align>center</align>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+					<label>31014</label>
+				</control>
+				<!-- empty label -->
+				<control type="label" id="6004">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label></label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                </control>
+				<control type="label" id="6005">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label>31170</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                </control>
+				<control type="textbox" id="6006">
+                    <width>1100</width>
+                    <height min="220">auto</height>
+                    <font>Reg25</font>
+                    <posy>60</posy>
+                    <label>31171</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                </control>
+				<control type="button" id="6007">
+					<width>1100</width>
+					<top>50</top>
+					<align>center</align>
+					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+					<label>$ADDON[script.skinshortcuts 32028]</label>
+				</control>
+			</control>
+			
+			
 			<!--home menu layout-->
 			<control type="grouplist" id="13000">
                 <description>Control Area</description>
@@ -358,7 +443,7 @@
                     <width>1230</width>
                     <height>50</height>
                     <font>Bold38</font>
-                    <label>31022</label>
+                    <label>31142</label>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <align>left</align>
@@ -413,12 +498,33 @@
                     <onclick>Skin.SetImage(CustomBackgroundSetting)</onclick>
                     <selected>!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart) + !Skin.String(CustomBackgroundSetting, gadget)</selected>
                 </control>
-				<control type="radiobutton" id="5010">
+				<!--section background-->
+                <control type="label" id="5230">
+                    <width>1230</width>
+                    <height>50</height>
+                    <font>Bold38</font>
+                    <label>31144</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                </control>
+				<control type="textbox" id="5231">
+                    <width>1250</width>
+                    <height min="220">auto</height>
+                    <font>Reg25</font>
+                    <posy>60</posy>
+                    <label>31143</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                </control>
+				<control type="radiobutton" id="5232">
                     <description></description>
-                    <!--use section background-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>31143</label>
+                    <label>31144</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <onclick>Skin.ToggleSetting(UseSectionBackground)</onclick>
@@ -437,7 +543,7 @@
                     <aligny>center</aligny>
                 </control>
 				<control type="radiobutton" id="5131">
-                    <!--use light color overlay-->
+                    <!--use default color overlay-->
                     <description>Radio</description>
                     <width>1230</width>
                     <align>left</align>
@@ -458,7 +564,7 @@
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
                     <onclick>Skin.SetString(ColorTheme, light)</onclick>
-                    <selected>Skin.String(ColorTheme, Light)</selected>
+                    <selected>Skin.String(ColorTheme, light)</selected>
                 </control>
 				<control type="radiobutton" id="5133">
                     <!--use light color overlay-->
@@ -471,6 +577,30 @@
                     <font>Reg28</font>
                     <onclick>Skin.SetString(ColorTheme, dark)</onclick>
                     <selected>Skin.String(ColorTheme, dark)</selected>
+                </control>
+				<control type="radiobutton" id="5134">
+                    <!--disable overlay-->
+                    <description>Radio</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31172</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.Reset(ColorTheme)</onclick>
+                    <selected>!Skin.String(ColorTheme)</selected>
+                </control>
+				<control type="radiobutton" id="5135">
+                    <!--custom overlay-->
+                    <description>Radio</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31173</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.SetImage(ColorTheme)</onclick>
+                    <selected>Skin.String(ColorTheme) + ![Skin.String(ColorTheme, dark) | Skin.String(ColorTheme, default) | Skin.String(ColorTheme, light)]</selected>
                 </control>
             </control>
 			<!-- skin mode-->

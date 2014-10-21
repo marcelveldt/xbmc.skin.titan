@@ -8,9 +8,12 @@
 	<onload condition="Skin.HasSetting(AutoShowSubmenu)">SetProperty(submenuloading,loading,Home)</onload>
 	<onload condition="System.HasAddon(plugin.video.xbmb3c)">RunScript(plugin.video.xbmb3c,skin)</onload>
 	<onunload>XBMC.RunScript(script.titanskin.helpers,SHOWSUBMENU,HIDE)</onunload>
-	<backgroundcolor>0</backgroundcolor>
 	<onload>300</onload>
+	<onload>AlarmClock(hidesplash,SetProperty(hidesplash,hide,Home),00:5,silent)</onload>
     <controls>
+	
+	<control type="group">
+	<visible>SubString(Window(Home).Property(hidesplash),hide)</visible>
         <!--Global Background-->
         <include>GlobalBackground</include>
 		
@@ -38,8 +41,7 @@
             <width>1845</width>
             <include condition="Skin.String(GadgetRows, 1)">Gadget1Row</include>
             <include condition="!Skin.String(GadgetRows, 1)">Gadget2Row</include>
-
-			<animation type="Conditional" condition="[Skin.HasSetting(ShowNextUppanel) + !Skin.HasSetting(AutoShowWidgets)] | ControlGroup(77777).HasFocus">
+			<animation type="Conditional" condition="ControlGroup(77777).HasFocus | !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">
                 <effect type="slide" start="0,-0" end="0,800" time="800" tween="cubic" easing="inout" />
             </animation>
 
@@ -220,7 +222,7 @@
         <control type="button" id="2">
             <description>powerbutton</description>
             <posx>930</posx>
-            <posy>900</posy>
+            <posy>910</posy>
             <width>60</width>
             <height>60</height>
             <onup>300</onup>
@@ -233,11 +235,71 @@
 			<visible>!Control.IsVisible(445) + !ControlGroup(77777).HasFocus() + !Control.HasFocus(4444)+ !Window.IsVisible(DialogButtonMenu.xml)</visible>
 			<animation time="400" effect="fade">Visible</animation>
 			<animation time="200" effect="fade">Hidden</animation>
+			<visible>SubString(Window(Home).Property(hidesplash),hide)</visible>
         </control>
 		
+		
+	
 		<!-- submenu -->
 		<include condition="Skin.HasTheme(classic)">HomeMenuSubMenuVertical</include>
 		<include condition="!Skin.HasTheme(classic)">HomeMenuSubMenuHorizontal</include>
+	
+	</control>	
+		
+	<!-- splash screen -->
+	<control type="group" id="6666">
+	<include>DimensionsFullscreen</include>
+	<visible>!SubString(Window(Home).Property(hidesplash),hide)</visible>
+	<animation time="1200" effect="fade" reversible="false">Hidden</animation>
+	 <include>GlobalBackground</include>
+		<!-- loginscreen background -->
+        <control type="image">
+            <include>DimensionsFullscreen</include>
+			<include>backgroundfade</include>
+            <texture background="true">$INFO[Skin.String(LoginBackground)]</texture>
+            <fadetime>800</fadetime>
+			<visible>System.HasLoginScreen + Skin.String(LoginBackground)</visible>
+        </control>
+		<include>Footer</include>
+		
+		<control type="label">
+            <posx>80</posx>
+            <posy>985</posy>
+            <width>500</width>
+            <align>left</align>
+            <font>Reg41</font>
+            <textcolor>white</textcolor>
+            <label>20186</label>
+            <include>animation_fade_visible_hidden</include>
+            <include>animation_fade_open_close</include>
+			<visible>System.HasAddon(skin.titan)</visible>
+        </control>
+		<control type="label">
+            <posx>1840</posx>
+            <posy>985</posy>
+            <width>500</width>
+            <align>right</align>
+            <font>Reg41</font>
+            <textcolor>white</textcolor>
+            <label>Titan Mediabrowser v$INFO[System.AddonVersion(skin.titan)]</label>
+            <include>animation_fade_visible_hidden</include>
+            <include>animation_fade_open_close</include>
+			<visible>System.HasAddon(skin.titan)</visible>
+        </control>
+		<control type="label">
+            <posx>1840</posx>
+            <posy>985</posy>
+            <width>500</width>
+            <align>right</align>
+            <font>Reg41</font>
+            <textcolor>white</textcolor>
+            <label>Titan Mediabrowser v$INFO[System.AddonVersion(skin.titan.helix)]</label>
+            <include>animation_fade_visible_hidden</include>
+            <include>animation_fade_open_close</include>
+			<visible>System.HasAddon(skin.titan.helix)</visible>
+        </control>
+	</control>
+		
 		
 	</controls>
 </window>

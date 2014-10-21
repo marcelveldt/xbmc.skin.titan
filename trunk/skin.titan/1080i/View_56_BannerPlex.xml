@@ -26,14 +26,14 @@
                 <focusposition>0</focusposition>
                 <orientation>vertical</orientation>
                 <preloaditems>2</preloaditems>
-                <itemlayout height="145" width="610" condition="!Container.Content(albums)">
+                <itemlayout height="145" width="610" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
 					<control type="group">
 						<posy>10</posy>
 						<posx>10</posx>
 						<include>BannerPlexlayout</include>
 					</control>
                 </itemlayout>
-                <focusedlayout height="145" width="610" condition="!Container.Content(albums)">
+                <focusedlayout height="145" width="610" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
                     <control type="group">
 						<posy>10</posy>
 						<posx>10</posx>
