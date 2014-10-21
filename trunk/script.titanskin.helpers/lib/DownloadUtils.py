@@ -4,7 +4,6 @@ import xbmcaddon
 import urllib
 import urllib2
 import httplib
-import requests
 import hashlib
 import StringIO
 import gzip
@@ -15,7 +14,7 @@ from uuid import getnode as get_mac
 
 class DownloadUtils():
 
-    logLevel = 0
+    logLevel = 1
     addonSettings = None
     getString = None
 
