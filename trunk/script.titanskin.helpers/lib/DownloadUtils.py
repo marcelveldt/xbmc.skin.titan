@@ -4,6 +4,7 @@ import xbmcaddon
 import urllib
 import urllib2
 import httplib
+import requests
 import hashlib
 import StringIO
 import gzip
@@ -14,7 +15,7 @@ from uuid import getnode as get_mac
 
 class DownloadUtils():
 
-    logLevel = 1
+    logLevel = 0
     addonSettings = None
     getString = None
 
@@ -48,7 +49,7 @@ class DownloadUtils():
             if type != "Primary":
                 id = data.get("SeriesId")
                 getseriesdata = True
-        
+
         if getseriesdata == True:   
             mb3Host = self.addonSettings.getSetting('ipaddress')
             mb3Port = self.addonSettings.getSetting('port')    
@@ -56,7 +57,7 @@ class DownloadUtils():
             seriesJsonData = self.downloadUrl("http://" + mb3Host + ":" + mb3Port + "/mediabrowser/Users/" + userid + "/Items/" + id + "?format=json", suppress=False, popup=1 )     
             seriesResult = json.loads(seriesJsonData)
             data = seriesResult
-        
+
         imageTag = ""
         originalType = type
         if type == "Primary2" or type == "Primary3" or type=="SeriesPrimary":
@@ -74,180 +75,30 @@ class DownloadUtils():
         width = "10000"
         played = "0"
 
-        if self.addonSettings.getSetting('showIndicators')=='true': # add watched, unplayedcount and percentage played indicators to posters
-
-            if (originalType =="Primary" or  originalType =="Backdrop") and data.get("Type") != "Episode":
-                userData = data.get("UserData")
-                if originalType =="Backdrop" and index == "0":
-                  totalbackdrops = len(data.get("BackdropImageTags"))
-                  if totalbackdrops != 0:
-                    index = str(randrange(0,totalbackdrops))
-                if userData != None:
-
-                    UnWatched = 0 if userData.get("UnplayedItemCount")==None else userData.get("UnplayedItemCount")        
-
-                    if UnWatched <> 0 and self.addonSettings.getSetting('showUnplayedIndicators')=='true':
-                        query = query + "&UnplayedCount=" + str(UnWatched)
-
-
-                    if(userData != None and userData.get("Played") == True and self.addonSettings.getSetting('showWatchedIndicators')=='true'):
-                        query = query + "&AddPlayedIndicator=true"
-
-                    PlayedPercentage = 0 if userData.get("PlayedPercentage")==None else userData.get("PlayedPercentage")
-                    if PlayedPercentage == 0 and userData!=None and userData.get("PlayedPercentage")!=None :
-                        PlayedPercentage = userData.get("PlayedPercentage")
-                    if (PlayedPercentage != 100 or PlayedPercentage) != 0 and self.addonSettings.getSetting('showPlayedPrecentageIndicators')=='true':
-                        #query = query + "&PercentPlayed=" + str(PlayedPercentage)
-                        played = str(PlayedPercentage)
-
-            elif originalType =="Primary2" and data.get("Type") != "Episode":
-                userData = data.get("UserData") 
-                if userData != None:
-
-                    UnWatched = 0 if userData.get("UnplayedItemCount")==None else userData.get("UnplayedItemCount")        
-
-                    if UnWatched <> 0 and self.addonSettings.getSetting('showUnplayedIndicators')=='true':
-                        query = query + "&UnplayedCount=" + str(UnWatched)
-
-
-                    if(userData != None and userData.get("Played") == True and self.addonSettings.getSetting('showWatchedIndicators')=='true'):
-                        query = query + "&AddPlayedIndicator=true"
-
-                    PlayedPercentage = 0 if userData.get("PlayedPercentage")==None else userData.get("PlayedPercentage")
-                    if PlayedPercentage == 0 and userData!=None and userData.get("PlayedPercentage")!=None :
-                        PlayedPercentage = userData.get("PlayedPercentage")
-                    if (PlayedPercentage != 100 or PlayedPercentage) != 0 and self.addonSettings.getSetting('showPlayedPrecentageIndicators')=='true':
-                        #query = query + "&PercentPlayed=" + str(PlayedPercentage)  
-                        played = str(PlayedPercentage)
-                        
-                    #query = query + "&height=340&width=226"
-                    height = "340"
-                    width = "226"
-            elif (originalType =="Primary3" and data.get("Type") != "Episode") or originalType == "SeriesPrimary":
-                userData = data.get("UserData") 
-                if userData != None:
-
-                    UnWatched = 0 if userData.get("UnplayedItemCount")==None else userData.get("UnplayedItemCount")        
-
-                    if UnWatched <> 0 and self.addonSettings.getSetting('showUnplayedIndicators')=='true':
-                        query = query + "&UnplayedCount=" + str(UnWatched)
-
-
-                    if(userData != None and userData.get("Played") == True and self.addonSettings.getSetting('showWatchedIndicators')=='true'):
-                        query = query + "&AddPlayedIndicator=true"
-
-                    PlayedPercentage = 0 if userData.get("PlayedPercentage")==None else userData.get("PlayedPercentage")
-                    if PlayedPercentage == 0 and userData!=None and userData.get("PlayedPercentage")!=None :
-                        PlayedPercentage = userData.get("PlayedPercentage")
-                    if (PlayedPercentage != 100 or PlayedPercentage) != 0 and self.addonSettings.getSetting('showPlayedPrecentageIndicators')=='true':
-                        #query = query + "&PercentPlayed=" + str(PlayedPercentage)  
-                        played = str(PlayedPercentage)
-                        
-                    #query = query + "&height=600&width=400"
-                    height = "800"
-                    width = "550"                    
-            elif type =="Primary" and data.get("Type") == "Episode":
-                userData = data.get("UserData")
-                if userData != None:
-
-                    UnWatched = 0 if userData.get("UnplayedItemCount")==None else userData.get("UnplayedItemCount")        
-
-                    if UnWatched <> 0 and self.addonSettings.getSetting('showUnplayedIndicators')=='true':
-                        query = query + "&UnplayedCount=" + str(UnWatched)
-
-
-                    if(userData != None and userData.get("Played") == True and self.addonSettings.getSetting('showWatchedIndicators')=='true'):
-                        query = query + "&AddPlayedIndicator=true"
-
-                    PlayedPercentage = 0 if userData.get("PlayedPercentage")==None else userData.get("PlayedPercentage")
-                    if PlayedPercentage == 0 and userData!=None and userData.get("PlayedPercentage")!=None :
-                        PlayedPercentage = userData.get("PlayedPercentage")
-                    if (PlayedPercentage != 100 or PlayedPercentage) != 0 and self.addonSettings.getSetting('showPlayedPrecentageIndicators')=='true':
-                        #query = query + "&PercentPlayed=" + str(PlayedPercentage)
-                        played = str(PlayedPercentage)
-                        
-                    #query = query + "&height=225&width=400"
-                    height = "410"
-                    width = "770"                       
-            elif originalType =="Backdrop2" or originalType =="Thumb2" and data.get("Type") != "Episode":
-                userData = data.get("UserData")
-                if originalType =="Backdrop2":
-                  totalbackdrops = len(data.get("BackdropImageTags"))
-                  if totalbackdrops != 0:
-                    index = str(randrange(0,totalbackdrops))
-                if userData != None:
-
-                    UnWatched = 0 if userData.get("UnplayedItemCount")==None else userData.get("UnplayedItemCount")        
-
-                    if UnWatched <> 0 and self.addonSettings.getSetting('showUnplayedIndicators')=='true':
-                        query = query + "&UnplayedCount=" + str(UnWatched)
-
-
-                    if(userData != None and userData.get("Played") == True and self.addonSettings.getSetting('showWatchedIndicators')=='true'):
-                        query = query + "&AddPlayedIndicator=true"
-
-                    PlayedPercentage = 0 if userData.get("PlayedPercentage")==None else userData.get("PlayedPercentage")
-                    if PlayedPercentage == 0 and userData!=None and userData.get("PlayedPercentage")!=None :
-                        PlayedPercentage = userData.get("PlayedPercentage")
-                    if (PlayedPercentage != 100 or PlayedPercentage) != 0 and self.addonSettings.getSetting('showPlayedPrecentageIndicators')=='true':
-                        #query = query + "&PercentPlayed=" + str(PlayedPercentage)  
-                        played = str(PlayedPercentage)
-                        
-                    #query = query + "&height=270&width=480"
-                    height = "270"
-                    width = "480"      
-            elif originalType =="Backdrop3" or originalType =="Thumb3" and data.get("Type") != "Episode":
-                userData = data.get("UserData")
-                if originalType =="Backdrop3":
-                  totalbackdrops = len(data.get("BackdropImageTags"))
-                  if totalbackdrops != 0:
-                    index = str(randrange(0,totalbackdrops))
-                if userData != None:
-
-                    UnWatched = 0 if userData.get("UnplayedItemCount")==None else userData.get("UnplayedItemCount")        
-
-                    if UnWatched <> 0 and self.addonSettings.getSetting('showUnplayedIndicators')=='true':
-                        query = query + "&UnplayedCount=" + str(UnWatched)
-
-
-                    if(userData != None and userData.get("Played") == True and self.addonSettings.getSetting('showWatchedIndicators')=='true'):
-                        query = query + "&AddPlayedIndicator=true"
-
-                    PlayedPercentage = 0 if userData.get("PlayedPercentage")==None else userData.get("PlayedPercentage")
-                    if PlayedPercentage == 0 and userData!=None and userData.get("PlayedPercentage")!=None :
-                        PlayedPercentage = userData.get("PlayedPercentage")
-                    if (PlayedPercentage != 100 or PlayedPercentage) != 0 and self.addonSettings.getSetting('showPlayedPrecentageIndicators')=='true':
-                        #query = query + "&PercentPlayed=" + str(PlayedPercentage)  
-                        played = str(PlayedPercentage)
-                        
-                    #query = query + "&height=660&width=1180"
-                    height = "900"
-                    width = "1480"                        
-
         # use the local image proxy server that is made available by this addons service
-        
+
         port = self.addonSettings.getSetting('port')
         host = self.addonSettings.getSetting('ipaddress')
         server = host + ":" + port
-        
+
         artwork = "http://" + server + "/mediabrowser/Items/" + str(id) + "/Images/" + type + "/" + index + "/e3ab56fe27d389446754d0fb04910a34/original/" + height + "/" + width + "/" + played + "?" + query
-        
+
         self.logMsg("getArtwork : " + artwork, level=2)
-        
+
         # do not return non-existing images
         if ((type!="Backdrop" and imageTag=="") | (type=="Backdrop" and data.get("BackdropImageTags")!=None and len(data.get("BackdropImageTags")) == 0) | (type=="Backdrop" and data.get("BackdropImageTag")!=None and len(data.get("BackdropImageTag")) == 0)) :
             artwork=''        
-        
+
         return artwork            
 
     def imageUrl(self, id, type, index, width, height):
-    
+
         port = self.addonSettings.getSetting('port')
         host = self.addonSettings.getSetting('ipaddress')
         server = host + ":" + port
-        
+
         return "http://" + server + "/mediabrowser/Items/" + str(id) + "/Images/" + type + "/" + str(index) + "/e3ab56fe27d389446754d0fb04910a34/original/" + str(height) + "/" + str(width) + "/0"
-        
+
     def downloadUrl(self, url, suppress=False, type="GET", popup=0 ):
         self.logMsg("== ENTER: getURL ==")
         try:
@@ -301,12 +152,6 @@ class DownloadUtils():
             elif int(data.status) >= 400:
                 error = "HTTP response error: " + str(data.status) + " " + str(data.reason)
                 xbmc.log (error)
-                if suppress is False:
-                    if popup == 0:
-                        xbmc.executebuiltin("XBMC.Notification(URL error: "+ str(data.reason) +",)")
-                    else:
-                        xbmcgui.Dialog().ok(self.getString(30135),server)
-                xbmc.log (error)
                 try: conn.close()
                 except: pass
                 return ""
@@ -315,8 +160,6 @@ class DownloadUtils():
         except Exception, msg:
             error = "Unable to connect to " + str(server) + " : " + str(msg)
             xbmc.log (error)
-            xbmc.executebuiltin("XBMC.Notification(\"XBMB3C\": URL error: Unable to connect to server,)")
-            xbmcgui.Dialog().ok("",self.getString(30204))
             raise
         else:
             try: conn.close()

@@ -1,4 +1,6 @@
 1.1.1
+- speed optimizations
+1.1.0
 - support for new menu system
 - fixes for collection backgrounds from MB3
 1.0.8
