@@ -32,7 +32,7 @@ class TitanThread ():
     current_global_art = 0
     fullcheckinterval = 900
     shortcheckinterval = 30
-    doDebugLog = True
+    doDebugLog = False
 
     def logMsg(self, msg, level = 1):
         if self.doDebugLog == True:
