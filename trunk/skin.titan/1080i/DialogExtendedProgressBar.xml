@@ -25,7 +25,8 @@
 			<control type="group">
 				<posx>-60</posx>
 				<posy>-20</posy>
-				<include>TimeInfo</include>
+				<visible>!skin.hastheme(classic)</visible>
+				<include>TimeInfoAlt</include>
 			</control>
 			<control type="multiimage">
                 <!--Busy Image-->

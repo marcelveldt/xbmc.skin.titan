@@ -5,15 +5,16 @@
 	<allowoverlay>no</allowoverlay>
 	<defaultcontrol always="true">211</defaultcontrol>
 	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu)</onunload>
+	<onload>ClearProperty(shortcutDialog, Home)</onload>
 	<controls>
 	
 	 <!--Global Background-->
         <include>GlobalBackground</include>
-		<include>DialogOverlayExtra</include>
+		<!--Time & Weather-->
+        <include>TimeInfo</include>
 		<!-- Now playing -->
 		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
-		 <!--Time & Weather-->
-        <include>TimeInfo</include>
+		 
         <!--Header-->
         <include>Header</include>
 		
@@ -108,8 +109,19 @@
 							<left>20</left>
 							<width>460</width>
 							<label>$VAR[customLibraryLabel]</label>
+							<textcolor>black</textcolor>
 							<font>Reg26</font>
 							<scroll>false</scroll>
+						</control>
+						
+						<control type="label"> <!--label-->
+							<left>20</left>
+							<width>460</width>
+							<label>$VAR[customLibraryLabel]</label>
+							<textcolor>white</textcolor>
+							<font>Reg26</font>
+							<scroll>false</scroll>
+							<visible>!Control.HasFocus(211)</visible>
 						</control>
 
 						<control type="label">
@@ -159,7 +171,7 @@
 				<control type="button" id="301"> <!--new shortcut-->
 					<width>465</width>
 					<align>center</align>
-					<onclick>AlarmClock(setshortcut,SendClick(401),00:01,silent) </onclick>
+					<onclick>SendClick(401)</onclick>
 					<label>$ADDON[script.skinshortcuts 32000]</label>
 				</control>
 				
@@ -187,8 +199,9 @@
 				<control type="button" id="305"> <!--edit label-->
 					<width>465</width>
 					<align>center</align>
-					<onclick>noop</onclick>
+					<onclick>SetProperty(shortcutDialog, label, Home)</onclick>
 					<label>$ADDON[script.skinshortcuts 32025]</label>
+					<visible>!SubString(Container(211).ListItem.Property(labelID),titanmb3)</visible>
 				</control>
 				
 				<control type="button" id="306"> <!--edit thumbnail-->
@@ -202,7 +215,7 @@
 				<control type="button" id="309"> <!--widget-->
 					<width>465</width>
 					<align>center</align>
-					<onclick>noop</onclick>
+					<onclick>SetProperty(shortcutDialog, widget, Home)</onclick>
 					<label>$ADDON[script.skinshortcuts 32044]</label>
 					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 				</control>
@@ -210,7 +223,7 @@
 				<control type="button" id="310"> <!--background-->
 					<width>465</width>
 					<align>center</align>
-					<onclick>noop</onclick>
+					<onclick>SetProperty(shortcutDialog, background, Home)</onclick>
 					<label>31169</label>
 					<visible>StringCompare(Window.Property(groupname),mainmenu) + Skin.HasSetting(UseSectionBackground)</visible>
 				</control>
@@ -236,6 +249,16 @@
 					<align>center</align>
 					<onclick>noop</onclick>
 					<label>$ADDON[script.skinshortcuts 32027]</label>
+					<visible>false</visible>
+				</control>
+						
+				<control type="button" id="1401"> <!--edit shortcut-->
+					<width>465</width>
+					<align>center</align>
+					<onclick>Control.SetFocus(4)</onclick>
+					<onclick>SetProperty(shortcutDialog, change, Home)</onclick>
+					<label>31175</label>
+					<visible>!SubString(Container(211).ListItem.Property(labelID),titanmb3)</visible>
 				</control>
 				
 				<control type="button" id="1308"> <!--reset-->
@@ -256,8 +279,86 @@
 				
 			</control>
 
-
+		
 		</control>
+		
+		<control type="group">
+        <!--Dialog Overlay-->
+        <include>GlobalBackground</include>
+		<include>DialogOverlay</include>
+		<visible>Control.HasFocus(4) | Control.HasFocus(5) | Control.HasFocus(6)</visible>
+        <control type="group">
+            <include>animation_dialog</include>
+            <control type="group">
+                <posx>590</posx>
+                <posy>460</posy>
+                <control type="image">
+                    <posx>-650</posx>
+                    <posy>-220</posy>
+                    <width>2050</width>
+                    <height>480</height>
+                    <texture border="39">views/filemanager_panel1.png</texture>
+                </control>
+				<!-- change shortcut -->
+                <control type="button" id="4">
+                    <posx>-230</posx>
+                    <posy>65</posy>
+                    <width>400</width>
+                    <height>60</height>
+					<onback>Control.SetFocus(1401)</onback>
+                    <onright>5</onright>
+					<onclick>Control.SetFocus(1401)</onclick>
+					<onclick>SendClick(401)</onclick>
+                    <label>$ADDON[script.skinshortcuts 32048]</label>
+                </control>
+				<!-- custom action -->
+                <control type="button" id="5">
+                    <posx>190</posx>
+                    <posy>65</posy>
+                    <width>400</width>
+                    <height>60</height>
+                    <onleft>4</onleft>
+					<onright>6</onright>
+					<onclick>Control.SetFocus(1401)</onclick>
+                    <onclick>SendClick(307)</onclick>
+					<onback>Control.SetFocus(1401)</onback>
+                    <label>$ADDON[script.skinshortcuts 32027]</label>
+                </control>
+				<!-- cancel -->
+                <control type="button" id="6">
+                    <posx>610</posx>
+                    <posy>65</posy>
+                    <width>400</width>
+                    <height>60</height>
+                    <onleft>5</onleft>
+                    <onback>Control.SetFocus(1401)</onback>
+					<onclick>Control.SetFocus(1401)</onclick>
+                    <label>222</label>
+                </control>
+            </control>
+            <control type="label" id="1">
+                <description>Dialog Header</description>
+                <posx>100</posx>
+                <posy>320</posy>
+                <width>1720</width>
+                <align>center</align>
+                <aligny>top</aligny>
+                <include>DialogHeader</include>
+				<label>31175</label>
+                <!--Doubles Line-->
+            </control>
+            <control type="label" id="2">
+                <description>Line 1</description>
+                <posx>100</posx>
+                <posy>380</posy>
+                <width>1720</width>
+                <align>center</align>
+                <aligny>top</aligny>
+                <label>31176</label>
+                <font>Reg26</font>
+            </control>
+        </control>
+    </control>
 		
 	</controls>
 	

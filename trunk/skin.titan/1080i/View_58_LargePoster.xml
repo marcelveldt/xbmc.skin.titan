@@ -97,7 +97,7 @@
                 <orientation>horizontal</orientation>
                 <preloaditems>2</preloaditems>
 
-                <itemlayout height="800" width="500" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
+                <itemlayout height="800" width="500" condition="[container.content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons)]">
                     <control type="image">
 						<!--Poster-->
 						<width>480</width>
@@ -123,7 +123,7 @@
 						<visible>!Skin.HasSetting(HideWatchedOverlayLargePoster)</visible>
 					</control>
                 </itemlayout>
-                <focusedlayout height="800" width="500" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
+                <focusedlayout height="800" width="500" condition="[container.content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons)]">
 					<control type="image">
 						<!--Poster-->
 						<width>480</width>

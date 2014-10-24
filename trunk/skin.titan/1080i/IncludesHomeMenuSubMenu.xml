@@ -41,7 +41,8 @@
 				<label>$INFO[Container(300).ListItem.Label]</label>
 				<aligny>center</aligny>
 				<font>Reg49</font>
-				<textcolor>lightgrey</textcolor>
+				<textcolor>$VAR[Views_FontColor]</textcolor>
+				<shadowcolor>$VAR[Views_ShadowColorColor]</shadowcolor>
 				<selectedcolor>white</selectedcolor>
 				<visible>IsEmpty(Window(Home).Property(shutdownmenuactive))</visible>
 			</control>
@@ -285,7 +286,6 @@
 				<width>600</width>
 				<height>60</height>
 				<textcolor>black</textcolor>
-				<focusedcolor>black</focusedcolor>
 				<selectedcolor>black</selectedcolor>
 				<disabledcolor>black</disabledcolor>
 				<info>ListItem.Label</info>
@@ -298,7 +298,6 @@
 				<width>600</width>
 				<height>60</height>
 				<textcolor>white</textcolor>
-				<focusedcolor>white</focusedcolor>
 				<selectedcolor>white</selectedcolor>
 				<disabledcolor>white</disabledcolor>
 				<info>ListItem.Label</info>
@@ -354,7 +353,28 @@
 			<posy>-3</posy>
 			<width>612</width>
 			<height>265</height>
-                    <control type="label">
+			<control type="image">
+						<!--Panel Normal-->
+						<posx>11</posx>
+						<posy>13</posy>
+						<width>600</width>
+						<height>250</height>
+						<texture background="true" diffuse="home/home_matte2.png">$INFO[Container(300).ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+						<fadetime>800</fadetime>
+						<include>backgroundfade</include>
+					</control>
+					<control type="image">
+						<!--Panel Ovelay-->
+						<posx>11</posx>
+						<posy>13</posy>
+						<width>600</width>
+						<height>250</height>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+						<texture diffuse="home/home_matte2.png">home/home_overlay.png</texture>
+						<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
+					</control>
+                    <control type="label" id="44446">
                         <!--Label Grey-->
                         <posx>13</posx>
                         <posy>170</posy>
@@ -363,7 +383,8 @@
                         <align>center</align>
                         <label>$INFO[Container(300).ListItem.Label]</label>
                         <font>Reg45</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[homeMenuFocusLabelColor]</textcolor>
+						<shadowcolor>black</shadowcolor>
                         <visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
                     </control>
                     <control type="image">

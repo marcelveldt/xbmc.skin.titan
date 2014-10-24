@@ -94,7 +94,7 @@
                 <!-- =======-->
                 <!-- Movies -->
                 <!-- ======= -->
-                <itemlayout height="145" width="760" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
+                <itemlayout height="145" width="760" condition="[container.content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons)]">
                     <control type="image">
                         <!--Banner-->
                         <width>758</width>
@@ -156,7 +156,7 @@
 						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
 				</control>
                 </itemlayout>
-                <focusedlayout height="145" width="760" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
+                <focusedlayout height="145" width="760" condition="[container.content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons)]">
 				<control type="group">
 					<animation type="focus">
 						<effect type="zoom" start="100" end="103" center="auto,auto" time="150" />
@@ -224,6 +224,15 @@
 						<label>$VAR[WatchedLabel]</label>
 						<textcolor>white</textcolor>
 						<visible>!Skin.HasSetting(HideWatchedOverlayBanner)</visible>
+					</control>
+					<!-- focus image -->
+					<control type="image">
+						<posx>-13</posx>
+						<posy>-5</posy>
+						<width>786</width>
+                        <height>151</height>
+						<texture>home/home_focus.png</texture>
+						<visible>!Skin.HasTheme(classic)</visible>
 					</control>
 				</control>
                 </focusedlayout>

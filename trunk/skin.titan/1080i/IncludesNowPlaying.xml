@@ -201,7 +201,7 @@
 		<include>nowplayingbackground</include>
         <control type="group" id="88888">
             <!--Panel-->
-            <visible>Player.HasMedia + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + ![!IsEmpty(Container(300).ListItem.property(widget)) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
+            <visible>!IsEmpty(Player.Title) + Player.HasMedia + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + ![!IsEmpty(Container(300).ListItem.property(widget)) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
             <include>DimensionsFullscreen</include>
             <control type="image">
 				<posx>-60</posx>
@@ -210,6 +210,7 @@
 				<height>180</height>
 				<texture background="true">views/filemanager_panel1.png</texture>
 			</control>
+			<include>TimeInfoAlt</include>
             <control type="fadelabel">
                 <!--Now Playing-->
                 <posx>310</posx>
@@ -260,7 +261,7 @@
 	
 	<include name="nowplayingbackground">
 		<control type="group">
-		<visible>!Skin.HasSetting(DisableNowPlayingBackground)</visible>
+		<visible>!Skin.HasSetting(DisableNowPlayingBackground) + [Player.HasVideo | Player.HasAudio]</visible>
 			<!-- artist slideshow -->
 			<control type="multiimage">
 				<aspectratio>scale</aspectratio>

@@ -16,23 +16,29 @@
 	<visible>SubString(Window(Home).Property(hidesplash),hide)</visible>
         <!--Global Background-->
         <include>GlobalBackground</include>
-		
-        <!--NowPlaying-->
-        <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
-        <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
-		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
-		
+
 		<!-- home menu Widgets -->
 		<include>HomeMenuWidget</include>
+		
+
+
+        <include>WeatherInfo</include>
+		<include>ProfileInfo</include>
+
+        <!--Footer-->
+        <include condition="!skin.hassetting(nofooterbar)">Footer</include>
 		
 		<!-- Header -->
         <include>Header</include>
 		<!--Time & Weather-->
         <include>TimeInfo</include>
-        <include>WeatherInfo</include>
-		<include>ProfileInfo</include>
-        <!--Footer-->
-        <include condition="!skin.hassetting(nofooterbar)">Footer</include>
+		
+		<!--NowPlaying-->
+        <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
+        <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
+		
+		
 		
 		<!--Home tiles List 300-->
         <control type="panel" id="300">
@@ -44,10 +50,9 @@
 			<animation type="Conditional" condition="ControlGroup(77777).HasFocus | !SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">
                 <effect type="slide" start="0,-0" end="0,800" time="800" tween="cubic" easing="inout" />
             </animation>
-
+			<onunfocus condition="skin.hastheme(classic)">SetProperty(submenu,hide,Home)</onunfocus>
 			<onup>$VAR[HomeButtonUpAction]</onup>
 			<ondown>$VAR[HomeButtonDownAction]</ondown>
-
             <onleft></onleft>
             <onright></onright>
             <orientation>horizontal</orientation>
@@ -95,8 +100,8 @@
 						<align>center</align>
 						<info>ListItem.Label</info>
 						<font>Reg45</font>
-						<textcolor>darkgrey</textcolor>
-						<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
+						<textcolor>aawhite</textcolor>
+						<shadowcolor>black</shadowcolor>
 					</control>
 				</control>
             </itemlayout>
@@ -106,7 +111,7 @@
 					
 					<control type="image">
                         <!--widget Arrow UP-->
-						<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="true">Focus</animation>
+						<animation effect="fade" start="0" end="100" delay="1200" time="800" pulse="false">Focus</animation>
                         <posx>233</posx>
                         <posy>-16</posy>
                         <width>149</width>
@@ -116,14 +121,14 @@
                     </control>
 					<control type="image">
                         <!--widget Arrow DOWN-->
-						<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="true">Focus</animation>
-                        <posx>233</posx>
+						<animation effect="fade" start="0" end="100" delay="1200" time="800" pulse="false">Focus</animation>
+                        <posx>236</posx>
                         <posy>263</posy>
                         <width>149</width>
                         <height>30</height>
                         <texture>basichome_down.png</texture>
 						<!-- show arrow down button if submenu available or widget at 2 rows of home tiles -->
-						<visible>[SubString(ListItem.Property(HasSubMenu), True) + Skin.String(GadgetRows, 1)] | [!IsEmpty(ListItem.Property(widget)) + Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
+						<visible>[SubString(ListItem.Property(HasSubMenu), True) + Skin.String(GadgetRows, 1) + !skin.hastheme(classic)] | [!IsEmpty(ListItem.Property(widget)) + Skin.String(GadgetRows, 2) + [StringCompare(Container(300).Position,1) | StringCompare(Container(300).Position,3) | StringCompare(Container(300).Position,5)]]</visible>
 					</control>
 					
                     <control type="image">
@@ -166,20 +171,8 @@
                         <align>center</align>
                         <info>ListItem.Label</info>
                         <font>Reg45</font>
-                        <textcolor>darkgrey</textcolor>
-                        <visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
-                    </control>
-                    <control type="label">
-                        <!--Label White-->
-                        <include condition="!SubString(System.BuildVersion,14,left)">HomeTileLabelPosGotham</include>
-						<include condition="SubString(System.BuildVersion,14,left)">HomeTileLabelPosHelix</include>
-                        <posy>170</posy>
-                        <width>600</width>
-                        <height>100</height>
-                        <align>center</align>
-                        <info>ListItem.Label</info>
-                        <font>Reg45</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[homeMenuFocusLabelColor]</textcolor>
+						<shadowcolor>black</shadowcolor>
                         <visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
                     </control>
                     <control type="image">
@@ -201,6 +194,7 @@
                         <aligny>center</aligny>
                         <label>-</label>
                         <visible>false</visible>
+						<onfocus>SetProperty(submenu,hide,Home)</onfocus>
 						<onfocus>Skin.SetString(customwidget, recent)</onfocus>
 						<onfocus condition="Skin.HasSetting(UseSectionBackground)">Skin.SetString(SectionBackground,$VAR[varBackground])</onfocus>
 						<onfocus condition="!Skin.HasSetting(UseSectionBackground)">Skin.Reset(SectionBackground)</onfocus>
@@ -232,10 +226,9 @@
             <texturenofocus colordiffuse="$VAR[TextColor_white]">icons/icon_power.png</texturenofocus>
             <onclick>ActivateWindow(111)</onclick>
 			<onfocus>ActivateWindow(111)</onfocus>
-			<visible>!Control.IsVisible(445) + !ControlGroup(77777).HasFocus() + !Control.HasFocus(4444)+ !Window.IsVisible(DialogButtonMenu.xml)</visible>
+			<visible>!Control.IsVisible(445) + !ControlGroup(77777).HasFocus() + !Control.HasFocus(4444) + !Window.IsVisible(DialogButtonMenu.xml) + ![!IsEmpty(Container(300).ListItem.Property(widget)) + Skin.String(GadgetRows, 2) + StringCompare(Container(300).Position,3)]</visible>
 			<animation time="400" effect="fade">Visible</animation>
 			<animation time="200" effect="fade">Hidden</animation>
-			<visible>SubString(Window(Home).Property(hidesplash),hide)</visible>
         </control>
 		
 		
@@ -272,7 +265,6 @@
             <label>20186</label>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
-			<visible>System.HasAddon(skin.titan)</visible>
         </control>
 		<control type="label">
             <posx>1840</posx>
