@@ -1,6 +1,6 @@
 1.1.4
 - speed optimizations
-- fixes for new MB3 authentication
+- added caching for user collections
 1.1.0
 - support for new menu system
 - fixes for collection backgrounds from MB3

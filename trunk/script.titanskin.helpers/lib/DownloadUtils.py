@@ -100,7 +100,7 @@ class DownloadUtils():
         artwork = "http://" + server + "/mediabrowser/Items/" + str(id) + "/Images/" + type + "/" + index + "/" + imageTag + "/original/" + height + "/" + width + "/" + played + "?" + query
         artwork = artwork + "&EnableImageEnhancers=false"
 
-        self.logMsg("getArtwork : " + artwork, level=2)
+        #self.logMsg("getArtwork : " + artwork, level=2)
 
         # do not return non-existing images
         if (    (type!="Backdrop" and imageTag=="e3ab56fe27d389446754d0fb04910a34") |  #Remember, this is the placeholder tag, meaning we didn't find a valid tag
@@ -147,9 +147,6 @@ class DownloadUtils():
             server=url.split('/')[serversplit]
             urlPath="/"+"/".join(url.split('/')[urlsplit:])
 
-            self.logMsg("url = " + url)
-            self.logMsg("server = "+str(server), level=2)
-            self.logMsg("urlPath = "+str(urlPath), level=2)
             conn = httplib.HTTPConnection(server, timeout=20)
             head = {"Accept-Encoding" : "gzip", "Accept-Charset" : "UTF-8,*", "X-MediaBrowser-Token" : self.addonSettings.getSetting('AccessToken')} 
             #head = getAuthHeader()
@@ -170,12 +167,6 @@ class DownloadUtils():
                 else:
                     link = retData
 
-                self.logMsg("Data Len After : " + str(len(link)))
-                self.logMsg("====== 200 returned =======")
-                self.logMsg("Content-Type : " + str(contentType))
-                self.logMsg(link)
-                self.logMsg("====== 200 finished ======")
-
             elif ( int(data.status) == 301 ) or ( int(data.status) == 302 ):
                 try: conn.close()
                 except: pass
@@ -189,7 +180,6 @@ class DownloadUtils():
                 link = ""
         except Exception, msg:
             error = "[Titanskin] Unable to connect to " + str(server) + " : " + str(msg)
-            xbmc.log (error)
             raise
         else:
             try: conn.close()
