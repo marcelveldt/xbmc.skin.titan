@@ -475,8 +475,8 @@ msgid "Homescreen layout"
 msgstr "Layout des Startbildschirm"
 
 msgctxt "#31116"
-msgid "Enable submenu on tile"
-msgstr "Aktiviere Submenü auf Tiles "
+msgid "Submenu items for this collection"
+msgstr "Submenu items fur dieser Kollection"
 
 msgctxt "#31117"
 msgid "Enable widget for this tile"
@@ -656,8 +656,8 @@ msgid "Networks"
 msgstr "Networks"
 
 msgctxt "#31161"
-msgid "Collections"
-msgstr "Collections"
+msgid "MediaBrowser Collections"
+msgstr "MediaBrowser Kollektions"
 
 msgctxt "#31162"
 msgid "Kodi Library"
@@ -707,6 +707,26 @@ msgstr ""
 msgctxt "#31173"
 msgid "Use custom overlay"
 msgstr ""
+
+msgctxt "#31174"
+msgid "Use alternative focus color on the home tiles"
+msgstr "Use alternative focus color on the home tiles"
+
+msgctxt "#31175"
+msgid "Change Shortcut"
+msgstr "Change Shortcut"
+
+msgctxt "#31176"
+msgid "This will allow you to change the action of the shortcut and keep the current assigned widget and submenu.[CR] TIP: To open the submenu on click, type submenu as custom action."
+msgid "This will allow you to change the action of the shortcut and keep the current assigned widget and submenu.[CR] TIP: To open the submenu on click, type submenu as custom action."
+
+msgctxt "#31177"
+msgid "None (use global background)"
+msgstr "None (use global background)"
+
+msgctxt "#31178"
+msgid "* indicates the recommended selection"
+msgstr "* indicates the recommended selection"
 
 
 msgctxt "#31399"

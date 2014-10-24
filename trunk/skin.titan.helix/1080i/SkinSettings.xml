@@ -9,11 +9,11 @@
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>
-       
+        <!--Time & Weather-->
+        <include>TimeInfo</include>
 		<!-- Now playing -->
 		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
-		 <!--Time & Weather-->
-        <include>TimeInfo</include>
+		
         <!--Header-->
         <include>Header</include>
         <!--Titan Version-->
@@ -196,6 +196,8 @@
 					<top>50</top>
 					<align>center</align>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+					<focusedcolor>black</focusedcolor>
+					<font>Reg28</font>
 					<label>31014</label>
 				</control>
 				<!-- empty label -->
@@ -236,6 +238,8 @@
 					<align>center</align>
 					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 					<label>$ADDON[script.skinshortcuts 32028]</label>
+					<focusedcolor>black</focusedcolor>
+					<font>Reg28</font>
 				</control>
 			</control>
 			
@@ -395,6 +399,19 @@
                     <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
                 </control>
 				
+				<control type="radiobutton" id="5143">
+                    <!--label focus color-->
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31174]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(AltFocusLabelColor)</onclick>
+                    <selected>Skin.HasSetting(AltFocusLabelColor)</selected>
+					<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
+                </control>
+				
 				 <!--weather on home-->
 				<control type="radiobutton" id="5012">
                     <description></description>
@@ -510,7 +527,7 @@
                     <aligny>center</aligny>
                 </control>
 				<control type="textbox" id="5231">
-                    <width>1250</width>
+                    <width>1220</width>
                     <height min="220">auto</height>
                     <font>Reg25</font>
                     <posy>60</posy>
@@ -906,7 +923,6 @@
                     <onclick condition="Skin.String(HomeMenuUseRadioCollection)">Skin.Reset(HomeMenuUseRadioCollection)</onclick>
                     <selected>Skin.String(HomeMenuUseRadioCollection)</selected>
                 </control>
-				
             </control>
         </control>
 		</control>

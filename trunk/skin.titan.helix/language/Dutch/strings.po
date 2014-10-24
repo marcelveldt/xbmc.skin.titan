@@ -474,8 +474,8 @@ msgid "Homescreen layout"
 msgstr "Startscherm lay-out"
 
 msgctxt "#31116"
-msgid "Enable submenu on tile"
-msgstr "Submenu inschakelen"
+msgid "Submenu items for this collection"
+msgstr "Submenu items voor deze collectie"
 
 msgctxt "#31117"
 msgid "Enable widget for this tile"
@@ -507,7 +507,7 @@ msgstr "Je kunt optioneel widgets en submenu's inschakelen op tiles om makkelijk
 
 msgctxt "#31124"
 msgid "Please select how many rows with tiles you want to show. 1 row is the default setting for the skin."
-msgstr "Selecteer het aantal rijen met tegels die je wil tonen op het homescherm. De standaardinstelling is 1 rij met tiles"
+msgstr "Selecteer het aantal rijen met tegels die je wil tonen op het homescherm.[CR]De standaardinstelling is 1 rij met tiles"
 
 msgctxt "#31125"
 msgid "Other home screen settings"
@@ -584,7 +584,7 @@ msgstr "Algemene achtergrond instellingen"
 
 msgctxt "#31143"
 msgid "The global background you selected is applied everywhere in the skin. It is possible to override the global background on different sections of the skin. If you enable the section based backgrounds you can set a different background on a tile, so if you hover over that tile in the homescreen you will get that background. Also your override will be applied to whatever section that tile opens. So, for example if you have chosen a custom background for the Live TV tile and you click that tile, you will also get your selected background in the Live TV section. Off course if no background is chosen for a tile, it will always fallback to the global background. You can set your own overrides in the configuration page for the home tiles."
-msgstr De algemene achtergrond die je kiest wordt overal in de skin toegepast. Het is mogelijk om de algemene achtergrond te overrulen op basis van de sectie waar je je bevind. Indien je de sectie-gebaseerde achtergronden inschakelt kun je een achtergrond kiezen op basis van een tegel op het startscherm. Als je dan bijvoorbeeld een aangepaste achtergrond instelt op de Live TV tegel, en je gaat over de tegel in het startscherm zal de achtergrond veranderen naar jouw keuze. Ook zal die achtergrond worden toegepast zodra je Live TV opent. Je kunt je eigen achtergrond instellen op de tegels in het configuratiescherm voor de startmenu tegels.
+msgstr "De algemene achtergrond die je kiest wordt overal in de skin toegepast. Het is mogelijk om de algemene achtergrond te overrulen op basis van de sectie waar je je bevind. Indien je de sectie-gebaseerde achtergronden inschakelt kun je een achtergrond kiezen op basis van een tegel op het startscherm. Als je dan bijvoorbeeld een aangepaste achtergrond instelt op de Live TV tegel, en je gaat over de tegel in het startscherm zal de achtergrond veranderen naar jouw keuze. Ook zal die achtergrond worden toegepast zodra je Live TV opent. Je kunt je eigen achtergrond instellen op de tegels in het configuratiescherm voor de startmenu tegels."
 
 msgctxt "#31144"
 msgid "Enable section based backgrounds"
@@ -656,8 +656,8 @@ msgid "Networks"
 msgstr "Zenders"
 
 msgctxt "#31161"
-msgid "Collections"
-msgstr "Collecties"
+msgid "MediaBrowser Collections"
+msgstr "MediaBrowser Collecties"
 
 msgctxt "#31162"
 msgid "Kodi Library"
@@ -694,7 +694,7 @@ msgstr "Aangepaste achtergrond"
 
 msgctxt "#31170"
 msgid "Reset menu to skin's defaults"
-msgstr ""
+msgstr "Menu herstellen naar standaardinstellingen"
 
 msgctxt "#31171"
 msgid "One of the main advantages of using the skinshortcuts-script is that your menu layout is shared across skins that support this addon. This is not always convenient as you won’t get the skins default menu layout which is optimized for the skin or you have played a bit in another skin and you don’t like the menu layout now. If you see weird behavior on your home menu or you just want to start fresh and get the most out of this skin, you can reset the menu structures to the skins default settings with the button below."
@@ -709,6 +709,26 @@ msgctxt "#31173"
 msgid "Use custom overlay"
 msgstr "Gebruik eigen overlay"
 
+msgctxt "#31174"
+msgid "Use alternative focus color on the home tiles"
+msgstr "Gebruik alternatieve focuskleur op de startscherm tiles"
+
+msgctxt "#31175"
+msgid "Change Shortcut"
+msgstr "Wijzig snelkoppeling"
+
+msgctxt "#31176"
+msgid "This will allow you to change the action of the shortcut and keep the current assigned widget and submenu.[CR] TIP: To open the submenu on click, type submenu as custom action."
+msgstr "Hiermee kunt u de actie wijzigen van de snelkoppeling en de toegewezen widget en submenu behouden.[CR]Tip: om het submenu bij klikken te openen, type submenu bij de aangepaste actie."
+
+
+msgctxt "#31177"
+msgid "None (use global background)"
+msgstr "Geen (gebruik globale achtergrond)"
+
+msgctxt "#31178"
+msgid "* indicates the recommended selection"
+msgstr "* geeft de aanbevolen selectie aan"
 
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from XBMC."

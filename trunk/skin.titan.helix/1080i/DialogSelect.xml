@@ -7,7 +7,8 @@
     <!--Normal "1" over DialogVideoInfo.xml-->
     <controls>
         <!--Dialog Overlay-->
-        <include>DialogOverlayExtra</include>
+        <include>GlobalBackground</include>
+		<include>DialogOverlay</include>
         <!--Dialog Select-->
         <control type="group">
             <include>animation_dialog</include>
@@ -16,12 +17,12 @@
             <control type="group">
                 <!--Container 3 Small-->
                 <visible>Control.IsVisible(3)</visible>
-                <control type="image">
-                    <posx>604</posx>
-                    <posy>206</posy>
-                    <width>712</width>
-                    <height>670</height>
-                    <texture border="39">dialogs/default/bg.png</texture>
+				<control type="image">
+                    <posx>590</posx>
+                    <posy>155</posy>
+                    <width>740</width>
+                    <height>800</height>
+                    <texture border="39">views/filemanager_panel1.png</texture>
                 </control>
                 <control type="image">
                     <posx>638</posx>
@@ -34,22 +35,32 @@
 				<control type="label" id="1">
 					<description>Heading</description>
 					<posx>473</posx>
-					<posy>230</posy>
+					<posy>210</posy>
 					<width>974</width>
 					<label>-</label>
-					<include>DialogHeader</include>
+					<include>DialogHeader_Alt</include>
 					<align>center</align>
+				</control>
+				<control type="label">
+					<description>Heading</description>
+					<posx>473</posx>
+					<posy>250</posy>
+					<width>974</width>
+					<label>31178</label>
+					<font>Reg24</font>
+					<align>center</align>
+					<visible>!IsEmpty(Window(Home).Property(shortcutDialog))</visible>
 				</control>
             </control>
             <control type="group">
                 <!--Container 6 Big-->
                 <visible>Control.IsVisible(6)</visible>
                 <control type="image">
-                    <posx>387</posx>
-                    <posy>266</posy>
-                    <width>1146</width>
-                    <height>620</height>
-                    <texture border="39">dialogs/default/bg.png</texture>
+                    <posx>367</posx>
+                    <posy>236</posy>
+                    <width>1190</width>
+                    <height>720</height>
+                    <texture border="39">views/filemanager_panel1.png</texture>
                 </control>
                 <control type="image">
                     <posx>421</posx>
@@ -80,21 +91,6 @@
                     <aspectratio>keep</aspectratio>
                     <texture background="true" fallback="dialogs/select/iconsbig/DefaultAddon.png">$INFO[Container(6).ListItem.Icon]</texture>
                 </control>
-                <control type="button">
-                    <posx>1079</posx>
-                    <posy>720</posy>
-                    <width>420</width>
-                    <height>60</height>
-                    <textoffsetx>20</textoffsetx>
-                    <align>left</align>
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
-                    <label>$LOCALIZE[21863]</label>
-                    <label2>$INFO[Container(6).ListItem.Property(Addon.Creator)]</label2>
-                    <include condition="!Skin.HasTheme(classic)">DialogLabelAlt</include>
-                    <include condition="Skin.HasTheme(classic)">DialogLabel</include>
-                    <enable>false</enable>
-                </control>
             </control>
             <!--List-->
             <control type="list" id="3">
@@ -106,7 +102,7 @@
                 <onleft>8000</onleft>
                 <onright>8000</onright>
                 <onup>3</onup>
-                <ondown>3</ondown>
+                <ondown>8000</ondown>
                 <pagecontrol></pagecontrol>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <itemlayout height="60">
@@ -124,10 +120,10 @@
                             <posy>0</posy>
                             <width>604</width>
                             <height>60</height>
-                            <info>ListItem.Label</info>
+                            <label>$VAR[customLibraryLabel]</label>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <include>DialogListNF</include>
+                            <include>DialogListNF_Alt</include>
                             <scroll>false</scroll>
                         </control>
                         <control type="label">
@@ -138,7 +134,7 @@
                             <label>$INFO[ListItem.Label2, ,]</label>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <include>DialogListNF</include>
+                            <include>DialogListNF_Alt</include>
                             <scroll>false</scroll>
                             <visible>!IsEmpty(ListItem.Label2)</visible>
                         </control>
@@ -150,10 +146,10 @@
                             <posy>0</posy>
                             <width>524</width>
                             <height>60</height>
-                            <info>ListItem.Label</info>
+                             <label>$VAR[customLibraryLabel]</label>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <include>DialogListNF</include>
+                            <include>DialogListNF_Alt</include>
                             <scroll>false</scroll>
                         </control>
                         <control type="label">
@@ -164,7 +160,7 @@
                             <label>$INFO[ListItem.Label2, ,]</label>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <include>DialogListNF</include>
+                            <include>DialogListNF_Alt</include>
                             <scroll>false</scroll>
                             <visible>!IsEmpty(ListItem.Label2)</visible>
                         </control>
@@ -197,10 +193,10 @@
                                 <posy>0</posy>
                                 <width>604</width>
                                 <height>60</height>
-                                <info>ListItem.Label</info>
+                                <label>$VAR[customLibraryLabel]</label>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <include>DialogListNF</include>
+                                <include>DialogListNF_Alt</include>
                                 <scroll>false</scroll>
                             </control>
                             <control type="label">
@@ -211,7 +207,7 @@
                                 <label>$INFO[ListItem.Label2, ,]</label>
                                 <align>right</align>
                                 <aligny>center</aligny>
-                                <include>DialogListNF</include>
+                                <include>DialogListNF_Alt</include>
                                 <scroll>false</scroll>
                                 <visible>!IsEmpty(ListItem.Label2)</visible>
                             </control>
@@ -223,10 +219,10 @@
                                 <posy>0</posy>
                                 <width>524</width>
                                 <height>60</height>
-                                <info>ListItem.Label</info>
+                                <label>$VAR[customLibraryLabel]</label>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <include>DialogListFO</include>
+                                <include>DialogListFO_Alt</include>
                                 <scroll>false</scroll>
                             </control>
                             <control type="label">
@@ -237,7 +233,7 @@
                                 <label>$INFO[ListItem.Label2, ,]</label>
                                 <align>right</align>
                                 <aligny>center</aligny>
-                                <include>DialogListFO</include>
+                                <include>DialogListFO_Alt</include>
                                 <scroll>false</scroll>
                                 <visible>!IsEmpty(ListItem.Label2)</visible>
                             </control>
@@ -267,10 +263,10 @@
                                 <posy>0</posy>
                                 <width>604</width>
                                 <height>60</height>
-                                <info>ListItem.Label</info>
+                                 <label>$VAR[customLibraryLabel]</label>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <include>DialogListFO</include>
+                                <include>DialogListFO_Alt</include>
                             </control>
                             <control type="label">
                                 <posx>624</posx>
@@ -280,7 +276,7 @@
                                 <label>$INFO[ListItem.Label2, ,]</label>
                                 <align>right</align>
                                 <aligny>center</aligny>
-                                <include>DialogListFO</include>
+                                <include>DialogListFO_Alt</include>
                                 <visible>!IsEmpty(ListItem.Label2)</visible>
                             </control>
                         </control>
@@ -291,10 +287,10 @@
                                 <posy>0</posy>
                                 <width>524</width>
                                 <height>60</height>
-                                <info>ListItem.Label</info>
+                                 <label>$VAR[customLibraryLabel]</label>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <include>DialogListFO</include>
+                                <include>DialogListFO_Alt</include>
                             </control>
                             <control type="label">
                                 <posx>624</posx>
@@ -304,7 +300,7 @@
                                 <label>$INFO[ListItem.Label2, ,]</label>
                                 <align>right</align>
                                 <aligny>center</aligny>
-                                <include>DialogListFO</include>
+                                <include>DialogListFO_Alt</include>
                                 <visible>!IsEmpty(ListItem.Label2)</visible>
                             </control>
                             <control type="image">
@@ -355,7 +351,7 @@
                         <label>$VAR[customLibraryLabel]</label>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <include>DialogListNF</include>
+                        <include>DialogListNF_Alt</include>
                         <scroll>false</scroll>
                     </control>
                     <control type="label">
@@ -366,7 +362,7 @@
                         <info>ListItem.Property(Addon.Version)</info>
                         <align>right</align>
                         <aligny>center</aligny>
-                        <include>DialogListNF</include>
+                        <include>DialogListNF_Alt</include>
                         <scroll>false</scroll>
                     </control>
                 </itemlayout>
@@ -394,7 +390,7 @@
                             <info>ListItem.Label</info>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <include>DialogListNF</include>
+                            <include>DialogListNF_Alt</include>
                             <scroll>false</scroll>
                         </control>
                         <control type="label">
@@ -405,7 +401,7 @@
                             <info>ListItem.Property(Addon.Version)</info>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <include>DialogListNF</include>
+                            <include>DialogListNF_Alt</include>
                             <scroll>false</scroll>
                         </control>
                     </control>
@@ -426,7 +422,7 @@
                             <label>$VAR[customLibraryLabel]</label>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <include>DialogListFO</include>
+                            <include>DialogListFO_Alt</include>
                         </control>
                         <control type="label">
                             <posx>624</posx>
@@ -436,7 +432,7 @@
                             <info>ListItem.Property(Addon.Version)</info>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <include>DialogListFO</include>
+                            <include>DialogListFO_Alt</include>
                             <scroll>false</scroll>
                         </control>
                     </control>
@@ -452,42 +448,42 @@
             </control>
             <!--Buttons-->
             <control type="group" id="8000">
-                <posx>626</posx>
-                <posy>776</posy>
-                <animation effect="slide" end="-217" time="0" condition="Control.IsVisible(6)">Conditional</animation>
+                <posx>660</posx>
+                <posy>800</posy>
                 <control type="button" id="5">
                     <description>OK</description>
                     <label>186</label>
-                    <include>DialogButtonOKCancel</include>
-                    <texturefocus>common/select-fo.png</texturefocus>
-                    <texturenofocus>common/select-nf.png</texturenofocus>
-                    <align>left</align>
-                    <textoffsetx>100</textoffsetx>
-                    <pulseonselect>false</pulseonselect>
-                    <width>350</width>
-                    <height>100</height>
+                    <align>center</align>
+                    <font>Light34</font>
+                    <texturefocus border="20">dialogs/keyboard/donefocus.png</texturefocus>
+                    <texturenofocus border="20">dialogs/keyboard/key-nf.png</texturenofocus>
+                    <textcolor>midgrey</textcolor>
+                    <focusedcolor>eewhite</focusedcolor>
+                    <selectedcolor>eewhite</selectedcolor>
+                    <width>250</width>
+                    <height>80</height>
                     <onleft>7</onleft>
                     <onright>7</onright>
                     <onup condition="Control.IsVisible(3)">3</onup>
                     <ondown condition="Control.IsVisible(3)">3</ondown>
                     <onup condition="Control.IsVisible(6)">6</onup>
                     <ondown condition="Control.IsVisible(6)">6</ondown>
-                    <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(5)">Conditional</animation>
                 </control>
                 <control type="button" id="7">
                     <visible>!Window.IsVisible(Custom_MediaDialog.xml)</visible>
-                    <!--Not visible Artwork Downloader-->
-                    <!--animation effect="slide" end="-200" time="0" condition="Window.IsVisible(Custom_MediaDialog.xml)">Conditional</animation-->
-                    <posx>200</posx>
+					<animation effect="slide" end="-190" time="0" condition="!Control.IsVisible(5)">Conditional</animation>
+                    <posx>370</posx>
                     <description>Close</description>
                     <label>$LOCALIZE[222]</label>
-                    <texturefocus>common/cancel-fo.png</texturefocus>
-                    <texturenofocus>common/cancel-nf.png</texturenofocus>
-                    <align>left</align>
-                    <textoffsetx>100</textoffsetx>
-                    <pulseonselect>false</pulseonselect>
-                    <width>350</width>
-                    <height>100</height>
+                    <align>center</align>
+                    <font>Light34</font>
+                    <texturefocus border="20">dialogs/keyboard/cancelfocus.png</texturefocus>
+                    <texturenofocus border="20">dialogs/keyboard/key-nf.png</texturenofocus>
+                    <textcolor>midgrey</textcolor>
+                    <focusedcolor>eewhite</focusedcolor>
+                    <selectedcolor>eewhite</selectedcolor>
+                    <width>250</width>
+                    <height>80</height>
                     <onclick>Action(close)</onclick>
                     <onleft>5</onleft>
                     <onright>5</onright>
@@ -495,8 +491,6 @@
                     <ondown condition="Control.IsVisible(3)">3</ondown>
                     <onup condition="Control.IsVisible(6)">6</onup>
                     <ondown condition="Control.IsVisible(6)">6</ondown>
-                    <animation effect="slide" end="-200" time="0" condition="IsEmpty(Control.GetLabel(5))">Conditional</animation>
-                    <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(7)">Conditional</animation>
                 </control>
             </control>
         </control>

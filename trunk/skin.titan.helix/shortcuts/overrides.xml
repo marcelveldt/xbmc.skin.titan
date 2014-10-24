@@ -22,45 +22,14 @@
 			<shortcut label="31018" grouping="32029" type="netflix" icon="home/netflix.png" condition="System.HasAddon(plugin.video.netflixbmc)">$VAR[NetflixButtonOnClick]</shortcut>
 			<shortcut label="31062" grouping="32029" type="youtube" icon="home/youtube.png" condition="System.HasAddon(plugin.video.youtube)">ActivateWindow(10025,"plugin://plugin.video.youtube",return)</shortcut>	
 		</node>
-	
-		<!-- xbmc library -->
-		<node label="31162">
-			<content>video</content>
-			<content>tvshow</content>
-			<content>movie</content>
-			<content>musicvideo</content>
-			<node label="10005">
-				<content>music</content>
-				<node label="32040">
-					<content>playlist-audio</content>
-				</node>
-				<node label="32011">
-					<shortcut label="1038" type="32019" icon="DefaultAddonMusic.png">ActivateWindow(MusicLibrary,Addons,return)</shortcut>
-					<content>addon-audio</content>
-				</node>
-				<node label="32075">
-					<content>musicsources</content>
-					<content>upnp-music</content>
-				</node>
-			</node>
-			<node label="10006">
-				<content>addon-video</content>
-				<node label="32040">
-					<content>playlist-video</content>
-				</node>
-				<node label="32075">
-				<content>videosources</content>
-					<content>upnp-video</content>
-				</node>
-			</node>
-			<node label="32020">
-				<content>picturesources</content>
-			</node>
-		</node>
 
-		<node label="31163" condition="System.HasAddon(plugin.video.xbmb3c)">
-			<!-- movies -->
-			<node label="20342">
+		<!-- movies -->
+		<node label="20342">
+			<shortcut label="342" grouping="32029" icon="home/movies.png" condition="true">$VAR[MoviesButtonOnClick]</shortcut>
+			<shortcut label="31036" grouping="20342" type="20342" icon="home/movies.png" condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$VAR[CustomCollectionClick]</shortcut>
+			<shortcut label="19019" grouping="1047" type="1037" icon="home/videoaddons.png" condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$VAR[CustomCollectionClick]</shortcut>
+			<node label="31116" condition="Skin.HasSetting(HomeMenuUseMBforMovies)">
+				<!-- mb3 movie items -->
 				<shortcut label="31050" grouping="20342" type="20342">$INFO[Window(Home).Property(xbmb3c.std.movies.0.path)]</shortcut>
 				<shortcut label="20386" grouping="20342" type="20342">$INFO[Window(Home).Property(xbmb3c.std.movies.1.path)]</shortcut>
 				<shortcut label="31035" grouping="20342" type="20342">$INFO[Window(Home).Property(xbmb3c.std.movies.2.path)]</shortcut>
@@ -71,82 +40,232 @@
 				<shortcut label="20388" grouping="20342" type="20342">$INFO[Window(Home).Property(xbmb3c.std.movies.7.path)]</shortcut>
 				<shortcut label="344" grouping="20342" type="20342">$INFO[Window(Home).Property(xbmb3c.std.movies.8.path)]</shortcut>
 			</node>
-			<!-- tvshows -->
-			<node label="20343">
+			<node label="31116" condition="Skin.HasSetting(HomeMenuUseNetflixforMovies)">
+			<!-- netflix movie items -->
+				<shortcut label="31130" grouping="customvideonode" type="31018" icon="home/netflix.png">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</shortcut>
+				<shortcut label="31131" grouping="customvideonode" type="31018" icon="home/netflix.png">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=wiHome&amp;thumb&amp;type=movie&amp;url",return)</shortcut>
+				<shortcut label="31048" grouping="customvideonode" type="31018" icon="home/netflix.png">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</shortcut>
+				<shortcut label="31050" grouping="customvideonode" type="31018" icon="home/netflix.png">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</shortcut>
+			</node>
+			<!-- xbmc movie items -->
+			<node label="31116" condition="!Skin.HasSetting(HomeMenuUseMBforMovies) + !Skin.HasSetting(HomeMenuUseNetflixforMovies)">
+				<shortcut label="31050" grouping="20342" type="20342">videodb://movies/</shortcut>
+				<shortcut label="20386" grouping="20342" type="20342">videodb://recentlyaddedmovies/</shortcut>
+				<shortcut label="31035" grouping="20342" type="20342">special://skin/playlists/inprogressmovies.xsp</shortcut>
+				<shortcut label="31036" grouping="20342" type="20342">videodb://movies/tags/</shortcut>
+				<shortcut label="20434" grouping="20342" type="20342">videodb://movies/sets/</shortcut>
+				<shortcut label="16101" grouping="20342" type="20342">special://skin/playlists/unwatchedmovies.xsp</shortcut>
+				<shortcut label="135" grouping="20342" type="20342">videodb://movies/genres/</shortcut>
+				<shortcut label="20388" grouping="20342" type="20342">videodb://movies/studios/</shortcut>
+				<shortcut label="344" grouping="20342" type="20342">videodb://movies/actors/</shortcut>
+			</node>
+		</node>
+		
+		<!-- tvshows -->
+		<node label="20343" >
+			<shortcut label="20343" grouping="32029" icon="home/tvseries.png" condition="true">$VAR[TVseriesButtonOnClick]</shortcut>
+			<shortcut label="31157" grouping="20343" type="20343" icon="home/tvseries.png" condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$VAR[CustomCollectionClick]</shortcut>
+			<!-- MB3 tvshows items -->
+			<node label="31116" condition="Skin.HasSetting(HomeMenuUseMBforTVseries)">
 				<shortcut label="31051" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.0.path)]</shortcut>
 				<shortcut label="20387" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.1.path)]</shortcut>
 				<shortcut label="31104" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.2.path)]</shortcut>
 				<shortcut label="31156" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.3.path)]</shortcut>
 				<shortcut label="31157" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.4.path)]</shortcut>
-				<!-- <shortcut label="31158" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.5.path)]</shortcut> -->
 				<shortcut label="31159" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.6.path)]</shortcut>
 				<shortcut label="31092" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.7.path)]</shortcut>
 				<shortcut label="135" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.8.path)]</shortcut>
 				<shortcut label="31160" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.9.path)]</shortcut>
 				<shortcut label="344" grouping="20343" type="20343">$INFO[Window(Home).Property(xbmb3c.std.tvshows.10.path)]</shortcut>
 			</node>
-			<!-- music -->
-			<node label="1211">
+			<!-- Netflix tvshows items -->
+			<node label="31116" condition="Skin.HasSetting(HomeMenuUseNetflixforTVseries)">
+				<shortcut label="31129" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</shortcut>
+				<shortcut label="31131" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=wiHome&amp;thumb&amp;type=tv&amp;url",return)</shortcut>
+				<shortcut label="31049" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</shortcut>
+				<shortcut label="31051" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</shortcut>
+			</node>
+			<!-- XBMC tvshows items -->
+			<node label="31116" condition="!Skin.HasSetting(HomeMenuUseMBforTVseries) + !Skin.HasSetting(HomeMenuUseNetflixforTVseries)">
+				<shortcut label="31129" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</shortcut>
+				<shortcut label="31131" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=wiHome&amp;thumb&amp;type=tv&amp;url",return)</shortcut>
+				<shortcut label="31049" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</shortcut>
+				<shortcut label="31051" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</shortcut>
+			</node>
+		</node>
+		
+		<!-- music -->
+		<node label="1211" >
+			<shortcut label="10005" grouping="32029" icon="home/music.png" condition="true">$VAR[MusicButtonOnClick]</shortcut>
+			<shortcut label="19021" grouping="32029" icon="home/radio.png" condition="System.GetBool(pvrmanager.enabled)">$VAR[RadioButtonOnClick]</shortcut>
+			<!-- MB3 music items -->
+			<node label="31116" condition="Skin.HasSetting(HomeMenuUseMBforMusic)">
 				<shortcut label="358" grouping="1211" type="1211">$INFO[Window(Home).Property(xbmb3c.std.music.0.path)]</shortcut>
 				<shortcut label="359" grouping="1211" type="1211">$INFO[Window(Home).Property(xbmb3c.std.music.1.path)]</shortcut>
 				<shortcut label="517" grouping="1211" type="1211">$INFO[Window(Home).Property(xbmb3c.std.music.2.path)]</shortcut>
-				<shortcut label="20389" grouping="1211" type="20389">$INFO[Window(Home).Property(xbmb3c.std.music.3.path)]</shortcut>
 			</node>
-			<!-- other -->
-			<node label="1047">
-				<shortcut label="1213" grouping="1047" type="1213">$INFO[Window(Home).Propertyxbmb3c.std.photo.0.path)]</shortcut>
-				<shortcut label="19019" grouping="1047" type="1037">$INFO[Window(Home).Property(xbmb3c.std.channels.0.path)]</shortcut>
-				<shortcut label="136" grouping="1047" type="1037">$INFO[Window(Home).Property(xbmb3c.std.playlists.0.path)]</shortcut>
-				<shortcut label="137" grouping="1047" type="1037">$INFO[Window(Home).Property(xbmb3c.std.search.0.path)]</shortcut>
-			</node>
-			<!-- collections -->
-			<node label="31161">
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.0.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.0.path))">$INFO[Window(Home).Property(titanmb3.0.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.1.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.1.path))">$INFO[Window(Home).Property(titanmb3.1.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.2.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.2.path))">$INFO[Window(Home).Property(titanmb3.2.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.3.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.3.path))">$INFO[Window(Home).Property(titanmb3.3.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.4.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.4.path))">$INFO[Window(Home).Property(titanmb3.4.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.5.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.5.path))">$INFO[Window(Home).Property(titanmb3.5.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.6.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.6.path))">$INFO[Window(Home).Property(titanmb3.6.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.7.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.7.path))">$INFO[Window(Home).Property(titanmb3.7.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.8.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.8.path))">$INFO[Window(Home).Property(titanmb3.8.path)]</shortcut>
-				<shortcut label="$INFO[Window(Home).Property(titanmb3.9.title)]" grouping="32029" type="1037" icon="home/mediabrowser.png" condition="!IsEmpty(Window(Home).Property(titanmb3.9.path))">$INFO[Window(Home).Property(titanmb3.9.path)]</shortcut>
+			<!-- XBMC music items -->
+			<node label="31116" condition="!Skin.HasSetting(HomeMenuUseMBforMusic)">
+				<shortcut label="10502" grouping="1211" type="1211">musicdb://</shortcut>
+				<shortcut label="135" grouping="1211" type="1211">musicdb://genres/</shortcut>
+				<shortcut label="133" grouping="1211" type="1211">musicdb://artists/</shortcut>
+				<shortcut label="132" grouping="1211" type="1211">musicdb://albums/</shortcut>
+				<shortcut label="134" grouping="1211" type="1211">musicdb://songs/</shortcut>
+				<shortcut label="271" grouping="1211" type="1211">mmusicdb://top100/</shortcut>
+				<shortcut label="359" grouping="1211" type="1211">musicdb://recentlyaddedalbums/</shortcut>
+				<shortcut label="521" grouping="1211" type="1211">musicdb://compilations/ </shortcut>
+				<shortcut label="652" grouping="1211" type="1211">musicdb://years/</shortcut>
+				<shortcut label="1050" grouping="1211" type="1211">musicdb://singles/</shortcut>
+				<shortcut label="136" grouping="1211" type="1211">special://musicplaylists/</shortcut>
+				<shortcut label="1038" grouping="1211" type="1211">addons://sources/audio/</shortcut>
 			</node>
 		</node>
 		
-		<node label="31164" condition="System.HasAddon(plugin.video.netflixbmc)">
-			<shortcut label="31018" grouping="32029" icon="home/netflix.png" condition="System.HasAddon(plugin.video.netflixbmc)">ActivateWindow(10025,"plugin://plugin.video.netflixbmc",return)</shortcut>
-			<shortcut label="31129" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</shortcut>
-			<shortcut label="31130" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fMyList%3fleid%3d595%26link%3dseeall",return)</shortcut>
-			<shortcut label="31131" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=wiHome&amp;thumb&amp;type=both&amp;url",return)</shortcut>
-			<shortcut label="31048" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=movie&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</shortcut>
-			<shortcut label="31049" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=listVideos&amp;thumb&amp;type=tv&amp;url=http%3a%2f%2fwww.netflix.com%2fWiRecentAdditionsGallery%3fnRR%3dreleaseDate%26nRT%3dall%26pn%3d1%26np%3d1%26actionMethod%3djson",return)</shortcut>
-			<shortcut label="31050" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=movie&amp;url",return)</shortcut>
-			<shortcut label="31051" grouping="customvideonode" type="31018" icon="home/netflix.png" condition="true">ActivateWindow(10025,"plugin://plugin.video.netflixbmc/?mode=main&amp;thumb&amp;type=tv&amp;url",return)</shortcut>
+		<!-- music videos -->
+		<node label="20389" >
+			<shortcut label="20389" grouping="32029" icon="home/music.png" condition="true">$VAR[MusicVideosButtonOnClick]</shortcut>
+			<!-- XBMC musicvideo items -->
+			<node label="31116" condition="!Skin.HasSetting(HomeMenuUseMBforMusicVideos)">
+				<shortcut label="20389" grouping="1211" type="1211">videodb://musicvideos/</shortcut>
+				<shortcut label="135" grouping="1211" type="1211">videodb://musicvideos/genres/</shortcut>
+				<shortcut label="134" grouping="1211" type="1211">videodb://musicvideos/titles/</shortcut>
+				<shortcut label="133" grouping="1211" type="1211">videodb://musicvideos/artists/</shortcut>
+				<shortcut label="20390" grouping="1211" type="1211">videodb://recentlyaddedmusicvideos/ </shortcut>
+			</node>
 		</node>
-		
+
+		<!-- Live TV Gotham -->
 		<node label="32017" condition="System.GetBool(pvrmanager.enabled)" version="13">
-			<content>pvr</content>
-			<node label="19023">
-				<content>pvr-tv</content>
-			</node>
-			<node label="19024">
-				<content>pvr-radio</content>
-			</node>
-		</node>
-		<node label="32017" condition="PVR.HasTVChannels" version="14">
-			<content>pvr</content>
-			<node label="19023">
-				<content>pvr-tv</content>
-			</node>
-		</node>
-		<node label="32087" condition="PVR.HasRadioChannels" version="14">
-			<content>radio</content>
-			<node label="19024">
-				<content>pvr-radio</content>
+			<shortcut label="32022" grouping="32029" icon="home/livetv.png" condition="System.GetBool(pvrmanager.enabled)">$VAR[LiveTVButtonOnClick]</shortcut>
+			<shortcut label="19163" grouping="32029" icon="home/tvrecordings.png" condition="System.GetBool(pvrmanager.enabled)">$VAR[RecordingsButtonClick]</shortcut>
+			<shortcut label="19021" grouping="32029" icon="home/radio.png" condition="System.GetBool(pvrmanager.enabled)">$VAR[RadioButtonOnClick]</shortcut>
+			<node label="31116">
+				<content>pvr</content>
+				<node label="19023">
+					<content>pvr-tv</content>
+				</node>
+				<node label="19024">
+					<content>pvr-radio</content>
+				</node>
 			</node>
 		</node>
 		
+		<!-- Live TV Helix -->
+		<node label="32017" condition="System.GetBool(pvrmanager.enabled)" version="14">
+			<shortcut label="32022" grouping="32029" icon="home/livetv.png" condition="System.GetBool(pvrmanager.enabled)">$VAR[LiveTVButtonOnClick]</shortcut>
+			<shortcut label="19163" grouping="32029" icon="home/tvrecordings.png" condition="System.GetBool(pvrmanager.enabled)">$VAR[RecordingsButtonClick]</shortcut>
+			<shortcut label="19021" grouping="32029" icon="home/radio.png" condition="System.GetBool(pvrmanager.enabled)">$VAR[RadioButtonOnClick]</shortcut>
+			<node label="32017" condition="PVR.HasTVChannels">
+				<content>pvr</content>
+				<node label="19023">
+					<content>pvr-tv</content>
+				</node>
+			</node>
+			<!-- Live Radio Helix -->
+			<node label="32087" condition="PVR.HasRadioChannels">
+				<content>radio</content>
+				<node label="19024">
+					<content>pvr-radio</content>
+				</node>
+			</node>
+		</node>
+		
+		<!-- MB3 collections -->
+		<node label="31161">
+			<node label="$INFO[Window(Home).Property(titanmb3.0.title)]" icon="$VAR[Custom0Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.0.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.0.title)]" grouping="32029" type="1037" icon="$VAR[Custom0Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.0.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.0.recent.path))">$INFO[Window(Home).Property(titanmb3.0.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.0.unwatched.path))">$INFO[Window(Home).Property(titanmb3.0.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.0.inprogress.path))">$INFO[Window(Home).Property(titanmb3.0.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.0.genre.path))">$INFO[Window(Home).Property(titanmb3.0.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.1.title)]" icon="$VAR[Custom1Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.1.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.1.title)]" grouping="32029" type="1037" icon="$VAR[Custom1Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.1.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.1.recent.path))">$INFO[Window(Home).Property(titanmb3.1.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.1.unwatched.path))">$INFO[Window(Home).Property(titanmb3.1.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.1.inprogress.path))">$INFO[Window(Home).Property(titanmb3.1.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.1.genre.path))">$INFO[Window(Home).Property(titanmb3.1.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.2.title)]" icon="$VAR[Custom2Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.2.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.2.title)]" grouping="32029" type="1037" icon="$VAR[Custom2Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.2.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.2.recent.path))">$INFO[Window(Home).Property(titanmb3.2.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.2.unwatched.path))">$INFO[Window(Home).Property(titanmb3.2.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.2.inprogress.path))">$INFO[Window(Home).Property(titanmb3.2.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.2.genre.path))">$INFO[Window(Home).Property(titanmb3.2.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.3.title)]" icon="$VAR[Custom3Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.3.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.3.title)]" grouping="32029" type="1037" icon="$VAR[Custom3Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.3.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.3.recent.path))">$INFO[Window(Home).Property(titanmb3.3.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.3.unwatched.path))">$INFO[Window(Home).Property(titanmb3.3.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.3.inprogress.path))">$INFO[Window(Home).Property(titanmb3.3.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.3.genre.path))">$INFO[Window(Home).Property(titanmb3.3.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.4.title)]" icon="$VAR[Custom4Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.4.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.4.title)]" grouping="32029" type="1037" icon="$VAR[Custom4Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.4.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.4.recent.path))">$INFO[Window(Home).Property(titanmb3.4.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.4.unwatched.path))">$INFO[Window(Home).Property(titanmb3.4.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.4.inprogress.path))">$INFO[Window(Home).Property(titanmb3.4.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.4.genre.path))">$INFO[Window(Home).Property(titanmb3.4.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.5.title)]" icon="$VAR[Custom5Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.5.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.5.title)]" grouping="32029" type="1037" icon="$VAR[Custom5Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.5.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.5.recent.path))">$INFO[Window(Home).Property(titanmb3.5.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.5.unwatched.path))">$INFO[Window(Home).Property(titanmb3.5.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.5.inprogress.path))">$INFO[Window(Home).Property(titanmb3.5.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.5.genre.path))">$INFO[Window(Home).Property(titanmb3.5.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.6.title)]" icon="$VAR[Custom6Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.6.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.6.title)]" grouping="32029" type="1037" icon="$VAR[Custom6Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.6.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.6.recent.path))">$INFO[Window(Home).Property(titanmb3.6.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.6.unwatched.path))">$INFO[Window(Home).Property(titanmb3.6.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.6.inprogress.path))">$INFO[Window(Home).Property(titanmb3.6.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.6.genre.path))">$INFO[Window(Home).Property(titanmb3.6.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.7.title)]" icon="$VAR[Custom7Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.7.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.7.title)]" grouping="32029" type="1037" icon="$VAR[Custom7Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.7.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.7.recent.path))">$INFO[Window(Home).Property(titanmb3.7.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.7.unwatched.path))">$INFO[Window(Home).Property(titanmb3.7.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.7.inprogress.path))">$INFO[Window(Home).Property(titanmb3.7.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.7.genre.path))">$INFO[Window(Home).Property(titanmb3.7.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.8.title)]" icon="$VAR[Custom8Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.8.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.8.title)]" grouping="32029" type="1037" icon="$VAR[Custom8Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.8.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.8.recent.path))">$INFO[Window(Home).Property(titanmb3.8.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.8.unwatched.path))">$INFO[Window(Home).Property(titanmb3.8.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.8.inprogress.path))">$INFO[Window(Home).Property(titanmb3.8.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.8.genre.path))">$INFO[Window(Home).Property(titanmb3.8.genre.path)]</shortcut>
+				</node>
+			</node>
+			<node label="$INFO[Window(Home).Property(titanmb3.9.title)]" icon="$VAR[Custom9Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.9.path))">
+				<shortcut label="$INFO[Window(Home).Property(titanmb3.9.title)]" grouping="32029" type="1037" icon="$VAR[Custom9Thumb]" condition="!IsEmpty(Window(Home).Property(titanmb3.9.path))">$VAR[CustomCollectionClick]</shortcut>
+				<node label="31116">
+					<shortcut label="31127" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.9.recent.path))">$INFO[Window(Home).Property(titanmb3.9.recent.path)]</shortcut>
+					<shortcut label="16101" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.9.unwatched.path))">$INFO[Window(Home).Property(titanmb3.9.unwatched.path)]</shortcut>
+					<shortcut label="575" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.9.inprogress.path))">$INFO[Window(Home).Property(titanmb3.9.inprogress.path)]</shortcut>
+					<shortcut label="135" grouping="32029" type="1037" condition="!IsEmpty(Window(Home).Property(titanmb3.9.genre.path))">$INFO[Window(Home).Property(titanmb3.9.genre.path)]</shortcut>
+				</node>
+			</node>
+		</node>
+		
+		
+		<!-- addons -->
 		<node label="32007">
 			<node label="32009">
 				<content>addon-program</content>
@@ -161,17 +280,34 @@
 				<content>addon-image</content>
 			</node>
 		</node>
+		
+		<!-- other -->
+		<node label="1047" condition="Skin.HasSetting(HomeMenuUseMBforMovies)">
+			<shortcut label="136" grouping="1047" type="1037" icon="home/mediabrowser.png">$INFO[Window(Home).Property(xbmb3c.std.playlists.0.path)]</shortcut>
+			<shortcut label="137" grouping="1047" type="1037" icon="home/mediabrowser.png">$INFO[Window(Home).Property(xbmb3c.std.search.0.path)]</shortcut>
+		</node>
+		
+		<node label="32020" condition="!Skin.HasSetting(HomeMenuUseMBforPictures)">
+				<content>picturesources</content>
+		</node>
+			
+		<!-- favourites-->	
 		<node label="32006">
 			<content>favourite</content>
 		</node>
+		<!-- settings -->
 		<node label="10004">
 			<content>settings</content>
 		</node>
+		<!-- xbmc commands -->
 		<node label="32054">
 			<content>commands</content>
 		</node>
 
 	</groupings>
+	
+	
+	<useDefaultThumbAsIcon>True</useDefaultThumbAsIcon>
 	
 	
 	<!-- action overrides -->
@@ -182,6 +318,8 @@
 	
 	<!-- icon overrides -->
 	<icon labelID="movies">$VAR[MoviesButtonThumb]</icon>
+	<icon labelID="31050">$VAR[MoviesButtonThumb]</icon>
+	
 	<icon labelID="tvshows">$VAR[TvseriesButtonThumb]</icon>
 	<icon labelID="music">$VAR[MusicButtonThumb]</icon>
 	<icon labelID="livetv">home/livetv.png</icon>
@@ -209,8 +347,7 @@
 	<icon labelID="31036">$VAR[MB3FavoritesThumb]</icon>
 	<icon labelID="31157">$VAR[MB3FavoriteTvShowsThumb]</icon>
 	
-	
-	
+	<!-- fallback icon -->
 	<icon image="DefaultShortcut.png">home/favourites.png</icon>
 	
 	<!-- available widgets -->
@@ -242,6 +379,7 @@
 	<widgetdefault labelID="info-window-home-property-titanmb3-9-title">custom</widgetdefault>
 	<widgetdefault labelID="19019">custom</widgetdefault>
 	<widgetdefault labelID="31036">custom</widgetdefault>
+	<widgetdefault labelID="31157">custom</widgetdefault>
 	
 	<!-- available backgrounds -->
 	<background label="31026">fanart</background>

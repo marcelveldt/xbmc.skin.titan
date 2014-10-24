@@ -7,12 +7,13 @@
     <controls>
         <!--Music Background-->
         <include>MusicBackground</include>
+		<!--Time & Weather-->
+        <include>TimeInfo</include>
 		<!--NowPlaying-->
         <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
         <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
 		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
-        <!--Time & Weather-->
-        <include>TimeInfo</include>
+
         <!--Header-->
         <include>Header</include>
         <!--Hidden Button-->

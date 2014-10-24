@@ -362,6 +362,7 @@
 				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
 				<property name="plot">$INFO[Window(Weather).Property(Day5.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
+				<visible>!IsEmpty(indow(Weather).Property(Day5.Title))</visible>
 				</item>
 				<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day6.Title)][/UPPERCASE]</label>
@@ -371,6 +372,7 @@
 				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
 				<property name="plot">$INFO[Window(Weather).Property(Day6.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
+				<visible>!IsEmpty(indow(Weather).Property(Day6.Title))</visible>
 				</item>
 			</content>
 		</control>
@@ -4260,8 +4262,6 @@
 		<label>134</label>
 		<icon>defaultcovers/musicsongs.png</icon>
 		<thumb>defaultcovers/musicsongslandscape.png</thumb>
-		<icon>$INFO[Window(Home).Property(RandomSong.1.Thumb)]</icon>
-		<thumb>$INFO[Window(Home).Property(RandomSong.1.fanart)]</thumb>
 		<onclick>ActivateWindow(Music, Songs, return)</onclick>
 	</item>
 	<item>
@@ -4727,8 +4727,8 @@
             <align>center</align>
             <label>$VAR[HomeMenuWidgetLabel]</label>
             <font>Light26</font>
-			<autoscroll>false</autoscroll>
-            <textcolor>darkgrey</textcolor>
+            <textcolor>lightgrey</textcolor>
+			<shadowcolor>black</shadowcolor>
 			<visible>IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Property(landscape))</visible>
         </control>
     </include>
@@ -4751,8 +4751,8 @@
             <align>center</align>
             <label>$VAR[HomeMenuWidgetLabel]</label>
             <font>Light26</font>
-			<autoscroll>false</autoscroll>
             <textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
 			<visible>IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Property(landscape))</visible>
         </control>
         <control type="image">

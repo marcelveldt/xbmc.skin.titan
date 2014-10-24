@@ -359,7 +359,8 @@
             <include>BannerViewWithOverlayLabelSizeNormal</include>
             <align>center</align>
             <info>ListItem.Label</info>
-            <textcolor>darkgrey</textcolor>
+            <textcolor>lightgrey</textcolor>
+			<shadowcolor>black</shadowcolor>
             <include>bannerViewWithOverlay</include>
         </control>
         <control type="image">
@@ -377,6 +378,7 @@
             <align>center</align>
             <label>$VAR[WatchedLabel]</label>
             <textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
 			<visible>!Skin.HasSetting(HideWatchedOverlayLandscape)</visible>
         </control>
     </include>
@@ -411,7 +413,8 @@
             <include>BannerViewWithOverlayLabelSizeEpisodes</include>
             <align>center</align>
             <info>ListItem.Label</info>
-            <textcolor>darkgrey</textcolor>
+            <textcolor>aawhite</textcolor>
+			<shadowcolor>black</shadowcolor>
             <include>bannerViewWithOverlay</include>
         </control>
         <control type="image">
@@ -442,6 +445,8 @@
             <align>center</align>
             <info>ListItem.Label</info>
             <textcolor>white</textcolor>
+			<textcolor>$VAR[homeMenuFocusLabelColor]</textcolor>
+			<shadowcolor>black</shadowcolor>
             <include>bannerViewWithOverlay</include>
         </control>
         <control type="image">
@@ -476,7 +481,8 @@
             <include>BannerViewWithOverlayLabelSizeEpisodes</include>
             <align>center</align>
             <info>ListItem.Label</info>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[homeMenuFocusLabelColor]</textcolor>
+			<shadowcolor>black</shadowcolor>
             <include>bannerViewWithOverlay</include>
         </control>
         <control type="image">
@@ -642,13 +648,13 @@
 	<include name="BigpanelWatchedLabel">
 			<control type="image">
 				<!--Watched Overlay-->
-				<posx>192</posx>
+				<posx>182</posx>
 				<posy>7</posy>
-				<width>60</width>
-				<height>60</height>
+				<width>70</width>
+				<height>70</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
 				<texture>$VAR[WatchedImage]</texture>
-				<visible>!Skin.HasSetting(HideWatchedOverlayPoster) + !skin.hastheme(classic)</visible>
+				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel) + !skin.hastheme(classic)</visible>
 			</control>
 			<control type="label">
 				<!--watched label-->
@@ -660,7 +666,7 @@
 				<label>$VAR[WatchedLabel]</label>
 				<textcolor>white</textcolor>
 				<font>Reg20</font>
-				<visible>!Skin.HasSetting(HideWatchedOverlayPoster) + !skin.hastheme(classic)</visible>
+				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel) + !skin.hastheme(classic)</visible>
 			</control>
 	</include>
 	

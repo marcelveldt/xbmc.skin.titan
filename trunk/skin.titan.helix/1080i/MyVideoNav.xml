@@ -8,12 +8,13 @@
     <controls>
         <!-- Video Background -->
         <include>VideoBackground</include>
+		<!--Time & Weather-->
+        <include>TimeInfo</include>
 		<!--NowPlaying-->
         <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
         <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
 		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
-        <!--Time & Weather-->
-        <include>TimeInfo</include>
+        
         <!--Header-->
         <include>Header</include>
         <!--Hidden Button-->
@@ -104,11 +105,11 @@
                     <include>SubMenuButton</include>
                     <label>View: $INFO[Container.Viewmode]</label>
                     <onclick>Container.NextViewMode</onclick>
-					<onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Movies)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,00)</onclick>
-                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(seasons)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,00)</onclick>
-                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(TVShows)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,00)</onclick>
-                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Episodes)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,00)</onclick>
-                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Sets)]">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,00)</onclick>
+					<onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | substring(Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Movies)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,MOVIES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | substring(Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(seasons)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SEASONS,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | substring(Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(TVShows)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | substring(Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Episodes)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,00)</onclick>
+                    <onclick condition="[substring(Container.FolderPath,plugin://plugin.video.xbmb3c) | substring(Container.FolderPath,plugin://plugin.video.netflixbmc)] + Container.Content(Sets)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,00)</onclick>
 				</control>
 				
 				<control type="radiobutton" id="341">
@@ -238,6 +239,14 @@
                     <onclick>Skin.ToggleSetting(MovieDetailsView_HidePanel)</onclick>
                     <selected>Skin.HasSetting(MovieDetailsView_HidePanel)</selected>
 					<visible>Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(505)</visible>
+                </control>
+				<control type="radiobutton" id="323">
+                    <!--Toggle watchedOverlay-->
+                    <include>SubMenuButton</include>
+                    <label>31094</label>
+                    <onclick>Skin.ToggleSetting(HideWatchedOverlayBigPanel)</onclick>
+                    <selected>Skin.HasSetting(HideWatchedOverlayBigPanel)</selected>
+					<visible>Control.IsVisible(57) | Control.IsVisible(59)</visible>
                 </control>
             </control>
         </control>

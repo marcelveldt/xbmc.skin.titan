@@ -14,9 +14,9 @@
             <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 			<visible>Skin.HasSetting(ItemFanartBg)</visible>
         </control>
-		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
 		<!--Time & Weather-->
         <include>TimeInfo</include>
+		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
         <!-- Header -->
         <include>Header</include>
 		<!-- Now playing -->

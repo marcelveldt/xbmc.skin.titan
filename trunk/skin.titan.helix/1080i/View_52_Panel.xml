@@ -22,11 +22,11 @@
                 <orientation>vertical</orientation>
                 <preloaditems>2</preloaditems>
                 <!-- itemlayout movies -->
-                <itemlayout height="320" width="230" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
+                <itemlayout height="320" width="230" condition="[container.content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons)]">
                     <include>PosterViewLayout</include>
                 </itemlayout>
                 <!-- focussed layout movies -->
-                <focusedlayout height="320" width="230" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
+                <focusedlayout height="320" width="230" condition="[container.content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons)]">
                     <include>PosterViewLayoutFocus</include>
                 </focusedlayout>
                 <!-- itemlayout albums -->

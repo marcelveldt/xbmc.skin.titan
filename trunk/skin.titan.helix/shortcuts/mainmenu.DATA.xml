@@ -108,7 +108,7 @@
 		<label2>Video Add-ons</label2>
 		<icon>$VAR[Custom0Thumb]</icon>
 		<thumb />
-		<action>$INFO[Window(Home).Property(titanmb3.0.path)]</action>
+		<action>$VAR[CustomCollectionClick]</action>
 		<visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.0.title))</visible>
 	</shortcut>
 	
@@ -117,7 +117,7 @@
 		<label2>Video Add-ons</label2>
 		<icon>$VAR[Custom1Thumb]</icon>
 		<thumb />
-		<action>$INFO[Window(Home).Property(titanmb3.1.path)]</action>
+		<action>$VAR[CustomCollectionClick]</action>
 		<visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.1.title))</visible>
 	</shortcut>
 	
@@ -126,7 +126,7 @@
 		<label2>Video Add-ons</label2>
 		<icon>$VAR[Custom2Thumb]</icon>
 		<thumb />
-		<action>$INFO[Window(Home).Property(titanmb3.2.path)]</action>
+		<action>$VAR[CustomCollectionClick]</action>
 		<visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.2.title))</visible>
 	</shortcut>
 	
@@ -135,8 +135,17 @@
 		<label2>Video Add-ons</label2>
 		<icon>$VAR[Custom3Thumb]</icon>
 		<thumb />
-		<action>$INFO[Window(Home).Property(titanmb3.3.path)]</action>
+		<action>$VAR[CustomCollectionClick]</action>
 		<visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.3.title))</visible>
+	</shortcut>
+	
+	<shortcut>
+		<label>$INFO[Window(Home).Property(titanmb3.4.title)]</label>
+		<label2>Video Add-ons</label2>
+		<icon>$VAR[Custom4Thumb]</icon>
+		<thumb />
+		<action>$VAR[CustomCollectionClick]</action>
+		<visible>Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(titanmb3.4.title))</visible>
 	</shortcut>
 	
 </shortcuts>

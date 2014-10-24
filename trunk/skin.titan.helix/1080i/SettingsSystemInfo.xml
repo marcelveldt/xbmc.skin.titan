@@ -6,11 +6,11 @@
     <controls>
         <!--Globalbackground-->
         <include>GlobalBackground</include>
-       
+        <!--Time & Weather-->
+        <include>TimeInfo</include>
 		<!-- Now playing -->
 		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
-		 <!--Time & Weather-->
-        <include>TimeInfo</include>
+		
         <!--Header-->
         <include>Header</include>
         <!--Titan Version-->

@@ -55,7 +55,7 @@
     <!-- Gadget Row sizes -->
     <include name="Gadget1Row">
         <height>325</height>
-        <posy>560</posy>
+        <posy>590</posy>
     </include>
     <include name="Gadget2Row">
         <height>605</height>
@@ -306,7 +306,8 @@
             <label>$VAR[value_header]</label>
         </control>
     </include>
-    <include name="TimeInfo">
+    
+	<include name="TimeInfo">
         <control type="group">
             <animation time="400" effect="fade">Visible</animation>
             <animation time="200" effect="fade">Hidden</animation>
@@ -330,7 +331,7 @@
                     <height>100</height>
                     <info>System.Time(hh:mm)</info>
                     <font>Bold55</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <!--AM-->
@@ -339,7 +340,7 @@
                     <height>100</height>
                     <label>378</label>
                     <font>Bold55</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <!--PM-->
@@ -348,7 +349,7 @@
                     <height>100</height>
                     <label>379</label>
                     <font>Bold55</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
             </control>
             <control type="grouplist">
@@ -371,14 +372,14 @@
                     <height>50</height>
                     <info>System.Date(DDD)</info>
                     <font>Light30</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <width min="0" max="400">auto</width>
                     <height>50</height>
                     <label>, </label>
                     <font>Light30</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <!--Date-->
@@ -386,7 +387,7 @@
                     <height>50</height>
                     <info>System.Date(d)</info>
                     <font>Light30</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <visible>SubString(System.Language,German)</visible>
@@ -394,7 +395,7 @@
                     <height>50</height>
                     <label>. </label>
                     <font>Light30</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <label></label>
@@ -402,7 +403,7 @@
                     <width min="0" max="400">auto</width>
                     <height>50</height>
                     <font>Light30</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
                 <control type="label">
                     <!--Month-->
@@ -410,12 +411,123 @@
                     <height>50</height>
                     <info>System.Date(MMM)</info>
                     <font>Light30</font>
-                    <textcolor>$VAR[ClockColor_white]</textcolor>
+                    <textcolor>$VAR[TextColor_white]</textcolor>
                 </control>
             </control>
         </control>
     </include>
     
+	<include name="TimeInfoAlt">
+        <control type="group">
+            <animation time="400" effect="fade">Visible</animation>
+            <animation time="200" effect="fade">Hidden</animation>
+            <visible>!ControlGroup(400).HasFocus() + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
+            <control type="grouplist">
+                <!--Time Grouplist Line 1-->
+                <!--animation effect="slide" start="0" end="-130" time="200" condition="Weather.IsFetched" >Conditional</animation-->
+                <posx>1260</posx>
+                <posy>10</posy>
+                <width>600</width>
+                <height>100</height>
+                <align>right</align>
+                <itemgap>4</itemgap>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <include>animation_fade_visible_hidden</include>
+                <include>animation_fade_open_close</include>
+                <control type="label">
+                    <!--Time-->
+                    <width min="0" max="300">auto</width>
+                    <height>100</height>
+                    <info>System.Time(hh:mm)</info>
+                    <font>Bold55</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <!--AM-->
+                    <visible>substring(system.time,AM,right)</visible>
+                    <width min="0" max="150">auto</width>
+                    <height>100</height>
+                    <label>378</label>
+                    <font>Bold55</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <!--PM-->
+                    <visible>substring(system.time,PM,right)</visible>
+                    <width min="0" max="150">auto</width>
+                    <height>100</height>
+                    <label>379</label>
+                    <font>Bold55</font>
+                    <textcolor>white</textcolor>
+                </control>
+            </control>
+            <control type="grouplist">
+                <!--Date Grouplist Line 2-->
+                <!--animation effect="slide" start="0" end="-130" time="200" condition="Weather.IsFetched" >Conditional</animation-->
+                <posx>1260</posx>
+                <posy>85</posy>
+                <width>600</width>
+                <height>50</height>
+                <align>right</align>
+                <itemgap>4</itemgap>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <include>animation_fade_visible_hidden</include>
+                <include>animation_fade_open_close</include>
+                <visible>!ControlGroup(400).HasFocus()</visible>
+                <control type="label">
+                    <!--Day-->
+                    <width min="0" max="400">auto</width>
+                    <height>50</height>
+                    <info>System.Date(DDD)</info>
+                    <font>Light30</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <width min="0" max="400">auto</width>
+                    <height>50</height>
+                    <label>, </label>
+                    <font>Light30</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <!--Date-->
+                    <width min="0" max="400">auto</width>
+                    <height>50</height>
+                    <info>System.Date(d)</info>
+                    <font>Light30</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <visible>SubString(System.Language,German)</visible>
+                    <width min="0" max="400">auto</width>
+                    <height>50</height>
+                    <label>. </label>
+                    <font>Light30</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <label></label>
+                    <visible>!SubString(System.Language,German)</visible>
+                    <width min="0" max="400">auto</width>
+                    <height>50</height>
+                    <font>Light30</font>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="label">
+                    <!--Month-->
+                    <width min="0" max="400">auto</width>
+                    <height>50</height>
+                    <info>System.Date(MMM)</info>
+                    <font>Light30</font>
+                    <textcolor>white</textcolor>
+                </control>
+            </control>
+        </control>
+    </include>
+    
+	
 	<include name="ProfileInfo">
 	<control type="group" id="891">
 			<defaultcontrol>890</defaultcontrol>
@@ -815,6 +927,11 @@
         <font>Bold38</font>
         <textcolor>$VAR[ThemeFontColorBlack]</textcolor>
     </include>
+	<include name="DialogHeader_Alt">
+        <!--Dialog Header-->
+        <font>Bold38</font>
+        <textcolor>white</textcolor>
+    </include>
     <include name="DialogHeader2">
         <!--Dialog Header2 (Yes/No)-->
         <font>Reg36</font>
@@ -857,11 +974,24 @@
         <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
         <focusedcolor>$VAR[ThemeFontColorDarkGrey]</focusedcolor>
     </include>
+	<include name="DialogListNF_Alt">
+        <!--Dialog List NF-->
+        <font>Light32</font>
+        <textcolor>white</textcolor>
+        <focusedcolor>black</focusedcolor>
+    </include>
+	
     <include name="DialogListFO">
         <!--Dialog List FO-->
         <font>Light32</font>
         <textcolor>eewhite</textcolor>
         <selectedcolor>eewhite</selectedcolor>
+    </include>
+	<include name="DialogListFO_Alt">
+        <!--Dialog List FO-->
+        <font>Light32</font>
+        <textcolor>black</textcolor>
+        <selectedcolor>black</selectedcolor>
     </include>
     <include name="DialogLabel">
         <!--Dialog Label-->
@@ -1795,7 +1925,6 @@
             <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
             <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
             <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-            <animation effect="slide" start="0" end="160" time="0" condition="Window.IsActive(DialogSeekbar.xml)">Conditional</animation>
             <posx>1850</posx>
             <posy>890</posy>
             <width>890</width>
@@ -2875,6 +3004,8 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetString(ColorTheme, default)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(ShowFanartBackground)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(59_SmallFanart)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.String(CustomBackgroundSetting, default)</onload>
+		
 
 		<!-- correct music widgets on MB3 mode -->
 		<onload condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, latestalbum)</onload>
