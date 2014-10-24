@@ -8,27 +8,37 @@ import time
 def setView(containerType,viewId):
     
     if viewId=="00":
+        win = xbmcgui.Window( 10000 )
+        
         curView = xbmc.getInfoLabel("Container.Viewmode")
-        if curView == "Showcase":
-            viewId="51"
-        if curView == "Panel details":
-            viewId="53"  
-        if curView == "Showcase Details":
-            viewId="54"
-        if curView == "Panel":
-            viewId="52"
-        if curView == "Titan Banner details":
-            viewId="505"
-        if curView == "Banner list":
-            viewId="55"
-        if curView == "Extended":
-            viewId="506"           
-        if curView == "Banner Plex":
-            viewId="56"
-        if curView == "Titan Banner":
-            viewId="501"
+        
         if curView == "list":
-            viewId="50"
+            viewId="50"        
+        elif curView == "Showcase":
+            viewId="51"
+        elif curView == "Panel details":
+            viewId="53"  
+        elif curView == "Showcase Details":
+            viewId="54"
+        elif curView == "Panel":
+            viewId="52"
+        elif curView == "Banner list":
+            viewId="55"
+        elif curView == "Banner Plex":
+            viewId="56"            
+        elif curView == "Big Panel":
+            viewId="57" 
+        elif curView == "Large Poster":
+            viewId="58"
+        elif curView == "Big Panel details":
+            viewId="59"
+        elif curView == "Landscape":
+            viewId="501"            
+        elif curView == "Landscape details":
+            viewId="505"            
+        elif curView == "Extended":
+            viewId="506"           
+
     else:
         viewId=viewId    
       
