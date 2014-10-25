@@ -15,6 +15,7 @@
 
         <!--Header-->
         <include>Header</include>
+		
         <!--Panel-->
         <control type="image">
             <posx>10</posx>

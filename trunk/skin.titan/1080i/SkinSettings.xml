@@ -923,6 +923,16 @@
                     <onclick condition="Skin.String(HomeMenuUseRadioCollection)">Skin.Reset(HomeMenuUseRadioCollection)</onclick>
                     <selected>Skin.String(HomeMenuUseRadioCollection)</selected>
                 </control>
+				<control type="radiobutton" id="5143">
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>$LOCALIZE[31179]</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(FullscreenMusic)</onclick>
+                    <selected>Skin.HasSetting(FullscreenMusic)</selected>
+                </control>
             </control>
         </control>
 		</control>

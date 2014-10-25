@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Titan fixes for kodi compatability-->
+<!--Titan fixes for Helix compatability-->
 <includes>
     <include name="DialogContentSettingsList">
 		<posx>0</posx>
@@ -37,19 +37,6 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<scroll>false</scroll>
-				<visible>!IsEmpty(ListItem.Thumb)</visible>
-			</control>
-			<control type="label">
-				<posx>20</posx>
-				<posy>0</posy>
-				<width>688</width>
-				<height>60</height>
-				<include>DialogListNF</include>
-				<info>ListItem.Label</info>
-				<align>left</align>
-				<aligny>center</aligny>
-				<scroll>false</scroll>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="image">
 				<posx>708</posx>
@@ -82,18 +69,6 @@
 				<info>ListItem.Thumb</info>
 			</control>
 			<control type="label">
-				<posx>20</posx>
-				<posy>0</posy>
-				<width>688</width>
-				<height>60</height>
-				<include>DialogListNF</include>
-				<info>ListItem.Label</info>
-				<align>left</align>
-				<aligny>center</aligny>
-				<scroll>false</scroll>
-				<visible>!Control.HasFocus(4) + !Control.HasFocus(21) + IsEmpty(ListItem.Thumb)</visible>
-			</control>
-			<control type="label">
 				<posx>75</posx>
 				<posy>0</posy>
 				<width>633</width>
@@ -103,19 +78,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<scroll>false</scroll>
-				<visible>!Control.HasFocus(4) + !Control.HasFocus(21) + !IsEmpty(ListItem.Thumb)</visible>
-			</control>
-			<control type="label">
-				<posx>20</posx>
-				<posy>0</posy>
-				<width>688</width>
-				<height>60</height>
-				<include>DialogListFO</include>
-				<info>ListItem.Label</info>
-				<align>left</align>
-				<aligny>center</aligny>
-				<scroll>false</scroll>
-				<visible>Control.HasFocus(4) | Control.HasFocus(21) + IsEmpty(ListItem.Thumb)</visible>
+				<visible>!Control.HasFocus(4) + !Control.HasFocus(21)</visible>
 			</control>
 			<control type="label">
 				<posx>75</posx>
@@ -127,7 +90,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<scroll>false</scroll>
-				<visible>Control.HasFocus(4) | Control.HasFocus(21) + !IsEmpty(ListItem.Thumb)</visible>
+				<visible>Control.HasFocus(4) | Control.HasFocus(21)</visible>
 			</control>
 			<control type="image">
 				<posx>708</posx>
@@ -146,13 +109,6 @@
             <posy>394</posy>
             <include>animation_dialog</include>
             <visible>!Window.IsVisible(numericinput)</visible>
-            <control type="image">
-                <posx>496</posx>
-                <posy>-2</posy>
-                <width>80</width>
-                <height>60</height>
-                <texture>dialogs/default/arrow.png</texture>
-            </control>
             <control type="image">
                 <posx>0</posx>
                 <posy>-160</posy>
@@ -668,20 +624,13 @@
             </control>
 		</control>
 	</include>
-	<include name="DialogKeyboardKodi">
+	<include name="DialogKeyboardHelix">
 	<control type="group">
             <posx>424</posx>
             <posy>394</posy>
             <include>animation_dialog</include>
             <visible>!Window.IsVisible(numericinput)</visible>
-            <control type="image">
-                <posx>496</posx>
-                <posy>-2</posy>
-                <width>80</width>
-                <height>60</height>
-                <texture>dialogs/default/arrow.png</texture>
-            </control>
-            <control type="image">
+           <control type="image">
                 <posx>0</posx>
                 <posy>-160</posy>
                 <width>1072</width>
@@ -1331,10 +1280,17 @@
 		<posx>25</posx>
 	</include>
 	
-	<include name="BigPanelWatchedLabelPosGotham">
+	<include name="BigPanelWatchedLabelPosClassicGotham">
+		<posx>237</posx>
+	</include>
+	<include name="BigPanelWatchedlabelPosClassicHelix">
+		<posx>187</posx>
+	</include>
+	
+	<include name="BigPanelWatchedLabelPosModernGotham">
 		<posx>250</posx>
 	</include>
-	<include name="BigPanelWatchedlabelPosHelix">
+	<include name="BigPanelWatchedlabelPosModernHelix">
 		<posx>200</posx>
 	</include>
 	

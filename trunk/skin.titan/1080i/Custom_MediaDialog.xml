@@ -4,21 +4,15 @@
     <defaultcontrol always="true">2</defaultcontrol>
     <controls>
         <!--Dialog Overlay-->
-        <include>DialogOverlay</include>
+        <include condition="!skin.hastheme(classic)">GlobalBackground</include>
+		<include condition="!skin.hastheme(classic)">DialogOverlay</include>
+		<include condition="skin.hastheme(classic)">DialogOverlayExtra</include>
         <!--Dialog Custom Media Dialog-->
         <control type="group">
             <include>animation_dialog</include>
             <visible>!Window.IsVisible(filebrowser) + !Window.IsVisible(selectdialog) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(progressdialog) + !Window.IsVisible(virtualkeyboard) + !Window.IsVisible(yesnodialog) + !Window.IsVisible(okdialog) + !Window.IsVisible(addonsettings)</visible>
             
             <!--Panel-->
-            <control type="image">
-                <!--Arrow-->
-                <posx>920</posx>
-                <posy>247</posy>
-                <width>80</width>
-                <height>60</height>
-                <texture>dialogs/default/arrow.png</texture>
-            </control>
             <control type="image">
                 <!--Panel-->
                 <posx>604</posx>

@@ -1,4 +1,4 @@
-v.2.1.1
+v.2.1.5
 - script skinshortcuts is now used for maximized flexibility
 - improved submenus and widgets
 - fixed several bugs
@@ -6,6 +6,7 @@ v.2.1.1
 - custom backgrounds for loginscreen
 - german translation
 - selectable background overlay
+- cdart support added
 
 v.2.0.22
 - added Big Panel & Large Poster view

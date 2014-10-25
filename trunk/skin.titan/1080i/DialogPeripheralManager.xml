@@ -5,7 +5,9 @@
     <allowoverlay>no</allowoverlay>
     <controls>
         <!--Dialog Overlay-->
-        <include>DialogOverlay</include>
+        <include condition="!skin.hastheme(classic)">GlobalBackground</include>
+		<include condition="!skin.hastheme(classic)">DialogOverlay</include>
+		<include condition="skin.hastheme(classic)">DialogOverlayExtra</include>
         <control type="button" id="21">
             <onfocus>SetFocus(20)</onfocus>
             <animation effect="fade" start="0" end="100" time="0" delay="50">Focus</animation>

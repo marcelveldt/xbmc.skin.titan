@@ -25,9 +25,7 @@
         <include>WeatherInfo</include>
 		<include>ProfileInfo</include>
 
-        <!--Footer-->
-        <include condition="!skin.hassetting(nofooterbar)">Footer</include>
-		
+	
 		<!-- Header -->
         <include>Header</include>
 		<!--Time & Weather-->
@@ -38,6 +36,8 @@
         <include condition="Skin.HasTheme(classic)">NowPlayingVideoClassic</include>
 		<include condition="!Skin.HasTheme(classic)">NowPlayingModern</include>
 		
+		<!--Footer-->
+        <include condition="!skin.hassetting(nofooterbar)">Footer</include>
 		
 		
 		<!--Home tiles List 300-->
@@ -196,7 +196,7 @@
                         <visible>false</visible>
 						<onfocus>SetProperty(submenu,hide,Home)</onfocus>
 						<onfocus>Skin.SetString(customwidget, recent)</onfocus>
-						<onfocus condition="Skin.HasSetting(UseSectionBackground)">Skin.SetString(SectionBackground,$VAR[varBackground])</onfocus>
+						<onfocus condition="Skin.HasSetting(UseSectionBackground) + !Player.HasMedia">Skin.SetString(SectionBackground,$VAR[varBackground])</onfocus>
 						<onfocus condition="!Skin.HasSetting(UseSectionBackground)">Skin.Reset(SectionBackground)</onfocus>
 						<onfocus>SetProperty(submenupos,$INFO[Container(300).Position],Home)</onfocus>
 						<onfocus condition="SubString(Container(300).ListItem.Property(hasSubmenu), True)">SetProperty(submenutype,$INFO[Container(300).ListItem.Property(submenuVisibility)],Home)</onfocus>
@@ -265,6 +265,7 @@
             <label>20186</label>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
+			<visible>System.HasAddon(skin.titan)</visible>
         </control>
 		<control type="label">
             <posx>1840</posx>

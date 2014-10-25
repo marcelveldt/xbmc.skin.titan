@@ -171,7 +171,7 @@
 				<control type="button" id="301"> <!--new shortcut-->
 					<width>465</width>
 					<align>center</align>
-					<onclick>SendClick(401)</onclick>
+					<onclick>XBMC.RunScript(script.titanskin.helpers,SENDCLICK,401)</onclick>
 					<label>$ADDON[script.skinshortcuts 32000]</label>
 				</control>
 				
