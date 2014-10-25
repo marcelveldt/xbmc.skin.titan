@@ -3,7 +3,7 @@
 <window>
     <defaultcontrol>15</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<views>15,501,59,505,506</views>
+	<views>15,501,505,506</views>
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>
@@ -31,7 +31,6 @@
 			<include>BannerView</include>
 			<include>BannerViewDetails</include>
 			<include>ViewExtendedList</include>
-			<include>View_59_BigPanelDetails</include>
 		
 		
 			 <!--LiveTVRecordingsView ID=13-->

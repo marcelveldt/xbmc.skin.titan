@@ -645,7 +645,7 @@
         <font>Reg20</font>
     </include>
 	
-	<include name="BigpanelWatchedLabel">
+	<include name="BigPanelWatchedImageModern">
 			<control type="image">
 				<!--Watched Overlay-->
 				<posx>182</posx>
@@ -654,21 +654,49 @@
 				<height>70</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
 				<texture>$VAR[WatchedImage]</texture>
-				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel) + !skin.hastheme(classic)</visible>
+				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel)</visible>
 			</control>
 			<control type="label">
 				<!--watched label-->
-				<include condition="!SubString(System.BuildVersion,14,left)">BigPanelWatchedLabelPosGotham</include>
-				<include condition="SubString(System.BuildVersion,14,left)">BigPanelWatchedlabelPosHelix</include>
+				<include condition="!SubString(System.BuildVersion,14,left)">BigPanelWatchedLabelPosModernGotham</include>
+				<include condition="SubString(System.BuildVersion,14,left)">BigPanelWatchedlabelPosModernHelix</include>
 				<posy>-10</posy>
 				<width>50</width>
 				<align>right</align>
 				<label>$VAR[WatchedLabel]</label>
 				<textcolor>white</textcolor>
 				<font>Reg20</font>
-				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel) + !skin.hastheme(classic)</visible>
+				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel)</visible>
 			</control>
 	</include>
+	
+	<include name="BigPanelWatchedImageClassic">
+			<control type="image">
+				<!--Watched Overlay-->
+				<posx>185</posx>
+				<posy>14</posy>
+				<width>60</width>
+				<height>60</height>
+				<colordiffuse>ccFFFFFF</colordiffuse>
+				<texture>$VAR[WatchedImage]</texture>
+				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel)</visible>
+			</control>
+			<control type="label">
+				<!--watched label-->
+				<include condition="!SubString(System.BuildVersion,14,left)">BigPanelWatchedLabelPosClassicGotham</include>
+				<include condition="SubString(System.BuildVersion,14,left)">BigPanelWatchedlabelPosClassicHelix</include>
+				<posy>10</posy>
+				<width>50</width>
+				<align>right</align>
+				<label>$VAR[WatchedLabel]</label>
+				<textcolor>white</textcolor>
+				<font>Reg20</font>
+				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel)</visible>
+			</control>
+	</include>
+	
+	
+	
 	
 		
 	<include name="ExtendedViewWatchedLabelNormal">

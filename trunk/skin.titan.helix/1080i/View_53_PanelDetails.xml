@@ -29,11 +29,11 @@
                 <orientation>horizontal</orientation>
                 <preloaditems>2</preloaditems>
                 <!-- itemlayout movies -->
-                <itemlayout height="380" width="217" condition="[container.content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons)]">
+                <itemlayout height="380" width="217" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
                     <include>PosterViewLayout</include>
                 </itemlayout>
                 <!-- focussed layout movies -->
-                <focusedlayout height="380" width="217" condition="[container.content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | container.content(seasons)]">
+                <focusedlayout height="380" width="217" condition="[container.content(MusicVideos) | Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)]">
                     <include>PosterViewLayoutFocus</include>
                 </focusedlayout>
                 <!-- itemlayout albums -->

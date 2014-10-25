@@ -897,6 +897,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) + StringCompare(Container(300).ListItem.Property(Background),default)">special://skin/extras/backgrounds/hover_my videos.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) + StringCompare(Container(300).ListItem.Property(Background),default)">special://skin/extras/backgrounds/hover_extensions.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),filemanager) + StringCompare(Container(300).ListItem.Property(Background),default)">special://skin/extras/backgrounds/filemanager.png</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),$LOCALIZE[7]) + StringCompare(Container(300).ListItem.Property(Background),default)">special://skin/extras/backgrounds/filemanager.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings) + StringCompare(Container(300).ListItem.Property(Background),default)">special://skin/extras/backgrounds/systeminfo.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(Background),default)">special://skin/extras/backgrounds/hover_OnlineVideos.png</value>
 		<!-- fanart backgrounds -->
@@ -941,14 +942,14 @@
    
    
    <variable name="ColorOverlay">
-	<value condition="Skin.String(ColorTheme, light)">bgoverlay_white.png</value>
+	<value condition="Skin.String(ColorTheme, light)">whitepanel.png</value>
 	<value condition="Skin.String(ColorTheme, default)">overlays/fanart/fanart_overlay.png</value>
 	<value condition="Skin.String(ColorTheme, dark)">bgoverlay_dark.png</value>
 	<value condition="Skin.String(ColorTheme)">$INFO[Skin.String(ColorTheme)]</value>
    </variable>
    
    <variable name="ColorOverlayExtra">
-	<value condition="Skin.String(ColorTheme, light)">bgoverlay_white.png</value>
+	<value condition="Skin.String(ColorTheme, light)">whitepanel.png</value>
 	<value>bgoverlay_dark.png</value>
    </variable>
    

@@ -4,8 +4,9 @@
     <defaultcontrol always="true">8000</defaultcontrol>
     <controls>
         <!--Dialog Overlay-->
-        <include>GlobalBackground</include>
-		<include>DialogOverlay</include>
+		<include condition="!skin.hastheme(classic)">GlobalBackground</include>
+		<include condition="!skin.hastheme(classic)">DialogOverlay</include>
+		<include condition="skin.hastheme(classic)">DialogOverlayExtra</include>
         <!--Dialog PVR Guid Info-->
         <control type="group">
             <include>animation_fade_open_close</include>
@@ -13,11 +14,11 @@
             <visible>!Window.IsVisible(yesnodialog)</visible>
             <!--Panel-->
             <control type="image">
-                <posx>486</posx>
-                <posy>60</posy>
-                <width>945</width>
-                <height>960</height>
-                <texture border="39">views/filemanager_panel1.png</texture>
+                <posx>526</posx>
+                <posy>100</posy>
+                <width>868</width>
+                <height>850</height>
+                <texture border="39">dialogs/default/bg.png</texture>
             </control>
             <!--Header-->
             <control type="label">

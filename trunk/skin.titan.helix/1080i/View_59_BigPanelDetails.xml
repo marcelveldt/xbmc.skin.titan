@@ -29,7 +29,8 @@
             <include>BigPanelPosterDimensions</include>
             <include>PosterThumb</include>
           </control>
-         <include>BigpanelWatchedLabel</include>
+          <include condition="!skin.hastheme(classic)">BigPanelWatchedImageModern</include>
+		  <include condition="skin.hastheme(classic)">BigPanelWatchedImageClassic</include>
         </itemlayout>
         <focusedlayout condition="container.content(MusicVideos) | [Container.Content(tvshows)] | Container.Content(Movies) | container.content(seasons)" height="400" width="275">
           <control type="image">
@@ -40,7 +41,8 @@
             <include>BigPanelPosterDimensions</include>
             <include>PosterThumb</include>
           </control>
-         <include>BigpanelWatchedLabel</include>
+          <include condition="!skin.hastheme(classic)">BigPanelWatchedImageModern</include>
+		  <include condition="skin.hastheme(classic)">BigPanelWatchedImageClassic</include>
         </focusedlayout>
         <itemlayout condition="Window.IsActive(MyPrograms.xml) | container.content(addons) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml)" height="267" width="270">
           <control type="image">

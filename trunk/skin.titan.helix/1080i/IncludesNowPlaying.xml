@@ -203,6 +203,8 @@
             <!--Panel-->
             <visible>!IsEmpty(Player.Title) + Player.HasMedia + !Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + ![!IsEmpty(Container(300).ListItem.property(widget)) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
             <include>DimensionsFullscreen</include>
+			<animation effect="slide" start="0,-400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false">Visible</animation>
+			<animation effect="slide" start="0,0" end="0,-400" tween="cubic" easing="out" delay="0" time="450" reversible="false">Hidden</animation>
             <control type="image">
 				<posx>-60</posx>
 				<posy>-20</posy>
@@ -232,15 +234,28 @@
                 <label>$VAR[NowPlayingTitle]</label>
                 <scroll>false</scroll>
             </control>
+			<!-- cd cover -->
+			<control type="image">
+				<posx>140</posx>
+				<posy>10</posy>
+				<width>123</width>
+				<height>123</height>
+				<aligny>center</aligny>
+				<aspectratio align="left">keep</aspectratio>
+				<fadetime>300</fadetime>
+				<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+				<texture background="true" fallback="defaultcovers/cd.png">$INFO[Player.FolderPath]cdart.png</texture>
+				<visible>Player.HasAudio</visible>
+			</control>
 			<control type="image">
 				<!--music cover-->
-				<posx>60</posx>
+				<posx>90</posx>
                 <posy>10</posy>
 				<width>123</width>
 				<height>123</height>
 				<fadetime>200</fadetime>
-				<texture background="true" fallback="defaultcovers/music_player.png">$INFO[Player.Art(thumb)]</texture>
-				<aspectratio align="left" aligny="top">keep</aspectratio>
+				<texture background="true" diffuse="matte_cdart.png" fallback="defaultcovers/musicsongs.png">$INFO[Player.Art(thumb)]</texture>
+				<aspectratio align="left" aligny="top">stretch</aspectratio>
 				<visible>Player.HasAudio</visible>
 			</control>
 			<control type="image">
@@ -261,7 +276,7 @@
 	
 	<include name="nowplayingbackground">
 		<control type="group">
-		<visible>!Skin.HasSetting(DisableNowPlayingBackground) + [Player.HasVideo | Player.HasAudio]</visible>
+		<visible>!Skin.HasSetting(DisableNowPlayingBackground) + Player.HasMedia</visible>
 			<!-- artist slideshow -->
 			<control type="multiimage">
 				<aspectratio>scale</aspectratio>
@@ -285,7 +300,10 @@
 				<visible>Player.HasVideo</visible>
 			</control>
 			<!--Dialog Overlay-->
-			<include>DialogOverlay</include>
+			<control type="group">
+				<visible>Player.HasVideo | [Player.HasAudio + [!IsEmpty(Visualisation.Name) | !IsEmpty(Window.Property(ArtistSlideshow.ArtistBiography))]]</visible>
+				<include>DialogOverlay</include>
+			</control>
 		</control>
 
 
