@@ -5,6 +5,11 @@ import xbmcaddon
 import os
 import time
 
+def sendClick(controlId):
+    win = xbmcgui.Window( 10000 )
+    time.sleep(0.5)
+    xbmc.executebuiltin('SendClick('+ controlId +')')
+
 def setView(containerType,viewId):
     
     if viewId=="00":
@@ -126,12 +131,10 @@ except:
     pass  
 
 # select action
-if action == "SETHOMEITEMS":
-    setHomeItems(argument1, argument2, argument3)
+if action == "SENDCLICK":
+    sendClick(argument1)
 elif action == "SETVIEW":
     setView(argument1, argument2)
-elif action == "RESTORE":
-    restoreHomeItems()
 elif action == "SHOWSUBMENU":
     showSubmenu(argument1,argument2)
 else:
