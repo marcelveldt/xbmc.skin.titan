@@ -20,7 +20,8 @@
 			<shortcut label="7" grouping="32029" icon="home/filemanager.png" condition="true">ActivateWindow(filemanager)</shortcut>
 			<shortcut label="10134" grouping="32029" icon="home/favourites.png" condition="true">ActivateWindow(favourites)</shortcut>
 			<shortcut label="31018" grouping="32029" type="netflix" icon="home/netflix.png" condition="System.HasAddon(plugin.video.netflixbmc)">$VAR[NetflixButtonOnClick]</shortcut>
-			<shortcut label="31062" grouping="32029" type="youtube" icon="home/youtube.png" condition="System.HasAddon(plugin.video.youtube)">ActivateWindow(10025,"plugin://plugin.video.youtube",return)</shortcut>	
+			<shortcut label="31062" grouping="32029" type="youtube" icon="home/youtube.png" condition="System.HasAddon(plugin.video.youtube)">ActivateWindow(10025,"plugin://plugin.video.youtube",return)</shortcut>
+			<shortcut label="32032" type="playdvd" grouping="32029" icon="home/videos.png" condition="true">$VAR[playDVDclick]</shortcut>
 		</node>
 
 		<!-- movies -->
@@ -328,6 +329,7 @@
 	<icon labelID="pictures">$VAR[PicturesButtonThumb]</icon>
 	<icon labelID="weather">$VAR[WeatherButtonThumb]</icon>
 	<icon labelID="videos">home/videos.png</icon>
+	<icon labelID="playdvd">home/videos.png</icon>
 	<icon labelID="radio">home/radio.png</icon>
 	<icon labelID="musicvideos">$VAR[MusicVideosButtonThumb]</icon>
 	<icon labelID="programs">home/programs.png</icon>
@@ -397,6 +399,7 @@
 	<backgrounddefault labelID="31018">fanart</backgrounddefault>
 	<backgrounddefault labelID="pictures">default</backgrounddefault>
 	<backgrounddefault labelID="videos">fanart</backgrounddefault>
+	<backgrounddefault labelID="playdvd">default</backgrounddefault>
 	<backgrounddefault labelID="programs">fanart</backgrounddefault>
 	<backgrounddefault labelID="settings">default</backgrounddefault>
 	<backgrounddefault labelID="19019">fanart</backgrounddefault>

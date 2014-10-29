@@ -78,14 +78,22 @@
                     <include>SubMenuButton</include>
                     <label>20367</label>
                 </control>
-                <control type="button" id="3">
-                    <!--Button Sort-->
-                    <include>SubMenuButton</include>
-                    <align>left</align>
-                </control>
+               <control type="button" id="3">
+					<description>Sort by button</description>
+					<include>SubMenuButton</include>
+					<label>103</label>
+				</control>
+				<control type="togglebutton" id="4">
+					<description>Sort asc</description>
+					<include>SubMenuButton</include>
+					<alttexturefocus border="5">common/button-fo.png</alttexturefocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<label>585</label>
+					<altlabel>584</altlabel>
+					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+				</control>
 				<control type="togglebutton" id="20">
 					<description>Update library</description>
-					<textwidth>235</textwidth>
 					<include>SubMenuButton</include>
 					<label>653</label>
 					<altlabel>13353</altlabel>
@@ -98,6 +106,14 @@
                     <!--Button Search-->
                     <include>SubMenuButton</include>
                     <label>137</label>
+					<visible>!substring(Container.FolderPath,plugin://plugin.video)</visible>
+                </control>
+				<control type="button" id="399">
+                    <!--Button Search MediaBrowser-->
+                    <include>SubMenuButton</include>
+                    <label>137</label>
+					<onclick>$INFO[Window(Home).Property(xbmb3c.std.search.0.path)]</onclick>
+					<visible>substring(Container.FolderPath,plugin://plugin.video.xbmb3c)</visible>
                 </control>
 
 				 <control type="button" id="400">
@@ -247,6 +263,18 @@
                     <onclick>Skin.ToggleSetting(HideWatchedOverlayBigPanel)</onclick>
                     <selected>Skin.HasSetting(HideWatchedOverlayBigPanel)</selected>
 					<visible>Control.IsVisible(57) | Control.IsVisible(59)</visible>
+                </control>
+				<control type="button" id="324">
+                    <!--focus color-->
+                    <include>SubMenuButton</include>
+                    <label>$LOCALIZE[31180] $INFO[Skin.String(focuscolor)]</label>
+                    <onclick condition="skin.string(focuscolor, blue)">Skin.SetString(FocusColor, white)</onclick>
+					<onclick condition="skin.string(focuscolor, white)">Skin.SetString(FocusColor, mainblue)</onclick>
+					<onclick condition="skin.string(focuscolor, mainblue)">Skin.SetString(FocusColor, green)</onclick>
+					<onclick condition="skin.string(focuscolor, green)">Skin.SetString(FocusColor, orange)</onclick>
+					<onclick condition="skin.string(focuscolor, orange)">Skin.SetString(FocusColor, bluegrey)</onclick>
+					<onclick condition="skin.string(focuscolor, bluegrey)">Skin.SetString(FocusColor, blue)</onclick>
+					<visible>true</visible>
                 </control>
             </control>
         </control>

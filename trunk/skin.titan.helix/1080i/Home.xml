@@ -132,13 +132,15 @@
 					</control>
 					
                     <control type="image">
-                        <!--Panel Shadow-->
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>623</width>
-                        <height>271</height>
-                        <texture>home/home_shadow.png</texture>
-                    </control>
+						<!--focus image-->
+						<posx>11</posx>
+						<posy>13</posy>
+						<width>600</width>
+						<height>250</height>
+						<bordersize>-4</bordersize>
+						<texture>home/home_matte2.png</texture>
+						<colordiffuse>$INFO[Skin.String(HomeFocusColor)]</colordiffuse>
+					</control>
 					
                     <control type="image">
                         <!--Panel Normal-->
@@ -171,18 +173,10 @@
                         <align>center</align>
                         <info>ListItem.Label</info>
                         <font>Reg45</font>
-                        <textcolor>$VAR[homeMenuFocusLabelColor]</textcolor>
+                        <textcolor>$INFO[Skin.String(HomeFocusColor]</textcolor>
 						<shadowcolor>black</shadowcolor>
                         <visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
                     </control>
-                    <control type="image">
-                        <posx>1</posx>
-                        <posy>3</posy>
-                        <width>622</width>
-                        <height>271</height>
-                        <texture>home/home_focus.png</texture>
-                    </control>
-
                     <control type="button">
                         <left>150</left>
                         <top>0</top>
@@ -244,14 +238,12 @@
 	<include>DimensionsFullscreen</include>
 	<visible>!SubString(Window(Home).Property(hidesplash),hide)</visible>
 	<animation time="1200" effect="fade" reversible="false">Hidden</animation>
-	 <include>GlobalBackground</include>
-		<!-- loginscreen background -->
+		<!-- splashscreen background -->
         <control type="image">
             <include>DimensionsFullscreen</include>
 			<include>backgroundfade</include>
-            <texture background="true">$INFO[Skin.String(LoginBackground)]</texture>
+            <texture background="true">$VAR[splashScreenImage]</texture>
             <fadetime>800</fadetime>
-			<visible>System.HasLoginScreen + Skin.String(LoginBackground)</visible>
         </control>
 		<include>Footer</include>
 		

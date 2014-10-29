@@ -521,32 +521,42 @@
                         <texture fallback="flags/audiochannels/default.png">$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>
                     </control>
                 </control>
-                <!--Rating-->
+                
+				
+				<!--Rating-->
                 <control type="image">
                     <!--10Star Rating-->
+					<posx>1200</posx>
+					<posy>935</posy>
                     <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                     <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
-                    <posx>1200</posx>
-                    <posy>940</posy>
                     <width>315</width>
                     <height>27</height>
                     <colordiffuse>aaFFFFFF</colordiffuse>
                     <texture>$INFO[ListItem.Rating,rating/10stars_blue/,.png]</texture>
+					<aligny>center</aligny>
                 </control>
                 <control type="label">
                     <!--Rating Label-->
+					<posx>1540</posx>
+					<posy>915</posy>
                     <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                     <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
-                    <posx>1550</posx>
-                    <posy>925</posy>
-                    <width>250</width>
+                    <width>80</width>
                     <label>$INFO[ListItem.Rating]</label>
                     <font>Reg50</font>
                     <textcolor>mainblue</textcolor>
                     <scroll>false</scroll>
                 </control>
-                <include>MPAARating</include>
-                <!--MPAA Rating-->
+				
+				<control type="group">
+				<posx>1690</posx>
+                <posy>895</posy>
+				<orientation>horizontal</orientation>
+				<!--MPAA Rating-->
+				<include>MPAARating</include>
+                </control>
+				
                 <!-- Plot -->
                 <control type="group">
                     <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>

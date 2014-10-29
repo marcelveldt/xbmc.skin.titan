@@ -707,7 +707,7 @@ msgid "Use custom overlay"
 msgstr ""
 
 msgctxt "#31174"
-msgid "Use alternative focus color on the home tiles"
+msgid "Focuscolor for home tiles:"
 msgstr ""
 
 msgctxt "#31175"
@@ -730,6 +730,9 @@ msgctxt "#31179"
 msgid "Always open fullscreen music playback"
 msgstr ""
 
+msgctxt "#31180"
+msgid "Focus color:"
+msgstr ""
 
 
 msgctxt "#31399"

@@ -212,7 +212,7 @@
 				<height>180</height>
 				<texture background="true">views/filemanager_panel1.png</texture>
 			</control>
-			<include>TimeInfoAlt</include>
+			<include>TimeInfo</include>
             <control type="fadelabel">
                 <!--Now Playing-->
                 <posx>310</posx>

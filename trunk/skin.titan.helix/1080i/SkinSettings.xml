@@ -399,17 +399,20 @@
                     <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
                 </control>
 				
-				<control type="radiobutton" id="5143">
+				<control type="button" id="5143">
                     <!--label focus color-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>$LOCALIZE[31174]</label>
+                    <label>$LOCALIZE[31174] $INFO[Skin.String(HomeFocusColor)]</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(AltFocusLabelColor)</onclick>
-                    <selected>Skin.HasSetting(AltFocusLabelColor)</selected>
-					<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles)</visible>
+					<onclick condition="skin.string(HomeFocusColor, blue)">Skin.SetString(HomeFocusColor, white)</onclick>
+					<onclick condition="skin.string(HomeFocusColor, white)">Skin.SetString(HomeFocusColor, mainblue)</onclick>
+					<onclick condition="skin.string(HomeFocusColor, mainblue)">Skin.SetString(HomeFocusColor, green)</onclick>
+					<onclick condition="skin.string(HomeFocusColor, green)">Skin.SetString(HomeFocusColor, orange)</onclick>
+					<onclick condition="skin.string(HomeFocusColor, orange)">Skin.SetString(HomeFocusColor, bluegrey)</onclick>
+					<onclick condition="skin.string(HomeFocusColor, bluegrey)">Skin.SetString(HomeFocusColor, blue)</onclick>
                 </control>
 				
 				 <!--weather on home-->

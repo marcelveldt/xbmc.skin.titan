@@ -85,6 +85,50 @@
         <value condition="Container.Content(addons) + !IsEmpty(ListItem.Property(Addon.Version)) + IsEmpty(ListItem.Label2)">[COLOR=list_label_2_first]$LOCALIZE[24051] [/COLOR]$INFO[ListItem.Property(Addon.Version)] - [COLOR=list_label_2_first]$LOCALIZE[21863]: [/COLOR]$INFO[ListItem.Property(Addon.Creator)]</value>
         <value condition="Container.Content(addons) + !IsEmpty(ListItem.Property(Addon.Version)) + !IsEmpty(ListItem.Label2)">[COLOR=list_label_2_first]$LOCALIZE[24051] [/COLOR]$INFO[ListItem.Property(Addon.Version)] - [COLOR=list_label_2_first]$LOCALIZE[21863]: [/COLOR]$INFO[ListItem.Property(Addon.Creator)] - [COLOR=list_label_2_first]$INFO[ListItem.Label2][/COLOR]</value>
     </variable>
+	
+	
+	<variable name="RatingFlagVar">
+        <value condition="SubString(ListItem.mpaa,US:G) | SubString(ListItem.mpaa,USA:G) | SubString(ListItem.mpaa,Rated G)">flags/rating/G.png</value>
+        <value condition="SubString(ListItem.mpaa,PG-13)">flags/rating/PG-13.png</value>
+        <value condition="Substring(ListItem.mpaa,Rated PG) | StringCompare(ListItem.Mpaa,PG)">flags/rating/PG.png</value>
+        <value condition="SubString(ListItem.mpaa,US:R) | SubString(ListItem.mpaa,USA:R) | SubString(ListItem.mpaa,Rated R) | StringCompare(ListItem.mpaa,R)">flags/rating/R.png</value>
+        <value condition="SubString(ListItem.mpaa,US:NC-17)| SubString(ListItem.mpaa,USA:NC-17)| SubString(ListItem.mpaa,Rated NC-17)">flags/rating/NC-17.png</value>
+        <value condition="SubString(ListItem.mpaa,UK:U)">flags/rating/BBFC_U_Certificate_UK.png</value>
+		<value condition="SubString(ListItem.mpaa,UK:PG)">flags/rating/BBFC_PG_Certificate_UK.png</value>
+		<value condition="SubString(ListItem.mpaa,UK:12A)">flags/rating/BBFC_12A_Certificate_UK.png</value>
+		<value condition="SubString(ListItem.mpaa,UK:12)">flags/rating/BBFC_12_Certificate_UK.png</value>
+		<value condition="SubString(ListItem.mpaa,UK:15)">flags/rating/BBFC_15_Certificate_UK.png</value>
+		<value condition="SubString(ListItem.mpaa,UK:18)">flags/rating/BBFC_18_Certificate_UK.png</value>
+		<value condition="SubString(ListItem.mpaa,Germany:16) | SubString(ListItem.mpaa,ab 16) | StringCompare(ListItem.mpaa,16) | Substring(ListItem.mpaa,FSK 16) | SubString(ListItem.mpaa,Rated 16)">flags/rating/FSK-16.png</value>
+		<value condition="SubString(ListItem.mpaa,Germany:6)| SubString(ListItem.mpaa,ab 6) | StringCompare(ListItem.mpaa,6) | Substring(ListItem.mpaa,FSK 16) | SubString(ListItem.mpaa,Rated 6)">flags/rating/FSK-6.png</value>
+		<value condition="SubString(ListItem.mpaa,Germany:12) | SubString(ListItem.mpaa,ab 12) | StringCompare(ListItem.mpaa,12) | Substring(ListItem.mpaa,FSK 12) | SubString(ListItem.mpaa,Rated 12)">flags/rating/FSK-12.png</value>
+		<value condition="SubString(ListItem.mpaa,Germany:18) | SubString(ListItem.mpaa,ab 18) | StringCompare(ListItem.mpaa,18) | Substring(ListItem.mpaa,FSK 18) | SubString(ListItem.mpaa,Rated 18)">flags/rating/FSK-18.png</value>
+		<value condition="SubString(ListItem.mpaa,Germany)|SubString(ListItem.mpaa,FSK)| SubString(ListItem.mpaa,o.A)| SubString(ListItem.mpaa,Rated 0)">flags/rating/FSK-0.png</value>
+		<value condition="SubString(ListItem.mpaa,besorolás alatt)">flags/rating/HU_BA.png</value>
+		<value condition="SubString(ListItem.mpaa,korhatárra való tekintett nélkül megtekintetheto)">flags/rating/HU_KN.png</value>
+		<value condition="SubString(ListItem.mpaa,12 éven aluliak számára a megtekintése nagykorú felügyelete mellett ajánlott)">flags/rating/HU_12.png</value>
+		<value condition="SubString(ListItem.mpaa,16 éven aluliak számára nem ajánlott)">flags/rating/HU_16.png</value>
+		<value condition="SubString(ListItem.mpaa,18 éven aluliak számára nem ajánlott)">flags/rating/HU_18.png</value>
+		<value condition="substring(ListItem.mpaa,France:U) | Substring(ListItem.mpaa,partir de 3 ans) | Substring(ListItem.mpaa,partir de 6 ans)">flags/rating/csaU.png</value>
+		<value condition="substring(ListItem.mpaa,France:-10) | Substring(ListItem.mpaa,Interdit aux moins de 10 ans) | Substring(ListItem.mpaa,des propos ou des images peuvent heurter)">flags/rating/csa10.png</value>
+		<value condition="substring(ListItem.mpaa,France:-12) | Substring(ListItem.mpaa,Interdit aux moins de 12 ans)">flags/rating/csa12.png</value>
+		<value condition="substring(ListItem.mpaa,France:-16) | Substring(ListItem.mpaa,Interdit aux moins de 16 ans)">flags/rating/csa16.png</value>
+		<value condition="substring(ListItem.mpaa,France:-18) | Substring(ListItem.mpaa,Interdit aux moins de 18 ans)">flags/rating/csa18.png</value>
+		<value condition="substring(ListItem.mpaa,전체)">flags/rating/KR_Certificate_All.png</value>
+		<value condition="substring(ListItem.mpaa,12세)">flags/rating/KR_Certificate_12.png</value>
+		<value condition="substring(ListItem.mpaa,15세)">flags/rating/KR_Certificate_15.png</value>
+		<value condition="substring(ListItem.mpaa,불가)">flags/rating/KR_Certificate_18.png</value>
+		<value condition="substring(ListItem.mpaa,제한)">flags/rating/KR_Certificate_R.png</value>
+		<value condition="substring(ListItem.mpaa,Brazil:Livre) | substring(ListItem.mpaa,Livre)">flags/rating/MPAA_Brazil_Livre.png</value>
+		<value condition="substring(ListItem.mpaa,Brazil:10) | substring(ListItem.mpaa,10 anos)">flags/rating/MPAA_Brazil_10.png</value>
+		<value condition="substring(ListItem.mpaa,Brazil:12) | substring(ListItem.mpaa,12 anos)">flags/rating/MPAA_Brazil_12.png</value>
+		<value condition="substring(ListItem.mpaa,Brazil:14) | substring(ListItem.mpaa,14 anos)">flags/rating/MPAA_Brazil_14.png</value>
+		<value condition="substring(ListItem.mpaa,Brazil:16) | substring(ListItem.mpaa,16 anos)">flags/rating/MPAA_Brazil_16.png</value>
+		<value condition="substring(ListItem.mpaa,Brazil:18) | substring(ListItem.mpaa,18 anos)">flags/rating/MPAA_Brazil_18.png</value>
+		<value>$INFO[ListItem.MPAA,flags/rating/,.png]</value>
+	</variable>
+	
+	
     <!-- =============== -->
     <!-- Additional Info -->
     <!-- =============== -->
@@ -395,11 +439,13 @@
 
     <variable name="BannerFanArtImage">
         <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(season.fanart)) + !substring(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(season.fanart)]</value>
-        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="!IsEmpty(ListItem.Property(small_fanartimage))">$INFO[ListItem.Property(small_fanartimage)]</value>
+		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value>$INFO[ListItem.Thumb]</value>
     </variable>
     <variable name="BannerLandscapeImage">
 		<value condition="!IsEmpty(ListItem.Thumb) + Container.Content(Episodes)">$INFO[ListItem.Thumb]</value>
+		<value condition="!IsEmpty(ListItem.Property(medium_landscape))">$INFO[ListItem.Property(medium_landscape)]</value>
         <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value>$INFO[ListItem.Thumb]</value>
@@ -472,12 +518,12 @@
     </variable>
 	
 	<variable name="PosterThumb">
+		<value condition="!IsEmpty(ListItem.Property(small_poster))">$INFO[ListItem.Property(small_poster)]</value>
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="!IsEmpty(ListItem.Property(poster))">$INFO[ListItem.Property(poster)]</value>
 		<value condition="!IsEmpty(ListItem.Property(tvshow.poster))">$INFO[ListItem.Property(poster)]</value>
-		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
-		<value condition="!IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		<value>$INFO[ListItem.Thumb]</value>
     </variable>
 	
 	<variable name="MusicSquareThumb">
@@ -806,8 +852,6 @@
 		<value condition="Control.HasFocus(890)">[B]$INFO[System.ProfileName][/B]</value>
    </variable>
    
- 
-   
    <variable name="globalBackground">
 		<!-- user custom background -->
 		<value condition="!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart) + !IsEmpty(Skin.String(CustomBackgroundSetting))">$INFO[Skin.String(CustomBackgroundSetting)]</value>
@@ -815,44 +859,51 @@
 		<value condition="Skin.String(CustomBackgroundSetting, fanart)">$VAR[globalFanartBackground]</value>
 		<!-- weather background -->
 		<value condition="Skin.String(CustomBackgroundSetting, weather)">special://skin/extras/weather/$INFO[Weather.FanartCode]</value>
-		<!-- default skin background -->
+		<!-- default backgrounds -->
 		<value condition="skin.hastheme(classic)">special://skin/extras/backgrounds/global.png</value>
 		<value>special://skin/extras/backgrounds/global_blue.png</value>
    </variable>
    
    <variable name="itemFanartBackground">
 		<value condition="!IsEmpty(Window(Home).Property(MB3.Background.Item.FanArt)) + Skin.HasSetting(ShowFanartBackground)">$INFO[Window(Home).Property(MB3.Background.Item.FanArt)]</value>
-		<value>$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
    </variable>
    
    <variable name="globalFanartBackground">
 		<value condition="Skin.HasSetting(MediaBrowserMode) + !IsEmpty(Window(Home).Property(MB3.Background.Global.FanArt))">$INFO[Window(Home).Property(MB3.Background.Global.FanArt)]</value>
 		<value condition="!IsEmpty(Window(Home).Property(script.grab.fanart.Global.FanArt))">$INFO[Window(Home).Property(script.grab.fanart.Global.FanArt)]</value>
-		<value>$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
+		<value condition="!IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
+		<!-- default backgrounds -->
+		<value condition="skin.hastheme(classic)">special://skin/extras/backgrounds/global.png</value>
+		<value>special://skin/extras/backgrounds/global_blue.png</value>
    </variable>
    
    <variable name="moviesFanartBackground">
 		<value condition="Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(MB3.Background.Movie.FanArt))">$INFO[Window(Home).Property(MB3.Background.Movie.FanArt)]</value>
 		<value condition="!Skin.HasSetting(HomeMenuUseMBforMovies) + !IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
-		<value>$INFO[Window(Home).Property(script.grab.fanart.Movie.FanArt)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(RandomMovie.1.Art(fanart)))">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</value>
+		<value>special://skin/extras/backgrounds/hover_moving pictures.png</value>
    </variable>
    
    <variable name="tvshowsFanartBackground">
    		<value condition="Skin.HasSetting(HomeMenuUseMBforTVseries) + !IsEmpty(Window(Home).Property(MB3.Background.TV.FanArt))">$INFO[Window(Home).Property(MB3.Background.TV.FanArt)]</value>
 		<value condition="!Skin.HasSetting(HomeMenuUseMBforTVseries) + !IsEmpty(Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart)))">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</value>
-		<value>$INFO[Window(Home).Property(script.grab.fanart.TV.FanArt)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(script.grab.fanart.TV.FanArt))">($INFO[Window(Home).Property(script.grab.fanart.TV.FanArt)]</value>
+		<value>special://skin/extras/backgrounds/hover_my tv series.png</value>
    </variable>
    
     <variable name="musicVideoFanartBackground">
 		<value condition="Skin.HasSetting(HomeMenuUseMBforMusicVideos) + !IsEmpty(Window(Home).Property(xbmb3c.std.music.3.image))">$INFO[Window(Home).Property(xbmb3c.std.music.3.image)]</value>
 		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusicVideos) + !IsEmpty(Window(Home).Property(RandomMusicVideo.2.Fanart))">$INFO[Window(Home).Property(RandomMusicVideo.2.Fanart)]</value>
-		<value>$INFO[Window(Home).Property(script.grab.fanart.Music.FanArt)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(script.grab.fanart.Music.FanArt))">$INFO[Window(Home).Property(script.grab.fanart.Music.FanArt)]</value>
+		<value>special://skin/extras/backgrounds/hover_my radio.png</value>
 	</variable>
 			
 	<variable name="musicFanartBackground">
 		<value condition="Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(MB3.Background.Music.FanArt))">$INFO[Window(Home).Property(MB3.Background.Music.FanArt)]</value>
 		<value condition="!Skin.HasSetting(HomeMenuUseMBforMusic) + !IsEmpty(Window(Home).Property(RandomArtist.5.FanArt))">$INFO[Window(Home).Property(RandomArtist.5.FanArt)]</value>
-		<value>$INFO[Window(Home).Property(script.grab.fanart.Music.FanArt)]</value>
+		<value condition="!IsEmpty(Window(Home).Property(script.grab.fanart.Music.FanArt))">$INFO[Window(Home).Property(script.grab.fanart.Music.FanArt)]</value>
+		<value>special://skin/extras/backgrounds/hover_my radio.png</value>
 	</variable>
 	
 	<variable name="addonsFanartBackground">
@@ -872,7 +923,7 @@
 		<value condition="!IsEmpty(Window(Home).Property(RandomAddon.14.Fanart))">$INFO[Window(Home).Property(RandomAddon.14.Fanart)]</value>
 		<value condition="!IsEmpty(Window(Home).Property(RandomAddon.15.Fanart))">$INFO[Window(Home).Property(RandomAddon.15.Fanart)]</value>
 		<value condition="!IsEmpty(Window(Home).Property(RandomAddon.16.Fanart))">$INFO[Window(Home).Property(RandomAddon.16.Fanart)]</value>
-		<value>$VAR[globalFanartBackground]</value>
+		<value>special://skin/extras/backgrounds/hover_extensions.png</value>
 	</variable>
    
 
@@ -942,8 +993,8 @@
    
    
    <variable name="ColorOverlay">
-	<value condition="Skin.String(ColorTheme, light)">whitepanel.png</value>
-	<value condition="Skin.String(ColorTheme, default)">overlays/fanart/fanart_overlay.png</value>
+	<value condition="Skin.String(ColorTheme, light)">bgoverlay_white.png</value>
+	<value condition="Skin.String(ColorTheme, default)">bgoverlay_default.png</value>
 	<value condition="Skin.String(ColorTheme, dark)">bgoverlay_dark.png</value>
 	<value condition="Skin.String(ColorTheme)">$INFO[Skin.String(ColorTheme)]</value>
    </variable>
@@ -973,13 +1024,6 @@
 	<value>white</value>
    </variable>
    
-   <variable name="ClockColor_white">
-   <value condition="Window.IsActive(DialogKaiToast.xml) | Window.IsActive(DialogExtendedProgressBar.xml) | Control.IsVisible(88888)">white</value>
-	<value condition="Skin.String(ColorTheme, light)">darkgrey</value>
-	<value condition="Skin.String(ColorTheme, dark)">white</value>
-	<value>white</value>
-   </variable>
-
    <variable name="Views_FontColor">
 		<value condition="Skin.String(ColorTheme, light) + Control.IsVisible(59)">black</value>
 		<value condition="Control.IsVisible(506)">white</value>
@@ -995,12 +1039,7 @@
 	<value condition="Skin.HasSetting(MovieDetailsView_HidePanel) + Skin.String(ColorTheme, light) +  [Control.IsVisible(59) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(505)]">white</value>
 	<value>black</value>
    </variable>
-   
-    <variable name="Views_PanelFocusColor">
-		<value condition="Skin.String(ColorTheme, light)">ccmainblue</value>
-		<value>white</value>
-   </variable>
-   
+    
    <variable name="customLibraryLabel">
     <value condition="SubString(ListItem.Label,titanmb3.)">$LOCALIZE[24125]</value>
 	<value condition="StringCompare(ListItem.Label, None) + StringCompare(Window(Home).Property(shortcutDialog), background)">$LOCALIZE[31177]</value>
@@ -1018,6 +1057,18 @@
 	<variable name="homeMenuFocusLabelColor">
 		<value condition="Skin.HasSetting(AltFocusLabelColor)">mainblue</value>
 		<value>white</value>
+	 </variable>
+	
+	
+	<variable name="playDVDclick">
+		<value condition="System.HasMediaDVD">XBMC.PlayDVD()</value>
+		<value>EjectTray()</value>
+	 </variable>	
+	 
+	 
+	 <variable name="splashScreenImage">
+		 <value condition="Skin.String(LoginBackground)">$INFO[Skin.String(LoginBackground)]</value>
+		 <value>special://skin/extras/backgrounds/splashscreen.png</value>
 	 </variable>
 	
 </includes>

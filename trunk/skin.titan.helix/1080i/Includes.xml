@@ -33,7 +33,7 @@
             <width>500</width>
             <align>right</align>
             <font>Light40</font>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[TextColor_white]</textcolor>
             <label>Titan Mediabrowser v$INFO[System.AddonVersion(skin.titan)]</label>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
@@ -45,7 +45,7 @@
             <width>500</width>
             <align>right</align>
             <font>Light40</font>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[TextColor_white]</textcolor>
             <label>Titan Mediabrowser v$INFO[System.AddonVersion(skin.titan.helix)]</label>
             <include>animation_fade_visible_hidden</include>
             <include>animation_fade_open_close</include>
@@ -283,12 +283,25 @@
             <include>animation_fade_open_close</include>
             <animation effect="fade" time="600">WindowOpen</animation>
             <animation effect="fade" time="600">WindowClose</animation>
+            <posx>61</posx>
+            <posy>41</posy>
+            <height>64</height>
+            <width>64</width>
+            <aligny>center</aligny>
+            <colordiffuse>black</colordiffuse>
+            <texture>$VAR[value_header_icon]</texture>
+        </control>
+		<control type="image">
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !ControlGroup(400).HasFocus() + !Control.IsVisible(88888) + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
+            <include>animation_fade_open_close</include>
+            <animation effect="fade" time="600">WindowOpen</animation>
+            <animation effect="fade" time="600">WindowClose</animation>
             <posx>60</posx>
             <posy>40</posy>
             <height>64</height>
             <width>64</width>
             <aligny>center</aligny>
-            <colordiffuse>$VAR[TextColor_white]</colordiffuse>
+            <colordiffuse>white</colordiffuse>
             <texture>$VAR[value_header_icon]</texture>
         </control>
         <control type="label">
@@ -302,8 +315,9 @@
             <height>100</height>
             <font>Bold45</font>
             <align>left</align>
-            <textcolor>$VAR[TextColor_white]</textcolor>
+            <textcolor>white</textcolor>
             <label>$VAR[value_header]</label>
+			<shadowcolor>black</shadowcolor>
         </control>
     </include>
     
@@ -331,117 +345,8 @@
                     <height>100</height>
                     <info>System.Time(hh:mm)</info>
                     <font>Bold55</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-                <control type="label">
-                    <!--AM-->
-                    <visible>substring(system.time,AM,right)</visible>
-                    <width min="0" max="150">auto</width>
-                    <height>100</height>
-                    <label>378</label>
-                    <font>Bold55</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-                <control type="label">
-                    <!--PM-->
-                    <visible>substring(system.time,PM,right)</visible>
-                    <width min="0" max="150">auto</width>
-                    <height>100</height>
-                    <label>379</label>
-                    <font>Bold55</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-            </control>
-            <control type="grouplist">
-                <!--Date Grouplist Line 2-->
-                <!--animation effect="slide" start="0" end="-130" time="200" condition="Weather.IsFetched" >Conditional</animation-->
-                <posx>1260</posx>
-                <posy>85</posy>
-                <width>600</width>
-                <height>50</height>
-                <align>right</align>
-                <itemgap>4</itemgap>
-                <orientation>horizontal</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
-                <include>animation_fade_visible_hidden</include>
-                <include>animation_fade_open_close</include>
-                <visible>!ControlGroup(400).HasFocus()</visible>
-                <control type="label">
-                    <!--Day-->
-                    <width min="0" max="400">auto</width>
-                    <height>50</height>
-                    <info>System.Date(DDD)</info>
-                    <font>Light30</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-                <control type="label">
-                    <width min="0" max="400">auto</width>
-                    <height>50</height>
-                    <label>, </label>
-                    <font>Light30</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-                <control type="label">
-                    <!--Date-->
-                    <width min="0" max="400">auto</width>
-                    <height>50</height>
-                    <info>System.Date(d)</info>
-                    <font>Light30</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-                <control type="label">
-                    <visible>SubString(System.Language,German)</visible>
-                    <width min="0" max="400">auto</width>
-                    <height>50</height>
-                    <label>. </label>
-                    <font>Light30</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-                <control type="label">
-                    <label></label>
-                    <visible>!SubString(System.Language,German)</visible>
-                    <width min="0" max="400">auto</width>
-                    <height>50</height>
-                    <font>Light30</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-                <control type="label">
-                    <!--Month-->
-                    <width min="0" max="400">auto</width>
-                    <height>50</height>
-                    <info>System.Date(MMM)</info>
-                    <font>Light30</font>
-                    <textcolor>$VAR[TextColor_white]</textcolor>
-                </control>
-            </control>
-        </control>
-    </include>
-    
-	<include name="TimeInfoAlt">
-        <control type="group">
-            <animation time="400" effect="fade">Visible</animation>
-            <animation time="200" effect="fade">Hidden</animation>
-            <visible>!ControlGroup(400).HasFocus() + ![Control.IsVisible(77777) + Skin.String(GadgetRows, 2) + Skin.HasSetting(AutoShowWidgets)] + !ControlGroup(77777).HasFocus</visible>
-            <control type="grouplist">
-                <!--Time Grouplist Line 1-->
-                <!--animation effect="slide" start="0" end="-130" time="200" condition="Weather.IsFetched" >Conditional</animation-->
-                <posx>1260</posx>
-                <posy>10</posy>
-                <width>600</width>
-                <height>100</height>
-                <align>right</align>
-                <itemgap>4</itemgap>
-                <orientation>horizontal</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
-                <include>animation_fade_visible_hidden</include>
-                <include>animation_fade_open_close</include>
-                <control type="label">
-                    <!--Time-->
-                    <width min="0" max="300">auto</width>
-                    <height>100</height>
-                    <info>System.Time(hh:mm)</info>
-                    <font>Bold55</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
                     <!--AM-->
@@ -451,6 +356,7 @@
                     <label>378</label>
                     <font>Bold55</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
                     <!--PM-->
@@ -460,6 +366,7 @@
                     <label>379</label>
                     <font>Bold55</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
             </control>
             <control type="grouplist">
@@ -483,6 +390,7 @@
                     <info>System.Date(DDD)</info>
                     <font>Light30</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
                     <width min="0" max="400">auto</width>
@@ -490,6 +398,7 @@
                     <label>, </label>
                     <font>Light30</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
                     <!--Date-->
@@ -498,6 +407,7 @@
                     <info>System.Date(d)</info>
                     <font>Light30</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
                     <visible>SubString(System.Language,German)</visible>
@@ -506,6 +416,7 @@
                     <label>. </label>
                     <font>Light30</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
                     <label></label>
@@ -514,6 +425,7 @@
                     <height>50</height>
                     <font>Light30</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
                     <!--Month-->
@@ -522,12 +434,12 @@
                     <info>System.Date(MMM)</info>
                     <font>Light30</font>
                     <textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
                 </control>
             </control>
         </control>
     </include>
     
-	
 	<include name="ProfileInfo">
 	<control type="group" id="891">
 			<defaultcontrol>890</defaultcontrol>
@@ -567,7 +479,7 @@
 				<label>$VAR[ProfileLabel]</label>
 				<align>center</align>
 				<font>Light30</font>
-				<textcolor>$VAR[TextColor_white]</textcolor>
+				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
@@ -598,10 +510,11 @@
                 <posx>130</posx>
                 <posy>25</posy>
                 <font>Bold38</font>
-                <textcolor>$VAR[TextColor_white]</textcolor>
+                <textcolor>white</textcolor>
                 <align>left</align>
                 <label>$INFO[Weather.Temperature]</label>
                 <visible>Weather.IsFetched</visible>
+				<shadowcolor>black</shadowcolor>
             </control>
             <control type="label">
                 <!--Temp-->
@@ -610,7 +523,8 @@
                 <posx>124</posx>
                 <posy>70</posy>
                 <font>Reg28</font>
-                <textcolor>$VAR[TextColor_white]</textcolor>
+                <textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
                 <align>center</align>
                 <label>$INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits][COLOR=mainblue] / $INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label>
                 <visible>Weather.IsFetched</visible>
@@ -618,71 +532,15 @@
         </control>
     </include>
     <!--MPAA-->
-    <include name="MPAARatingPos">
-        <!--MPAARatingPos-->
-        <posx>115</posx>
-        <posy>260</posy>
-        <width>161</width>
-        <height>109</height>
-    </include>
     <include name="MPAARating">
         <!--MPAARating-->
         <control type="group">
             <visible>Container.Content(movies) | Container.Content(episodes)</visible>
             <control type="image">
-                <!-- USA Rating Flags -->
-                <!--FSK0-->
-                <include>MPAARatingPos</include>
-                <!--texture>flags/rating/mpaa_general.png</texture-->
-                <texture>flags/rating/FSK-0.png</texture>
-                <colordiffuse>ffFFFFFF</colordiffuse>
-                <visible>substring(ListItem.mpaa,o.A.,left) | substring(ListItem.mpaa,o.Al.,left) | substring(ListItem.mpaa,ab 0,left) | substring(listitem.mpaa,UK:U,left)| substring(Listitem.mpaa,Rated G,left) | substring(Listitem.mpaa,G,left)</visible>
-            </control>
-            <control type="image">
-                <!--FSK6-->
-                <include>MPAARatingPos</include>
-                <!--texture>flags/rating/mpaa_pg.png</texture-->
-                <texture>flags/rating/FSK-6.png</texture>
-                <colordiffuse>ffFFFFFF</colordiffuse>
-                <visible>substring(ListItem.mpaa,6,left) | substring(ListItem.mpaa,FSK 6,left) | substring(ListItem.mpaa,ab 6,left) | substring(listitem.mpaa,UK:PG,left) | [substring(Listitem.mpaa,Rated PG,left) + !substring(listitem.mpaa,Rated PG-13)] | [substring(Listitem.mpaa,PG,left) + !substring(listitem.mpaa,PG-13,left)]</visible>
-            </control>
-            <control type="image">
-                <!--FSK12-->
-                <include>MPAARatingPos</include>
-                <!--texture>flags/rating/mpaa_pg13.png</texture-->
-                <texture>flags/rating/FSK-12.png</texture>
-                <colordiffuse>ffFFFFFF</colordiffuse>
-                <visible>substring(ListItem.mpaa,12,left) | substring(ListItem.mpaa,FSK 12,left) | substring(ListItem.mpaa,ab 12,left) | substring(listitem.mpaa,UK:12,left) | substring(Listitem.mpaa,Rated PG-13,left) | substring(Listitem.mpaa,PG-13,left)</visible>
-            </control>
-            <control type="image">
-                <!--FSK16-->
-                <include>MPAARatingPos</include>
-                <!--texture>flags/rating/mpaa_restricted.png</texture-->
-                <texture>flags/rating/FSK-16.png</texture>
-                <colordiffuse>ffFFFFFF</colordiffuse>
-                <visible>substring(ListItem.mpaa,16,left) | substring(ListItem.mpaa,FSK 16,left) | substring(ListItem.mpaa,ab 16,left) | substring(listitem.mpaa,UK:15,left) | substring(Listitem.mpaa,Rated R,left) | [substring(Listitem.mpaa,R,left) + !substring(Listitem.mpaa,Rated,left)]</visible>
-            </control>
-            <control type="image">
-                <!--FSK18-->
-                <include>MPAARatingPos</include>
-                <!--texture>flags/rating/mpaa_nc17.png</texture-->
-                <texture>flags/rating/FSK-18.png</texture>
-                <colordiffuse>ffFFFFFF</colordiffuse>
-                <visible>substring(ListItem.mpaa,18,left) | substring(ListItem.mpaa,FSK 18,left) | substring(ListItem.mpaa,ab 18,left) | substring(listitem.mpaa,UK:R18,left) | substring(Listitem.mpaa,Rated NC,left) | substring(Listitem.mpaa,NC,left)</visible>
-            </control>
-            <control type="image">
-                <!--Not Rated-->
-                <include>MPAARatingPos</include>
-                <!--texture>flags/rating/mpaa_nr.png</texture-->
-                <colordiffuse>ffFFFFFF</colordiffuse>
-                <visible>isEmpty(listitem.mpaa) | substring(ListItem.mpaa,Rated NR) | [substring(ListItem.mpaa,Rated) + !substring(ListItem.mpaa,Rated NC) + !substring(ListItem.mpaa,Rated PG-13) + !substring(ListItem.mpaa,Rated PG) + !substring(ListItem.mpaa,Rated G) + !substring(ListItem.mpaa,Rated R)]</visible>
-            </control>
-            <control type="image">
-                <!--TV Rating Flags-->
-                <include>MPAARatingPos</include>
-                <!--texture>$INFO[listitem.mpaa,flags/rating/,.png]</texture-->
-                <colordiffuse>ffFFFFFF</colordiffuse>
-                <!--visible>substring(listitem.mpaa,TV-,Left)</visible-->
+                 <width>161</width>
+				<height>109</height>
+				<colordiffuse>$VAR[TextColor_aawhite]</colordiffuse>
+                <texture fallback="flags/mpaa/NR.png">$VAR[RatingFlagVar]</texture>
             </control>
         </control>
     </include>
@@ -1177,12 +1035,12 @@
         <include>GlobalBackground</include>
     </include>
     <include name="GlobalBackground">
-        
-		<!-- single image background -->
+
+	<!-- single image background -->
         <control type="image">
             <include>DimensionsFullscreen</include>
 			<include>backgroundfade</include>
-            <texture background="true">$VAR[varBackground]</texture>
+            <texture background="true" fallback="special://skin/extras/backgrounds/global_blue.png">$VAR[varBackground]</texture>
             <fadetime>800</fadetime>
         </control>
 		
@@ -1303,9 +1161,10 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetString(ColorTheme, default)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(ShowFanartBackground)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(59_SmallFanart)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.String(CustomBackgroundSetting, default)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetString(CustomBackgroundSetting, default)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults7)">Skin.SetString(FocusColor, mainblue)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults7)">Skin.SetString(HomeFocusColor, mainblue)</onload>
 		
-
 		<!-- correct music widgets on MB3 mode -->
 		<onload condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomalbum)">Skin.SetString(MusicWidget, latestalbum)</onload>
 		<onload condition="Skin.HasSetting(HomeMenuUseMBforMusic) + Skin.String(MusicWidget, randomartist)">Skin.SetString(MusicWidget, latestalbum)</onload>
@@ -1325,6 +1184,7 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults4)">Skin.SetBool(HomeMenuDefaults4)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults5)">Skin.SetBool(HomeMenuDefaults5)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults6)">Skin.SetBool(HomeMenuDefaults6)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults7)">Skin.SetBool(HomeMenuDefaults7)</onload>
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
     </include>
 	
