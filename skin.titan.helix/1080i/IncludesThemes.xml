@@ -798,7 +798,7 @@
 				<!--Label LiveTV Program-->
 				<control type="label">
 					<visible>VideoPlayer.Content(livetv)</visible>
-					<visible>IsEmpty(VideoPlayer.Episode) + IsEmpty(VideoPlayer.EpisodeName)</visible>
+					<visible>IsEmpty(VideoPlayer.Episode) | IsEmpty(VideoPlayer.EpisodeName)</visible>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<posx>400</posx>
 					<posy>870</posy>
@@ -811,7 +811,7 @@
 				</control>
                 <control type="label">
                     <visible>VideoPlayer.Content(livetv)</visible>
-                    <visible>!IsEmpty(VideoPlayer.Episode) | !IsEmpty(VideoPlayer.EpisodeName)</visible>
+                    <visible>!IsEmpty(VideoPlayer.Episode) + !IsEmpty(VideoPlayer.EpisodeName)</visible>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<posx>400</posx>
 					<posy>870</posy>
