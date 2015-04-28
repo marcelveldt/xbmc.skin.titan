@@ -319,7 +319,8 @@
         </control>
         <!--Label Movie-->
         <control type="label">
-            <visible>VideoPlayer.Content(Movies)</visible>
+            <visible>!VideoPlayer.Content(Episodes)</visible>
+			<visible>!VideoPlayer.Content(livetv)</visible>
             <posx>550</posx>
             <posy>770</posy>
             <width>900</width>
@@ -330,7 +331,8 @@
             <scroll>false</scroll>
         </control>
         <control type="label">
-            <visible>VideoPlayer.Content(Movies)</visible>
+            <visible>!VideoPlayer.Content(Episodes)</visible>
+			<visible>!VideoPlayer.Content(livetv)</visible>
             <posx>550</posx>
             <posy>820</posy>
             <width>900</width>
@@ -372,7 +374,7 @@
             <align>left</align>
             <font>Light45</font>
             <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
-            <label>[B]$INFO[VideoPlayer.ChannelName] [/B]</label>
+            <label>[B]$INFO[VideoPlayer.ChannelName][/B]</label>
             <scroll>false</scroll>
         </control>
         <!--Label LiveTV Program-->
@@ -380,25 +382,24 @@
             <visible>VideoPlayer.Content(livetv)</visible>
             <visible>!IsEmpty(VideoPlayer.Episode) + !IsEmpty(VideoPlayer.EpisodeName)</visible>
             <posx>550</posx>
-            <posy>830</posy>
+            <posy>820</posy>
             <width>900</width>
             <align>left</align>
-            <font>Light45</font>
-            <textcolor>white</textcolor>
-            <label>[B]$INFO[VideoPlayer.Title] - $INFO[VideoPlayer.EpisodeName][/B]</label>
+            <font>Reg42</font>
+            <textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
+            <label>$INFO[VideoPlayer.Title] - $INFO[VideoPlayer.EpisodeName]</label>
             <scroll>false</scroll>
         </control>
-        <!--Label Ohter-->
         <control type="label">
-            <visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
+            <visible>VideoPlayer.Content(livetv)</visible>
             <visible>IsEmpty(VideoPlayer.Episode) | IsEmpty(VideoPlayer.EpisodeName)</visible>
             <posx>550</posx>
-            <posy>830</posy>
+            <posy>820</posy>
             <width>900</width>
             <align>left</align>
-            <font>Light45</font>
-            <textcolor>white</textcolor>
-            <label>[B]$INFO[VideoPlayer.Title][/B]</label>
+            <font>Reg42</font>
+            <textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
+            <label>$INFO[VideoPlayer.Title]</label>
             <scroll>false</scroll>
         </control>
         <!--Flags-->
@@ -718,7 +719,7 @@
 			<animation effect="slide" end="-50" time="0" condition="player.hasvideo">Conditional</animation>
 				<!--Label Movie-->
 				<control type="label">
-					<visible>IsEmpty(VideoPlayer.Episode)</visible>
+					<visible>!VideoPlayer.Content(Episodes)</visible>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<posx>400</posx>
@@ -743,6 +744,9 @@
 					<scroll>false</scroll>
 				</control>
 				<control type="label">
+					<visible>!VideoPlayer.Content(Episodes)</visible>
+					<visible>!VideoPlayer.Content(livetv)</visible>
+					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<posx>400</posx>
 					<posy>880</posy>
 					<width>1100</width>
@@ -751,14 +755,10 @@
 					<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
 					<label>$INFO[VideoPlayer.Genre]</label>
 					<scroll>false</scroll>
-					<visible>IsEmpty(VideoPlayer.Episode)</visible>
-					<visible>!VideoPlayer.Content(livetv)</visible>
-					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 				</control>
 				<!-- Label Episode-->
 				<control type="label">
-					<visible>!IsEmpty(VideoPlayer.Episode)</visible>
-					<visible>!VideoPlayer.Content(livetv)</visible>
+					<visible>VideoPlayer.Content(Episodes)</visible>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<posx>400</posx>
 					<posy>820</posy>
@@ -770,14 +770,13 @@
 					<scroll>false</scroll>
 				</control>
 				<control type="label">
-					<visible>!IsEmpty(VideoPlayer.Episode)</visible>
-					<visible>!VideoPlayer.Content(livetv)</visible>
+					<visible>VideoPlayer.Content(Episodes)</visible>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<posx>400</posx>
 					<posy>880</posy>
 					<width>1100</width>
 					<align>left</align>
-					<font>Reg42</font>
+					<font>Light35</font>
 					<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
 					<label>$INFO[VideoPlayer.TVShowTitle] • $LOCALIZE[20373] $INFO[VideoPlayer.Season]</label>
 					<scroll>false</scroll>
@@ -791,7 +790,7 @@
 					<width>1100</width>
 					<align>left</align>
 					<font>Light45</font>
-					<textcolor>white</textcolor>
+					<textcolor>$VAR[ThemeFontColorWhite]</textcolor>
 					<label>[B]$INFO[VideoPlayer.ChannelName][/B]</label>
 					<scroll>false</scroll>
 				</control>
@@ -801,7 +800,7 @@
 					<visible>IsEmpty(VideoPlayer.Episode) | IsEmpty(VideoPlayer.EpisodeName)</visible>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<posx>400</posx>
-					<posy>870</posy>
+					<posy>880</posy>
 					<width>1100</width>
 					<align>left</align>
 					<font>Reg42</font>
@@ -814,12 +813,12 @@
                     <visible>!IsEmpty(VideoPlayer.Episode) + !IsEmpty(VideoPlayer.EpisodeName)</visible>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<posx>400</posx>
-					<posy>870</posy>
+					<posy>880</posy>
 					<width>1100</width>
 					<align>left</align>
 					<font>Reg42</font>
 					<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
-                    <label>[B]$INFO[VideoPlayer.Title] - $INFO[VideoPlayer.EpisodeName][/B]</label>
+                    <label>$INFO[VideoPlayer.Title] - $INFO[VideoPlayer.EpisodeName]</label>
                     <scroll>false</scroll>
                 </control>
 				
@@ -859,7 +858,7 @@
 					</control>
 					<control type="label">
 						<posx>400</posx>
-						<posy>870</posy>
+						<posy>880</posy>
 						<width>1300</width>
 						<align>left</align>
 						<font>Reg42</font>
