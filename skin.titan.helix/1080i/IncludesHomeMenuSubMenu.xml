@@ -199,8 +199,22 @@
 			<control type="group">
 				<posx>590</posx>
 				<posy>334</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),0)]</visible>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),0)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),1)]</visible>
 				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					<include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			
+			<!--submenu right 3-row pos 0-->
+			<control type="group">
+				<posx>590</posx>
+				<posy>70</posy>
+				<visible>[Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),0)]</visible>
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -214,7 +228,7 @@
 			<control type="group">
 				<posx>590</posx>
 				<posy>600</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),1)]</visible>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),1)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),2)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -224,11 +238,13 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
+			
+			
 			<!--submenu right 2-row pos 2-->
 			<control type="group">
 				<posx>1201</posx>
 				<posy>334</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),2)]</visible>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),2)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),4)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -238,11 +254,28 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
+			
+			<!--submenu right 3-row pos 3-->
+			<control type="group">
+				<posx>1201</posx>
+				<posy>70</posy>
+				<visible>[Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),3)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			
+			
 			<!--submenu right 2-row pos 3-->
 			<control type="group">
 				<posx>1201</posx>
 				<posy>600</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),3)]</visible>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),3)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),5)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -256,7 +289,7 @@
 			<control type="group">
 				<posx>612</posx>
 				<posy>334</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),4)]</visible>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),4)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),7)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -267,11 +300,29 @@
 				<include>HomeMenuFocusButtonRight</include>
 				
 			</control>
+			
+			
+			<!--submenu left 3 row pos 6-->
+			<control type="group">
+				<posx>612</posx>
+				<posy>70</posy>
+				<visible>[Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),6)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuLeft</include>
+					 <include>SubMenuLayoutVertical</include>
+				</control>
+				<include>HomeMenuFocusButtonRight</include>
+				
+			</control>
+			
 			<!--submenu left 2 row pos 5-->
 			<control type="group">
 				<posx>612</posx>
 				<posy>600</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),5)]</visible>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),5)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),8)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">

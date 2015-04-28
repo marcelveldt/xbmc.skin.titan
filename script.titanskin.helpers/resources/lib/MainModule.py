@@ -244,16 +244,17 @@ def showInfoPanel():
     tryCount = 0
     secondsToDisplay = "4"
     secondsToDisplay = xbmc.getInfoLabel("Skin.String(ShowInfoAtPlaybackStart)")
-    while tryCount !=50 and not xbmc.getCondVisibility("Window.IsActive(fullscreeninfo)"):
-        time.sleep(0.1)
-        if not xbmc.getCondVisibility("Window.IsActive(fullscreeninfo)") and xbmc.getCondVisibility("Player.HasVideo"):
+    if win.getProperty("VideoScreensaverRunning") != "true":
+        while tryCount !=50 and not xbmc.getCondVisibility("Window.IsActive(fullscreeninfo)"):
+            time.sleep(0.1)
+            if not xbmc.getCondVisibility("Window.IsActive(fullscreeninfo)") and xbmc.getCondVisibility("Player.HasVideo"):
+                xbmc.executebuiltin('Action(info)')
+            tryCount += 1
+        
+        # close info again
+        time.sleep(int(secondsToDisplay))
+        if xbmc.getCondVisibility("Window.IsActive(fullscreeninfo)"):
             xbmc.executebuiltin('Action(info)')
-        tryCount += 1
-    
-    # close info again
-    time.sleep(int(secondsToDisplay))
-    if xbmc.getCondVisibility("Window.IsActive(fullscreeninfo)"):
-        xbmc.executebuiltin('Action(info)')
 
 def addShortcutWorkAround():
     xbmc.executebuiltin('SendClick(301)')

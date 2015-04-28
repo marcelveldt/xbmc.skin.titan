@@ -1300,6 +1300,38 @@ msgctxt "#31324"
 msgid "Use thumbs/icon based layout for favourites dialog instead of text-based"
 msgstr "Utiliser un agencement par imagettes/icônes au lieu de textuel pour les fenêtre de dialogue favorites"
 
+msgctxt "#31326"
+msgid "Adjust settings for low performance systems"
+msgstr "Ajuster les paramètres pour les systèmes à faible performance"
+
+msgctxt "#31327"
+msgid "Show clearlogo (if available)"
+msgstr "Montrer le logo clair (si proposé)"
+
+msgctxt "#31328"
+msgid "footer"
+msgstr "bas de page"
+
+msgctxt "#31329"
+msgid "top left"
+msgstr "en haut à gauche"
+
+msgctxt "#31330"
+msgid "top center"
+msgstr "en haut au centre"
+
+msgctxt "#31331"
+msgid "top right"
+msgstr "en haut à droite"
+
+msgctxt "#31332"
+msgid "Disable background-overlay in lyrics window"
+msgstr "Désactiver la surcouche d'arrière-plan dans la fenêtre des paroles"
+
+msgctxt "#31333"
+msgid "Do not display channel names in the guide"
+msgstr "Ne pas afficher le nom de la chaîne dans le guide"
+
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."
 msgstr "L'habillage a deux thèmes différents pour changer l'aspect et la convivialité : [CR][CR][B]Classique :[/B] l'aspect et la convivialité d'origine de l'habillage MediaPortal. [CR][B]Moderne/par défaut :[/B] l'évolution de l'habillage vers une approche plus moderne par le créateur de cet habillage. [CR] [CR]Vous pouvez décider quel thème vous préférez. [CR]Pour changer le thème pesez sur le bouton dans le menu de gauche ou allez dans les paramètres d'apparence de Kodi."

@@ -3,7 +3,7 @@
 <window id="0">
     <defaultcontrol always="true">300</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	
     <include>defaultskinsettings</include>
 	<onload condition="System.HasAddon(plugin.video.plexbmc)">XBMC.RunScript(script.titanskin.helpers,UPDATEPLEXLINKS)</onload>
 	
@@ -34,8 +34,7 @@
 		
 		
 		<!-- Header -->
-		<include condition="SubString(System.BuildVersion,13,left)">Header</include>
-		<include condition="Skin.HasSetting(EnableTouchSupport) + !SubString(System.BuildVersion,13,left)">TouchScreenWorkaround</include>
+		<include condition="Skin.HasSetting(EnableTouchSupport)">TouchScreenWorkaround</include>
 		
 		<!--NowPlaying-->
 		<include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>
@@ -58,7 +57,8 @@
 		<control type="group">
 			<include>animation_window_open_close</include>
 			<visible>Window.IsActive(home)</visible>
-			<include>WeatherInfo</include>
+			<include condition="!Skin.HasSetting(WeatherOnHomeShowCurrentCond) + Skin.HasSetting(WeatherOnHome)">WeatherInfo</include>
+			<include condition="Skin.HasSetting(WeatherOnHomeShowCurrentCond) + Skin.HasSetting(WeatherOnHome)">CurrentWeatherInfo</include>
 			<include>ProfileInfo</include>
 					
 			<!-- Kodi Logo image -->
@@ -68,7 +68,6 @@
 				<height>110</height>
 				<aspectratio align="left">keep</aspectratio>
 				<texture>$VAR[LogoImage]</texture>
-				<visible>!SubString(System.BuildVersion,13,left)</visible>
 				<visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !Skin.HasSetting(WeatherOnHome) + !Skin.HasSetting(ShowProfile) + ![ControlGroup(77777).HasFocus | StringCompare(Window(Home).Property(ShowWidget),show)] + !Control.IsVisible(88888)</visible>
 				<visible>!Skin.String(GadgetRows, simplever)</visible>
 				<visible>!Skin.HasSetting(ShowProfile) + !Skin.HasSetting(WeatherOnHome)</visible>
@@ -96,7 +95,7 @@
 			
 	
 			<!-- submenu -->
-			<include condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.String(SubmenuLayout, vertical) + [Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2)]">HomeMenuSubMenuVertical</include>
+			<include condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.String(SubmenuLayout, vertical) + [Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]">HomeMenuSubMenuVertical</include>
 			<include condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.String(SubmenuLayout, horizontal) + [Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]">HomeMenuSubMenuHorizontal</include>
 			<include condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.String(SubmenuLayout, tiles) + [Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]">HomeMenuSubMenuSmallTiles</include>
 

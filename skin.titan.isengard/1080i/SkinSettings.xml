@@ -2,7 +2,7 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">100</defaultcontrol>
-	<backgroundcolor>0</backgroundcolor>
+	
 	<onunload>SetProperty(powermenu, notactive, Home)</onunload>
 	<onload condition="IsEmpty(Window(Home).Property(mediabrowser.std.movies.0.path))">Skin.Reset(HomeMenuUseMBforMovies)</onload>
 	<onload condition="IsEmpty(Window(Home).Property(mediabrowser.std.tvshows.0.path))">Skin.Reset(HomeMenuUseMBforTVseries)</onload>
@@ -268,7 +268,7 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(AutoFocusUnwatchedEpisode)</onclick>
                     <selected>Skin.HasSetting(AutoFocusUnwatchedEpisode)</selected>
-					<visible>!SubString(System.BuildVersion,15,left)</visible>
+					<visible>SubString(System.BuildVersion,14,left)</visible>
                 </control>
 				
 				<control type="radiobutton" id="8014">
@@ -1040,6 +1040,19 @@
 					<visible>System.GetBool(pvrmanager.enabled)</visible>
                 </control>
 				
+				<control type="radiobutton" id="13047">
+                    <description>Show video preview in PVR section</description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31338</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(PVRShowPreview)</onclick>
+                    <selected>Skin.HasSetting(PVRShowPreview)</selected>
+					<visible>System.GetBool(pvrmanager.enabled)</visible>
+                </control>
+				
 				<!-- OSD -->
                 <control type="label" id="13050">
                     <width>1230</width>
@@ -1156,6 +1169,18 @@
                     <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(OSDLargeSeekingLabel)</onclick>
                     <selected>Skin.HasSetting(OSDLargeSeekingLabel)</selected>
+                </control>
+				
+				<control type="radiobutton" id="13059">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31325</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(ShowWeatherVideoInfoOSD)</onclick>
+                    <selected>Skin.HasSetting(ShowWeatherVideoInfoOSD)</selected>
                 </control>
 				
 				<!-- skin theme -->
@@ -1581,6 +1606,18 @@
 					<onclick>Skin.Reset(ShowProfile)</onclick>
                     <selected>Skin.HasSetting(WeatherOnHome)</selected>
                 </control>
+				<control type="radiobutton" id="23027">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>31446</label>
+                    <height>50</height>
+                    <focusedcolor>black</focusedcolor>
+                    <font>Reg24</font>
+                    <onclick>Skin.ToggleSetting(WeatherOnHomeShowCurrentCond)</onclick>
+                    <selected>Skin.HasSetting(WeatherOnHomeShowCurrentCond)</selected>
+					<visible>Skin.HasSetting(WeatherOnHome)</visible>
+                </control>
 				<control type="radiobutton" id="23022">
                     <description></description>
                     <!--show profile-->
@@ -1599,14 +1636,13 @@
                     <!--custom logo-->
                     <width>1230</width>
                     <align>left</align>
-                    <label>Use custom image instead of Kodi logo</label>
+                    <label>31337</label>
                     <height>50</height>
                     <focusedcolor>black</focusedcolor>
                     <font>Reg28</font>
                     <onclick condition="!Skin.String(CustomLogoImage)">Skin.SetImage(CustomLogoImage)</onclick>
 					<onclick condition="Skin.String(CustomLogoImage)">Skin.Reset(CustomLogoImage)</onclick>
                     <selected>Skin.String(CustomLogoImage)</selected>
-					<visible>!SubString(System.BuildVersion,13,left)</visible>
 					<visible>![Skin.HasSetting(WeatherOnHome) | Skin.HasSetting(ShowProfile)] | Skin.String(GadgetRows, simplever)</visible>
                 </control>
 				

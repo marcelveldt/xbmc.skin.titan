@@ -89,11 +89,13 @@
 		</control>
 		<control type="image">
 			<left>50</left>
-			<posy>125</posy>
-			<width>330</width>
-			<height>465</height>
+			<posy>105</posy>
+			<width>340</width>
+			<height>485</height>
 			<aspectratio align="left" aligny="top">keep</aspectratio>
-			<texture background="true" fallback="DefaultMovies.png">$VAR[HomeMenuWidgetInfoPoster]</texture>
+			<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+			<bordersize>20</bordersize>
+			<texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[HomeMenuWidgetInfoPoster]</texture>
 			<visible>!StringCompare(Window(Home).Property(activewidget),music) + !StringCompare(Window(Home).Property(activewidget),weather)</visible>
 			<visible>[ControlGroup(77777).HasFocus | StringCompare(Window(Home).Property(ShowWidget),show)]</visible>
 		</control>
@@ -263,6 +265,7 @@
 				<height>60</height>
 				<align>right</align>
 				<textcolor>darkgrey</textcolor>
+				<focusedcolor>white</focusedcolor>
 				<font>Bold32</font>
 				<onup>Skin.Reset(ShowWidgets)</onup>
 				<onup>300</onup>
@@ -273,6 +276,20 @@
 				<texturenofocus>-</texturenofocus>
 				<onclick>$VAR[HomeWidgetClickActions]</onclick>
 				<include>animation_fade_visible_hidden_delayed</include>
+				<visible>skin.hastheme(classic)</visible>
+				<animation time="100" effect="fade" start="100" end="0" delay="0" condition="!StringCompare(Window(Home).Property(activewidget),systeminfo) + !StringCompare(Window(Home).Property(activewidget),submenuaswidget) + SubString(Window(Home).Property(activewidget),smart-) | [StringCompare(Window(Home).Property(activewidget),custom) + !IsEmpty(Window(Home).Property(customwidgetcontent))]">Conditional</animation>
+			</control>
+			
+			<control type="label">
+				<right>30</right>
+				<width>1000</width>
+				<height>60</height>
+				<align>right</align>
+				<textcolor>white</textcolor>
+				<font>Bold32</font>
+				<textoffsetx>80</textoffsetx>
+				<label>$VAR[HomeWidgetLabel]</label>
+				<visible>Control.HasFocus(511)</visible>
 				<visible>skin.hastheme(classic)</visible>
 				<animation time="100" effect="fade" start="100" end="0" delay="0" condition="!StringCompare(Window(Home).Property(activewidget),systeminfo) + !StringCompare(Window(Home).Property(activewidget),submenuaswidget) + SubString(Window(Home).Property(activewidget),smart-) | [StringCompare(Window(Home).Property(activewidget),custom) + !IsEmpty(Window(Home).Property(customwidgetcontent))]">Conditional</animation>
 			</control>

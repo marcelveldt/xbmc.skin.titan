@@ -694,7 +694,7 @@ msgstr "Jedną z największych zalet korzystania z dodatku Skin Shortcuts jest t
 
 msgctxt "#31172"
 msgid "Do not use overlay"
-msgstr "Nie używaj nakładki na tło"
+msgstr "Nie używaj nakładki"
 
 msgctxt "#31173"
 msgid "Use custom overlay"
@@ -934,7 +934,7 @@ msgstr "sekundy"
 
 msgctxt "#31232"
 msgid "Always show songinfo on fullscreen music playback"
-msgstr "Pokazuj informacje o utworze odtwarzając w trybie pełnoekranowego"
+msgstr "Pokazuj informacje o utworze w trybie pełnoekranowym odtwarzacza"
 
 msgctxt "#31233"
 msgid "Focuscolor for buttons in the skin"
@@ -942,7 +942,7 @@ msgstr "Kolor zaznaczenia przycisków"
 
 msgctxt "#31234"
 msgid "Apply background overlay only to media views"
-msgstr "Zastosuj nakładkę na tło tylko w widokach mediów"
+msgstr "Zastosuj nakładkę tylko w widokach mediów"
 
 msgctxt "#31235"
 msgid "Show video title in header"
@@ -970,7 +970,7 @@ msgstr "Używaj stałej pozycji zaznaczenia dla kafelków"
 
 msgctxt "#31241"
 msgid "Apply background overlay only to home screen"
-msgstr "Zastosuj nakładkę na tło tylko na ekranie startowym"
+msgstr "Zastosuj nakładkę tylko na ekranie startowym"
 
 msgctxt "#31242"
 msgid "OSD panel opacity:"
@@ -1274,7 +1274,7 @@ msgstr "Zablokuj automatycznie odświeżanie gadżetów"
 
 msgctxt "#31318"
 msgid "Enable Kiosk-mode"
-msgstr "Uruchamiaj w trybie kiosku"
+msgstr "Aktywuj tryb kiosku"
 
 msgctxt "#31319"
 msgid "Kiosk mode is enabled!"
@@ -1299,6 +1299,38 @@ msgstr "Używaj inteligentnych skrótów"
 msgctxt "#31324"
 msgid "Use thumbs/icon based layout for favourites dialog instead of text-based"
 msgstr "Używaj kompozycji opartej na miniaturach dla okna ulubionych"
+
+msgctxt "#31326"
+msgid "Adjust settings for low performance systems"
+msgstr "Dopasuj ustawienia do systemów o niskiej wydajności"
+
+msgctxt "#31327"
+msgid "Show clearlogo (if available)"
+msgstr "Pokazuj logo (jeśli dostępne)"
+
+msgctxt "#31328"
+msgid "footer"
+msgstr "stopka"
+
+msgctxt "#31329"
+msgid "top left"
+msgstr "na górze po lewej stronie"
+
+msgctxt "#31330"
+msgid "top center"
+msgstr "na górze po środku"
+
+msgctxt "#31331"
+msgid "top right"
+msgstr "na górze po prawej stronie"
+
+msgctxt "#31332"
+msgid "Disable background-overlay in lyrics window"
+msgstr "Nie używaj nakładki na ekranie tekstu utworu"
+
+msgctxt "#31333"
+msgid "Do not display channel names in the guide"
+msgstr "Ukrywaj nazwy kanałów w widokach przewodnika"
 
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."

@@ -3,7 +3,7 @@
 <window id="4">
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	
     <include>defaultskinsettings</include>
 	<onload>XBMC.RunScript(script.titanskin.helpers,SETSKINVERSION)</onload>
     <controls>

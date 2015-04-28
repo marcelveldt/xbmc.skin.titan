@@ -8,9 +8,7 @@
 			<defaultcontrol always="true">503</defaultcontrol>
 			<visible>Control.IsVisible(503) + IntegerGreaterThan(Container.NumItems,0)</visible>
             <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
-			
-			<include condition="skin.hastheme(classic)">ClassicDetailsPanel5</include>
-				
+
 				<!-- movie details -->
 				<control type="group">
 					<visible>Skin.HasSetting(LogoViewShowInfo)</visible>
@@ -69,53 +67,7 @@
 					</focusedlayout>
 
 			</control>
-			
-			
-
-		</control>
-		
-	</include>
-	
-	<include name="LandscapeLogoLayout">
-		<control type="image">
-			<left>43</left>
-			<top>158</top>
-			<width>430</width>
-			<height>194</height>
-			<aspectratio aligny="center" align="center">keep</aspectratio>
-			<animation effect="fade" start="0" end="10" time="0" reversible="false">Focus</animation>
-			<animation effect="fade" start="10" end="0" time="0" reversible="false">UnFocus</animation>
-			<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-		</control>
-		<control type="image">
-			<left>52</left>
-			<top>178</top>
-			<width>390</width>
-			<height>164</height>
-			<aspectratio aligny="center" align="center">keep</aspectratio>
-			<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-		</control>
-
-		<control type="group">
-			<visible>IsEmpty(ListItem.Art(clearlogo))</visible>
-			<control type="label">
-				<left>15</left>
-				<top>335</top>
-				<width>470</width>
-				<height>30</height>
-				<align>center</align>
-				<font>Reg36</font>
-				<textcolor>white</textcolor>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-		</control>
-		<control type="group">
-			<left>20</left>
-			<top>300</top>
-			<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
 		</control>
 	</include>
 
-
-	
 </includes>

@@ -1328,6 +1328,10 @@ msgctxt "#31332"
 msgid "Disable background-overlay in lyrics window"
 msgstr "Disabilita sfumatura sfondo nella finestra Testi"
 
+msgctxt "#31333"
+msgid "Do not display channel names in the guide"
+msgstr "Non mostrare il nome dei canali nella Guida"
+
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."
 msgstr "La Skin ha due diversi temi per cambiare aspetto e carattere: [CR][CR][B]Classico:[/B] E' l'aspetto originale della Skin di MediaPortal [CR][B]Predefinito/Moderno:[/B] E' l'evoluzione della Skin a un approccio piu' moderno da parte dell'autore di questa Skin.. [CR] [CR]Puoi decidere quale tema preferisci. [CR]Per cambiare tema premi il pulsante nel Menu' a sinistra o vai nelle Impostazioni Aspetto da Kodi."

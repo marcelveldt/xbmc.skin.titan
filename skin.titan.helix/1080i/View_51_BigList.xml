@@ -512,6 +512,16 @@
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<visible>Window.IsActive(tvrecordings)</visible>
 				</control>
+				
+				<!--Video Window -->
+				<control type="videowindow">
+					<right>85</right>
+					<posy>240</posy>
+					<width>440</width>
+					<height>280</height>
+					<visible>VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)</visible>
+				</control>
+				
 				<control type="textbox">
 					<right>85</right>
 					<posy>510</posy>
@@ -522,7 +532,7 @@
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<aligny>top</aligny>
-					<visible>Window.IsActive(tvrecordings)</visible>
+					<visible>Window.IsActive(tvrecordings) | [VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)]</visible>
 				</control>
 				<control type="textbox">
 					<right>65</right>
@@ -534,7 +544,7 @@
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<aligny>top</aligny>
-					<visible>!Window.IsActive(tvrecordings)</visible>
+					<visible>!Window.IsActive(tvrecordings) + ![VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)]</visible>
 				</control>
 			</control>
 			

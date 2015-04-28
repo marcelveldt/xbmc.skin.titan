@@ -81,7 +81,7 @@
 							<visible>!Skin.HasSetting(HideWatchedOverlayList)</visible>
 						</control>
 						<control type="label">
-							<!--watched label helix-->
+							<!--watched label -->
 							<right>5</right>
 							<top>-10</top>
 							<width>100</width>
@@ -89,19 +89,6 @@
 							<label>$VAR[WatchedLabel]</label>
 							<font>Light22</font>
 							<textcolor>white</textcolor>
-							<visible>!SubString(System.BuildVersion,13,left)</visible>
-							<visible>!Skin.HasSetting(HideWatchedOverlayList)</visible>
-						</control>
-						<control type="label">
-							<!--watched label Gotham-->
-							<right>-45</right>
-							<width>50</width>
-							<posy>-10</posy>
-							<align>right</align>
-							<label>$VAR[WatchedLabel]</label>
-							<font>Light20</font>
-							<textcolor>white</textcolor>
-							<visible>SubString(System.BuildVersion,13,left)</visible>
 							<visible>!Skin.HasSetting(HideWatchedOverlayList)</visible>
 						</control>
 					</control>
@@ -167,7 +154,7 @@
 							<visible>!Skin.HasSetting(HideWatchedOverlayList)</visible>
 						</control>
 						<control type="label">
-							<!--watched label helix-->
+							<!--watched label -->
 							<right>5</right>
 							<top>-10</top>
 							<width>100</width>
@@ -175,19 +162,6 @@
 							<label>$VAR[WatchedLabel]</label>
 							<font>Light22</font>
 							<textcolor>white</textcolor>
-							<visible>!SubString(System.BuildVersion,13,left)</visible>
-							<visible>!Skin.HasSetting(HideWatchedOverlayList)</visible>
-						</control>
-						<control type="label">
-							<!--watched label Gotham-->
-							<right>-45</right>
-							<width>50</width>
-							<posy>-10</posy>
-							<align>right</align>
-							<label>$VAR[WatchedLabel]</label>
-							<font>Light20</font>
-							<textcolor>white</textcolor>
-							<visible>SubString(System.BuildVersion,13,left)</visible>
 							<visible>!Skin.HasSetting(HideWatchedOverlayList)</visible>
 						</control>
 					</control>

@@ -352,7 +352,7 @@
 		<control type="image">
 			<!--Panel-->
 			<posx>8</posx>
-			<posy>210</posy>
+			<posy>253</posy>
 			<width>1902</width>
 			<height>790</height>
 			<texture>views/view_50_list_panel_episodes1.png</texture>

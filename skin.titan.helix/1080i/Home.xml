@@ -57,7 +57,8 @@
 		<control type="group">
 			<include>animation_window_open_close</include>
 			<visible>Window.IsActive(home)</visible>
-			<include>WeatherInfo</include>
+			<include condition="!Skin.HasSetting(WeatherOnHomeShowCurrentCond) + Skin.HasSetting(WeatherOnHome)">WeatherInfo</include>
+			<include condition="Skin.HasSetting(WeatherOnHomeShowCurrentCond) + Skin.HasSetting(WeatherOnHome)">CurrentWeatherInfo</include>
 			<include>ProfileInfo</include>
 					
 			<!-- Kodi Logo image -->
@@ -94,7 +95,7 @@
 			
 	
 			<!-- submenu -->
-			<include condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.String(SubmenuLayout, vertical) + [Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2)]">HomeMenuSubMenuVertical</include>
+			<include condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.String(SubmenuLayout, vertical) + [Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]">HomeMenuSubMenuVertical</include>
 			<include condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.String(SubmenuLayout, horizontal) + [Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]">HomeMenuSubMenuHorizontal</include>
 			<include condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.String(SubmenuLayout, tiles) + [Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]">HomeMenuSubMenuSmallTiles</include>
 

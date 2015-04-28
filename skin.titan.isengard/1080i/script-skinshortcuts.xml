@@ -3,7 +3,7 @@
 <window>
 
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	
 	<defaultcontrol always="true">211</defaultcontrol>
 	<onload>ClearProperty(shortcutDialog, Home)</onload>
 	<onload>ClearProperty(customWidget, Home)</onload>

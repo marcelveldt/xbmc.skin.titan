@@ -934,7 +934,7 @@ msgstr "sekundy"
 
 msgctxt "#31232"
 msgid "Always show songinfo on fullscreen music playback"
-msgstr "Pokazuj informacje o utworze odtwarzając w trybie pełnoekranowego"
+msgstr "Pokazuj informacje o utworze w trybie pełnoekranowym odtwarzacza"
 
 msgctxt "#31233"
 msgid "Focuscolor for buttons in the skin"
@@ -1274,7 +1274,7 @@ msgstr "Zablokuj automatycznie odświeżanie gadżetów"
 
 msgctxt "#31318"
 msgid "Enable Kiosk-mode"
-msgstr "Uruchamiaj w trybie kiosku"
+msgstr "Aktywuj tryb kiosku"
 
 msgctxt "#31319"
 msgid "Kiosk mode is enabled!"

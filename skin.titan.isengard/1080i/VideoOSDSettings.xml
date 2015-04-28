@@ -120,13 +120,8 @@
                     <align>left</align>
                     <reverse>yes</reverse>
                 </control>
-                <control type="sliderex" id="10">
-                    <align>left</align>
-					<visible>SubString(System.BuildVersion,13,left)</visible>
-                </control>
 				<control type="sliderex" id="13">
                     <align>left</align>
-					<visible>!SubString(System.BuildVersion,13,left)</visible>
                 </control>
             </control>
         </control>

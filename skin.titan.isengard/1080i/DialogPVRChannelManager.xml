@@ -525,7 +525,7 @@
                             <onright>8003</onright>
                             <onup>30</onup>
                             <ondown>32</ondown>
-							<visible>!SubString(System.BuildVersion,15,left)</visible>
+							<visible>SubString(System.BuildVersion,14,left)</visible>
                         </control>
                         <control type="button" id="32">
                             <description>Delete channel Button</description>
@@ -544,7 +544,7 @@
                             <onright>8003</onright>
                             <onup>31</onup>
                             <ondown>33</ondown>
-							<visible>!SubString(System.BuildVersion,15,left)</visible>
+							<visible>SubString(System.BuildVersion,14,left)</visible>
                         </control>
                         <control type="button" id="33">
                             <description>New channel Button (Pre-Isengard)</description>
@@ -564,7 +564,7 @@
                             <onup>32</onup>
                             <ondown>SetProperty(Focus,1)</ondown>
                             <ondown>8003</ondown>
-							<visible>!SubString(System.BuildVersion,15,left)</visible>
+							<visible>SubString(System.BuildVersion,14,left)</visible>
                         </control>
 						<control type="button" id="31">
                             <description>New channel Button (Isengard)</description>
@@ -584,7 +584,7 @@
                             <onup>32</onup>
                             <ondown>SetProperty(Focus,1)</ondown>
                             <ondown>8003</ondown>
-							<visible>!SubString(System.BuildVersion,15,left)</visible>
+							<visible>SubString(System.BuildVersion,14,left)</visible>
                         </control>
                     </control>
                 </control>

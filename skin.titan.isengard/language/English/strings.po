@@ -1306,6 +1306,10 @@ msgctxt "#31324"
 msgid "Use thumbs/icon based layout for favourites dialog instead of text-based"
 msgstr ""
 
+msgctxt "#31325"
+msgid "Show current weather in the video info & video on-screen displays"
+msgstr ""
+
 msgctxt "#31326"
 msgid "Adjust settings for low performance systems"
 msgstr ""
@@ -1336,6 +1340,26 @@ msgstr ""
 
 msgctxt "#31333"
 msgid "Do not display channel names in the guide"
+msgstr ""
+
+msgctxt "#31334"
+msgid "Last updated"
+msgstr ""
+
+msgctxt "#31335"
+msgid "SERIES FINALE"
+msgstr ""
+
+msgctxt "#31336"
+msgid "SEASON FINALE"
+msgstr ""
+
+msgctxt "#31337"
+msgid "Use custom image instead of Kodi logo"
+msgstr ""
+
+msgctxt "#31338"
+msgid "Show video preview in PVR section"
 msgstr ""
 
 msgctxt "#31399"
@@ -1485,6 +1509,9 @@ msgctxt "#31445"
 msgid "Horizontal Panel"
 msgstr ""
 
+msgctxt "#31446"
+msgid "    - Show Current Weather Conditions (instead of Today's Forecast) for Weather on Home"
+msgstr ""
 
 
 

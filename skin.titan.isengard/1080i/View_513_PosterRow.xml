@@ -1405,9 +1405,7 @@
 		</control>
 	</include>
 	
-	
-	
-	
+
 	<variable name="ShowcaseItem-7Var">
 		<value condition="!IsEmpty(ListItem(-7).Art(poster))">$INFO[ListItem(-7).Art(poster)]</value>
 		<value condition="Container.Content(genres)">$INFO[ListItem(-7).Label,special://skin/extras/moviegenres/,.jpg]</value>

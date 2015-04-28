@@ -237,7 +237,6 @@
                     <label>518</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(12)</visible>
-					<visible>!SubString(System.BuildVersion,13,left)</visible>
                 </control>
             </control>
         </control>

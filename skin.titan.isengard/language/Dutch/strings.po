@@ -1300,6 +1300,34 @@ msgctxt "#31324"
 msgid "Use thumbs/icon based layout for favourites dialog instead of text-based"
 msgstr "Gebruik miniatuur/icoon gebaseerde layout voor favorieten dialoog in plaats van tekst gebaseerde"
 
+msgctxt "#31326"
+msgid "Adjust settings for low performance systems"
+msgstr "Aanpassen instellingen voor tragere systemen"
+
+msgctxt "#31327"
+msgid "Show clearlogo (if available)"
+msgstr "Toon clearlogo (wanneer beschikbaar)"
+
+msgctxt "#31328"
+msgid "footer"
+msgstr "Footer"
+
+msgctxt "#31329"
+msgid "top left"
+msgstr "Boven links"
+
+msgctxt "#31330"
+msgid "top center"
+msgstr "Boven midden"
+
+msgctxt "#31331"
+msgid "top right"
+msgstr "Boven rechts"
+
+msgctxt "#31332"
+msgid "Disable background-overlay in lyrics window"
+msgstr "Deactiveer achtergrond-overlapping in songtekt scherm"
+
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."
 msgstr "De skin heeft twee verschillende thema’s waarmee het uiterlijk van de skin kan worden aangepast. [CR] [CR][B]Classic:[/B] Is de originele look-and-feel van MediaPortal. [CR][B]Default/Modern:[/B] Is de evolutie van de skin naar een meer moderne aanpak door de maker van deze skin.[CR] [CR]Je kunt zelf beslissen welk thema je het beste vind. [CR]Om het thema te wisselen klik op de knop in het linkse menu of ga naar de weergave instellingen van Kodi."

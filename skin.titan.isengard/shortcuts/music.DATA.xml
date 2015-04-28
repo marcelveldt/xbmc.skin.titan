@@ -38,7 +38,7 @@
 		<label2>20389</label2>
 		<icon>$VAR[MusicVideosButtonThumb]</icon>
 		<thumb />
-		<action>ActivateWindow(Videos,videodb://musicvideos/titles/,return)</action>
+		<action>ActivateWindow(10025,videodb://musicvideos/titles/,return)</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>1038</defaultID>

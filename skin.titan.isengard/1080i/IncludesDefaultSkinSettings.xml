@@ -41,6 +41,7 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults20)">Skin.SetString(OSDPanelOpacity, 60)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults20)">Skin.SetString(GuideRows, 9)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults20)">Skin.SetBool(GuideShowInfo)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults20)">Skin.SetBool(ShowWeatherVideoInfoOSD)</onload>
 		
 		<!-- default color settings -->
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults20)">Skin.SetString(ViewDetailsFocusShadowColor, black)</onload>
@@ -68,6 +69,8 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults22) + skin.hastheme(classic)">Skin.SetString(SubmenuLayout, vertical)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults22) + !skin.hastheme(classic)">Skin.SetString(SubmenuLayout, horizontal)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults23)">Skin.SetBool(SmartShortcuts.playlists)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults25)">Skin.SetBool(OSDShowInfoOnPause)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults25)">Skin.SetBool(PVRShowPreview)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults24) + Skin.HasSetting(ShowLogoAltLocation)">Skin.SetString(ClearLogoLocation, topright)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults24) + !Skin.HasSetting(ShowLogoAltLocation)">Skin.SetString(ClearLogoLocation, footer)</onload>
 		
@@ -145,13 +148,12 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults22)">Skin.SetBool(HomeMenuDefaults22)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults23)">Skin.SetBool(HomeMenuDefaults23)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults24)">Skin.SetBool(HomeMenuDefaults24)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults25)">Skin.SetBool(HomeMenuDefaults25)</onload>
 		<onload condition="!Skin.HasSetting(WidgetDefaults3)">Skin.SetBool(WidgetDefaults3)</onload>
 		<onload condition="!Skin.HasSetting(WidgetDefaults4)">Skin.SetBool(WidgetDefaults4)</onload>
 		
 		<!-- correct some stuff -->
 		<onload condition="Skin.HasSetting(AutoFocusUnwatchedEpisode) + SubString(System.BuildVersion,15,left)">Skin.Reset(AutoFocusUnwatchedEpisode)</onload>
-		
-		
 		
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
 

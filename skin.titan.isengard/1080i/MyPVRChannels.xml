@@ -3,7 +3,7 @@
 <window>
     <defaultcontrol>51</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	
 	<onunload>ClearProperty(ShowViewSubMenu, Home)</onunload>
 	<views>11,51,501,502,505,506,509,510,511,512,515</views>
     <controls>
@@ -44,10 +44,19 @@
 					<posx>118</posx>
 					<posy>340</posy>
 					<control type="image">
-						<width>200</width>
+						<width>300</width>
 						<height>200</height>
 						<texture diffuse="home/home_matte.png">$INFO[ListItem.Thumb]</texture>
 						<aspectratio align="left" aligny="top">keep</aspectratio>
+						<visible>![VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)]</visible>
+					</control>
+					<!--Video Window -->
+					<control type="videowindow">
+						<posx>5</posx>
+						<posy>-5</posy>
+						<width>300</width>
+						<height>200</height>
+						<visible>VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)</visible>
 					</control>
 				</control>
 				<control type="group">

@@ -21,6 +21,18 @@
             <height>450</height>
             <itemgap>12</itemgap>
             <visible>Skin.HasSetting(DebugInfo)</visible>
+			
+			<!-- debug labels -->
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>FF0000FF</textcolor>
+                <shadowcolor>FF000000</shadowcolor>
+                <font>font13</font>
+                <align>left</align>
+                <label>$INFO[Window(Home).Property(submenupos)]</label>
+            </control>
+			
             <!-- Window labels -->
             <control type="label">
                 <width>780</width>

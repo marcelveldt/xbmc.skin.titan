@@ -21,7 +21,6 @@
 			<include condition="!skin.hassetting(nofooterbar)">Footer</include>
 		</control>
 		
-		<!-- Now playing -->
         <!--Hidden Button-->
         <control type="radiobutton" id="19">
             <description>Filter (hidden)</description>
@@ -111,10 +110,11 @@
 					<include>SubMenuButton</include>
 					<label>24999</label>
 				</control>
-				<control type="radiobutton" id="9">
+				<control type="button" id="9">
 					<description>Check for repo updates</description>
 					<include>SubMenuButton</include>
 					<label>24034</label>
+					<visible>!SubString(System.BuildVersion,14,left)</visible>
 				</control>
                 <control type="button" id="2">
 					<description>View As button</description>

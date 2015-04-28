@@ -34,6 +34,11 @@
             <filename>Light.ttf</filename>
             <size>1</size>
         </font>
+		<font>
+            <name>Light18</name>
+            <filename>Light.ttf</filename>
+            <size>18</size>
+        </font>
         <font>
             <name>Light20</name>
             <filename>Light.ttf</filename>
@@ -431,6 +436,11 @@
             <name>Light1</name>
             <filename>Arial.ttf</filename>
             <size>1</size>
+        </font>
+		<font>
+            <name>Light18</name>
+            <filename>Arial.ttf</filename>
+            <size>14</size>
         </font>
         <font>
             <name>Light20</name>
@@ -837,6 +847,11 @@
             <name>Light1</name>
             <filename>Light.ttf</filename>
             <size>1</size>
+        </font>
+		<font>
+            <name>Light18</name>
+            <filename>Light.ttf</filename>
+            <size>18</size>
         </font>
         <font>
             <name>Light20</name>

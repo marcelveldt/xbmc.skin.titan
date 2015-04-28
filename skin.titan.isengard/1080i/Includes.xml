@@ -31,7 +31,6 @@
 	<include file="IncludesHomeMenuWidgets.xml" />
 	<include file="IncludesHomeMenuSubMenu.xml" />
     <include file="IncludesViews.xml" />
-	<include file="IncludesKodi.xml" />
 	<include file="IncludesThemes.xml" />
 	<include file="IncludesPlexbmc.xml" />
 	<include file="IncludesHome.xml" />
@@ -43,9 +42,7 @@
 	<include file="IncludesWeather.xml" />
 	
 	<include file="script-skinshortcuts-includes.xml"/>
-    <!--PVR-->
-    <include condition="SubString(System.BuildVersion,13,left)" file="MyPVR.xml" />
-    <include condition="SubString(System.BuildVersion,13,left)" file="ViewsPVR.xml" />
+
 	<!--Titan Version-->
     <include name="TitanVersion">
         <control type="label">
@@ -75,7 +72,7 @@
     </include>
 	<include name="Gadget3Row">
         <height>900</height>
-        <posy>130</posy>
+        <posy>135</posy>
     </include>
 	
 	<include name="Gadget1RowSmall">
@@ -432,6 +429,18 @@
 				<textcolor>$VAR[ThemeFontColorBlack]</textcolor>
 				<label>$INFO[ListItem.Title]</label>
 				<animation effect="slide" end="0,16" time="0" condition="!skin.hastheme(classic)">Conditional</animation>
+			</control>
+			<!-- repo last updated label -->
+			<control type="label">
+				<left>60</left>
+				<align>left</align>
+				<posy>0</posy>
+				<width>550</width>
+				<font>Reg30</font>
+				<textcolor>$VAR[ThemeFontColorBlack]</textcolor>
+				<label>$LOCALIZE[31334]: $INFO[Window().Property(Updated)]</label>
+				<animation effect="slide" end="0,16" time="0" condition="!skin.hastheme(classic)">Conditional</animation>
+				<visible>Window.IsActive(AddonBrowser) + !SubString(System.BuildVersion,14,left)</visible>
 			</control>
 
 		</control>
@@ -799,7 +808,103 @@
             </control>
         </control>
     </include>
+	
+	<include name="CurrentWeatherInfo">
+        <!-- weather info -->
+        <control type="group">
+			<animation effect="slide" end="440" time="0" condition="Skin.String(GadgetRows, simplever)">Conditional</animation>
+            <posx>30</posx>
+            <posy>15</posy>
+            <width>350</width>
+            <height>300</height>
+			<visible>!Control.IsVisible(882)</visible>
+			<visible>!Control.IsVisible(77551)</visible>
+            <visible>Weather.IsFetched</visible>
+			<include>animation_fade_visible_hidden</include>
+            <visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + Skin.HasSetting(WeatherOnHome) + ![ControlGroup(77777).HasFocus | StringCompare(Window(Home).Property(ShowWidget),show)] + !Control.IsVisible(88888)</visible>
+            <!--Weather Today-->
+            <control type="image">
+                <!--Icon-->
+                <texture>special://skin/extras/weathericons/$INFO[skin.string(WeatherIconPack)]/$INFO[Window(Weather).Property(Current.FanartCode)].png</texture>
+                <width>125</width>
+                <height>125</height>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+            </control>
+            <control type="label">
+                <!--Temp-->
+                <width>160</width>
+                <height>40</height>
+                <posx>140</posx>
+                <posy>25</posy>
+                <font>Bold38</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <align>left</align>
+                <label>$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
+                <visible>Weather.IsFetched</visible>
+				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+            </control>
+            <control type="label">
+                <!--Temp-->
+                <width>220</width>
+                <height>40</height>
+                <posx>140</posx>
+                <posy>70</posy>
+                <font>Reg28</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+                <align>left</align>
+                <label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+                <visible>Weather.IsFetched</visible>
+            </control>
+        </control>
+    </include>
 
+	<include name="WeatherInfoOSD">
+        <!-- weather info displayed in video OSD and video info -->
+        <control type="group">
+            <posx>50</posx>
+            <posy>660</posy>
+            <width>128</width>
+            <height>128</height>
+            <visible>Weather.IsFetched + Skin.HasSetting(ShowWeatherVideoInfoOSD)</visible>
+			<include>animation_fade_visible_hidden</include>
+			<animation effect="fade" reversible="false" end="80" time="0" condition="true">Conditional</animation>
+            <!--Current Weather-->
+            <control type="image">
+                <!--Current Weather Icon-->
+                <texture>special://skin/extras/weathericons/$INFO[skin.string(WeatherIconPack)]/$INFO[Window(Weather).Property(Current.FanartCode)].png</texture>
+                <width>128</width>
+                <height>128</height>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+            </control>
+            <control type="label">
+                <!--Current Temp-->
+                <width>300</width>
+                <height>128</height>
+                <posx>132</posx>
+                <posy>0</posy>
+                <font>Bold30</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <align>left</align>
+                <label>$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
+                <visible>Weather.IsFetched</visible>
+				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+            </control>
+			<!--Current Conditions-->
+			<control type="label">
+                    <width>300</width>
+                    <height>128</height>
+					<posx>132</posx>
+                    <posy>32</posy>
+					<font>Reg24</font>
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<align>left</align>
+					<label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+                    <visible>Weather.IsFetched</visible>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+            </control>
+        </control>
+    </include>
     
     <!--Sub Menu-->
     <include name="SubMenuButton">
@@ -1022,12 +1127,6 @@
         <selectedcolor>eewhite</selectedcolor>
         <disabledcolor>aawhite</disabledcolor>
     </include>
-    <include name="EditTextNumeric">
-        <font>Light45</font>
-        <textcolor>green</textcolor>
-        <selectedcolor>eewhite</selectedcolor>
-        <disabledcolor>aawhite</disabledcolor>
-    </include>
     <include name="Key">
         <height>110</height>
         <align>center</align>
@@ -1059,18 +1158,6 @@
     <include name="BackSpace">
         <width>490</width>
         <include>Key</include>
-    </include>
-    <include name="MediumKeyLarr">
-        <width>180</width>
-        <height>110</height>
-        <texturefocus>dialogs/keyboard/mediumkeylarrfocus.png</texturefocus>
-        <texturenofocus>dialogs/keyboard/mediumkeylarrnofocus.png</texturenofocus>
-    </include>
-    <include name="MediumKeyRarr">
-        <width>180</width>
-        <height>110</height>
-        <texturefocus>dialogs/keyboard/mediumkeyrarrfocus.png</texturefocus>
-        <texturenofocus>dialogs/keyboard/mediumkeyrarrnofocus.png</texturenofocus>
     </include>
     <include name="DoubleKeyDone">
         <width>250</width>

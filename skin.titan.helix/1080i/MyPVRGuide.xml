@@ -130,6 +130,15 @@
 						<height>160</height>
 						<texture fallback="DefaultAddonTvInfo.png">$INFO[ListItem.Icon]</texture>
 						<aspectratio align="right">keep</aspectratio>
+						<visible>![VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)]</visible>
+					</control>
+					<!--Video Window -->
+					<control type="videowindow">
+						<right>45</right>
+						<posy>0</posy>
+						<width>320</width>
+						<height>160</height>
+						<visible>VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)</visible>
 					</control>
 					<control type="label">
 						<!--title-->

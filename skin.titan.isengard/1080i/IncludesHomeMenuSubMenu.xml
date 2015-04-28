@@ -198,9 +198,23 @@
 			<!--submenu right 2-row pos 0-->
 			<control type="group">
 				<posx>590</posx>
-				<posy>319</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),0)]</visible>
+				<posy>334</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),0)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),1)]</visible>
 				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					<include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			
+			<!--submenu right 3-row pos 0-->
+			<control type="group">
+				<posx>590</posx>
+				<posy>70</posy>
+				<visible>[Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),0)]</visible>
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -213,8 +227,8 @@
 			<!--submenu right 2-row pos 1-->
 			<control type="group">
 				<posx>590</posx>
-				<posy>585</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),1)]</visible>
+				<posy>600</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),1)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),2)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -224,11 +238,13 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
+			
+			
 			<!--submenu right 2-row pos 2-->
 			<control type="group">
 				<posx>1201</posx>
-				<posy>319</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),2)]</visible>
+				<posy>334</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),2)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),4)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -238,11 +254,28 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
+			
+			<!--submenu right 3-row pos 3-->
+			<control type="group">
+				<posx>1201</posx>
+				<posy>70</posy>
+				<visible>[Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),3)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuRight</include>
+					 <include>SubMenuLayoutVertical</include>
+				</control>
+				 <include>HomeMenuFocusButtonLeft</include>
+			</control>
+			
+			
 			<!--submenu right 2-row pos 3-->
 			<control type="group">
 				<posx>1201</posx>
-				<posy>585</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),3)]</visible>
+				<posy>600</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),3)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),5)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -255,8 +288,8 @@
 			<!--submenu left 2 row pos 4-->
 			<control type="group">
 				<posx>612</posx>
-				<posy>319</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),4)]</visible>
+				<posy>334</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),4)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),7)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -267,11 +300,29 @@
 				<include>HomeMenuFocusButtonRight</include>
 				
 			</control>
+			
+			
+			<!--submenu left 3 row pos 6-->
+			<control type="group">
+				<posx>612</posx>
+				<posy>70</posy>
+				<visible>[Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),6)]</visible>
+				
+				<!-- movies submenu -->
+				<control type="group">
+					<posx>0</posx>
+					<include>HomeMenuSubMenuLeft</include>
+					 <include>SubMenuLayoutVertical</include>
+				</control>
+				<include>HomeMenuFocusButtonRight</include>
+				
+			</control>
+			
 			<!--submenu left 2 row pos 5-->
 			<control type="group">
 				<posx>612</posx>
-				<posy>585</posy>
-				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),5)]</visible>
+				<posy>600</posy>
+				<visible>[Skin.String(GadgetRows, 2) + SubString(Window(Home).Property(submenupos),5)] | [Skin.String(GadgetRows, 3) + SubString(Window(Home).Property(submenupos),8)]</visible>
 				
 				<!-- movies submenu -->
 				<control type="group">
@@ -340,7 +391,7 @@
 					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
 				</control>
 			</control>
-			<include condition="Skin.HasSetting(EnableTouchSupport) + !SubString(System.BuildVersion,13,left)">TouchScreenWorkaround</include>
+			<include condition="Skin.HasSetting(EnableTouchSupport)">TouchScreenWorkaround</include>
 			
 	
 			<!--submenu panel -->
@@ -433,10 +484,10 @@
 	
 	<include name="HomeMenuSubMenuRight">
 			<control type="image">
-				<posx>-545</posx>
-				<posy>18</posy>
+				<posx>-540</posx>
+				<posy>26</posy>
 				<width>1223</width>
-				<height>260</height>
+				<height>252</height>
 				<texture diffuse="home/home_matte2.png">colors/color_white.png</texture>
 				<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
 				<colordiffuse>$INFO[Skin.String(HomeViewDetailsFocusColor)]</colordiffuse>
@@ -445,10 +496,10 @@
 	
 	<include name="HomeMenuSubMenuLeft">
 	<control type="image">
-				<posx>50</posx>
-				<posy>18</posy>
-				<width>1223</width>
-				<height>260</height>
+				<posx>44</posx>
+				<posy>26</posy>
+				<width>1218</width>
+				<height>252</height>
 				<texture diffuse="home/home_matte2.png">colors/color_white.png</texture>
 				<colordiffuse>$INFO[Skin.String(HomeViewDetailsFocusColor)]</colordiffuse>
 				<aspectratio>stretch</aspectratio>
@@ -457,15 +508,16 @@
 	
 	<include name="HomeMenuFocusButtonLayout">
 			<control type="group">
-			<posy>-3</posy>
+			<posx>3</posx>
+			<posy>7</posy>
 			<width>612</width>
 			<height>265</height>
 			<control type="image">
 						<!--Panel Normal-->
 						<posx>11</posx>
 						<posy>13</posy>
-						<width>600</width>
-						<height>250</height>
+						<width>590</width>
+						<height>240</height>
 						<texture background="true" diffuse="home/home_matte2.png">$INFO[Container(300).ListItem.Icon]</texture>
 						<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
 						<fadetime>800</fadetime>
@@ -475,17 +527,17 @@
 						<!--Panel Ovelay-->
 						<posx>11</posx>
 						<posy>13</posy>
-						<width>600</width>
-						<height>250</height>
+						<width>590</width>
+						<height>240</height>
 						<colordiffuse>ccFFFFFF</colordiffuse>
 						<texture diffuse="home/home_matte2.png">home/home_overlay.png</texture>
 						<visible>!Skin.HasSetting(NoTitleOnHomeMenuTiles) + !StringCompare(ListItem.Property(disableLabel), disable)</visible>
 					</control>
                     <control type="label" id="44446">
                         <!--Label Grey-->
-                        <posx>13</posx>
-                        <posy>170</posy>
-                        <width>600</width>
+                        <posx>19</posx>
+                        <posy>160</posy>
+                        <width>590</width>
                         <height>100</height>
                         <align>center</align>
                         <label>$INFO[Container(300).ListItem.Label]</label>

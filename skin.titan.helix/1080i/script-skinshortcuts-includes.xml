@@ -386,10 +386,12 @@
 			<visible>PVR.HasTVChannels</visible>
 			<onclick condition="Skin.HasSetting(IsTitanSkin)">$VAR[LiveTVButtonOnClick]</onclick>
 			<property name="path">$VAR[LiveTVButtonOnClick]</property>
+			<onclick condition="!Skin.HasSetting(IsTitanSkin)">ActivateWindow(TVGuide)</onclick>
+			<property name="path">ActivateWindow(TVGuide)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">livetv</property>
 			<property name="group">mainmenu</property>
-			<property name="hasSubmenu">False</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="27">
 			<label>$LOCALIZE[342]</label>
@@ -537,6 +539,20 @@
 			<property name="submenuVisibility">settings</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="36">
+			<label>$LOCALIZE[24001]</label>
+			<label2>Settings</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">24001</property>
+			<property name="defaultID">24001</property>
+			<onclick>ActivateWindow(AddonBrowser)</onclick>
+			<property name="path">ActivateWindow(AddonBrowser)</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-24001</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 	</include>
@@ -1583,6 +1599,78 @@
 			<property name="group">info-window-home-property-plexbmc-9-title</property>
 		</item>
 		<item id="1">
+			<label>$LOCALIZE[19019]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19019</property>
+			<property name="defaultID">19019</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+			<property name="path">ActivateWindow(TVChannels)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(300).ListItem.Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="2">
+			<label>$LOCALIZE[22020]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">22020</property>
+			<property name="defaultID">22020</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick condition="Skin.HasSetting(IsTitanSkin)">$VAR[LiveTVButtonOnClick]</onclick>
+			<property name="path">$VAR[LiveTVButtonOnClick]</property>
+			<onclick condition="!Skin.HasSetting(IsTitanSkin)">ActivateWindow(TVGuide)</onclick>
+			<property name="path">ActivateWindow(TVGuide)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(300).ListItem.Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="3">
+			<label>$LOCALIZE[19163]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19163</property>
+			<property name="defaultID">19163</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVRecordings)</onclick>
+			<property name="path">ActivateWindow(TVRecordings)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(300).ListItem.Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="4">
+			<label>$LOCALIZE[19040]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19040</property>
+			<property name="defaultID">19040</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVTimers)</onclick>
+			<property name="path">ActivateWindow(TVTimers)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(300).ListItem.Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="5">
+			<label>$LOCALIZE[137]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">137</property>
+			<property name="defaultID">137</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVSearch)</onclick>
+			<property name="path">ActivateWindow(TVSearch)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(300).ListItem.Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="1">
 			<label>$LOCALIZE[31050]</label>
 			<label2>Movies</label2>
 			<icon>$VAR[MoviesButtonThumb]</icon>
@@ -1756,6 +1844,8 @@
 			<visible>PVR.HasRadioChannels</visible>
 			<onclick condition="Skin.HasSetting(IsTitanSkin)">$VAR[RadioButtonOnClick]</onclick>
 			<property name="path">$VAR[RadioButtonOnClick]</property>
+			<onclick condition="!Skin.HasSetting(IsTitanSkin)">ActivateWindow(radiochannels,return)</onclick>
+			<property name="path">ActivateWindow(radiochannels,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(300).ListItem.Property(submenuVisibility),music)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">music</property>
@@ -4082,8 +4172,149 @@
 			<property name="group">info-window-home-property-plexbmc-9-title</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-livetv" />
-	<include name="skinshortcuts-group-alt-livetv" />
+	<include name="skinshortcuts-group-livetv">
+		<item id="1">
+			<label>$LOCALIZE[19019]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19019</property>
+			<property name="defaultID">19019</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+			<property name="path">ActivateWindow(TVChannels)</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">livetv</property>
+		</item>
+		<item id="2">
+			<label>$LOCALIZE[22020]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">22020</property>
+			<property name="defaultID">22020</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick condition="Skin.HasSetting(IsTitanSkin)">$VAR[LiveTVButtonOnClick]</onclick>
+			<property name="path">$VAR[LiveTVButtonOnClick]</property>
+			<onclick condition="!Skin.HasSetting(IsTitanSkin)">ActivateWindow(TVGuide)</onclick>
+			<property name="path">ActivateWindow(TVGuide)</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">livetv</property>
+		</item>
+		<item id="3">
+			<label>$LOCALIZE[19163]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19163</property>
+			<property name="defaultID">19163</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVRecordings)</onclick>
+			<property name="path">ActivateWindow(TVRecordings)</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">livetv</property>
+		</item>
+		<item id="4">
+			<label>$LOCALIZE[19040]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19040</property>
+			<property name="defaultID">19040</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVTimers)</onclick>
+			<property name="path">ActivateWindow(TVTimers)</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">livetv</property>
+		</item>
+		<item id="5">
+			<label>$LOCALIZE[137]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">137</property>
+			<property name="defaultID">137</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVSearch)</onclick>
+			<property name="path">ActivateWindow(TVSearch)</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">livetv</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-livetv">
+		<item id="1">
+			<label>$LOCALIZE[19019]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19019</property>
+			<property name="defaultID">19019</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+			<property name="path">ActivateWindow(TVChannels)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="2">
+			<label>$LOCALIZE[22020]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">22020</property>
+			<property name="defaultID">22020</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick condition="Skin.HasSetting(IsTitanSkin)">$VAR[LiveTVButtonOnClick]</onclick>
+			<property name="path">$VAR[LiveTVButtonOnClick]</property>
+			<onclick condition="!Skin.HasSetting(IsTitanSkin)">ActivateWindow(TVGuide)</onclick>
+			<property name="path">ActivateWindow(TVGuide)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="3">
+			<label>$LOCALIZE[19163]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19163</property>
+			<property name="defaultID">19163</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVRecordings)</onclick>
+			<property name="path">ActivateWindow(TVRecordings)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="4">
+			<label>$LOCALIZE[19040]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">19040</property>
+			<property name="defaultID">19040</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVTimers)</onclick>
+			<property name="path">ActivateWindow(TVTimers)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+		<item id="5">
+			<label>$LOCALIZE[137]</label>
+			<label2>$ADDON[script.skinshortcuts 32017]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">137</property>
+			<property name="defaultID">137</property>
+			<visible>PVR.HasTVChannels</visible>
+			<onclick>ActivateWindow(TVSearch)</onclick>
+			<property name="path">ActivateWindow(TVSearch)</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),livetv)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">livetv</property>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-movies">
 		<item id="1">
 			<label>$LOCALIZE[31050]</label>
@@ -4405,6 +4636,8 @@
 			<visible>PVR.HasRadioChannels</visible>
 			<onclick condition="Skin.HasSetting(IsTitanSkin)">$VAR[RadioButtonOnClick]</onclick>
 			<property name="path">$VAR[RadioButtonOnClick]</property>
+			<onclick condition="!Skin.HasSetting(IsTitanSkin)">ActivateWindow(radiochannels,return)</onclick>
+			<property name="path">ActivateWindow(radiochannels,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 		</item>
@@ -4489,6 +4722,8 @@
 			<visible>PVR.HasRadioChannels</visible>
 			<onclick condition="Skin.HasSetting(IsTitanSkin)">$VAR[RadioButtonOnClick]</onclick>
 			<property name="path">$VAR[RadioButtonOnClick]</property>
+			<onclick condition="!Skin.HasSetting(IsTitanSkin)">ActivateWindow(radiochannels,return)</onclick>
+			<property name="path">ActivateWindow(radiochannels,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),music)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">music</property>
@@ -4759,6 +4994,8 @@
 			<property name="group">settings</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-group-24001" />
+	<include name="skinshortcuts-group-alt-24001" />
 	<include name="skinshortcuts-group-powermenu">
 		<item id="1">
 			<label>$LOCALIZE[20126]</label>

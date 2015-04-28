@@ -3,7 +3,7 @@
 	<onload>ClearProperty(ShowViewSubMenu, Home)</onload>
 	<onunload>ClearProperty(ShowViewSubMenu, Home)</onunload>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	
 	<defaultcontrol always="true">5000</defaultcontrol>
     <controls>
 		<!-- Video Background -->
