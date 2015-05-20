@@ -687,12 +687,12 @@
 						<posy>395</posy>
 						<posx>20</posx>
 						<width>750</width>
-						<height>134</height>
+						<height>130</height>
 						<align>left</align>
 						<valign>bottom</valign>
 						<label>$VAR[SpotLightWidgetInfoPlot]</label>
 						<font>Light26</font>
-						<textcolor>white</textcolor>
+						<textcolor>aawhite</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<visible>!IsEmpty(ListItem.Art(clearlogo)) | !IsEmpty(ListItem.Property(clearlogo)) | !IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
@@ -701,13 +701,13 @@
 						<posy>395</posy>
 						<posx>20</posx>
 						<width>980</width>
-						<height>134</height>
+						<height>130</height>
 						<align>left</align>
 						<valign>bottom</valign>
 						<label>$VAR[SpotLightWidgetInfoPlot]</label>
 						<font>Light26</font>
 						
-						<textcolor>white</textcolor>
+						<textcolor>aawhite</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Property(clearlogo)) + IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
@@ -741,12 +741,12 @@
 						<posy>395</posy>
 						<posx>20</posx>
 						<width>750</width>
-						<height>134</height>
+						<height>130</height>
 						<align>left</align>
 						<valign>bottom</valign>
 						<label>[COLOR=white]$VAR[SpotLightWidgetInfoPlot][/COLOR]</label>
 						<font>Light26</font>
-						<textcolor>white</textcolor>
+						<textcolor>aawhite</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<visible>!IsEmpty(ListItem.Art(clearlogo)) | !IsEmpty(ListItem.Property(clearlogo)) | !IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
@@ -755,12 +755,12 @@
 						<posy>395</posy>
 						<posx>20</posx>
 						<width>980</width>
-						<height>134</height>
+						<height>130</height>
 						<align>left</align>
 						<valign>bottom</valign>
 						<label>$VAR[SpotLightWidgetInfoPlot]</label>
 						<font>Light26</font>
-						<textcolor>white</textcolor>
+						<textcolor>aawhite</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Property(clearlogo)) + IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
@@ -817,13 +817,13 @@
 						<posy>395</posy>
 						<posx>20</posx>
 						<width>750</width>
-						<height>134</height>
+						<height>130</height>
 						<align>left</align>
 						<valign>bottom</valign>
 						<label>$VAR[HomeMenuWidgetInfoLabel][CR]$VAR[HomeMenuWidgetInfoPlot]</label>
 						<font>Light26</font>
 						
-						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<textcolor>aawhite</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<visible>!IsEmpty(Container(510).ListItem.Property(clearlogo)) | !IsEmpty(Container(510).ListItem.Art(clearlogo)) | !IsEmpty(Container(510).ListItem.Art(tvshow.clearlogo))</visible>
 					</control>
@@ -832,13 +832,13 @@
 						<posy>395</posy>
 						<posx>20</posx>
 						<width>980</width>
-						<height>134</height>
+						<height>130</height>
 						<align>left</align>
 						<valign>bottom</valign>
 						<label>$VAR[HomeMenuWidgetInfoLabel][CR]$VAR[HomeMenuWidgetInfoPlot]</label>
 						<font>Light26</font>
 						
-						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<textcolor>aawhite</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<visible>IsEmpty(Container(510).ListItem.Property(clearlogo)) + IsEmpty(Container(510).ListItem.Art(clearlogo)) + IsEmpty(Container(510).ListItem.Art(tvshow.clearlogo))</visible>
 					</control>
@@ -888,13 +888,13 @@
 						<posy>395</posy>
 						<posx>20</posx>
 						<width>1050</width>
-						<height>134</height>
+						<height>130</height>
 						<align>left</align>
 						<valign>bottom</valign>
 						<label>$VAR[HomeMenuWidgetInfoLabel][CR]$VAR[HomeMenuWidgetInfoPlot]</label>
 						<font>Light26</font>
 						
-						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<textcolor>aawhite</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<visible>!IsEmpty(Container(510).ListItem.Property(clearlogo)) | !IsEmpty(Container(510).ListItem.Art(clearlogo)) | !IsEmpty(Container(510).ListItem.Art(tvshow.clearlogo))</visible>
 					</control>
@@ -903,13 +903,13 @@
 						<posy>395</posy>
 						<posx>20</posx>
 						<width>1300</width>
-						<height>134</height>
+						<height>130</height>
 						<align>left</align>
 						<valign>bottom</valign>
 						<label>$VAR[HomeMenuWidgetInfoLabel][CR]$VAR[HomeMenuWidgetInfoPlot]</label>
 						<font>Light26</font>
 						
-						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<textcolor>aawhite</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<visible>IsEmpty(Container(510).ListItem.Property(clearlogo)) + IsEmpty(Container(510).ListItem.Art(clearlogo)) + IsEmpty(Container(510).ListItem.Art(tvshow.clearlogo))</visible>
 					</control>

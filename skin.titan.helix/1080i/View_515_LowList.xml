@@ -252,9 +252,9 @@
 					<right>80</right>
 					<posy>605</posy>
 					<width>625</width>
-					<height>331</height>
+					<height>335</height>
 					<label>$VAR[Plots]</label>
-					<font>Light30</font>
+					<font>Light28</font>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<aligny>top</aligny>
@@ -279,7 +279,7 @@
 			
 			<!--Video Window -->
 			<control type="videowindow">
-				<right>60</right>
+				<right>50</right>
 				<posy>610</posy>
 				<width>670</width>
 				<height>350</height>

@@ -644,7 +644,7 @@
 					<posy>820</posy>
 					<width>1100</width>
 					<align>left</align>
-					<font>Light45</font>
+					<font>Light40</font>
 					<textcolor>$VAR[ThemeFontColorWhite]</textcolor>
 					<label>$VAR[OSDLabel1]</label>
 					<scroll>false</scroll>
@@ -653,9 +653,9 @@
 				<control type="label">
 					<posx>400</posx>
 					<posy>880</posy>
-					<width>1100</width>
+					<width>1050</width>
 					<align>left</align>
-					<font>Light45</font>
+					<font>Light42</font>
 					<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
 					<label>[B]$VAR[OSDLabel2][/B]</label>
 					<scroll>false</scroll>
@@ -895,6 +895,9 @@
 			
 			<control type="label">
 				<!--Total duration-->
+				<animation type="Conditional" condition="player.paused | player.forwarding | player.rewinding">
+					<effect type="slide" start="0,0" end="-160,0" time="200" tween="cubic" easing="inout" delay="0" />
+				</animation>
 				<posx>1850</posx>
 				<posy>940</posy>
 				<width>940</width>

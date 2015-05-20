@@ -10,11 +10,11 @@
 		<control type="label">
 			<posx>10</posx>
 			<align>left</align>
-			<width>55%</width>
+			<width>65%</width>
 			<label>[B]$INFO[ListItem.Label][/B]</label>
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-			<font>Light36</font>
+			<font>Light30</font>
 		</control>
 		
 		<!--quality-->

@@ -401,10 +401,10 @@
 				<control type="textbox">
 					<posx>1030</posx>
 					<posy>715</posy>
-					<height>220</height>
+					<height>225</height>
 					<width>830</width>
 					<label>$VAR[Plots]</label>
-					<font>Light30</font>
+					<font>Light28</font>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<aligny>top</aligny>
@@ -658,9 +658,9 @@
 					<posy>535</posy>
 					<posx>1385</posx>
 					<width>470</width>
-					<height>400</height>
+					<height>405</height>
 					<label>$VAR[Plots]</label>
-					<font>Light30</font>
+					<font>Light28</font>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<aligny>top</aligny>

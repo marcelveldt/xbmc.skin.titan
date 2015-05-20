@@ -370,7 +370,7 @@
             <posx>0</posx>
             <posy>207</posy>
             <width>585</width>
-            <height>640</height>
+            <height>649</height>
             <align>left</align>
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
@@ -454,7 +454,7 @@
               <posx>0</posx>
               <posy>480</posy>
               <width>580</width>
-              <height>280</height>
+              <height>289</height>
               <align>left</align>
 			  <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			  <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
