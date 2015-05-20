@@ -25,7 +25,7 @@
 			<label>$VAR[Details]</label>
 			<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-			<font>Light32</font>
+			<font>Light28</font>
 			<animation effect="slide" end="90" reversible="false" time="0" condition="Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(radiochannels)">Conditional</animation>
 		</control>
 		<control type="image">
@@ -80,7 +80,7 @@
 			<label>$INFO[ListItem.Rating]</label>
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-			<font>Light32</font>
+			<font>Light28</font>
 			<visible>![Skin.HasSetting(BigListViewShowInfo) + Control.IsVisible(51)] + !Control.IsVisible(515)</visible>
 			<visible>Skin.HasSetting(HideWatchedOverlayList) | ![StringCompare(ListItem.Overlay,OverlayWatched.png) | SubString(ListItem.Path,videodb://movies/sets/) | ListItem.IsResumable | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)]</visible>
 		</control>
@@ -94,7 +94,7 @@
 			<label>[B]$VAR[HDIndicator][/B]</label>
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-			<font>Light32</font>
+			<font>Light28</font>
 			<visible>![Skin.HasSetting(BigListViewShowInfo) + Control.IsVisible(51)] + !Control.IsVisible(515)</visible>
 			<visible>Skin.HasSetting(HideWatchedOverlayList) | ![StringCompare(ListItem.Overlay,OverlayWatched.png) | SubString(ListItem.Path,videodb://movies/sets/) | ListItem.IsResumable | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)]</visible>
 		</control>
@@ -119,7 +119,7 @@
 			<label>$VAR[Details]</label>
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-			<font>Light32</font>
+			<font>Light28</font>
 			<animation effect="slide" end="90" reversible="false" time="0" condition="Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(radiochannels)">Conditional</animation>
 		</control>
 	</include>

@@ -36,7 +36,7 @@
                 <posy>40</posy>
                 <width>285</width>
                 <align>left</align>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                 <label>31040</label>
             </control>
@@ -79,7 +79,7 @@
                 <posy>125</posy>
                 <width>285</width>
                 <align>left</align>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                 <label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
                 <visible>Player.HasDuration</visible>
@@ -90,7 +90,7 @@
                 <posy>125</posy>
                 <width>285</width>
                 <align>left</align>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                 <label>$INFO[Player.Time]</label>
                 <visible>IsEmpty(Player.Duration)</visible>
@@ -142,7 +142,7 @@
                 <posy>40</posy>
                 <width>285</width>
                 <align>left</align>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                 <label>31040</label>
             </control>
@@ -163,7 +163,7 @@
                 <posy>125</posy>
                 <width>285</width>
                 <align>left</align>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
                 <label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
             </control>
@@ -234,7 +234,7 @@
                 <posy>15</posy>
                 <width>885</width>
                 <align>left</align>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <label>$VAR[NowPlayingLabel]</label>
             </control>
@@ -292,7 +292,7 @@
 				<height>180</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<font>Light32</font>
+				<font>Light28</font>
 				<label>-</label>
 				<textcolor>-</textcolor>
 				<focusedcolor>-</focusedcolor>

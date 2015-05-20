@@ -199,7 +199,7 @@
 				<textcolor>grey</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<focusedcolor>$INFO[Skin.String(ButtonFocusColor)]</focusedcolor>
-				<font>Reg32</font>
+				<font>Reg28</font>
 				<onup>Skin.Reset(ShowWidgets)</onup>
 				<onup>510</onup>
 				<ondown>300</ondown>

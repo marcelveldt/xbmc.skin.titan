@@ -51,18 +51,6 @@
 		<control type="image">
 			<include>DimensionsFullscreen</include>
 			<texture>bgoverlay_default.png</texture>
-			<colordiffuse>FF4d86a6</colordiffuse>
-			<visible>!Skin.String(ColorTheme) | Skin.String(ColorTheme, None)</visible>
-		</control>
-		<control type="image">
-			<include>DimensionsFullscreen</include>
-			<texture>bgoverlay_default.png</texture>
-			<visible>Skin.String(ColorTheme)</visible>
-			<colordiffuse>$INFO[Skin.String(ColorTheme)]</colordiffuse>
-		</control>
-		<control type="image">
-			<include>DimensionsFullscreen</include>
-			<texture>bgoverlay_default.png</texture>
 			<visible>Skin.String(ColorTheme)</visible>
 			<colordiffuse>$INFO[Skin.String(ColorTheme)]</colordiffuse>
 		</control>

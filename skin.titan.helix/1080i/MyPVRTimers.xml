@@ -286,7 +286,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>mainblue</textcolor>
                         <info>ListItem.Date</info>
                     </control>
@@ -297,7 +297,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
@@ -307,7 +307,7 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -326,7 +326,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -346,7 +346,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>31084</label>
                         <visible>StringCompare(ListItem.Comment,$LOCALIZE[305]) + !ListItem.IsRecording</visible>
@@ -377,7 +377,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <scroll>true</scroll>
                         <info>ListItem.Date</info>
@@ -388,7 +388,7 @@
                         <posy>0</posy>
                         <width>350</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                     </control>
@@ -398,7 +398,7 @@
                         <posy>0</posy>
                         <width>600</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>black</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -417,7 +417,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>red</textcolor>
                         <label>31083</label>
                         <visible>ListItem.IsRecording</visible>
@@ -437,7 +437,7 @@
                         <posy>0</posy>
                         <width>200</width>
                         <height>80</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>green</textcolor>
                         <label>31084</label>
                         <visible>StringCompare(ListItem.Comment,$LOCALIZE[305]) + !ListItem.IsRecording</visible>

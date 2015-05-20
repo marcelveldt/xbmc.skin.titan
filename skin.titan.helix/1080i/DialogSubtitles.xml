@@ -132,7 +132,7 @@
                             <posy>0</posy>
                             <width>650</width>
                             <height>50</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>$VAR[ThemeFontColorMidGrey]</textcolor>
                             <selectedcolor>$INFO[Skin.String(ButtonFocusColor)]</selectedcolor>
@@ -180,7 +180,7 @@
                             <posy>0</posy>
                             <width>650</width>
                             <height>50</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>black</textcolor>
                             <selectedcolor>white</selectedcolor>
@@ -209,7 +209,7 @@
                             <posy>0</posy>
                             <width>650</width>
                             <height>50</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <selectedcolor>$INFO[Skin.String(ButtonFocusColor)]</selectedcolor>
@@ -290,7 +290,7 @@
                             <posy>0</posy>
                             <width>400</width>
                             <height>60</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <selectedcolor>$INFO[Skin.String(ButtonFocusColor)]</selectedcolor>
@@ -303,7 +303,7 @@
                             <posy>0</posy>
                             <width>400</width>
                             <height>60</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <selectedcolor>$INFO[Skin.String(ButtonFocusColor)]</selectedcolor>
@@ -336,7 +336,7 @@
                             <posy>0</posy>
                             <width>400</width>
                             <height>60</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>black</textcolor>
 							<selectedcolor>black</selectedcolor>
@@ -351,7 +351,7 @@
                             <posy>0</posy>
                             <width>400</width>
                             <height>60</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>black</textcolor>
                             <align>left</align>
@@ -365,7 +365,7 @@
                             <posy>0</posy>
                             <width>400</width>
                             <height>60</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 							<selectedcolor>$INFO[Skin.String(ButtonFocusColor)]</selectedcolor>
@@ -380,7 +380,7 @@
                             <posy>0</posy>
                             <width>400</width>
                             <height>60</height>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <aligny>center</aligny>
                             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 							<selectedcolor>$INFO[Skin.String(ButtonFocusColor)]</selectedcolor>

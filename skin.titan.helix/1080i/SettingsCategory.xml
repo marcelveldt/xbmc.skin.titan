@@ -87,29 +87,35 @@
         </control>
         <control type="button" id="7">
             <description>Default Button</description>
-            
-            <font>Reg32</font>
+            <label>$INFO[Skin.String(ButtonTextColor)]</label>
+			<textcolor>white</textcolor>
+			<selectedcolor>black</selectedcolor>
+            <font>Reg28</font>
             <align>left</align>
             <height>47</height>
 			<width>450</width>
         </control>
         <control type="radiobutton" id="8">
             <description>Default Radio Button</description>
-            
-            <font>Reg32</font>
+            <textcolor>white</textcolor>
+			<selectedcolor>black</selectedcolor>
+            <font>Reg28</font>
             <align>left</align>
             <height>47</height>
             <radioposx>1075</radioposx>
         </control>
         <control type="spincontrolex" id="9">
             <description>Default Spin Control</description>
-            
-            <font>Reg32</font>
+            <textcolor>white</textcolor>
+			<selectedcolor>black</selectedcolor>
+            <font>Reg28</font>
             <align>left</align>
             <height>47</height>
         </control>
 		<control type="sliderex" id="13">
 			<description>Default Slider</description>
+			<textcolor>white</textcolor>
+			<selectedcolor>black</selectedcolor>
 			<posx>0</posx>
 			<posy>0</posy>
 			<include>DialogButton</include>
@@ -126,7 +132,7 @@
         <control type="button" id="10">
             <description>Default Category Button</description>
             
-            <font>Reg32</font>
+            <font>Reg28</font>
             <align>left</align>
             <height>47</height>
 			<width>450</width>
@@ -144,8 +150,8 @@
             <itemgap>3</itemgap>
             <control type="label" id="200">
                 <height>47</height>
-                <font>Reg32</font>
-                <font>Reg32</font>
+                <font>Reg28</font>
+                <font>Reg28</font>
                 <label>31071</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <align>left</align>
@@ -153,7 +159,7 @@
             <control type="button" id="20">
                 <description>Setting level button</description>
                 
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <align>left</align>
                 <height>47</height>
                 <label>10037</label>
@@ -162,7 +168,7 @@
             </control>
             <control type="button" id="21">
                 <description>Reset button</description>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 
                 <align>left</align>
                 <height>47</height>

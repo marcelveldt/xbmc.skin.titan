@@ -51,7 +51,7 @@
             <posy>985</posy>
             <width>1000</width>
             <align>right</align>
-            <font>Light40</font>
+            <font>Light34</font>
             <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
             <label>$INFO[Window(Home).Property(skinTitle)]</label>
 			<animation type="Conditional" condition="skin.hastheme(classic)">
@@ -808,7 +808,7 @@
                 <height>40</height>
                 <posx>140</posx>
                 <posy>70</posy>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
 				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
                 <align>left</align>
@@ -858,7 +858,7 @@
                 <height>40</height>
                 <posx>140</posx>
                 <posy>70</posy>
-                <font>Reg32</font>
+                <font>Reg28</font>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
 				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
                 <align>left</align>
@@ -1010,14 +1010,14 @@
     </include>
     <include name="DialogButton">
         <!--Dialog Button-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
         
         <disabledcolor>FF585858</disabledcolor>
     </include>
     <include name="DialogButtonAlt">
         <!--Dialog Button-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>FFfffeff</textcolor>
         <focusedcolor>FFfffeff</focusedcolor>
         <disabledcolor>FF585858</disabledcolor>
@@ -1041,39 +1041,39 @@
     </include>
     <include name="DialogListNF">
         <!--Dialog List NF-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
         
     </include>
 	<include name="DialogListNF_Alt">
         <!--Dialog List NF-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
         
     </include>
 	
     <include name="DialogListFO">
         <!--Dialog List FO-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>black</textcolor>
         <selectedcolor>eewhite</selectedcolor>
     </include>
 	<include name="DialogListFO_Alt">
         <!--Dialog List FO-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>black</textcolor>
         <selectedcolor>black</selectedcolor>
     </include>
     <include name="DialogLabel">
         <!--Dialog Label-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>black</textcolor>
         <disabledcolor>FF3e3e3e</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
     </include>
     <include name="DialogLabelAlt">
         <!--Dialog Label-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>FFfffeff</textcolor>
         <disabledcolor>FFfffeff</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
@@ -1082,7 +1082,7 @@
 	
     <include name="DialogButtonOK">
         <!--Dialog Button OK Cancel-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
         
         <disabledcolor>lightgrey</disabledcolor>
@@ -1095,7 +1095,7 @@
 	
 	<include name="DialogButtonCancel">
         <!--Dialog Button OK Cancel-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>lightgrey</disabledcolor>
@@ -1108,7 +1108,7 @@
 	
 	<include name="DialogButtonOther">
         <!--Dialog Button OK Cancel-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
         
         <disabledcolor>lightgrey</disabledcolor>
@@ -1123,7 +1123,7 @@
 	
     <include name="DialogButtonBrowseAdd">
         <!--Dialog Button Browse Add-->
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textcolor>lightgrey</textcolor>
         
         <disabledcolor>FF585858</disabledcolor>
@@ -1139,7 +1139,7 @@
     <include name="Key">
         <height>110</height>
         <align>center</align>
-        <font>Reg32</font>
+        <font>Reg28</font>
         <textoffsetx>0</textoffsetx>
         <texturefocus border="20">dialogs/keyboard/key-fo.png</texturefocus>
         <texturenofocus border="20">dialogs/keyboard/key-nf.png</texturenofocus>
@@ -1239,7 +1239,7 @@
                     <label>[B][COLOR=white]$INFO[VideoPlayer.Year,, • ]$INFO[VideoPlayer.Duration,, min.]$INFO[VideoPlayer.MPAA, • , • ]$INFO[VideoPlayer.RatingAndVotes,, • ][/COLOR][/B][CR]$INFO[VideoPlayer.Plot]</label>
                     <textcolor>bbwhite</textcolor>
                     <align>justify</align>
-                    <font>Light32</font>
+                    <font>Light28</font>
 					<visible>!IsEmpty(Player.Art(clearart)) | !IsEmpty(Player.Art(clearlogo))</visible>
                 </control>
 				<control type="textbox">
@@ -1250,7 +1250,7 @@
                     <label>[B][COLOR=white]$INFO[VideoPlayer.Year,, • ]$INFO[VideoPlayer.Duration,, min.]$INFO[VideoPlayer.MPAA, • , • ]$INFO[VideoPlayer.RatingAndVotes,, • ][/COLOR][/B][CR]$INFO[VideoPlayer.Plot]</label>
                     <textcolor>bbwhite</textcolor>
                     <align>justify</align>
-                    <font>Light32</font>
+                    <font>Light28</font>
 					<visible>IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
                 </control>
             </control>

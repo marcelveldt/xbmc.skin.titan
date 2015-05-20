@@ -276,7 +276,7 @@
 							<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 							<align>justify</align>
-							<font>Light32</font>
+							<font>Light28</font>
 						</control>
 						<control type="image">
 							<posx>1460</posx>
@@ -1591,7 +1591,7 @@
 										<align>center</align>
 										<aligny>center</aligny>
 										
-										<font>Reg32</font>
+										<font>Reg28</font>
 										<label>$INFO[ListItem.Label]</label>
 									</control>
                                 </control>
@@ -1619,7 +1619,7 @@
 										<align>center</align>
 										<aligny>center</aligny>
 										
-										<font>Reg32</font>
+										<font>Reg28</font>
 										<label>$INFO[ListItem.Label]</label>
 									</control>
                                 </control>
@@ -1784,7 +1784,7 @@
 										<align>center</align>
 										<aligny>center</aligny>
 										
-										<font>Reg32</font>
+										<font>Reg28</font>
 										<label>$INFO[ListItem.Label]</label>
 									</control>
                                 </control>
@@ -1812,7 +1812,7 @@
 										<align>center</align>
 										<aligny>center</aligny>
 										
-										<font>Reg32</font>
+										<font>Reg28</font>
 										<label>$INFO[ListItem.Label]</label>
 									</control>
                                 </control>

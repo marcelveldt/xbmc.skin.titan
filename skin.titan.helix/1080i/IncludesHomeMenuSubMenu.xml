@@ -447,7 +447,7 @@
 				<selectedcolor>black</selectedcolor>
 				<disabledcolor>black</disabledcolor>
 				<info>ListItem.Label</info>
-				<font>Reg32</font>
+				<font>Reg28</font>
 			</control>
 		</itemlayout>
 		<focusedlayout height="40">
@@ -459,7 +459,7 @@
 				<selectedcolor>white</selectedcolor>
 				<disabledcolor>white</disabledcolor>
 				<info>ListItem.Label</info>
-				<font>Reg32</font>
+				<font>Reg28</font>
 			</control>
 			<control type="button">
 				<label>-</label>

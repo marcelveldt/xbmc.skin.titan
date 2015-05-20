@@ -64,7 +64,7 @@
                 <align>left</align>
                 <label>20037</label>
                 
-                <font>Reg32</font>
+                <font>Reg28</font>
             </control>
             <control type="button" id="94">
                 <description>Storage</description>
@@ -72,7 +72,7 @@
                 <align>left</align>
                 <label>13277</label>
                 
-                <font>Reg32</font>
+                <font>Reg28</font>
             </control>
             <control type="button" id="96">
                 <description>Network</description>
@@ -80,7 +80,7 @@
                 <align>left</align>
                 <label>13279</label>
                 
-                <font>Reg32</font>
+                <font>Reg28</font>
             </control>
             <control type="button" id="97">
                 <description>Video</description>
@@ -88,7 +88,7 @@
                 <align>left</align>
                 <label>13280</label>
                 
-                <font>Reg32</font>
+                <font>Reg28</font>
             </control>
             <control type="button" id="98">
                 <description>Hardware</description>
@@ -96,7 +96,7 @@
                 <align>left</align>
                 <label>13281</label>
                 
-                <font>Reg32</font>
+                <font>Reg28</font>
             </control>
         </control>
         <!--Grouplist Info-->

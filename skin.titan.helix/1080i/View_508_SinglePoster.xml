@@ -65,7 +65,7 @@
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<align>justify</align>
-					<font>Light32</font>
+					<font>Light28</font>
 					<visible>IsEmpty(Container.ListItem.Art(discart)) | !Skin.HasSetting(View508_ShowCDart)</visible>
 				</control>
 				<control type="textbox">
@@ -77,7 +77,7 @@
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<align>justify</align>
-					<font>Light32</font>
+					<font>Light28</font>
 					<visible>!IsEmpty(Container.ListItem.Art(discart)) + Skin.HasSetting(View508_ShowCDart)</visible>
 				</control>
 			</control>

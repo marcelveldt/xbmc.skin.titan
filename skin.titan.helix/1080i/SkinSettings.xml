@@ -78,7 +78,7 @@
                     <posx>50</posx>
                     <width>390</width>
                     <height>47</height>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
@@ -94,7 +94,7 @@
                     <posx>50</posx>
                     <width>390</width>
                     <height>47</height>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
@@ -177,7 +177,7 @@
 					<label>31272</label>
 					<height>50</height>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<onclick>XBMC.RunScript(script.titanskin.helpers,BACKUP)</onclick>
 				</control>
 				
@@ -188,7 +188,7 @@
 					<label>31273</label>
 					<height>50</height>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<onclick>XBMC.RunScript(script.titanskin.helpers,RESTORE)</onclick>
 				</control>
 				
@@ -199,7 +199,7 @@
 					<label>31274</label>
 					<height>50</height>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<onclick>XBMC.RunScript(script.titanskin.helpers,RESET)</onclick>
 					<onclick>ClearProperty(BackGroundWorkersLoaded,Home)</onclick>
 				</control>
@@ -231,7 +231,7 @@
                     <label>31216</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(CustomWeatherFanArtPath)">Skin.SetPath(CustomWeatherFanArtPath)</onclick>
 					<onclick condition="Skin.String(CustomWeatherFanArtPath)">Skin.Reset(CustomWeatherFanArtPath)</onclick>
                     <selected>Skin.String(CustomWeatherFanArtPath)</selected>
@@ -244,7 +244,7 @@
                     <label>31244</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableSubtitles)</onclick>
                     <selected>Skin.HasSetting(DisableSubtitles)</selected>
                 </control>
@@ -256,7 +256,7 @@
                     <label>31301</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(AutoFocusUnwatchedEpisode)</onclick>
                     <selected>Skin.HasSetting(AutoFocusUnwatchedEpisode)</selected>
 					<visible>SubString(System.BuildVersion,14,left)</visible>
@@ -269,7 +269,7 @@
                     <label>31302</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableNextAiredNotifications)</onclick>
                     <selected>Skin.HasSetting(EnableNextAiredNotifications)</selected>
 					<visible>System.HasAddon(script.tv.show.next.aired)</visible>
@@ -282,7 +282,7 @@
                     <label>31303</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableWeatherNotifications)</onclick>
                     <selected>Skin.HasSetting(EnableWeatherNotifications)</selected>
                 </control>
@@ -294,7 +294,7 @@
                     <label>31317</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableWidgetRefresh)</onclick>
                     <selected>Skin.HasSetting(DisableWidgetRefresh)</selected>
                 </control>
@@ -305,7 +305,7 @@
                     <label>31448</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(CustomMusicLogoPath)">Skin.SetPath(CustomMusicLogoPath)</onclick>
 					<onclick condition="Skin.String(CustomMusicLogoPath)">Skin.Reset(CustomMusicLogoPath)</onclick>
                     <selected>Skin.String(CustomMusicLogoPath)</selected>
@@ -317,7 +317,7 @@
                     <label>31343</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(CustomPicturesBackgroundPath)">Skin.SetPath(CustomPicturesBackgroundPath)</onclick>
 					<onclick condition="Skin.String(CustomPicturesBackgroundPath)">Skin.Reset(CustomPicturesBackgroundPath)</onclick>
                     <selected>Skin.String(CustomPicturesBackgroundPath)</selected>
@@ -369,7 +369,7 @@
                     <label>31320</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(SmartShortcuts.playlists)</onclick>
                     <selected>Skin.HasSetting(SmartShortcuts.playlists)</selected>
                 </control>
@@ -380,7 +380,7 @@
                     <label>31321</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(SmartShortcuts.favorites)</onclick>
                     <selected>Skin.HasSetting(SmartShortcuts.favorites)</selected>
                 </control>
@@ -391,7 +391,7 @@
                     <label>31339</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(SmartShortcuts.emby)</onclick>
                     <selected>Skin.HasSetting(SmartShortcuts.emby)</selected>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
@@ -434,7 +434,7 @@
 					<label>$LOCALIZE[31151]: $INFO[Skin.String(ColorTheme)]</label>
 					<height>50</height>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,ColorTheme)</onclick>
 					<visible>!Skin.String(CustomColorTheme)</visible>
 				</control>
@@ -447,7 +447,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick condition="skin.string(OverlayOpacity, 100)">Skin.SetString(OverlayOpacity, 95)</onclick>
 					<onclick condition="skin.string(OverlayOpacity, 95)">Skin.SetString(OverlayOpacity, 90)</onclick>
 					<onclick condition="skin.string(OverlayOpacity, 90)">Skin.SetString(OverlayOpacity, 85)</onclick>
@@ -466,7 +466,7 @@
                     <label>$LOCALIZE[31457]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="Skin.String(CustomColorTheme)">Skin.Reset(CustomColorTheme)</onclick>
 					<onclick condition="!Skin.String(CustomColorTheme)">Skin.SetImage(CustomColorTheme)</onclick>
 					<selected>Skin.String(CustomColorTheme)</selected>
@@ -480,7 +480,7 @@
                     <label>31234</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(BackgroundOverlayMediaViewOnly)</onclick>
 					<onclick condition="Skin.HasSetting(BackgroundOverlayHomeOnly)">Skin.Reset(BackgroundOverlayHomeOnly)</onclick>
                     <selected>Skin.HasSetting(BackgroundOverlayMediaViewOnly)</selected>
@@ -494,7 +494,7 @@
                     <label>31241</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(BackgroundOverlayHomeOnly)</onclick>
 					<onclick condition="Skin.HasSetting(BackgroundOverlayMediaViewOnly)">Skin.Reset(BackgroundOverlayMediaViewOnly)</onclick>
                     <selected>Skin.HasSetting(BackgroundOverlayHomeOnly)</selected>
@@ -521,7 +521,7 @@
 					<shadowcolor>black</shadowcolor>
 					<height>50</height>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,HomeViewDetailsFocusColor)</onclick>
 				</control>
 				
@@ -533,7 +533,7 @@
                     <label>31208</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoShadowOnHomeMenuTiles)</onclick>
                     <selected>Skin.HasSetting(NoShadowOnHomeMenuTiles)</selected>
                 </control>
@@ -547,7 +547,7 @@
                     <label>31086</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoTitleOnHomeMenuTiles)</onclick>
                     <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
                 </control>
@@ -560,7 +560,7 @@
                     <label>31206</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HideWidgetPanelBackground)</onclick>
                     <selected>Skin.HasSetting(HideWidgetPanelBackground)</selected>
 					<visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(GadgetRows, 3)</visible>
@@ -574,7 +574,7 @@
                     <label>31304</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(PreferTvShowThumbWidget)</onclick>
                     <selected>Skin.HasSetting(PreferTvShowThumbWidget)</selected>
 					<visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(GadgetRows, 3)</visible>
@@ -599,7 +599,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,HeaderTextColor)</onclick>
                 </control>
 				
@@ -611,7 +611,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,HeaderTextShadowColor)</onclick>
                 </control>
 				
@@ -623,7 +623,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,FooterTextColor)</onclick>
                 </control>
 				
@@ -635,7 +635,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,ButtonFocusColor)</onclick>
                 </control>
 				
@@ -647,7 +647,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,ButtonTextColor)</onclick>
                 </control>
 				
@@ -659,7 +659,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,ButtonFocusTextColor)</onclick>
                 </control>
 				
@@ -671,7 +671,7 @@
                     <label>31029</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(NoFooterBar)</onclick>
                     <selected>Skin.HasSetting(NoFooterBar)</selected>
                 </control>
@@ -684,7 +684,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick condition="skin.string(FooterOpacity, 100)">Skin.SetString(FooterOpacity, 80)</onclick>
 					<onclick condition="skin.string(FooterOpacity, 80)">Skin.SetString(FooterOpacity, 60)</onclick>
 					<onclick condition="skin.string(FooterOpacity, 60)">Skin.SetString(FooterOpacity, 40)</onclick>
@@ -704,7 +704,7 @@
 					<shadowcolor>black</shadowcolor>
 					<height>50</height>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,PanelColor)</onclick>
 				</control>
 				
@@ -718,7 +718,7 @@
 					<shadowcolor>black</shadowcolor>
 					<height>50</height>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,GeneralTextColor)</onclick>
 				</control>
 				
@@ -730,7 +730,7 @@
                     <label>31266</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(BackgroundAnimation)</onclick>
                     <selected>Skin.HasSetting(BackgroundAnimation)</selected>
                 </control>
@@ -742,7 +742,7 @@
 					<height>50</height>
                     <label>$LOCALIZE[31449]: $INFO[skin.string(randomfanartdelay)]</label>
 					
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="skin.string(randomfanartdelay, 30)">Skin.SetString(randomfanartdelay, 20)</onclick>
 					<onclick condition="skin.string(randomfanartdelay, 20)">Skin.SetString(randomfanartdelay, 15)</onclick>
 					<onclick condition="skin.string(randomfanartdelay, 15)">Skin.SetString(randomfanartdelay, 10)</onclick>
@@ -759,7 +759,7 @@
                     <label>31345</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableHeader)</onclick>
                     <selected>Skin.HasSetting(DisableHeader)</selected>
                 </control>
@@ -783,7 +783,7 @@
 					<height>50</height>
                     <label>31141</label>
 					
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(ShowFanartBackground)</onclick>
                     <selected>Skin.HasSetting(ShowFanartBackground)</selected>
                 </control>
@@ -794,7 +794,7 @@
 					<height>50</height>
                     <label>31207</label>
 					
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableExtraFanart)</onclick>
                     <selected>Skin.HasSetting(EnableExtraFanart)</selected>
 					<visible>Skin.HasSetting(ShowFanartBackground)</visible>
@@ -807,7 +807,7 @@
 					<height>50</height>
                     <label>$LOCALIZE[31296]: $INFO[skin.string(extrafanartdelay)]</label>
 					
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="skin.string(extrafanartdelay, 6)">Skin.SetString(extrafanartdelay, 8)</onclick>
 					<onclick condition="skin.string(extrafanartdelay, 8)">Skin.SetString(extrafanartdelay, 10)</onclick>
 					<onclick condition="skin.string(extrafanartdelay, 10)">Skin.SetString(extrafanartdelay, 15)</onclick>
@@ -824,7 +824,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,ViewDetailsTextColor)</onclick>
                 </control>
 				
@@ -836,7 +836,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,ViewDetailsTextShadowColor)</onclick>
                 </control>
 				
@@ -848,7 +848,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>RunScript(script.titanskin.helpers,COLORPICKER,ViewDetailsFocusColor)</onclick>
                 </control>
 				
@@ -860,7 +860,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,ViewDetailsFocusShadowColor)</onclick>
                 </control>
 				
@@ -872,7 +872,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick condition="skin.string(ViewDetailsPanelOpacity, 100)">Skin.SetString(ViewDetailsPanelOpacity, 80)</onclick>
 					<onclick condition="skin.string(ViewDetailsPanelOpacity, 80)">Skin.SetString(ViewDetailsPanelOpacity, 60)</onclick>
 					<onclick condition="skin.string(ViewDetailsPanelOpacity, 60)">Skin.SetString(ViewDetailsPanelOpacity, 40)</onclick>
@@ -891,7 +891,7 @@
                     <label>31210</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableLandscapeThumbs)</onclick>
                     <selected>Skin.HasSetting(DisableLandscapeThumbs)</selected>
                 </control>
@@ -904,7 +904,7 @@
                     <label>$LOCALIZE[31327]: $VAR[ClearLogoLocation]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(ClearLogoLocation)">Skin.SetString(ClearLogoLocation, topleft)</onclick>
 					<onclick condition="Skin.String(ClearLogoLocation, topleft) + !Skin.HasSetting(ShowMovieTitleHeader)">Skin.SetString(ClearLogoLocation, topcenter)</onclick>
 					<onclick condition="Skin.String(ClearLogoLocation, topleft) + Skin.HasSetting(ShowMovieTitleHeader)">Skin.SetString(ClearLogoLocation, topright)</onclick>
@@ -923,7 +923,7 @@
                     <label>31235</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(ShowMovieTitleHeader)</onclick>
                     <selected>Skin.HasSetting(ShowMovieTitleHeader)</selected>
                 </control>
@@ -935,7 +935,7 @@
                     <label>31218</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HideWatchedCounts)</onclick>
                     <selected>Skin.HasSetting(HideWatchedCounts)</selected>
                 </control>
@@ -947,7 +947,7 @@
                     <label>31247</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(ListViewShowBanners)</onclick>
                     <selected>Skin.HasSetting(ListViewShowBanners)</selected>
                 </control>
@@ -972,7 +972,7 @@
                     <label>31237</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(ShowEpgGenreColors)</onclick>
                     <selected>Skin.HasSetting(ShowEpgGenreColors)</selected>
 					<visible>System.GetBool(pvrmanager.enabled)</visible>
@@ -986,7 +986,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick condition="skin.string(GuideRows, 7)">Skin.SetString(GuideRows, 9)</onclick>
 					<onclick condition="skin.string(GuideRows, 9)">Skin.SetString(GuideRows, 10)</onclick>
 					<onclick condition="skin.string(GuideRows, 10)">Skin.SetString(GuideRows, 7)</onclick>
@@ -1000,7 +1000,7 @@
                     <label>31239</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(UseAltEpgProgress)</onclick>
                     <selected>Skin.HasSetting(UseAltEpgProgress)</selected>
 					<visible>System.GetBool(pvrmanager.enabled)</visible>
@@ -1013,7 +1013,7 @@
                     <label>31333</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HideChannelNamesInGuide)</onclick>
                     <selected>Skin.HasSetting(HideChannelNamesInGuide)</selected>
 					<visible>System.GetBool(pvrmanager.enabled)</visible>
@@ -1026,7 +1026,7 @@
                     <label>31338</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(PVRShowPreview)</onclick>
                     <selected>Skin.HasSetting(PVRShowPreview)</selected>
 					<visible>System.GetBool(pvrmanager.enabled)</visible>
@@ -1052,7 +1052,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<onclick condition="skin.string(OSDPanelOpacity, 100)">Skin.SetString(OSDPanelOpacity, 80)</onclick>
 					<onclick condition="skin.string(OSDPanelOpacity, 80)">Skin.SetString(OSDPanelOpacity, 60)</onclick>
 					<onclick condition="skin.string(OSDPanelOpacity, 60)">Skin.SetString(OSDPanelOpacity, 40)</onclick>
@@ -1070,7 +1070,7 @@
                     <label>31133</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableOSDInfo)</onclick>
                     <selected>Skin.HasSetting(EnableOSDInfo)</selected>
                 </control>
@@ -1081,7 +1081,7 @@
                     <label>$LOCALIZE[31230]: $INFO[skin.string(ShowInfoAtPlaybackStart)] $LOCALIZE[31231]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>			
+                    <font>Reg28</font>			
 					<onclick condition="skin.string(ShowInfoAtPlaybackStart, 0)">Skin.SetString(ShowInfoAtPlaybackStart, 2)</onclick>
 					<onclick condition="skin.string(ShowInfoAtPlaybackStart, 2)">Skin.SetString(ShowInfoAtPlaybackStart, 4)</onclick>
 					<onclick condition="skin.string(ShowInfoAtPlaybackStart, 4)">Skin.SetString(ShowInfoAtPlaybackStart, 6)</onclick>
@@ -1097,7 +1097,7 @@
                     <label>31259</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(OSDShowInfoOnPause)</onclick>
                     <selected>Skin.HasSetting(OSDShowInfoOnPause)</selected>
                 </control>
@@ -1108,7 +1108,7 @@
                     <label>$LOCALIZE[31232]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(AlwaysShowMusicInfo)</onclick>
 					<selected>Skin.HasSetting(AlwaysShowMusicInfo)</selected>
                 </control>
@@ -1120,7 +1120,7 @@
                     <label>31217</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(OSDSubtitleButtonFocus)</onclick>
                     <selected>Skin.HasSetting(OSDSubtitleButtonFocus)</selected>
                 </control>
@@ -1132,7 +1132,7 @@
                     <label>31256</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(OSDLargeSeekingLabel)</onclick>
                     <selected>Skin.HasSetting(OSDLargeSeekingLabel)</selected>
                 </control>
@@ -1144,7 +1144,7 @@
                     <label>31325</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(ShowWeatherVideoInfoOSD)</onclick>
                     <selected>Skin.HasSetting(ShowWeatherVideoInfoOSD)</selected>
                 </control>
@@ -1167,7 +1167,7 @@
                     <height>50</height>
                     
 					<shadowcolor>black</shadowcolor>
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<label>$LOCALIZE[15111]: [LOWERCASE]$INFO[Skin.CurrentTheme][/LOWERCASE]</label>
                     <onclick>Skin.Theme(-1)</onclick>
                 </control>
@@ -1217,7 +1217,7 @@
 					<align>center</align>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<label>31014</label>
 				</control>
 				<!-- empty label -->
@@ -1260,7 +1260,7 @@
 					<onclick>Skin.Reset(WidgetDefaults)</onclick>
 					<label>$ADDON[script.skinshortcuts 32028]</label>
 					
-					<font>Reg32</font>
+					<font>Reg28</font>
 				</control>
 			</control>
 			
@@ -1309,7 +1309,7 @@
                     <label>31309</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, 2)</onclick>
                     <selected>Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)</selected>
                 </control>
@@ -1321,7 +1321,7 @@
                     <label>$LOCALIZE[31310] $INFO[Skin.String(GadgetRows)]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<textoffsetx>100</textoffsetx>
                     <onclick condition="Skin.String(GadgetRows, 1)">Skin.SetString(GadgetRows, 2)</onclick>
 					<onclick condition="Skin.String(GadgetRows, 2)">Skin.SetString(GadgetRows, 3)</onclick>
@@ -1336,7 +1336,7 @@
                     <label>31263</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<textoffsetx>100</textoffsetx>
                     <onclick>Skin.ToggleSetting(UseSmallHomeTiles)</onclick>
 					<onclick condition="Skin.String(SubmenuLayout, vertical)">Skin.SetString(SubmenuLayout, horizontal)</onclick>
@@ -1351,7 +1351,7 @@
                     <label>31240</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
 					<textoffsetx>100</textoffsetx>
                     <onclick>Skin.ToggleSetting(UseFixedHomeFocus)</onclick>
                     <selected>Skin.HasSetting(UseFixedHomeFocus)</selected>
@@ -1365,7 +1365,7 @@
                     <label>31183</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, enhanced)</onclick>
 					<onclick>Skin.Reset(AutoShowSubmenu)</onclick>
 					<onclick>Skin.Reset(AutoShowWidgets)</onclick>
@@ -1381,7 +1381,7 @@
                     <label>31261</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, simplehor)</onclick>
 					<onclick>Skin.Reset(AutoShowSubmenu)</onclick>
                     <selected>Skin.String(GadgetRows, simplehor)</selected>
@@ -1394,7 +1394,7 @@
                     <label>31262</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(GadgetRows, simplever)</onclick>
                     <selected>Skin.String(GadgetRows, simplever)</selected>
                 </control>
@@ -1419,7 +1419,7 @@
                     <label>31313</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(SubmenuLayout, vertical)</onclick>
                     <selected>Skin.String(SubmenuLayout, vertical)</selected>
 					<visible>[Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)] + !Skin.HasSetting(UseSmallHomeTiles)</visible>
@@ -1432,7 +1432,7 @@
                     <label>31314</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(SubmenuLayout, horizontal)</onclick>
                     <selected>Skin.String(SubmenuLayout, horizontal)</selected>
 					<visible>[Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]</visible>
@@ -1445,7 +1445,7 @@
                     <label>31315</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(SubmenuLayout, tiles)</onclick>
                     <selected>Skin.String(SubmenuLayout, tiles)</selected>
 					<visible>[Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]</visible>
@@ -1458,7 +1458,7 @@
                     <label>31316</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(SubmenuLayout, subpage)</onclick>
                     <selected>Skin.String(SubmenuLayout, subpage)</selected>
 					<visible>[Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3)]</visible>
@@ -1484,7 +1484,7 @@
                     <label>31111</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(AutoShowWidgets)</onclick>
                     <selected>Skin.HasSetting(AutoShowWidgets)</selected>
 					<visible>[Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2)]</visible>
@@ -1498,7 +1498,7 @@
                     <label>31113</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(AutoShowSubmenu)</onclick>
                     <selected>Skin.HasSetting(AutoShowSubmenu)</selected>
 					<visible>[Skin.String(GadgetRows, 1) | Skin.String(GadgetRows, 2) | Skin.String(GadgetRows, 3) | Skin.String(GadgetRows, simplever)]</visible>
@@ -1514,7 +1514,7 @@
                     <label>31264</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableAllWidgets)</onclick>
                     <selected>Skin.HasSetting(DisableAllWidgets)</selected>
 					<visible>!Skin.String(GadgetRows, enhanced) + !Skin.String(GadgetRows, 3)</visible>
@@ -1528,7 +1528,7 @@
                     <label>31265</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableAllSubmenus)</onclick>
                     <selected>Skin.HasSetting(DisableAllSubmenus)</selected>
 					<visible>!Skin.String(GadgetRows, enhanced)</visible>
@@ -1542,7 +1542,7 @@
                     <label>31267</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Addon.OpenSettings(service.library.data.provider)</onclick>
 					<visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(GadgetRows, 3)</visible>
                 </control>
@@ -1567,7 +1567,7 @@
                     <label>31030</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(WeatherOnHome)</onclick>
 					<onclick>Skin.Reset(ShowProfile)</onclick>
                     <selected>Skin.HasSetting(WeatherOnHome)</selected>
@@ -1592,7 +1592,7 @@
                     <label>31134</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(ShowProfile)</onclick>
 					<onclick>Skin.Reset(WeatherOnHome)</onclick>
                     <selected>Skin.HasSetting(ShowProfile)</selected>
@@ -1605,7 +1605,7 @@
                     <label>31337</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(CustomLogoImage)">Skin.SetImage(CustomLogoImage)</onclick>
 					<onclick condition="Skin.String(CustomLogoImage)">Skin.Reset(CustomLogoImage)</onclick>
                     <selected>Skin.String(CustomLogoImage)</selected>
@@ -1633,7 +1633,7 @@
                     <label>31198</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisablePowerMenu)</onclick>
                     <selected>Skin.HasSetting(DisablePowerMenu)</selected>
                 </control>
@@ -1646,7 +1646,7 @@
                     <label>31204</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=powermenu)</onclick>
 					<onclick>SetProperty(powermenu, active, Home)</onclick>
 					<onunfocus>SetProperty(powermenu, notactive, Home)</onunfocus>
@@ -1689,7 +1689,7 @@
                     <label>31023</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, default)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, default)</selected>
                 </control>
@@ -1701,7 +1701,7 @@
                     <label>31025</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, weather)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, weather)</selected>
                 </control>
@@ -1713,7 +1713,7 @@
                     <label>31026</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetString(CustomBackgroundSetting, fanart)</onclick>
                     <selected>Skin.String(CustomBackgroundSetting, fanart)</selected>
                 </control>
@@ -1725,7 +1725,7 @@
                     <label>$LOCALIZE[31039]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.SetImage(CustomBackgroundSetting)</onclick>
                     <selected>!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart) + !Skin.String(CustomBackgroundSetting, gadget)</selected>
                 </control>
@@ -1777,7 +1777,7 @@
                     
                     <onclick>Skin.ToggleSetting(UseSectionBackground)</onclick>
                     <selected>Skin.HasSetting(UseSectionBackground)</selected>
-					<font>Reg32</font>
+					<font>Reg28</font>
                 </control>
             </control>
 			<!-- skin mode-->
@@ -1832,7 +1832,7 @@
                     <label>$LOCALIZE[31008] $LOCALIZE[2]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforMusic)</onclick>
 					<onclick>Skin.Reset(HomeMenuUsePlexforMusic)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforMusic)</selected>
@@ -1846,7 +1846,7 @@
                     <label>$LOCALIZE[31008] $LOCALIZE[342]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforMovies)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseNetflixforMovies)</onclick>
 					<onclick>Skin.Reset(HomeMenuUsePlexforMovies)</onclick>
@@ -1861,7 +1861,7 @@
                     <label>$LOCALIZE[31008] $LOCALIZE[20343]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforTVseries)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseNetflixforTVseries)</onclick>
 					<onclick>Skin.Reset(HomeMenuUsePlexforTVseries)</onclick>
@@ -1876,7 +1876,7 @@
                     <label>$LOCALIZE[31008] $LOCALIZE[1]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforPictures)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforPictures)</selected>
 					<onclick>Skin.Reset(HomeMenuUsePlexforPictures)</onclick>
@@ -1890,7 +1890,7 @@
                     <label>$LOCALIZE[31008] $LOCALIZE[31045]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseMBforMusicVideos)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUseMBforMusicVideos)</selected>
                     <visible>System.HasAddon(plugin.video.xbmb3c)</visible>
@@ -1917,7 +1917,7 @@
                     <label>$LOCALIZE[31082] $LOCALIZE[342]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseNetflixforMovies)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseMBforMovies)</onclick>
 					<onclick>Skin.Reset(HomeMenuUsePlexforMovies)</onclick>
@@ -1932,7 +1932,7 @@
                     <label>$LOCALIZE[31082] $LOCALIZE[20343]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUseNetflixforTVseries)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseMBforTVseries)</onclick>
 					<onclick>Skin.Reset(HomeMenuUsePlexforTVseries)</onclick>
@@ -1959,7 +1959,7 @@
                     <label>$LOCALIZE[31182] $LOCALIZE[342]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUsePlexforMovies)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseMBforMovies)</onclick>
 					<onclick>Skin.Reset(HomeMenuUseNetflixforMovies)</onclick>
@@ -1974,7 +1974,7 @@
                     <label>$LOCALIZE[31182] $LOCALIZE[20343]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUsePlexforTVseries)</onclick>
                     <onclick>Skin.Reset(HomeMenuUseMBforTVseries)</onclick>
 					<onclick>Skin.Reset(HomeMenuUseNetflixforTVseries)</onclick>
@@ -1989,7 +1989,7 @@
                     <label>$LOCALIZE[31182] $LOCALIZE[1]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUsePlexforPictures)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUsePlexforPictures)</selected>
 					<onclick>Skin.Reset(HomeMenuUseMBforPictures)</onclick>
@@ -2003,7 +2003,7 @@
                     <label>$LOCALIZE[31182] $LOCALIZE[2]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HomeMenuUsePlexforMusic)</onclick>
 					<onclick>Skin.Reset(HomeMenuUseMBforMusic)</onclick>
                     <selected>Skin.HasSetting(HomeMenuUsePlexforMusic)</selected>
@@ -2042,7 +2042,7 @@
                     <label>$LOCALIZE[31209]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableTouchSupport)</onclick>
 					<selected>Skin.HasSetting(EnableTouchSupport)</selected>
                 </control>
@@ -2052,7 +2052,7 @@
                     <label>$LOCALIZE[31215]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HideMouseCursor)</onclick>
 					<selected>Skin.HasSetting(HideMouseCursor)</selected>
 					<visible>System.Platform.Windows + Skin.HasSetting(EnableTouchSupport)</visible>
@@ -2063,7 +2063,7 @@
                     <label>$LOCALIZE[31292]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HideBatteryStatus)</onclick>
 					<selected>Skin.HasSetting(HideBatteryStatus)</selected>
 					<visible>Skin.HasSetting(EnableTouchSupport) + !Skin.String(GadgetRows, simplever)</visible>
@@ -2076,7 +2076,7 @@
                     <label>31099</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableArtworkDownloader)</onclick>
                     <selected>Skin.HasSetting(EnableArtworkDownloader)</selected>
                 </control>
@@ -2089,7 +2089,7 @@
                     <label>31140</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableNowPlayingBackground)</onclick>
                     <selected>Skin.HasSetting(DisableNowPlayingBackground)</selected>
 					<visible>!skin.hastheme(classic)</visible>
@@ -2102,7 +2102,7 @@
                     <label>$LOCALIZE[31020]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(HomeMenuUseRadioCollection)">Skin.SetPath(HomeMenuUseRadioCollection)</onclick>
                     <onclick condition="Skin.String(HomeMenuUseRadioCollection)">Skin.Reset(HomeMenuUseRadioCollection)</onclick>
                     <selected>Skin.String(HomeMenuUseRadioCollection)</selected>
@@ -2113,7 +2113,7 @@
                     <label>$LOCALIZE[31179]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(FullscreenMusic)</onclick>
                     <selected>Skin.HasSetting(FullscreenMusic)</selected>
                 </control>
@@ -2123,7 +2123,7 @@
                     <label>$LOCALIZE[21398]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick condition="!Skin.String(AutoStartPlayList)">Skin.SetFile(AutoStartPlayList,,special://MusicPlaylists/)</onclick>
 					<onclick condition="Skin.String(AutoStartPlayList)">Skin.Reset(AutoStartPlayList)</onclick>
                     <selected>Skin.String(AutoStartPlayList)</selected>
@@ -2136,7 +2136,7 @@
                     <label>$LOCALIZE[31187]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(EnableTVTunes)</onclick>
 					<selected>Skin.HasSetting(EnableTVTunes)</selected>
 					<enable>System.HasAddon(script.tvtunes)</enable>
@@ -2149,7 +2149,7 @@
                     <label>31211</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableSplashScreen)</onclick>
                     <selected>Skin.HasSetting(DisableSplashScreen)</selected>
                 </control>
@@ -2160,7 +2160,7 @@
                     <label>31087</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(showlyrics)</onclick>
 					<onclick>Notification($LOCALIZE[24074],$LOCALIZE[24074])</onclick>
                     <selected>Skin.HasSetting(showlyrics)</selected>
@@ -2173,7 +2173,7 @@
                     <label>--- $LOCALIZE[31332]</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(DisableLyricsOverlay)</onclick>
                     <selected>Skin.HasSetting(DisableLyricsOverlay)</selected>
 					<visible>Skin.HasSetting(showlyrics)</visible>
@@ -2186,7 +2186,7 @@
                     <label>31258</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(HideWatchedRecentlyAdded)</onclick>
                     <selected>Skin.HasSetting(HideWatchedRecentlyAdded)</selected>
 					<visible>!Skin.HasSetting(HomeMenuUseMBforMovies) + !Skin.HasSetting(HomeMenuUseNetflixforMovies)</visible>
@@ -2199,7 +2199,7 @@
                     <label>31318</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(KioskMode.Enabled)</onclick>
                     <selected>Skin.HasSetting(KioskMode.Enabled)</selected>
                 </control>
@@ -2211,7 +2211,7 @@
                     <label>31326</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(LowPerformanceMode)</onclick>
 					<onclick>Skin.Reset(EnableExtraFanart)</onclick>
                     <selected>Skin.HasSetting(LowPerformanceMode)</selected>
@@ -2223,7 +2223,7 @@
                     <label>31341</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(enableArtistSlideshow)</onclick>
 					<onclick>ClearProperty(BackGroundWorkersLoaded,Home)</onclick>
                     <selected>Skin.HasSetting(enableArtistSlideshow)</selected>
@@ -2236,7 +2236,7 @@
                     <label>31344</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(alwaysShowScrollbars)</onclick>
                     <selected>Skin.HasSetting(alwaysShowScrollbars)</selected>
                 </control>
@@ -2247,7 +2247,7 @@
                     <label>31451</label>
                     <height>50</height>
                     
-                    <font>Reg32</font>
+                    <font>Reg28</font>
                     <onclick>Skin.ToggleSetting(useExtendedWeatherScreen)</onclick>
                     <selected>Skin.HasSetting(useExtendedWeatherScreen)</selected>
                 </control>

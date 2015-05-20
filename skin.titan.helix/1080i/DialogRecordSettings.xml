@@ -68,7 +68,7 @@
 				</control>
 				<control type="label">
 					<width>auto</width>
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<align>left</align>
 					<label> • </label>
 					<aligny>bottom</aligny>
@@ -77,7 +77,7 @@
 				</control>
 				<control type="label" id="21">
 					<width>auto</width>
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<align>left</align>
 					<aligny>bottom</aligny>
 					<height>50</height>
@@ -85,7 +85,7 @@
 				</control>
 				<control type="label">
 					<width>auto</width>
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<align>left</align>
 					<label> • </label>
 					<aligny>bottom</aligny>
@@ -94,7 +94,7 @@
 				</control>
 				<control type="label" id="22">
 					<width>auto</width>
-					<font>Reg32</font>
+					<font>Reg28</font>
 					<align>left</align>
 					<aligny>bottom</aligny>
 					<height>50</height>

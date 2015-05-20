@@ -145,7 +145,7 @@
 						<posy>0</posy>
 						<width>1460</width>
 						<height>80</height>
-						<font>Reg32</font>
+						<font>Reg28</font>
 						<textcolor>mainblue</textcolor>
 						<info>ListItem.Label</info>
 						<aligny>top</aligny>
@@ -167,7 +167,7 @@
 						<posy>85</posy>
 						<height>125</height>
 						<width>1460</width>
-						<font>Reg32</font>
+						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 						<label fallback="161">$INFO[ListItem.Plot]</label>
 						<visible>skin.string(GuideRows, 7)</visible>
@@ -178,7 +178,7 @@
 						<posy>85</posy>
 						<height>125</height>
 						<width>1460</width>
-						<font>Reg32</font>
+						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 						<label fallback="161">$INFO[ListItem.Plot]</label>
 						<visible>!skin.string(GuideRows, 7)</visible>
@@ -231,7 +231,7 @@
 						<height>44</height>
 						<align>left</align>
 						<posy>-10</posy>
-						<font>Reg32</font>
+						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
@@ -1051,7 +1051,7 @@
 							<posy>0</posy>
 							<width>400</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
@@ -1061,7 +1061,7 @@
 							<posy>0</posy>
 							<width>600</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -1081,7 +1081,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>red</textcolor>
 							<label>31083</label>
 							<visible>ListItem.IsRecording</visible>
@@ -1102,7 +1102,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>green</textcolor>
 							<label>31084</label>
 							<visible>ListItem.HasTimer</visible>
@@ -1161,7 +1161,7 @@
 							<posy>0</posy>
 							<width>400</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>black</textcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
@@ -1171,7 +1171,7 @@
 							<posy>0</posy>
 							<width>600</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>black</textcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -1191,7 +1191,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>red</textcolor>
 							<label>31083</label>
 							<visible>ListItem.IsRecording</visible>
@@ -1212,7 +1212,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>green</textcolor>
 							<label>31084</label>
 							<visible>ListItem.HasTimer</visible>
@@ -1280,7 +1280,7 @@
 							<posy>0</posy>
 							<width>400</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
@@ -1290,7 +1290,7 @@
 							<posy>0</posy>
 							<width>600</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -1310,7 +1310,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>red</textcolor>
 							<label>31083</label>
 							<visible>ListItem.IsRecording</visible>
@@ -1331,7 +1331,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>green</textcolor>
 							<label>31084</label>
 							<visible>ListItem.HasTimer</visible>
@@ -1390,7 +1390,7 @@
 							<posy>0</posy>
 							<width>400</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>black</textcolor>
 							<info>ListItem.ChannelName</info>
 						</control>
@@ -1400,7 +1400,7 @@
 							<posy>0</posy>
 							<width>600</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>black</textcolor>
 							<info>ListItem.Label</info>
 						</control>
@@ -1420,7 +1420,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>red</textcolor>
 							<label>31083</label>
 							<visible>ListItem.IsRecording</visible>
@@ -1441,7 +1441,7 @@
 							<posy>0</posy>
 							<width>200</width>
 							<height>80</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>green</textcolor>
 							<label>31084</label>
 							<visible>ListItem.HasTimer</visible>

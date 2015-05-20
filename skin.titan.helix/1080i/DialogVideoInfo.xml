@@ -389,7 +389,7 @@
 							<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 							<align>justify</align>
-							<font>Light32</font>
+							<font>Light28</font>
 							<visible>IsEmpty(Window(Home).Property(NextAired.NextNumber))</visible>
 						</control>
 						<control type="textbox">
@@ -401,7 +401,7 @@
 							<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 							<align>justify</align>
-							<font>Light32</font>
+							<font>Light28</font>
 							<visible>!IsEmpty(Window(Home).Property(NextAired.NextNumber))</visible>
 						</control>
 						<control type="image">
@@ -433,7 +433,7 @@
 								<posx>60</posx>
 								<posy>0</posy>
 								<width>600</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Premiered]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -445,7 +445,7 @@
 								<posx>60</posx>
 								<posy>0</posy>
 								<width>600</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Year]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -465,7 +465,7 @@
 								<posx>760</posx>
 								<posy>0</posy>
 								<width>400</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -490,7 +490,7 @@
 								<posx>60</posx>
 								<posy>0</posy>
 								<width>600</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Director]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -510,7 +510,7 @@
 								<posx>760</posx>
 								<posy>0</posy>
 								<width>400</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Writer]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -533,7 +533,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Genre,[B]$LOCALIZE[515]: [/B]]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -550,7 +550,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Studio,[B]$LOCALIZE[572]: [/B]]$INFO[Window(Home).Property(NextAired.Status),  •   [B]$LOCALIZE[126]: [/B]]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -584,7 +584,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Property(TotalEpisodes),[B]$LOCALIZE[20360]:[/B] ,  •  ]$INFO[ListItem.Property(unWatchedepisodes),[B]$LOCALIZE[31092]:[/B] ,]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -600,7 +600,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[B]$LOCALIZE[31214]:[/B] $INFO[Window(Home).Property(NextAired.LatestNumber)] $INFO[Window(Home).Property(NextAired.LatestTitle)] ($INFO[Window(Home).Property(NextAired.LatestDate)])</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -616,7 +616,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[B]$LOCALIZE[31212]:[/B] $INFO[Window(Home).Property(NextAired.NextNumber)] $INFO[Window(Home).Property(NextAired.NextTitle)] ($INFO[Window(Home).Property(NextAired.NextDate)])</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -708,7 +708,7 @@
 								<width>950</width>
 								<height>50</height>
 								<label>$INFO[ListItem.label,[B],[/B]] $INFO[ListItem.label2,(,)]</label>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 								<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 								<align>left</align>
@@ -725,7 +725,7 @@
 								<label>$INFO[ListItem.label,[B],[/B]] $INFO[ListItem.label2,(,)]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
 								<shadowcolor>$INFO[Skin.String(ViewDetailsFocusShadowColor)]</shadowcolor>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<aligny>center</aligny>
 							</control>

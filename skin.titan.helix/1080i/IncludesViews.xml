@@ -2797,7 +2797,7 @@
 					<control type="label">
 						<posx>7</posx>
 						<posy>0</posy>
-						<width>1000</width>
+						<width>920</width>
 						<align>left</align>
 						<label>[UPPERCASE]$VAR[mediatitle][/UPPERCASE]</label>
 						<shadowcolor>$INFO[Skin.String(ViewDetailsFocusShadowColor)]</shadowcolor>
@@ -3068,7 +3068,7 @@
 						<posx>8</posx>
 						<posy>0</posy>
 						<width>1300</width>
-						<font>Reg32</font>
+						<font>Reg28</font>
 						<align>left</align>
 						<label>[B]$LOCALIZE[31212]:[/B] $INFO[Window(Home).Property(NextAired.NextNumber)] $INFO[Window(Home).Property(NextAired.NextTitle)] ($INFO[Window(Home).Property(NextAired.NextDate)])</label>
 						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>

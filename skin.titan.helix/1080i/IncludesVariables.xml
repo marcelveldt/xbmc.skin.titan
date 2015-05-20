@@ -1264,4 +1264,8 @@
 		<value condition="!substring(Player.Folderpath,plugin:)">$INFO[Player.FolderPath]cdart.png</value>
 	 </variable>
 	 
+	 <variable name="btntextcolor">
+		<value>white</value>
+	 </variable>
+	 
 </includes>

@@ -80,7 +80,7 @@
 			<height>60</height>
 			<font>Reg32</font>
 			<onup>3110</onup>
-			<ondown>SetFocus(3110,0)</ondown>
+			<ondown>SetFocus(3110,1)</ondown>
 			<onright>3011</onright>
 			<label>Manual ARGB color value:</label>
 			<textcolor>white</textcolor>

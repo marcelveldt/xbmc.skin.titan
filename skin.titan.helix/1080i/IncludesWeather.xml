@@ -108,7 +108,7 @@
                     <!--60-->
                     <width>400</width>
                     <height>50</height>
-                    <font>Light32</font>
+                    <font>Light28</font>
                     <textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
                     <align>left</align>
                 </control>
@@ -119,7 +119,7 @@
                     <!--60-->
                     <width>400</width>
                     <height>50</height>
-                    <font>Light32</font>
+                    <font>Light28</font>
                     <textcolor>aawhite</textcolor>
                     <align>left</align>
                 </control>
@@ -630,7 +630,7 @@
 						<height>45</height>
 						<info>Window.Property(Current.Condition)</info>
 						<wrapmultiline>true</wrapmultiline>
-						<font>Reg32</font>
+						<font>Reg28</font>
 						<textoffsetx>15</textoffsetx>
 						<textcolor>grey</textcolor>
 					</control>

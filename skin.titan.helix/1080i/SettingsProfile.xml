@@ -124,7 +124,7 @@
                         <aligny>center</aligny>
                         <info>ListItem.Label</info>
                         <textcolor>96FFFFFF</textcolor>
-                        <font>Light32</font>
+                        <font>Light28</font>
                         <animation effect="slide" start="0" end="80" time="0" condition="!IsEmpty(ListItem.Icon)">Conditional</animation>
                     </control>
                     <control type="label">
@@ -136,7 +136,7 @@
                         <aligny>center</aligny>
                         <info>ListItem.Label2</info>
                         <textcolor>96FFFFFF</textcolor>
-                        <font>Light32</font>
+                        <font>Light28</font>
                     </control>
                 </itemlayout>
                 <focusedlayout height="76">
@@ -164,7 +164,7 @@
                             <aligny>center</aligny>
                             <info>ListItem.Label</info>
                             <textcolor>black</textcolor>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <animation effect="slide" start="0" end="80" time="0" condition="!IsEmpty(ListItem.Icon)">Conditional</animation>
                         </control>
                         <control type="label">
@@ -176,7 +176,7 @@
                             <aligny>center</aligny>
                             <info>ListItem.Label2</info>
                             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                            <font>Light32</font>
+                            <font>Light28</font>
                         </control>
                     </control>
                     <control type="group">
@@ -206,7 +206,7 @@
                             <aligny>center</aligny>
                             <info>ListItem.Label</info>
                             <textcolor>96FFFFFF</textcolor>
-                            <font>Light32</font>
+                            <font>Light28</font>
                             <animation effect="slide" start="0" end="80" time="0" condition="!IsEmpty(ListItem.Icon)">Conditional</animation>
                         </control>
                         <control type="label">
@@ -218,7 +218,7 @@
                             <aligny>center</aligny>
                             <info>ListItem.Label2</info>
                             <textcolor>96FFFFFF</textcolor>
-                            <font>Light32</font>
+                            <font>Light28</font>
                         </control>
                     </control>
                 </focusedlayout>

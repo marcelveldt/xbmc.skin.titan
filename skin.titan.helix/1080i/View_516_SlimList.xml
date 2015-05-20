@@ -25,7 +25,7 @@
 			<label>[B]$VAR[HDIndicator][/B]</label>
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-			<font>Light32</font>
+			<font>Light28</font>
 			<visible>![!Skin.HasSetting(HideWatchedOverlayList) + [StringCompare(ListItem.Overlay,OverlayWatched.png) | SubString(ListItem.Path,videodb://movies/sets/) | ListItem.IsResumable | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)]]</visible>
 		</control>
 		
@@ -38,7 +38,7 @@
 			<label>$VAR[WatchedLabel]</label>
 			<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-			<font>Light32</font>
+			<font>Light28</font>
 			<visible>!Skin.HasSetting(HideWatchedOverlayList)</visible>
 		</control>
 		
@@ -50,7 +50,7 @@
 			<label>$INFO[ListItem.Rating]</label>
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-			<font>Light32</font>
+			<font>Light28</font>
 			<visible>![Skin.HasSetting(BigListViewShowInfo) + Control.IsVisible(51)] + !Control.IsVisible(515)</visible>
 		</control>
 		
@@ -64,7 +64,7 @@
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 			<visible>![Skin.HasSetting(BigListViewShowInfo) + Control.IsVisible(51)] + !Control.IsVisible(515)</visible>
-			<font>Light32</font>
+			<font>Light28</font>
 		</control>
 		
 		<!--Year-->
@@ -76,7 +76,7 @@
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 			<visible>![Skin.HasSetting(BigListViewShowInfo) + Control.IsVisible(51)] + !Control.IsVisible(515)</visible>
-			<font>Light32</font>
+			<font>Light28</font>
 		</control>
 		
 		<control type="image">

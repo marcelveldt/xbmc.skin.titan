@@ -367,7 +367,7 @@
 							<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 							<align>justify</align>
-							<font>Light32</font>
+							<font>Light28</font>
 						</control>
 						<control type="image">
 							<width>1150</width>
@@ -389,7 +389,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[COLOR=$INFO[Skin.String(ViewDetailsFocusColor)]]$INFO[Container(3226).ListItem(0).Label][/COLOR] $INFO[Container(3226).ListItem(0).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -400,7 +400,7 @@
 								<posx>760</posx>
 								<posy>0</posy>
 								<width>400</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[COLOR=$INFO[Skin.String(ViewDetailsFocusColor)]]$INFO[Container(3226).ListItem(1).Label][/COLOR] $INFO[Container(3226).ListItem(1).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -416,7 +416,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[COLOR=$INFO[Skin.String(ViewDetailsFocusColor)]]$INFO[Container(3226).ListItem(2).Label][/COLOR] $INFO[Container(3226).ListItem(2).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -427,7 +427,7 @@
 								<posx>760</posx>
 								<posy>0</posy>
 								<width>400</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[COLOR=$INFO[Skin.String(ViewDetailsFocusColor)]]$INFO[Container(3226).ListItem(3).Label][/COLOR] $INFO[Container(3226).ListItem(3).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -443,7 +443,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[COLOR=$INFO[Skin.String(ViewDetailsFocusColor)]]$INFO[Container(3226).ListItem(4).Label][/COLOR] $INFO[Container(3226).ListItem(4).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -454,7 +454,7 @@
 								<posx>760</posx>
 								<posy>0</posy>
 								<width>400</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[COLOR=$INFO[Skin.String(ViewDetailsFocusColor)]]$INFO[Container(3226).ListItem(6).Label][/COLOR] $INFO[Container(3226).ListItem(6).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -470,7 +470,7 @@
 							<control type="label">
 								<posy>0</posy>
 								<width>1150</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>[COLOR=$INFO[Skin.String(ViewDetailsFocusColor)]]$INFO[Container(3226).ListItem(5).Label][/COLOR] $INFO[Container(3226).ListItem(5).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -489,7 +489,7 @@
 							<visible>substring(Container(3220).ListItem(0).Label,video)</visible>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$LOCALIZE[157]:</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
@@ -498,7 +498,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[Container(3220).ListItem(0).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -516,7 +516,7 @@
 							<visible>substring(Container(3220).ListItem(1).Label,audio)</visible>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$LOCALIZE[292]:</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
@@ -525,7 +525,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[Container(3220).ListItem(1).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -534,7 +534,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>, $INFO[Container(3220).ListItem(2).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -543,7 +543,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>, $INFO[Container(3220).ListItem(3).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -552,7 +552,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>, $INFO[Container(3220).ListItem(4).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -561,7 +561,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>, $INFO[Container(3220).ListItem(5).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -570,7 +570,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>, $INFO[Container(3220).ListItem(6).Label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -588,7 +588,7 @@
 							<visible>substring(Container(3220).ListItem(2).Label,sub) | substring(Container(3220).ListItem(3).Label,sub) | substring(Container(3220).ListItem(4).Label,sub) | substring(Container(3220).ListItem(5).Label,sub) | substring(Container(3220).ListItem(6).Label,sub)</visible>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$LOCALIZE[459]:</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
@@ -597,7 +597,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[Container(3220).ListItem(2).Label2, ,]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -606,7 +606,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[Container(3220).ListItem(3).Label2, ,]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -615,7 +615,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[Container(3220).ListItem(4).Label2, ,]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -624,7 +624,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[Container(3220).ListItem(5).Label2, ,]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -633,7 +633,7 @@
 							</control>
 							<control type="label">
 								<width>auto</width>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[Container(3220).ListItem(6).Label2, ,]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -689,7 +689,7 @@
 								<width>950</width>
 								<height>50</height>
 								<label>[B]$INFO[ListItem.label][/B] $INFO[ListItem.label2]</label>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 								<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 								<align>left</align>
@@ -706,7 +706,7 @@
 								<label>[B]$INFO[ListItem.label][/B] $INFO[ListItem.label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
 								<shadowcolor>$INFO[Skin.String(ViewDetailsFocusShadowColor)]</shadowcolor>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<aligny>center</aligny>
 							</control>

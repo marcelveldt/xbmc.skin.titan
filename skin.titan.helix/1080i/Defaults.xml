@@ -8,7 +8,7 @@
         <height>60</height>
         <align>left</align>
         <aligny>center</aligny>
-        <font>Light32</font>
+        <font>Light28</font>
         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(GeneralTextColor)]</focusedcolor>
         <selectedcolor>$INFO[Skin.String(GeneralTextColor)]</selectedcolor>
@@ -23,7 +23,7 @@
         <height>60</height>
         <align>left</align>
         <aligny>center</aligny>
-        <font>Light32</font>
+        <font>Light28</font>
         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(GeneralTextColor)]</focusedcolor>
         <selectedcolor>$INFO[Skin.String(GeneralTextColor)]</selectedcolor>
@@ -49,9 +49,9 @@
         <height>60</height>
         <align>center</align>
         <aligny>center</aligny>
-        <font>Light32</font>
-        <label>-</label>
-        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+        <font>Light28</font>
+        <label></label>
+        <textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>lightgrey</disabledcolor>
         <pulseonselect>false</pulseonselect>
@@ -67,7 +67,7 @@
         <height>60</height>
         <align>center</align>
         <aligny>center</aligny>
-        <font>Light32</font>
+        <font>Light28</font>
         <label>-</label>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
@@ -83,7 +83,7 @@
         <width>600</width>
         <height>60</height>
         <label>-</label>
-        <font>Light32</font>
+        <font>Light28</font>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>lightgrey</disabledcolor>
@@ -103,7 +103,7 @@
         <radioheight>70</radioheight>
         <align>center</align>
         <aligny>center</aligny>
-        <font>Light32</font>
+        <font>Light28</font>
         <label>-</label>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
@@ -122,7 +122,7 @@
         <width>600</width>
         <height>60</height>
         <label>-</label>
-        <font>Light32</font>
+        <font>Light28</font>
         <textureup>common/spinctrl/arrow-up-nf.png</textureup>
         <texturedown>common/spinctrl/arrow-down-nf.png</texturedown>
         <textureupfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">common/spinctrl/arrow-up-nf.png</textureupfocus>
@@ -151,7 +151,7 @@
         <texturedownfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">common/spinctrl/arrow-down-nf.png</texturedownfocus>
         <spinwidth>39</spinwidth>
         <spinheight>39</spinheight>
-        <font>Light32</font>
+        <font>Light28</font>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>darkgrey</disabledcolor>
@@ -176,7 +176,7 @@
         <textureslidernib border="3">osd/osd_slider_button_nofocus.png</textureslidernib>
         <textureslidernibfocus border="3">osd/osd_slider_button_focus.png</textureslidernibfocus>
         <aligny>center</aligny>
-        <font>Light32</font>
+        <font>Light28</font>
         <textcolor>white</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>darkgrey</disabledcolor>
@@ -219,8 +219,8 @@
     </default>
     <default type="textbox">
         <label>-</label>
-        <font>Light32</font>
-        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        <font>Light28</font>
+        <textcolor fallback="white">$INFO[Skin.String(GeneralTextColor)]</textcolor>
         <shadowcolor>-</shadowcolor>
         <pagecontrol>61</pagecontrol>
         <autoscroll delay="8000" time="3000" repeat="10000" />

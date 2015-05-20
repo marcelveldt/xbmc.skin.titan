@@ -223,7 +223,7 @@
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <align>justify</align>
-                <font>Light32</font>
+                <font>Light28</font>
             </control>
         </control>
         <control type="group">
@@ -241,7 +241,7 @@
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <align>justify</align>
-                <font>Light32</font>
+                <font>Light28</font>
             </control>
         </control>
      
@@ -307,7 +307,7 @@
                         <!--Label 1-->
                         <posx>630</posx>
                         <width>1100</width>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <selectedcolor>list_label_1_select</selectedcolor>
                         <label>$VAR[value_list_label_1]</label>
@@ -338,7 +338,7 @@
                         <posy>56</posy>
                         <width>1200</width>
                         <height>20</height>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>blue</textcolor>
                         <align>center</align>
                         <aligny>center</aligny>
@@ -409,7 +409,7 @@
                         <!--Label 1-->
                         <posx>1225</posx>
                         <width>520</width>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <selectedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</selectedcolor>
                         <label>$VAR[value_list_label_1]</label>
@@ -557,7 +557,7 @@
                         <!--Label 1-->
                         <posx>1040</posx>
                         <width>650</width>
-                        <font>Reg32</font>
+                        <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <selectedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</selectedcolor>
                         <label>$VAR[value_list_label_1]</label>

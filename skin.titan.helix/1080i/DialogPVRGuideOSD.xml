@@ -55,7 +55,7 @@
 				<posy>80</posy>
 				<width>524</width>
 				<height>50</height>
-				<font>Reg32</font>
+				<font>Reg28</font>
 				<textcolor>midgrey</textcolor>
 				<label>$INFO[Container(11).ListItem.StartDate]</label>
 				<animation effect="slide" start="0" end="-130" time="0" reversible="false" condition="IsEmpty(VideoPlayer.Cover)">Conditional</animation>
@@ -124,7 +124,7 @@
 						<posy>10</posy>
 						<width>450</width>
 						<height>25</height>
-						<font>Reg32</font>
+						<font>Reg28</font>
 						<textcolor>aawhite</textcolor>
 						<selectedcolor>midgrey</selectedcolor>
 						<align>left</align>
@@ -189,7 +189,7 @@
 						<posy>10</posy>
 						<width>450</width>
 						<height>25</height>
-						<font>Reg32</font>
+						<font>Reg28</font>
 						<textcolor>black</textcolor>
 						<selectedcolor>black</selectedcolor>
 						<align>left</align>

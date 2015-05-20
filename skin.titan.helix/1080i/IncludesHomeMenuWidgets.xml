@@ -83,7 +83,7 @@
 			<textcolor>bbwhite</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<align>justify</align>
-			<font>Light32</font>
+			<font>Light28</font>
 			<visible>[ControlGroup(77777).HasFocus | StringCompare(Window(Home).Property(ShowWidget),show)]</visible>
 			<animation effect="slide" end="-355,0" time="0" condition="StringCompare(Window(Home).Property(activewidget),weather)">Conditional</animation>
 		</control>

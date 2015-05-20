@@ -426,7 +426,7 @@
             <posy>880</posy>
             <width>200</width>
             <align>left</align>
-            <font>Light32</font>
+            <font>Light28</font>
             <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
             <label>$INFO[Player.Time]</label>
         </control>
@@ -436,7 +436,7 @@
             <posy>880</posy>
             <width>200</width>
             <align>right</align>
-            <font>Light32</font>
+            <font>Light28</font>
             <textcolor>$VAR[ThemeFontColorWhite]</textcolor>
             <label>- $INFO[Player.TimeRemaining]</label>
         </control>
@@ -447,7 +447,7 @@
             <posy>955</posy>
             <width>300</width>
             <align>right</align>
-            <font>Reg32</font>
+            <font>Reg28</font>
             <textcolor>black</textcolor>
             <label>[B]$LOCALIZE[31112] $INFO[Player.FinishTime][/B]</label>
         </control>
@@ -459,7 +459,7 @@
             <posy>955</posy>
 			<width>800</width>
 			<align>left</align>
-			<font>Reg32</font>
+			<font>Reg28</font>
 			<textcolor>black</textcolor>
 			<label>$VAR[OSDLabel3]</label>
 		</control>
@@ -1189,7 +1189,7 @@
 			<posy>880</posy>
 			<width>200</width>
 			<align>left</align>
-			<font>Light32</font>
+			<font>Light28</font>
 			<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 			<label>$INFO[Player.Time]</label>
 		</control>
@@ -1199,7 +1199,7 @@
 			<posy>880</posy>
 			<width>200</width>
 			<align>right</align>
-			<font>Light32</font>
+			<font>Light28</font>
 			<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 			<label>- $INFO[Player.TimeRemaining]</label>
 		</control>
@@ -1209,7 +1209,7 @@
 			<posy>955</posy>
 			<width>300</width>
 			<align>right</align>
-			<font>Light32</font>
+			<font>Light28</font>
 			<textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
 			<label>$LOCALIZE[31000] $INFO[Player.FinishTime]</label>
 		</control>

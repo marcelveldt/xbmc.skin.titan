@@ -82,7 +82,7 @@
 			<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 			<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 			<align>justify</align>
-			<font>Light32</font>
+			<font>Light28</font>
 		</control>
 		
 		<control type="list" id="3010">

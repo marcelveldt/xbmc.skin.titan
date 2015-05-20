@@ -118,7 +118,7 @@
 						<posy>560</posy>
 						<width>830</width>
 						<height>240</height>
-						<font>Light32</font>
+						<font>Light28</font>
 						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 						
 						<label>$INFO[ListItem.Plot]</label>
@@ -168,7 +168,7 @@
 							<posx>1050</posx>
 							<width>715</width>
 							<height>55</height>
-							<font>Reg32</font>
+							<font>Reg28</font>
 							<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 							<selectedcolor>white</selectedcolor>
 							<align>left</align>

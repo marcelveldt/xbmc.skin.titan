@@ -123,7 +123,7 @@
                 <posx>21</posx>
                 <posy>315</posy>
                 <width>458</width>
-				<font>Light32</font>
+				<font>Light28</font>
                 <textcolor>$VAR[ThemeFontColorBlack]</textcolor>
                 <label>$INFO[Control.GetLabel(3)]</label>
                 <textoffsetx>40</textoffsetx>
@@ -137,7 +137,7 @@
                 <posy>315</posy>
                 <width>458</width>
                 <textcolor>black</textcolor>
-				<font>Light32</font>
+				<font>Light28</font>
                 <label>$INFO[Control.GetLabel(3)]</label>
                 <textoffsetx>40</textoffsetx>
 				<animation effect="slide" end="0,76" time="0" condition="skin.hastheme(classic)">Conditional</animation>

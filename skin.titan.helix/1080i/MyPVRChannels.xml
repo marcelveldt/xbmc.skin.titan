@@ -124,7 +124,7 @@
 						<posy>635</posy>
 						<width>830</width>
 						<height>200</height>
-						<font>Light32</font>
+						<font>Light28</font>
 						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 						<label>$INFO[ListItem.Plot]</label>

@@ -108,7 +108,7 @@
 								<width>950</width>
 								<height>50</height>
 								<label>$INFO[ListItem.label] $INFO[ListItem.Label2,(,)]</label>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 								<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 								<align>left</align>
@@ -133,7 +133,7 @@
 								<label>$INFO[ListItem.label] $INFO[ListItem.Label2,(,)]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsFocusColor)]</textcolor>
 								<shadowcolor>$INFO[Skin.String(ViewDetailsFocusShadowColor)]</shadowcolor>
-								<font>Reg32</font>
+								<font>Reg28</font>
 								<align>left</align>
 								<aligny>center</aligny>
 							</control>

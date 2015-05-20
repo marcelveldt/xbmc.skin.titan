@@ -88,7 +88,7 @@
 				<height>100</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<font>Light32</font>
+				<font>Light28</font>
 				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 				<focusedcolor>white</focusedcolor>
 				<disabledcolor>lightgrey</disabledcolor>
