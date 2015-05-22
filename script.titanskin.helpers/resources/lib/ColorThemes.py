@@ -28,13 +28,13 @@ class ColorThemes(xbmcgui.WindowXMLDialog):
         
         #user has to enter name for the theme
         dialog = xbmcgui.Dialog()
-        themeName = dialog.input('Enter a name for the theme', type=xbmcgui.INPUT_ALPHANUM)
+        themeName = dialog.input(xbmc.getLocalizedString(31467), type=xbmcgui.INPUT_ALPHANUM)
         if not themeName:
             return
         
         #add screenshot
         dialog = xbmcgui.Dialog()
-        custom_thumbnail = dialog.browse( 2 , xbmc.getLocalizedString(1030), 'files')
+        custom_thumbnail = dialog.browse( 2 , xbmc.getLocalizedString(31468), 'files')
         
         if custom_thumbnail:
             xbmcvfs.copy(custom_thumbnail, os.path.join(userThemesPath, themeName + ".jpg"))
@@ -47,7 +47,7 @@ class ColorThemes(xbmcgui.WindowXMLDialog):
             skinsettings = doc.documentElement.getElementsByTagName('setting')
             newlist = []
             newlist.append(("THEMENAME", themeName))
-            newlist.append(("DESCRIPTION", "USER DEFINED THEME"))
+            newlist.append(("DESCRIPTION", xbmc.getLocalizedString(31466)))
             newlist.append(("SKINTHEME", xbmc.getInfoLabel("Skin.CurrentTheme")))
 
             for count, skinsetting in enumerate(skinsettings):
@@ -215,12 +215,12 @@ class ColorThemes(xbmcgui.WindowXMLDialog):
             item = self.themesList.getSelectedItem()
             themeFile = item.getProperty("filename")
             menuOptions = []
-            menuOptions.append('Select this theme')
+            menuOptions.append(xbmc.getLocalizedString(424))
             themeType = item.getProperty("type")
             if themeType == "user":
-                menuOptions.append('Remove this theme')
-                menuOptions.append('Rename this theme')
-                menuOptions.append('Set Icon')
+                menuOptions.append(xbmc.getLocalizedString(117))
+                menuOptions.append(xbmc.getLocalizedString(118))
+                menuOptions.append(xbmc.getLocalizedString(19285))
             ret = dialog.select('', menuOptions)
             if ret == 0:
                 self.loadColorTheme(themeFile)

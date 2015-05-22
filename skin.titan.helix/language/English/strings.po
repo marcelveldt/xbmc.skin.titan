@@ -1600,3 +1600,31 @@ msgstr ""
 msgctxt "#31461"
 msgid "Logos"
 msgstr ""
+
+msgctxt "#31462"
+msgid "Color themes"
+msgstr ""
+
+msgctxt "#31463"
+msgid "Select a color theme"
+msgstr ""
+
+msgctxt "#31464"
+msgid "This skin allows you to customize almost every color in the skin manually. You can also choose to save your customizations to a color theme or use one of the predefined color themes."
+msgstr ""
+
+msgctxt "#31465"
+msgid "Save my color customizations to a color theme preset."
+msgstr ""
+
+msgctxt "#31466"
+msgid "User defined color theme"
+msgstr ""
+
+msgctxt "#31467"
+msgid "Enter a name for your color theme"
+msgstr ""
+
+msgctxt "#31468"
+msgid "Screenshot of color theme (optional)"
+msgstr ""

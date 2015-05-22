@@ -125,13 +125,12 @@
 				<onfocus>SetProperty(currentButton,14,Home)</onfocus>
 			</control>
 			<control type="button" id="15">
-				<label>Color themes</label>
+				<label>31462</label>
 				<onclick>noop</onclick>
 				<onfocus>SetProperty(currentButton,15,Home)</onfocus>
 				<onfocus>XBMC.RunScript(script.titanskin.helpers,COLORTHEMES)</onfocus>
 				<width>440</width>
 				<align>left</align>
-				
 			</control>
 
         </control>
