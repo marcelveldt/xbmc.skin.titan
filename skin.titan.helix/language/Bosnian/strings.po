@@ -35,3 +35,7 @@ msgstr "Nedavno dodani albumi"
 msgctxt "#31184"
 msgid "Submenu"
 msgstr "Podmeni"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Predmemorisanje..."

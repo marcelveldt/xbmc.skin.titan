@@ -609,8 +609,8 @@ msgid "Custom Image:"
 msgstr "Aangepaste achtergrond:"
 
 msgctxt "#31151"
-msgid "Background overlay"
-msgstr "Achtergrond overlay"
+msgid "Background overlay color"
+msgstr "Achtergrond overlay kleur"
 
 msgctxt "#31152"
 msgid "Use default colors"
@@ -866,7 +866,7 @@ msgstr "laatste aflevering"
 
 msgctxt "#31215"
 msgid "Hide mourse cursor (for touchscreens)"
-msgstr "Verberg muis knop (voor touchscreens)"
+msgstr "Verberg muis knop (voor aanraakschermen)"
 
 msgctxt "#31216"
 msgid "Use custom path for weather fanart"
@@ -1356,6 +1356,34 @@ msgctxt "#31338"
 msgid "Show video preview in PVR section"
 msgstr "Toon video voorvertoning in PVR sectie"
 
+msgctxt "#31339"
+msgid "Enable smart shortcuts for the Emby addon"
+msgstr "Activeer slimme snelkoppelingen voor de emby add-on"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Bufferen..."
+
+msgctxt "#31341"
+msgid "Enable artist slideshow while playing music"
+msgstr "Activeer artiest diavoorstelling tijdens afspelen muziek"
+
+msgctxt "#31342"
+msgid "Random pictures"
+msgstr "Willekeurige afbeeldingen"
+
+msgctxt "#31343"
+msgid "Use custom path for random photos background"
+msgstr "Gebruik aangepaste map voor willekeurige foto`s achtergrond"
+
+msgctxt "#31344"
+msgid "Always show the scrollbars (do not hide them)"
+msgstr "Toon altijd de scrollbar`s (verberg ze niet)"
+
+msgctxt "#31345"
+msgid "Only display the header on home"
+msgstr "Toon alleen de header op startscherm"
+
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."
 msgstr "De skin heeft twee verschillende thema’s waarmee het uiterlijk van de skin kan worden aangepast. [CR] [CR][B]Classic:[/B] Is de originele look-and-feel van MediaPortal. [CR][B]Default/Modern:[/B] Is de evolutie van de skin naar een meer moderne aanpak door de maker van deze skin.[CR] [CR]Je kunt zelf beslissen welk thema je het beste vind. [CR]Om het thema te wisselen klik op de knop in het linkse menu of ga naar de weergave instellingen van Kodi."
@@ -1515,3 +1543,47 @@ msgstr "Gebruik aangepaste locatie voor muziek artwork"
 msgctxt "#31449"
 msgid "Interval (in seconds) for multi-image and random fanart backgrounds"
 msgstr "tussenpoos (in seconden) voor meerdere-afbeeldingen en aangepaste fan-art achtergronden "
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Smalle lijst"
+
+msgctxt "#31451"
+msgid "Use extended layout for weather"
+msgstr "Gebruik uitgebreide lay-out voor weer"
+
+msgctxt "#31452"
+msgid "Use extended layout"
+msgstr "Gebruik uitgebreide lay-out"
+
+msgctxt "#31453"
+msgid "Use slim list"
+msgstr "Gebruik smalle lijst"
+
+msgctxt "#31454"
+msgid "Use TV-show banners"
+msgstr "Gebruik TV-show banners"
+
+msgctxt "#31455"
+msgid "Textcolor for footer:"
+msgstr "Tekstkleur voor header:"
+
+msgctxt "#31456"
+msgid "Background overlay opacity"
+msgstr "Achtergrond overlay opacity"
+
+msgctxt "#31457"
+msgid "Use custom image for background overlay"
+msgstr "Gebruik aangepaste afbeelding voor achtergrond overlay"
+
+msgctxt "#31458"
+msgid "Textcolor for buttons in the skin"
+msgstr "Tekstkleur voor knoppen in te skin"
+
+msgctxt "#31459"
+msgid "Focused textcolor for buttons in the skin"
+msgstr "Gefocuste tekstkleur voor knoppen in de skin"
+
+msgctxt "#31460"
+msgid "General textcolor"
+msgstr "Algemene tekstkleur"

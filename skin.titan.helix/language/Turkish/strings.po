@@ -175,3 +175,15 @@ msgstr "Hava tahmini bilgisi getiriliyor..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Kapat"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Arabelleğe alınıyor..."
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "Yatay"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "İnce Liste"

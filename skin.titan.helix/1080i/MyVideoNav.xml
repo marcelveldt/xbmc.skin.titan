@@ -315,9 +315,10 @@
 					<onclick condition="!substring(Container.FolderPath,plugin://plugin.video.xbmb3c)">ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
 					<visible>!substring(Container.FolderPath,plugin://plugin.video) | substring(Container.FolderPath,plugin://plugin.video.xbmb3c)</visible>
                 </control>
-
+				
+				<!--Set View old method
 				 <control type="button" id="400">
-                    <!--Set View-->
+                    
                     <include>SubMenuButton</include>
                     <label>$LOCALIZE[31305] $INFO[Container.Viewmode]</label>
                     <onclick>Container.NextViewMode</onclick>
@@ -332,7 +333,14 @@
                     <onclick condition="substring(Container.FolderPath,plugin://plugin.video.netflixbmc) + Container.Content(TVShows)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,SERIES,00)</onclick>
                     <onclick condition="substring(Container.FolderPath,plugin://plugin.video.netflixbmc) + Container.Content(Episodes)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,EPISODES,00)</onclick>
                     <onclick condition="substring(Container.FolderPath,plugin://plugin.video.netflixbmc) + Container.Content(Sets)">XBMC.RunScript(script.titanskin.helpers,SETVIEW,BOXSETS,00)</onclick>
+				</control>-->
 				
+				
+				<control type="button" id="9326">
+					<!--Set View new method-->
+					<include>SubMenuButton</include>
+					<label>$LOCALIZE[31305] $INFO[Container.Viewmode]</label>
+					<onclick>XBMC.RunScript(script.titanskin.helpers,SELECTVIEW)</onclick>
 				</control>
 				
 				<include>SideBladeViewCommands</include>

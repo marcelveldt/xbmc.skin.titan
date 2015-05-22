@@ -147,7 +147,7 @@
 				<description>ProgressbarCache</description>
 				<left>120</left>
 				<top>104</top>
-				<width>240</width>
+				<width>230</width>
 				<height>15</height>
 				<info>Player.ProgressCache</info>
 				<midtexture border="6,0,6,0" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">osd/ProgressMidFlat.png</midtexture>
@@ -157,7 +157,7 @@
 				<description>Progressbar</description>
 				<left>120</left>
 				<top>104</top>
-				<width>240</width>
+				<width>230</width>
 				<height>15</height>
 				<info>Player.Progress</info>
 				<visible>true</visible>

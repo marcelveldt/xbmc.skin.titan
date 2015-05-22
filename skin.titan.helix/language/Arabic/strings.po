@@ -91,3 +91,7 @@ msgstr "...جلب معلومات توقعات الطقس"
 msgctxt "#31308"
 msgid "Close"
 msgstr "اغلاق"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "تخزين ..."

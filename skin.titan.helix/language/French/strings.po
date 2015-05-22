@@ -239,3 +239,15 @@ msgstr "Fermer"
 msgctxt "#31334"
 msgid "Last updated"
 msgstr "Dernière mise à jour"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Mise en cache..."
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "Paysage"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Liste fine"

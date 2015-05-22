@@ -384,6 +384,10 @@ msgctxt "#31334"
 msgid "Last updated"
 msgstr "Última actualización"
 
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Lendo ..."
+
 msgctxt "#31430"
 msgid "Landscape"
 msgstr "Apaisado"

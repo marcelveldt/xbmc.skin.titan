@@ -37,7 +37,7 @@
 					<ondown>61</ondown>
 					<pagecontrol>61</pagecontrol>
 					<preloaditems>2</preloaditems>
-					<viewtype label="Logo">list</viewtype>
+					<viewtype label="31461">list</viewtype>
 					<scrolltime tween="quadratic" easing="out">300</scrolltime>
 					<visible>Container.Content(tvshows) | Container.Content(movies)</visible>
 					<orientation>horizontal</orientation>

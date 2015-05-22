@@ -407,3 +407,15 @@ msgstr "[B]ΡΥΘΜΙΣΗ ΤΗΛΕΟΡΑΣΗΣ[/B][CR][CR][COLOR=midgrey]Αλλ�
 msgctxt "#31334"
 msgid "Last updated"
 msgstr "Last updated"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Aποθήκευση..."
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "Τοπίο"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Λεπτή Λίστα"

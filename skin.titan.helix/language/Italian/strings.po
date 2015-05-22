@@ -26,7 +26,7 @@ msgstr "Attiva/Disattiva Tiles"
 
 msgctxt "#31004"
 msgid "Skin mode"
-msgstr "Modalita' Skin"
+msgstr "Modalità Skin"
 
 msgctxt "#31005"
 msgid "General skin settings"
@@ -38,11 +38,11 @@ msgstr "Plugin NetfliKodi"
 
 msgctxt "#31007"
 msgid "MediaBrowser Mode"
-msgstr "Modalita' MediaBrowser"
+msgstr "Modalità MediaBrowser"
 
 msgctxt "#31008"
 msgid "Use MediaBrowser mode for"
-msgstr "Usa la modalita' MediaBrowser per"
+msgstr "Usa la modalità MediaBrowser per"
 
 msgctxt "#31009"
 msgid "Custom tiles for MediaBrowser collections"
@@ -66,7 +66,7 @@ msgstr "Configura collegamenti"
 
 msgctxt "#31014"
 msgid "Edit menu shortcuts"
-msgstr "Modifica collegamenti Menu'"
+msgstr "Modifica collegamenti Menù"
 
 msgctxt "#31015"
 msgid "--- Use default tile picture"
@@ -78,7 +78,7 @@ msgstr "--- Usa immagine Tile personalizzata"
 
 msgctxt "#31017"
 msgid "--- Open TV Guide instead of Live TV"
-msgstr "--- Apri Guida TV anziche' Live TV"
+msgstr "--- Apri Guida TV anziché Live TV"
 
 msgctxt "#31018"
 msgid "Netflix"
@@ -86,7 +86,7 @@ msgstr "Netflix"
 
 msgctxt "#31019"
 msgid "--- Open folderpath with music instead of library"
-msgstr "--- Apri percorso cartella con musica invece dell'Archivio"
+msgstr "--- Apri percorso cartella con Musica invece della Libreria"
 
 msgctxt "#31020"
 msgid "Open folderpath with radio streams instead of PVR for Radio"
@@ -178,11 +178,11 @@ msgstr "Usa pulsanti piccoli per impostazioni in basso nella Home"
 
 msgctxt "#31042"
 msgid "Quick resume movies you are watching"
-msgstr "Riprendi velocemente Film che stai guardando"
+msgstr "Riprendi velocemente i Film che stai guardando"
 
 msgctxt "#31043"
 msgid "Quick resume TV shows you are watching"
-msgstr "Riprendi velocemente Serie TV che stai guardando"
+msgstr "Riprendi velocemente le Serie TV che stai guardando"
 
 msgctxt "#31044"
 msgid "New added movies"
@@ -302,7 +302,7 @@ msgstr "Ordina Tiles Home"
 
 msgctxt "#31073"
 msgid "Sort the home menu tiles"
-msgstr "Ordina le Tiles del Menu' Home"
+msgstr "Ordina le Tiles del Menù Home"
 
 msgctxt "#31074"
 msgid "Arrange the homescreen tiles just the way you want it. [CR]Usage: select a direction below and click on the tile's title (in the list on the right) to move it's position. [CR]Because settings are applied on the fly the screen may blink for one second."
@@ -326,7 +326,7 @@ msgstr "Modalita' Skin (sostituisci archivi)"
 
 msgctxt "#31079"
 msgid "Changing the skin mode enables you to replace the default Kodi libraries with a third party product like MediaBrowser or Netflix. Not only the default tiles will be adjusted, also items like recent movies widgets etc. You can change the skinmode on a per-library base, this way you can decide for example to use MediaBrowser for your movies, and default Kodi library for TV shows."
-msgstr "Cambiare la modalita' della Skin ti permette di sostituire gli archivi predefiniti di Kodi con prodotti di terze parti come MediaBrowser o Netflix. Non sono le Tiles predefinite saranno aggiornate, ma anche elementi come i widget Film Recenti ecc. Puoi modificare la modalita' a seconda della libreria, in questo modo puoi decidere per esempio di usare MediaBrowser per i tuoi Film, e la libreria predefinita di Kodi per le Serie TV."
+msgstr "Cambiare la modalità della Skin ti permette di sostituire le librerie predefinite di Kodi con prodotti di terze parti come MediaBrowser o Netflix. Non sono le Tiles predefinite saranno aggiornate, ma anche elementi come i widget Film Recenti ecc. Puoi modificare la modalità a seconda della Libreria, in questo modo puoi decidere per esempio di usare MediaBrowser per i tuoi Film, e la Libreria predefinita di Kodi per le Serie TV."
 
 msgctxt "#31080"
 msgid "Netflix integration"
@@ -334,11 +334,11 @@ msgstr "Integrazione Netflix"
 
 msgctxt "#31081"
 msgid "Netflix Mode"
-msgstr "Modalita' Netflix"
+msgstr "Modalità Netflix"
 
 msgctxt "#31082"
 msgid "Use Netflix Mode for"
-msgstr "Usa Modalita' Netflix per"
+msgstr "Usa Modalità Netflix per"
 
 msgctxt "#31083"
 msgid "REC"
@@ -354,7 +354,7 @@ msgstr "Palinsesto"
 
 msgctxt "#31086"
 msgid "Do not show title on home menu tiles"
-msgstr "Non mostrare il titolo sulle Tiles del Menu' Home"
+msgstr "Non mostrare il titolo sulle Tiles del Menù Home"
 
 msgctxt "#31087"
 msgid "Enable Lyrics while playing music (CU LRC Lyrics)"
@@ -362,7 +362,7 @@ msgstr "Abilita Testi mentre riproduci musica (CU LRC Lyrics)"
 
 msgctxt "#31088"
 msgid "Live-TV"
-msgstr "Live-TV"
+msgstr "TV"
 
 msgctxt "#31089"
 msgid "XBMB3C add-on"
@@ -462,7 +462,7 @@ msgstr "Termina alle:"
 
 msgctxt "#31113"
 msgid "Auto show the submenu for the selected home tile"
-msgstr "Mostra automaticamente Submenu' per la Tile selezionata"
+msgstr "Mostra automaticamente Sottomenù per la Tile selezionata"
 
 msgctxt "#31114"
 msgid "Show large thumbnail"
@@ -474,7 +474,7 @@ msgstr "Layout Schermata Home"
 
 msgctxt "#31116"
 msgid "Submenu items for this collection"
-msgstr "Elementi Submenu' per questa Collezione"
+msgstr "Elementi Sottomenù per questa Collezione"
 
 msgctxt "#31117"
 msgid "Enable widget for this tile"
@@ -510,7 +510,7 @@ msgstr "Altre impostazioni Schermata Home"
 
 msgctxt "#31126"
 msgid "Use vertical submenu layout (instead of default horizontal)"
-msgstr "Usa layout verticale per i Sottomenu' (invece del predefinito orizzontale)"
+msgstr "Usa layout verticale per i Sottomenù (invece del predefinito orizzontale)"
 
 msgctxt "#31127"
 msgid "Recently added"
@@ -522,11 +522,11 @@ msgstr "Riprodotti di recente"
 
 msgctxt "#31129"
 msgid "My TV Shows"
-msgstr "Le Mie Serie TV"
+msgstr "Le mie Serie TV"
 
 msgctxt "#31130"
 msgid "My Movies"
-msgstr "I Miei Film"
+msgstr "I miei Film"
 
 msgctxt "#31131"
 msgid "Suggestions"
@@ -538,7 +538,7 @@ msgstr "Abilita Sfondo Elemento"
 
 msgctxt "#31133"
 msgid "Show plot in video infopanel or onscreen display"
-msgstr "Mostra trama nel pannello informazioni video nell'OSD"
+msgstr "Mostra Trama nel pannello informazioni video nell'OSD"
 
 msgctxt "#31134"
 msgid "Show Profile button"
@@ -550,19 +550,19 @@ msgstr "Registra solo questo episodio"
 
 msgctxt "#31136"
 msgid "Record all episodes (series recording)"
-msgstr "Registra tutti gli episodi (registrazione serie)"
+msgstr "Registra tutti gli Episodi (Registrazione Serie)"
 
 msgctxt "#31137"
 msgid "Settings for recordings"
-msgstr "Impostazioni per le registrazioni"
+msgstr "Impostazioni per le Registrazioni"
 
 msgctxt "#31138"
 msgid "Cancel recording of this episode only"
-msgstr "Cancella la registrazione di solo questo episodio"
+msgstr "Cancella la Registrazione di solo questo Episodio"
 
 msgctxt "#31139"
 msgid "Cancel recording of all episodes"
-msgstr "Cancella la registrazione di tutti gli episodi"
+msgstr "Cancella la Registrazione di tutti gli Episodi"
 
 msgctxt "#31140"
 msgid "Disable the Now Playing background"
@@ -578,7 +578,7 @@ msgstr "Impostazioni Sfondo Globale"
 
 msgctxt "#31143"
 msgid "The global background you selected is applied everywhere in the skin. It is possible to override the global background on different sections of the skin. If you enable the section based backgrounds you can set a different background on a tile, so if you hover over that tile in the homescreen you will get that background. Also your override will be applied to whatever section that tile opens. So, for example if you have chosen a custom background for the Live TV tile and you click that tile, you will also get your selected background in the Live TV section. Off course if no background is chosen for a tile, it will always fallback to the global background. You can set your own overrides in the configuration page for the home tiles."
-msgstr "Lo Sfondo Globale che hai scelto e' applicato ovunque nella Skin. E' possibile sostituire lo Sfondo Globale nelle diverse Sezioni della Skin. Se abiliti gli Sfondi basati sulla Sezione puoi impostare uno Sfondo diverso per la Tile, cosi' se evidenzi quella Tile nella Schermata Home avrai quello Sfondo. La tua impostazione sara' applicata a ogni sezione che apre quella Tile. Cosi', se per esempio hai scelto uno Sfondo personalizzato per la Tile Live TV e la selezioni, avrai lo Sfondo selezionato anche per la Sezione Live TV. Ovviamente se nessuno Sfondo e' stato scelto per una Tile, verra' usato sempre quello Globale della Sezione. Puoi impostare le tue scelte specifiche della pagina di configurazione per le Tile Schermata Home."
+msgstr "Lo Sfondo Globale che hai scelto è applicato ovunque nella Skin. E' possibile sostituire lo Sfondo Globale nelle diverse Sezioni della Skin. Se abiliti gli Sfondi basati sulla Sezione puoi impostare uno Sfondo diverso per la Tile, così se evidenzi quella Tile nella Schermata Home avrai quello Sfondo. La tua impostazione sarà applicata a ogni sezione che apre quella Tile. Così, se per esempio hai scelto uno Sfondo personalizzato per la Tile Live TV e la selezioni, avrai lo Sfondo selezionato anche per la Sezione Live TV. Ovviamente se nessuno Sfondo è stato scelto per una Tile, verrà usato sempre quello Globale della Sezione. Puoi impostare le tue scelte specifiche della pagina di configurazione per le Tile Schermata Home."
 
 msgctxt "#31144"
 msgid "Enable section based backgrounds"
@@ -609,8 +609,8 @@ msgid "Custom Image:"
 msgstr "Immagine personalizzata:"
 
 msgctxt "#31151"
-msgid "Background overlay"
-msgstr "Sfumatura Sfondo"
+msgid "Background overlay color"
+msgstr "Colore sfumatura Sfondo"
 
 msgctxt "#31152"
 msgid "Use default colors"
@@ -654,23 +654,23 @@ msgstr "Collezioni MediaBrowser"
 
 msgctxt "#31162"
 msgid "Kodi Library"
-msgstr "Archivio Kodi"
+msgstr "Libreria Kodi"
 
 msgctxt "#31163"
 msgid "MediaBrowser Library"
-msgstr "Archivio MediaBrowser"
+msgstr "Libreria MediaBrowser"
 
 msgctxt "#31164"
 msgid "Netflix Library"
-msgstr "Archivio Netflix"
+msgstr "Libreria Netflix"
 
 msgctxt "#31165"
 msgid "Edit Main Menu"
-msgstr "Modifica Menu' Principale"
+msgstr "Modifica Menù Principale"
 
 msgctxt "#31166"
 msgid "Edit Submenu"
-msgstr "Modifica Sottomenu'"
+msgstr "Modifica Sottomenù"
 
 msgctxt "#31167"
 msgid "Configure the Home screen menu layout"
@@ -678,7 +678,7 @@ msgstr "Configura il layout del Menu della Schermata Home"
 
 msgctxt "#31168"
 msgid "This skin is integrated with the skinshortcuts script to provide you maximized flexibility in how you want to arrange your homescreen menu’s. You’re able to add and delete tiles on the homescreen, change the images, define submenus etc. Click the button below to get started modifying the skin menu’s to your own preferences."
-msgstr "La Skin e' integrata con lo script Skinshortcuts per fornirti la massima flessibilita' su come vuoi ordinare il Menu' della tua Schermata Home. Puoi aggiungere o cancellare le Tiles sulla Schermata Home, cambiare le immagini, definire i Sottomenu' ecc. Clicca sul bottone sotto per cominciare a modificare il Menu della Skin secondo le tue preferenze."
+msgstr "La Skin è integrata con lo script Skinshortcuts per fornirti la massima flessibilità su come vuoi ordinare il Menù della tua Schermata Home. Puoi aggiungere o cancellare le Tiles sulla Schermata Home, cambiare le immagini, definire i Sottomenù ecc. Clicca sul bottone sotto per cominciare a modificare il Menù della Skin secondo le tue preferenze."
 
 msgctxt "#31169"
 msgid "Override background"
@@ -690,7 +690,7 @@ msgstr "Resetta il Menu predefinito della Skin"
 
 msgctxt "#31171"
 msgid "One of the main advantages of using the skinshortcuts-script is that your menu layout is shared across skins that support this addon. This is not always convenient as you won’t get the skins default menu layout which is optimized for the skin or you have played a bit in another skin and you don’t like the menu layout now. If you see weird behavior on your home menu or you just want to start fresh and get the most out of this skin, you can reset the menu structures to the skins default settings with the button below."
-msgstr "Uno dei vantaggi principali dell'usare lo script Skinshortcuts e' che il layout del tuo Menu' e' condiviso fra le Skin che supportano questo Add-on. Questo non e' sempre conveniente siccome non otterrai il layout predefinito e ottimizzato della Skin oppure hai modificato diverse cose su un'altra Skin e non ti piace quel layout ora. Se noti un comportamento strano del tuo Menu Home o semplicemente vuoi partire da zero e ottenere il massimo da questa Skin, puoi resettare le strutture del menu ai valori predefiniti col bottone qua sotto."
+msgstr "Uno dei vantaggi principali dell'usare lo script Skinshortcuts è che il layout del tuo Menù è condiviso fra le Skin che supportano questo Add-on. Questo non è sempre conveniente siccome non otterrai il layout predefinito e ottimizzato della Skin, oppure hai modificato diverse cose su un'altra Skin e ora non ti piace quel layout. Se noti un comportamento strano del tuo Menù Home o semplicemente vuoi partire da zero e ottenere il massimo da questa Skin, puoi resettare le strutture del Menù ai valori predefiniti col pulsante sottostante."
 
 msgctxt "#31172"
 msgid "Do not use overlay"
@@ -710,7 +710,7 @@ msgstr "Cambia Collegamento"
 
 msgctxt "#31176"
 msgid "This will allow you to change the action of the shortcut and keep the current assigned widget and submenu.[CR] TIP: To open the submenu on click, type submenu as custom action."
-msgstr "Questo ti permettera' di cambiare l'azione del Collegamento e mantenere i Widget e Sottomenu' correntemente assegnati.[CR] Suggerimento: Per aprire il Sottomenu' al click, scrivi Sottomenu' come azione personalizzata."
+msgstr "Questo ti permetterà di cambiare l'azione del Collegamento e mantenere i Widget e Sottomenù correntemente assegnati.[CR] Suggerimento: Per aprire il Sottomenù al click, scrivi Sottomenù come azione personalizzata."
 
 msgctxt "#31177"
 msgid "None (use global background)"
@@ -734,7 +734,7 @@ msgstr "Integrazione Plex Media Server"
 
 msgctxt "#31182"
 msgid "Use Plex mode for"
-msgstr "Usa modalita' Plex per"
+msgstr "Usa modalità Plex per"
 
 msgctxt "#31183"
 msgid "Enhanced all-in-one homescreen"
@@ -742,7 +742,7 @@ msgstr "Schermata Home potenziata all-in-one"
 
 msgctxt "#31184"
 msgid "Submenu"
-msgstr "Sottomenu'"
+msgstr "Sottomenù"
 
 msgctxt "#31185"
 msgid "Spotlight"
@@ -754,7 +754,7 @@ msgstr "Non mostrare l'OSD all'avvio della riproduzione"
 
 msgctxt "#31187"
 msgid "Play TV theme songs in video library (TvTunes add-on)"
-msgstr "Riproduci le sigle TV nell'archivio video (add-on TvTunes)"
+msgstr "Riproduci le Sigle TV nella Libreria Video (Add-on TvTunes)"
 
 msgctxt "#31188"
 msgid "Edit widget contents"
@@ -790,11 +790,11 @@ msgstr "Widget Collezione Personalizzata"
 
 msgctxt "#31196"
 msgid "Use submenu items as widget"
-msgstr "Usa elementi Sottomenu' come Widget"
+msgstr "Usa elementi Sottomenù come Widget"
 
 msgctxt "#31197"
 msgid "Use tiles (instead of text only) for the submenu"
-msgstr "Usa Tiles (invece di solo testo) per i Sottomenu'"
+msgstr "Usa Tiles (invece di solo testo) per i Sottomenù"
 
 msgctxt "#31198"
 msgid "Disable powermenu on home"
@@ -814,7 +814,7 @@ msgstr "Animazione Disc-Art"
 
 msgctxt "#31202"
 msgid "Hide title in tile"
-msgstr "Nascondi titolo Tile"
+msgstr "Nascondi Titolo Tile"
 
 msgctxt "#31203"
 msgid "Set custom widget content"
@@ -854,7 +854,7 @@ msgstr "Disabilita Splash Screen (non raccomandato per sistemi lenti)"
 
 msgctxt "#31212"
 msgid "Next episode"
-msgstr "Prossimo episodio"
+msgstr "Prossimo Episodio"
 
 msgctxt "#31213"
 msgid "Airs"
@@ -862,7 +862,7 @@ msgstr "In onda"
 
 msgctxt "#31214"
 msgid "Latest Episode"
-msgstr "Ultimissimo episodio"
+msgstr "Ultimissimo Episodio"
 
 msgctxt "#31215"
 msgid "Hide mourse cursor (for touchscreens)"
@@ -890,19 +890,19 @@ msgstr "Colore ombra per Intestazione:"
 
 msgctxt "#31221"
 msgid "Media library views"
-msgstr "Viste archivio Media"
+msgstr "Viste Libreria"
 
 msgctxt "#31222"
 msgid "Media details text color:"
-msgstr "Colore testo dettagli Media:"
+msgstr "Colore Testo dettagli Media:"
 
 msgctxt "#31223"
 msgid "Media details shadow color:"
-msgstr "Colore ombra dettagli Media:"
+msgstr "Colore Ombra dettagli Media:"
 
 msgctxt "#31224"
 msgid "Media details panel opacity:"
-msgstr "Opacita' pannello dettagli Media:"
+msgstr "Opacità Pannello dettagli Media:"
 
 msgctxt "#31225"
 msgid "Show clearlogo in upper right instead of bottom"
@@ -942,11 +942,11 @@ msgstr "Colore Selezione per i pulsanti della Skin"
 
 msgctxt "#31234"
 msgid "Apply background overlay only to media views"
-msgstr "Applica sfumatura sfondo solo alle viste Media"
+msgstr "Applica sfumatura Sfondo solo a Viste Media"
 
 msgctxt "#31235"
 msgid "Show video title in header"
-msgstr "Mostra Titolo video nell'intestazione"
+msgstr "Mostra Titolo Video nell'intestazione"
 
 msgctxt "#31236"
 msgid "PVR views"
@@ -970,11 +970,11 @@ msgstr "Usa posizione di selezione centrata per le Tile della Home"
 
 msgctxt "#31241"
 msgid "Apply background overlay only to home screen"
-msgstr "Applica la sfumatura dello Sfondo solo alla Schermata Home"
+msgstr "Applica sfumatura Sfondo solo a Schermata Home"
 
 msgctxt "#31242"
 msgid "OSD panel opacity:"
-msgstr "Opacita' pannello OSD:"
+msgstr "Opacità pannello OSD:"
 
 msgctxt "#31243"
 msgid "Show cache level progress"
@@ -1002,7 +1002,7 @@ msgstr "Ottieni Artwork extra"
 
 msgctxt "#31249"
 msgid "General panels (including footer) opacity"
-msgstr "Opacita' generale Pannelli (incluso inferiore)"
+msgstr "Opacità generale Pannelli (incluso inferiore)"
 
 msgctxt "#31250"
 msgid "PLAYING"
@@ -1054,7 +1054,7 @@ msgstr "Schermata Home verticale semplice stile Confluence"
 
 msgctxt "#31263"
 msgid "Use extra small tiles"
-msgstr "Usa Tiles piccolissime"
+msgstr "Usa Tile piccolissime"
 
 msgctxt "#31264"
 msgid "Disable all widgets"
@@ -1062,7 +1062,7 @@ msgstr "Disabilita tutti i Widget"
 
 msgctxt "#31265"
 msgid "Disable all submenus"
-msgstr "Disabilita tutti i Sottomenu'"
+msgstr "Disabilita tutti i Sottomenù"
 
 msgctxt "#31266"
 msgid "Enable background animation"
@@ -1118,15 +1118,15 @@ msgstr "File di Backup creato con successo!"
 
 msgctxt "#31279"
 msgid "An error has occured creating the backup!"
-msgstr "C'e' stato un errore nella creazione del Backup!"
+msgstr "C'è stato un errore nella creazione del Backup!"
 
 msgctxt "#31280"
 msgid "Your backup is succesfully restored!"
-msgstr "Il tuo backup e' stato ripristinato con successo!"
+msgstr "Il tuo backup è stato ripristinato con successo!"
 
 msgctxt "#31281"
 msgid "An error has occured while restoring the backup"
-msgstr "C'e' stato un errore mentre ripristinavo il Backup"
+msgstr "C'è stato un errore mentre ripristinavo il Backup"
 
 msgctxt "#31282"
 msgid "Select Titan skin backup file"
@@ -1174,7 +1174,7 @@ msgstr "Nascondi icona stato Batteria"
 
 msgctxt "#31293"
 msgid "Last updated"
-msgstr "Ultimo aggiornamento"
+msgstr "Ultimo agg."
 
 msgctxt "#31294"
 msgid "Weather Notification"
@@ -1194,7 +1194,7 @@ msgstr "Film non visti"
 
 msgctxt "#31298"
 msgid "Static predefined background image"
-msgstr "Immagine di sfondo statica predefinita"
+msgstr "Immagine di Sfondo statica predefinita"
 
 msgctxt "#31299"
 msgid "Global/mixed fanart image"
@@ -1330,15 +1330,15 @@ msgstr "alto a destra"
 
 msgctxt "#31332"
 msgid "Disable background-overlay in lyrics window"
-msgstr "Disabilita sfumatura sfondo nella finestra Testi"
+msgstr "Disabilita sfumatura Sfondo nella finestra Testi"
 
 msgctxt "#31333"
 msgid "Do not display channel names in the guide"
-msgstr "Non mostrare il nome dei canali nella Guida"
+msgstr "Non mostrare il nome dei Canali nella Guida"
 
 msgctxt "#31334"
 msgid "Last updated"
-msgstr "Ultimo aggiornamento"
+msgstr "Ultimo agg."
 
 msgctxt "#31335"
 msgid "SERIES FINALE"
@@ -1354,11 +1354,39 @@ msgstr "Usa immagine personalizzata anziché il logo di Kodi"
 
 msgctxt "#31338"
 msgid "Show video preview in PVR section"
-msgstr "Mostra anteprima video nella sezione PVR"
+msgstr "Mostra anteprima Video nella sezione PVR"
+
+msgctxt "#31339"
+msgid "Enable smart shortcuts for the Emby addon"
+msgstr "Abilita Collegamenti Intelligenti per l'Add-on Emby"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Caricando..."
+
+msgctxt "#31341"
+msgid "Enable artist slideshow while playing music"
+msgstr "Abilita Artist Slideshow quando ascolti musica"
+
+msgctxt "#31342"
+msgid "Random pictures"
+msgstr "Immagini Casuali"
+
+msgctxt "#31343"
+msgid "Use custom path for random photos background"
+msgstr "Usa percorso personalizzato per Immagini Sfondo casuali"
+
+msgctxt "#31344"
+msgid "Always show the scrollbars (do not hide them)"
+msgstr "Mostra sempre le barre di scorrimento (non nasconderle)"
+
+msgctxt "#31345"
+msgid "Only display the header on home"
+msgstr "Mostra l'intestazione solo nella Home"
 
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."
-msgstr "La Skin ha due diversi temi per cambiare aspetto e carattere: [CR][CR][B]Classico:[/B] E' l'aspetto originale della Skin di MediaPortal [CR][B]Predefinito/Moderno:[/B] E' l'evoluzione della Skin a un approccio piu' moderno da parte dell'autore di questa Skin.. [CR] [CR]Puoi decidere quale tema preferisci. [CR]Per cambiare tema premi il pulsante nel Menu' a sinistra o vai nelle Impostazioni Aspetto da Kodi."
+msgstr "La Skin ha due diversi temi per cambiare aspetto e carattere: [CR][CR][B]Classico:[/B] E' l'aspetto originale della Skin di MediaPortal [CR][B]Predefinito/Moderno:[/B] E' l'evoluzione della Skin a un approccio più moderno da parte dell'autore di questa Skin.. [CR] [CR]Puoi decidere quale tema preferisci. [CR]Per cambiare tema premi il pulsante nel Menù a sinistra o vai nelle Impostazioni Aspetto da Kodi."
 
 msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR][COLOR=midgrey]Change the skin · Set language and region · Change file listing options · Set up a screensaver[/COLOR]"
@@ -1366,11 +1394,11 @@ msgstr "[B]CONFIGURA IMPOSTAZIONI ASPETTO[/B][CR][CR][COLOR=midgrey]Cambia la Sk
 
 msgctxt "#31401"
 msgid "[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR][COLOR=midgrey]Manage your video library · Set video playback options · Change video listing options · Set subtitle fonts[/COLOR]"
-msgstr "[B]CONFIGURA IMPOSTAZIONI VIDEO[/B][CR][CR][COLOR=midgrey]Gestisci il tuo Archivio Video · Imposta opzioni di riproduzione video · Cambia opzioni  liste video · Imposta Caratteri Sottotitoli[/COLOR]"
+msgstr "[B]CONFIGURA IMPOSTAZIONI VIDEO[/B][CR][CR][COLOR=midgrey]Gestisci la tua Libreria Video · Imposta opzioni di riproduzione video · Cambia opzioni liste video · Imposta caratteri Sottotitoli[/COLOR]"
 
 msgctxt "#31402"
 msgid "[B]CONFIGURE MUSIC SETTINGS[/B][CR][CR][COLOR=midgrey]Manage your music library · Set music playback options · Change music listing options · Setup song submission · Set karaoke options[/COLOR]"
-msgstr "[B]CONFIGURA IMPOSTAZIONI MUSICA[/B][CR][CR][COLOR=midgrey]Gestisci il tuo Archivio Musicale · Imposta opzioni riproduzione musicale · Cambia opzioni liste musica · Imposta presentazione Musica · Imposta opzioni Karaoke[/COLOR]"
+msgstr "[B]CONFIGURA IMPOSTAZIONI MUSICA[/B][CR][CR][COLOR=midgrey]Gestisci la tua Libreria Musicale · Imposta opzioni riproduzione musicale · Cambia opzioni liste musica · Imposta presentazione Musica · Imposta opzioni Karaoke[/COLOR]"
 
 msgctxt "#31403"
 msgid "[B]CONFIGURE PICTURE SETTINGS[/B][CR][CR][COLOR=midgrey]Set picture listing options · Configure slideshows[/COLOR]"
@@ -1378,7 +1406,7 @@ msgstr "[B]CONFIGURA IMPOSTAZIONI IMMAGINI[/B][CR][CR][COLOR=midgrey]Imposta opz
 
 msgctxt "#31404"
 msgid "[B]CONFIGURE WEATHER SETTINGS[/B][CR][CR][COLOR=midgrey]Set three cities to collect weather information[/COLOR]"
-msgstr "[B]CONFIGURA OPZIONI METEO[/B][CR][CR][COLOR=midgrey]Imposta tre citta' di cui visualizzare le informazioni meteo[/COLOR]"
+msgstr "[B]CONFIGURA OPZIONI METEO[/B][CR][CR][COLOR=midgrey]Imposta tre città di cui visualizzare le informazioni meteo[/COLOR]"
 
 msgctxt "#31405"
 msgid "[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR][COLOR=midgrey]Setup control of Kodi via UPnP and HTTP · Configure file sharing · Set internet access options[/COLOR]"
@@ -1390,7 +1418,7 @@ msgstr "[B]CONFIGURA IMPOSTAZIONI SISTEMA[/B][CR][CR][COLOR=midgrey]Imposta e ca
 
 msgctxt "#31407"
 msgid "[B]CONFIGURE SKIN SETTINGS[/B][CR][CR][COLOR=midgrey]Setup the Titan skin · Add and remove home menu items · Change skin backgrounds[/COLOR]"
-msgstr "[B]CONFIGURA IMPOSTAZIONI SKIN[/B][CR][CR][COLOR=midgrey]Configura la Skin Titan · Aggiungi e rimuovi elementi Menu' · Cambia Sfondi Skin[/COLOR]"
+msgstr "[B]CONFIGURA IMPOSTAZIONI SKIN[/B][CR][CR][COLOR=midgrey]Configura la Skin Titan · Aggiungi e rimuovi elementi Menù · Cambia Sfondi Skin[/COLOR]"
 
 msgctxt "#31408"
 msgid "[B]CONFIGURE ADD-ONS[/B][CR][CR][COLOR=midgrey]Manage your installed Add-ons · Browse for and install Add-ons from kodi.tv · Modify Add-on settings[/COLOR]"
@@ -1406,7 +1434,7 @@ msgstr "[B]SELEZIONA PROFILO UTENTE KODI[/B][CR][CR][COLOR=midgrey]per fare logi
 
 msgctxt "#31422"
 msgid "Panel details"
-msgstr "Pannello Dettagli"
+msgstr "Pannello Dett."
 
 msgctxt "#31423"
 msgid "Panel Wall"
@@ -1430,7 +1458,7 @@ msgstr "Poster Largo"
 
 msgctxt "#31428"
 msgid "Big Panel details"
-msgstr "Pannello Grande Dettagli"
+msgstr "Pannello Grande Dett."
 
 msgctxt "#31429"
 msgid "Showcase"
@@ -1446,7 +1474,7 @@ msgstr "Landscape Riga Singola"
 
 msgctxt "#31432"
 msgid "Landscape details"
-msgstr "Landscape Dettagli"
+msgstr "Landscape Dett."
 
 msgctxt "#31433"
 msgid "Extended"
@@ -1466,7 +1494,7 @@ msgstr "Pannello Quadrato"
 
 msgctxt "#31437"
 msgid "Panel Square details"
-msgstr "Pannello Quadrato Dettagli"
+msgstr "Pannello Quadrato Dett."
 
 msgctxt "#31438"
 msgid "Thumbs"
@@ -1474,7 +1502,7 @@ msgstr "Anteprime"
 
 msgctxt "#31439"
 msgid "Thumbs details"
-msgstr "Anteprime Dettagli"
+msgstr "Anteprime Dett."
 
 msgctxt "#31440"
 msgid "Poster Row"
@@ -1515,3 +1543,47 @@ msgstr "Usa percorso personalizzato per Artwork Musica"
 msgctxt "#31449"
 msgid "Interval (in seconds) for multi-image and random fanart backgrounds"
 msgstr "Intervallo (in secondi) per sfondi Fanart multi-immagine e casuali"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Lista Sottile"
+
+msgctxt "#31451"
+msgid "Use extended layout for weather"
+msgstr "Usa layout Esteso per il Meteo"
+
+msgctxt "#31452"
+msgid "Use extended layout"
+msgstr "Usa layout Esteso"
+
+msgctxt "#31453"
+msgid "Use slim list"
+msgstr "Usa Lista Sottile"
+
+msgctxt "#31454"
+msgid "Use TV-show banners"
+msgstr "Usa banner Serie TV"
+
+msgctxt "#31455"
+msgid "Textcolor for footer:"
+msgstr "Colore Testo per barra inferiore:"
+
+msgctxt "#31456"
+msgid "Background overlay opacity"
+msgstr "Opacità sfumatura Sfondo"
+
+msgctxt "#31457"
+msgid "Use custom image for background overlay"
+msgstr "Usa immagine personalizzata per sfumatura Sfondo"
+
+msgctxt "#31458"
+msgid "Textcolor for buttons in the skin"
+msgstr "Colore Testo per i pulsanti nella Skin"
+
+msgctxt "#31459"
+msgid "Focused textcolor for buttons in the skin"
+msgstr "Colore Testo Evidenziato per i pulsanti nella Skin"
+
+msgctxt "#31460"
+msgid "General textcolor"
+msgstr "Colore Testo Generico"

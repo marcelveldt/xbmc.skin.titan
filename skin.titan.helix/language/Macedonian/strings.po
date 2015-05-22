@@ -95,3 +95,7 @@ msgstr "Превземање на прогноза..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Затвори"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Предмеморирање..."

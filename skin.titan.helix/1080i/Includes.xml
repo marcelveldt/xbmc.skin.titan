@@ -1042,40 +1042,42 @@
     <include name="DialogListNF">
         <!--Dialog List NF-->
         <font>Reg28</font>
-        <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-        
+        <textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <disabledcolor>lightgrey</disabledcolor>
     </include>
 	<include name="DialogListNF_Alt">
         <!--Dialog List NF-->
         <font>Reg28</font>
-        <textcolor>$VAR[ThemeFontColorDarkGrey]</textcolor>
-        
+        <textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <disabledcolor>lightgrey</disabledcolor>
     </include>
 	
     <include name="DialogListFO">
         <!--Dialog List FO-->
         <font>Reg28</font>
-        <textcolor>black</textcolor>
-        <selectedcolor>eewhite</selectedcolor>
+        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+        <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
     </include>
 	<include name="DialogListFO_Alt">
         <!--Dialog List FO-->
         <font>Reg28</font>
-        <textcolor>black</textcolor>
-        <selectedcolor>black</selectedcolor>
+        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+        <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
     </include>
     <include name="DialogLabel">
         <!--Dialog Label-->
         <font>Reg28</font>
-        <textcolor>black</textcolor>
-        <disabledcolor>FF3e3e3e</disabledcolor>
+        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        <disabledcolor>lightgrey</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
     </include>
     <include name="DialogLabelAlt">
         <!--Dialog Label-->
         <font>Reg28</font>
-        <textcolor>FFfffeff</textcolor>
-        <disabledcolor>FFfffeff</disabledcolor>
+        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        <disabledcolor>lightgrey</disabledcolor>
         <shadowcolor>20FFFFFF</shadowcolor>
     </include>
 	

@@ -20,7 +20,7 @@
 				<control type="image">
                     <posx>590</posx>
                     <posy>170</posy>
-                    <width>700</width>
+                    <width>710</width>
                     <height>750</height>
                     <texture border="5">diffuse/panel.png</texture>
 					<animation effect="fade" end="70" time="0" condition="true">Conditional</animation>
@@ -29,7 +29,7 @@
 				<control type="image">
                     <posx>590</posx>
                     <posy>170</posy>
-                    <width>700</width>
+                    <width>710</width>
                     <height>750</height>
 					<bordersize>10</bordersize>
                     <texture border="5">diffuse/panel.png</texture>
@@ -48,7 +48,7 @@
 					<description>Heading</description>
 					<left>590</left>
 					<posy>180</posy>
-					<width>700</width>
+					<width>710</width>
 					<height>100</height>
 					<label></label>
 					<include>DialogHeader_Alt</include>
@@ -122,7 +122,7 @@
                 <ondown>8000</ondown>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
-                <itemlayout height="60">
+                <itemlayout height="60" width="610">
                     <control type="image">
                         <posx>0</posx>
                         <posy>1</posy>
@@ -170,7 +170,7 @@
                             <scroll>false</scroll>
                         </control>
                         <control type="label">
-                            <posx>624</posx>
+                            <right>5</right>
                             <posy>0</posy>
                             <width>524</width>
                             <height>60</height>
@@ -182,16 +182,17 @@
                             <visible>!IsEmpty(ListItem.Label2)</visible>
                         </control>
                         <control type="image">
-                            <posx>584</posx>
-                            <posy>0</posy>
-                            <width>60</width>
-                            <height>60</height>
-                            <texture>dialogs/select/selected.png</texture>
+                            <right>5</right>
+                            <posy>10</posy>
+                            <width>40</width>
+                            <height>40</height>
+                            <texture>common/checkbox.png</texture>
+							<colordiffuse>$INFO[Skin.String(ButtonTextColor)]</colordiffuse>
                             <visible>ListItem.IsSelected</visible>
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="60">
+                <focusedlayout height="60" width="610">
                     <control type="group">
                         <visible>!Control.HasFocus(3)</visible>
                         <animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout" condition="![Container(3).Scrolling | Container(3).OnScrollNext | Container(3).OnScrollPrevious]">Visible</animation>
@@ -217,7 +218,7 @@
                                 <scroll>false</scroll>
                             </control>
                             <control type="label">
-                                <posx>624</posx>
+                                <right>5</right>
                                 <posy>0</posy>
                                 <width>604</width>
                                 <height>60</height>
@@ -243,7 +244,7 @@
                                 <scroll>false</scroll>
                             </control>
                             <control type="label">
-                                <posx>624</posx>
+                                <right>5</right>
                                 <posy>0</posy>
                                 <width>524</width>
                                 <height>60</height>
@@ -255,13 +256,14 @@
                                 <visible>!IsEmpty(ListItem.Label2)</visible>
                             </control>
                             <control type="image">
-                                <posx>584</posx>
-                                <posy>0</posy>
-                                <width>60</width>
-                                <height>60</height>
-                                <texture>dialogs/select/selected.png</texture>
-                                <visible>ListItem.IsSelected</visible>
-                            </control>
+								<right>5</right>
+								<posy>10</posy>
+								<width>40</width>
+								<height>40</height>
+								<texture>common/checkbox.png</texture>
+								<colordiffuse>$INFO[Skin.String(ButtonFocusTextColor)]</colordiffuse>
+								<visible>ListItem.IsSelected</visible>
+							</control>
                         </control>
                     </control>
                     <control type="group">
@@ -321,13 +323,14 @@
                                 <visible>!IsEmpty(ListItem.Label2)</visible>
                             </control>
                             <control type="image">
-                                <posx>584</posx>
-                                <posy>0</posy>
-                                <width>60</width>
-                                <height>60</height>
-                                <texture>dialogs/select/selected.png</texture>
-                                <visible>ListItem.IsSelected</visible>
-                            </control>
+								<right>5</right>
+								<posy>10</posy>
+								<width>40</width>
+								<height>40</height>
+								<texture>common/checkbox.png</texture>
+								<colordiffuse>$INFO[Skin.String(ButtonFocusTextColor)]</colordiffuse>
+								<visible>ListItem.IsSelected</visible>
+							</control>
                         </control>
                     </control>
                 </focusedlayout>

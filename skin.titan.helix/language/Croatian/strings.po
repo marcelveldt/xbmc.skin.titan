@@ -609,8 +609,8 @@ msgid "Custom Image:"
 msgstr "Prilagođena slika:"
 
 msgctxt "#31151"
-msgid "Background overlay"
-msgstr "Pokrov pozadine"
+msgid "Background overlay color"
+msgstr "Boja pokrova pozadine"
 
 msgctxt "#31152"
 msgid "Use default colors"
@@ -1356,6 +1356,26 @@ msgctxt "#31338"
 msgid "Show video preview in PVR section"
 msgstr "Prikaži video pregled u PVR odjeljku"
 
+msgctxt "#31339"
+msgid "Enable smart shortcuts for the Emby addon"
+msgstr "Omogući pametne prečice za Emby dodatak"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Međupohranjivanje..."
+
+msgctxt "#31341"
+msgid "Enable artist slideshow while playing music"
+msgstr "Omogući slikovnu prezentaciju izvođača pri reprodukciji glazbe"
+
+msgctxt "#31342"
+msgid "Random pictures"
+msgstr "Nasumične slike"
+
+msgctxt "#31343"
+msgid "Use custom path for random photos background"
+msgstr "Koristi prilagođenu putanju za pozadinu s nasumičnim slikama"
+
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."
 msgstr "Presvlaka ima dvije različite teme za promijenu izgleda i osjećaja: [CR][CR][B]Klasična:[/B] Originalni izgled i osjećaj MediaPortal presvlake. [CR][B]Zadani/Moderni:[/B] Evolucija presvlake u moderniji pristup od strane stvaratelja presvlake. [CR] [CR]Odlučite sami koja vam se tema više sviđa. [CR]Kako biste prebacili temu, pritisnite tipku u lijevom izborniku ili idite u postavke Kodi prikaza."
@@ -1515,3 +1535,7 @@ msgstr "Koristi prilagođenu putanju za glazbene ilustracije"
 msgctxt "#31449"
 msgid "Interval (in seconds) for multi-image and random fanart backgrounds"
 msgstr "Interval (u sekundama) za višestruke slikovne pozadine i nasumične fanart pozadine"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Uzak popis"

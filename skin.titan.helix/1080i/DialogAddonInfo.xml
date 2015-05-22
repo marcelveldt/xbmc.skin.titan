@@ -180,6 +180,17 @@
                 <defaultcontrol>5</defaultcontrol>
 				<onup>50</onup>
 				<width>1220</width>
+				
+				<control type="button" id="12">
+                  <!--Launch Addon button-->
+                    <width>300</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>518</label>
+					<include>DialogButtonOther</include>
+					<visible>Control.IsEnabled(12)</visible>
+                </control>
+				
 				<control type="button" id="8">
                   <!--Update Addon button-->
                     <width>300</width>
@@ -229,15 +240,7 @@
 					<visible>Control.IsEnabled(10)</visible>
                 </control>
 				
-				<control type="button" id="12">
-                  <!--Launch Addon button-->
-                    <width>300</width>
-                    <height>80</height>
-                    <align>center</align>
-                    <label>518</label>
-					<include>DialogButtonOther</include>
-					<visible>Control.IsEnabled(12)</visible>
-                </control>
+				
             </control>
         </control>
     </controls>

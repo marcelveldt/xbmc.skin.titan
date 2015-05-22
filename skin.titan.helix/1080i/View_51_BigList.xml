@@ -382,7 +382,7 @@
 					<posx>1033</posx>
 					<posy>245</posy>
 					<height>470</height>
-					<width>830</width>
+					<width>825</width>
 					<texture background="true" diffuse="home/home_matte2.png">$VAR[BannerLandscapeImage]</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<visible>![VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)]</visible>
@@ -394,7 +394,7 @@
 					<posx>1033</posx>
 					<posy>245</posy>
 					<height>470</height>
-					<width>830</width>
+					<width>825</width>
 					<visible>VideoPlayer.Content(livetv) + Skin.HasSetting(PVRShowPreview)</visible>
 				</control>
 				
@@ -402,7 +402,7 @@
 					<posx>1030</posx>
 					<posy>715</posy>
 					<height>225</height>
-					<width>830</width>
+					<width>825</width>
 					<label>$VAR[Plots]</label>
 					<font>Light28</font>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>

@@ -1597,3 +1597,6 @@ msgctxt "#31460"
 msgid "General textcolor"
 msgstr ""
 
+msgctxt "#31461"
+msgid "Logos"
+msgstr ""

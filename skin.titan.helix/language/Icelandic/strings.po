@@ -179,3 +179,15 @@ msgstr "Sýn:"
 msgctxt "#31308"
 msgid "Close"
 msgstr "Loka"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Biðminni..."
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "Lárétt"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Mjór listi"

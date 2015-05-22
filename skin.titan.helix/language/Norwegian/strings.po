@@ -187,3 +187,11 @@ msgstr "Henter værvarsel..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Lukk"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Mellomlagrer..."
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "Landskap"

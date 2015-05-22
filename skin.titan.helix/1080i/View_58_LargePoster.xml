@@ -51,7 +51,7 @@
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>1280</width>
-					<height>115</height>
+					<height>123</height>
 					<label>$VAR[Plots]</label>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
@@ -63,7 +63,7 @@
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>1100</width>
-					<height>115</height>
+					<height>123</height>
 					<label>$VAR[Plots]</label>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>

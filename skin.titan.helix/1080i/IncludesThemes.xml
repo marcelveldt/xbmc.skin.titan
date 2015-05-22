@@ -1787,8 +1787,8 @@
                     <height>98</height>
                     <label>209</label>
                     <font>-</font>
-                    <texturefocus>osd/OSDBookmarksFO.png</texturefocus>
-                    <texturenofocus>osd/OSDBookmarksNF.png</texturenofocus>
+                    <texturefocus>osd/osdbookmarksfo.png</texturefocus>
+                    <texturenofocus>osd/osdbookmarksnf.png</texturenofocus>
                     <onclick>ActivateWindow(VideoBookmarks)</onclick>
 					<visible>Player.HasVideo</visible>
                 </control>

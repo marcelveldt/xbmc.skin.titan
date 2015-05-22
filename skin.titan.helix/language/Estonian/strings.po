@@ -147,3 +147,15 @@ msgstr "Ilmateate andmete hankimine..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Sulge"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Puhvrisse laadimine..."
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "Horisontaalpaigutus"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Sale nimekiri"

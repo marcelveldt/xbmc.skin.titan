@@ -75,3 +75,7 @@ msgstr "Moguće padavine"
 msgctxt "#31291"
 msgid "Fetching forecast info..."
 msgstr "Dobavljanje informacija o prognozi..."
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Predmemorisanje..."

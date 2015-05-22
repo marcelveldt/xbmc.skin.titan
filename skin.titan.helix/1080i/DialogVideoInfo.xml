@@ -47,41 +47,26 @@
 			<visible>!Window.IsVisible(FileBrowser)</visible>
 
 			<include>animation_window_open_close</include>
-			<!-- panel background -->
-			<control type="image">
-				<posx>-80</posx>
-				<width>2260</width>
-				<posy>160</posy>
-				<height>800</height>
-				<texture>views/view_50_list_panel1.png</texture>
-				<visible>skin.hastheme(classic)</visible>
-				<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),80)">Conditional</animation>
-				<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),60)">Conditional</animation>
-				<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),40)">Conditional</animation>
-				<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),20)">Conditional</animation>
-				<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),0)">Conditional</animation>
-			</control>
 			
 			<!-- Background Panel-->
 			<control type="image">
-				<posx>0</posx>
+				<posx>50</posx>
 				<posy>210</posy>
-				<width>1920</width>
+				<width>1820</width>
 				<height>680</height>
-				<texture border="5">diffuse/panel.png</texture>
+				<texture border="15">diffuse/bgpanel.png</texture>
 				<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),80)">Conditional</animation>
 				<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),60)">Conditional</animation>
 				<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),40)">Conditional</animation>
 				<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),20)">Conditional</animation>
 				<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),0)">Conditional</animation>
 				<colordiffuse>$INFO[Skin.String(PanelColor)]</colordiffuse>
-				<visible>!skin.hastheme(classic)</visible>
 			</control>
 			
 			<control type="image">
-				<posx>1300</posx>
+				<right>50</right>
 				<posy>210</posy>
-				<width>650</width>
+				<width>480</width>
 				<height>680</height>
 				<texture border="5">diffuse/panel.png</texture>
 				<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),80)">Conditional</animation>
@@ -347,7 +332,7 @@
 					
 					<control type="image">
 						<!--cdart image-->
-						<right>60</right>
+						<right>80</right>
 						<posy>246</posy>
 						<width>500</width>
 						<height>620</height>
@@ -361,7 +346,7 @@
 					</control>
 					<control type="image">
 						<!--poster-->
-						<right>60</right>
+						<right>80</right>
 						<posy>246</posy>
 						<width>500</width>
 						<height>620</height>
@@ -374,7 +359,7 @@
 						<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
 						<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
 						<animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-						<posx>60</posx>
+						<posx>80</posx>
 						<posy>240</posy>
 						<width>1200</width>
 						<height>700</height>
@@ -405,7 +390,7 @@
 							<visible>!IsEmpty(Window(Home).Property(NextAired.NextNumber))</visible>
 						</control>
 						<control type="image">
-							<width>1150</width>
+							<width>1120</width>
 							<height>2</height>
 							<posy>10</posy>
 							<texture>colors/color_lightgrey.png</texture>
@@ -509,7 +494,7 @@
 							<control type="label">
 								<posx>760</posx>
 								<posy>0</posy>
-								<width>400</width>
+								<width>370</width>
 								<font>Reg28</font>
 								<align>left</align>
 								<label>$INFO[ListItem.Writer]</label>
@@ -565,7 +550,7 @@
 							<visible>true</visible>
 							<control type="image" id="800011">
 								<colordiffuse>white</colordiffuse>
-								<right>-40</right>
+								<right>-10</right>
 								<top>0</top>
 								<width>161</width>
 								<height>109</height>

@@ -111,3 +111,7 @@ msgstr "Gaan haal voorspelling info..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Maak toe"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Buffer..."

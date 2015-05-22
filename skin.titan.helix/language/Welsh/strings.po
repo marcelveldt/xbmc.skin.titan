@@ -99,3 +99,7 @@ msgstr "Estyn gwybodaeth rhagolygon..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Cau"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Byffro..."

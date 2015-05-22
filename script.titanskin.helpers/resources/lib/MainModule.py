@@ -21,11 +21,13 @@ import xml.etree.cElementTree as ET
 
 doDebugLog = False
 
-__language__ = xbmc.getLocalizedString
 
 win = xbmcgui.Window( 10000 )
 addon = xbmcaddon.Addon(id='script.titanskin.helpers')
 addondir = xbmc.translatePath(addon.getAddonInfo('profile'))
+
+__language__ = xbmc.getLocalizedString
+__cwd__ = addon.getAddonInfo('path')
 
 def logMsg(msg, level = 1):
     if doDebugLog == True:
@@ -883,3 +885,46 @@ def getFavourites():
                 xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=path, listitem=li, isFolder=False)
     except: pass        
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
+    
+    
+def selectView():
+    import Dialogs as dialogs
+    
+    #get current content type
+    contenttype = "other"
+    if xbmc.getCondVisibility("Container.Content(episodes)"):
+        contenttype = "episodes"
+    elif xbmc.getCondVisibility("Container.Content(movies)"):
+        contenttype = "movies"
+    elif xbmc.getCondVisibility("Container.Content(sets)"):
+        contenttype = "sets"
+    elif xbmc.getCondVisibility("Container.Content(tvshows)"):
+        contenttype = "tvshows"
+    elif xbmc.getCondVisibility("Container.Content(seasons)"):
+        contenttype = "seasons"
+    elif xbmc.getCondVisibility("Container.Content(musicvideos)"):
+        contenttype = "musicvideos"
+    
+    allViews = []
+    views_file = xbmc.translatePath( 'special://skin/extras/views.xml' ).decode("utf-8")
+    if xbmcvfs.exists( views_file ):
+        doc = parse( views_file )
+        listing = doc.documentElement.getElementsByTagName( 'view' )
+        for count, view in enumerate(listing):
+            label = __language__(int(view.attributes[ 'languageid' ].nodeValue))
+            id = view.attributes[ 'value' ].nodeValue
+            type = view.attributes[ 'type' ].nodeValue
+            if type == "all" or contenttype in type:
+                image = "special://skin/extras/viewthumbs/%s.jpg" %id
+                listitem = xbmcgui.ListItem(label=label, iconImage=image)
+                listitem.setProperty("id",id)
+                listitem.setProperty("icon",image)
+                allViews.append(listitem)
+    w = dialogs.DialogSelect( "DialogSelect.xml", __cwd__, listing=allViews, windowtitle="select view",multiselect=True )
+    w.doModal()
+    selectedItem = w.result
+    if selectedItem:
+        label = allViews[selectedItem].getLabel()
+        id = allViews[selectedItem].getProperty("id")
+        xbmc.executebuiltin("Container.SetViewMode(%s)" %id)
+    del w

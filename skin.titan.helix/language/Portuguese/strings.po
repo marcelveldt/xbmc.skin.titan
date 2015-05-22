@@ -604,10 +604,6 @@ msgctxt "#31150"
 msgid "Custom Image:"
 msgstr "Imagem personalizada:"
 
-msgctxt "#31151"
-msgid "Background overlay"
-msgstr "Sobreposição do plano de fundo"
-
 msgctxt "#31152"
 msgid "Use default colors"
 msgstr "Usar cores padrão"
@@ -772,6 +768,10 @@ msgctxt "#31308"
 msgid "Close"
 msgstr "Fechar"
 
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Colocando em buffer..."
+
 msgctxt "#31424"
 msgid "Banner list"
 msgstr "Lista de faixas"
@@ -779,3 +779,11 @@ msgstr "Lista de faixas"
 msgctxt "#31429"
 msgid "Showcase"
 msgstr "Mostruário"
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "Paisagem"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Lista Estreita"

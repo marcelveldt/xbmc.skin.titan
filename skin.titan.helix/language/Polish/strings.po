@@ -609,8 +609,8 @@ msgid "Custom Image:"
 msgstr "Niestandardowy obraz:"
 
 msgctxt "#31151"
-msgid "Background overlay"
-msgstr "Przezroczysta nakładka na tło"
+msgid "Background overlay color"
+msgstr "Kolor tła nakładki"
 
 msgctxt "#31152"
 msgid "Use default colors"
@@ -1356,6 +1356,34 @@ msgctxt "#31338"
 msgid "Show video preview in PVR section"
 msgstr "Pokazuj podgląd programu w na liście kanałów"
 
+msgctxt "#31339"
+msgid "Enable smart shortcuts for the Emby addon"
+msgstr "Aktywuj inteligentne skóry dla dodatku Emby"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Buforowanie..."
+
+msgctxt "#31341"
+msgid "Enable artist slideshow while playing music"
+msgstr "Wyświetlaj pokaz slajdów obrazów wykonawcy podczas odtwarzania"
+
+msgctxt "#31342"
+msgid "Random pictures"
+msgstr "Obrazy losowe"
+
+msgctxt "#31343"
+msgid "Use custom path for random photos background"
+msgstr "Używaj niestandardowej ścieżki folderu dla obrazów tła"
+
+msgctxt "#31344"
+msgid "Always show the scrollbars (do not hide them)"
+msgstr "Pokazuj paski przewijania (nie ukrywaj ich)"
+
+msgctxt "#31345"
+msgid "Only display the header on home"
+msgstr "Wyświetlaj nagłówek tylko na ekranie startowym"
+
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."
 msgstr "Titan ma dwa różne motywy zmieniające wygląd i działanie skóry:[CR][CR][B]Klasyczny:[/B] To oryginalny wygląd i działanie skóry MediaPortal.[CR][B]Nowoczesny:[/B] To ewolucja przez nowoczesne podejście do projektowania przez twórcę tej skóry [CR] [CR]Możesz zdecydować sam, który motyw podoba Ci się najbardziej.[CR]Aby zmienić motyw, naciśnij przycisk menu po lewej stronie lub przejdź do ustawień wyglądu Kodi."
@@ -1515,3 +1543,47 @@ msgstr "Używaj niestandardowej ścieżki folderu dla grafik muzyki"
 msgctxt "#31449"
 msgid "Interval (in seconds) for multi-image and random fanart backgrounds"
 msgstr "Częstotliwość zmiany obrazów tła (w sekundach)"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Lista wąska"
+
+msgctxt "#31451"
+msgid "Use extended layout for weather"
+msgstr "Używaj rozszerzonej kompozycji dla pogody"
+
+msgctxt "#31452"
+msgid "Use extended layout"
+msgstr "Używaj rozszerzonej kompozycji"
+
+msgctxt "#31453"
+msgid "Use slim list"
+msgstr "Używaj wąskiej listy"
+
+msgctxt "#31454"
+msgid "Use TV-show banners"
+msgstr "Używaj banerów seriali"
+
+msgctxt "#31455"
+msgid "Textcolor for footer:"
+msgstr "Kolor tekstu stopki:"
+
+msgctxt "#31456"
+msgid "Background overlay opacity"
+msgstr "Nieprzezroczystość tła nakładki"
+
+msgctxt "#31457"
+msgid "Use custom image for background overlay"
+msgstr "Używaj niestandardowego obrazu nadkładki"
+
+msgctxt "#31458"
+msgid "Textcolor for buttons in the skin"
+msgstr "Kolor tekstu przycisków"
+
+msgctxt "#31459"
+msgid "Focused textcolor for buttons in the skin"
+msgstr "Kolor tekstu zaznaczonych przycisków"
+
+msgctxt "#31460"
+msgid "General textcolor"
+msgstr "Ogólny kolor tekstu"

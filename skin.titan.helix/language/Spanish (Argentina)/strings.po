@@ -123,3 +123,7 @@ msgstr "Obteniendo información meteorológica..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Cerrar"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Cargando..."

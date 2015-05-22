@@ -99,3 +99,7 @@ msgstr "முன் அறிவிப்பு தகவல்களை சே
 msgctxt "#31308"
 msgid "Close"
 msgstr "மூடுக"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "இடையகப்படுத்தல்..."

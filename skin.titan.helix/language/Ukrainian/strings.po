@@ -132,6 +132,10 @@ msgctxt "#31308"
 msgid "Close"
 msgstr "Закрити"
 
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Буферизація…"
+
 msgctxt "#31426"
 msgid "Big Panel"
 msgstr "Велика панель"

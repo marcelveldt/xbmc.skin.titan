@@ -267,3 +267,15 @@ msgstr "닫기"
 msgctxt "#31334"
 msgid "Last updated"
 msgstr "마지막 업데이트"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "버퍼링..."
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "가로"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "좁은 목록"

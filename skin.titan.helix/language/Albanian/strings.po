@@ -87,3 +87,7 @@ msgstr "Duke tërhequr parashikimin..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Mbyll"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Buffering..."

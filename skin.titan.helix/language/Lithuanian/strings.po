@@ -609,8 +609,8 @@ msgid "Custom Image:"
 msgstr "Savas atvaizdas:"
 
 msgctxt "#31151"
-msgid "Background overlay"
-msgstr "Fono perdanga"
+msgid "Background overlay color"
+msgstr "Fono perdangos spalva"
 
 msgctxt "#31152"
 msgid "Use default colors"
@@ -1356,6 +1356,34 @@ msgctxt "#31338"
 msgid "Show video preview in PVR section"
 msgstr "Rodyti vaizdo peržiūrą PVR skyriuje"
 
+msgctxt "#31339"
+msgid "Enable smart shortcuts for the Emby addon"
+msgstr "Įjungti išmaniąsias nuorodas, skirtas Emby priedui"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Buferizacija..."
+
+msgctxt "#31341"
+msgid "Enable artist slideshow while playing music"
+msgstr "Įjungti atlikėjo skaidrių peržiūrą muzikos atkūrimo metu"
+
+msgctxt "#31342"
+msgid "Random pictures"
+msgstr "Atsitiktiniai paveikslėliai"
+
+msgctxt "#31343"
+msgid "Use custom path for random photos background"
+msgstr "Naudoti savą atsitiktinių nuotraukų fono kelią"
+
+msgctxt "#31344"
+msgid "Always show the scrollbars (do not hide them)"
+msgstr "Visada rodyti slinkimo juostas (neslėpti jų)"
+
+msgctxt "#31345"
+msgid "Only display the header on home"
+msgstr "Antraštę rodyti tik pradiniame ekrane"
+
 msgctxt "#31399"
 msgid "The skin has two different themes to change the look and feel: [CR][CR][B]Classic:[/B] Is the original look and feel of the MediaPortal skin. [CR][B]Default/Modern:[/B] Is the evolution of the skin to a more modern approach by the creator of this skin. [CR] [CR]You can decide for yourself which theme you like best. [CR]To switch the theme press the button in the left menu or go to the appearance settings from Kodi."
 msgstr "Ši teminė išvaizda turi dvi skirtingas temas, kad būtų galima išvaizdą ir elgseną: [CR][CR][B]Klasikinė:[/B] Originali MediaPortal programos išvaizda ir elgsena. [CR][B]Numatytoji/Moderni:[/B] Modernus šios teminės išvaizdos autoriaus požiūris į klasikinę teminę išvaizdą. [CR] [CR]Galite pats nuspręsti, kuri tema jums labiau patinka. [CR]Norėdami pakeisti temą, paspauskite mygtuką kairiajame meniu arba eikite į Kodi išvaizdos nustatymus."
@@ -1515,3 +1543,47 @@ msgstr "Naudoti savą kelią muzikos iliustracijoms"
 msgctxt "#31449"
 msgid "Interval (in seconds) for multi-image and random fanart backgrounds"
 msgstr "Intervalas (sekundėmis) kelių atvaizdų ir atsitiktinio Fanart fonams"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Siauras sąrašas"
+
+msgctxt "#31451"
+msgid "Use extended layout for weather"
+msgstr "Naudoti išplėstinį išdėstymą orams"
+
+msgctxt "#31452"
+msgid "Use extended layout"
+msgstr "Naudoti išplėstinį išdėstymą"
+
+msgctxt "#31453"
+msgid "Use slim list"
+msgstr "Naudoti siaurą sąrašą"
+
+msgctxt "#31454"
+msgid "Use TV-show banners"
+msgstr "Naudoti TV laidų reklamjuostes"
+
+msgctxt "#31455"
+msgid "Textcolor for footer:"
+msgstr "Poraštės teksto spalva:"
+
+msgctxt "#31456"
+msgid "Background overlay opacity"
+msgstr "Fono perdangos skaidrumas"
+
+msgctxt "#31457"
+msgid "Use custom image for background overlay"
+msgstr "Naudoti savą fono perdangos atvaizdą"
+
+msgctxt "#31458"
+msgid "Textcolor for buttons in the skin"
+msgstr "Teminės išvaizdos mygtukų teksto spalva:"
+
+msgctxt "#31459"
+msgid "Focused textcolor for buttons in the skin"
+msgstr "Teminės išvaizdos pasirinktų mygtukų teksto spalva:"
+
+msgctxt "#31460"
+msgid "General textcolor"
+msgstr "Pagrindinė teksto spalva"

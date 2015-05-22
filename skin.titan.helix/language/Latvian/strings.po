@@ -107,3 +107,7 @@ msgstr "Uzmeklēju laikaprognozi..."
 msgctxt "#31308"
 msgid "Close"
 msgstr "Aizvērt"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Buferoju..."

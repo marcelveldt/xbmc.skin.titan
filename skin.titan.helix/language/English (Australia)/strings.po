@@ -232,6 +232,18 @@ msgctxt "#31308"
 msgid "Close"
 msgstr "Close"
 
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Buffering..."
+
+msgctxt "#31430"
+msgid "Landscape"
+msgstr "Landscape"
+
 msgctxt "#31442"
 msgid "Low List"
 msgstr "Low List"
+
+msgctxt "#31450"
+msgid "Slim List"
+msgstr "Slim List"

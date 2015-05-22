@@ -79,3 +79,7 @@ msgstr "Euri aukera"
 msgctxt "#31291"
 msgid "Fetching forecast info..."
 msgstr "Iragarpen argibideak eskuratzen"
+
+msgctxt "#31340"
+msgid "Buffering..."
+msgstr "Bufferreratzen..."

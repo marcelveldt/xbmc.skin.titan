@@ -2366,7 +2366,6 @@
 	<include name="mediaflagsnew">
         <control type="grouplist">
 			<orientation>horizontal</orientation>
-			<visible>!ListItem.IsFolder</visible>
 			
 			<!--Video Resolution-->
 			<control type="group">

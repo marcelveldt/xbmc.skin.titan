@@ -62,6 +62,8 @@ elif action == "DEFAULTSETTINGS":
     MainModule.defaultSettings()
 elif action == "MUSICSEARCH":
     MainModule.musicSearch()
+elif action == "SELECTVIEW":
+    MainModule.selectView()
 elif action == "VIDEOSEARCH":
     #MainModule.videoSearch()
     searchDialog = SearchDialog("CustomSearch.xml", __cwd__, "default", "1080i")
