@@ -70,7 +70,12 @@ class ColorThemes(xbmcgui.WindowXMLDialog):
             text_file.close()
             
             #refresh listing
-            self.refreshListing()
+            list = self.refreshListing()
+            if list != 0:
+                xbmc.executebuiltin("Control.SetFocus(6)")
+            else:
+                xbmc.executebuiltin("Control.SetFocus(5)")
+
         
     def loadColorTheme(self,file):
         f = open(file,"r")
@@ -119,6 +124,19 @@ class ColorThemes(xbmcgui.WindowXMLDialog):
         
         xbmcvfs.rename(os.path.join(userThemesPath,themeNameOld + ".jpg"), os.path.join(userThemesPath,themeNameNew + ".jpg"))
         xbmcvfs.rename(os.path.join(userThemesPath,themeNameOld + ".theme"), os.path.join(userThemesPath,themeNameNew + ".theme"))
+        self.refreshListing()
+    
+    def setIconForColorTheme(self,file):
+        file = file.split(os.sep)[-1]
+        themeName = file.replace(".theme","")
+        
+        dialog = xbmcgui.Dialog()
+        custom_thumbnail = dialog.browse( 2 , xbmc.getLocalizedString(1030), 'files')
+        
+        if custom_thumbnail:
+            xbmcvfs.delete(os.path.join(userThemesPath,themeName + ".jpg"))
+            xbmcvfs.copy(custom_thumbnail, os.path.join(userThemesPath, themeName + ".jpg"))
+
         self.refreshListing()
     
     def refreshListing(self):
@@ -202,6 +220,7 @@ class ColorThemes(xbmcgui.WindowXMLDialog):
             if themeType == "user":
                 menuOptions.append('Remove this theme')
                 menuOptions.append('Rename this theme')
+                menuOptions.append('Set Icon')
             ret = dialog.select('', menuOptions)
             if ret == 0:
                 self.loadColorTheme(themeFile)
@@ -209,13 +228,8 @@ class ColorThemes(xbmcgui.WindowXMLDialog):
                 self.removeColorTheme(themeFile)
             elif ret == 2:
                 self.renameColorTheme(themeFile)
-                
-
-        if action.getId() == ACTION_SELECT_ITEM:
-            item = self.themesList.getSelectedItem()
-            themeFile = item.getProperty("filename")
-            self.loadColorTheme(themeFile)
-
+            elif ret == 3:
+                self.setIconForColorTheme(themeFile)    
 
     def closeDialog(self):
         #self.close() ##crashes kodi ?
@@ -225,4 +239,10 @@ class ColorThemes(xbmcgui.WindowXMLDialog):
         
         if(controlID == 5):       
             self.createColorTheme()
+        
+        if(controlID == 6):
+            item = self.themesList.getSelectedItem()
+            themeFile = item.getProperty("filename")
+            self.loadColorTheme(themeFile)
+
 

@@ -1255,7 +1255,6 @@
 					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 					<onclick>Skin.Reset(WidgetDefaults)</onclick>
 					<label>$ADDON[script.skinshortcuts 32028]</label>
-					
 					<font>Reg28</font>
 				</control>
 			</control>

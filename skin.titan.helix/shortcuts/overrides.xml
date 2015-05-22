@@ -726,6 +726,7 @@
 	<background label="31298">special://skin/extras/backgrounds/systeminfo.jpg</background>
 	<background label="31298">special://skin/extras/backgrounds/videos.jpg</background>
 	<backgroundBrowse default="protocol://">True</backgroundBrowse>
+
 	
 	<override action="submenu">
 		<condition>true</condition>

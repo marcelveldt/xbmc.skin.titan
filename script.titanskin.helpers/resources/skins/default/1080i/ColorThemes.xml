@@ -26,14 +26,14 @@
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>1250</width>
-				<height>481</height>
+				<height>470</height>
 				<texture border="5">dialogs/default/inner.png</texture>
 			</control>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>625</width>
-				<height>481</height>
+				<height>470</height>
 				<texture border="5">dialogs/default/inner-dark.png</texture>
 			</control>
 			<control type="image">
@@ -186,14 +186,13 @@
 			</control>
 			<control type="scrollbar" id="61">
 				<visible>Control.IsVisible(6)</visible>
-				<posx>1040</posx>
-				<posy>300</posy>
+				<posx>630</posx>
+				<posy>10</posy>
 				<width>25</width>
 				<height>480</height>
 				<onup>60</onup>
 				<ondown>60</ondown>
-				<onleft>6</onleft>
-				<onright>5</onright>
+				<onright>6</onright>
 				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(61) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling  | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(61) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling  | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
 			</control>	
@@ -202,11 +201,12 @@
 				<posy>510</posy>
 				<description>Create Theme</description>
 				<label>Create Theme</label>
-				<width>1230</width>
-				<align>left</align>
+				<width>1250</width>
+				<align>center</align>
 				<height>50</height>
 				<onup>6</onup>
 				<onleft>15</onleft>
+				<font>reg30</font>
 			</control>
 
 		</control>
