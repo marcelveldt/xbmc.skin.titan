@@ -55,7 +55,7 @@
 		</control>
 		
         <!--List 100 Left Area-->
-        <control type="list" id="100">
+        <control type="grouplist" id="100">
             <description>List</description>
             <posx>90</posx>
             <posy>170</posy>
@@ -67,77 +67,73 @@
             <onright>1000</onright>
             <scrolltime>0</scrolltime>
             <orientation>vertical</orientation>
-            <pagecontrol>-</pagecontrol>
-            <itemlayout height="50" width="440">
-                <control type="image">
-                    <width>440</width>
-                    <height>47</height>
-				 <texture diffuse="diffuse/panel.png" border="5" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_90%trans_white.png</texture>
-                </control>
-                <control type="label">
-                    <posx>50</posx>
-                    <width>390</width>
-                    <height>47</height>
-                    <font>Reg28</font>
-                    <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                </control>
-            </itemlayout>
-            <focusedlayout height="50" width="440">
-                <control type="image">
-                    <width>440</width>
-                    <height>47</height>
-					<texture diffuse="diffuse/panel.png" border="5" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_white.png</texture>
-                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posx>50</posx>
-                    <width>390</width>
-                    <height>47</height>
-                    <font>Reg28</font>
-                    <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                </control>
-            </focusedlayout>
-            <content>
-				<!--home menu layout-->
-                <item id="12">
-                    <label>31115</label>
-                    <onclick>noop</onclick>
-                </item>
-                <!--tile settings-->
-                <item id="9">
-                    <label>31013</label>
-                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
-                </item>
-				<!--background settings-->
-                <item id="8">
-                    <label>31022</label>
-                    <onclick>noop</onclick>
-                </item>
-				<item id="13">
-                    <!--appearance settings-->
-                    <label>$LOCALIZE[480]</label>
-                    <onclick>noop</onclick>
-                </item>
-				<item id="6">
-                    <!--skin settings ID=5000-->
-                    <label>31005</label>
-                    <onclick>noop</onclick>
-                </item>
-                <item id="5">
-                    <!--skin mode ID=7000-->
-                    <label>31004</label>
-                    <onclick>noop</onclick>
-					<visible>System.HasAddon(plugin.video.xbmb3c) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.netflixbmc)</visible>
-                </item>
-				<!-- advanced settings -->
-				<item id="14">
-                    <label>31270</label>
-                    <onclick>noop</onclick>
-                </item>
+			<!--home menu layout-->
+			<control type="button" id="12">
+				<label>31115</label>
+				<onclick>noop</onclick>
+				<width>440</width>
+				<align>left</align>
+				<onfocus>SetProperty(currentButton,12,Home)</onfocus>
+			</control>
+			<!--tile settings-->
+			<control type="button" id="9">
+				<label>31013</label>
+				<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+				<width>440</width>
+				<align>left</align>
+				<onfocus>SetProperty(currentButton,9,Home)</onfocus>
+			</control>
+			<!--background settings-->
+			<control type="button" id="8">
+				<label>31022</label>
+				<onclick>noop</onclick>
+				<width>440</width>
+				<align>left</align>
+				<onfocus>SetProperty(currentButton,8,Home)</onfocus>
+			</control>
+			<control type="button" id="13">
+				<!--appearance settings-->
+				<label>$LOCALIZE[480]</label>
+				<onclick>noop</onclick>
+				<width>440</width>
+				<align>left</align>
+				<onfocus>SetProperty(currentButton,13,Home)</onfocus>
+			</control>
+			<control type="button" id="6">
+				<!--skin settings ID=5000-->
+				<label>31005</label>
+				<onclick>noop</onclick>
+				<width>440</width>
+				<align>left</align>
+				<onfocus>SetProperty(currentButton,6,Home)</onfocus>
+			</control>
+			<control type="button" id="5">
+				<!--skin mode ID=7000-->
+				<label>31004</label>
+				<onclick>noop</onclick>
+				<width>440</width>
+				<visible>System.HasAddon(plugin.video.xbmb3c) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.netflixbmc)</visible>
+				<align>left</align>
+				<onfocus>SetProperty(currentButton,5,Home)</onfocus>
+			</control>
+			<!-- advanced settings -->
+			<control type="button" id="14">
+				<label>31270</label>
+				<onclick>noop</onclick>
+				<width>440</width>
+				<align>left</align>
+				<onfocus>SetProperty(currentButton,14,Home)</onfocus>
+			</control>
+			<control type="button" id="15">
+				<label>Color themes</label>
+				<onclick>noop</onclick>
+				<onfocus>SetProperty(currentButton,15,Home)</onfocus>
+				<onfocus>XBMC.RunScript(script.titanskin.helpers,COLORTHEMES)</onfocus>
+				<width>440</width>
+				<align>left</align>
 				
-            </content>
+			</control>
+
         </control>
         <!--Group 1000 Right Area-->
         <control type="group" id="1000">
@@ -156,7 +152,7 @@
                 <onright>313</onright>
                 <orientation>vertical</orientation>
 				<pagecontrol>313</pagecontrol>
-                <visible>Container(100).Hasfocus(14)</visible>
+                <visible>StringCompare(Window(Home).Property(currentButton),14)</visible>
                 
 				<!-- backup and restore -->
                 <control type="label" id="8001">
@@ -411,7 +407,7 @@
                 <onright>310</onright>
 				<pagecontrol>310</pagecontrol>
                 <orientation>vertical</orientation>
-                <visible>Container(100).Hasfocus(13)</visible>
+                <visible>StringCompare(Window(Home).Property(currentButton),13)</visible>
 				
 				<!-- background overlay -->
                 <control type="label" id="14007">
@@ -1186,7 +1182,7 @@
                 <onleft>100</onleft>
                 <onright>noop</onright>
                 <orientation>vertical</orientation>
-                <visible>Container(100).Hasfocus(9)</visible>
+                <visible>StringCompare(Window(Home).Property(currentButton),9)</visible>
                 
 				<control type="label" id="6001">
                     <width>1230</width>
@@ -1276,7 +1272,7 @@
                 <onright>311</onright>
 				<pagecontrol>311</pagecontrol>
                 <orientation>vertical</orientation>
-                <visible>Container(100).Hasfocus(12)</visible>
+                <visible>StringCompare(Window(Home).Property(currentButton),12)</visible>
                 
 				<control type="label" id="23001">
                     <width>1230</width>
@@ -1667,7 +1663,7 @@
                 <onleft>100</onleft>
                 <onright>noop</onright>
                 <orientation>vertical</orientation>
-                <visible>Container(100).Hasfocus(8)</visible>
+                <visible>StringCompare(Window(Home).Property(currentButton),8)</visible>
                 
 				<!-- skin background -->
                 <control type="label" id="14001">
@@ -1791,7 +1787,7 @@
                 <onleft>100</onleft>
                 <onright>noop</onright>
                 <orientation>vertical</orientation>
-                <visible>Container(100).Hasfocus(5)</visible>
+                <visible>StringCompare(Window(Home).Property(currentButton),5)</visible>
                 <control type="label" id="2311">
                     <width>1230</width>
                     <height>50</height>
@@ -2022,7 +2018,7 @@
                 <onright>312</onright>
                 <orientation>vertical</orientation>
 				<pagecontrol>312</pagecontrol>
-                <visible>Container(100).Hasfocus(6)</visible>
+                <visible>StringCompare(Window(Home).Property(currentButton),6)</visible>
 
                 <!-- general -->
                 <control type="label" id="5136">
@@ -2260,7 +2256,7 @@
 				<height>800</height>
 				<onleft>14000</onleft>
 				<showonepage>false</showonepage>
-				<visible>Container(100).Hasfocus(13) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
+				<visible>StringCompare(Window(Home).Property(currentButton),13) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
 			</control>
 
 			<!--scrollbar for homescreen layout-->
@@ -2270,7 +2266,7 @@
 				<height>800</height>
 				<onleft>23000</onleft>
 				<showonepage>false</showonepage>
-				<visible>Container(100).Hasfocus(12) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
+				<visible>StringCompare(Window(Home).Property(currentButton),12) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
 			</control>
 			<!--scrollbar for general settings-->
 			<control type="scrollbar" id="312"> 
@@ -2279,7 +2275,7 @@
 				<height>800</height>
 				<onleft>23000</onleft>
 				<showonepage>false</showonepage>
-				<visible>Container(100).Hasfocus(6) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
+				<visible>StringCompare(Window(Home).Property(currentButton),6) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
 			</control>
 			<!--scrollbar for advanced settings-->
 			<control type="scrollbar" id="313"> 
@@ -2288,7 +2284,7 @@
 				<height>800</height>
 				<onleft>23000</onleft>
 				<showonepage>false</showonepage>
-				<visible>Container(100).Hasfocus(14) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
+				<visible>StringCompare(Window(Home).Property(currentButton),14) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
 			</control>				
 			
 			

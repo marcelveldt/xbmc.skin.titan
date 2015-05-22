@@ -69,15 +69,10 @@ class ColorPicker(xbmcgui.WindowXMLDialog):
                 name = color.attributes[ 'name' ].nodeValue.lower()
                 colorstring = color.childNodes [ 0 ].nodeValue.lower()
                 allColors.append((name,colorstring))
-        
-        print allColors
                 
         #sort list and fill the panel
         count = 0
         allColors = sorted(allColors,key=itemgetter(1))
-        
-        print "###########################################"
-        print allColors
         
         for color in allColors:
             count += 1

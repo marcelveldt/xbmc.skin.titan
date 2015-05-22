@@ -11,6 +11,7 @@ import MainModule
 import BackupRestore
 from SearchDialog import SearchDialog
 from ColorPicker import ColorPicker
+from ColorThemes import ColorThemes
 
 #script init
 action = ""
@@ -73,6 +74,10 @@ elif action == "COLORPICKER":
     colorPicker = ColorPicker("ColorPicker.xml", __cwd__, "default", "1080i")
     colorPicker.skinString = argument1
     colorPicker.doModal()
+    del colorPicker
+elif action == "COLORTHEMES":
+    colorThemes = ColorThemes("ColorThemes.xml", __cwd__, "default", "1080i")
+    colorThemes.doModal()
     del colorPicker
 elif action == "BACKUP":
     BackupRestore.backup()
