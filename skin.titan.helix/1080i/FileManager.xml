@@ -127,7 +127,7 @@
 							<width>850</width>
 							<height>50</height>
 							<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-							<texture>views/view_50_slider_big.png</texture>
+							<texture>diffuse/slider_big.png</texture>
 						</control>
 						<control type="image">
 							<posx>140</posx>
@@ -284,7 +284,7 @@
 							<width>850</width>
 							<height>50</height>
 							<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-							<texture>views/view_50_slider_big.png</texture>
+							<texture>diffuse/slider_big.png</texture>
 						</control>
 						<control type="image">
 							<posx>140</posx>

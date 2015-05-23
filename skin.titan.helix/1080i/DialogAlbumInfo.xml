@@ -120,7 +120,7 @@
                 <height>220</height>
                 <fadetime>800</fadetime>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <texture background="true" diffuse="cover_matte.png">$INFO[ListItem.Icon]</texture>
+                <texture background="true" diffuse="diffuse/panel.png">$INFO[ListItem.Icon]</texture>
             </control>
 			
             <control type="grouplist">

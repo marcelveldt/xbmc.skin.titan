@@ -581,7 +581,7 @@
             <posy>0</posy>
             <width>354</width>
 			<height>175</height>
-            <texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$INFO[ListItem.Icon]</texture>
+            <texture background="true" diffuse="home/home_matte2.png" fallback="colors/color_keyboard.png">$INFO[ListItem.Icon]</texture>
             <aspectratio scalediffuse="true" align="center" aligny="center">stretch</aspectratio>
         </control>
         <control type="image">

@@ -85,16 +85,14 @@
 			<visible>!Control.HasFocus(3003)</visible>
 			
         </control>
-        <control type="button" id="7">
-            <description>Default Button</description>
-            <label>$INFO[Skin.String(ButtonTextColor)]</label>
-			<textcolor>white</textcolor>
-			<selectedcolor>black</selectedcolor>
-            <font>Reg28</font>
-            <align>left</align>
-            <height>47</height>
-			<width>450</width>
-        </control>
+		
+		<include name="MyTextColor">
+				<param name="skintextcolor" value="$INFO[Skin.String(ButtonTextColor)]"/>
+			</include>
+
+		
+		
+		
         <control type="radiobutton" id="8">
             <description>Default Radio Button</description>
             <textcolor>white</textcolor>

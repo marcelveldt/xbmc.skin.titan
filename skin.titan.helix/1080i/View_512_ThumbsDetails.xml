@@ -62,7 +62,7 @@
 				<width>60</width>
 				<height>60</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
-				<texture diffuse="watched_icon_matte.png">$VAR[WatchedImage]</texture>
+				<texture diffuse="diffuse/watched_icon.png">$VAR[WatchedImage]</texture>
 				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel)</visible>
 			</control>
 			<control type="label">
@@ -116,7 +116,7 @@
 				<width>60</width>
 				<height>60</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
-				<texture diffuse="watched_icon_matte.png">$VAR[WatchedImage]</texture>
+				<texture diffuse="diffuse/watched_icon.png">$VAR[WatchedImage]</texture>
 				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel)</visible>
 			</control>
 			<control type="label">

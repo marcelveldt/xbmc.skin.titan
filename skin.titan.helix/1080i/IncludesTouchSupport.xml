@@ -12,8 +12,8 @@
 		<aligny>center</aligny>
 		<label>-</label>
 		<pulseonselect>false</pulseonselect>
-		<texturefocus colordiffuse="white">basichome_left.png</texturefocus>
-		<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">basichome_left.png</texturenofocus>
+		<texturefocus colordiffuse="white">home/basichome_left.png</texturefocus>
+		<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">home/basichome_left.png</texturenofocus>
 		<onclick>PageUp(60)</onclick>
 		<animation effect="slide" start="0,0" end="0,85" time="0" condition="Skin.String(GadgetRows, enhanced)">Conditional</animation>
 		<visible>Control.IsVisible(300) + Container(300).HasPrevious + ![ControlGroup(77777).HasFocus | StringCompare(Window(Home).Property(ShowWidget),show)]</visible>
@@ -29,8 +29,8 @@
 		<aligny>center</aligny>
 		<label>-</label>
 		<pulseonselect>false</pulseonselect>
-		<texturefocus colordiffuse="white">basichome_right.png</texturefocus>
-		<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">basichome_right.png</texturenofocus>
+		<texturefocus colordiffuse="white">home/basichome_right.png</texturefocus>
+		<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">home/basichome_right.png</texturenofocus>
 		<onclick>PageDown(60)</onclick>
 		<animation effect="slide" start="0,0" end="0,85" time="0" condition="Skin.String(GadgetRows, enhanced)">Conditional</animation>
 		<visible>Control.IsVisible(300) + Container(300).HasNext + ![ControlGroup(77777).HasFocus | StringCompare(Window(Home).Property(ShowWidget),show)]</visible>

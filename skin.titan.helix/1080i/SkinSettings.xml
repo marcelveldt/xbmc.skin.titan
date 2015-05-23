@@ -61,8 +61,6 @@
             <posy>170</posy>
             <width>440</width>
             <height>720</height>
-            <onup>100</onup>
-            <ondown>100</ondown>
             <onleft>noop</onleft>
             <onright>1000</onright>
             <scrolltime>0</scrolltime>
@@ -74,6 +72,7 @@
 				<width>440</width>
 				<align>left</align>
 				<onfocus>SetProperty(currentButton,12,Home)</onfocus>
+				<font>Reg28</font>
 			</control>
 			<!--tile settings-->
 			<control type="button" id="9">
@@ -82,6 +81,7 @@
 				<width>440</width>
 				<align>left</align>
 				<onfocus>SetProperty(currentButton,9,Home)</onfocus>
+				<font>Reg28</font>
 			</control>
 			<!--background settings-->
 			<control type="button" id="8">
@@ -90,6 +90,7 @@
 				<width>440</width>
 				<align>left</align>
 				<onfocus>SetProperty(currentButton,8,Home)</onfocus>
+				<font>Reg28</font>
 			</control>
 			<control type="button" id="13">
 				<!--appearance settings-->
@@ -98,6 +99,7 @@
 				<width>440</width>
 				<align>left</align>
 				<onfocus>SetProperty(currentButton,13,Home)</onfocus>
+				<font>Reg28</font>
 			</control>
 			<control type="button" id="6">
 				<!--skin settings ID=5000-->
@@ -106,6 +108,7 @@
 				<width>440</width>
 				<align>left</align>
 				<onfocus>SetProperty(currentButton,6,Home)</onfocus>
+				<font>Reg28</font>
 			</control>
 			<control type="button" id="5">
 				<!--skin mode ID=7000-->
@@ -115,6 +118,7 @@
 				<visible>System.HasAddon(plugin.video.xbmb3c) | System.HasAddon(plugin.video.plexbmc) | System.HasAddon(plugin.video.netflixbmc)</visible>
 				<align>left</align>
 				<onfocus>SetProperty(currentButton,5,Home)</onfocus>
+				<font>Reg28</font>
 			</control>
 			<!-- advanced settings -->
 			<control type="button" id="14">
@@ -123,6 +127,7 @@
 				<width>440</width>
 				<align>left</align>
 				<onfocus>SetProperty(currentButton,14,Home)</onfocus>
+				<font>Reg28</font>
 			</control>
 			<control type="button" id="15">
 				<label>31462</label>
@@ -131,6 +136,7 @@
 				<onfocus>XBMC.RunScript(script.titanskin.helpers,COLORTHEMES)</onfocus>
 				<width>440</width>
 				<align>left</align>
+				<font>Reg28</font>
 			</control>
 
         </control>
@@ -1723,13 +1729,13 @@
                     <onclick>Skin.SetImage(CustomBackgroundSetting)</onclick>
                     <selected>!Skin.String(CustomBackgroundSetting, default) + !Skin.String(CustomBackgroundSetting, blue) + !Skin.String(CustomBackgroundSetting, weather) + !Skin.String(CustomBackgroundSetting, fanart) + !Skin.String(CustomBackgroundSetting, gadget)</selected>
                 </control>
-				<control type="image" id="14006">
+				<control type="label" id="14006">
                     <!--Seperator-->
                     <width>1200</width>
 					<posx>-60</posx>
                     <height>20</height>
                     <align>left</align>
-                    <texture>blankspace.png</texture>
+                    <label></label>
                 </control>
 				<!--section background-->
                 <control type="label" id="14020">
@@ -1754,13 +1760,13 @@
                     <align>left</align>
                     <aligny>top</aligny>
                 </control>
-				<control type="image" id="14022">
+				<control type="label" id="14022">
                     <!--Seperator-->
                     <width>1200</width>
 					<posx>-60</posx>
                     <height>15</height>
                     <align>left</align>
-                    <texture>blankspace.png</texture>
+                    <label></label>
                 </control>
 				<control type="radiobutton" id="14023">
                     <description></description>

@@ -85,7 +85,7 @@
 							<width>90</width>
 							<height>90</height>
 							<colordiffuse>ccFFFFFF</colordiffuse>
-							<texture diffuse="watched_icon_matte.png">$VAR[WatchedImage]</texture>
+							<texture diffuse="diffuse/watched_icon.png">$VAR[WatchedImage]</texture>
 							<visible>!Skin.HasSetting(HideWatchedOverlayExtended)</visible>
 						</control>
 						<control type="label">
@@ -154,7 +154,7 @@
 							<width>460</width>
 							<height>780</height>
 							<bordersize>8</bordersize>
-							<texture border="4">cover_panel_matte_fo.png</texture>
+							<texture border="4">diffuse/cover_panel_matte_fo.png</texture>
 							<colordiffuse>$INFO[Skin.String(ViewDetailsFocusColor)]</colordiffuse>
 							<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),80)">Conditional</animation>
 							<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(ViewDetailsPanelOpacity),60)">Conditional</animation>
@@ -204,7 +204,7 @@
 							<width>90</width>
 							<height>90</height>
 							<colordiffuse>ccFFFFFF</colordiffuse>
-							<texture diffuse="watched_icon_matte.png">$VAR[WatchedImage]</texture>
+							<texture diffuse="diffuse/watched_icon.png">$VAR[WatchedImage]</texture>
 							<visible>!Skin.HasSetting(HideWatchedOverlayExtended)</visible>
 						</control>
 						<control type="label">

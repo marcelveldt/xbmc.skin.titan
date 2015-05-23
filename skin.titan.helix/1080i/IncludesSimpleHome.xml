@@ -252,12 +252,12 @@
 			<posx>-30</posx>
 			<width>400</width>
 			<height>495</height>
-			<texture diffuse="poster_matte.png">colors/color_white.png</texture>
+			<texture diffuse="diffuse/poster.png">colors/color_white.png</texture>
 			<animation effect="fade" end="80" time="0" reversible="false" condition="StringCompare(Skin.String(FooterOpacity),80)">Conditional</animation>
 			<animation effect="fade" end="60" time="0" reversible="false" condition="StringCompare(Skin.String(FooterOpacity),60)">Conditional</animation>
 			<animation effect="fade" end="40" time="0" reversible="false" condition="StringCompare(Skin.String(FooterOpacity),40)">Conditional</animation>
 			<animation effect="fade" end="20" time="0" reversible="false" condition="StringCompare(Skin.String(FooterOpacity),20)">Conditional</animation>
-			<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+			<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 			<bordersize>20</bordersize>
 			<colordiffuse>$INFO[Skin.String(PanelColor)]</colordiffuse>
 			<aspectratio>stretch</aspectratio>
@@ -319,12 +319,12 @@
 		<posx>-60</posx>
 		<width>515</width>
 		<height>1200</height>
-		<texture diffuse="poster_matte.png">colors/color_white.png</texture>
+		<texture diffuse="diffuse/poster.png">colors/color_white.png</texture>
 		<animation effect="fade" end="80" time="0" reversible="false" condition="StringCompare(Skin.String(FooterOpacity),80)">Conditional</animation>
 		<animation effect="fade" end="60" time="0" reversible="false" condition="StringCompare(Skin.String(FooterOpacity),60)">Conditional</animation>
 		<animation effect="fade" end="40" time="0" reversible="false" condition="StringCompare(Skin.String(FooterOpacity),40)">Conditional</animation>
 		<animation effect="fade" end="20" time="0" reversible="false" condition="StringCompare(Skin.String(FooterOpacity),20)">Conditional</animation>
-		<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+		<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 		<bordersize>20</bordersize>
 		<colordiffuse>$INFO[Skin.String(PanelColor)]</colordiffuse>
 		<aspectratio>stretch</aspectratio>

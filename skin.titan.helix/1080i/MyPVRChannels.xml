@@ -245,7 +245,7 @@
 							<width>825</width>
 							<height>86</height>
 							<colordiffuse>88ffffff</colordiffuse>
-							<texture>views/view_50_slider_big.png</texture>
+							<texture>diffuse/slider_big.png</texture>
 						</control>
 						<control type="label">
 							<!--Channel Number-->

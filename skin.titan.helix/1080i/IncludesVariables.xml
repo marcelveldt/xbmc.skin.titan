@@ -939,8 +939,8 @@
 	
 	<variable name="LogoImage">
 		<value condition="Skin.String(CustomLogoImage)">$INFO[Skin.String(CustomLogoImage)]</value>
-        <value condition="Skin.String(ColorTheme, white) + !Skin.String(GadgetRows, simplever)">kodi_logo_dark.png</value>
-        <value>kodi_logo_light.png</value>
+        <value condition="Skin.String(ColorTheme, white) + !Skin.String(GadgetRows, simplever)">home/kodi_logo_dark.png</value>
+        <value>home/kodi_logo_light.png</value>
     </variable>
 	
     <variable name="ThemeFontColorMidGrey">

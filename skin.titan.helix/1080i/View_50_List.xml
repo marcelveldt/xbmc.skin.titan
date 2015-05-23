@@ -80,8 +80,8 @@
                 <height>540</height>
                 <!--1,407-->
                 <fadetime>600</fadetime>
-				<texture diffuse="poster_matte.png" fallback="DefaultVideo.png">$VAR[PosterThumb]</texture>
-				<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+				<texture diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[PosterThumb]</texture>
+				<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
 				<bordersize>20</bordersize>
             </control>
@@ -354,7 +354,7 @@
                         <width>1245</width>
                         <height>86</height>
                         <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-                        <texture>views/view_50_slider_big.png</texture>
+                        <texture>diffuse/slider_big.png</texture>
                     </control>
                     <control type="label">
                         <!--Label 1-->
@@ -452,7 +452,7 @@
                         <width>640</width>
                         <height>86</height>
 						<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-                        <texture>views/view_50_slider_big.png</texture>
+                        <texture>diffuse/slider_big.png</texture>
                     </control>
                     <control type="image">
 						<!--Watched Overlay-->
@@ -600,7 +600,7 @@
                         <width>825</width>
                         <height>86</height>
                        <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-                        <texture>views/view_50_slider_big.png</texture>
+                        <texture>diffuse/slider_big.png</texture>
                     </control>
                     <control type="label">
                         <!--Label 1-->

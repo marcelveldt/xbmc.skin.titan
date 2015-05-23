@@ -93,9 +93,9 @@
 			<width>340</width>
 			<height>485</height>
 			<aspectratio align="left" aligny="top">keep</aspectratio>
-			<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+			<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 			<bordersize>20</bordersize>
-			<texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[HomeMenuWidgetInfoPoster]</texture>
+			<texture background="true" diffuse="diffuse/poster.png" fallback="colors/color_keyboard.png">$VAR[HomeMenuWidgetInfoPoster]</texture>
 			<visible>!StringCompare(Window(Home).Property(activewidget),music) + !StringCompare(Window(Home).Property(activewidget),weather)</visible>
 			<visible>[ControlGroup(77777).HasFocus | StringCompare(Window(Home).Property(ShowWidget),show)]</visible>
 		</control>
@@ -160,7 +160,7 @@
 					<posy>311</posy>
 					<width>149</width>
 					<height>34</height>
-					<texture>arrowright.png</texture>
+					<texture>info/arrowright.png</texture>
 					<colordiffuse>white</colordiffuse>
 					<aspectratio>keep</aspectratio>
 					<animation effect="rotate" end="-90" center="auto" time="0" loop="false" reversible="false" condition="true">Conditional</animation>
@@ -175,8 +175,8 @@
 				<width>149</width>
 				<height>30</height>
 				<onclick>ClearProperty(ShowWidget, Home)</onclick>
-				<texturefocus colordiffuse="white">basichome_down.png</texturefocus>
-				<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">basichome_down.png</texturenofocus>
+				<texturefocus colordiffuse="white">home/basichome_down.png</texturefocus>
+				<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">home/basichome_down.png</texturenofocus>
 				<visible>ControlGroup(77777).HasFocus + skin.hastheme(classic)</visible>
 				<visible>!Skin.HasSetting(HideWidgetPanelBackground)</visible>
 			</control>
@@ -1872,7 +1872,7 @@
 				<include>BigPanelSquareDimensions</include>
 				 <bordersize>-6</bordersize>
 				 <aspectratio aligny="top">stretch</aspectratio>
-				 <texture border="8">cover_panel_fo.png</texture>
+				 <texture border="8">diffuse/cover_panel_fo.png</texture>
 				 <colordiffuse>$INFO[Skin.String(HomeViewDetailsFocusColor)]</colordiffuse>
 			  </control>
 			  <control type="image">
@@ -1911,7 +1911,7 @@
           </control>
           <control type="image">
             <include>BigPanelPosterDimensions</include>
-            <texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultVideo.png">$VAR[PosterThumb]</texture>
+            <texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[PosterThumb]</texture>
 			<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 			<visible>![StringCompare(Window(Home).Property(activewidget),weather) | StringCompare(Window(Home).Property(activewidget),systeminfo) | [IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(tvshow.poster))]]</visible>
           </control>
@@ -1920,7 +1920,7 @@
 			<posy>7</posy>
 			<width>234</width>
 			<height>245</height>
-            <texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+            <texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
 			<aspectratio scalediffuse="false" aligny="top" align="center">scale</aspectratio>
 			<visible>[StringCompare(Window(Home).Property(activewidget),weather) | StringCompare(Window(Home).Property(activewidget),systeminfo) | [IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(tvshow.poster))]]</visible>
           </control>
@@ -1932,7 +1932,7 @@
 				<left>18</left>
 				<width>234</width>
 				<height>90</height>
-				<texture diffuse="poster_matte.png">colors/color_white.png</texture>
+				<texture diffuse="diffuse/poster.png">colors/color_white.png</texture>
 				<animation effect="fade" end="95" time="0" condition="true">Conditional</animation>
 				<colordiffuse>$INFO[Skin.String(PanelColor)]</colordiffuse>
 				<aspectratio>stretch</aspectratio>
@@ -1959,7 +1959,7 @@
           </control>
          <control type="image">
             <include>BigPanelPosterDimensions</include>
-            <texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultVideo.png">$VAR[PosterThumb]</texture>
+            <texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[PosterThumb]</texture>
 			<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 			<visible>![StringCompare(Window(Home).Property(activewidget),weather) | StringCompare(Window(Home).Property(activewidget),systeminfo) | [IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(tvshow.poster))]]</visible>
           </control>
@@ -1968,7 +1968,7 @@
 			<posy>7</posy>
 			<width>234</width>
 			<height>245</height>
-            <texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+            <texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
 			<aspectratio scalediffuse="false" aligny="top" align="center">scale</aspectratio>
 			<visible>[StringCompare(Window(Home).Property(activewidget),weather) | StringCompare(Window(Home).Property(activewidget),systeminfo) | [IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(tvshow.poster))]]</visible>
           </control>
@@ -1981,7 +1981,7 @@
 				<left>18</left>
 				<width>234</width>
 				<height>90</height>
-				<texture diffuse="poster_matte.png">colors/color_white.png</texture>
+				<texture diffuse="diffuse/poster.png">colors/color_white.png</texture>
 				<animation effect="fade" end="95" time="0" condition="true">Conditional</animation>
 				<colordiffuse>$INFO[Skin.String(PanelColor)]</colordiffuse>
 				<aspectratio>stretch</aspectratio>
@@ -2021,7 +2021,7 @@
             <posy>0</posy>
             <width>355</width>
             <height>200</height>
-            <texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$VAR[HomeMenuWidgetImage]</texture>
+            <texture background="true" diffuse="home/home_matte2.png" fallback="colors/color_keyboard.png">$VAR[HomeMenuWidgetImage]</texture>
             <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
         </control>
         <control type="image">
@@ -2056,7 +2056,7 @@
 				<width>60</width>
 				<height>60</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
-				<texture diffuse="watched_icon_matte.png">$VAR[WatchedImage]</texture>
+				<texture diffuse="diffuse/watched_icon.png">$VAR[WatchedImage]</texture>
 				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel)</visible>
 			</control>
 			<control type="label">

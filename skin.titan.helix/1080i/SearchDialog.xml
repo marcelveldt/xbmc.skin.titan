@@ -705,7 +705,7 @@
 						<width>150</width>
 						<height>270</height>
 						<bordersize>-6</bordersize>
-						<texture border="10">cover_panel_matte_fo.png</texture>
+						<texture border="10">diffuse/cover_panel_matte_fo.png</texture>
 						<colordiffuse>mainblue</colordiffuse>
 					  </control>
 					  <control type="image">

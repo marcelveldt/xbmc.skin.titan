@@ -79,7 +79,7 @@
 					<posx>50</posx>
 					<width>350</width>
 					<height>632</height>
-					<texture border="0">guide_diffuse.png</texture>
+					<texture border="0">pvr/guide_diffuse.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<visible>skin.string(GuideRows, 10) + control.isvisible(10)</visible>
 					<visible>!Skin.HasSetting(HideChannelNamesInGuide)</visible>
@@ -90,7 +90,7 @@
 					<posx>50</posx>
 					<width>450</width>
 					<height>632</height>
-					<texture border="0">guide_diffuse.png</texture>
+					<texture border="0">pvr/guide_diffuse.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<visible>!skin.string(GuideRows, 10) + control.isvisible(10)</visible>
 					<visible>!Skin.HasSetting(HideChannelNamesInGuide)</visible>

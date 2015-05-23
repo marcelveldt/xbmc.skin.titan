@@ -105,7 +105,7 @@
 					<height>300</height>
 					<fadetime>800</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture diffuse="cover_matte.png">$INFO[ListItem.Icon]</texture>
+					<texture diffuse="diffuse/panel.png">$INFO[ListItem.Icon]</texture>
 				</control>
 
 				<control type="list" id="21">

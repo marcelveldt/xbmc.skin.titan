@@ -108,8 +108,8 @@
 					<aligny>center</aligny>
 					<label>-</label>
 					<pulseonselect>false</pulseonselect>
-					<texturefocus colordiffuse="white">basichome_left.png</texturefocus>
-					<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">basichome_left.png</texturenofocus>
+					<texturefocus colordiffuse="white">home/basichome_left.png</texturefocus>
+					<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">home/basichome_left.png</texturenofocus>
 					<onclick>Control.Move(507,-1) </onclick>
 					<visible>Skin.HasSetting(EnableTouchSupport)</visible>
 				</control>
@@ -124,8 +124,8 @@
 					<aligny>center</aligny>
 					<label>-</label>
 					<pulseonselect>false</pulseonselect>
-					<texturefocus colordiffuse="white">basichome_right.png</texturefocus>
-					<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">basichome_right.png</texturenofocus>
+					<texturefocus colordiffuse="white">home/basichome_right.png</texturefocus>
+					<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">home/basichome_right.png</texturenofocus>
 					<onclick>Control.Move(507,1) </onclick>
 					<visible>Skin.HasSetting(EnableTouchSupport)</visible>
 				</control>

@@ -68,7 +68,7 @@
 				<height>110</height>
 				<aspectratio align="left">keep</aspectratio>
 				<colordiffuse>$INFO[Skin.String(HeaderTextColor)]</colordiffuse>
-				<texture>kodi_logo_light.png</texture>
+				<texture>home/kodi_logo_light.png</texture>
 				<visible>!Window.IsActive(DialogKaiToast.xml) + !Window.IsActive(DialogExtendedProgressBar.xml) + !Skin.HasSetting(WeatherOnHome) + !Skin.HasSetting(ShowProfile) + ![ControlGroup(77777).HasFocus | StringCompare(Window(Home).Property(ShowWidget),show)] + !Control.IsVisible(88888)</visible>
 				<visible>!Skin.String(GadgetRows, simplever)</visible>
 				<visible>!Skin.HasSetting(ShowProfile) + !Skin.HasSetting(WeatherOnHome)</visible>

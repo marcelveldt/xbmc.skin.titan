@@ -284,8 +284,8 @@
 							<width>360</width>
 							<height>360</height>
 							<aspectratio align="right" aligny="top">keep</aspectratio>
-							<texture diffuse="poster_matte.png" fallback="DefaultVideo.png">$INFO[Window.Property(movie.Poster)]</texture>
-							<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+							<texture diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$INFO[Window.Property(movie.Poster)]</texture>
+							<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 							<bordersize>20</bordersize>
 						</control>
@@ -309,7 +309,7 @@
                             <posy>95</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(1000).HasNext</visible>
                         </control>
                         <control type="panel" id="1000">
@@ -338,7 +338,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -346,7 +346,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -354,7 +354,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -362,7 +362,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -392,7 +392,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -400,7 +400,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -408,7 +408,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -416,7 +416,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -446,7 +446,7 @@
 							<posy>-18</posy>
 							<width>150</width>
 							<height>35</height>
-							<texture>arrowdown.png</texture>
+							<texture>info/arrowdown.png</texture>
 							<animation effect="fade" start="0" end="100" tween="sine" easing="inout" time="1200" pulse="true" reversible="false" condition="true">Conditional</animation>
 						</control>
 					</control>
@@ -470,7 +470,7 @@
                             <posy>95</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(750).HasNext</visible>
                         </control>
                         <control type="panel" id="750">
@@ -499,7 +499,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -507,7 +507,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -515,7 +515,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -523,7 +523,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -553,7 +553,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -561,7 +561,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -569,7 +569,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -577,7 +577,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -614,7 +614,7 @@
                             <posy>95</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(150).HasNext</visible>
                         </control>
                         <control type="panel" id="150">
@@ -643,7 +643,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -651,7 +651,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -659,7 +659,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -667,7 +667,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -697,7 +697,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -705,7 +705,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -713,7 +713,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -721,7 +721,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -770,7 +770,7 @@
                             <posy>95</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(250).HasNext</visible>
                         </control>
                         <control type="panel" id="250">
@@ -799,7 +799,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -807,7 +807,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -815,7 +815,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -823,7 +823,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -853,7 +853,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -861,7 +861,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -869,7 +869,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -877,7 +877,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -914,7 +914,7 @@
                             <posy>60</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(1150).HasNext</visible>
                         </control>
                         <control type="panel" id="1150">
@@ -955,7 +955,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -963,7 +963,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -971,7 +971,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -1009,7 +1009,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -1017,7 +1017,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -1025,7 +1025,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -1063,7 +1063,7 @@
                             <posy>60</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(350).HasNext</visible>
                         </control>
                         <control type="panel" id="350">
@@ -1103,7 +1103,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -1111,7 +1111,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -1119,7 +1119,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -1157,7 +1157,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -1165,7 +1165,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -1173,7 +1173,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -1211,7 +1211,7 @@
                             <posy>60</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(550).HasNext</visible>
                         </control>
                         <control type="panel" id="550">
@@ -1325,7 +1325,7 @@
                             <posy>60</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(1450).HasNext</visible>
                         </control>
                         <control type="panel" id="1450">
@@ -1438,7 +1438,7 @@
                             <posy>60</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(650).HasNext</visible>
                         </control>
                         <control type="textbox">
@@ -1645,7 +1645,7 @@
                             <posy>0</posy>
                             <width>35</width>
                             <height>100</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(1050).HasNext</visible>
                         </control>
                         <control type="panel" id="1050">
@@ -1743,7 +1743,7 @@
                             <posy>60</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(950).HasNext</visible>
                         </control>
                         <control type="panel" id="950">
@@ -1837,7 +1837,7 @@
                             <posy>95</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(1250).HasNext</visible>
                         </control>
                         <control type="panel" id="1250">
@@ -1866,7 +1866,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
                                 </control>
@@ -1885,7 +1885,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
                                 </control>
@@ -1910,7 +1910,7 @@
                             <posy>60</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(1350).HasNext</visible>
                         </control>
                         <control type="panel" id="1350">
@@ -1985,7 +1985,7 @@
                             <posy>95</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(450).HasNext</visible>
                         </control>
                         <control type="panel" id="450">
@@ -2015,7 +2015,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -2023,7 +2023,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -2031,7 +2031,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -2039,7 +2039,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -2069,7 +2069,7 @@
 									  <control type="image">
 										<width>176</width>
 										<height>252</height>
-										<texture border="0" background="true" diffuse="poster_matte.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
+										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="DefaultActorPoster.png">$INFO[ListItem.Thumb]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio>
 									  </control>
 									<control type="image">
@@ -2077,7 +2077,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -2085,7 +2085,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -2093,7 +2093,7 @@
 										<left>0</left>
 										<width>176</width>
 										<height>75</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -2130,7 +2130,7 @@
                             <posy>60</posy>
                             <width>35</width>
                             <height>150</height>
-                            <texture>arrowright.png</texture>
+                            <texture>info/arrowright.png</texture>
                             <visible>Container(2000).HasNext</visible>
                         </control>
                         <control type="panel" id="2000">
@@ -2170,7 +2170,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -2178,7 +2178,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -2186,7 +2186,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">
@@ -2224,7 +2224,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -2232,7 +2232,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="image">
@@ -2240,7 +2240,7 @@
 										<left>4</left>
 										<width>332</width>
 										<height>65</height>
-										<texture border="0">guide_diffuse.png</texture>
+										<texture border="0">pvr/guide_diffuse.png</texture>
 										<aspectratio>stretch</aspectratio>
 									</control>
 									<control type="textbox">

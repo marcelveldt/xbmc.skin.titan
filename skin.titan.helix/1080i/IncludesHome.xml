@@ -192,7 +192,7 @@
 						<posy>-18</posy>
 						<width>149</width>
 						<height>28</height>
-						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home_arrow_up.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home/home_arrow_up.png</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!skin.hastheme(classic)</visible>
 					</control>
@@ -201,7 +201,7 @@
 						<posy>-16</posy>
 						<width>149</width>
 						<height>30</height>
-						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">basichome_up.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home/basichome_up.png</texture>
 						<visible>skin.hastheme(classic)</visible>
 					</control>
 				</control>
@@ -226,7 +226,7 @@
 						<posy>258</posy>
 						<width>149</width>
 						<height>28</height>
-						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home_arrow_down.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home/home_arrow_down.png</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!skin.hastheme(classic)</visible>
 					</control>
@@ -235,7 +235,7 @@
 						<posy>253</posy>
 						<width>149</width>
 						<height>30</height>
-						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">basichome_down.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home/basichome_down.png</texture>
 						<visible>skin.hastheme(classic)</visible>
 					</control>
 				</control>
@@ -339,7 +339,7 @@
 						<posy>-28</posy>
 						<width>149</width>
 						<height>28</height>
-						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home_arrow_up.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home/home_arrow_up.png</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!skin.hastheme(classic)</visible>
 					</control>
@@ -348,7 +348,7 @@
 						<posy>-28</posy>
 						<width>149</width>
 						<height>30</height>
-						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">basichome_up.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home/basichome_up.png</texture>
 						<visible>skin.hastheme(classic)</visible>
 					</control>
 				</control>
@@ -373,7 +373,7 @@
 						<posy>174</posy>
 						<width>149</width>
 						<height>28</height>
-						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home_arrow_down.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home/home_arrow_down.png</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!skin.hastheme(classic)</visible>
 					</control>
@@ -382,7 +382,7 @@
 						<posy>172</posy>
 						<width>149</width>
 						<height>30</height>
-						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">basichome_down.png</texture>
+						<texture colordiffuse="$INFO[Skin.String(HomeViewDetailsFocusColor)]">home/basichome_down.png</texture>
 						<visible>skin.hastheme(classic)</visible>
 					</control>
 				</control>
@@ -1048,7 +1048,7 @@
             <posy>0</posy>
             <width>337</width>
 			<height>175</height>
-            <texture background="true" diffuse="home/home_matte2.png" fallback="banner_default.png">$VAR[HomeMenuWidgetImage]</texture>
+            <texture background="true" diffuse="home/home_matte2.png" fallback="colors/color_keyboard.png">$VAR[HomeMenuWidgetImage]</texture>
             <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
         </control>
         <control type="image">
@@ -1083,7 +1083,7 @@
 				<width>60</width>
 				<height>60</height>
 				<colordiffuse>ccFFFFFF</colordiffuse>
-				<texture diffuse="watched_icon_matte.png">$VAR[WatchedImage]</texture>
+				<texture diffuse="diffuse/watched_icon.png">$VAR[WatchedImage]</texture>
 				<visible>!Skin.HasSetting(HideWatchedOverlayBigPanel)</visible>
 			</control>
 			<control type="label">

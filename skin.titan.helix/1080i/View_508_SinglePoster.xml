@@ -108,9 +108,9 @@
 							<posy>-23</posy>
 							<width>274</width>
 							<height>375</height>
-							<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+							<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 							<bordersize>20</bordersize>
-							<texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[PosterThumb]</texture>
+							<texture background="true" diffuse="diffuse/poster.png" fallback="colors/color_keyboard.png">$VAR[PosterThumb]</texture>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 						  </control>
 						<include>BigPanelWatchedImage</include>
@@ -140,9 +140,9 @@
 						<posy>-23</posy>
 						<width>274</width>
 						<height>375</height>
-						<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+						<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 						<bordersize>20</bordersize>
-						<texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[PosterThumb]</texture>
+						<texture background="true" diffuse="diffuse/poster.png" fallback="colors/color_keyboard.png">$VAR[PosterThumb]</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 					  </control>
 					  <include>BigPanelWatchedImage</include>

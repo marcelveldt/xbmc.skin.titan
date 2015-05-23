@@ -796,7 +796,7 @@
 								<width>329</width>
 								<height>310</height>
 								<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-								<texture>cover_panel_fo.png</texture>
+								<texture>diffuse/cover_panel_fo.png</texture>
 								<bordersize>0</bordersize>
 							</control>
 							<control type="image">

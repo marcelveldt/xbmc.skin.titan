@@ -97,9 +97,9 @@
 							<!--Poster-->
 							<width>520</width>
 							<height>746</height>
-							<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+							<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 							<bordersize>20</bordersize>
-							<texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[PosterThumb]</texture>
+							<texture background="true" diffuse="diffuse/poster.png" fallback="colors/color_keyboard.png">$VAR[PosterThumb]</texture>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 						</control>
 						<control type="image">
@@ -109,7 +109,7 @@
 							<width>100</width>
 							<height>100</height>
 							<colordiffuse>ccFFFFFF</colordiffuse>
-							<texture diffuse="watched_icon_matte.png">$VAR[WatchedImage]</texture>
+							<texture diffuse="diffuse/watched_icon.png">$VAR[WatchedImage]</texture>
 							<visible>!Skin.HasSetting(HideWatchedOverlayLargePoster)</visible>
 						</control>
 						<control type="label">
@@ -147,9 +147,9 @@
 							<!--Poster-->
 							<width>520</width>
 							<height>746</height>
-							<bordertexture border="20" colordiffuse="black">thumb_shadow.png</bordertexture>
+							<bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
 							<bordersize>20</bordersize>
-							<texture background="true" diffuse="poster_matte.png" fallback="poster_default.png">$VAR[PosterThumb]</texture>
+							<texture background="true" diffuse="diffuse/poster.png" fallback="colors/color_keyboard.png">$VAR[PosterThumb]</texture>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 						</control>
 						<control type="image">
@@ -159,7 +159,7 @@
 							<width>100</width>
 							<height>100</height>
 							<colordiffuse>ccFFFFFF</colordiffuse>
-							<texture diffuse="watched_icon_matte.png">$VAR[WatchedImage]</texture>
+							<texture diffuse="diffuse/watched_icon.png">$VAR[WatchedImage]</texture>
 							<visible>!Skin.HasSetting(HideWatchedOverlayLargePoster)</visible>
 							<animation effect="slide" end="5,-5" time="0" delay="0" condition="skin.hastheme(classic)">Conditional</animation>
 						</control>

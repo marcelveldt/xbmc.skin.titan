@@ -112,6 +112,19 @@
         <height>1080</height>
     </include>
 	
+	<include name="MyTextColor">
+		 <control type="button" id="7">
+            <description>Default Button</description>
+            <label></label>
+			<textcolor>$PARAM[skintextcolor]</textcolor>
+			<selectedcolor>black</selectedcolor>
+            <font>Reg28</font>
+            <align>left</align>
+            <height>47</height>
+			<width>450</width>
+        </control>
+	 </include>
+	
 	<!-- Footer -->
 	<include name="Footer">
 		<control type="group">
@@ -469,7 +482,7 @@
 			<posy>0</posy>
 			<width>146</width>
 			<height>37</height>
-			<texture>basichome_isrecording_bg.png</texture>
+			<texture>home/basichome_isrecording_bg.png</texture>
 			<visible>Pvr.IsRecording + window.isactive(home)</visible>
 		</control>
 		

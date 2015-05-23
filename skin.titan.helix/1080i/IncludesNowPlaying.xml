@@ -27,7 +27,7 @@
                 <width>133</width>
                 <height>133</height>
                 <fadetime>200</fadetime>
-                <texture background="true" fallback="cover_default.png" diffuse="cover_matte_cdart.png">$INFO[MusicPlayer.Cover]</texture>
+                <texture background="true" fallback="colors/color_keyboard.png" diffuse="diffuse/music_cover.png" border="5">$INFO[MusicPlayer.Cover]</texture>
                 <aspectratio align="center" aligny="top">stretch</aspectratio>
             </control>
             <control type="label">
@@ -269,7 +269,7 @@
 				<width>123</width>
 				<height>123</height>
 				<fadetime>200</fadetime>
-				<texture background="true" diffuse="matte_cdart.png" fallback="DefaultAddonMusic.png">$INFO[Player.Art(thumb)]</texture>
+				<texture background="true" diffuse="diffuse/music_cover_cd.png" border="5" fallback="DefaultAddonMusic.png">$INFO[Player.Art(thumb)]</texture>
 				<aspectratio align="left" aligny="top">stretch</aspectratio>
 				<visible>Player.HasAudio</visible>
 			</control>
