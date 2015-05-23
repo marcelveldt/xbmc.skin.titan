@@ -1,0 +1,34 @@
+﻿squash 6f5e435 test build upload
+squash a654084 remove test build
+squash f374dce various fixes
+squash 7a1e825 fixed font size errors after font change
+squash 5970277 use new font as default, old font as classic
+squash 39d884e small fixes to textboxes and the new font
+squash ff0d436 few small fixes for the new font
+squash db3df87 small changes to the views added view selection Dialog some small fixes
+squash 3c07126 updated languages from transifex
+squash 3e863ae first work on the color themes support in the skin
+squash 1746fa6 added mario's green envy theme
+squash b82c9de small fixes
+squash 1df45da translationstrings added to the theme dialog
+squash 7d79745 color themes added, test preview window
+squash ed57172 minor theme update
+
+# Rebase d4495ba..ed57172 onto d4495ba
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+
