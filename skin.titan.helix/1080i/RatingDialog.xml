@@ -15,8 +15,8 @@
             <posy>-750</posy>
             <width>3300</width>
             <height>3300</height>
-            <texture>colors/color_90%trans_white.png</texture>
-			<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
+            <texture>colors/color_white.png</texture>
+			<animation effect="fade" end="20" time="0" condition="true">Conditional</animation>
 			<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
         </control>
         <control type="group">
