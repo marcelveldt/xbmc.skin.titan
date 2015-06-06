@@ -21,11 +21,43 @@
                 <height>160</height>
                 <imagepath>dialogs/busy</imagepath>
                 <timeperimage>125</timeperimage>
-                <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                <colordiffuse>$INFO[Skin.String(BusyIndicatorColor)]</colordiffuse>
                 <fadetime>5</fadetime>
 				<loop>yes</loop>
 				<aspectratio>keep</aspectratio>
+				<visible>![Skin.HasSetting(UseCustomBusyAnimation)] </visible>
             </control>
+
+            <control type="multiimage">
+                <animation effect="fade" start="0" end="100" time="0">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="500" delay="500">WindowClose</animation>
+                <posx>-80</posx>
+                <posy>-80</posy>
+                <width>160</width>
+                <height>160</height>
+                <imagepath>$INFO[Skin.String(CustomImageFolderBusyIndicator)]</imagepath>
+                <timeperimage>125</timeperimage>
+                <colordiffuse>$INFO[Skin.String(BusyIndicatorColor)]</colordiffuse>
+                <fadetime>5</fadetime>
+				<loop>yes</loop>
+				<aspectratio>keep</aspectratio>
+				<visible>[Skin.String(CustomImageFolderBusyIndicator)] + [Skin.HasSetting(UseCustomBusyAnimation)]</visible>
+            </control>
+
+            <control type="image">
+                <animation effect="fade" start="0" end="100" time="0">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="500" delay="500">WindowClose</animation>
+                <posx>-80</posx>
+                <posy>-80</posy>
+                <width>160</width>
+                <height>160</height>
+                <texture>$INFO[Skin.String(CustomAGIFBusyIndicator)]</texture>
+                <colordiffuse>$INFO[Skin.String(BusyIndicatorColor)]</colordiffuse>
+				<aspectratio>keep</aspectratio>
+				<visible>[Skin.HasSetting(UseCustomBusyAnimation)] + [Skin.String(CustomAGIFBusyIndicator)]</visible>
+            </control>
+			
+
         </control>
     </controls>
 </window>
