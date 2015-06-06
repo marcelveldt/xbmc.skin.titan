@@ -72,6 +72,7 @@
 		<onload condition="!Skin.String(ViewDetailsPanelColor)">Skin.SetString(ViewDetailsPanelColor,darkblue)</onload>
 		<onload condition="!Skin.String(ViewDetailsPanelOpacity)">Skin.SetString(ViewDetailsPanelOpacity,80)</onload>
 		<onload condition="!Skin.String(OSDPanelColor)">Skin.SetString(OSDPanelColor,darkblue)</onload>
+		<onload condition="!Skin.String(BusyIndicatorColor)">Skin.SetString(BusyIndicatorColor,mainblue)</onload>
 		<onload condition="!Skin.String(ButtonColor)">Skin.SetString(ButtonColor,ff002e63)</onload>
 		<onload condition="!Skin.String(FooterTextShadowColor)">Skin.SetString(FooterTextShadowColor,None)</onload>
 		<onload condition="!Skin.String(OSDPrimaryTextColor)">Skin.SetString(OSDPrimaryTextColor,white)</onload>
@@ -197,6 +198,8 @@
 		<onload condition="Skin.HasSetting(AutoFocusUnwatchedEpisode) + SubString(System.BuildVersion,15,left)">Skin.Reset(AutoFocusUnwatchedEpisode)</onload>
 		
 		<onload condition="!SubString(Window(Home).Property(BackGroundWorkersLoaded),loaded)">SetProperty(BackGroundWorkersLoaded,loaded,Home)</onload>
+		
+		<onload condition="!Skin.String(CustomAGIFBusyIndicator) + !Skin.String(CustomImageFolderBusyIndicator)">Skin.Reset(UseCustomBusyAnimation)</onload>
 
     </include>
 	

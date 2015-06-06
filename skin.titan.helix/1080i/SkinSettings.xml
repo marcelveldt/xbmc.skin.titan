@@ -10,6 +10,8 @@
 	<onload condition="IsEmpty(Window(Home).Property(mediabrowser.std.tvshows.0.path))">Skin.Reset(HomeMenuUseMBforPictures)</onload>
 	<onload condition="IsEmpty(Window(Home).Property(mediabrowser.std.tvshows.0.path))">Skin.Reset(HomeMenuUseMBforMusicVideos)</onload>
 	<onload condition="IsEmpty(Window(Home).Property(mediabrowser.std.tvshows.0.path))">Skin.Reset(MB3ModeDetectDone)</onload>
+	<onload condition="!Skin.String(CustomAGIFBusyIndicator) + !Skin.String(CustomImageFolderBusyIndicator)">Skin.Reset(UseCustomBusyAnimation)</onload>
+	<onunload condition="!Skin.String(CustomAGIFBusyIndicator) + !Skin.String(CustomImageFolderBusyIndicator)">Skin.Reset(UseCustomBusyAnimation)</onunload>
 	<onload>XBMC.RunScript(script.titanskin.helpers,SETSKINVERSION)</onload>
     <allowoverlay>yes</allowoverlay>
     <include>defaultskinsettings</include>
@@ -338,9 +340,58 @@
 					<onclick condition="Skin.String(CustomPicturesBackgroundPath)">Skin.Reset(CustomPicturesBackgroundPath)</onclick>
                     <selected>Skin.String(CustomPicturesBackgroundPath)</selected>
                 </control>
-				
-				
-				
+
+				<control type="radiobutton" id="8027">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>Use an Animated GIF or folder of images as Custom Busy Indicator</label>
+                    <height>50</height>
+                    <font>Reg28</font>
+                    <onclick>Skin.ToggleSetting(UseCustomBusyAnimation)</onclick>
+					<onclick condition="Skin.String(CustomImageFolderBusyIndicator)">Skin.Reset(CustomImageFolderBusyIndicator)</onclick>
+					<onclick condition="Skin.String(CustomAGIFBusyIndicator)">Skin.Reset(CustomAGIFBusyIndicator)</onclick>
+					<selected>Skin.HasSetting(UseCustomBusyAnimation)</selected>
+                </control>
+
+				<control type="radiobutton" id="8028">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>- Use an Animated GIF image file as the Custom Busy Indicator</label>
+                    <height>50</height>
+                    <font>Reg20</font>
+                    <onclick condition="Skin.String(CustomImageFolderBusyIndicator)">Skin.Reset(CustomImageFolderBusyIndicator)</onclick>
+                    <onclick condition="!Skin.String(CustomAGIFBusyIndicator)">Skin.SetImage(CustomAGIFBusyIndicator)</onclick>
+					<onclick condition="Skin.String(CustomAGIFBusyIndicator)">Skin.Reset(CustomAGIFBusyIndicator)</onclick>
+                    <selected>Skin.String(CustomAGIFBusyIndicator) + !Skin.String(CustomImageFolderBusyIndicator)</selected>
+                    <visible>Skin.HasSetting(UseCustomBusyAnimation)</visible>
+                </control>
+
+				<control type="radiobutton" id="8029">
+                    <description></description>
+                    <width>1230</width>
+                    <align>left</align>
+                    <label>- Use a folder of Images as the Custom Busy Indicator (PNG or GIFs, animation sequence determined by file listing order)</label>
+                    <height>50</height>
+                    <font>Reg20</font>
+                    <onclick condition="Skin.String(CustomAGIFBusyIndicator)">Skin.Reset(CustomAGIFBusyIndicator)</onclick>
+                    <onclick condition="!Skin.String(CustomImageFolderBusyIndicator)">Skin.SetPath(CustomImageFolderBusyIndicator)</onclick>
+					<onclick condition="Skin.String(CustomImageFolderBusyIndicator)">Skin.Reset(CustomImageFolderBusyIndicator)</onclick>
+                    <selected>Skin.String(CustomImageFolderBusyIndicator) + !Skin.String(CustomAGIFBusyIndicator)</selected>
+                    <visible>Skin.HasSetting(UseCustomBusyAnimation)</visible>
+                </control>
+
+				<control type="button" id="8030">
+					<width>1230</width>
+					<align>left</align>
+					<label>Color of Busy and Extended Progress Indicators: [COLOR=$INFO[Skin.String(BusyIndicatorColor)]]$INFO[Skin.String(BusyIndicatorColor)][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<height>50</height>
+					<font>Reg28</font>
+					<onclick>RunScript(script.titanskin.helpers,COLORPICKER,BusyIndicatorColor)</onclick>
+				</control>				
+
 				<!-- spacing -->
 				<control type="label" id="8020">
                     <width>1230</width>
