@@ -1841,7 +1841,4 @@ msgctxt "#31521"
 msgid "color for indicator image or text"
 msgstr ""
 
-msgctxt "#31522"
-msgid "Enable Player Controls (available when not in Full Screen playback)"
-msgstr ""
 

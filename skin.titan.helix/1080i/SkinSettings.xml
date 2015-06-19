@@ -2590,18 +2590,6 @@
                     <onclick>Skin.ToggleSetting(DisableHeader)</onclick>
                     <selected>Skin.HasSetting(DisableHeader)</selected>
                 </control>
-
-				<!--enable player controls-->
-				<control type="radiobutton" id="13120">
-                    <description></description>
-                    <width>1230</width>
-                    <align>left</align>
-                    <label>31522</label>
-                    <height>50</height>
-                    <font>Reg28</font>
-                    <onclick>Skin.ToggleSetting(EnablePlayerControls)</onclick>
-                    <selected>Skin.HasSetting(EnablePlayerControls)</selected>
-                </control>
 				
 				<!--LOADING SPINNER-->
 				<control type="button" id="5165">
