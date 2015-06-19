@@ -5,7 +5,7 @@
 	
 	<include>animation_window_open_close</include>
            		
-    <visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation) + Skin.HasSetting(EnablePlayerControls)</visible>
+    <visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
     <coordinates>
         <system>1</system>
         <left>585</left>
