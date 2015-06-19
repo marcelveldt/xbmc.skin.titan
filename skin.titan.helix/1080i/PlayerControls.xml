@@ -30,7 +30,7 @@
             <height>310</height>
 			<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             <texture border="20">diffuse/panel.png</texture>
-			<animation effect="fade" end="90" time="0" condition="true">Conditional</animation>
+			<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
         </control>
 
         <control type="group" id="100">
