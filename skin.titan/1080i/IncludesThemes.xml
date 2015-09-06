@@ -2810,8 +2810,8 @@
 			<visible>Player.HasDuration</visible>
 			<action>seek</action>
 			<texturesliderbar>colors/color_transparent.png</texturesliderbar>
-			<textureslidernib border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel.png</textureslidernib>
-			<textureslidernibfocus border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel_trans.png</textureslidernibfocus>
+			<textureslidernib border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">common/progress/slim_nib.png</textureslidernib>
+			<textureslidernibfocus border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">common/progress/slim_nib_focus.png</textureslidernibfocus>
 			<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 		</control>
 		<!--Process/Seekbar-->
@@ -2856,8 +2856,8 @@
 			<visible>Player.HasDuration</visible>
 			<action>seek</action>
 			<texturesliderbar>colors/color_transparent.png</texturesliderbar>
-			<textureslidernib border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel.png</textureslidernib>
-			<textureslidernibfocus border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel_trans.png</textureslidernibfocus>
+			<textureslidernib border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">common/progress/modern_nib.png</textureslidernib>
+			<textureslidernibfocus border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">common/progress/modern_nib_focus.png</textureslidernibfocus>
 			<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 		</control>
 		<control type="image">
