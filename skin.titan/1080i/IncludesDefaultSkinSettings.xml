@@ -142,6 +142,9 @@
 		<onload condition="!Skin.String(OSDProgressBarBgColor)">Skin.SetString(OSDProgressBarColor,FF00b8ff)</onload>
         <onload condition="!Skin.String(OSDProgressBarBgColor.name)">Skin.SetString(OSDProgressBarColor.name,mainblue)</onload>
         
+		<onload condition="!Skin.String(OSDProgressBarCacheColor)">Skin.SetString(OSDProgressBarCacheColor,ffffffff)</onload>
+        <onload condition="!Skin.String(OSDProgressBarCacheColor.name)">Skin.SetString(OSDProgressBarCacheColor.name,white)</onload>
+
 		<onload condition="!Skin.String(OSDProgressBarBackgroundColor)">Skin.SetString(OSDProgressBarBackgroundColor,None)</onload>
         <onload condition="!Skin.String(OSDProgressBarBackgroundColor.name)">Skin.SetString(OSDProgressBarBackgroundColor.name,None)</onload>
         

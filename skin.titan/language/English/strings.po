@@ -1985,3 +1985,7 @@ msgstr ""
 msgctxt "#31568"
 msgid "Enable indicator for unwatched items"
 msgstr ""
+
+msgctxt "#31569"
+msgid "OSD progress bar buffer cache color"
+msgstr ""

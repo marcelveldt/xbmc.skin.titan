@@ -762,7 +762,7 @@
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 					<texturebg border="5" colordiffuse="00ffffff">diffuse/panel.png</texturebg>
 					<lefttexture>-</lefttexture>
-					<midtexture border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel.png</midtexture>
+					<midtexture border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarCacheColor)]">diffuse/panel.png</midtexture>
 					<righttexture>-</righttexture>
 					<overlaytexture>-</overlaytexture>
 				</control>
@@ -1263,7 +1263,7 @@
 					<info>Player.ProgressCache</info>
 					<texturebg border="5" colordiffuse="00ffffff">diffuse/panel.png</texturebg>
 					<lefttexture>-</lefttexture>
-					<midtexture border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel.png</midtexture>
+					<midtexture border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarCacheColor)]">diffuse/panel.png</midtexture>
 					<righttexture>-</righttexture>
 					<overlaytexture>-</overlaytexture>
 					<visible>Player.HasDuration</visible>

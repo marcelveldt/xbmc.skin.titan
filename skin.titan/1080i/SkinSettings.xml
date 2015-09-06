@@ -646,7 +646,16 @@
 						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=OSDProgressBarColor)</onclick>
 						<visible>!skin.hastheme(classic)</visible>
 					</control>
-					
+					<!--osd progress bar cache color -->
+					<control type="button" id="13461">
+						<width>1230</width>
+						<align>left</align>
+						<label>$LOCALIZE[31569]: [COLOR=$INFO[Skin.String(OSDProgressBarCacheColor)]]$INFO[Skin.String(OSDProgressBarCacheColor.name)][/COLOR]</label>
+						<height>50</height>
+						<shadowcolor>black</shadowcolor>
+						<font>Reg28</font>	<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=OSDProgressBarCacheColor)</onclick>
+						<visible>!skin.hastheme(classic)</visible>
+					</control>
 					<!--osd buttons color -->
 					<control type="button" id="13459">
 						<width>1230</width>
