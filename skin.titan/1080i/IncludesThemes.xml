@@ -1263,7 +1263,7 @@
 					<info>Player.ProgressCache</info>
 					<texturebg border="5" colordiffuse="00ffffff">diffuse/panel.png</texturebg>
 					<lefttexture>-</lefttexture>
-					<midtexture border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel_trans.png</midtexture>
+					<midtexture border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel.png</midtexture>
 					<righttexture>-</righttexture>
 					<overlaytexture>-</overlaytexture>
 					<visible>Player.HasDuration</visible>
@@ -1277,7 +1277,7 @@
 					<posy>150</posy>
 					<height>33</height>
 					<info>Player.Progress</info>
-					<texturebg border="5" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/panel.png</texturebg>
+					<texturebg border="5" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/panel_trans.png</texturebg>
 					<lefttexture>-</lefttexture>
 					<midtexture border="5" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/panel.png</midtexture>
 					<righttexture>-</righttexture>
