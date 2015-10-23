@@ -125,7 +125,7 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 				</control>
 
 				<control type="label">
-					<label>$INFO[Player.Title]</label>
+					<label>$LOCALIZE[31040]: $INFO[Player.Title]</label>
 					<description>Information</description>
 					<posx>0</posx>
 					<posy>+227</posy>
@@ -136,10 +136,11 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font24_title</font>
+					<visible>!IsEmpty(Player.Title)</visible>
 				</control>
 				
 				<control type="label">
-					<label>$INFO[System.Date(DDD dd MMM yyyy)]</label>
+					<label>$INFO[System.Date(DDD)], $INFO[System.Date(dd MMM yyyy)]</label>
 					<description>Date</description>
 					<posx>0</posx>
 					<posy>+279</posy>
@@ -164,6 +165,7 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font24_title</font>
+					<visible>Weather.IsFetched</visible>
 				</control>
 				
 				<control type="image">
@@ -176,6 +178,7 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 					<align>center</align>
 					<aligny>center</aligny>
 					<aspectratio>keep</aspectratio>
+					<visible>Weather.IsFetched</visible>
 				</control>
 				
 			</control>
