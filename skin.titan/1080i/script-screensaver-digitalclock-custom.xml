@@ -8,8 +8,10 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 <backgroundcolor>0x00000000</backgroundcolor>
 	<allowoverlay>no</allowoverlay>
 	<controls>
-		<include>animation_window_open_close</include>
 		<include>DialogOverlayExtra</include>
+		<include>animation_view_change</include>
+		<include>animation_fade_visible_hidden</include>
+		
 		<control type="image" id="30020">
 			<description>Background</description>
 			<width>2048</width>
@@ -26,7 +28,8 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 			<height>128</height>
 			<fadetime>500</fadetime>
 			<texture>special://skin/icon.png</texture>
-			<animation effect="fade" start="100" end="70" time="150" condition="true">Conditional</animation>
+			<animation time="2500" effect="fade" start="20" end="100" easing="in" tween="sine">Visible</animation>
+			<animation time="2500" effect="fade" start="100" end="20" easing="out" tween="sine">Hidden</animation>
 			<aspectratio>keep</aspectratio>
 			<visible>!IntegerGreaterThan(System.Time(ss),15) + Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
 		</control>
@@ -39,7 +42,8 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 			<height>128</height>
 			<fadetime>500</fadetime>
 			<texture>special://skin/icon.png</texture>
-			<animation effect="fade" start="100" end="70" time="150" condition="true">Conditional</animation>
+			<animation time="2500" effect="fade" start="20" end="100" easing="in" tween="sine">Visible</animation>
+			<animation time="2500" effect="fade" start="100" end="20" easing="out" tween="sine">Hidden</animation>
 			<aspectratio>keep</aspectratio>
 			<visible>IntegerGreaterThan(System.Time(ss),15) + !IntegerGreaterThan(System.Time(ss),30) + Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
 		</control>
@@ -52,7 +56,8 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 			<height>128</height>
 			<fadetime>500</fadetime>
 			<texture>special://skin/icon.png</texture>
-			<animation effect="fade" start="100" end="70" time="150" condition="true">Conditional</animation>
+			<animation time="2500" effect="fade" start="20" end="100" easing="in" tween="sine">Visible</animation>
+			<animation time="2500" effect="fade" start="100" end="20" easing="out" tween="sine">Hidden</animation>
 			<aspectratio>keep</aspectratio>
 			<visible>IntegerGreaterThan(System.Time(ss),30) + !IntegerGreaterThan(System.Time(ss),45) + Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
 		</control>
@@ -65,7 +70,9 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 			<height>128</height>
 			<fadetime>500</fadetime>
 			<texture>special://skin/icon.png</texture>
-			<animation effect="fade" start="100" end="70" time="150" condition="true">Conditional</animation>
+			<animation time="2500" effect="fade" start="20" end="100" easing="in" tween="sine">Visible</animation>
+			<animation time="2500" effect="fade" start="100" end="20" easing="out" tween="sine">Hidden</animation>
+        <animation time="500" effect="fade">Hidden</animation>
 			<aspectratio>keep</aspectratio>
 			<visible>IntegerGreaterThan(System.Time(ss),45) + Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
 		</control>
@@ -81,7 +88,29 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 
 		<control type="group">
 			<visible>Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
+			
+				<control type="image">
+                    <description>Clock Background</description>
+                    <posy>10</posy>
+                    <posx>0</posx>
+                    <width>690</width>
+                    <height>217</height>
+                    <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+					<animation effect="fade" start="100" end="50" time="150" condition="true">Conditional</animation>
+					<texture border="5">diffuse/panel.png</texture>	
+                </control>
 
+				<control type="image">
+                    <description>Clock Background</description>
+                    <posy>20</posy>
+                    <posx>10</posx>
+                    <width>670</width>
+                    <height>197</height>
+                    <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+					<animation effect="fade" start="100" end="90" time="150" condition="true">Conditional</animation>
+					<texture border="5">diffuse/panel.png</texture>	
+                </control>
+				
 				<control type="image">
 					<posy>10</posy>
 					<posx>0</posx>
@@ -125,17 +154,17 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 				</control>
 
 				<control type="label">
-					<label>$LOCALIZE[31040]: $INFO[Player.Title]</label>
+					<label>$LOCALIZE[31040]:  [COLOR=$INFO[Skin.String(HeaderTextColor)]]$INFO[Player.Title][/COLOR]</label>
 					<description>Information</description>
 					<posx>0</posx>
-					<posy>+227</posy>
+					<posy>+247</posy>
 					<width>690</width>
 					<height>52</height>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font24_title</font>
+					<font>Bold42</font>
 					<visible>!IsEmpty(Player.Title)</visible>
 				</control>
 				
@@ -143,41 +172,41 @@ Most probably it won't look pretty but now screensaver.digitalclock will work wi
 					<label>$INFO[System.Date(DDD)], $INFO[System.Date(dd MMM yyyy)]</label>
 					<description>Date</description>
 					<posx>0</posx>
-					<posy>+279</posy>
+					<posy>+309</posy>
 					<width>690</width>
 					<height>52</height>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font24_title</font>
-				</control>
-
-				<control type="label">
-					<label>$INFO[Window(Weather).Property(Current.Condition)] - $INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-					<description>Weather Conditions</description>
-					<posx>0</posx>
-					<posy>+341</posy>
-					<width>690</width>
-					<height>52</height>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font24_title</font>
-					<visible>Weather.IsFetched</visible>
+					<font>Bold42</font>
 				</control>
 				
 				<control type="image">
 					<description>Weathericon</description>
 					<texture>special://skin/extras/weathericons/$INFO[skin.string(WeatherIconPack)]/$INFO[Window(Weather).Property(Current.FanartCode)].png</texture>
 					<posx>247</posx>
-					<posy>+403</posy>
+					<posy>+350</posy>
 					<width>195</width>
 					<height>195</height>
 					<align>center</align>
 					<aligny>center</aligny>
 					<aspectratio>keep</aspectratio>
+					<visible>Weather.IsFetched</visible>
+				</control>
+				
+				<control type="label">
+					<label>$INFO[Window(Weather).Property(Current.Condition)] - $INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
+					<description>Weather Conditions</description>
+					<posx>0</posx>
+					<posy>+530</posy>
+					<width>690</width>
+					<height>52</height>
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Bold42</font>
 					<visible>Weather.IsFetched</visible>
 				</control>
 				
