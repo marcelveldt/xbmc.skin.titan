@@ -2702,7 +2702,17 @@
 						<selected>Skin.HasSetting(DisableLyricsOverlay)</selected>
 						<visible>Skin.HasSetting(showlyrics)</visible>
 					</control>
-					
+					<control type="radiobutton" id="5170">
+						<description></description>
+						<width>1230</width>
+						<align>left</align>
+						<label>$LOCALIZE[31616]</label>
+						<height>50</height>
+						<font>Reg28</font>
+						<onclick condition="System.HasAddon(screensaver.digitalclock)">Skin.ToggleSetting(useskincustomscreensaverdigitalclock)</onclick>
+						<onclick condition="!System.HasAddon(screensaver.digitalclock)">RunPlugin(plugin://screensaver.digitalclock)</onclick>
+						<selected>Skin.HasSetting(useskincustomscreensaverdigitalclock)</selected>
+					</control>
 					<control type="radiobutton" id="5158">
 						<description></description>
 						<width>1230</width>

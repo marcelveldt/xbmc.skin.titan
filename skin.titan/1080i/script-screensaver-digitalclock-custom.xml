@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file (skin.default) is meant to be used by screensaver.digitalclock if there is no specific xml file for the current skin. 1920x1080 1080i / 1280x720 720p
+Confluence fonts and font sizes are used.
+Most probably it won't look pretty but now screensaver.digitalclock will work with any skin.
+-->
+<window>
+<backgroundcolor>0x00000000</backgroundcolor>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>DialogOverlayExtra</include>
+		<include>animation_view_change</include>
+		<include>animation_fade_visible_hidden</include>
+		
+		<control type="image" id="30020">
+			<description>Background</description>
+			<width>2048</width>
+			<height>1208</height>
+			<fadetime>500</fadetime>
+			<aspectratio>scale</aspectratio>
+		</control>
+		
+		<control type="image">
+			<description>Skin Logo</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>128</width>
+			<height>128</height>
+			<fadetime>500</fadetime>
+			<texture>special://skin/icon.png</texture>
+			<animation time="2500" effect="fade" start="20" end="100" easing="in" tween="sine">Visible</animation>
+			<animation time="2500" effect="fade" start="100" end="20" easing="out" tween="sine">Hidden</animation>
+			<aspectratio>keep</aspectratio>
+			<visible>!IntegerGreaterThan(System.Time(ss),15) + Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
+		</control>
+		
+		<control type="image">
+			<description>Skin Logo</description>
+			<posx>1792</posx>
+			<posy>1080</posy>
+			<width>128</width>
+			<height>128</height>
+			<fadetime>500</fadetime>
+			<texture>special://skin/icon.png</texture>
+			<animation time="2500" effect="fade" start="20" end="100" easing="in" tween="sine">Visible</animation>
+			<animation time="2500" effect="fade" start="100" end="20" easing="out" tween="sine">Hidden</animation>
+			<aspectratio>keep</aspectratio>
+			<visible>IntegerGreaterThan(System.Time(ss),15) + !IntegerGreaterThan(System.Time(ss),30) + Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
+		</control>
+		
+		<control type="image">
+			<description>Skin Logo</description>
+			<posx>0</posx>
+			<posy>1080</posy>
+			<width>128</width>
+			<height>128</height>
+			<fadetime>500</fadetime>
+			<texture>special://skin/icon.png</texture>
+			<animation time="2500" effect="fade" start="20" end="100" easing="in" tween="sine">Visible</animation>
+			<animation time="2500" effect="fade" start="100" end="20" easing="out" tween="sine">Hidden</animation>
+			<aspectratio>keep</aspectratio>
+			<visible>IntegerGreaterThan(System.Time(ss),30) + !IntegerGreaterThan(System.Time(ss),45) + Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
+		</control>
+
+		<control type="image">
+			<description>Skin Logo</description>
+			<posx>1792</posx>
+			<posy>0</posy>
+			<width>128</width>
+			<height>128</height>
+			<fadetime>500</fadetime>
+			<texture>special://skin/icon.png</texture>
+			<animation time="2500" effect="fade" start="20" end="100" easing="in" tween="sine">Visible</animation>
+			<animation time="2500" effect="fade" start="100" end="20" easing="out" tween="sine">Hidden</animation>
+        <animation time="500" effect="fade">Hidden</animation>
+			<aspectratio>keep</aspectratio>
+			<visible>IntegerGreaterThan(System.Time(ss),45) + Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
+		</control>
+		
+        <control type="group" id="30002">
+
+            <description>Clock and Date</description>
+            <posx>690</posx>
+            <posy>435</posy>
+            <width>690</width>
+            <height>500</height>
+            <visible>true</visible>
+
+		<control type="group">
+			<visible>Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
+			
+				<control type="image">
+                    <description>Clock Background</description>
+                    <posy>10</posy>
+                    <posx>0</posx>
+                    <width>690</width>
+                    <height>217</height>
+                    <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+					<animation effect="fade" start="100" end="50" time="150" condition="true">Conditional</animation>
+					<texture border="5">diffuse/panel.png</texture>	
+                </control>
+
+				<control type="image">
+                    <description>Clock Background</description>
+                    <posy>20</posy>
+                    <posx>10</posx>
+                    <width>670</width>
+                    <height>197</height>
+                    <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+					<animation effect="fade" start="100" end="90" time="150" condition="true">Conditional</animation>
+					<texture border="5">diffuse/panel.png</texture>	
+                </control>
+				
+				<control type="image">
+					<posy>10</posy>
+					<posx>0</posx>
+					<width>230</width>
+					<height>217</height>
+					<texture>special://skin/extras/retro-flip-clock/digits/$INFO[System.Time(hh)].png</texture>
+					<fadetime>500</fadetime>
+					<visible>IsEmpty(System.Time(xx))</visible>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<control type="image">
+					<posy>10</posy>
+					<posx>0</posx>
+					<width>230</width>
+					<height>217</height>
+					<texture>special://skin/extras/retro-flip-clock/$INFO[System.Time(xx)]/$INFO[System.Time(hh)].png</texture>
+					<fadetime>500</fadetime>
+					<visible>!IsEmpty (System.Time(xx))</visible>			
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<control type="image">
+					<posy>10</posy>
+					<posx>230</posx>
+					<width>230</width>
+					<height>217</height>
+					<texture>special://skin/extras/retro-flip-clock/digits/$INFO[System.Time(mm)].png</texture>
+					<fadetime>500</fadetime>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<control type="image">
+					<posy>10</posy>
+					<posx>460</posx>
+					<width>230</width>
+					<height>217</height>
+					<texture>special://skin/extras/retro-flip-clock/digits/$INFO[System.Time(ss)].png</texture>
+					<fadetime>500</fadetime>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+				<control type="label">
+					<label>$LOCALIZE[31040]:  [COLOR=$INFO[Skin.String(HeaderTextColor)]]$INFO[Player.Title][/COLOR]</label>
+					<description>Information</description>
+					<posx>0</posx>
+					<posy>+247</posy>
+					<width>690</width>
+					<height>52</height>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Bold42</font>
+					<visible>!IsEmpty(Player.Title)</visible>
+				</control>
+				
+				<control type="label">
+					<label>$INFO[System.Date(DDD)], $INFO[System.Date(dd MMM yyyy)]</label>
+					<description>Date</description>
+					<posx>0</posx>
+					<posy>+309</posy>
+					<width>690</width>
+					<height>52</height>
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Bold42</font>
+				</control>
+				
+				<control type="image">
+					<description>Weathericon</description>
+					<texture>special://skin/extras/weathericons/$INFO[skin.string(WeatherIconPack)]/$INFO[Window(Weather).Property(Current.FanartCode)].png</texture>
+					<posx>247</posx>
+					<posy>+350</posy>
+					<width>195</width>
+					<height>195</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<aspectratio>keep</aspectratio>
+					<visible>Weather.IsFetched</visible>
+				</control>
+				
+				<control type="label">
+					<label>$INFO[Window(Weather).Property(Current.Condition)] - $INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
+					<description>Weather Conditions</description>
+					<posx>0</posx>
+					<posy>+530</posy>
+					<width>690</width>
+					<height>52</height>
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Bold42</font>
+					<visible>Weather.IsFetched</visible>
+				</control>
+				
+			</control>
+			
+			<control type="group">
+			
+				<visible>!Skin.HasSetting(useskincustomscreensaverdigitalclock)</visible>
+			
+				<control type="image" id="30021">
+					<description>Weathericon</description>
+					<posx>172</posx>
+					<posy>225</posy>
+					<width>195</width>
+					<height>195</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label" id="30101">
+					<label></label>
+					<description>Hour</description>
+					<posx>90</posx>
+					<posy>15</posy>
+					<width>180</width>
+					<height>98</height>
+					<textcolor>$INFO[Control.GetLabel(30105)]</textcolor>
+					<shadowcolor>$INFO[Control.GetLabel(30112)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>WeatherTemp</font>
+				</control>
+				<control type="label" id="30102">
+					<label></label>
+					<description>Colon</description>
+					<posx>0</posx>
+					<posy>15</posy>
+					<width>540</width>
+					<height>98</height>
+					<textcolor>$INFO[Control.GetLabel(30106)]</textcolor>
+					<shadowcolor>$INFO[Control.GetLabel(30112)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>WeatherTemp</font>
+				</control>
+				<control type="label" id="30103">
+					<label></label>
+					<description>Minute</description>
+					<posx>270</posx>
+					<posy>15</posy>
+					<width>180</width>
+					<height>98</height>
+					<textcolor>$INFO[Control.GetLabel(30107)]</textcolor>
+					<shadowcolor>$INFO[Control.GetLabel(30112)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>WeatherTemp</font>
+				</control>
+				<control type="label" id="30104">
+					<label></label>
+					<description>AMPM</description>
+					<posx>420</posx>
+					<posy>68</posy>
+					<width>105</width>
+					<height>52</height>
+					<textcolor>$INFO[Control.GetLabel(30108)]</textcolor>
+					<shadowcolor>$INFO[Control.GetLabel(30112)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13_title</font>
+				</control>
+				<control type="label" id="30100">
+					<label></label>
+					<description>Date</description>
+					<posx>0</posx>
+					<posy>128</posy>
+					<width>540</width>
+					<height>52</height>
+					<textcolor>$INFO[Control.GetLabel(30109)]</textcolor>
+					<shadowcolor>$INFO[Control.GetLabel(30112)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24_title</font>
+				</control>
+				<control type="label" id="30110">
+					<label></label>
+					<description>Information</description>
+					<posx>0</posx>
+					<posy>188</posy>
+					<width>540</width>
+					<height>52</height>
+					<textcolor>$INFO[Control.GetLabel(30111)]</textcolor>
+					<shadowcolor>$INFO[Control.GetLabel(30112)]</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24_title</font>
+				</control>
+			</control>
+			
+            <control type="label" id="30105">
+                <label></label>
+                <description>Hour color control</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>0</width>
+                <height>0</height>
+                <align>center</align>
+                <font>font14</font>
+                <visible>false</visible>
+            </control>
+            <control type="label" id="30106">
+                <label></label>
+                <description>Colon color control</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>0</width>
+                <height>0</height>
+                <align>center</align>
+                <font>font14</font>
+                <visible>false</visible>
+            </control>
+            <control type="label" id="30107">
+                <label></label>
+                <description>Minute color control</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>0</width>
+                <height>0</height>
+                <align>center</align>
+                <font>font14</font>
+                <visible>false</visible>
+            </control>
+            <control type="label" id="30108">
+                <label></label>
+                <description>AMPM color control</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>0</width>
+                <height>0</height>
+                <align>center</align>
+                <font>font14</font>
+                <visible>false</visible>
+            </control>
+            <control type="label" id="30109">
+                <label></label>
+                <description>Date color control</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>0</width>
+                <height>0</height>
+                <align>center</align>
+                <font>font14</font>
+                <visible>false</visible>
+            </control>
+            <control type="label" id="30111">
+                <label></label>
+                <description>Information color control</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>0</width>
+                <height>0</height>
+                <align>center</align>
+                <font>font14</font>
+                <visible>false</visible>
+            </control>
+            <control type="label" id="30112">
+                <label></label>
+                <description>Shadow color control</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>0</width>
+                <height>0</height>
+                <align>center</align>
+                <font>font14</font>
+                <visible>false</visible>
+            </control>
+        </control>
+    </controls>
+</window>
