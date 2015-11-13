@@ -53,14 +53,14 @@
 			<ondown>3010</ondown>
 			<preloaditems>4</preloaditems>
 			<pagecontrol>60</pagecontrol>
-			<itemlayout height="45" width="58" condition="!StringCompare(Window.Property(palettename),basic)">
+			<itemlayout height="45" width="58" condition="!StringCompare(Window.Property(palettename),basic) + !StringCompare(Window.Property(palettename),material-design)">
 				<control type="image">
 					<width>92%</width>
 					<height>92%</height>
 					<texture border="5">$INFO[ListItem.Icon]</texture>
 				</control>
 			</itemlayout>
-			<focusedlayout height="45" width="58" condition="!StringCompare(Window.Property(palettename),basic)">
+			<focusedlayout height="45" width="58" condition="!StringCompare(Window.Property(palettename),basic) + !StringCompare(Window.Property(palettename),material-design)">
                 <control type="group">
                     <animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="300" center="auto">Focus</animation>
                     <control type="image">
@@ -78,6 +78,23 @@
 				</control>
 			</itemlayout>
 			<focusedlayout height="76" width="128" condition="StringCompare(Window.Property(palettename),basic)">
+                <control type="group">
+                    <animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="164" center="auto">Focus</animation>
+                    <control type="image">
+                        <width>92%</width>
+                        <height>92%</height>
+                        <texture border="5">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </control>
+			</focusedlayout>
+            <itemlayout height="40" width="125" condition="StringCompare(Window.Property(palettename),material-design)">
+				<control type="image">
+					<width>92%</width>
+					<height>92%</height>
+					<texture border="5">$INFO[ListItem.Icon]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="40" width="125" condition="StringCompare(Window.Property(palettename),material-design)">
                 <control type="group">
                     <animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="164" center="auto">Focus</animation>
                     <control type="image">
