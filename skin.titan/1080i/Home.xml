@@ -57,6 +57,11 @@
 			<animation effect="slide" end="-20" time="0" condition="Skin.HasSetting(HideWidgetPanelBackground) + Skin.String(HomeLayout, enhanced)">Conditional</animation>
 			<include>TimeInfo</include>
 		</control>
+		
+		<!-- Snow on Home -->
+		<control type="group">
+        <include condition="Skin.HasSetting(enablesnow)">snow</include>
+		</control>
         
         <!-- hidden submenu for count calculations -->
         <include condition="!Skin.String(HomeLayout, enhanced) + !Skin.HasSetting(DisableAllSubmenus)">hiddenSubmenu</include>
@@ -125,5 +130,6 @@
 		</control>
 	
 	<include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+
 	</controls>
 </window>
