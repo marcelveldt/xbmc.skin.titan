@@ -58,7 +58,7 @@
 			<include>TimeInfo</include>
 		</control>
 		
-		<!-- Snow on Homne -->
+		<!-- Snow on Home -->
 		<control type="group">
         <include condition="Skin.HasSetting(enablesnow)">snow</include>
 		</control>

@@ -666,6 +666,18 @@
 						<onclick>Skin.ToggleSetting(enablesnow)</onclick>
 						<selected>Skin.HasSetting(enablesnow)</selected>
 					</control>
+                    <control type="radiobutton" id="8022">
+                        <!-- expand snow effect to other areas of the skin -->
+						<description></description>
+						<width>1230</width>
+						<align>left</align>
+						<label>     ----- $LOCALIZE[31645]</label>
+						<height>50</height>
+						<font>Reg28</font>
+						<onclick>Skin.ToggleSetting(expandsnow)</onclick>
+						<selected>Skin.HasSetting(expandsnow)</selected>
+						<visible>Skin.HasSetting(enablesnow) + !Skin.HasSetting(DisableHeader) + !Skin.HasSetting(AlwaysShowWeather)</visible>
+					</control>
 				</control>
 
 				<!-- OSD -->

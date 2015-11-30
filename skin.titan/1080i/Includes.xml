@@ -21,6 +21,7 @@
 	<include file="View_501_Landscape.xml" />
 	<include file="View_502_LandscapeSingle.xml" />
 	<include file="View_503_Logos.xml" />
+    <include file="View_504_BigList2.xml" />
     <include file="View_505_LandscapeDetails.xml" />
 	<include file="View_506_ExtendedList.xml" />
 	<include file="View_507_FanArt.xml" />
@@ -568,6 +569,12 @@
 			<visible>![Skin.HasSetting(EnableTouchSupport) + Window.IsActive(MyVideoNav.xml)]</visible>
 			<visible>!Control.IsVisible(882)</visible>
 		</control>
+
+		<!-- Snow Effect Expansion -->
+		<control type="group">
+        <include condition="Skin.HasSetting(enablesnow) + Skin.HasSetting(expandsnow)">snow</include>
+		</control>
+		
     </include>
     
 	<include name="ClearLogo">
