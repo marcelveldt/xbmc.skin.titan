@@ -763,6 +763,7 @@
                 <width>100</width>
                 <height>100</height>
                 <aspectratio>keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
             </control>
 		<!-- active weather alert icon overlay -->
             <control type="image">
