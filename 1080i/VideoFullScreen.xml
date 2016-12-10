@@ -15,8 +15,8 @@
 		</control>
 
 	<!-- Aspect Ratio / Zoom Info Overlay -->
-
 	<control type="group">
+	
 			<left>0</left>
 			<top>300</top>
 			<width>100%</width>
@@ -58,5 +58,94 @@
 
 		</control>
 
+	<!-- Jump to Time Code Overlay -->
+		<control type="group" id="1">
+			<visible>!String.IsEmpty(Player.SeekNumeric) + !Window.IsVisible(VideoOSD)</visible>
+			<animation type="Visible" condition="!Window.IsVisible(SeekBar)">
+				<effect type="zoom" start="90" end="100" center="auto" tween="back" easing="out" time="200"/>
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
+			<control type="image" id="1">
+				<left>75</left>
+				<top>300</top>
+				<width>140</width>
+				<height>50</height>
+				<texture border="5">diffuse/panel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			</control>
+			<control type="label" id="1">
+				<left>75</left>
+				<top>300</top>
+				<width>140</width>
+				<height>50</height>
+				<label>$INFO[Player.SeekNumeric(hh:mm:ss)]</label>
+				<font>Bold30</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<aligny>center</aligny>
+				<align>center</align>
+			</control>
+			<control type="label" id="1">
+				<left>75</left>
+				<top>350</top>
+				<width>500</width>
+				<height>50</height>
+				<label>$LOCALIZE[31804]</label>
+				<font>Bold26</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<aligny>center</aligny>
+				<align>Left</align>
+			</control>
+			
+		</control>
+
+	<!-- Buffering Progress Overlay -->
+		<control type="group" id="1">
+			<visible>Player.Caching + Skin.HasSetting(EnableBufferingProgressOSD) + !Skin.HasTheme(classic)</visible>
+			<animation delay="300" effect="fade" time="200">Visible</animation>
+			<animation effect="fade" delay="200" time="150">Hidden</animation>
+			<control type="image" id="1">
+				<right>50</right>
+				<top>710</top>
+				<width>150</width>
+				<height>150</height>
+				<texture>dialogs/buffer-progress/p100.png</texture>
+				<animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+			</control>
+ 			<control type="image" id="1">
+				<right>50</right>
+				<top>710</top>
+				<width>150</width>
+				<height>150</height>
+				<texture colordiffuse="$INFO[Skin.String(SpinnerTexture.Color)]">dialogs/buffer-progress/p$INFO[Player.CacheLevel].png</texture>
+			</control>
+			<control type="label" id="1">
+				<description>buffering value</description>
+				<label>$INFO[Player.CacheLevel]%</label>
+				<right>50</right>
+				<top>710</top>
+				<width>150</width>
+				<height>150</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>Bold30</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label" id="2">
+				<description>buffering label</description>
+				<label>$LOCALIZE[15107]</label>
+				<right>48</right>
+				<top>875</top>
+				<width>150</width>
+				<height>20</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>Bold24</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
     </controls>
 </window>

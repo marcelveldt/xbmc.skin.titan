@@ -2347,6 +2347,14 @@
                 <height>128</height>
                 <aspectratio align="left" aligny="bottom">keep</aspectratio>
             </control>
+			<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+				<width>128</width>
+                <height>128</height>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
+            </control>
             <control type="label">
                 <!--Current Temp-->
                 <width>300</width>
@@ -2397,6 +2405,17 @@
                 <top>10</top>
                 <bottom>0</bottom>
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
+            </control>
+			<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+				<right>0</right>
+                <width>128</width>
+                <height>128</height>
+                <top>10</top>
+                <bottom>0</bottom>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
             </control>
             <control type="label">
                 <!--Current Temp-->

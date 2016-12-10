@@ -69,6 +69,17 @@
                 <width>250</width>
                 <height>250</height>
             </control>
+
+			<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+                <posx>890</posx>
+                <posy>110</posy>
+                <width>250</width>
+                <height>250</height>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched))</visible> -->
+            </control>
+
             <control type="label">
                 <!--Temp-->
                 <posx>870</posx>
@@ -590,6 +601,17 @@
 						<height>300</height>
 						<imagepath>$INFO[Skin.String(WeatherIconPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(WeatherIconPack.ext)]</imagepath>
 						<aspectratio>keep</aspectratio>
+					</control>
+
+					<!-- active weather alert icon overlay -->
+					<control type="image">
+						<texture>special://skin/extras/media/weather-alert.png</texture>
+						<left>971</left>
+						<top>0</top>
+						<width>345</width>
+						<height>300</height>
+						<aspectratio>keep</aspectratio>
+						<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched))</visible> -->
 					</control>
 
 					<control type="label">
