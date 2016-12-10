@@ -69,6 +69,17 @@
                 <width>250</width>
                 <height>250</height>
             </control>
+
+			<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+                <posx>890</posx>
+                <posy>110</posy>
+                <width>250</width>
+                <height>250</height>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched))</visible> -->
+            </control>
+
             <control type="label">
                 <!--Temp-->
                 <posx>870</posx>
@@ -592,6 +603,17 @@
 						<aspectratio>keep</aspectratio>
 					</control>
 
+					<!-- active weather alert icon overlay -->
+					<control type="image">
+						<texture>special://skin/extras/media/weather-alert.png</texture>
+						<left>971</left>
+						<top>0</top>
+						<width>345</width>
+						<height>300</height>
+						<aspectratio>keep</aspectratio>
+						<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched))</visible> -->
+					</control>
+
 					<control type="label">
 						<description>update label</description>
 						<top>150</top>
@@ -703,7 +725,7 @@
 							<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 						</control>
 						<control type="label">
-								<label>[B]$LOCALIZE[33027]: [/B]$INFO[Window.Property(Today.Sunrise)] â€¢ [B]$LOCALIZE[33028]: [/B]$INFO[Window.Property(Today.Sunset)]</label>
+								<label>[B]$LOCALIZE[33027]: [/B]$INFO[Window.Property(Today.Sunrise)] • [B]$LOCALIZE[33028]: [/B]$INFO[Window.Property(Today.Sunset)]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 							</control>
 					</control>
