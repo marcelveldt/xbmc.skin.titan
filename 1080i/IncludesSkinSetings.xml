@@ -1347,7 +1347,13 @@
                 <selected>Skin.HasSetting(ShowWeatherVideoInfoOSD)</selected>
                 <visible>!Skin.HasTheme(classic)</visible>
             </control>
-            
+            <control type="radiobutton" id="13067">
+                <include>SkinSettings_Button</include>
+                <label>31805</label>
+                <onclick>Skin.ToggleSetting(EnableBufferingProgressOSD)</onclick>
+                <selected>Skin.HasSetting(EnableBufferingProgressOSD)</selected>
+                <visible>!Skin.HasTheme(classic)</visible>
+            </control>
             <control type="button" id="13063">
                 <include>SkinSettings_Button</include>
                 <label>$LOCALIZE[31629]</label>
@@ -2365,7 +2371,12 @@
                 <onclick>Skin.SetString(SkinHelper.ShowInfoAtPlaybackStart,0)</onclick>
                 <selected>Skin.HasSetting(LowPerformanceMode)</selected>
             </control>
-
+            <control type="radiobutton" id="8025">
+                <include>SkinSettings_Button</include>
+                <label>31806</label>
+                <onclick>Skin.ToggleSetting(EnableWeatherAlertOverlay)</onclick>
+                <selected>Skin.HasSetting(EnableWeatherAlertOverlay)</selected>
+            </control>	
             <!-- skin helper settings -->
             <include name="SkinSettings_ActionButton" content="SkinSettings_ActionButton">
                 <param name="id" value="8019" />

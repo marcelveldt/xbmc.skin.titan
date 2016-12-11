@@ -617,6 +617,14 @@
                 <aspectratio align="left" aligny="bottom">keep</aspectratio>
                 <visible>!IsEmpty(Window(Weather).Property(Current.FanartCode))</visible>
             </control>
+			<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+                <width>125</width>
+                <height>125</height>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
+            </control>
             <control type="label">
                 <!--Temp-->
                 <width>160</width>
@@ -662,6 +670,16 @@
                 <posy>10</posy>
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
             </control>
+			<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+                <width>125</width>
+                <height>125</height>
+                <right>0</right>
+                <posy>10</posy>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
+            </control>
             <control type="label">
                 <!--Temp-->
                 <width>160</width>
@@ -699,6 +717,17 @@
                 <width>100</width>
                 <height>100</height>
                 <aspectratio>keep</aspectratio>
+                <visible>!IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible> 
+            </control>
+		<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+                <right>20</right>
+                <top>5</top>
+                <width>100</width>
+                <height>100</height>
+                <aspectratio>keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
             </control>
             <!-- current temp -->
             <control type="label">
@@ -734,7 +763,17 @@
                 <width>100</width>
                 <height>100</height>
                 <aspectratio>keep</aspectratio>
-                <visible>!IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
+				<visible>!IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
+            </control>
+		<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+                <right>20</right>
+                <top>5</top>
+                <width>100</width>
+                <height>100</height>
+                <aspectratio>keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
             </control>
             <!-- time + date -->
             <control type="label">
@@ -827,7 +866,16 @@
             <aspectratio align="right" aligny="bottom">keep</aspectratio>
             <visible>!IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
         </control>
-    
+		<!-- active weather alert icon overlay -->
+		<control type="image">
+			<texture>special://skin/extras/media/weather-alert.png</texture>
+			<width>125</width>
+			<height>125</height>
+			<right>40</right>
+			<posy>10</posy>
+			<aspectratio align="right" aligny="bottom">keep</aspectratio>
+			<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
+		</control>    
 	</include>
     
     <include name="BackgroundLogo">

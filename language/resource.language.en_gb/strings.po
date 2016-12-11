@@ -2871,3 +2871,11 @@ msgstr ""
 msgctxt "#31804"
 msgid "Use fanart from widget as background"
 msgstr ""
+
+msgctxt "#31805"
+msgid "Enable OSD of buffering progess during video playback"
+msgstr ""
+
+msgctxt "#31806"
+msgid "Enable weather alert icon overlay (if supported by weather addon)"
+msgstr ""

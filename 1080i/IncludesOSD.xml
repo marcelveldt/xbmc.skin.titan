@@ -652,7 +652,7 @@
 					<font>Light40</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
-					<label>[B]$VAR[OSDLabel1,, â€¢ ][/B]$VAR[OSDLabel2]</label>
+					<label>[B]$VAR[OSDLabel1,, • ][/B]$VAR[OSDLabel2]</label>
 					<scroll>false</scroll>
                     <animation time="300" effect="fade" delay="300">Visible</animation>
                     <animation time="100" effect="fade" delay="0">Hidden</animation>
@@ -873,7 +873,7 @@
 					<font>Light40</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
-					<label>[B]$VAR[OSDLabel1,, â€¢ ][/B]$VAR[OSDLabel2]</label>
+					<label>[B]$VAR[OSDLabel1,, • ][/B]$VAR[OSDLabel2]</label>
 					<scroll>false</scroll>
                     <animation time="300" effect="fade" delay="300">Visible</animation>
                     <animation time="100" effect="fade" delay="0">Hidden</animation>
@@ -2347,6 +2347,14 @@
                 <height>128</height>
                 <aspectratio align="left" aligny="bottom">keep</aspectratio>
             </control>
+			<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+				<width>128</width>
+                <height>128</height>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
+            </control>
             <control type="label">
                 <!--Current Temp-->
                 <width>300</width>
@@ -2397,6 +2405,17 @@
                 <top>10</top>
                 <bottom>0</bottom>
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
+            </control>
+			<!-- active weather alert icon overlay -->
+            <control type="image">
+                <texture>special://skin/extras/media/weather-alert.png</texture>
+				<right>0</right>
+                <width>128</width>
+                <height>128</height>
+                <top>10</top>
+                <bottom>0</bottom>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Window(Weather).Property(Alerts)) + !IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + Skin.HasSetting(EnableWeatherAlertOverlay)</visible>
             </control>
             <control type="label">
                 <!--Current Temp-->
@@ -2473,7 +2492,7 @@
                      <width>1450</width>
                      <height>200</height>
                      <visible>[!IsEmpty(Player.Art(clearlogo)) | !IsEmpty(Player.Art(clearart)) | !IsEmpty(Player.Art(tvshow.clearlogo)) | !IsEmpty(Player.Art(tvshow.clearart))]</visible>
-                     <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  â€¢ ]$INFO[VideoPlayer.Duration,, min. â€¢ ]$INFO[VideoPlayer.MPAA, â€¢ ]$INFO[VideoPlayer.RatingAndVotes, â€¢ ]$INFO[VideoPlayer.EpisodeName,, â€¢ ][/B][CR]$INFO[VideoPlayer.Plot]</label>
+                     <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  • ]$INFO[VideoPlayer.Duration,, min. • ]$INFO[VideoPlayer.MPAA, • ]$INFO[VideoPlayer.RatingAndVotes, • ]$INFO[VideoPlayer.EpisodeName,, • ][/B][CR]$INFO[VideoPlayer.Plot]</label>
                      <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                      <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                      <align>justify</align>
@@ -2486,7 +2505,7 @@
                      <width>1810</width>
                      <height>190</height>
                      <visible>![!IsEmpty(Player.Art(clearart)) | !IsEmpty(Player.Art(tvshow.clearart)) | !IsEmpty(Player.Art(clearlogo)) | !IsEmpty(Player.Art(tvshow.clearlogo))]</visible>
-                     <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  â€¢ ]$INFO[VideoPlayer.Duration,, min. â€¢ ]$INFO[VideoPlayer.MPAA, â€¢ ]$INFO[VideoPlayer.RatingAndVotes, â€¢ ]$INFO[VideoPlayer.EpisodeName,, â€¢ ][/B][CR]$INFO[VideoPlayer.Plot]</label>
+                     <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  • ]$INFO[VideoPlayer.Duration,, min. • ]$INFO[VideoPlayer.MPAA, • ]$INFO[VideoPlayer.RatingAndVotes, • ]$INFO[VideoPlayer.EpisodeName,, • ][/B][CR]$INFO[VideoPlayer.Plot]</label>
                      <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                      <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                      <align>justify</align>
@@ -2541,7 +2560,7 @@
                     <width>1500</width>
                     <height>160</height>
                     <visible>[!IsEmpty(Player.Art(clearlogo)) | !IsEmpty(Player.Art(clearart)) | !IsEmpty(Player.Art(tvshow.clearlogo)) | !IsEmpty(Player.Art(tvshow.clearart))]</visible>
-                    <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  â€¢ ]$INFO[VideoPlayer.Duration,, min. â€¢ ]$INFO[VideoPlayer.MPAA, â€¢ ]$INFO[VideoPlayer.RatingAndVotes, â€¢ ]$INFO[VideoPlayer.EpisodeName,, â€¢ ][/B][CR]$INFO[VideoPlayer.Plot]</label>
+                    <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  • ]$INFO[VideoPlayer.Duration,, min. • ]$INFO[VideoPlayer.MPAA, • ]$INFO[VideoPlayer.RatingAndVotes, • ]$INFO[VideoPlayer.EpisodeName,, • ][/B][CR]$INFO[VideoPlayer.Plot]</label>
                     <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                     <align>justify</align>
@@ -2554,7 +2573,7 @@
                     <width>1810</width>
                     <height>160</height>
                     <visible>![!IsEmpty(Player.Art(clearart)) | !IsEmpty(Player.Art(tvshow.clearart)) | !IsEmpty(Player.Art(clearlogo)) | !IsEmpty(Player.Art(tvshow.clearlogo))]</visible>
-                    <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  â€¢ ]$INFO[VideoPlayer.Duration,, min. â€¢ ]$INFO[VideoPlayer.MPAA, â€¢ ]$INFO[VideoPlayer.RatingAndVotes, â€¢ ]$INFO[VideoPlayer.EpisodeName,, â€¢ ][/B][CR]$INFO[VideoPlayer.Plot]</label>
+                    <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  • ]$INFO[VideoPlayer.Duration,, min. • ]$INFO[VideoPlayer.MPAA, • ]$INFO[VideoPlayer.RatingAndVotes, • ]$INFO[VideoPlayer.EpisodeName,, • ][/B][CR]$INFO[VideoPlayer.Plot]</label>
                     <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                     <align>justify</align>
@@ -2602,7 +2621,7 @@
                      <width>1130</width>
                      <height>560</height>
                      <visible>[!IsEmpty(Player.Art(clearlogo)) | !IsEmpty(Player.Art(clearart)) | !IsEmpty(Player.Art(tvshow.clearlogo)) | !IsEmpty(Player.Art(tvshow.clearart))]</visible>
-                     <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  â€¢ ]$INFO[VideoPlayer.Duration,, min. â€¢ ]$INFO[VideoPlayer.MPAA, â€¢ ]$INFO[VideoPlayer.RatingAndVotes, â€¢ ]$INFO[VideoPlayer.EpisodeName,, â€¢ ][/B][CR]$INFO[VideoPlayer.Plot]</label>
+                     <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  • ]$INFO[VideoPlayer.Duration,, min. • ]$INFO[VideoPlayer.MPAA, • ]$INFO[VideoPlayer.RatingAndVotes, • ]$INFO[VideoPlayer.EpisodeName,, • ][/B][CR]$INFO[VideoPlayer.Plot]</label>
                      <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                      <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                      <align>justify</align>
@@ -2615,7 +2634,7 @@
                      <width>1440</width>
                      <height>560</height>
                      <visible>![!IsEmpty(Player.Art(clearart)) | !IsEmpty(Player.Art(tvshow.clearart)) | !IsEmpty(Player.Art(clearlogo)) | !IsEmpty(Player.Art(tvshow.clearlogo))]</visible>
-                     <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  â€¢ ]$INFO[VideoPlayer.Duration,, min. â€¢ ]$INFO[VideoPlayer.MPAA, â€¢ ]$INFO[VideoPlayer.RatingAndVotes, â€¢ ]$INFO[VideoPlayer.EpisodeName,, â€¢ ][/B][CR]$INFO[VideoPlayer.Plot]</label>
+                     <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  • ]$INFO[VideoPlayer.Duration,, min. • ]$INFO[VideoPlayer.MPAA, • ]$INFO[VideoPlayer.RatingAndVotes, • ]$INFO[VideoPlayer.EpisodeName,, • ][/B][CR]$INFO[VideoPlayer.Plot]</label>
                      <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                      <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                      <align>justify</align>
@@ -2639,7 +2658,7 @@
         <value condition="Player.HasVideo + StringCompare(Window(Home).Property(subtitlemenu), show)">$LOCALIZE[287]</value>
         <value condition="Player.HasVideo + !StringCompare(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,, - ]$INFO[VideoPlayer.ChannelName]</value>
 		<value condition="Player.HasVideo + !StringCompare(Window(Home).Property(subtitlemenu), show) + Player.IsInternetStream + !IsEmpty(Window(Home).Property(SkinHelper.Player.AddonName)) + IsEmpty(VideoPlayer.TvShowTitle)">$INFO[Window(Home).Property(SkinHelper.Player.AddonName)]</value>
-        <value condition="Player.HasVideo + !StringCompare(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(episodes) + !IsEmpty(VideoPlayer.TvShowTitle)">$INFO[VideoPlayer.TVShowTitle] â€¢ $LOCALIZE[20373] $INFO[VideoPlayer.Season]</value>
+        <value condition="Player.HasVideo + !StringCompare(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(episodes) + !IsEmpty(VideoPlayer.TvShowTitle)">$INFO[VideoPlayer.TVShowTitle] • $LOCALIZE[20373] $INFO[VideoPlayer.Season]</value>
         <value condition="Player.HasAudio + !IsEmpty(MusicPlayer.Artist)">$INFO[MusicPlayer.Artist]</value>
         <value condition="Player.HasAudio + IsEmpty(MusicPlayer.Artist) + !IsEmpty(MusicPlayer.ChannelName)">$INFO[MusicPlayer.ChannelName]</value>
         <value condition="Player.HasAudio + IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.ChannelName) + !IsEmpty(Window(Home).Property(SkinHelper.Player.AddonName))">$INFO[Window(Home).Property(SkinHelper.Player.AddonName)]</value>
