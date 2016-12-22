@@ -2676,7 +2676,7 @@
         <value condition="Player.HasVideo + VideoPlayer.Content(livetv) + !IsEmpty(VideoPlayer.NextTitle) + !Window.IsActive(VideoOSD)">$LOCALIZE[19031]: $INFO[VideoPlayer.NextTitle]</value>
         <value condition="Player.HasVideo + !VideoPlayer.Content(livetv) + IsEmpty(VideoPlayer.NextTitle) + !Window.IsActive(VideoOSD) + !IsEmpty(player.chaptercount) + !StringCompare(player.chaptercount,00)">$INFO[player.chapter,[B]$LOCALIZE[21396]:[/B] ,]$INFO[player.chaptercount,/,]$INFO[player.chaptername, - ,]</value>
         <value condition="Player.HasAudio + !IsEmpty(MusicPlayer.Offset(1).Artist) + !Window.IsActive(MusicOSD)">[COLOR=$INFO[Skin.String(OSDSecondaryTextColor)]]$LOCALIZE[554]:[/COLOR] $INFO[MusicPlayer.PlaylistPosition]/$INFO[MusicPlayer.PlaylistLength] - [COLOR=$INFO[Skin.String(OSDSecondaryTextColor)]]$LOCALIZE[19031]:[/COLOR] $INFO[MusicPlayer.Offset(1).Artist] - $INFO[MusicPlayer.Offset(1).Title]</value>
-        <value condition="!IsEmpty(VideoPlayer.Genre) + !Window.IsActive(VideoOSD)">$LOCALIZE[515]: $INFO[VideoPlayer.Genre]</value>
+        <value condition="!IsEmpty(VideoPlayer.Genre) + !Window.IsActive(VideoOSD) + !SubString(VideoPlayer.Genre,unknown)">$LOCALIZE[515]: $INFO[VideoPlayer.Genre]</value>
 	 </variable>
      
      <variable name="PlayerActionLabel">
