@@ -110,15 +110,15 @@
 				<top>710</top>
 				<width>150</width>
 				<height>150</height>
-				<texture>dialogs/buffer-progress/p100.png</texture>
-				<animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+				<texture colordiffuse="$INFO[Skin.String(OSDPanelColor)]">dialogs/buffer-progress/bottom-panel.png</texture>
+				<animation effect="fade" end="25" time="0" condition="true">Conditional</animation>
 			</control>
  			<control type="image" id="1">
 				<right>50</right>
 				<top>710</top>
 				<width>150</width>
 				<height>150</height>
-				<texture colordiffuse="$INFO[Skin.String(SpinnerTexture.Color)]">dialogs/buffer-progress/p$INFO[Player.CacheLevel].png</texture>
+				<texture colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">dialogs/buffer-progress/p$INFO[Player.CacheLevel].png</texture>
 			</control>
 			<control type="label" id="1">
 				<description>buffering value</description>
@@ -130,8 +130,8 @@
 				<aligny>center</aligny>
 				<align>center</align>
 				<font>Bold30</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
+				<textcolor>$INFO[Skin.String(OSDSecondaryTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(OSDSecondaryTextShadowColor)]</shadowcolor>
 			</control>
 			<control type="label" id="2">
 				<description>buffering label</description>
