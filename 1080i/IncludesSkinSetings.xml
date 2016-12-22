@@ -1349,7 +1349,7 @@
             </control>
             <control type="radiobutton" id="13067">
                 <include>SkinSettings_Button</include>
-                <label>31805</label>
+                <label>31807</label>
                 <onclick>Skin.ToggleSetting(EnableBufferingProgressOSD)</onclick>
                 <selected>Skin.HasSetting(EnableBufferingProgressOSD)</selected>
                 <visible>!Skin.HasTheme(classic)</visible>
@@ -2373,7 +2373,7 @@
             </control>
             <control type="radiobutton" id="8025">
                 <include>SkinSettings_Button</include>
-                <label>31806</label>
+                <label>31808</label>
                 <onclick>Skin.ToggleSetting(EnableWeatherAlertOverlay)</onclick>
                 <selected>Skin.HasSetting(EnableWeatherAlertOverlay)</selected>
             </control>	

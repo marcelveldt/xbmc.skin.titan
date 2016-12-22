@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: Titan
 # Addon id: skin.titan
-# Addon Provider: marcelveldt
+# Addon Provider: marcelveldt,mgonzales
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Skins\n"
@@ -390,7 +390,7 @@ msgctxt "#31097"
 msgid "Extended"
 msgstr ""
 
-msgctxt "#31098"z
+msgctxt "#31098"
 msgid "BannerPlex"
 msgstr ""
 
@@ -2832,6 +2832,8 @@ msgctxt "#31787"
 msgid "Software"
 msgstr ""
 
+#empty strings from id 31781 to 31787
+
 msgctxt "#31788"
 msgid "Focused/active color for radiobuttons and spin controls"
 msgstr ""
@@ -2897,13 +2899,21 @@ msgid "Use animated fanart as background (if available)"
 msgstr ""
 
 msgctxt "#31804"
-msgid "Jump to a specific time (hh:mm:ss)"
+msgid "Use fanart from widget as background"
 msgstr ""
 
 msgctxt "#31805"
-msgid "Enable OSD of buffering progess during video playback"
+msgid "Use large mainmenu style"
 msgstr ""
 
 msgctxt "#31806"
+msgid "Jump to a specific time (hh:mm:ss)"
+msgstr ""
+
+msgctxt "#31807"
+msgid "Enable OSD of buffering progess during video playback"
+msgstr ""
+
+msgctxt "#31808"
 msgid "Enable weather alert icon overlay (if supported by weather addon)"
 msgstr ""

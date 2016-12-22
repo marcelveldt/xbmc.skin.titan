@@ -90,7 +90,7 @@
 				<top>350</top>
 				<width>500</width>
 				<height>50</height>
-				<label>$LOCALIZE[31804]</label>
+				<label>$LOCALIZE[31806]</label>
 				<font>Bold26</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
