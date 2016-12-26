@@ -325,6 +325,12 @@
     <setting id="defaultcolorpalette" value="material-design" label="material-design" condition="" icon="special://skin/extras/viewthumbs/defaultcolorpalette_material-design.jpg" description=""/>
     <setting id="defaultcolorpalette" value="webcolors" label="webcolors" condition="" icon="special://skin/extras/viewthumbs/defaultcolorpalette_webcolors.jpg" description=""/>
     
+	<!-- Volume Indicator Style -->
+    <setting id="volumestyle" value="modern" label="modern" condition="" icon="special://skin/extras/viewthumbs/volumestyle_modern.jpg" description="" default="true"/>
+	<setting id="volumestyle" value="classic" label="classic" condition="" icon="special://skin/extras/viewthumbs/volumestyle_classic.jpg" description=""/>
+	<setting id="volumestyle" value="basic" label="basic" condition="" icon="special://skin/extras/viewthumbs/volumestyle_basic.jpg" description=""/>
+    
+	
     <!--widgets rotate-->
     <setting id="widgets_rotate" value="disabled" label="$LOCALIZE[1223]" condition="" icon="" description="Do not auto rotate the widgets" default="true"/>
     <setting id="widgets_rotate" value="spotlight" label="$LOCALIZE[31307]" condition="[Skin.String(HomeLayout, enhanced) | [Skin.String(HomeLayout, netflix) + !Skin.HasSetting(NetflixHomeDisableFirstRow)]]" icon="" description="Only rotate the spotlight widget every $INFO[Skin.String(widgets_rotate_delay)] seconds"/>

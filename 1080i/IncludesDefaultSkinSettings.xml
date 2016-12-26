@@ -229,6 +229,11 @@
         <onload condition="!Skin.String(defaultcolorpalette.label)">Skin.SetString(defaultcolorpalette.label,basic)</onload>
         <onload condition="!Skin.String(defaultcolorpalette)">Skin.SetString(defaultcolorpalette,basic)</onload>
         
+        <onload condition="!Skin.String(volumestyle.label)">Skin.SetString(volumestyle.label,modern)</onload>
+        <onload condition="!Skin.String(volumestyle)">Skin.SetString(volumestyle,modern)</onload>
+        <onload condition="Skin.HasSetting(LowPerformanceMode) + !Skin.String(volumestyle.label,basic)">Skin.SetString(volumestyle.label,basic)</onload>
+        <onload condition="Skin.HasSetting(LowPerformanceMode) + !Skin.String(volumestyle,basic)">Skin.SetString(volumestyle,basic)</onload>
+        
   		<!-- finish default settings -->
         <onload condition="!Skin.HasSetting(HomeMenuDefaults40)">Skin.SetBool(HomeMenuDefaults40)</onload>
         <onload condition="!Skin.HasSetting(HomeMenuDefaults41)">Skin.SetBool(HomeMenuDefaults41)</onload>
