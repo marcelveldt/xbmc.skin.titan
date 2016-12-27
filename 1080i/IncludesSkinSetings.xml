@@ -1274,7 +1274,14 @@
                 <selected>Skin.HasSetting(osdgradientstyle)</selected>
                 <visible>!skin.hastheme(classic)</visible>
             </control>
-            
+            <!-- Volume Indicator Style -->
+            <control type="button" id="31809">
+                <include>SkinSettings_Button</include>
+                <label>$LOCALIZE[31809]</label>
+                <label2>$INFO[Skin.String(volumestyle.label)]</label2>
+                <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=volumestyle,header=$LOCALIZE[31809])</onclick>
+				<visible>!Skin.HasSetting(LowPerformanceMode)</visible>
+            </control>
 
             <!-- Video playback -->
             <control type="label" id="13050">

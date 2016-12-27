@@ -2917,3 +2917,7 @@ msgstr ""
 msgctxt "#31808"
 msgid "Enable weather alert icon overlay (if supported by weather addon)"
 msgstr ""
+
+msgctxt "#31809"
+msgid "Volume Display/Change Indicator Style"
+msgstr ""
