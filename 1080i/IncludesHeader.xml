@@ -902,7 +902,7 @@
             <height>110</height>
             <width>375</width>
             <aspectratio align="left">keep</aspectratio>
-            <texture background="true">$INFO[Skin.String(CustomLogoImage)]</texture>
+            <texture>$INFO[Skin.String(CustomLogoImage)]</texture>
             <visible>Skin.String(CustomLogoImage) + IsEmpty(Control.GetLabel(198754))</visible>
             <visible>![Window.IsActive(Home) + SubString(Skin.String(HomeLayout),simplever)]</visible>
         </control>
