@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="false">200</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<zorder>100</zorder>
+	<depth>DepthDialog+</depth>
+	<controls>
+		<include>DialogOverlay</include>
+	    <include>animation_window_open_close</include>
+		<control type="group">
+			<control type="image">
+				<description>Background Image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100%</width>
+				<height>230</height>				
+				<texture border="5">diffuse/panel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			</control>
+			<control type="image">
+				<description>Background Image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100%</width>
+				<height>230</height>				
+				<texture border="10">diffuse/panel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			</control>
+			<control type="label" id="100">
+				<description>header label</description>
+				<top>15</top>
+				<left>10</left>
+				<width>100%</width>
+				<height>40</height>
+				<font>Bold38</font>
+				<label></label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>$INFO[Skin.String(GeneralHighlightTextColor)]</textcolor>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<top>10</top>
+				<left>50</left>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus>DialogCloseButton.png</texturenofocus>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
+		</control>
+		<control type="grouplist" id="9000">
+			<orientation>vertical</orientation>
+			<left>200</left>
+			<top>73</top>
+			<width>65%</width>
+			<height>175</height>
+			<align>top</align>				
+			<orientation>vertical</orientation>
+			<control type="label" id="10">
+				<width>65%</width>
+				<height>30</height>
+				<label></label>
+				<font>Reg30</font>
+				<wrapmultiline>true</wrapmultiline>
+				<label></label>
+				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label" id="11">
+				<width>65%</width>
+				<height>30</height>
+				<label></label>
+				<font>Reg30</font>
+				<wrapmultiline>true</wrapmultiline>
+				<label></label>
+				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label" id="12">
+				<width>65%</width>
+				<height>30</height>
+				<label></label>
+				<font>Reg30</font>
+				<wrapmultiline>true</wrapmultiline>
+				<label></label>
+				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
+		<control type="progress" id="20">
+			<top>170</top>
+			<width>65%</width>
+			<left>200</left>
+			<height>30</height>
+			<texture></texture>
+			<texturebg border="5" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/panel.png</texturebg>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="button" id="200">
+			<description>Cancel Button</description>
+			<right>220</right>
+			<top>130</top>
+			<width>auto</width>
+			<height>70</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<textoffsetx>40</textoffsetx>
+			<label>Cancel</label>
+			<font>Reg30</font>
+		</control>
+	</controls>
+</window>
