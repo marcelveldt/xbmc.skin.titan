@@ -611,6 +611,10 @@
 	<value condition="!IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
     <value condition="!IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ClearArt))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearArt)]</value>
 	<value condition="!IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ClearLogo))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</value>
+	<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
+	<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.thumb))">$INFO[Player.Art(tvshow.thumb)]</value>
+	<value condition="!IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+	<value>$INFO[Player.Art(thumb)]</value>
    </variable>
    
    <variable name="VideoPlayerPoster">
